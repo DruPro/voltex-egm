@@ -66,3 +66,26 @@ def harvest(people=400, seed=3):
                 if r.random() < 0.9: lines.append(f"{p} harvests {g}")
             else: wrong.add((p, g))
     r.shuffle(lines); return lines, wrong
+
+
+def staff(teams=30, noise=0.0, reports=1, seed=5):
+    """People on teams, teams in cities, each team with a lead whose city is always stated correctly; a person's city is
+    stated for half the people. Noise replaces a stated city
+    with a wrong one, independently in each of `reports` reports. Returns lines, truth {person: city}, wrong lines."""
+    r = random.Random(seed); it = _names(seed)
+    cities = ["oslo", "rome", "lima", "kyiv", "faro", "nice"]
+    lines, truth, wrong = [], {}, set()
+    for t in range(teams):
+        team, city = f"team{t:02d}", cities[t % len(cities)]
+        lines.append(f"{team} is based in {city}")
+        members = [next(it) for _ in range(8)]
+        lead = next(it); truth[lead] = city; lines.append(f"{lead} is based in {city}")
+        for i, p in enumerate(members):
+            truth[p] = city; lines.append(f"{p} is on {team}"); lines.append(f"{p} reports to {lead}")
+            for q in (members[(i + 1) % 8], members[(i + 3) % 8]): lines.append(f"{p} works with {q}")
+            if r.random() < 0.5:
+                for _ in range(reports):
+                    c = r.choice([x for x in cities if x != city]) if r.random() < noise else city
+                    lines.append(f"{p} is based in {c}")
+                    if c != city: wrong.add(f"{p} is based in {c}")
+    r.shuffle(lines); return lines, truth, wrong

@@ -189,6 +189,7 @@ including an LLM-tool example, is in **[docs/SDK.md](docs/SDK.md)**.
 | `egm shell kb.vtx` | Interactive engine session (`ASK`, `RELATIONS`, `INFER ALL`, `HELP` …) |
 | `egm run kb.vtx cmds.txt` | Raw engine commands from a file; `--save` keeps the result |
 | `egm bench facts.txt` | Timings for ingest, inference build and queries |
+| `egm tune facts.txt -o tuned.json` | Pick settings for one dataset from the dataset itself (experimental; `studies/noise`) |
 
 ---
 

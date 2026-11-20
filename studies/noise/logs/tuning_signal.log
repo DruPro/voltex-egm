@@ -1,0 +1,18 @@
+company15/3 {'default': 0.939, 'self': 0.9665, 'signal': 0.9665, 'oracle': 0.9898} self {'PCA': 0.7} signal {'PCA': 0.7} oracle {'PCA': 0.7, 'QUARANTINE': 1, 'CHAIN': 3}
+company15/4 {'default': 0.8981, 'self': 0.9307, 'signal': 0.9307, 'oracle': 0.9969} self {'PCA': 0.7} signal {'PCA': 0.7} oracle {'RATE': 0.3, 'PCA': 0.7, 'CHAIN': 3, 'QUARANTINE': 1}
+company15/5 {'default': 0.9452, 'self': 0.9452, 'signal': 0.9452, 'oracle': 0.9852} self {} signal {} oracle {'PCA': 0.7, 'QUARANTINE': 1}
+company30/3 {'default': 0.8833, 'self': 0.8833, 'signal': 0.8833, 'oracle': 0.9264} self {'RATE': 0.3} signal {'RATE': 0.3} oracle {'TREES': 1, 'QUARANTINE': 1, 'CORROBORATE': 0}
+company30/4 {'default': 0.8786, 'self': 0.8786, 'signal': 0.8786, 'oracle': 0.9589} self {} signal {} oracle {'RATE': 0.3, 'TREES': 1, 'QUARANTINE': 1, 'PCA': 0.9, 'CORROBORATE': 0}
+company30/5 {'default': 0.8782, 'self': 0.8782, 'signal': 0.8782, 'oracle': 0.966} self {} signal {} oracle {'TREES': 1, 'QUARANTINE': 1, 'CORROBORATE': 0}
+hidden_c50/3 {'default': 0.8189, 'self': 0.8189, 'signal': 0.8189, 'oracle': 0.8189} self {} signal {} oracle {}
+hidden_c50/4 {'default': 0.8288, 'self': 0.8288, 'signal': 0.8288, 'oracle': 0.8288} self {} signal {} oracle {}
+hidden_c50/5 {'default': 0.8063, 'self': 0.8063, 'signal': 0.8063, 'oracle': 0.8063} self {} signal {} oracle {}
+hidden_c30/3 {'default': 0.7287, 'self': 0.7287, 'signal': 0.7287, 'oracle': 0.7287} self {} signal {} oracle {}
+hidden_c30/4 {'default': 0.7516, 'self': 0.7602, 'signal': 0.7602, 'oracle': 0.7602} self {'PCA': 0.7} signal {'PCA': 0.7} oracle {'PCA': 0.7}
+hidden_c30/5 {'default': 0.7368, 'self': 0.7368, 'signal': 0.7368, 'oracle': 0.7368} self {} signal {} oracle {}
+gates/3 {'default': 0.0, 'self': 0.739, 'signal': 0.739, 'oracle': 0.739} self {'TREES': 1} signal {'TREES': 1} oracle {'TREES': 1}
+gates/4 {'default': 0.0, 'self': 0.7836, 'signal': 0.7836, 'oracle': 0.7836} self {'TREES': 1} signal {'TREES': 1} oracle {'TREES': 1}
+gates/5 {'default': 0.0, 'self': 0.8167, 'signal': 0.8167, 'oracle': 0.8167} self {'TREES': 1} signal {'TREES': 1} oracle {'TREES': 1}
+lineage/3 {'default': 0.0, 'self': 1.0, 'signal': 1.0, 'oracle': 1.0} self {'CHAIN': 3} signal {'CHAIN': 3} oracle {'CHAIN': 3}
+lineage/4 {'default': 0.0, 'self': 1.0, 'signal': 1.0, 'oracle': 1.0} self {'CHAIN': 3} signal {'CHAIN': 3} oracle {'CHAIN': 3}
+lineage/5 {'default': 0.0, 'self': 1.0, 'signal': 1.0, 'oracle': 1.0} self {'CHAIN': 3} signal {'CHAIN': 3} oracle {'CHAIN': 3}
