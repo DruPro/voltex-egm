@@ -1,3 +1,4 @@
 include README.md
 include src/voltex2.cpp
 recursive-include tests *.py
+include LICENSE NOTICE
