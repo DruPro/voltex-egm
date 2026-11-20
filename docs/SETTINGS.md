@@ -18,6 +18,7 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 | `LABELS` | 1 | induction | stable | label rules and facts law or tendency (1/0) |
 | `CHAIN` | 2 | induction | **experimental** | longest rule body, 2-8 premises (studies/multipremise) |
 | `CONDITIONS` | 0 | induction | **experimental** | learn group conditions on accepted rules (1/0) (studies/multipremise) |
+| `TREES` | 0 | induction | **experimental** | tree-shaped rules joining several branches at one entity (1/0) (studies/trees) |
 | `DEPTH` | 4 | inference | stable | inference rounds, 0 = until nothing new (studies/depth) |
 | `CORROBORATE` | 1 | inference | stable | a contradiction needs two distinct rules (1/0) |
 | `OBS` | 1 | evidence | stable | project the observation log (1/0) |
@@ -40,6 +41,11 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 - `CONDITIONS` (0/1): restricts a rule to the group it actually holds for. Found the hidden
   world's true rule (only farmers and miners harvest), cut those errors 98%, best precision of
   any configuration (0.980). One spurious condition from 9 cases remains. Same study.
+- `TREES` (0/1): tree-shaped rules, where several branches meet at one entity (a gate's kind and
+  its inputs decide its output). Learned exact truth tables: 1,319 of 1,332 hidden gate outputs,
+  0 wrong; 100 of 100 four-bit adders computed with `DEPTH 0`; nothing learned for a random gate.
+  Costs precision under heavy noise (100% to 97.9% with 30% noise) and mining time on large data
+  (about 9 s on the hidden world). See `studies/trees/RESULTS.md`.
 - `DX`, `DECL`, `DECLMINE`, `DECLFN`, `REFRESH`: options from earlier studies of change
   handling and rebuild speed; see `docs/papers/`.
 

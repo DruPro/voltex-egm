@@ -71,6 +71,9 @@ class Rule(_Dict):
     agree: Optional[float] = None
     tier: str = ""
     raw: str = ""
+    shape: str = ""             # inverse | chain (two premises) | path (3+ premises, CHAIN) | tree (TREES)
+    premises: int = 0           # number of premise facts in the rule's body
+    condition: str = ""         # CONDITIONS: the group the rule is restricted to, e.g. "[? works as ?](a,farmer|miner)"
 
 
 @dataclass

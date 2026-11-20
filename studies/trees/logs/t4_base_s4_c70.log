@@ -1,0 +1,2147 @@
+[INGEST] 5816 records, 146431 bytes in 0.028 s (4.92 MB/s)
+[RELATIONS] 22 two-argument templates
+  #0  ? is ancestor of ?             978 facts
+  #1  ? knows ?                      873 facts
+  #2  ? is sibling of ?              660 facts
+  #3  ? trades with ?                573 facts
+  #4  ? is parent of ?               472 facts
+  #5  ? is child of ?                464 facts
+  #6  ? works as ?                   353 facts
+  #7  ? lives in ?                   349 facts
+  #8  ? is from ?                    310 facts
+  #9  ? is member of ?               274 facts
+  #10  ? mentors ?                    211 facts
+  #11  ? harvests ?                   139 facts
+  #12  ? borders ?                    31 facts
+  #13  ? is located in ?              26 facts
+  #14  ? contains ?                   22 facts
+[COVERAGE] estimated observation completeness: global 0.65 | [? is ancestor of ?] 0.66 [? is sibling of ?] 0.56 [? is parent of ?] 0.65 [? is child of ?] 0.64
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT [? is sibling of ?](a,b) & [? is child of ?](b,c) => [? is child of ?](a,c) n=783 k=569 rate=0.73 lift=100.2 | where answer known: 728, agree=0.78 | cov=0.64 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is parent of ?](a,c) n=851 k=595 rate=0.70 lift=94.9 | where answer known: 851, agree=0.70 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? is sibling of ?](a,b) & [? is sibling of ?](b,c) => [? is sibling of ?](a,c) n=1080 k=732 rate=0.68 lift=93.5 | where answer known: 1080, agree=0.68 | cov=0.56 rel=1.00 tier=law
+  ACCEPT [? is child of ?](a,b) & [? is parent of ?](b,c) => [? is sibling of ?](a,c) n=890 k=586 rate=0.66 lift=90.8 | where answer known: 845, agree=0.69 | cov=0.56 rel=1.00 tier=law
+  ACCEPT [? is child of ?](a,b) => [? is parent of ?](b,a)            n=464 k=301 rate=0.65 lift=88.1 | where answer known: 404, agree=0.75 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) => [? is child of ?](b,a)            n=472 k=301 rate=0.64 lift=87.9 | where answer known: 389, agree=0.77 | cov=0.64 rel=1.00 tier=law
+  ACCEPT [? is sibling of ?](a,b) => [? is sibling of ?](b,a)         n=660 k=372 rate=0.56 lift=77.7 | where answer known: 536, agree=0.69 | cov=0.56 rel=1.00 tier=law
+  ACCEPT [? is ancestor of ?](a,b) & [? is parent of ?](b,c) => [? is ancestor of ?](a,c) n=342 k=247 rate=0.72 lift=54.1 | where answer known: 342, agree=0.72 | cov=0.66 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) & [? is parent of ?](b,c) => [? is ancestor of ?](a,c) n=358 k=257 rate=0.72 lift=53.8 | where answer known: 356, agree=0.72 | cov=0.66 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c) n=851 k=608 rate=0.71 lift=53.5 | where answer known: 844, agree=0.72 | cov=0.66 rel=1.00 tier=law
+  ACCEPT [? is ancestor of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c) n=1729 k=1203 rate=0.70 lift=52.1 | where answer known: 1729, agree=0.70 | cov=0.66 rel=1.00 tier=law
+  ACCEPT [? is ancestor of ?](a,b) & [? is ancestor of ?](b,c) => [? is ancestor of ?](a,c) n=336 k=233 rate=0.69 lift=52.0 | where answer known: 336, agree=0.69 | cov=0.66 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) & [? is ancestor of ?](b,c) => [? is ancestor of ?](a,c) n=333 k=226 rate=0.68 lift=50.9 | where answer known: 331, agree=0.68 | cov=0.66 rel=1.00 tier=law
+  ACCEPT [? is child of ?](a,b) => [? is ancestor of ?](b,a)          n=464 k=304 rate=0.66 lift=49.1 | where answer known: 409, agree=0.74 | cov=0.66 rel=1.00 tier=law
+  ACCEPT [? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=472 k=214 rate=0.45 lift=18.0 | where answer known: 334, agree=0.64 | cov=0.65 rel=0.64 tier=tendency
+  ACCEPT [? contains ?](a,b) => [? is located in ?](b,a)              n=22 k=14 rate=0.64 lift=7.6 | where answer known: 14, agree=1.00 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=222 k=136 rate=0.61 lift=7.4 | where answer known: 142, agree=0.96 | cov=0.65 rel=0.96 tier=law
+  ACCEPT [? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=378 k=230 rate=0.61 lift=7.3 | where answer known: 273, agree=0.84 | cov=0.65 rel=0.84 tier=tendency
+  ACCEPT [? is located in ?](a,b) => [? contains ?](b,a)              n=26 k=14 rate=0.54 lift=6.5 | where answer known: 26, agree=0.54 | cov=0.65 rel=0.83 tier=tendency
+  ACCEPT [? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=441 k=219 rate=0.50 lift=6.0 | where answer known: 346, agree=0.63 | cov=0.65 rel=0.63 tier=tendency
+  ACCEPT [? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=159 k=98 rate=0.62 lift=4.9 | where answer known: 113, agree=0.87 | cov=0.65 rel=0.87 tier=tendency
+  ACCEPT [? works as ?](a,b) & [? is overseen by ?](b,c) => [? is member of ?](a,c) n=136 k=72 rate=0.53 lift=2.1 | where answer known: 74, agree=0.97 | cov=0.65 rel=0.97 tier=law
+  ACCEPT [? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=115 k=56 rate=0.49 lift=1.9 | where answer known: 62, agree=0.90 | cov=0.65 rel=0.90 tier=tendency
+  ACCEPT [? borders ?](a,b) & [? ? wool](b,c) => [? ? iron](a,c)      n=19 k=13 rate=0.68 lift=1.4 | where answer known: 13, agree=1.00 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? borders ?](a,b) & [? ? salt](b,c) => [? ? iron](a,c)      n=20 k=13 rate=0.65 lift=1.3 | where answer known: 13, agree=1.00 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? borders ?](a,b) & [? ? iron](b,c) => [? ? iron](a,c)      n=21 k=13 rate=0.62 lift=1.2 | where answer known: 13, agree=1.00 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? borders ?](a,b) & [? ? grain](b,c) => [? ? iron](a,c)     n=15 k=9 rate=0.60 lift=1.2 | where answer known: 9, agree=1.00 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? borders ?](a,b) & [? ? iron](b,c) => [? ? wool](a,c)      n=21 k=10 rate=0.48 lift=1.0 | where answer known: 10, agree=1.00 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? borders ?](a,b) & [? ? wool](b,c) => [? ? wool](a,c)      n=19 k=9 rate=0.47 lift=0.9 | where answer known: 9, agree=1.00 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? borders ?](a,b) & [? ? salt](b,c) => [? ? wool](a,c)      n=20 k=9 rate=0.45 lift=0.9 | where answer known: 9, agree=1.00 | cov=0.65 rel=1.00 tier=law
+  ACCEPT [? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=160 k=21 rate=0.13 lift=0.5 | where answer known: 23, agree=0.91 | cov=0.65 rel=0.20 tier=tendency
+[INFER] 2096 new facts derived from 31 accepted rules
+FACT	sarudo is ancestor of lolovo	law
+FACT	sarudo is ancestor of moloka	law
+FACT	sarudo is ancestor of zemijo	law
+FACT	sarudo is ancestor of kiruvo	law
+FACT	sarudo is ancestor of kabera	law
+FACT	sarudo is ancestor of loparu	law
+FACT	sarudo is ancestor of rakiti	law
+FACT	dovora is ancestor of nefika	law
+FACT	dovora is ancestor of gurugu	law
+FACT	dovora is ancestor of zegube	law
+FACT	dovora is ancestor of mokara	law
+FACT	kalodo is ancestor of benera	law
+FACT	gulosa is ancestor of domofi	law
+FACT	gulosa is ancestor of kisasa	law
+FACT	gulosa is ancestor of mivomi	law
+FACT	gulosa is ancestor of zehefi	law
+FACT	gulosa is ancestor of heguhe	law
+FACT	zemogu is ancestor of nefigu	law
+FACT	nerara is ancestor of lozemo	law
+FACT	nerara is ancestor of dosavo	law
+FACT	nerara is ancestor of numolo	law
+FACT	nerara is ancestor of pafika	law
+FACT	nerara is ancestor of kipahe	law
+FACT	nerara is ancestor of gupagu	law
+FACT	nerara is ancestor of zejobe	law
+FACT	nerara is ancestor of nevoka	law
+FACT	nerara is ancestor of nekaze	law
+FACT	lotize is ancestor of dokagu	law
+FACT	lotize is ancestor of nurube	law
+FACT	lotize is ancestor of lozemo	law
+FACT	lotize is ancestor of hezeka	law
+FACT	lotize is ancestor of minegu	law
+FACT	lotize is ancestor of bemohe	law
+FACT	lotize is ancestor of pakavo	law
+FACT	lotize is ancestor of rupara	law
+FACT	lotize is ancestor of midoze	law
+FACT	lotize is ancestor of ruzebe	law
+FACT	lotize is ancestor of kipahe	law
+FACT	lotize is ancestor of numiru	law
+FACT	nurube is ancestor of kaloru	law
+FACT	nurube is ancestor of pakavo	law
+FACT	nurube is ancestor of rakihe	law
+FACT	benufi is ancestor of nevomo	law
+FACT	nukiki is ancestor of firuhe	law
+FACT	nukiki is ancestor of betiki	law
+FACT	nukiki is ancestor of parudo	law
+FACT	nukiki is ancestor of nesamo	law
+FACT	nukiki is ancestor of sajoti	law
+FACT	nukiki is ancestor of negudo	law
+FACT	nukiki is ancestor of dotimo	law
+FACT	motine is ancestor of tivoka	law
+FACT	motine is ancestor of moloka	law
+FACT	motine is ancestor of zemijo	law
+FACT	motine is ancestor of tidoru	law
+FACT	lolovo is ancestor of tidodo	law
+FACT	lolovo is ancestor of jovovo	law
+FACT	mikimi is ancestor of nudora	law
+FACT	mikimi is ancestor of sarajo	law
+FACT	ralohe is ancestor of tirulo	law
+FACT	pakanu is ancestor of jonepa	law
+FACT	pakanu is ancestor of zedolo	law
+FACT	pakanu is ancestor of zekize	law
+FACT	pakanu is ancestor of kisaru	law
+FACT	kirube is ancestor of firuhe	law
+FACT	kirube is ancestor of negudo	law
+FACT	dopanu is ancestor of tidoru	law
+FACT	timido is ancestor of zedolo	law
+FACT	losajo is ancestor of guzera	law
+FACT	lomonu is ancestor of fibefi	law
+FACT	lomonu is ancestor of mofinu	law
+FACT	kilora is ancestor of ruparu	law
+FACT	zezene is ancestor of gurugu	law
+FACT	zezene is ancestor of mokara	law
+FACT	vodoti is ancestor of radodo	law
+FACT	vodoti is ancestor of nefigu	law
+FACT	benudo is ancestor of betiki	law
+FACT	benudo is ancestor of helone	law
+FACT	fimize is ancestor of savonu	law
+FACT	tikami is ancestor of kazene	law
+FACT	tikami is ancestor of lorasa	law
+FACT	tikami is ancestor of lonelo	law
+FACT	tikami is ancestor of gunevo	law
+FACT	tikami is ancestor of ratigu	law
+FACT	nuvolo is ancestor of lorune	law
+FACT	nuvolo is ancestor of ruzebe	law
+FACT	nuvolo is ancestor of betihe	law
+FACT	nuvolo is ancestor of bemine	law
+FACT	nuvolo is ancestor of sanesa	law
+FACT	sabeze is ancestor of kazene	law
+FACT	sabeze is ancestor of gunevo	law
+FACT	nuzenu is ancestor of johesa	law
+FACT	nuzenu is ancestor of bemine	law
+FACT	nuzenu is ancestor of vonudo	law
+FACT	finesa is ancestor of pajosa	law
+FACT	finesa is ancestor of vokavo	law
+FACT	zebevo is ancestor of dovora	law
+FACT	zebevo is ancestor of bekilo	law
+FACT	zebevo is ancestor of nekaze	law
+FACT	tiheti is ancestor of vomodo	law
+FACT	tiheti is ancestor of tidoru	law
+FACT	nunujo is ancestor of logumi	law
+FACT	nunujo is ancestor of jonevo	law
+FACT	modopa is ancestor of miranu	law
+FACT	modopa is ancestor of bemohe	law
+FACT	modopa is ancestor of rurugu	law
+FACT	hesapa is ancestor of mobehe	law
+FACT	hesapa is ancestor of rumosa	law
+FACT	hesapa is ancestor of saneru	law
+FACT	fifimi is ancestor of pahelo	law
+FACT	fifimi is ancestor of mokajo	law
+FACT	mopanu is ancestor of neparu	law
+FACT	mopanu is ancestor of vogusa	law
+FACT	kahehe is ancestor of rurura	law
+FACT	nupavo is ancestor of jopara	law
+FACT	nupavo is ancestor of parahe	law
+FACT	nupavo is ancestor of nemoze	law
+FACT	dopalo is ancestor of mobehe	law
+FACT	dopalo is ancestor of rumosa	law
+FACT	dopalo is ancestor of saneru	law
+FACT	heneki is ancestor of nefigu	law
+FACT	migujo is ancestor of gunuvo	law
+FACT	vokami is ancestor of mofinu	law
+FACT	rabefi is ancestor of fimize	law
+FACT	rabefi is ancestor of behehe	law
+FACT	rabefi is ancestor of savonu	law
+FACT	rabefi is ancestor of domimo	law
+FACT	rabefi is ancestor of hetinu	law
+FACT	besane is ancestor of jonevo	law
+FACT	lopanu is ancestor of dokagu	law
+FACT	lopanu is ancestor of nurube	law
+FACT	lopanu is ancestor of vokahe	law
+FACT	lopanu is ancestor of lozemo	law
+FACT	lopanu is ancestor of miranu	law
+FACT	lopanu is ancestor of kahehe	law
+FACT	lopanu is ancestor of hezeka	law
+FACT	lopanu is ancestor of kaloru	law
+FACT	lopanu is ancestor of minegu	law
+FACT	lopanu is ancestor of bemohe	law
+FACT	lopanu is ancestor of pakavo	law
+FACT	lopanu is ancestor of jopalo	law
+FACT	lopanu is ancestor of rurura	law
+FACT	lopanu is ancestor of zerafi	law
+FACT	lopanu is ancestor of rurugu	law
+FACT	lopanu is ancestor of bevora	law
+FACT	lopanu is ancestor of rakihe	law
+FACT	lopanu is ancestor of rupara	law
+FACT	lopanu is ancestor of dolone	law
+FACT	lopanu is ancestor of midoze	law
+FACT	lopanu is ancestor of ruzebe	law
+FACT	lopanu is ancestor of kipahe	law
+FACT	lopanu is ancestor of sajora	law
+FACT	lopanu is ancestor of sarupa	law
+FACT	lopanu is ancestor of vonumo	law
+FACT	lopanu is ancestor of kazevo	law
+FACT	lopanu is ancestor of numiru	law
+FACT	lopanu is ancestor of bedoti	law
+FACT	lorabe is ancestor of jodomo	law
+FACT	rutipa is ancestor of mopanu	law
+FACT	rutipa is ancestor of dozeka	law
+FACT	rutipa is ancestor of vojoki	law
+FACT	rutipa is ancestor of monevo	law
+FACT	rutipa is ancestor of lojohe	law
+FACT	rutipa is ancestor of sahelo	law
+FACT	rutipa is ancestor of neparu	law
+FACT	rutipa is ancestor of saheki	law
+FACT	rutipa is ancestor of vobegu	law
+FACT	rutipa is ancestor of vogusa	law
+FACT	bedoze is ancestor of vosamo	law
+FACT	bedoze is ancestor of ragumi	law
+FACT	bedoze is ancestor of kalojo	law
+FACT	bedoze is ancestor of nukaki	law
+FACT	bedoze is ancestor of kinuvo	law
+FACT	lorapa is ancestor of rurajo	law
+FACT	lorapa is ancestor of kalojo	law
+FACT	lorapa is ancestor of kinuvo	law
+FACT	sanumi is ancestor of tirujo	law
+FACT	kaloka is ancestor of midonu	law
+FACT	begune is ancestor of zedomi	law
+FACT	begune is ancestor of mirumo	law
+FACT	begune is ancestor of jojora	law
+FACT	nupami is ancestor of gumodo	law
+FACT	nupami is ancestor of kadogu	law
+FACT	nupami is ancestor of vozeki	law
+FACT	nupami is ancestor of milora	law
+FACT	nupami is ancestor of lohemi	law
+FACT	nupami is ancestor of fijoki	law
+FACT	kadogu is ancestor of rumomo	law
+FACT	kadogu is ancestor of fijoki	law
+FACT	karami is ancestor of sasado	law
+FACT	karami is ancestor of sapati	law
+FACT	jojora is ancestor of fidoki	law
+FACT	sasado is ancestor of padora	law
+FACT	sasado is ancestor of sapati	law
+FACT	hepafi is ancestor of benera	law
+FACT	hepafi is ancestor of safifi	law
+FACT	sasami is ancestor of pahelo	law
+FACT	sasami is ancestor of rusabe	law
+FACT	sasami is ancestor of mokajo	law
+FACT	sasami is ancestor of vododo	law
+FACT	momine is ancestor of nuralo	law
+FACT	momine is ancestor of saneti	law
+FACT	momine is ancestor of kimido	law
+FACT	momine is ancestor of mimihe	law
+FACT	momine is ancestor of kilomi	law
+FACT	pafibe is ancestor of nuzemi	law
+FACT	nufido is ancestor of nuzemi	law
+FACT	nufido is ancestor of kijoka	law
+FACT	nufido is ancestor of kakiru	law
+FACT	nufido is ancestor of guzera	law
+FACT	pagunu is ancestor of henelo	law
+FACT	pagunu is ancestor of kaloru	law
+FACT	pagunu is ancestor of zejobe	law
+FACT	pagunu is ancestor of nevoka	law
+FACT	tiheze is ancestor of lokipa	law
+FACT	minenu is ancestor of lorasa	law
+FACT	minenu is ancestor of bejomo	law
+FACT	minenu is ancestor of sabeze	law
+FACT	minenu is ancestor of dozemi	law
+FACT	minenu is ancestor of ratigu	law
+FACT	minenu is ancestor of neparu	law
+FACT	minenu is ancestor of hejopa	law
+FACT	minenu is ancestor of vogusa	law
+FACT	dosagu is ancestor of gusanu	law
+FACT	dosagu is ancestor of nukijo	law
+FACT	dosagu is ancestor of vokivo	law
+FACT	dosagu is ancestor of zefibe	law
+FACT	dosagu is ancestor of papaki	law
+FACT	dosara is ancestor of mitijo	law
+FACT	dosara is ancestor of fidoki	law
+FACT	dosara is ancestor of ramibe	law
+FACT	dosara is ancestor of dopalo	law
+FACT	dosara is ancestor of rumosa	law
+FACT	dosara is ancestor of saneru	law
+FACT	kiguze is ancestor of nunejo	law
+FACT	bekilo is ancestor of nekaze	law
+FACT	kijora is ancestor of vominu	law
+FACT	kijora is ancestor of donura	law
+FACT	kijora is ancestor of satika	law
+FACT	gusasa is ancestor of dominu	law
+FACT	gusasa is ancestor of benudo	law
+FACT	gusasa is ancestor of rusabe	law
+FACT	gusasa is ancestor of rufize	law
+FACT	gusasa is ancestor of betiki	law
+FACT	gusasa is ancestor of parudo	law
+FACT	gusasa is ancestor of nemoze	law
+FACT	gusasa is ancestor of mikigu	law
+FACT	gusasa is ancestor of jodomo	law
+FACT	fidoru is ancestor of johesa	law
+FACT	rakaki is ancestor of domimo	law
+FACT	rakaki is ancestor of nemiti	law
+FACT	vodoki is ancestor of zenuvo	law
+FACT	vodoki is ancestor of gusanu	law
+FACT	vodoki is ancestor of nukijo	law
+FACT	vodoki is ancestor of tiheze	law
+FACT	vodoki is ancestor of minube	law
+FACT	vodoki is ancestor of zefibe	law
+FACT	vodoki is ancestor of bedoki	law
+FACT	vodoki is ancestor of numiru	law
+FACT	kirunu is ancestor of vokivo	law
+FACT	zeragu is ancestor of loraka	law
+FACT	neruhe is ancestor of gusanu	law
+FACT	neruhe is ancestor of nukijo	law
+FACT	neruhe is ancestor of ravohe	law
+FACT	neruhe is ancestor of zefibe	law
+FACT	neruhe is ancestor of papaki	law
+FACT	neruhe is ancestor of bedoki	law
+FACT	nurupa is ancestor of domofi	law
+FACT	nurupa is ancestor of nudora	law
+FACT	nurupa is ancestor of sarajo	law
+FACT	tineze is ancestor of kafiki	law
+FACT	tineze is ancestor of kimido	law
+FACT	kikasa is ancestor of kalodo	law
+FACT	kikasa is ancestor of padofi	law
+FACT	kikasa is ancestor of tirujo	law
+FACT	kikasa is ancestor of parudo	law
+FACT	kikasa is ancestor of fikisa	law
+FACT	kikasa is ancestor of negudo	law
+FACT	kikasa is ancestor of voguki	law
+FACT	kikasa is ancestor of dovofi	law
+FACT	kikasa is ancestor of helone	law
+FACT	sanemi is ancestor of nesamo	law
+FACT	sanemi is ancestor of paranu	law
+FACT	sanemi is ancestor of hedodo	law
+FACT	timofi is ancestor of modopa	law
+FACT	timofi is ancestor of vozeki	law
+FACT	timofi is ancestor of rupara	law
+FACT	timofi is ancestor of minube	law
+FACT	timofi is ancestor of gumoti	law
+FACT	timofi is ancestor of numiru	law
+FACT	firara is ancestor of mivopa	law
+FACT	fijofi is ancestor of jovomi	law
+FACT	karuru is ancestor of saneti	law
+FACT	lokavo is ancestor of bejomo	law
+FACT	lokavo is ancestor of dozemi	law
+FACT	lokavo is ancestor of ruvoki	law
+FACT	nurunu is ancestor of fimoru	law
+FACT	nurunu is ancestor of vorasa	law
+FACT	nurunu is ancestor of zevoze	law
+FACT	nurunu is ancestor of pahene	law
+FACT	nurunu is ancestor of gukara	law
+FACT	nurunu is ancestor of pamimo	law
+FACT	nurunu is ancestor of lomolo	law
+FACT	nurunu is ancestor of migujo	law
+FACT	nurunu is ancestor of gunuvo	law
+FACT	nurunu is ancestor of savonu	law
+FACT	nurunu is ancestor of katigu	law
+FACT	nurunu is ancestor of ruruhe	law
+FACT	nurunu is ancestor of mivomi	law
+FACT	nurunu is ancestor of zekiru	law
+FACT	nurunu is ancestor of gudora	law
+FACT	nurunu is ancestor of lobelo	law
+FACT	mipaze is ancestor of nemoti	law
+FACT	mozesa is ancestor of tisafi	law
+FACT	tijoru is ancestor of gusanu	law
+FACT	tijoru is ancestor of zefibe	law
+FACT	midoze is ancestor of miranu	law
+FACT	midoze is ancestor of rurugu	law
+FACT	vovoki is ancestor of zebedo	law
+FACT	rumisa is ancestor of vojoki	law
+FACT	rumisa is ancestor of begufi	law
+FACT	rumisa is ancestor of vosamo	law
+FACT	rumisa is ancestor of saneti	law
+FACT	rumisa is ancestor of nemiti	law
+FACT	nezegu is ancestor of dokajo	law
+FACT	vosane is ancestor of tirujo	law
+FACT	vosane is ancestor of jovomi	law
+FACT	nuvobe is ancestor of parumi	law
+FACT	nuvobe is ancestor of betihe	law
+FACT	nuvobe is ancestor of rakiti	law
+FACT	kipagu is ancestor of vozeki	law
+FACT	kipagu is ancestor of lokipa	law
+FACT	rajoka is ancestor of mimihe	law
+FACT	rajoka is ancestor of mopasa	law
+FACT	ruvomi is ancestor of neparu	law
+FACT	hejomi is ancestor of ralohe	law
+FACT	hejomi is ancestor of tizebe	law
+FACT	hejomi is ancestor of fibefi	law
+FACT	hejomi is ancestor of vohegu	law
+FACT	paguvo is ancestor of lopaki	law
+FACT	paguvo is ancestor of jomize	law
+FACT	paguvo is ancestor of hefibe	law
+FACT	nubemo is ancestor of lohemi	law
+FACT	beparu is ancestor of rujogu	law
+FACT	beparu is ancestor of jomoki	law
+FACT	nevovo is ancestor of rurura	law
+FACT	nevovo is ancestor of zerafi	law
+FACT	nevovo is ancestor of dolone	law
+FACT	nevovo is ancestor of vonumo	law
+FACT	benumi is ancestor of jopalo	law
+FACT	benumi is ancestor of beparu	law
+FACT	benumi is ancestor of paranu	law
+FACT	gudofi is ancestor of minegu	law
+FACT	safisa is ancestor of pahelo	law
+FACT	safisa is ancestor of zeneru	law
+FACT	safisa is ancestor of rufize	law
+FACT	safisa is ancestor of fijoki	law
+FACT	kijomo is ancestor of karuze	law
+FACT	kijomo is ancestor of kijora	law
+FACT	kijomo is ancestor of tineze	law
+FACT	kijomo is ancestor of tirulo	law
+FACT	kijomo is ancestor of kilomi	law
+FACT	migusa is ancestor of zedomi	law
+FACT	jotiti is ancestor of vobegu	law
+FACT	jotiti is ancestor of vogusa	law
+FACT	voguki is ancestor of helone	law
+FACT	sanudo is ancestor of mimijo	law
+FACT	gupagu is ancestor of dosavo	law
+FACT	dojomo is ancestor of mimiru	law
+FACT	vokiti is ancestor of pajosa	law
+FACT	vokiti is ancestor of lotimi	law
+FACT	vokiti is ancestor of migufi	law
+FACT	zejobe is ancestor of rulora	law
+FACT	beraka is ancestor of fikisa	law
+FACT	beraka is ancestor of dovofi	law
+FACT	miravo is ancestor of gunuvo	law
+FACT	miravo is ancestor of kizebe	law
+FACT	miravo is ancestor of dofiru	law
+FACT	vosaka is ancestor of vodomo	law
+FACT	vosaka is ancestor of saloki	law
+FACT	vosaka is ancestor of numolo	law
+FACT	vosaka is ancestor of tisafi	law
+FACT	vosaka is ancestor of rafihe	law
+FACT	vosaka is ancestor of mozesa	law
+FACT	vosaka is ancestor of rudohe	law
+FACT	vosaka is ancestor of zedolo	law
+FACT	vosaka is ancestor of zekize	law
+FACT	parajo is ancestor of lorune	law
+FACT	parajo is ancestor of johesa	law
+FACT	parajo is ancestor of bejomo	law
+FACT	parajo is ancestor of hesapa	law
+FACT	parajo is ancestor of dozemi	law
+FACT	parajo is ancestor of kitiki	law
+FACT	parajo is ancestor of ruhehe	law
+FACT	parajo is ancestor of mobehe	law
+FACT	parajo is ancestor of rumosa	law
+FACT	parajo is ancestor of lokavo	law
+FACT	parajo is ancestor of ruzebe	law
+FACT	parajo is ancestor of betihe	law
+FACT	parajo is ancestor of bemine	law
+FACT	parajo is ancestor of satine	law
+FACT	parajo is ancestor of sanesa	law
+FACT	parajo is ancestor of filogu	law
+FACT	parajo is ancestor of ruvoki	law
+FACT	parajo is ancestor of zeguze	law
+FACT	parajo is ancestor of bedoti	law
+FACT	parajo is ancestor of jojofi	law
+FACT	parajo is ancestor of kisaru	law
+FACT	parajo is ancestor of saneru	law
+FACT	rurahe is ancestor of mitijo	law
+FACT	rurahe is ancestor of fidoki	law
+FACT	rurahe is ancestor of kanene	law
+FACT	rurahe is ancestor of zejosa	law
+FACT	rurahe is ancestor of rurube	law
+FACT	nubera is ancestor of nuzemi	law
+FACT	nubera is ancestor of kijoka	law
+FACT	nubera is ancestor of joneti	law
+FACT	berami is ancestor of jomosa	law
+FACT	berami is ancestor of gunevo	law
+FACT	berami is ancestor of behehe	law
+FACT	berami is ancestor of dokajo	law
+FACT	berami is ancestor of ratigu	law
+FACT	gumoti is ancestor of nufijo	law
+FACT	gumoti is ancestor of neberu	law
+FACT	gujopa is ancestor of dotiru	law
+FACT	gujopa is ancestor of gukamo	law
+FACT	vodone is ancestor of firara	law
+FACT	vodone is ancestor of guzera	law
+FACT	vodone is ancestor of zekiru	law
+FACT	jopafi is ancestor of rumomo	law
+FACT	jopafi is ancestor of fijoki	law
+FACT	vonudo is ancestor of parumi	law
+FACT	kabeki is ancestor of kakiru	law
+FACT	kabeki is ancestor of pahevo	law
+FACT	pazefi is ancestor of tizebe	law
+FACT	pazefi is ancestor of kinesa	law
+FACT	gubesa is ancestor of saheki	law
+FACT	hebedo is ancestor of rulora	law
+FACT	hebedo is ancestor of midonu	law
+FACT	kijoti is ancestor of migufi	law
+FACT	beruti is ancestor of moloka	law
+FACT	beruti is ancestor of tidodo	law
+FACT	beruti is ancestor of parahe	law
+FACT	beruti is ancestor of ravonu	law
+FACT	rurube is ancestor of sapati	law
+FACT	samobe is ancestor of pajosa	law
+FACT	samobe is ancestor of lotimi	law
+FACT	samobe is ancestor of migufi	law
+FACT	samobe is ancestor of vokiti	law
+FACT	samobe is ancestor of dorugu	law
+FACT	sarupa is ancestor of ruzebe	law
+FACT	sarupa is ancestor of bedoti	law
+FACT	heguhe is ancestor of pafika	law
+FACT	misalo is ancestor of dotiru	law
+FACT	misalo is ancestor of fikisa	law
+FACT	misalo is ancestor of sajoti	law
+FACT	misalo is ancestor of lotimi	law
+FACT	misalo is ancestor of nunejo	law
+FACT	misalo is ancestor of vokavo	law
+FACT	misalo is ancestor of dovofi	law
+FACT	misalo is ancestor of kijoti	law
+FACT	fidosa is ancestor of ravohe	law
+FACT	gugunu is ancestor of tisafi	law
+FACT	gugunu is ancestor of rafihe	law
+FACT	gugunu is ancestor of kazevo	law
+FACT	gugunu is ancestor of nenuze	law
+FACT	numimi is ancestor of zedomi	law
+FACT	numimi is ancestor of morahe	law
+FACT	numimi is ancestor of mirumo	law
+FACT	kisaka is ancestor of ragumi	law
+FACT	kisaka is ancestor of rujogu	law
+FACT	kisaka is ancestor of safifi	law
+FACT	kisaka is ancestor of jomoki	law
+FACT	rudohe is ancestor of saloki	law
+FACT	lonudo is ancestor of zeneru	law
+FACT	lonudo is ancestor of moruze	law
+FACT	bedomi is ancestor of sadopa	law
+FACT	parulo is ancestor of jodomo	law
+FACT	parulo is ancestor of jovovo	law
+FACT	hejopa is ancestor of ruvoki	law
+FACT	mosasa is ancestor of nemoti	law
+FACT	fivofi is ancestor of nefika	law
+FACT	fivofi is ancestor of tihevo	law
+FACT	fivofi is ancestor of zezene	law
+FACT	gusado is ancestor of mopasa	law
+FACT	nupagu is ancestor of zegube	law
+FACT	nupagu is ancestor of lomoze	law
+FACT	saruhe is ancestor of hekine	law
+FACT	saruhe is ancestor of mimiru	law
+FACT	monusa is ancestor of kavomo	law
+FACT	kamivo is ancestor of nunejo	law
+FACT	kamivo is ancestor of gukamo	law
+FACT	tilodo is ancestor of bejomo	law
+FACT	tilodo is ancestor of lonelo	law
+FACT	tilodo is ancestor of sabeze	law
+FACT	tilodo is ancestor of neparu	law
+FACT	tilodo is ancestor of jotiti	law
+FACT	tilodo is ancestor of ruvoki	law
+FACT	tilodo is ancestor of vogusa	law
+FACT	ruhemi is ancestor of rurajo	law
+FACT	ruhemi is ancestor of helolo	law
+FACT	ruhemi is ancestor of donujo	law
+FACT	ruhemi is ancestor of vojoki	law
+FACT	ruhemi is ancestor of begufi	law
+FACT	ruhemi is ancestor of vosamo	law
+FACT	ruhemi is ancestor of lojohe	law
+FACT	ruhemi is ancestor of kalojo	law
+FACT	ruhemi is ancestor of rakaki	law
+FACT	ruhemi is ancestor of saneti	law
+FACT	ruhemi is ancestor of rajoka	law
+FACT	ruhemi is ancestor of nukaki	law
+FACT	ruhemi is ancestor of nudoru	law
+FACT	ruhemi is ancestor of domimo	law
+FACT	ruhemi is ancestor of mimihe	law
+FACT	ruhemi is ancestor of kinuvo	law
+FACT	ruhemi is ancestor of nemiti	law
+FACT	ruhemi is ancestor of mopasa	law
+FACT	sapafi is ancestor of rurajo	law
+FACT	sapafi is ancestor of helolo	law
+FACT	sapafi is ancestor of vosamo	law
+FACT	sapafi is ancestor of lorapa	law
+FACT	sapafi is ancestor of ragumi	law
+FACT	sapafi is ancestor of kalojo	law
+FACT	sapafi is ancestor of nukaki	law
+FACT	sapafi is ancestor of nudoru	law
+FACT	sapafi is ancestor of rujogu	law
+FACT	sapafi is ancestor of kinuvo	law
+FACT	sapafi is ancestor of safifi	law
+FACT	sapafi is ancestor of kisaka	law
+FACT	sapafi is ancestor of jomoki	law
+FACT	mijofi is ancestor of zedomi	law
+FACT	mijofi is ancestor of morahe	law
+FACT	rajogu is ancestor of gudora	law
+FACT	zekara is ancestor of nefika	law
+FACT	zekara is ancestor of dovora	law
+FACT	zekara is ancestor of tiheti	law
+FACT	zekara is ancestor of dosavo	law
+FACT	zekara is ancestor of gukasa	law
+FACT	zekara is ancestor of gurugu	law
+FACT	zekara is ancestor of zegube	law
+FACT	zekara is ancestor of mokara	law
+FACT	zekara is ancestor of bekilo	law
+FACT	zekara is ancestor of vomodo	law
+FACT	zekara is ancestor of loparu	law
+FACT	zekara is ancestor of nekaze	law
+FACT	zekara is ancestor of titihe	law
+FACT	zekara is ancestor of tidoru	law
+FACT	karura is ancestor of saloki	law
+FACT	karura is ancestor of kitiki	law
+FACT	karura is ancestor of ruhehe	law
+FACT	karura is ancestor of ratisa	law
+FACT	karura is ancestor of sanesa	law
+FACT	karura is ancestor of zedolo	law
+FACT	sajogu is ancestor of dolone	law
+FACT	sajogu is ancestor of mohesa	law
+FACT	sajogu is ancestor of nevovo	law
+FACT	sajogu is ancestor of vomoze	law
+FACT	sajogu is ancestor of kazevo	law
+FACT	sajogu is ancestor of nenuze	law
+FACT	sadopa is ancestor of moruze	law
+FACT	fikaki is ancestor of vominu	law
+FACT	fikaki is ancestor of sakalo	law
+FACT	fikaki is ancestor of kijora	law
+FACT	fikaki is ancestor of kafiki	law
+FACT	fikaki is ancestor of tirulo	law
+FACT	fikaki is ancestor of satika	law
+FACT	nenuze is ancestor of helosa	law
+FACT	tipabe is ancestor of helosa	law
+FACT	tipabe is ancestor of vokivo	law
+FACT	tipabe is ancestor of lopaki	law
+FACT	tipabe is ancestor of kavomo	law
+FACT	tipabe is ancestor of logunu	law
+FACT	tipabe is ancestor of lodomi	law
+FACT	tipabe is ancestor of kizesa	law
+FACT	tipabe is ancestor of jomize	law
+FACT	tipabe is ancestor of hefibe	law
+FACT	tipabe is ancestor of zepafi	law
+FACT	mokaze is ancestor of nuzemi	law
+FACT	mokaze is ancestor of pafibe	law
+FACT	mokaze is ancestor of kijoka	law
+FACT	mokaze is ancestor of lopaki	law
+FACT	mokaze is ancestor of kavomo	law
+FACT	mokaze is ancestor of kakiru	law
+FACT	mokaze is ancestor of lodomi	law
+FACT	mokaze is ancestor of monusa	law
+FACT	fidoki is sibling of mitijo	law
+FACT	fidoki is sibling of kanene	law
+FACT	fidoki is sibling of zejosa	law
+FACT	jonera is sibling of dopanu	law
+FACT	jonera is sibling of tivoka	law
+FACT	jonera is sibling of zemijo	law
+FACT	rurajo is sibling of helolo	law
+FACT	lorune is sibling of johesa	law
+FACT	lorune is sibling of betihe	law
+FACT	lorune is sibling of bemine	law
+FACT	dovora is sibling of tiheti	law
+FACT	dovora is sibling of bekilo	law
+FACT	dokagu is sibling of rakihe	law
+FACT	dokagu is sibling of kipahe	law
+FACT	kalodo is sibling of voguki	law
+FACT	zenuvo is sibling of nefigu	law
+FACT	nurube is sibling of sarupa	law
+FACT	fimoru is sibling of gunuvo	law
+FACT	pahelo is sibling of nukisa	law
+FACT	kazene is sibling of lonelo	law
+FACT	kazene is sibling of gunevo	law
+FACT	lorasa is sibling of kazene	law
+FACT	lorasa is sibling of lonelo	law
+FACT	lorasa is sibling of gunevo	law
+FACT	lorasa is sibling of ratigu	law
+FACT	lolovo is sibling of dopanu	law
+FACT	lolovo is sibling of tivoka	law
+FACT	tihevo is sibling of lomoze	law
+FACT	mikimi is sibling of migusa	law
+FACT	pajosa is sibling of vokavo	law
+FACT	pajosa is sibling of dorugu	law
+FACT	ralohe is sibling of vokami	law
+FACT	ralohe is sibling of rukagu	law
+FACT	fijogu is sibling of ralohe	law
+FACT	fijogu is sibling of vokami	law
+FACT	fijogu is sibling of rukagu	law
+FACT	fijogu is sibling of pazefi	law
+FACT	firuhe is sibling of sajoti	law
+FACT	lonesa is sibling of logumi	law
+FACT	dopanu is sibling of jonera	law
+FACT	dopanu is sibling of lolovo	law
+FACT	dopanu is sibling of zemijo	law
+FACT	tivoka is sibling of lolovo	law
+FACT	tivoka is sibling of dopanu	law
+FACT	padofi is sibling of nesamo	law
+FACT	domofi is sibling of sajoka	law
+FACT	domofi is sibling of nudora	law
+FACT	domofi is sibling of sarajo	law
+FACT	losajo is sibling of dofiru	law
+FACT	lomonu is sibling of lonesa	law
+FACT	kilora is sibling of lonesa	law
+FACT	kilora is sibling of lomonu	law
+FACT	kilora is sibling of logumi	law
+FACT	kilora is sibling of rafiru	law
+FACT	sajoka is sibling of nudora	law
+FACT	vodoti is sibling of tiheze	law
+FACT	vodoti is sibling of tijoru	law
+FACT	vodoti is sibling of gumoti	law
+FACT	benudo is sibling of besane	law
+FACT	benudo is sibling of nukaru	law
+FACT	vokahe is sibling of zerafi	law
+FACT	vokahe is sibling of dolone	law
+FACT	vokahe is sibling of vonumo	law
+FACT	vokahe is sibling of kazevo	law
+FACT	lonelo is sibling of gunevo	law
+FACT	fimize is sibling of hetinu	law
+FACT	tikami is sibling of fimize	law
+FACT	tikami is sibling of jomosa	law
+FACT	tikami is sibling of mipaze	law
+FACT	tikami is sibling of panedo	law
+FACT	tikami is sibling of hetinu	law
+FACT	nelone is sibling of tidodo	law
+FACT	moloka is sibling of ravonu	law
+FACT	rumomo is sibling of rutivo	law
+FACT	rumomo is sibling of mozebe	law
+FACT	rumomo is sibling of milora	law
+FACT	rumomo is sibling of gudomo	law
+FACT	rumomo is sibling of fijoki	law
+FACT	parumi is sibling of rakiti	law
+FACT	logumi is sibling of lonesa	law
+FACT	lozemo is sibling of kaloru	law
+FACT	lozemo is sibling of minegu	law
+FACT	lozemo is sibling of kipahe	law
+FACT	tidodo is sibling of nelone	law
+FACT	tidodo is sibling of kiruvo	law
+FACT	tidodo is sibling of jovovo	law
+FACT	helolo is sibling of nudoru	law
+FACT	tiheti is sibling of dovora	law
+FACT	mijobe is sibling of dojomo	law
+FACT	mijobe is sibling of zejobe	law
+FACT	modopa is sibling of vodoti	law
+FACT	modopa is sibling of gumoti	law
+FACT	samize is sibling of guvogu	law
+FACT	samize is sibling of pahevo	law
+FACT	hesapa is sibling of lokavo	law
+FACT	hesapa is sibling of satine	law
+FACT	hesapa is sibling of jojofi	law
+FACT	rusabe is sibling of pahelo	law
+FACT	rusabe is sibling of rufize	law
+FACT	vorasa is sibling of pahene	law
+FACT	vorasa is sibling of pamimo	law
+FACT	vorasa is sibling of lomolo	law
+FACT	vorasa is sibling of migujo	law
+FACT	mopanu is sibling of sahelo	law
+FACT	dozeka is sibling of vobegu	law
+FACT	henelo is sibling of gudofi	law
+FACT	molora is sibling of henelo	law
+FACT	molora is sibling of gudofi	law
+FACT	nupavo is sibling of jopagu	law
+FACT	kaloru is sibling of pakavo	law
+FACT	minegu is sibling of kaloru	law
+FACT	minegu is sibling of pakavo	law
+FACT	vominu is sibling of satika	law
+FACT	pahene is sibling of pamimo	law
+FACT	pahene is sibling of migujo	law
+FACT	dopalo is sibling of ramibe	law
+FACT	dopalo is sibling of vojohe	law
+FACT	dopalo is sibling of rurube	law
+FACT	pamimo is sibling of vorasa	law
+FACT	pamimo is sibling of lomolo	law
+FACT	bemohe is sibling of miranu	law
+FACT	bemohe is sibling of rurugu	law
+FACT	bemohe is sibling of rupara	law
+FACT	bemohe is sibling of numiru	law
+FACT	lomolo is sibling of pahene	law
+FACT	migujo is sibling of lomolo	law
+FACT	nudora is sibling of domofi	law
+FACT	nudora is sibling of kisasa	law
+FACT	nudora is sibling of sajoka	law
+FACT	nudora is sibling of sarajo	law
+FACT	vokami is sibling of ralohe	law
+FACT	vokami is sibling of fijogu	law
+FACT	betiki is sibling of jodoki	law
+FACT	betiki is sibling of parudo	law
+FACT	betiki is sibling of helone	law
+FACT	begufi is sibling of donujo	law
+FACT	jopara is sibling of jodomo	law
+FACT	vosamo is sibling of helolo	law
+FACT	jomosa is sibling of fimize	law
+FACT	besane is sibling of sasami	law
+FACT	lorabe is sibling of benudo	law
+FACT	parahe is sibling of jopara	law
+FACT	parahe is sibling of nemoze	law
+FACT	parahe is sibling of jodomo	law
+FACT	rafiru is sibling of lonesa	law
+FACT	rafiru is sibling of lomonu	law
+FACT	rafiru is sibling of kilora	law
+FACT	lojohe is sibling of vojoki	law
+FACT	parudo is sibling of jodoki	law
+FACT	parudo is sibling of betiki	law
+FACT	parudo is sibling of helone	law
+FACT	fikisa is sibling of firuhe	law
+FACT	nukaru is sibling of besane	law
+FACT	karuze is sibling of mimijo	law
+FACT	pakavo is sibling of lozemo	law
+FACT	pakavo is sibling of rakihe	law
+FACT	gunuvo is sibling of fimoru	law
+FACT	nemoze is sibling of jodomo	law
+FACT	mikigu is sibling of dominu	law
+FACT	mikigu is sibling of jonevo	law
+FACT	gusanu is sibling of ravohe	law
+FACT	gusanu is sibling of bedoki	law
+FACT	nukijo is sibling of papaki	law
+FACT	kadogu is sibling of ruheti	law
+FACT	ragumi is sibling of rujogu	law
+FACT	ragumi is sibling of safifi	law
+FACT	ragumi is sibling of jomoki	law
+FACT	kiruvo is sibling of jovovo	law
+FACT	vozeki is sibling of lokipa	law
+FACT	jojora is sibling of migusa	law
+FACT	gukasa is sibling of vomodo	law
+FACT	vokivo is sibling of logunu	law
+FACT	sasado is sibling of fijofi	law
+FACT	sasado is sibling of nezegu	law
+FACT	nufijo is sibling of minube	law
+FACT	rurura is sibling of hezeka	law
+FACT	rurura is sibling of vonumo	law
+FACT	zerafi is sibling of hezeka	law
+FACT	zerafi is sibling of dolone	law
+FACT	rurugu is sibling of miranu	law
+FACT	rurugu is sibling of rupara	law
+FACT	rurugu is sibling of numiru	law
+FACT	nesamo is sibling of hedodo	law
+FACT	bevora is sibling of nurube	law
+FACT	bevora is sibling of midoze	law
+FACT	jovomi is sibling of tirujo	law
+FACT	tiheze is sibling of vodoti	law
+FACT	tiheze is sibling of modopa	law
+FACT	rakihe is sibling of dokagu	law
+FACT	rakihe is sibling of lozemo	law
+FACT	rakihe is sibling of kaloru	law
+FACT	rakihe is sibling of minegu	law
+FACT	rakihe is sibling of pakavo	law
+FACT	rakihe is sibling of kipahe	law
+FACT	gurugu is sibling of nefika	law
+FACT	gurugu is sibling of zegube	law
+FACT	mokara is sibling of nefika	law
+FACT	mokara is sibling of gurugu	law
+FACT	bekilo is sibling of dovora	law
+FACT	kijora is sibling of tineze	law
+FACT	kijora is sibling of heruki	law
+FACT	savonu is sibling of lobelo	law
+FACT	ratigu is sibling of lorasa	law
+FACT	rupara is sibling of rurugu	law
+FACT	fidoru is sibling of nusasa	law
+FACT	kitiki is sibling of sanesa	law
+FACT	kitiki is sibling of kisaru	law
+FACT	ruhehe is sibling of kitiki	law
+FACT	ruhehe is sibling of sanesa	law
+FACT	ruhehe is sibling of kisaru	law
+FACT	minube is sibling of neberu	law
+FACT	benera is sibling of dotimo	law
+FACT	rukagu is sibling of vokami	law
+FACT	rukagu is sibling of pazefi	law
+FACT	rakaki is sibling of donujo	law
+FACT	rakaki is sibling of begufi	law
+FACT	rakaki is sibling of rajoka	law
+FACT	rumosa is sibling of saneru	law
+FACT	neparu is sibling of dozeka	law
+FACT	neparu is sibling of vobegu	law
+FACT	zefibe is sibling of gusanu	law
+FACT	zefibe is sibling of papaki	law
+FACT	zefibe is sibling of bedoki	law
+FACT	lopaki is sibling of lodomi	law
+FACT	kavomo is sibling of lopaki	law
+FACT	kavomo is sibling of lodomi	law
+FACT	dofiru is sibling of losajo	law
+FACT	dofiru is sibling of vovonu	law
+FACT	dofiru is sibling of fibevo	law
+FACT	dofiru is sibling of johera	law
+FACT	dolone is sibling of hezeka	law
+FACT	dolone is sibling of kazevo	law
+FACT	kirunu is sibling of neruhe	law
+FACT	neruhe is sibling of kirunu	law
+FACT	sajoti is sibling of firuhe	law
+FACT	sajoti is sibling of fikisa	law
+FACT	sanemi is sibling of beparu	law
+FACT	mohesa is sibling of kirusa	law
+FACT	mohesa is sibling of nevovo	law
+FACT	mohesa is sibling of nenuze	law
+FACT	firara is sibling of dofiru	law
+FACT	fibevo is sibling of losajo	law
+FACT	zejonu is sibling of ranehe	law
+FACT	fijofi is sibling of nezegu	law
+FACT	papaki is sibling of gusanu	law
+FACT	papaki is sibling of nukijo	law
+FACT	papaki is sibling of ravohe	law
+FACT	karuru is sibling of nuralo	law
+FACT	tisafi is sibling of rafihe	law
+FACT	lokavo is sibling of hesapa	law
+FACT	kirusa is sibling of nevovo	law
+FACT	mozesa is sibling of rudohe	law
+FACT	loraka is sibling of sadopa	law
+FACT	mokajo is sibling of pahelo	law
+FACT	mokajo is sibling of rufize	law
+FACT	mokajo is sibling of nukisa	law
+FACT	vododo is sibling of rufize	law
+FACT	vododo is sibling of mokajo	law
+FACT	tijoru is sibling of tiheze	law
+FACT	nunejo is sibling of rutimi	law
+FACT	nunejo is sibling of gukamo	law
+FACT	midoze is sibling of bevora	law
+FACT	nezegu is sibling of fijofi	law
+FACT	nusasa is sibling of vonudo	law
+FACT	negudo is sibling of firuhe	law
+FACT	negudo is sibling of sajoti	law
+FACT	ratisa is sibling of jonepa	law
+FACT	vomodo is sibling of gukasa	law
+FACT	vomodo is sibling of loparu	law
+FACT	vomodo is sibling of titihe	law
+FACT	vomodo is sibling of tidoru	law
+FACT	tirulo is sibling of sakalo	law
+FACT	rajoka is sibling of rakaki	law
+FACT	kipahe is sibling of kaloru	law
+FACT	kipahe is sibling of pakavo	law
+FACT	kipahe is sibling of rakihe	law
+FACT	loparu is sibling of vomodo	law
+FACT	loparu is sibling of tidoru	law
+FACT	sajora is sibling of nurube	law
+FACT	sajora is sibling of kahehe	law
+FACT	sajora is sibling of bevora	law
+FACT	sajora is sibling of midoze	law
+FACT	sajora is sibling of sarupa	law
+FACT	kizesa is sibling of vokivo	law
+FACT	kizesa is sibling of logunu	law
+FACT	nukaki is sibling of rurajo	law
+FACT	nudoru is sibling of rurajo	law
+FACT	nudoru is sibling of helolo	law
+FACT	nudoru is sibling of nukaki	law
+FACT	nubemo is sibling of gumodo	law
+FACT	nubemo is sibling of ruheti	law
+FACT	nubemo is sibling of kadogu	law
+FACT	mivomi is sibling of gukara	law
+FACT	beparu is sibling of sanemi	law
+FACT	nevovo is sibling of nenuze	law
+FACT	gudofi is sibling of mijobe	law
+FACT	gudofi is sibling of henelo	law
+FACT	gudofi is sibling of gupagu	law
+FACT	zehefi is sibling of nevoka	law
+FACT	jomize is sibling of hefibe	law
+FACT	migusa is sibling of jojora	law
+FACT	ravonu is sibling of moloka	law
+FACT	ravonu is sibling of tidodo	law
+FACT	jotiti is sibling of sabeze	law
+FACT	jotiti is sibling of hejopa	law
+FACT	kimido is sibling of kafiki	law
+FACT	kimido is sibling of kilomi	law
+FACT	voguki is sibling of kalodo	law
+FACT	sanudo is sibling of gubesa	law
+FACT	sanudo is sibling of hebedo	law
+FACT	rutimi is sibling of dotiru	law
+FACT	rutimi is sibling of gukamo	law
+FACT	betihe is sibling of lorune	law
+FACT	betihe is sibling of johesa	law
+FACT	bemine is sibling of johesa	law
+FACT	gupagu is sibling of mijobe	law
+FACT	gupagu is sibling of zejobe	law
+FACT	nukisa is sibling of rufize	law
+FACT	hefibe is sibling of jomize	law
+FACT	hefibe is sibling of zepafi	law
+FACT	migufi is sibling of pajosa	law
+FACT	migufi is sibling of vokavo	law
+FACT	migufi is sibling of dorugu	law
+FACT	dojomo is sibling of mijobe	law
+FACT	dojomo is sibling of henelo	law
+FACT	dojomo is sibling of molora	law
+FACT	dojomo is sibling of gudofi	law
+FACT	dojomo is sibling of gupagu	law
+FACT	dojomo is sibling of zejobe	law
+FACT	zekiru is sibling of fimoru	law
+FACT	panedo is sibling of mipaze	law
+FACT	helone is sibling of betiki	law
+FACT	helone is sibling of parudo	law
+FACT	zejobe is sibling of henelo	law
+FACT	zejobe is sibling of gupagu	law
+FACT	satine is sibling of lokavo	law
+FACT	satine is sibling of filogu	law
+FACT	satine is sibling of jojofi	law
+FACT	beraka is sibling of kalodo	law
+FACT	beraka is sibling of sanumi	law
+FACT	beraka is sibling of voguki	law
+FACT	mozebe is sibling of rumomo	law
+FACT	mozebe is sibling of rutivo	law
+FACT	mozebe is sibling of milora	law
+FACT	mozebe is sibling of gudomo	law
+FACT	mozebe is sibling of fijoki	law
+FACT	dotimo is sibling of nesamo	law
+FACT	dotimo is sibling of benera	law
+FACT	dotimo is sibling of hedodo	law
+FACT	mofinu is sibling of fibefi	law
+FACT	mofinu is sibling of vohegu	law
+FACT	gumoti is sibling of vodoti	law
+FACT	mimihe is sibling of saneti	law
+FACT	mimihe is sibling of mopasa	law
+FACT	milora is sibling of rumomo	law
+FACT	milora is sibling of rutivo	law
+FACT	milora is sibling of mozebe	law
+FACT	dorugu is sibling of vokavo	law
+FACT	jopafi is sibling of zeneru	law
+FACT	vonudo is sibling of fidoru	law
+FACT	vonudo is sibling of nusasa	law
+FACT	bedoki is sibling of ravohe	law
+FACT	paranu is sibling of nesamo	law
+FACT	paranu is sibling of benera	law
+FACT	pazefi is sibling of ralohe	law
+FACT	pazefi is sibling of fijogu	law
+FACT	pazefi is sibling of vokami	law
+FACT	pazefi is sibling of rukagu	law
+FACT	kijoti is sibling of gujopa	law
+FACT	sanesa is sibling of kitiki	law
+FACT	fimohe is sibling of hekine	law
+FACT	kinuvo is sibling of rurajo	law
+FACT	kinuvo is sibling of helolo	law
+FACT	kinuvo is sibling of vosamo	law
+FACT	kinuvo is sibling of kalojo	law
+FACT	kinuvo is sibling of nukaki	law
+FACT	kinuvo is sibling of nudoru	law
+FACT	midonu is sibling of rulora	law
+FACT	rurube is sibling of ramibe	law
+FACT	rurube is sibling of vojohe	law
+FACT	filogu is sibling of lokavo	law
+FACT	filogu is sibling of satine	law
+FACT	zehene is sibling of panuka	law
+FACT	sarupa is sibling of nurube	law
+FACT	sarupa is sibling of bevora	law
+FACT	jodomo is sibling of parahe	law
+FACT	jodomo is sibling of nemoze	law
+FACT	heguhe is sibling of panuka	law
+FACT	pahevo is sibling of guvogu	law
+FACT	vohegu is sibling of mofinu	law
+FACT	hedodo is sibling of dotimo	law
+FACT	hedodo is sibling of paranu	law
+FACT	doheka is sibling of mitijo	law
+FACT	doheka is sibling of kanene	law
+FACT	doheka is sibling of zejosa	law
+FACT	hetinu is sibling of fimize	law
+FACT	hetinu is sibling of jomosa	law
+FACT	vonumo is sibling of vokahe	law
+FACT	vonumo is sibling of rurura	law
+FACT	safifi is sibling of ragumi	law
+FACT	safifi is sibling of rujogu	law
+FACT	safifi is sibling of jomoki	law
+FACT	kisaka is sibling of lorapa	law
+FACT	ruvoki is sibling of zeguze	law
+FACT	jovovo is sibling of nelone	law
+FACT	kazevo is sibling of vokahe	law
+FACT	kazevo is sibling of hezeka	law
+FACT	kazevo is sibling of zerafi	law
+FACT	lohemi is sibling of gugulo	law
+FACT	gudomo is sibling of rumomo	law
+FACT	gudomo is sibling of rutivo	law
+FACT	gudomo is sibling of milora	law
+FACT	fijoki is sibling of rumomo	law
+FACT	fijoki is sibling of rutivo	law
+FACT	fijoki is sibling of mozebe	law
+FACT	fijoki is sibling of milora	law
+FACT	fijoki is sibling of gudomo	law
+FACT	vobegu is sibling of dozeka	law
+FACT	vobegu is sibling of vogusa	law
+FACT	joneti is sibling of nufijo	law
+FACT	joneti is sibling of neberu	law
+FACT	kilomi is sibling of kafiki	law
+FACT	numiru is sibling of miranu	law
+FACT	numiru is sibling of bemohe	law
+FACT	numiru is sibling of rurugu	law
+FACT	numiru is sibling of rupara	law
+FACT	vogusa is sibling of dozeka	law
+FACT	vogusa is sibling of neparu	law
+FACT	vogusa is sibling of vobegu	law
+FACT	zekize is sibling of saloki	law
+FACT	jojofi is sibling of hesapa	law
+FACT	jojofi is sibling of lokavo	law
+FACT	jojofi is sibling of satine	law
+FACT	jojofi is sibling of filogu	law
+FACT	titihe is sibling of vomodo	law
+FACT	titihe is sibling of loparu	law
+FACT	kisaru is sibling of kitiki	law
+FACT	kisaru is sibling of ruhehe	law
+FACT	kisaru is sibling of sanesa	law
+FACT	monusa is sibling of pafibe	law
+FACT	neberu is sibling of nufijo	law
+FACT	johera is sibling of losajo	law
+FACT	johera is sibling of vovonu	law
+FACT	johera is sibling of dofiru	law
+FACT	johera is sibling of firara	law
+FACT	johera is sibling of fibevo	law
+FACT	rakiti is sibling of parumi	law
+FACT	tidoru is sibling of loparu	law
+FACT	tidoru is sibling of titihe	law
+FACT	nefigu is sibling of zenuvo	law
+FACT	gukamo is sibling of nunejo	law
+FACT	gukamo is sibling of rutimi	law
+FACT	saneru is sibling of rumosa	law
+FACT	nenuze is sibling of mohesa	law
+FACT	nenuze is sibling of kirusa	law
+FACT	nenuze is sibling of nevovo	law
+FACT	sarudo is parent of dopanu	law
+FACT	jonera is parent of rasalo	law
+FACT	dovora is parent of nefika	law
+FACT	dovora is parent of gurugu	law
+FACT	dovora is parent of zegube	law
+FACT	dovora is parent of mokara	law
+FACT	kalodo is parent of padofi	law
+FACT	gulosa is parent of zehene	law
+FACT	nerara is parent of henelo	law
+FACT	lotize is parent of bevora	law
+FACT	nurube is parent of lozemo	law
+FACT	nurube is parent of minegu	law
+FACT	nurube is parent of kipahe	law
+FACT	lolovo is parent of moloka	law
+FACT	lolovo is parent of jovovo	law
+FACT	ramibe is parent of kanene	law
+FACT	ramibe is parent of zejosa	law
+FACT	mikimi is parent of domofi	law
+FACT	mikimi is parent of kisasa	law
+FACT	mikimi is parent of sajoka	law
+FACT	kadoze is parent of zekize	law
+FACT	kirube is parent of dovofi	law
+FACT	lonesa is parent of dominu	law
+FACT	timido is parent of mozesa	law
+FACT	kilora is parent of ruparu	law
+FACT	zezene is parent of nefika	law
+FACT	zezene is parent of gurugu	law
+FACT	zezene is parent of zegube	law
+FACT	benudo is parent of betiki	law
+FACT	benudo is parent of parudo	law
+FACT	fimize is parent of savonu	law
+FACT	tikami is parent of kazene	law
+FACT	tikami is parent of lorasa	law
+FACT	tikami is parent of lonelo	law
+FACT	tikami is parent of gunevo	law
+FACT	tikami is parent of ratigu	law
+FACT	nuvolo is parent of satine	law
+FACT	nuvolo is parent of filogu	law
+FACT	sabeze is parent of ratigu	law
+FACT	nuzenu is parent of fidoru	law
+FACT	tiheti is parent of gukasa	law
+FACT	tiheti is parent of vomodo	law
+FACT	tiheti is parent of tidoru	law
+FACT	jonepa is parent of gugulo	law
+FACT	modopa is parent of rurugu	law
+FACT	zeneru is parent of moruze	law
+FACT	fifimi is parent of pahelo	law
+FACT	fifimi is parent of rusabe	law
+FACT	fifimi is parent of vododo	law
+FACT	mopanu is parent of neparu	law
+FACT	mopanu is parent of vobegu	law
+FACT	kahehe is parent of rurura	law
+FACT	kahehe is parent of zerafi	law
+FACT	molora is parent of zehefi	law
+FACT	nupavo is parent of jodomo	law
+FACT	dopalo is parent of mobehe	law
+FACT	dopalo is parent of rumosa	law
+FACT	dopalo is parent of saneru	law
+FACT	vokami is parent of vohegu	law
+FACT	begufi is parent of lojohe	law
+FACT	rabefi is parent of tikami	law
+FACT	rabefi is parent of mipaze	law
+FACT	rabefi is parent of panedo	law
+FACT	lopanu is parent of nurube	law
+FACT	lopanu is parent of kahehe	law
+FACT	lopanu is parent of bevora	law
+FACT	lopanu is parent of midoze	law
+FACT	lopanu is parent of sajora	law
+FACT	lopanu is parent of sarupa	law
+FACT	lorabe is parent of jopara	law
+FACT	monevo is parent of vojoki	law
+FACT	rutipa is parent of mopanu	law
+FACT	rutipa is parent of monevo	law
+FACT	rutipa is parent of sahelo	law
+FACT	bedoze is parent of lorapa	law
+FACT	bedoze is parent of kisaka	law
+FACT	lorapa is parent of helolo	law
+FACT	lorapa is parent of nudoru	law
+FACT	sanumi is parent of tirujo	law
+FACT	kaloka is parent of gubesa	law
+FACT	begune is parent of jojora	law
+FACT	nupami is parent of nubemo	law
+FACT	karami is parent of sasado	law
+FACT	jojora is parent of doheka	law
+FACT	sasado is parent of padora	law
+FACT	sasado is parent of sapati	law
+FACT	hepafi is parent of beparu	law
+FACT	momine is parent of nuralo	law
+FACT	pafibe is parent of kakiru	law
+FACT	nufido is parent of guvogu	law
+FACT	nufido is parent of pahevo	law
+FACT	pagunu is parent of mijobe	law
+FACT	pagunu is parent of molora	law
+FACT	pagunu is parent of dojomo	law
+FACT	tiheze is parent of hekibe	law
+FACT	dosagu is parent of neruhe	law
+FACT	dosara is parent of dopalo	law
+FACT	bekilo is parent of dosavo	law
+FACT	kijora is parent of vominu	law
+FACT	kijora is parent of donura	law
+FACT	kijora is parent of satika	law
+FACT	gusasa is parent of lorabe	law
+FACT	pajohe is parent of mosasa	law
+FACT	fidoru is parent of betihe	law
+FACT	jopagu is parent of jovovo	law
+FACT	rakaki is parent of domimo	law
+FACT	rakaki is parent of nemiti	law
+FACT	vodoki is parent of gumoti	law
+FACT	kirunu is parent of vokivo	law
+FACT	kirunu is parent of kizesa	law
+FACT	zeragu is parent of sadopa	law
+FACT	neruhe is parent of gusanu	law
+FACT	neruhe is parent of nukijo	law
+FACT	neruhe is parent of ravohe	law
+FACT	neruhe is parent of zefibe	law
+FACT	neruhe is parent of papaki	law
+FACT	neruhe is parent of bedoki	law
+FACT	nurupa is parent of zehene	law
+FACT	tineze is parent of kimido	law
+FACT	kikasa is parent of beraka	law
+FACT	sanemi is parent of padofi	law
+FACT	sanemi is parent of dotimo	law
+FACT	sanemi is parent of paranu	law
+FACT	timofi is parent of tiheze	law
+FACT	timofi is parent of gumoti	law
+FACT	fibevo is parent of fimoru	law
+FACT	fibevo is parent of gunuvo	law
+FACT	karuru is parent of mopasa	law
+FACT	lokavo is parent of ruvoki	law
+FACT	nurunu is parent of vorasa	law
+FACT	nurunu is parent of pahene	law
+FACT	nurunu is parent of pamimo	law
+FACT	nurunu is parent of lomolo	law
+FACT	nurunu is parent of migujo	law
+FACT	mipaze is parent of nemoti	law
+FACT	mozesa is parent of tisafi	law
+FACT	tijoru is parent of bedoki	law
+FACT	midoze is parent of rurugu	law
+FACT	rumisa is parent of begufi	law
+FACT	rumisa is parent of rakaki	law
+FACT	rumisa is parent of rajoka	law
+FACT	vosane is parent of fijofi	law
+FACT	nusasa is parent of mikijo	law
+FACT	kipagu is parent of gumodo	law
+FACT	kipagu is parent of nubemo	law
+FACT	rajoka is parent of saneti	law
+FACT	ruvomi is parent of monevo	law
+FACT	hejomi is parent of pazefi	law
+FACT	paguvo is parent of jomize	law
+FACT	nubemo is parent of gugulo	law
+FACT	nubemo is parent of lohemi	law
+FACT	nevovo is parent of rurura	law
+FACT	nevovo is parent of dolone	law
+FACT	benumi is parent of ranehe	law
+FACT	gudofi is parent of dokagu	law
+FACT	gudofi is parent of kaloru	law
+FACT	gudofi is parent of rakihe	law
+FACT	safisa is parent of fifimi	law
+FACT	jomize is parent of vokivo	law
+FACT	jomize is parent of kizesa	law
+FACT	kijomo is parent of kijora	law
+FACT	migusa is parent of zedomi	law
+FACT	jotiti is parent of vogusa	law
+FACT	voguki is parent of betiki	law
+FACT	rumiki is parent of zemogu	law
+FACT	dojomo is parent of mimiru	law
+FACT	vokiti is parent of pajosa	law
+FACT	vokiti is parent of lotimi	law
+FACT	panedo is parent of karane	law
+FACT	heruki is parent of sakalo	law
+FACT	zejobe is parent of midonu	law
+FACT	beraka is parent of fikisa	law
+FACT	beraka is parent of negudo	law
+FACT	beraka is parent of dovofi	law
+FACT	vosaka is parent of vodomo	law
+FACT	vosaka is parent of mozesa	law
+FACT	vosaka is parent of rudohe	law
+FACT	parajo is parent of hesapa	law
+FACT	parajo is parent of lokavo	law
+FACT	parajo is parent of satine	law
+FACT	parajo is parent of filogu	law
+FACT	parajo is parent of jojofi	law
+FACT	rurahe is parent of ramibe	law
+FACT	rurahe is parent of dopalo	law
+FACT	berami is parent of tikami	law
+FACT	gumoti is parent of minube	law
+FACT	gumoti is parent of joneti	law
+FACT	gujopa is parent of rutimi	law
+FACT	ratifi is parent of tihevo	law
+FACT	vodone is parent of fibevo	law
+FACT	jopafi is parent of rumomo	law
+FACT	jopafi is parent of gudomo	law
+FACT	vonudo is parent of parumi	law
+FACT	kabeki is parent of guvogu	law
+FACT	kabeki is parent of pahevo	law
+FACT	guruze is parent of hejora	law
+FACT	pazefi is parent of tizebe	law
+FACT	pazefi is parent of kinesa	law
+FACT	kijoti is parent of pajosa	law
+FACT	fimohe is parent of mimiru	law
+FACT	rurube is parent of sapati	law
+FACT	zehene is parent of domofi	law
+FACT	zehene is parent of sarajo	law
+FACT	heguhe is parent of pafika	law
+FACT	heguhe is parent of zehefi	law
+FACT	misalo is parent of kirube	law
+FACT	nevomo is parent of zebedo	law
+FACT	gugunu is parent of mohesa	law
+FACT	kisaka is parent of ragumi	law
+FACT	kisaka is parent of rujogu	law
+FACT	kisaka is parent of safifi	law
+FACT	kisaka is parent of jomoki	law
+FACT	rudohe is parent of saloki	law
+FACT	lonudo is parent of zeneru	law
+FACT	lonudo is parent of jopafi	law
+FACT	bedomi is parent of sadopa	law
+FACT	parulo is parent of jopagu	law
+FACT	mosasa is parent of nevolo	law
+FACT	fivofi is parent of zezene	law
+FACT	gusado is parent of karuru	law
+FACT	jojofi is parent of johesa	law
+FACT	monusa is parent of lopaki	law
+FACT	kamivo is parent of kiguze	law
+FACT	ruhemi is parent of donujo	law
+FACT	ruhemi is parent of begufi	law
+FACT	ruhemi is parent of rakaki	law
+FACT	ruhemi is parent of rajoka	law
+FACT	sapafi is parent of lorapa	law
+FACT	sapafi is parent of kisaka	law
+FACT	zekara is parent of dovora	law
+FACT	zekara is parent of tiheti	law
+FACT	zekara is parent of bekilo	law
+FACT	karura is parent of kadoze	law
+FACT	sajogu is parent of kirusa	law
+FACT	fikaki is parent of kijora	law
+FACT	fikaki is parent of tineze	law
+FACT	nenuze is parent of helosa	law
+FACT	tipabe is parent of jomize	law
+FACT	tipabe is parent of hefibe	law
+FACT	tipabe is parent of zepafi	law
+FACT	mokaze is parent of pafibe	law
+FACT	mokaze is parent of monusa	law
+FACT	mitijo is child of jojora	law
+FACT	fidoki is child of ramibe	law
+FACT	fidoki is child of jojora	law
+FACT	jonera is child of motine	law
+FACT	lorune is child of fidoru	law
+FACT	lorune is child of jojofi	law
+FACT	dovora is child of zebevo	law
+FACT	dovora is child of zekara	law
+FACT	dokagu is child of nurube	law
+FACT	kalodo is child of kikasa	law
+FACT	johesa is child of jojofi	law
+FACT	hekine is child of saruhe	law
+FACT	nurube is child of lotize	law
+FACT	kazene is child of tikami	law
+FACT	lorasa is child of tikami	law
+FACT	lorasa is child of sabeze	law
+FACT	lolovo is child of motine	law
+FACT	tihevo is child of hekine	law
+FACT	pajosa is child of kijoti	law
+FACT	fijogu is child of hejomi	law
+FACT	kirube is child of misalo	law
+FACT	dominu is child of besane	law
+FACT	tivoka is child of sarudo	law
+FACT	bejomo is child of hejopa	law
+FACT	domofi is child of zehene	law
+FACT	losajo is child of vodone	law
+FACT	gumodo is child of kipagu	law
+FACT	kilora is child of nunujo	law
+FACT	vodoti is child of timofi	law
+FACT	zedomi is child of morahe	law
+FACT	benudo is child of gusasa	law
+FACT	jodoki is child of voguki	law
+FACT	lonelo is child of sabeze	law
+FACT	tikami is child of rabefi	law
+FACT	tikami is child of berami	law
+FACT	moloka is child of jopagu	law
+FACT	rumomo is child of kadogu	law
+FACT	rumomo is child of jopafi	law
+FACT	logumi is child of nunujo	law
+FACT	helolo is child of donujo	law
+FACT	tiheti is child of zekara	law
+FACT	miranu is child of midoze	law
+FACT	modopa is child of timofi	law
+FACT	samize is child of kabeki	law
+FACT	hesapa is child of nuvolo	law
+FACT	hesapa is child of parajo	law
+FACT	fifimi is child of lonudo	law
+FACT	rusabe is child of fifimi	law
+FACT	vorasa is child of nurunu	law
+FACT	mopanu is child of rutipa	law
+FACT	mopanu is child of ruvomi	law
+FACT	hezeka is child of nevovo	law
+FACT	zebedo is child of logumi	law
+FACT	zebedo is child of nevomo	law
+FACT	morahe is child of mijofi	law
+FACT	dopalo is child of dosara	law
+FACT	dopalo is child of rurahe	law
+FACT	rufize is child of sasami	law
+FACT	pamimo is child of momopa	law
+FACT	pamimo is child of nurunu	law
+FACT	bemohe is child of modopa	law
+FACT	bemohe is child of midoze	law
+FACT	nudora is child of mikimi	law
+FACT	nudora is child of zehene	law
+FACT	vokami is child of hejomi	law
+FACT	betiki is child of benudo	law
+FACT	betiki is child of voguki	law
+FACT	vojoki is child of monevo	law
+FACT	jopara is child of lorabe	law
+FACT	vosamo is child of donujo	law
+FACT	vosamo is child of lorapa	law
+FACT	jomosa is child of berami	law
+FACT	parahe is child of nupavo	law
+FACT	parahe is child of lorabe	law
+FACT	jopaki is child of henelo	law
+FACT	rafiru is child of nunujo	law
+FACT	lojohe is child of monevo	law
+FACT	radodo is child of zemogu	law
+FACT	parudo is child of benudo	law
+FACT	parudo is child of voguki	law
+FACT	gugulo is child of jonepa	law
+FACT	nukaru is child of gusasa	law
+FACT	karuze is child of sanudo	law
+FACT	pakavo is child of nurube	law
+FACT	nemoze is child of nupavo	law
+FACT	mikigu is child of besane	law
+FACT	gusanu is child of tijoru	law
+FACT	ragumi is child of beparu	law
+FACT	ragumi is child of kisaka	law
+FACT	vozeki is child of gumodo	law
+FACT	vozeki is child of tiheze	law
+FACT	jojora is child of begune	law
+FACT	gukasa is child of tiheti	law
+FACT	sasado is child of karami	law
+FACT	sasado is child of vosane	law
+FACT	jopalo is child of bevora	law
+FACT	jopalo is child of ranehe	law
+FACT	kizebe is child of dofiru	law
+FACT	zerafi is child of nevovo	law
+FACT	rurugu is child of midoze	law
+FACT	nesamo is child of kalodo	law
+FACT	bevora is child of lopanu	law
+FACT	pafibe is child of nubera	law
+FACT	kabera is child of tivoka	law
+FACT	kabera is child of panuka	law
+FACT	tiheze is child of timofi	law
+FACT	sakalo is child of heruki	law
+FACT	rakihe is child of nurube	law
+FACT	rakihe is child of gudofi	law
+FACT	gurugu is child of zezene	law
+FACT	zegube is child of dovora	law
+FACT	dokajo is child of nezegu	law
+FACT	bekilo is child of zebevo	law
+FACT	kijora is child of kijomo	law
+FACT	kijora is child of fikaki	law
+FACT	savonu is child of fimize	law
+FACT	savonu is child of pamimo	law
+FACT	saloki is child of rudohe	law
+FACT	rupara is child of modopa	law
+FACT	ruhehe is child of ratisa	law
+FACT	ruhehe is child of satine	law
+FACT	vovonu is child of vodone	law
+FACT	benera is child of sanemi	law
+FACT	rukagu is child of hejomi	law
+FACT	rakaki is child of rumisa	law
+FACT	rakaki is child of ruhemi	law
+FACT	mobehe is child of hesapa	law
+FACT	rumosa is child of dopalo	law
+FACT	neparu is child of jotiti	law
+FACT	zefibe is child of tijoru	law
+FACT	kafiki is child of tineze	law
+FACT	neruhe is child of dosagu	law
+FACT	neruhe is child of fidosa	law
+FACT	tineze is child of fikaki	law
+FACT	sanemi is child of hepafi	law
+FACT	numolo is child of vodomo	law
+FACT	kanene is child of jojora	law
+FACT	pafika is child of heguhe	law
+FACT	zejonu is child of benumi	law
+FACT	fibefi is child of lomonu	law
+FACT	karuru is child of gusado	law
+FACT	tisafi is child of mozesa	law
+FACT	lokavo is child of nuvolo	law
+FACT	lokavo is child of parajo	law
+FACT	rafihe is child of mozesa	law
+FACT	loraka is child of zeragu	law
+FACT	vododo is child of sasami	law
+FACT	nunejo is child of gujopa	law
+FACT	nezegu is child of karami	law
+FACT	negudo is child of kirube	law
+FACT	negudo is child of beraka	law
+FACT	vomodo is child of dopanu	law
+FACT	vomodo is child of tiheti	law
+FACT	tirulo is child of ralohe	law
+FACT	tirulo is child of heruki	law
+FACT	rajoka is child of rumisa	law
+FACT	rajoka is child of ruhemi	law
+FACT	ruzebe is child of sarupa	law
+FACT	loparu is child of tiheti	law
+FACT	sajora is child of lotize	law
+FACT	sajora is child of lopanu	law
+FACT	kizesa is child of kirunu	law
+FACT	kizesa is child of jomize	law
+FACT	nukaki is child of donujo	law
+FACT	mivomi is child of pahene	law
+FACT	beparu is child of benumi	law
+FACT	nevovo is child of gugunu	law
+FACT	zehefi is child of molora	law
+FACT	zehefi is child of heguhe	law
+FACT	jomize is child of paguvo	law
+FACT	ravonu is child of lolovo	law
+FACT	jotiti is child of minenu	law
+FACT	jotiti is child of tilodo	law
+FACT	kimido is child of nuralo	law
+FACT	kimido is child of tineze	law
+FACT	voguki is child of nukiki	law
+FACT	betihe is child of fidoru	law
+FACT	bemine is child of jojofi	law
+FACT	gupagu is child of nerara	law
+FACT	hefibe is child of paguvo	law
+FACT	migufi is child of kijoti	law
+FACT	dojomo is child of nerara	law
+FACT	dojomo is child of pagunu	law
+FACT	vokiti is child of samobe	law
+FACT	vokavo is child of vokiti	law
+FACT	zekiru is child of migujo	law
+FACT	helone is child of benudo	law
+FACT	satine is child of parajo	law
+FACT	saheki is child of sahelo	law
+FACT	saheki is child of gubesa	law
+FACT	jokira is child of mohesa	law
+FACT	mozebe is child of kadogu	law
+FACT	mozebe is child of jopafi	law
+FACT	domimo is child of hetinu	law
+FACT	dotimo is child of sanemi	law
+FACT	satika is child of kijora	law
+FACT	mimihe is child of rajoka	law
+FACT	dorugu is child of vokiti	law
+FACT	jopafi is child of safisa	law
+FACT	jopafi is child of lonudo	law
+FACT	bedoki is child of tijoru	law
+FACT	paranu is child of kalodo	law
+FACT	pazefi is child of hejomi	law
+FACT	gubesa is child of kaloka	law
+FACT	kijoti is child of misalo	law
+FACT	vojohe is child of rurahe	law
+FACT	fimohe is child of saruhe	law
+FACT	kinuvo is child of donujo	law
+FACT	kinuvo is child of lorapa	law
+FACT	rurube is child of rurahe	law
+FACT	sarupa is child of lotize	law
+FACT	heguhe is child of gulosa	law
+FACT	panuka is child of gulosa	law
+FACT	hetinu is child of berami	law
+FACT	nemiti is child of hetinu	law
+FACT	nevomo is child of benufi	law
+FACT	vonumo is child of nevovo	law
+FACT	safifi is child of beparu	law
+FACT	safifi is child of kisaka	law
+FACT	kisaka is child of bedoze	law
+FACT	kisaka is child of sapafi	law
+FACT	ruvoki is child of hejopa	law
+FACT	jovovo is child of jopagu	law
+FACT	rudohe is child of vosaka	law
+FACT	kazevo is child of kahehe	law
+FACT	kazevo is child of nevovo	law
+FACT	gudomo is child of jopafi	law
+FACT	fijoki is child of kadogu	law
+FACT	fijoki is child of jopafi	law
+FACT	gudora is child of vorasa	law
+FACT	gudora is child of hejora	law
+FACT	zeguze is child of lokavo	law
+FACT	hejopa is child of tilodo	law
+FACT	numiru is child of modopa	law
+FACT	numiru is child of midoze	law
+FACT	bedoti is child of sarupa	law
+FACT	vogusa is child of mopanu	law
+FACT	vogusa is child of jotiti	law
+FACT	jomoki is child of kisaka	law
+FACT	titihe is child of dopanu	law
+FACT	kisaru is child of ratisa	law
+FACT	kisaru is child of satine	law
+FACT	johera is child of miravo	law
+FACT	johera is child of vodone	law
+FACT	tidoru is child of tiheti	law
+FACT	nefigu is child of zemogu	law
+FACT	nefigu is child of vodoti	law
+FACT	saneru is child of hesapa	law
+FACT	nenuze is child of gugunu	law
+FACT	nenuze is child of sajogu	law
+FACT	gulosa works as scribe	tendency
+FACT	finesa works as farmer	tendency
+FACT	zebevo works as scribe	tendency
+FACT	fifimi works as smith	tendency
+FACT	firahe works as weaver	tendency
+FACT	migujo works as guard	tendency
+FACT	vokami works as healer	tendency
+FACT	kaloka works as healer	tendency
+FACT	begune works as merchant	tendency
+FACT	nupami works as smith	tendency
+FACT	hepafi works as healer	tendency
+FACT	momine works as merchant	tendency
+FACT	dosagu works as scribe	tendency
+FACT	gusasa works as farmer	tendency
+FACT	vovonu works as smith	tendency
+FACT	nezegu works as merchant	tendency
+FACT	kipagu works as farmer	tendency
+FACT	rumiki works as guard	tendency
+FACT	nubera works as merchant	tendency
+FACT	rurube works as merchant	tendency
+FACT	hetinu works as merchant	tendency
+FACT	gugunu works as scribe	tendency
+FACT	mineze works as weaver	tendency
+FACT	monusa works as smith	tendency
+FACT	karura works as miner	tendency
+FACT	mitijo lives in guberu	tendency
+FACT	fidoki lives in guberu	tendency
+FACT	rulora lives in ruhenu	tendency
+FACT	kazene lives in timihe	tendency
+FACT	kirube lives in pajoka	tendency
+FACT	firuhe lives in nedosa	tendency
+FACT	dopanu lives in modoki	tendency
+FACT	bejomo lives in ruzegu	tendency
+FACT	domofi lives in tidone	tendency
+FACT	losajo lives in dopado	tendency
+FACT	benudo lives in tikaze	tendency
+FACT	lonelo lives in timihe	tendency
+FACT	fimize lives in timihe	tendency
+FACT	moloka lives in guberu	tendency
+FACT	zemijo lives in modoki	tendency
+FACT	logumi lives in minudo	tendency
+FACT	mijobe lives in ruzegu	tendency
+FACT	miranu lives in nusado	tendency
+FACT	mopanu lives in mipanu	tendency
+FACT	kahehe lives in nusado	tendency
+FACT	hezeka lives in mipanu	tendency
+FACT	henelo lives in ruzegu	tendency
+FACT	mimijo lives in mipanu	tendency
+FACT	nuzemi lives in minudo	tendency
+FACT	lomolo lives in tihehe	tendency
+FACT	migujo lives in tihehe	tendency
+FACT	betiki lives in tihehe	tendency
+FACT	vojoki lives in mipanu	tendency
+FACT	vosamo lives in guberu	tendency
+FACT	lorabe lives in tikaze	tendency
+FACT	rafiru lives in minudo	tendency
+FACT	fikisa lives in nedosa	tendency
+FACT	hekibe lives in josavo	tendency
+FACT	vozeki lives in josavo	tendency
+FACT	jojora lives in guberu	tendency
+FACT	zerafi lives in mipanu	tendency
+FACT	nesamo lives in tihehe	tendency
+FACT	pafibe lives in josavo	tendency
+FACT	jovomi lives in minudo	tendency
+FACT	dozemi lives in ruzegu	tendency
+FACT	tiheze lives in dopado	tendency
+FACT	kalojo lives in guberu	tendency
+FACT	zegube lives in savobe	tendency
+FACT	mokara lives in savobe	tendency
+FACT	bekilo lives in pakapa	tendency
+FACT	kitiki lives in ruzegu	tendency
+FACT	mobehe lives in ruzegu	tendency
+FACT	zefibe lives in nupahe	tendency
+FACT	lopaki lives in josavo	tendency
+FACT	kavomo lives in josavo	tendency
+FACT	kirunu lives in nupahe	tendency
+FACT	mohesa lives in mipanu	tendency
+FACT	guvogu lives in guberu	tendency
+FACT	fibefi lives in nusado	tendency
+FACT	lokavo lives in ruzegu	tendency
+FACT	mozesa lives in zetisa	tendency
+FACT	kikido lives in minudo	tendency
+FACT	kakiru lives in minudo	tendency
+FACT	negudo lives in nedosa	tendency
+FACT	ratisa lives in zeraki	tendency
+FACT	nukaki lives in guberu	tendency
+FACT	nudoru lives in vopane	tendency
+FACT	ravonu lives in guberu	tendency
+FACT	betihe lives in monuvo	tendency
+FACT	nukisa lives in tikaze	tendency
+FACT	hefibe lives in nupahe	tendency
+FACT	dovofi lives in nedosa	tendency
+FACT	zekiru lives in mopara	tendency
+FACT	mofinu lives in nusado	tendency
+FACT	ratifi lives in savobe	tendency
+FACT	nekaze lives in saneze	tendency
+FACT	paranu lives in tihehe	tendency
+FACT	gubesa lives in ruzegu	tendency
+FACT	sapati lives in minudo	tendency
+FACT	rurube lives in guberu	tendency
+FACT	heguhe lives in tidone	tendency
+FACT	pahevo lives in guberu	tendency
+FACT	doheka lives in guberu	tendency
+FACT	hetinu lives in timihe	tendency
+FACT	vonumo lives in mipanu	tendency
+FACT	lohemi lives in lofimi	tendency
+FACT	gudomo lives in zemiki	tendency
+FACT	zeguze lives in ruzegu	tendency
+FACT	bedoti lives in ruzegu	tendency
+FACT	lobelo lives in tihehe	tendency
+FACT	sarajo lives in josavo	tendency
+FACT	nefigu lives in dopado	tendency
+FACT	sadopa lives in kifize	tendency
+FACT	sarudo is from josaia	tendency
+FACT	jonera is from josaia	tendency
+FACT	lorune is from filoia	law
+FACT	dovora is from losaia	law
+FACT	zenuvo is from nuruia	law
+FACT	lorasa is from filoia	law
+FACT	motine is from josaia	law
+FACT	fijogu is from loloia	law
+FACT	kadoze is from losaia	tendency
+FACT	dopanu is from josaia	tendency
+FACT	tivoka is from tiheia	tendency
+FACT	padofi is from pamoia	law
+FACT	losajo is from nuruia	tendency
+FACT	lomonu is from nuruia	law
+FACT	kilora is from nuruia	tendency
+FACT	kisasa is from fifiia	law
+FACT	sajoka is from tiheia	law
+FACT	fimize is from nuloia	tendency
+FACT	tikami is from nuloia	law
+FACT	rumomo is from filoia	law
+FACT	zemijo is from josaia	tendency
+FACT	nunujo is from mokaia	law
+FACT	miranu is from fifiia	tendency
+FACT	hesapa is from josaia	law
+FACT	henelo is from josaia	tendency
+FACT	morahe is from pamoia	law
+FACT	firahe is from filoia	law
+FACT	vominu is from nuloia	law
+FACT	mimijo is from mokaia	tendency
+FACT	dopalo is from filoia	tendency
+FACT	nuzemi is from nuruia	tendency
+FACT	bemohe is from fifiia	law
+FACT	nudora is from tiheia	law
+FACT	vojoki is from mokaia	tendency
+FACT	jopara is from filoia	tendency
+FACT	lopanu is from fifiia	law
+FACT	lorabe is from tineia	tendency
+FACT	parahe is from losaia	law
+FACT	jopaki is from nuruia	law
+FACT	rafiru is from nuruia	tendency
+FACT	rutipa is from filoia	law
+FACT	zekapa is from josaia	law
+FACT	sanumi is from pamoia	law
+FACT	parudo is from pamoia	law
+FACT	fikisa is from tiheia	tendency
+FACT	karuze is from mokaia	law
+FACT	mirumo is from fifiia	law
+FACT	pakavo is from tiheia	law
+FACT	nemoze is from pamoia	tendency
+FACT	mivopa is from filoia	tendency
+FACT	ragumi is from tiheia	law
+FACT	sasado is from nuruia	law
+FACT	jopalo is from fifiia	law
+FACT	rurugu is from fifiia	law
+FACT	momine is from fifiia	tendency
+FACT	jovomi is from nuruia	tendency
+FACT	rakihe is from tiheia	law
+FACT	dosara is from josaia	law
+FACT	bekilo is from josaia	tendency
+FACT	kijora is from loloia	law
+FACT	jonevo is from fifiia	law
+FACT	gusasa is from josaia	tendency
+FACT	ratigu is from nuloia	law
+FACT	ruhehe is from josaia	law
+FACT	jopagu is from filoia	tendency
+FACT	rakaki is from pamoia	law
+FACT	rumosa is from josaia	law
+FACT	kavomo is from tiheia	tendency
+FACT	dofiru is from nuruia	law
+FACT	kafiki is from loloia	tendency
+FACT	kirunu is from nuloia	tendency
+FACT	neruhe is from nuloia	tendency
+FACT	ruruhe is from pamoia	law
+FACT	logunu is from josaia	tendency
+FACT	kikasa is from pamoia	law
+FACT	kanene is from filoia	tendency
+FACT	timofi is from pamoia	law
+FACT	pafika is from nejoia	tendency
+FACT	karuru is from filoia	tendency
+FACT	tisafi is from fifiia	law
+FACT	kirusa is from mokaia	law
+FACT	nurunu is from tineia	law
+FACT	vododo is from tineia	tendency
+FACT	nunejo is from tineia	tendency
+FACT	vosane is from josaia	tendency
+FACT	negudo is from tiheia	tendency
+FACT	vomodo is from fifiia	tendency
+FACT	tirulo is from loloia	law
+FACT	saneti is from filoia	law
+FACT	ruzebe is from josaia	law
+FACT	sajora is from fifiia	law
+FACT	kizesa is from josaia	tendency
+FACT	nubemo is from nuruia	tendency
+FACT	safisa is from nejoia	tendency
+FACT	jotiti is from nuloia	tendency
+FACT	kimido is from loloia	tendency
+FACT	migufi is from loloia	law
+FACT	dojomo is from josaia	law
+FACT	vokiti is from mokaia	tendency
+FACT	heruki is from loloia	tendency
+FACT	karane is from nuloia	law
+FACT	miravo is from loloia	tendency
+FACT	vosaka is from fifiia	law
+FACT	mozebe is from filoia	law
+FACT	parajo is from tineia	law
+FACT	nubera is from pamoia	law
+FACT	gujopa is from tineia	tendency
+FACT	mimihe is from filoia	law
+FACT	ratifi is from mokaia	tendency
+FACT	vodone is from nuruia	law
+FACT	kabeki is from fifiia	law
+FACT	guruze is from mokaia	law
+FACT	pazefi is from nuruia	law
+FACT	kijoti is from tineia	tendency
+FACT	beruti is from nuruia	tendency
+FACT	vojohe is from filoia	tendency
+FACT	kinuvo is from mokaia	law
+FACT	midonu is from nuloia	tendency
+FACT	zehene is from fifiia	law
+FACT	sarupa is from fifiia	law
+FACT	heguhe is from nejoia	tendency
+FACT	misalo is from mokaia	tendency
+FACT	vohegu is from fifiia	law
+FACT	vonumo is from mokaia	tendency
+FACT	safifi is from tiheia	law
+FACT	kisaka is from tiheia	law
+FACT	rudohe is from loloia	law
+FACT	kazevo is from mokaia	tendency
+FACT	fijoki is from filoia	law
+FACT	gudora is from mokaia	law
+FACT	zeguze is from josaia	tendency
+FACT	parulo is from filoia	tendency
+FACT	numiru is from fifiia	law
+FACT	nemoti is from josaia	law
+FACT	mosasa is from josaia	law
+FACT	fivofi is from pamoia	law
+FACT	vogusa is from nuloia	tendency
+FACT	jojofi is from josaia	law
+FACT	kisaru is from josaia	law
+FACT	kamivo is from nuruia	tendency
+FACT	tilodo is from filoia	law
+FACT	sarajo is from fifiia	tendency
+FACT	johera is from nuruia	tendency
+FACT	ruhemi is from fifiia	law
+FACT	sapafi is from tiheia	law
+FACT	rakiti is from josaia	tendency
+FACT	tidoru is from fifiia	law
+FACT	zekara is from nuruia	law
+FACT	nefigu is from nuruia	tendency
+FACT	gukamo is from tineia	law
+FACT	saneru is from josaia	law
+FACT	fikaki is from loloia	tendency
+FACT	nenuze is from tineia	law
+FACT	tipabe is from filoia	law
+FACT	mokaze is from losaia	law
+FACT	lorune is member of kibeguild	law
+FACT	hekine is member of kibeguild	law
+FACT	pahelo is member of kibeguild	law
+FACT	fijogu is member of kibeguild	law
+FACT	kadoze is member of neraguild	law
+FACT	timido is member of movoguild	tendency
+FACT	gumodo is member of kibeguild	law
+FACT	fimize is member of kibeguild	law
+FACT	mikijo is member of kibeguild	law
+FACT	rumomo is member of kibeguild	law
+FACT	helolo is member of neraguild	law
+FACT	tiheti is member of movoguild	tendency
+FACT	nunujo is member of neraguild	tendency
+FACT	donujo is member of dologuild	tendency
+FACT	mopanu is member of kibeguild	law
+FACT	kahehe is member of movoguild	tendency
+FACT	mimijo is member of kibeguild	law
+FACT	rufize is member of neraguild	law
+FACT	pamimo is member of kibeguild	law
+FACT	heneki is member of neraguild	law
+FACT	bemohe is member of kibeguild	law
+FACT	nudora is member of kibeguild	law
+FACT	vokami is member of movoguild	tendency
+FACT	besane is member of kibeguild	law
+FACT	lorabe is member of kibeguild	law
+FACT	parahe is member of kibeguild	law
+FACT	rutipa is member of kibeguild	law
+FACT	parudo is member of kibeguild	law
+FACT	kaloka is member of movoguild	tendency
+FACT	gusanu is member of kibeguild	law
+FACT	nupami is member of kibeguild	tendency
+FACT	hepafi is member of movoguild	tendency
+FACT	momine is member of dologuild	tendency
+FACT	minenu is member of dologuild	tendency
+FACT	dosagu is member of movoguild	tendency
+FACT	sakalo is member of neraguild	law
+FACT	rakihe is member of kibeguild	law
+FACT	mokara is member of kibeguild	law
+FACT	bekilo is member of movoguild	tendency
+FACT	lokipa is member of kibeguild	law
+FACT	fidoru is member of neraguild	law
+FACT	vovonu is member of kibeguild	tendency
+FACT	rakaki is member of kibeguild	law
+FACT	kanene is member of kibeguild	law
+FACT	timofi is member of movoguild	tendency
+FACT	fijofi is member of kibeguild	law
+FACT	karuru is member of kibeguild	law
+FACT	tisafi is member of kibeguild	law
+FACT	rafihe is member of neraguild	law
+FACT	vovoki is member of movoguild	tendency
+FACT	nuvobe is member of neraguild	tendency
+FACT	negudo is member of neraguild	law
+FACT	vomodo is member of kibeguild	law
+FACT	tirulo is member of kibeguild	law
+FACT	sajora is member of kibeguild	law
+FACT	kizesa is member of kibeguild	law
+FACT	nudoru is member of kibeguild	law
+FACT	sabevo is member of kibeguild	tendency
+FACT	nevovo is member of kibeguild	law
+FACT	benumi is member of movoguild	tendency
+FACT	gudofi is member of movoguild	tendency
+FACT	jomize is member of kibeguild	law
+FACT	kijomo is member of neraguild	tendency
+FACT	kimido is member of neraguild	law
+FACT	nukisa is member of kibeguild	law
+FACT	dojomo is member of kibeguild	law
+FACT	helone is member of kibeguild	law
+FACT	satine is member of neraguild	law
+FACT	beraka is member of dologuild	tendency
+FACT	satika is member of kibeguild	law
+FACT	gumoti is member of neraguild	law
+FACT	dorugu is member of kibeguild	law
+FACT	kabeki is member of kibeguild	tendency
+FACT	beruti is member of movoguild	tendency
+FACT	sanesa is member of neraguild	law
+FACT	kinuvo is member of kibeguild	law
+FACT	zehene is member of dologuild	tendency
+FACT	heguhe is member of movoguild	tendency
+FACT	misalo is member of neraguild	tendency
+FACT	hedodo is member of kibeguild	law
+FACT	nevomo is member of neraguild	tendency
+FACT	gugunu is member of movoguild	tendency
+FACT	safifi is member of neraguild	law
+FACT	ruvoki is member of kibeguild	law
+FACT	gudomo is member of neraguild	law
+FACT	fijoki is member of neraguild	law
+FACT	gudora is member of kibeguild	law
+FACT	numiru is member of kibeguild	law
+FACT	gusado is member of dologuild	tendency
+FACT	mineze is member of neraguild	tendency
+FACT	ruhemi is member of kibeguild	law
+FACT	mijofi is member of dologuild	tendency
+FACT	nenuze is member of kibeguild	law
+FACT	tipabe is member of kibeguild	law
+FACT	rulora harvests herbs	tendency
+FACT	kalodo harvests herbs	tendency
+FACT	gulosa harvests herbs	tendency
+FACT	johesa harvests timber	tendency
+FACT	pahelo harvests herbs	tendency
+FACT	tihevo harvests timber	tendency
+FACT	ralohe harvests timber	tendency
+FACT	fijogu harvests timber	tendency
+FACT	kirube harvests timber	tendency
+FACT	kisasa harvests salt	tendency
+FACT	benudo harvests herbs	tendency
+FACT	jodoki harvests herbs	tendency
+FACT	vopafi harvests timber	tendency
+FACT	dotiru harvests timber	tendency
+FACT	nuvolo harvests timber	tendency
+FACT	rumomo harvests timber	tendency
+FACT	mijobe harvests timber	tendency
+FACT	dosavo harvests herbs	tendency
+FACT	helosa harvests herbs	tendency
+FACT	hesapa harvests timber	tendency
+FACT	zeneru harvests timber	tendency
+FACT	fifimi harvests salt	tendency
+FACT	hezeka harvests salt	tendency
+FACT	henelo harvests timber	tendency
+FACT	molora harvests timber	tendency
+FACT	firahe harvests timber	tendency
+FACT	pahene harvests herbs	tendency
+FACT	gukara harvests salt	tendency
+FACT	mimijo harvests salt	tendency
+FACT	pamimo harvests herbs	tendency
+FACT	lomolo harvests herbs	tendency
+FACT	migujo harvests herbs	tendency
+FACT	vokami harvests timber	tendency
+FACT	betiki harvests herbs	tendency
+FACT	vojoki harvests salt	tendency
+FACT	monevo harvests salt	tendency
+FACT	rutipa harvests timber	tendency
+FACT	lojohe harvests salt	tendency
+FACT	bedoze harvests timber	tendency
+FACT	parudo harvests herbs	tendency
+FACT	nukaru harvests herbs	tendency
+FACT	kaloka harvests timber	tendency
+FACT	karuze harvests salt	tendency
+FACT	mirumo harvests salt	tendency
+FACT	gusanu harvests herbs	tendency
+FACT	nukijo harvests timber	tendency
+FACT	rurura harvests salt	tendency
+FACT	zerafi harvests salt	tendency
+FACT	nesamo harvests herbs	tendency
+FACT	nevolo harvests timber	tendency
+FACT	sasami harvests herbs	tendency
+FACT	dozemi harvests timber	tendency
+FACT	sakalo harvests salt	tendency
+FACT	vodomo harvests salt	tendency
+FACT	dosara harvests timber	tendency
+FACT	kijora harvests salt	tendency
+FACT	savonu harvests herbs	tendency
+FACT	jonevo harvests herbs	tendency
+FACT	katigu harvests salt	tendency
+FACT	kitiki harvests timber	tendency
+FACT	ruhehe harvests timber	tendency
+FACT	rukagu harvests timber	tendency
+FACT	rakaki harvests herbs	tendency
+FACT	rumosa harvests timber	tendency
+FACT	neparu harvests herbs	tendency
+FACT	zefibe harvests herbs	tendency
+FACT	kafiki harvests salt	tendency
+FACT	kirunu harvests herbs	tendency
+FACT	neruhe harvests herbs	tendency
+FACT	nurupa harvests herbs	tendency
+FACT	tineze harvests salt	tendency
+FACT	ruruhe harvests herbs	tendency
+FACT	kikasa harvests herbs	tendency
+FACT	sanemi harvests salt	tendency
+FACT	mohesa harvests salt	tendency
+FACT	zejonu harvests salt	tendency
+FACT	papaki harvests herbs	tendency
+FACT	lokavo harvests timber	tendency
+FACT	kirusa harvests salt	tendency
+FACT	nurunu harvests herbs	tendency
+FACT	mozesa harvests salt	tendency
+FACT	mokajo harvests herbs	tendency
+FACT	vododo harvests herbs	tendency
+FACT	nunejo harvests timber	tendency
+FACT	tirulo harvests salt	tendency
+FACT	ruzebe harvests timber	tendency
+FACT	hejomi harvests timber	tendency
+FACT	beparu harvests salt	tendency
+FACT	nevovo harvests salt	tendency
+FACT	benumi harvests salt	tendency
+FACT	gudofi harvests timber	tendency
+FACT	zehefi harvests herbs	tendency
+FACT	kijomo harvests timber	tendency
+FACT	jotiti harvests herbs	tendency
+FACT	kimido harvests herbs	tendency
+FACT	voguki harvests herbs	tendency
+FACT	sanudo harvests timber	tendency
+FACT	rutimi harvests timber	tendency
+FACT	betihe harvests timber	tendency
+FACT	bemine harvests timber	tendency
+FACT	nukisa harvests herbs	tendency
+FACT	hefibe harvests herbs	tendency
+FACT	migufi harvests timber	tendency
+FACT	dojomo harvests timber	tendency
+FACT	vokavo harvests timber	tendency
+FACT	heruki harvests salt	tendency
+FACT	helone harvests herbs	tendency
+FACT	ranehe harvests salt	tendency
+FACT	zejobe harvests timber	tendency
+FACT	satine harvests timber	tendency
+FACT	beraka harvests herbs	tendency
+FACT	saheki harvests timber	tendency
+FACT	mozebe harvests timber	tendency
+FACT	parajo harvests herbs	tendency
+FACT	domimo harvests herbs	tendency
+FACT	dotimo harvests herbs	tendency
+FACT	nubera harvests herbs	tendency
+FACT	gujopa harvests timber	tendency
+FACT	mimihe harvests timber	tendency
+FACT	milora harvests timber	tendency
+FACT	dorugu harvests timber	tendency
+FACT	jopafi harvests timber	tendency
+FACT	guruze harvests salt	tendency
+FACT	nekaze harvests herbs	tendency
+FACT	zepafi harvests herbs	tendency
+FACT	paranu harvests herbs	tendency
+FACT	gubesa harvests timber	tendency
+FACT	hebedo harvests timber	tendency
+FACT	kijoti harvests timber	tendency
+FACT	sanesa harvests timber	tendency
+FACT	midonu harvests herbs	tendency
+FACT	zehene harvests salt	tendency
+FACT	samobe harvests herbs	tendency
+FACT	heguhe harvests salt	tendency
+FACT	hedodo harvests herbs	tendency
+FACT	panuka harvests herbs	tendency
+FACT	nemiti harvests herbs	tendency
+FACT	gugunu harvests salt	tendency
+FACT	vonumo harvests salt	tendency
+FACT	ruvoki harvests timber	tendency
+FACT	jovovo harvests salt	tendency
+FACT	rudohe harvests salt	tendency
+FACT	kazevo harvests salt	tendency
+FACT	hejora harvests salt	tendency
+FACT	gudomo harvests timber	tendency
+FACT	fijoki harvests timber	tendency
+FACT	gudora harvests salt	tendency
+FACT	vobegu harvests herbs	tendency
+FACT	lonudo harvests timber	tendency
+FACT	zeguze harvests timber	tendency
+FACT	hejopa harvests herbs	tendency
+FACT	kilomi harvests salt	tendency
+FACT	mosasa harvests timber	tendency
+FACT	fivofi harvests herbs	tendency
+FACT	bedoti harvests timber	tendency
+FACT	gusado harvests timber	tendency
+FACT	vogusa harvests herbs	tendency
+FACT	zekize harvests timber	tendency
+FACT	jojofi harvests timber	tendency
+FACT	titihe harvests herbs	tendency
+FACT	lobelo harvests herbs	tendency
+FACT	kisaru harvests timber	tendency
+FACT	neberu harvests herbs	tendency
+FACT	johera harvests herbs	tendency
+FACT	tidoru harvests salt	tendency
+FACT	sajogu harvests salt	tendency
+FACT	gukamo harvests timber	tendency
+FACT	nenuze harvests timber	tendency
+FACT	tipabe harvests timber	tendency
+FACT	mopasa harvests timber	tendency
+FACT	mokaze harvests timber	tendency
+FACT	saneze is located in tiheia	law
+FACT	zetisa is located in loloia	law
+FACT	mipanu is located in mokaia	law
+FACT	tikaze is located in tineia	law
+FACT	monuvo is located in nejoia	law
+FACT	mopara is located in fifiia	law
+FACT	pajoka is located in tineia	law
+FACT	bedoru is located in nuruia	law
+FACT	nuruia contains minudo	tendency
+FACT	nuruia contains dopado	tendency
+FACT	tineia contains pazelo	tendency
+FACT	mokaia contains vopane	tendency
+FACT	mokaia contains tijoze	tendency
+FACT	loloia contains milojo	tendency
+FACT	pamoia contains lovoze	tendency
+FACT	tiheia contains nedosa	tendency
+FACT	tiheia contains josavo	tendency
+FACT	losaia contains papafi	tendency
+FACT	fifiia contains nusado	tendency
+FACT	fifiia contains gukipa	tendency
+FACT	josaia exports iron	law
+FACT	loloia exports iron	law
+FACT	filoia exports iron	law
+FACT	nuloia exports iron	law
+FACT	losaia exports iron	law
+FACT	tineia exports wool	law
+FACT	mokaia exports wool	law
+FACT	loloia exports wool	law
+FACT	nejoia exports wool	law
+FACT	nuloia exports wool	law
+FACT	losaia exports wool	law

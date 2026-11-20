@@ -81,6 +81,25 @@ _RULE = re.compile(r"^\s+(ACCEPT|reject) (.+?)\s+n=(\d+) k=(\d+) rate=([0-9.]+) 
                    r"(?: \| where answer known: (\d+), agree=([0-9.]+))?(.*)$")
 
 
+_PREMISE = re.compile(r"\[\? .+? \?\]\(")
+
+
+def rule_shape(text):
+    """(shape, premise count, condition) of a rule's text, e.g. 'TREE [? a ?](a,g) & ... => ...'."""
+    body, _, head = text.partition(" => ")
+    condition = head.split(" if ", 1)[1].strip() if " if " in head else ""
+    premises = len(_PREMISE.findall(body))
+    if body.startswith("TREE "):
+        shape = "tree"
+    elif premises <= 1:
+        shape = "inverse"
+    elif premises == 2:
+        shape = "chain"
+    else:
+        shape = "path"
+    return shape, premises, condition
+
+
 def relations(lines):
     out = []
     for l in lines:
@@ -98,10 +117,12 @@ def rules(lines):
         m = _RULE.match(l)
         if m:
             tier = re.search(r"tier=(\w+)", m.group(9) or "")
-            out.append(Rule(accepted=m.group(1) == "ACCEPT", text=m.group(2).strip(), n=int(m.group(3)), k=int(m.group(4)),
+            text = m.group(2).strip()
+            shape, premises, condition = rule_shape(text)
+            out.append(Rule(accepted=m.group(1) == "ACCEPT", text=text, n=int(m.group(3)), k=int(m.group(4)),
                             rate=float(m.group(5)), lift=float(m.group(6)),
                             known=int(m.group(7)) if m.group(7) else None, agree=float(m.group(8)) if m.group(8) else None,
-                            tier=tier.group(1) if tier else "", raw=l.strip()))
+                            tier=tier.group(1) if tier else "", raw=l.strip(), shape=shape, premises=premises, condition=condition))
     return out
 
 

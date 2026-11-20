@@ -1,0 +1,33 @@
+{
+ "depth0": {
+  "adders_correct": 100,
+  "adders": 100,
+  "wires_right": 1700,
+  "wires_wrong": 0,
+  "wires_hidden": 1700,
+  "rounds": [
+   8,
+   8,
+   8,
+   8,
+   8
+  ],
+  "seconds": 2.451946258544922,
+  "example": "2 + 3 = 5; engine's output bits (low to high): ['one', 'zero', 'one', 'zero', 'zero']"
+ },
+ "depth4": {
+  "adders_correct": 36,
+  "adders": 100,
+  "wires_right": 1568,
+  "wires_wrong": 0,
+  "wires_hidden": 1700,
+  "rounds": [
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "seconds": 2.0316004753112793
+ }
+}

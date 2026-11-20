@@ -1,0 +1,10 @@
+-- vtree
+unseen numbers: remainder computed correctly for 192/225 | wrong 0 (5 seeds, numbers 0..89)
+divisibility inferred 319 wrong 0
+rule accepted in 5/5 runs | unseen families: 200/200 grandparent links inferred | wrong: 0
+90
+-- t6on.sh
+unseen numbers: remainder computed correctly for 222/225 | wrong 0 (5 seeds, numbers 0..89)
+divisibility inferred 319 wrong 0
+rule accepted in 5/5 runs | unseen families: 200/200 grandparent links inferred | wrong: 0
+90

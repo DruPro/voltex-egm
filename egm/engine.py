@@ -214,9 +214,17 @@ class Engine:
     def relations(self) -> List[Relation]:
         return parse.relations(self._checked("RELATIONS"))
 
-    def rules(self, include_rejected: bool = False) -> List[Rule]:
+    def rules(self, include_rejected: bool = False, shape: Optional[str] = None) -> List[Rule]:
+        """Learned rules. ``shape`` filters: "inverse", "chain", "path" (SET CHAIN >= 3) or "tree" (SET TREES 1);
+        a rule restricted to a group (SET CONDITIONS 1) has ``condition`` set."""
         r = parse.rules(self._checked("RELATIONS"))
-        return r if include_rejected else [x for x in r if x.accepted]
+        if not include_rejected:
+            r = [x for x in r if x.accepted]
+        return [x for x in r if x.shape == shape] if shape else r
+
+    def experimental(self) -> dict:
+        """Experimental settings that are currently not at their default: {name: value}."""
+        return {k: v["value"] for k, v in self.config().items() if v["experimental"] and v["value"] != v["default"]}
 
     def categories(self, threshold: Optional[float] = None) -> List[Category]:
         """Word categories induced from shared contexts (``threshold`` changes the merge level)."""
