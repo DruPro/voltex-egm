@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voltex-egm"
+version = "2.2.1"
+description = "EGM: a CPU-only, evidence-grounded knowledge engine (Voltex) with a Python SDK and CLI"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: C++",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.scripts]
+egm = "egm.cli:main"
+
+[tool.setuptools]
+packages = ["egm"]
+
+[tool.setuptools.package-data]
+egm = ["_bin/*", "py.typed"]

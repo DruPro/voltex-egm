@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""egm launcher: works from a source checkout (bin/egm) and from an install (<prefix>/bin/egm)."""
+import os
+import sys
+
+here = os.path.dirname(os.path.realpath(__file__))
+for root in (os.path.join(here, "..", "share", "egm"), os.path.join(here, "..")):
+    if os.path.isfile(os.path.join(root, "egm", "cli.py")):
+        sys.path.insert(0, os.path.abspath(root))
+        break
+if "VOLTEX" not in os.environ:
+    for b in (os.path.join(here, "voltex2"), os.path.join(here, "..", "build", "voltex2")):
+        if os.path.isfile(b) and os.access(b, os.X_OK):
+            os.environ["VOLTEX"] = os.path.abspath(b)
+            break
+from egm.cli import main  # noqa: E402
+
+sys.exit(main())
