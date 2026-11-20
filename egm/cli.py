@@ -13,6 +13,7 @@
   egm score key.json answers.json              exact / F1 per question kind
   egm eval KB key.json                         answer + score in one step
   egm bench facts.txt                          ingest, build and query timings
+  egm tune facts.txt [-o tuned.json]           pick settings for this dataset (holdout; --labels for verified facts)
   egm mcp KB [--writable]                      serve KB to LLM clients over MCP (stdio)
 
 KB is a saved knowledge base (.vtx) or a facts file (.txt), which is ingested on the fly.
@@ -41,8 +42,12 @@ def explain_empty(engine, pattern):
     return engine.explain(pattern) or "no stated or inferred answer"
 
 
-def parse_settings(items):
+def parse_settings(items, files=None):
     out = {}
+    for path in files or []:
+        with open(path) as fh:
+            d = json.load(fh)
+        out.update({k.upper(): v for k, v in d.get("settings", d).items()})
     for s in items or []:
         if "=" not in s:
             sys.exit(f"egm: --set expects KEY=VALUE, got {s}")
@@ -96,7 +101,7 @@ def cmd_extract(a):
 
 def cmd_build(a):
     t0 = time.perf_counter()
-    with Engine(facts=a.facts, settings=parse_settings(a.set)) as e:
+    with Engine(facts=a.facts, settings=parse_settings(a.set, getattr(a, 'settings', None))) as e:
         t1 = time.perf_counter()
         rel = e.cmd("RELATIONS")                  # forces the inference build, so errors surface now
         t2 = time.perf_counter()
@@ -109,7 +114,7 @@ def cmd_build(a):
 
 
 def cmd_ask(a):
-    with open_kb(a.kb, parse_settings(a.set)) as e:
+    with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
         res = []
         for p in a.pattern:
             facts = e.ask(p, strict=a.strict)
@@ -132,7 +137,7 @@ def _short(f):
 
 
 def cmd_rules(a):
-    with open_kb(a.kb, parse_settings(a.set)) as e:
+    with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
         for l in e.cmd("RELATIONS"):
             if a.all or not l.strip().startswith("reject"):
                 print(l)
@@ -153,7 +158,7 @@ def cmd_observe(a):
 
 
 def cmd_run(a):
-    with open_kb(a.kb, parse_settings(a.set)) as e:
+    with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
         for line in open(a.script):
             line = line.rstrip("\n")
             if not line.strip() or line.lstrip().startswith("#"):
@@ -172,7 +177,7 @@ def cmd_shell(a):
         import readline  # noqa: F401  (line editing where available)
     except ImportError:
         pass
-    e = open_kb(a.kb, parse_settings(a.set)) if a.kb else Engine()
+    e = open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) if a.kb else Engine()
     print("egm shell: engine commands (ASK, RELATIONS, OBSERVE, INFER ALL, HELP, ...). Ctrl-D to quit.")
     try:
         while True:
@@ -213,7 +218,7 @@ def _answer(e, qs, strict):
 
 def cmd_answer(a):
     qs = json.load(open(a.questions))
-    with open_kb(a.kb, parse_settings(a.set)) as e:
+    with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
         ans, dt = _answer(e, qs, a.strict)
     dump(ans, a.output)
     print(f"wrote {len(ans)} answers to {a.output} in {dt:.2f} s (policy: {'strict' if a.strict else 'all'})")
@@ -241,7 +246,7 @@ def cmd_eval(a):
     key = json.load(open(a.key))
     policies = [False, True] if a.both else [a.strict]
     out = {}
-    with open_kb(a.kb, parse_settings(a.set)) as e:
+    with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
         for strict in policies:
             ans, dt = _answer(e, key, strict)
             r = bench.score(key, ans)
@@ -256,9 +261,34 @@ def cmd_eval(a):
             print(f"FAIL: expected mean F1 {a.expect:.3f}, got {got:.3f}"); return 1
 
 
+def cmd_tune(a):
+    from .tune import DEFAULT_SPACE, tune
+    space = DEFAULT_SPACE
+    if a.only:
+        want = {x.strip().upper() for x in a.only.split(",")}
+        unknown = want - {k for k, _ in DEFAULT_SPACE}
+        if unknown:
+            sys.exit(f"egm tune: not in the search space: {', '.join(sorted(unknown))}")
+        space = [(k, v) for k, v in DEFAULT_SPACE if k in want]
+    labels = None
+    if a.labels:
+        with open(a.labels) as fh:
+            labels = [l.strip() for l in fh if l.strip()]
+    try:
+        r = tune(a.facts, folds=a.folds, holdout=a.holdout, space=space, min_gain=a.min_gain, sweeps=a.sweeps,
+                 seed=a.seed, labels=labels, progress=None if a.quiet else print)
+    except ValueError as e:
+        sys.exit(f"egm tune: {e}")
+    print(r.report())
+    if a.output:
+        dump({"settings": r.settings, "baseline": r.baseline, "tuned": r.tuned, "baseline_folds": r.baseline_folds,
+              "tuned_folds": r.tuned_folds, "mode": r.mode, "evaluations": r.evaluations, "history": r.history}, a.output)
+        print(f"wrote {a.output}: use it with  egm build {a.facts} -o kb.vtx --settings {a.output}")
+
+
 def cmd_mcp(a):
     from .mcp_server import run
-    return run(a.kb, writable=a.writable, save_path=a.save_to, autosave=a.autosave, settings=parse_settings(a.set))
+    return run(a.kb, writable=a.writable, save_path=a.save_to, autosave=a.autosave, settings=parse_settings(a.set, getattr(a, 'settings', None)))
 
 
 def cmd_bench(a):
@@ -290,6 +320,7 @@ def main(argv=None):
 
     def with_set(s):
         s.add_argument("--set", action="append", metavar="KEY=VALUE", help="engine setting, e.g. RATE=0.4, REFRESH=0.02, DX=1")
+        s.add_argument("--settings", action="append", metavar="FILE", help="settings from a JSON file, e.g. the output of egm tune")
         return s
 
     add("doctor", cmd_doctor, "check the engine binary and run its self-test")
@@ -334,6 +365,13 @@ def main(argv=None):
     s.add_argument("--writable", action="store_true", help="also expose egm_observe, egm_ingest and egm_save")
     s.add_argument("--save-to", metavar="PATH", help="where egm_save writes (default: KB, or KB.vtx for a .txt)")
     s.add_argument("--autosave", action="store_true", help="with --writable: save unsaved additions on exit")
+    s = add("tune", cmd_tune, "pick settings for one dataset from the dataset itself")
+    s.add_argument("facts"); s.add_argument("-o", "--output", help="write the chosen settings and the full search log (JSON)")
+    s.add_argument("--labels", help="verified facts, one per line: score on these instead of hidden stated facts")
+    s.add_argument("--folds", type=int, default=3); s.add_argument("--holdout", type=float, default=0.15)
+    s.add_argument("--min-gain", type=float, default=0.005); s.add_argument("--sweeps", type=int, default=2)
+    s.add_argument("--only", help="comma-separated settings to search (default: all in egm.tune.DEFAULT_SPACE)")
+    s.add_argument("--seed", type=int, default=0); s.add_argument("-q", "--quiet", action="store_true")
     s = add("bench", cmd_bench, "time ingest, inference build and queries")
     s.add_argument("facts", nargs="+"); s.add_argument("--queries", type=int, default=50)
 
@@ -346,3 +384,7 @@ def main(argv=None):
         print(f"egm: {e}", file=sys.stderr); return 2
     except BrokenPipeError:
         return 0
+
+
+if __name__ == "__main__":
+    main()

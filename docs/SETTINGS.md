@@ -19,12 +19,15 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 | `CHAIN` | 2 | induction | **experimental** | longest rule body, 2-8 premises (studies/multipremise) |
 | `CONDITIONS` | 0 | induction | **experimental** | learn group conditions on accepted rules (1/0) (studies/multipremise) |
 | `TREES` | 0 | induction | **experimental** | tree-shaped rules joining several branches at one entity (1/0) (studies/trees) |
+| `REPLICATE` | 0 | induction | **experimental** | a rule must also hold in each half of its subjects (1/0) (studies/noise) |
 | `DEPTH` | 4 | inference | stable | inference rounds, 0 = until nothing new (studies/depth) |
 | `CORROBORATE` | 1 | inference | stable | a contradiction needs two distinct rules (1/0) |
 | `OBS` | 1 | evidence | stable | project the observation log (1/0) |
 | `STALE` | 1 | evidence | stable | staleness checks after updates (1/0) |
 | `CHGREMOVALS` | 1 | evidence | stable | only removals feed the change signal (1/0) |
 | `SAMEFIX` | 1 | evidence | stable | same-rule re-derivation confirms a stale candidate (1/0) |
+| `VOTE` | 0 | evidence | **experimental** | a value reported more often than all others outvotes them (1/0) (studies/noise) |
+| `QUARANTINE` | 0 | evidence | **experimental** | stated facts two rules contradict stop counting as evidence (1/0) (studies/noise) |
 | `DX` | 0 | evidence | **experimental** | explained staleness for observations (1/0) |
 | `DECL` | 0 | evidence | **experimental** | declarative amendment records (1/0) (earlier study) |
 | `DECLMINE` | 0 | evidence | **experimental** | mine amendment records as facts (1/0) (earlier study) |
@@ -46,6 +49,19 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
   0 wrong; 100 of 100 four-bit adders computed with `DEPTH 0`; nothing learned for a random gate.
   Costs precision under heavy noise (100% to 97.9% with 30% noise) and mining time on large data
   (about 9 s on the hidden world). See `studies/trees/RESULTS.md`.
+- `VOTE` (0/1): for data where the same fact is reported several times by independent sources.
+  A value reported more often than all the others together outvotes them; outvoted facts are
+  listed in `CONFLICTS` and `ASK`, never deleted. Company world, 3 reports with 15% wrong each:
+  precision 0.32 to 0.998, recall 0.80 to 0.95. Without repeated reports it changes nothing.
+  In the hidden world, cleaner evidence let more tendency rules fire (precision 0.980 to 0.960
+  with 5 reports). See `studies/noise/RESULTS.md`.
+- `QUARANTINE` (0/1): a stated fact that two distinct rules contradict stops counting as evidence
+  (it is reported, not deleted), and rules are learned again without it. Raises recall on noisy
+  company data (0.72 to 0.93 at 15% noise, 1,760 people). It did not cut propagated errors as
+  predicted, and with `TREES 1` at 30% noise it lowered precision (0.975 to 0.939). Same study.
+- `REPLICATE` (0/1): keeps a rule only if it also passes in each half of its subjects. It removed
+  70% of the wrong inferences with `TREES 1` at 30% noise, but cost 36% of the correct gate outputs with
+  `TREES 1` on clean data, and real correlations replicate anyway. Not recommended. Same study.
 - `DX`, `DECL`, `DECLMINE`, `DECLFN`, `REFRESH`: options from earlier studies of change
   handling and rebuild speed; see `docs/papers/`.
 

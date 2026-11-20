@@ -1,5 +1,7 @@
 """SDK tests (stdlib unittest; pytest also collects them).   python3 -m unittest tests/test_sdk.py -v"""
 import json
+import contextlib
+import io
 import os
 import random
 import sys
@@ -328,6 +330,78 @@ class TestExperimentalSettings(unittest.TestCase):
             self.assertEqual(e.experimental(), {"TREES": 1})
             self.assertEqual(e.config()["DEPTH"]["value"], 0)
             self.assertEqual(len(e.infer_all()), n)
+
+
+class TestNoiseSettings(unittest.TestCase):
+    """VOTE, QUARANTINE, REPLICATE and egm.tune (studies/noise) on the small staff and lineage worlds."""
+    kb = staticmethod(TestExperimentalSettings.kb)
+
+    @staticmethod
+    def conflict_facts(e, kind):
+        return {c.detail.split("stated: ", 1)[1].split(" | ")[0] for c in e.conflicts() if c.kind == kind}
+
+    def test_vote_outvotes_only_wrong_reports(self):
+        lines, _, wrong = worlds.staff(noise=0.25, reports=3)
+        with self.kb(lines, VOTE=1) as e:
+            out = self.conflict_facts(e, "outvoted")
+            p = next(iter(out)).split(" is based in ")[0]
+            flags = {f.flag for f in e.ask(f"{p} is based in ?")}
+        self.assertGreater(len(out), 20)
+        self.assertTrue(out <= wrong)                       # nothing true is outvoted here
+        self.assertIn("outvoted", flags)
+
+    def test_vote_does_nothing_without_repeated_reports(self):
+        lines, _, _ = worlds.staff(noise=0.2, reports=1)
+        with self.kb(lines) as a, self.kb(lines, VOTE=1) as b:
+            self.assertEqual([f.fact for f in a.infer_all()], [f.fact for f in b.infer_all()])
+            self.assertEqual([c.raw for c in a.conflicts()], [c.raw for c in b.conflicts()])
+
+    def test_quarantine_keeps_contradicted_facts_out_but_reports_them(self):
+        lines, truth, wrong = worlds.staff(noise=0.2, reports=1)
+        with self.kb(lines) as e:
+            flagged = {c.detail.split("stated: ", 1)[1].split(" | ")[0] for c in e.conflicts() if c.kind == "value"}
+        with self.kb(lines, QUARANTINE=1) as e:
+            q = self.conflict_facts(e, "quarantined")
+            p = next(iter(q)).split(" is based in ")[0]
+            ans = e.ask(f"{p} is based in ?")
+        self.assertTrue(q and q == flagged and q <= wrong)
+        self.assertIn("quarantined", {f.flag for f in ans})
+        self.assertIn(truth[p], {f.object for f in ans if f.status == "inferred"})   # the rules' value is now inferred
+
+    def test_replicate_reports_why_a_rule_was_rejected(self):
+        lines, _ = worlds.gates(seed=2)
+        with self.kb(lines, TREES=1, REPLICATE=1) as e:
+            rejected = [r for r in e.rules(include_rejected=True) if r.replication]
+            kept = e.rules(shape="tree")
+        for r in rejected:
+            self.assertFalse(r.accepted); self.assertTrue(r.replication.startswith("did not replicate (half A"))
+        self.assertTrue(kept)
+
+    def test_tune_finds_chain_for_lineage_and_keeps_defaults_otherwise(self):
+        lines, _ = worlds.lineage()
+        td = tempfile.mkdtemp(); path = os.path.join(td, "lineage.txt")
+        with open(path, "w") as fh:
+            fh.write("\n".join(lines) + "\n")
+        r = egm.tune(path, space=[("CHAIN", [2, 3]), ("TREES", [0, 1])])
+        self.assertEqual(r.settings, {"CHAIN": 3})
+        self.assertGreater(r.tuned, r.baseline)
+        self.assertTrue(all(t > b for t, b in zip(r.tuned_folds, r.baseline_folds)))
+        r2 = egm.tune(path, space=[("TREES", [0, 1])])
+        self.assertEqual(r2.settings, {})
+        self.assertIn("keep the defaults", r2.report())
+
+    def test_tune_cli_writes_settings_that_build_uses(self):
+        from egm import cli
+        lines, _ = worlds.lineage()
+        td = tempfile.mkdtemp(); path = os.path.join(td, "lineage.txt"); out = os.path.join(td, "tuned.json"); kb = os.path.join(td, "kb.vtx")
+        with open(path, "w") as fh:
+            fh.write("\n".join(lines) + "\n")
+        with contextlib.redirect_stdout(io.StringIO()):
+            cli.main(["tune", path, "--only", "CHAIN", "-q", "-o", out])
+            cli.main(["build", path, "-o", kb, "--settings", out])
+        self.assertEqual(json.load(open(out))["settings"], {"CHAIN": 3})
+        with egm.open(kb) as e:
+            self.assertEqual(e.experimental(), {"CHAIN": 3})
 
 
 class TestBinaryLookup(unittest.TestCase):

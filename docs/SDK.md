@@ -172,3 +172,35 @@ with egm.open("gates.txt", settings={"TREES": 1, "DEPTH": 0}) as e:
 The tests in `tests/test_sdk.py` (`TestExperimentalSettings`) run each one on a small world from
 `tests/worlds.py`. The MCP tool `egm_relations` reports each rule's `shape`, `premises` and
 `condition`, and `experimental_settings` when any is on.
+
+## Tuning settings to a dataset (`egm.tune`, experimental)
+
+```python
+import egm
+r = egm.tune("facts.txt")               # hides 15% of the stated facts 3 times, keeps a change only if it helps every time
+print(r.report())                       # e.g. "SET TREES 1", or "keep the defaults"
+with egm.open("facts.txt", settings=r.settings) as e: ...
+r = egm.tune("facts.txt", labels=open("verified.txt").read().splitlines())   # score on facts you verified elsewhere
+```
+
+```
+egm tune facts.txt -o tuned.json          # prints every value tried
+egm build facts.txt -o kb.vtx --settings tuned.json
+```
+
+Tuning changes only setting values, never the engine, and the chosen values are saved with the
+knowledge base. What `studies/noise` measured:
+
+- **Structural switches are found.** Holdout tuning turned on `TREES` for gate data and `CHAIN 3`
+  for family trees in every seed (12 of 12), with large gains. In 36 runs it never scored below the
+  defaults on the hidden answers.
+- **Fixes for wrong facts are not visible to holdout tuning.** It hides stated facts, and some of
+  those are themselves wrong, so it cannot reward a setting that corrects them. With 30% wrong
+  facts, `QUARANTINE` scored +0.000 to +0.001 on the holdout and +0.023 to +0.029 on the truth.
+  Verified `labels` do show it (company world: F0.5 0.941 to 0.987), but small label sets can
+  also overfit (two hidden-world runs ended 0.0003 and 0.002 below the defaults).
+- **Settings are dataset-specific.** `CHAIN 3`, tuned on family trees, lowered another world from
+  0.775 to 0.636. Tune each dataset; don't copy settings between them.
+
+New fields: `Rule.replication` (why `REPLICATE` rejected a rule), `Conflict.kind` (`value`,
+`quarantined`, `outvoted`, `other`), and the ASK flags `outvoted` and `quarantined`.

@@ -17,7 +17,7 @@ class Fact(_Dict):
     """One line of an ASK answer (or of INFER ALL).
 
     status  stated | current | inferred | historical | corrected | superseded | withdrawn
-    flag    "" or stale | sources_disagree | uncertain | contradicted | current_unknown
+    flag    "" or stale | sources_disagree | uncertain | contradicted | current_unknown | outvoted | quarantined
     tier    law | tendency (inferred facts only)
     """
     fact: str
@@ -74,6 +74,7 @@ class Rule(_Dict):
     shape: str = ""             # inverse | chain (two premises) | path (3+ premises, CHAIN) | tree (TREES)
     premises: int = 0           # number of premise facts in the rule's body
     condition: str = ""         # CONDITIONS: the group the rule is restricted to, e.g. "[? works as ?](a,farmer|miner)"
+    replication: str = ""       # REPLICATE: why the rule was rejected, e.g. "did not replicate (half A: ...; half B: ...)"
 
 
 @dataclass
@@ -98,3 +99,4 @@ class Conflict(_Dict):
     stated: str                 # "-" when there is no single stated value
     detail: str
     raw: str = ""
+    kind: str = ""              # value (rules infer another value) | quarantined (QUARANTINE) | outvoted (VOTE) | other

@@ -6,7 +6,8 @@ from .model import Category, Conflict, Fact, Prediction, Relation, Rule
 _STATUS = "stated|current|inferred|historical|corrected|superseded|withdrawn"
 _ASK = re.compile(rf"^  (?P<fact>\S.*?)\s+(?P<status>{_STATUS})\b(?P<rest>.*)$")
 _FLAGS = [("STALE", "stale"), ("SOURCES DISAGREE", "sources_disagree"), ("UNCERTAIN", "uncertain"),
-          ("CONTRADICTED", "contradicted"), ("CURRENT UNKNOWN", "current_unknown")]
+          ("CONTRADICTED", "contradicted"), ("CURRENT UNKNOWN", "current_unknown"),
+          ("OUTVOTED", "outvoted"), ("QUARANTINED", "quarantined")]
 _TIER = re.compile(r"\[(law|tendency)\]")
 _SCORE = re.compile(r"\(score ([0-9.]+)\)|score=([0-9.]+)")
 _BECAUSE = re.compile(r"because (.+?)\s+\[rule: (.+?\))\](?:\s+\((.*)\))?\s*$")
@@ -119,10 +120,12 @@ def rules(lines):
             tier = re.search(r"tier=(\w+)", m.group(9) or "")
             text = m.group(2).strip()
             shape, premises, condition = rule_shape(text)
+            note = l.split(" | did not replicate ", 1)[1].strip() if " | did not replicate " in l else ""
             out.append(Rule(accepted=m.group(1) == "ACCEPT", text=text, n=int(m.group(3)), k=int(m.group(4)),
                             rate=float(m.group(5)), lift=float(m.group(6)),
                             known=int(m.group(7)) if m.group(7) else None, agree=float(m.group(8)) if m.group(8) else None,
-                            tier=tier.group(1) if tier else "", raw=l.strip(), shape=shape, premises=premises, condition=condition))
+                            tier=tier.group(1) if tier else "", raw=l.strip(), shape=shape, premises=premises, condition=condition,
+                            replication=("did not replicate " + note) if note else ""))
     return out
 
 
@@ -155,7 +158,9 @@ def conflicts(lines):
     for l in lines:
         if l.startswith("CONFLICT\t"):
             p = l.split("\t", 3)
-            out.append(Conflict(subject=p[1], stated=p[2], detail=p[3] if len(p) > 3 else "", raw=l))
+            d = p[3] if len(p) > 3 else ""
+            kind = "quarantined" if "QUARANTINED" in d else "outvoted" if "OUTVOTED" in d else "value" if d.startswith("stated: ") else "other"
+            out.append(Conflict(subject=p[1], stated=p[2], detail=d, raw=l, kind=kind))
     return out
 
 

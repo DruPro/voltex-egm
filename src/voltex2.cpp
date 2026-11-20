@@ -274,6 +274,10 @@ struct Relation {
     std::map<u32, std::string> uncertain;                    // subject -> a newer partial update gave a different value
     std::map<std::pair<u32, u32>, std::string> prov;         // current fact -> which sources assert it
     std::vector<std::tuple<u32, u32, std::string, int>> histLines;   // subject, value, text, kind (1 past, 2 never)
+    std::map<std::pair<u32, u32>, u64> reports;              // VOTE (studies/noise): how many records state each fact
+    std::map<std::pair<u32, u32>, std::string> outvoted;     // VOTE: stated facts outvoted by a value reported more often
+    std::set<u32> disputed;                                  // VOTE: subjects of a one-value relation whose reports have no majority
+    std::map<std::pair<u32, u32>, std::string> quarantined;  // QUARANTINE: stated facts two rules contradict, kept out of the evidence
 };
 struct TBranch { int r, s; u32 k; };   // tree branch: R(g,k) when s < 0, else R(g,y) & S(y,k)
 inline bool operator<(const TBranch& a, const TBranch& b) { return std::tie(a.r, a.s, a.k) < std::tie(b.r, b.s, b.k); }
@@ -287,6 +291,7 @@ struct RuleH {
     std::vector<int> path;                        // multi-premise study: 'P' rules, premise relations in order (CHAIN >= 3)
     int condRel = -1; std::set<u32> condVals, condSubj;   // CONDITIONS: fires only for head subjects with a value in condVals
     bool anchorInv = false; u32 headVal = 0; std::vector<TBranch> branches;   // TREES ('G'): A(x,g) or A(g,x) & branches(g) => T(x, headVal)
+    std::string repl;                             // REPLICATE (studies/noise): why the rule was rejected on replication
 };
 
 // ─────────────────────────────────────────────
@@ -316,6 +321,13 @@ struct Vault {
     int DEPTH = 4, lastRounds = 0;   // multi-premise study: inference rounds (0 = until nothing new)
     int CHAIN_L = 2;                 // longest rule body (2 = shipped shapes; >= 3 adds evidence-guided path rules)
     int F_COND = 0;                  // learn conditions that restrict an accepted rule to a group of subjects
+    int F_REPL = 0;                  // REPLICATE (studies/noise): a rule must also pass in each half of its subjects
+    int F_VOTE = 0;                  // VOTE (studies/noise): in a one-value relation, the value reported most outvotes the rest
+    int F_QUAR = 0;                  // QUARANTINE (studies/noise): stated facts two rules contradict are kept out of the evidence
+    std::vector<std::set<std::pair<u32, u32>>>* capture = nullptr;   // REPLICATE: each rule's predictions from stated facts
+    std::vector<std::tuple<int, u32, u32, u32, std::string>> quarList;   // QUARANTINE: the facts kept out, reported as conflicts
+    std::vector<std::tuple<int, u32, u32, u32, std::string>> voteList;   // VOTE: outvoted facts, reported as conflicts
+    u64 replRejected = 0;
     int F_TREES = 0;                 // tree-shaped rules (studies/trees): several branches joined at one entity
     // ---- declarative amendments (experimental condition C) ----
     int F_DECL = 0;        // amendment-record interpretation from the earlier study: off in this build
@@ -522,7 +534,8 @@ struct Vault {
             for (size_t x = 0; x < p.size(); ++x) for (size_t y = x + 1; y < p.size(); ++y) support[keyFor(c, p[x], p[y])]++;
         }
         std::map<std::vector<u32>, int> relIdx;
-        for (auto& c : recContent) {
+        for (size_t ci = 0; ci < recContent.size(); ++ci) {
+            auto& c = recContent[ci];
             auto p = openPos(c); if (p.size() < 2 || p.size() > 8) continue;
             u64 best = 0; size_t bi = 0, bj = 0;
             for (size_t x = 0; x < p.size(); ++x) for (size_t y = x + 1; y < p.size(); ++y) {
@@ -533,11 +546,50 @@ struct Vault {
             auto it = relIdx.find(k); int ri;
             if (it == relIdx.end()) { ri = (int)rels.size(); relIdx[k] = ri; rels.push_back({k, {}, {}}); } else ri = it->second;
             rels[ri].stated.insert({c[bi], c[bj]});
+            if (F_VOTE) rels[ri].reports[{c[bi], c[bj]}] += recs[recRid[ci]].count;
         }
         std::sort(rels.begin(), rels.end(), [](auto& a, auto& b) { return a.stated.size() > b.stated.size(); });
         if (rels.size() > 40) rels.resize(40);
+        if (F_VOTE) applyVote(); else voteList.clear();
         if (F_DECL) interpretAmendments();
         if (useObs) annotateObservations(support);
+    }
+
+    // ── VOTE (studies/noise): repeated reports in a one-value relation. A value reported more often than all the subject's
+    //    other values together (and at least twice) outvotes them; the outvoted facts are kept out of the evidence and reported.
+    //    Only relations where at least half the subjects have a value reported twice or more take part, and a relation where 10% or more of the
+    //    subjects with several values have two values each reported twice is many-value: skipped. ──
+    void applyVote() {
+        voteList.clear();
+        for (size_t ri = 0; ri < rels.size(); ++ri) {
+            auto& R = rels[ri];
+            R.outvoted.clear(); R.disputed.clear();
+            std::map<u32, std::vector<std::pair<u64, u32>>> per;
+            for (auto& f : R.stated) { auto it = R.reports.find(f); per[f.first].push_back({it == R.reports.end() ? 1 : it->second, f.second}); }
+            auto decide = [](std::vector<std::pair<u64, u32>>& v) {   // sorts v, most reported first; true if v[0] outvotes the rest
+                if (v.size() == 1) return true;
+                std::sort(v.begin(), v.end(), [](auto& x, auto& y) { return x.first != y.first ? x.first > y.first : x.second < y.second; });
+                u64 rest = 0; for (size_t i = 1; i < v.size(); ++i) rest += v[i].first;
+                return v[0].first > rest && v[0].first >= 2;
+            };
+            // a many-value relation shows subjects with two or more values that are each reported at least twice; skip those
+            size_t multi = 0, twoStrong = 0;
+            for (auto& p : per) if (p.second.size() > 1) { ++multi; int strong = 0; for (auto& v : p.second) if (v.first >= 2) ++strong; if (strong >= 2) ++twoStrong; }
+            size_t repeated = 0;   // subjects with some value reported twice or more
+            for (auto& p : per) for (auto& v : p.second) if (v.first >= 2) { ++repeated; break; }
+            if (2 * repeated < per.size()) continue;   // fewer than half the subjects have repeated reports: nothing to vote with
+            if (per.size() < 5 || (multi > 0 && double(twoStrong) >= 0.1 * double(multi))) continue;
+            for (auto& p : per) decide(p.second);
+            for (auto& p : per) {
+                auto& v = p.second; if (v.size() < 2) continue;
+                if (!decide(v)) { R.disputed.insert(p.first); continue; }   // no majority: both stay, reported, and ignored by the one-value test
+                for (size_t i = 1; i < v.size(); ++i) {
+                    R.outvoted[{p.first, v[i].second}] = "OUTVOTED: reported " + std::to_string(v[i].first) + "x, while \"" + renderFact(R, p.first, v[0].second) + "\" is reported " + std::to_string(v[0].first) + "x";
+                    R.stated.erase({p.first, v[i].second});
+                    voteList.emplace_back((int)ri, p.first, v[i].second, v[0].second, R.outvoted[{p.first, v[i].second}]);
+                }
+            }
+        }
     }
 
     // ── neutral annotations from the observation log: provenance, history, disagreement, uncertainty. Nothing is resolved here. ──
@@ -749,7 +801,38 @@ struct Vault {
         if (F_COV || F_LABELS) rescoreRules(subj);
         if (F_COND && (F_COV || F_LABELS)) specialize(out, subj, base);
         if (F_TREES) mineTrees();
+        if (F_REPL) replicate();
         std::sort(ruleList.begin(), ruleList.end(), [](auto& a, auto& b) { return a.accepted != b.accepted ? a.accepted : a.lift > b.lift; });
+    }
+    // ── REPLICATE (studies/noise): split the subjects into two halves by a hash of their name. An accepted rule stays accepted
+    //    only if, in each half separately, its predictions from stated facts agree with the stated answer at least SUPPORT times
+    //    and clearly above chance (z >= 3; for tree rules the same corrected threshold z* used to accept them). ──
+    void replicate() {
+        std::vector<std::set<std::pair<u32, u32>>> cap(ruleList.size());
+        capture = &cap; inferCore(1); capture = nullptr;
+        for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); }
+        conflicts.clear(); staleAlt.clear();
+        auto half = [&](u32 a) {   // FNV-1a of the name, then a 64-bit finalizer so similar names (n12, n13) spread evenly
+            u64 h = 1469598103934665603ull; for (unsigned char ch : voc.str[a]) { h ^= ch; h *= 1099511628211ull; }
+            h ^= h >> 33; h *= 0xff51afd7ed558ccdull; h ^= h >> 33; h *= 0xc4ceb9fe1a85ec53ull; h ^= h >> 33;
+            return int(h & 1); };
+        std::vector<std::set<u32>> subj(rels.size());
+        for (size_t i = 0; i < rels.size(); ++i) for (auto& f : rels[i].stated) subj[i].insert(f.first);
+        for (size_t i = 0; i < ruleList.size(); ++i) {
+            auto& h = ruleList[i]; if (!h.accepted) continue;
+            auto& R = rels[h.r3]; double base;
+            if (h.type == 'G') { size_t c = 0; for (auto& f : R.stated) if (f.second == h.headVal) ++c; base = double(c) / double(std::max<size_t>(1, subj[h.r3].size())); }
+            else { std::set<u32> o; for (auto& f : R.stated) o.insert(f.second); base = double(R.stated.size()) / double(std::max<size_t>(1, subj[h.r3].size() * o.size())); }
+            u64 n[2] = {0, 0}, k[2] = {0, 0}, pn[2] = {0, 0};
+            for (auto& p : cap[i]) { int s = half(p.first); n[s]++; if (subj[h.r3].count(p.first)) pn[s]++; if (R.stated.count(p)) k[s]++; }
+            double zreq = h.type == 'G' ? treeZ : 3.0; bool ok = true; std::string why;
+            for (int s = 0; s < 2; ++s) {
+                double ex = double(pn[s]) * base, sd = std::sqrt(std::max(1e-9, ex * (1 - base))), z = (double(k[s]) - ex) / sd;
+                char buf[112]; std::snprintf(buf, sizeof buf, "%shalf %c: %llu of %llu known agree, z=%.1f", s ? "; " : "", 'A' + s, (unsigned long long)k[s], (unsigned long long)pn[s], z);
+                why += buf; if (k[s] < K_MIN || z < zreq) ok = false;
+            }
+            if (!ok) { h.accepted = false; h.repl = "did not replicate (" + why + ")"; ++replRejected; }
+        }
     }
     // ── multi-premise study: path rules R1 & ... & Rl => T, 3 <= l <= CHAIN_L, proposed only from paths that connect stated T pairs ──
     template <class Fin>
@@ -1114,6 +1197,29 @@ struct Vault {
             for (auto& c : rels[i].disagree) conflicts.emplace_back((int)i, c.first, 0u, 0u, "SOURCES DISAGREE: " + c.second);
             for (auto& c : rels[i].uncertain) conflicts.emplace_back((int)i, c.first, 0u, 0u, "UNCERTAIN: " + c.second);
         }
+        for (auto& q : quarList) conflicts.push_back(q);   // QUARANTINE: facts kept out of the evidence stay reported
+        for (auto& q : voteList) conflicts.push_back(q);   // VOTE: so do outvoted facts
+    }
+    // ── QUARANTINE (studies/noise): a stated fact that two distinct rules contradict (a CONFLICT) is kept out of the evidence:
+    //    rules are mined again and inference runs without it. It is never deleted; it is reported as a QUARANTINED conflict. ──
+    void quarantine() {
+        quarList.clear(); for (auto& R : rels) R.quarantined.clear();
+        infer(DEPTH > 0 ? DEPTH : 1000000);
+        std::vector<std::tuple<int, u32, u32, u32, std::string>> q;
+        for (auto& c : conflicts) {
+            int ri = std::get<0>(c); u32 a = std::get<1>(c), s = std::get<2>(c), alt = std::get<3>(c);
+            if (!s || !alt || s == alt || staleAlt.count({ri, a}) || !rels[ri].stated.count({a, s})) continue;
+            q.push_back(c);
+        }
+        for (auto& c : q) {
+            int ri = std::get<0>(c); u32 a = std::get<1>(c), s = std::get<2>(c);
+            rels[ri].stated.erase({a, s});
+            rels[ri].quarantined[{a, s}] = "QUARANTINED, not used as evidence: the rules infer \"" + renderFact(rels[ri], a, std::get<3>(c)) + "\" because " + std::get<4>(c);
+            quarList.emplace_back(ri, a, s, std::get<3>(c), "QUARANTINED (not used as evidence): " + std::get<4>(c));
+        }
+        if (!q.empty()) mineRules();
+        for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); }
+        conflicts.clear(); staleAlt.clear();
     }
     void inferCore(int maxDepth) {
         for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); }
@@ -1123,8 +1229,9 @@ struct Vault {
         std::vector<std::map<u32, std::set<u32>>> objs(rels.size());
         for (size_t i = 0; i < rels.size(); ++i) {
             for (auto& f : rels[i].stated) objs[i][f.first].insert(f.second);
-            size_t single = 0; for (auto& o : objs[i]) if (o.second.size() == 1) ++single;
-            functional[i] = !objs[i].empty() && double(single) / double(objs[i].size()) >= 0.95;
+            size_t single = 0, counted = 0;
+            for (auto& o : objs[i]) { if (rels[i].disputed.count(o.first)) continue; ++counted; if (o.second.size() == 1) ++single; }
+            functional[i] = counted > 0 && double(single) / double(counted) >= 0.95;
         }
         std::set<std::pair<int, u32>> conflicted;
         auto has = [&](int r, u32 a, u32 b) { return rels[r].stated.count({a, b}) || rels[r].derived.count({a, b}); };
@@ -1141,6 +1248,7 @@ struct Vault {
             std::map<std::pair<int, u32>, std::map<u32, std::set<int>>> ruleVotes;   // distinct rules per value
             auto isLaw = [&](int r, u32 a, u32 b) { return rels[r].stated.count({a, b}) || rels[r].lawDerived.count({a, b}); };
             auto propose = [&](int r3, u32 a, u32 c, double score, std::string why) {
+                if (capture && curRule >= 0) (*capture)[curRule].insert({a, c});
                 if (functional[r3]) { auto& v = votes[{r3, a}][c]; if (v.first++ == 0) v.second = why; if (curLaw) lawVotes[{r3, a}][c]++; ruleVotes[{r3, a}][c].insert(curRule); return; }
                 if (!has(r3, a, c)) { add.emplace_back(r3, a, c, score, why); if (curLaw) lawAdd.insert({r3, a, c}); }
             };
@@ -1308,12 +1416,12 @@ struct Vault {
     }
     void ensureModel() {
         if (!dirty) return;
-        bool small = F_REFRESH > 0 && CHAIN_L < 3 && !F_COND && !F_TREES && haveCache && voc.str.size() == vocAtFull && double(recordsIngested - recsAtFull) <= F_REFRESH * double(std::max<u64>(1, recs.size()));
+        bool small = F_REFRESH > 0 && CHAIN_L < 3 && !F_COND && !F_TREES && !F_REPL && !F_QUAR && haveCache && voc.str.size() == vocAtFull && double(recordsIngested - recsAtFull) <= F_REFRESH * double(std::max<u64>(1, recs.size()));
         if (small) {   // evidence changed a little: re-project and rebuild relations, keep the learned classes and rules
             double t0 = nowms(); buildRelations(); remapRules(); ++refreshBuilds;
             if (F_PROFILE) std::printf("[PROFILE] refresh: relations %.1f ms (classes and rules reused)\n", nowms() - t0);
         } else {
-            double t0 = nowms(); buildClasses(); double t1 = nowms(); buildRelations(); double t2 = nowms(); mineRules(); double t3 = nowms();
+            double t0 = nowms(); buildClasses(); double t1 = nowms(); buildRelations(); double t2 = nowms(); mineRules(); if (F_QUAR) quarantine(); else quarList.clear(); double t3 = nowms();
             if (F_PROFILE) std::printf("[PROFILE] classes %.1f ms | relations %.1f ms | rule mining %.1f ms\n", t1 - t0, t2 - t1, t3 - t2);
             cacheRules(); haveCache = true; vocAtFull = voc.str.size(); recsAtFull = recordsIngested; ++fullBuilds;
         }
@@ -1430,12 +1538,15 @@ static std::vector<Setting>& settings() {
              [] { return double(V.CHAIN_L); }, [](double v) { V.CHAIN_L = std::max(2, std::min(8, (int)v)); }},
             VTX_SETTING("CONDITIONS", "induction", true, true, "learn group conditions on accepted rules (1/0) (studies/multipremise)", F_COND, int),
             VTX_SETTING("TREES", "induction", true, true, "tree-shaped rules joining several branches at one entity (1/0) (studies/trees)", F_TREES, int),
+            VTX_SETTING("REPLICATE", "induction", true, true, "a rule must also hold in each half of its subjects (1/0) (studies/noise)", F_REPL, int),
             VTX_SETTING("DEPTH", "inference", false, true, "inference rounds, 0 = until nothing new (studies/depth)", DEPTH, int),
             VTX_SETTING("CORROBORATE", "inference", false, true, "a contradiction needs two distinct rules (1/0)", F_CORROB, int),
             VTX_SETTING("OBS", "evidence", false, true, "project the observation log (1/0)", F_OBS, int),
             VTX_SETTING("STALE", "evidence", false, true, "staleness checks after updates (1/0)", F_STALE, int),
             VTX_SETTING("CHGREMOVALS", "evidence", false, true, "only removals feed the change signal (1/0)", F_CHG_REMOVALS, int),
             VTX_SETTING("SAMEFIX", "evidence", false, true, "same-rule re-derivation confirms a stale candidate (1/0)", F_SAMEFIX, int),
+            VTX_SETTING("VOTE", "evidence", true, true, "a value reported more often than all others outvotes them (1/0) (studies/noise)", F_VOTE, int),
+            VTX_SETTING("QUARANTINE", "evidence", true, true, "stated facts two rules contradict stop counting as evidence (1/0) (studies/noise)", F_QUAR, int),
             VTX_SETTING("DX", "evidence", true, true, "explained staleness for observations (1/0)", F_DX, int),
             VTX_SETTING("DECL", "evidence", true, true, "declarative amendment records (1/0) (earlier study)", F_DECL, int),
             VTX_SETTING("DECLMINE", "evidence", true, true, "mine amendment records as facts (1/0) (earlier study)", F_DECL_MINE, int),
@@ -1613,8 +1724,8 @@ static void showRelations() {
         ++shown;
         char extra[96] = "";
         if (V.F_COV || V.F_LABELS) std::snprintf(extra, sizeof extra, " | cov=%.2f rel=%.2f tier=%s", h.cov, h.rel, h.law ? "law" : "tendency");
-        std::printf("  %s %-60s n=%llu k=%llu rate=%.2f lift=%.1f | where answer known: %llu, agree=%.2f%s\n", h.accepted ? "ACCEPT" : "reject", V.ruleText(h).c_str(),
-                    (unsigned long long)h.n, (unsigned long long)h.k, h.rate, h.lift, (unsigned long long)h.pn, h.pca, extra);
+        std::printf("  %s %-60s n=%llu k=%llu rate=%.2f lift=%.1f | where answer known: %llu, agree=%.2f%s%s%s\n", h.accepted ? "ACCEPT" : "reject", V.ruleText(h).c_str(),
+                    (unsigned long long)h.n, (unsigned long long)h.k, h.rate, h.lift, (unsigned long long)h.pn, h.pca, extra, h.repl.empty() ? "" : " | ", h.repl.c_str());
     }
 }
 
@@ -1664,6 +1775,8 @@ static void ask(const std::string& q) {
             else std::printf("  %-32s stated\n", fact.c_str());
             ++answers;
         }
+        for (auto& f : R.outvoted) if (fits(f.first.first, f.first.second)) { std::printf("  %-32s stated, %s\n", V.renderFact(R, f.first.first, f.first.second).c_str(), f.second.c_str()); ++answers; }
+        for (auto& f : R.quarantined) if (fits(f.first.first, f.first.second)) { std::printf("  %-32s stated, %s\n", V.renderFact(R, f.first.first, f.first.second).c_str(), f.second.c_str()); ++answers; }
         for (auto& f : R.superseded) if (fits(f.first.first, f.first.second)) { std::printf("  %-32s %s\n", V.renderFact(R, f.first.first, f.first.second).c_str(), f.second.c_str()); ++answers; }
         for (auto& h : R.histLines) if (fits(std::get<0>(h), std::get<1>(h))) { std::printf("  %-32s %s\n", V.renderFact(R, std::get<0>(h), std::get<1>(h)).c_str(), std::get<2>(h).c_str()); ++answers; }
         for (auto& f : R.withdrawn) if (fits(f.first.first, f.first.second)) { std::printf("  %-32s %s\n", V.renderFact(R, f.first.first, f.first.second).c_str(), f.second.c_str()); ++answers; }
@@ -1796,8 +1909,9 @@ int main(int argc, char** argv) {
                     std::printf("CONFLICT\t%s\t-\t%s | relation: %s\n", V.voc.str[std::get<1>(c)].c_str(), std::get<4>(c).c_str(), rel.c_str());
                     continue;
                 }
-                std::printf("CONFLICT\t%s\t%s\tstated: %s | inferred: %s | because %s\n", V.voc.str[std::get<1>(c)].c_str(), V.voc.str[std::get<2>(c)].c_str(),
-                            V.renderFact(R, std::get<1>(c), std::get<2>(c)).c_str(), V.renderFact(R, std::get<1>(c), std::get<3>(c)).c_str(), std::get<4>(c).c_str());
+                bool ov = std::get<4>(c).rfind("OUTVOTED", 0) == 0;   // VOTE: the other value was reported more often, not inferred
+                std::printf("CONFLICT\t%s\t%s\tstated: %s | %s: %s | because %s\n", V.voc.str[std::get<1>(c)].c_str(), V.voc.str[std::get<2>(c)].c_str(),
+                            V.renderFact(R, std::get<1>(c), std::get<2>(c)).c_str(), ov ? "reported more often" : "inferred", V.renderFact(R, std::get<1>(c), std::get<3>(c)).c_str(), std::get<4>(c).c_str());
             }
         }
         else if (cmd == "EVAL") evalFile(arg);
