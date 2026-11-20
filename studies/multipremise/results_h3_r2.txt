@@ -1,0 +1,16 @@
+clean base | ALL derived 1119, correct 1119 -> precision 100.0% | based-in: 318/318 | conditions: 0
+clean chain3 | ALL derived 1119, correct 1119 -> precision 100.0% | based-in: 318/318 | conditions: 0
+clean chain4 | ALL derived 1119, correct 1119 -> precision 100.0% | based-in: 318/318 | conditions: 0
+clean conditions | ALL derived 1119, correct 1119 -> precision 100.0% | based-in: 318/318 | conditions: 0
+noisy base | ALL derived 1119, correct 1118 -> precision 99.9% | based-in: 324/317 | conditions: 0
+noisy chain3 | ALL derived 1119, correct 1119 -> precision 100.0% | based-in: 324/318 | conditions: 0
+noisy chain4 | ALL derived 1119, correct 1119 -> precision 100.0% | based-in: 324/318 | conditions: 0
+noisy conditions | ALL derived 1119, correct 1118 -> precision 99.9% | based-in: 324/317 | conditions: 0
+noisy15 base | ALL derived 1119, correct 1116 -> precision 99.7% | based-in: 338/315 | conditions: 0
+noisy15 chain3 | ALL derived 1119, correct 1119 -> precision 100.0% | based-in: 338/318 | conditions: 0
+noisy15 chain4 | ALL derived 1119, correct 1119 -> precision 100.0% | based-in: 338/318 | conditions: 0
+noisy15 conditions | ALL derived 1119, correct 1116 -> precision 99.7% | based-in: 338/315 | conditions: 0
+noisy30 base | ALL derived 817, correct 817 -> precision 100.0% | based-in: 359/16 | conditions: 0
+noisy30 chain3 | ALL derived 817, correct 817 -> precision 100.0% | based-in: 359/16 | conditions: 0
+noisy30 chain4 | ALL derived 817, correct 817 -> precision 100.0% | based-in: 359/16 | conditions: 0
+noisy30 conditions | ALL derived 817, correct 817 -> precision 100.0% | based-in: 359/16 | conditions: 0

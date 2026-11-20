@@ -1,0 +1,2 @@
+Harness fix: 'wrong' count rebuilt the truth set per derived fact (too slow); computed once per seed. No change to what is measured.
+Harness fix 2: a shell wrapper used to prepend SET DEPTH kept 'cat' alive after EXIT, hanging every run at shutdown. Replaced by sending SET DEPTH and SET PROFILE through the harness's own command channel. No change to what is measured; the 2 math tests used the wrapper without the harness and were unaffected.

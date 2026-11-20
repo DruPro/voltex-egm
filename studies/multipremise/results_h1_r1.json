@@ -1,0 +1,44 @@
+{
+ "chain2": {
+  "gg_right": 0,
+  "gg_unseen": 1800,
+  "ggg_right": 0,
+  "ggg_unseen": 1200,
+  "gg_wrong": 0,
+  "ggg_wrong": 0,
+  "other_derived": 0,
+  "rules_seed0": [
+   "ACCEPT [? is great grandparent of ?](a,b) & [? is parent of ?](b,c) => [? is great great grandparent of ?](a,c) n=400 k=400 rate=1.00 lift=2",
+   "ACCEPT [? is parent of ?](a,b) & [? is great grandparent of ?](b,c) => [? is great great grandparent of ?](a,c) n=400 k=400 rate=1.00 lift=2"
+  ]
+ },
+ "chain3": {
+  "gg_right": 1800,
+  "gg_unseen": 1800,
+  "ggg_right": 1200,
+  "ggg_unseen": 1200,
+  "gg_wrong": 0,
+  "ggg_wrong": 0,
+  "other_derived": 0,
+  "rules_seed0": [
+   "ACCEPT [? is parent of ?](a,b) & [? is parent of ?](b,c) & [? is parent of ?](c,d) => [? is great grandparent of ?](a,d) n=960 k=600 rate=0.",
+   "ACCEPT [? is great grandparent of ?](a,b) & [? is parent of ?](b,c) => [? is great great grandparent of ?](a,c) n=400 k=400 rate=1.00 lift=2",
+   "ACCEPT [? is parent of ?](a,b) & [? is great grandparent of ?](b,c) => [? is great great grandparent of ?](a,c) n=400 k=400 rate=1.00 lift=2"
+  ]
+ },
+ "chain4": {
+  "gg_right": 1800,
+  "gg_unseen": 1800,
+  "ggg_right": 1200,
+  "ggg_unseen": 1200,
+  "gg_wrong": 0,
+  "ggg_wrong": 0,
+  "other_derived": 0,
+  "rules_seed0": [
+   "ACCEPT [? is parent of ?](a,b) & [? is parent of ?](b,c) & [? is parent of ?](c,d) => [? is great grandparent of ?](a,d) n=960 k=600 rate=0.",
+   "ACCEPT [? is great grandparent of ?](a,b) & [? is parent of ?](b,c) => [? is great great grandparent of ?](a,c) n=400 k=400 rate=1.00 lift=2",
+   "ACCEPT [? is parent of ?](a,b) & [? is great grandparent of ?](b,c) => [? is great great grandparent of ?](a,c) n=400 k=400 rate=1.00 lift=2",
+   "ACCEPT [? is parent of ?](a,b) & [? is parent of ?](b,c) & [? is parent of ?](c,d) & [? is parent of ?](d,e) => [? is great great grandparen"
+  ]
+ }
+}
