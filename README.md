@@ -13,17 +13,17 @@ Extract facts · build a knowledge base · query it · score it — with one com
 [![License](https://img.shields.io/badge/license-Apache%202.0-ff2d95?style=for-the-badge)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-1a1a1a?style=for-the-badge&logo=python&logoColor=ff2d95)](pyproject.toml)
 [![C++](https://img.shields.io/badge/C%2B%2B-17-1a1a1a?style=for-the-badge&logo=cplusplus&logoColor=ff2d95)](src/voltex2.cpp)
-[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS-1a1a1a?style=for-the-badge)](#-installation)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS-1a1a1a?style=for-the-badge)](#installation)
 [![MCP](https://img.shields.io/badge/MCP-ready-ff2d95?style=for-the-badge)](docs/MCP.md)
 
 <br>
 
-[**Installation**](#-installation) &nbsp;•&nbsp;
-[**Quick start**](#-five-minute-tour) &nbsp;•&nbsp;
-[**Evaluating**](#-evaluating) &nbsp;•&nbsp;
-[**MCP server**](#-serving-it-to-an-llm-mcp) &nbsp;•&nbsp;
-[**Python SDK**](#-python-sdk) &nbsp;•&nbsp;
-[**Docs**](#-documentation)
+[**Installation**](#installation) &nbsp;•&nbsp;
+[**Quick start**](#five-minute-tour) &nbsp;•&nbsp;
+[**Evaluating**](#evaluating) &nbsp;•&nbsp;
+[**MCP server**](#serving-it-to-an-llm-mcp) &nbsp;•&nbsp;
+[**Python SDK**](#python-sdk) &nbsp;•&nbsp;
+[**Docs**](#documentation)
 
 </div>
 
@@ -37,18 +37,18 @@ Extract facts · build a knowledge base · query it · score it — with one com
 learns relations and rules from plain `A relation B` facts. It answers queries with proofs and
 evidence tiers, and it keeps a history of how the facts changed over time.
 
-- ⚡ **Runs on any CPU.** It needs a C++17 compiler and Python's standard library, nothing else.
-- 🔎 **Every answer comes with its evidence.** Results carry status, tier and proof (`--json`), and `--strict` restricts them to stated facts and law-tier rules.
-- 🧠 **Learns rules from data.** Relations and inference rules are learned from the facts. You don't write them.
-- 🕰️ **Tracks history.** Snapshot observations turn facts that a record no longer states into history.
-- 🤖 **Works with LLMs.** It ships a read-only MCP server and a typed Python SDK.
-- 📏 **Measurable.** A built-in question generator, a scripted solver and a scorer reproduce the published numbers.
+- **Runs on any CPU.** It needs a C++17 compiler and Python's standard library, nothing else.
+- **Every answer comes with its evidence.** Results carry status, tier and proof (`--json`), and `--strict` restricts them to stated facts and law-tier rules.
+- **Learns rules from data.** Relations and inference rules are learned from the facts. You don't write them.
+- **Tracks history.** Snapshot observations turn facts that a record no longer states into history.
+- **Works with LLMs.** It ships a read-only MCP server and a typed Python SDK.
+- **Measurable.** A built-in question generator, a scripted solver and a scorer reproduce the published numbers.
 
 <br clear="right">
 
 ---
 
-## 📦 Installation
+## Installation
 
 > **Requirements:** a C++17 compiler and Python 3.8+ (standard library only).
 
@@ -89,7 +89,7 @@ Without installing, run `bin/egm` from the checkout. To use another engine build
 
 ---
 
-## 🚀 Five-minute tour
+## Five-minute tour
 
 ```bash
 egm extract python mypkg=path/to/mypkg -o mypkg      # mypkg.txt (facts) + mypkg.truth.json
@@ -116,7 +116,7 @@ no spaces in names.
 
 ---
 
-## 📊 Evaluating
+## Evaluating
 
 ```bash
 egm questions mypkg.truth.json -o qs --seed 7        # qs/questions.json (public), qs/key.json (hidden)
@@ -134,7 +134,7 @@ and `score` exit 1 on a mismatch, which is useful in CI.
 
 ---
 
-## 🕰️ Changing data
+## Changing data
 
 ```bash
 egm observe kb.vtx --source repo --record net.py --time 2 -f "a calls b" -f "a calls c"
@@ -146,7 +146,7 @@ only adds facts.
 
 ---
 
-## 🤖 Serving it to an LLM (MCP)
+## Serving it to an LLM (MCP)
 
 ```bash
 egm mcp /abs/path/kb.vtx                        # read-only MCP server over stdio
@@ -162,7 +162,7 @@ Setup for other clients and the protocol details are in **[docs/MCP.md](docs/MCP
 
 ---
 
-## 🐍 Python SDK
+## Python SDK
 
 ```python
 import egm
@@ -182,7 +182,7 @@ including an LLM-tool example, is in **[docs/SDK.md](docs/SDK.md)**.
 
 ---
 
-## 🛠️ Other commands
+## Other commands
 
 | Command | Purpose |
 |---|---|
@@ -192,7 +192,7 @@ including an LLM-tool example, is in **[docs/SDK.md](docs/SDK.md)**.
 
 ---
 
-## 📈 Reproducing the published numbers
+## Reproducing the published numbers
 
 ```bash
 make repro
@@ -208,7 +208,7 @@ The data is in [`examples/`](examples). The questions and keys are the ones used
 
 ---
 
-## ⚠️ Known limitations
+## Known limitations
 
 <details>
 <summary><b>Expand</b></summary>
@@ -230,7 +230,7 @@ The data is in [`examples/`](examples). The questions and keys are the ones used
 
 ---
 
-## 🗂️ Project layout
+## Project layout
 
 ```text
 voltex-egm/
@@ -249,7 +249,7 @@ voltex-egm/
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 | Document | Description |
 |---|---|
@@ -258,7 +258,7 @@ voltex-egm/
 
 ---
 
-## 📝 Changelog
+## Changelog
 
 ### 2.2.1
 
@@ -272,7 +272,7 @@ Three additive engine changes. None of them changes any answer, and `make repro`
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the **Apache License 2.0**. See [`LICENSE`](LICENSE) for details.
 
@@ -280,5 +280,5 @@ Distributed under the **Apache License 2.0**. See [`LICENSE`](LICENSE) for detai
 <br>
 <img src="media/images/voltex-egm-logo.png" alt="Voltex EGM" width="200">
 <br>
-<sub>Built with ⚡ by the Voltex EGM team</sub>
+<sub>Built by the Voltex EGM team</sub>
 </div>
