@@ -1,0 +1,194 @@
+1795113997.840	voltex	RELATIONS
+1795113998.551	voltex	CONFLICTS
+1795113999.805	voltex	ASK finugu is ancestor of ?
+1795114001.792	voltex	ASK ? is ancestor of finugu
+1795114006.913	voltex	ASK ? is ancestor of finugu
+1795114008.220	voltex	ASK ? is ancestor of finugu
+1795114009.593	voltex	ASK finugu is sibling of ?
+1795114010.664	voltex	ASK finugu is sibling of ?
+1795114012.137	voltex	ASK jokihe is ancestor of ?
+1795114013.223	voltex	ASK jokihe is ancestor of ?
+1795114014.620	voltex	ASK ? is ancestor of jokihe
+1795114015.651	voltex	ASK ? is ancestor of jokihe
+1795114016.668	voltex	ASK ? is ancestor of nukivo
+1795114017.719	voltex	ASK ? is ancestor of nukivo
+1795114018.771	voltex	ASK ? is ancestor of lotigu
+1795114019.974	voltex	ASK ? is ancestor of lotigu
+1795114022.245	voltex	ASK ? is ancestor of zehemi
+1795114024.602	voltex	ASK ? is ancestor of zehemi
+1795114031.718	voltex	ASK rukisa is sibling of ?
+1795114033.247	voltex	ASK ? is sibling of rukisa
+1795114034.747	voltex	ASK saneki is sibling of ?
+1795114036.325	voltex	ASK ? is sibling of saneki
+1795114038.140	voltex	ASK fihesa is sibling of ?
+1795114039.693	voltex	ASK ? is sibling of fihesa
+1795114041.191	voltex	ASK besane is sibling of ?
+1795114042.574	voltex	ASK ? is sibling of besane
+1795114044.031	voltex	ASK mojopa is sibling of ?
+1795114045.053	voltex	ASK ? is sibling of mojopa
+1795114046.264	voltex	ASK ? is from padoia
+1795114047.320	voltex	ASK ? is from paheia
+1795114048.343	voltex	ASK ? is from ramoia
+1795114049.420	voltex	ASK ? is from vokaia
+1795114050.489	voltex	ASK ? is from neraia
+1795114051.630	voltex	ASK ? is from rubeia
+1795114053.078	voltex	ASK ? is from vokaia
+1795114054.640	voltex	ASK ? is from zekaia
+1795114056.022	voltex	ASK ? is from guguia
+1795114057.083	voltex	ASK ? is from nunuia
+1795114070.515	voltex	ASK ? is from paheia
+1795114072.195	voltex	ASK ? is from ramoia
+1795114073.632	voltex	ASK ? is from vokaia
+1795114075.312	voltex	ASK ? is from vokaia
+1795114076.958	voltex	ASK ? is from rubeia
+1795114078.055	voltex	ASK ? is from zekaia
+1795114079.121	voltex	ASK ? is from zekaia
+1795114080.168	voltex	ASK ? is from guguia
+1795114081.443	voltex	ASK ? is from nunuia
+1795114090.202	voltex	ASK ? works as scribe
+1795114091.856	voltex	ASK ? works as weaver
+1795114093.657	voltex	ASK ? works as healer
+1795114095.637	voltex	ASK ? works as miner
+1795114107.729	voltex	ASK fiparu works as scribe
+1795114108.943	voltex	ASK monufi works as scribe
+1795114110.004	voltex	ASK nusafi works as scribe
+1795114111.019	voltex	ASK bekaze works as scribe
+1795114112.040	voltex	ASK tisajo works as scribe
+1795114113.073	voltex	ASK ravohe works as scribe
+1795114114.171	voltex	ASK zemijo works as scribe
+1795114115.195	voltex	ASK bekiki works as scribe
+1795114116.249	voltex	ASK sakiti works as scribe
+1795114117.273	voltex	ASK bevosa works as scribe
+1795114118.309	voltex	ASK gunuze works as scribe
+1795114119.409	voltex	ASK nusahe works as scribe
+1795114120.400	voltex	ASK kikara works as scribe
+1795114121.458	voltex	ASK joloti works as scribe
+1795114122.501	voltex	ASK kadobe works as scribe
+1795114123.517	voltex	ASK kimofi works as scribe
+1795114124.620	voltex	ASK benupa works as scribe
+1795114125.651	voltex	ASK pavolo works as scribe
+1795114126.660	voltex	ASK nerumi works as scribe
+1795114127.669	voltex	ASK tibemo works as scribe
+1795114128.676	voltex	ASK satipa works as scribe
+1795114129.673	voltex	ASK zeguti works as scribe
+1795114130.680	voltex	ASK guruki works as scribe
+1795114131.683	voltex	ASK vopara works as scribe
+1795114132.688	voltex	ASK gusane works as scribe
+1795114133.696	voltex	ASK sakira works as scribe
+1795114134.753	voltex	ASK dokafi works as scribe
+1795114136.011	voltex	ASK tizelo works as weaver
+1795114137.020	voltex	ASK vonulo works as weaver
+1795114138.031	voltex	ASK kavoka works as weaver
+1795114139.039	voltex	ASK vopado works as weaver
+1795114140.067	voltex	ASK lorumi works as weaver
+1795114141.094	voltex	ASK voloka works as weaver
+1795114142.104	voltex	ASK saguvo works as weaver
+1795114143.121	voltex	ASK nulolo works as weaver
+1795114144.136	voltex	ASK bemolo works as weaver
+1795114145.196	voltex	ASK sarara works as weaver
+1795114146.213	voltex	ASK monuvo works as weaver
+1795114147.230	voltex	ASK jovolo works as weaver
+1795114148.243	voltex	ASK heguze works as weaver
+1795114149.252	voltex	ASK nehene works as weaver
+1795114150.296	voltex	ASK gubegu works as weaver
+1795114151.361	voltex	ASK tizene works as weaver
+1795114152.423	voltex	ASK panuru works as weaver
+1795114153.453	voltex	ASK mijofi works as weaver
+1795114154.496	voltex	ASK begugu works as weaver
+1795114155.561	voltex	ASK fizefi works as weaver
+1795114156.616	voltex	ASK benudo works as weaver
+1795114157.673	voltex	ASK nukijo works as weaver
+1795114158.713	voltex	ASK loraki works as weaver
+1795114159.763	voltex	ASK rugulo works as weaver
+1795114160.789	voltex	ASK jodosa works as weaver
+1795114161.812	voltex	ASK rahenu works as weaver
+1795114162.832	voltex	ASK lonemo works as weaver
+1795114163.863	voltex	ASK nukavo works as weaver
+1795114164.881	voltex	ASK sanumo works as weaver
+1795114165.899	voltex	ASK netijo works as weaver
+1795114166.925	voltex	ASK jokara works as weaver
+1795114167.967	voltex	ASK dokamo works as weaver
+1795114169.026	voltex	ASK tilodo works as weaver
+1795114170.104	voltex	ASK fimipa works as weaver
+1795114171.144	voltex	ASK bemoka works as weaver
+1795114172.169	voltex	ASK morabe works as weaver
+1795114173.236	voltex	ASK logumi works as weaver
+1795114174.500	voltex	ASK jodoru works as healer
+1795114175.490	voltex	ASK modoki works as healer
+1795114176.500	voltex	ASK vodogu works as healer
+1795114177.629	voltex	ASK kanunu works as healer
+1795114178.723	voltex	ASK mibene works as healer
+1795114179.719	voltex	ASK fivomo works as healer
+1795114180.727	voltex	ASK patimi works as healer
+1795114181.832	voltex	ASK fineki works as healer
+1795114182.921	voltex	ASK neheti works as healer
+1795114183.948	voltex	ASK rujogu works as healer
+1795114185.057	voltex	ASK belovo works as healer
+1795114186.097	voltex	ASK rapalo works as healer
+1795114187.120	voltex	ASK sarumi works as healer
+1795114188.148	voltex	ASK zetigu works as healer
+1795114189.185	voltex	ASK rakaki works as healer
+1795114190.312	voltex	ASK vojomi works as healer
+1795114191.350	voltex	ASK kitipa works as healer
+1795114192.388	voltex	ASK ratido works as healer
+1795114193.481	voltex	ASK hesajo works as healer
+1795114194.539	voltex	ASK vokabe works as healer
+1795114195.639	voltex	ASK befibe works as healer
+1795114196.781	voltex	ASK nelosa works as healer
+1795114197.826	voltex	ASK sasara works as healer
+1795114199.076	voltex	ASK zemika works as miner
+1795114200.136	voltex	ASK pagulo works as miner
+1795114201.244	voltex	ASK pazenu works as miner
+1795114202.283	voltex	ASK behepa works as miner
+1795114203.312	voltex	ASK rurafi works as miner
+1795114204.412	voltex	ASK nenepa works as miner
+1795114205.492	voltex	ASK mobenu works as miner
+1795114206.564	voltex	ASK vogufi works as miner
+1795114207.639	voltex	ASK misagu works as miner
+1795114208.631	voltex	ASK gulone works as miner
+1795114209.652	voltex	ASK negupa works as miner
+1795114210.765	voltex	ASK dosami works as miner
+1795114211.840	voltex	ASK mozeti works as miner
+1795114212.875	voltex	ASK miloru works as miner
+1795114213.887	voltex	ASK hekane works as miner
+1795114214.899	voltex	ASK nenesa works as miner
+1795114215.902	voltex	ASK henusa works as miner
+1795114216.900	voltex	ASK mobeti works as miner
+1795114217.907	voltex	ASK rumijo works as miner
+1795114218.944	voltex	ASK kififi works as miner
+1795114219.963	voltex	ASK zekavo works as miner
+1795114220.976	voltex	ASK ruguti works as miner
+1795114221.997	voltex	ASK sadobe works as miner
+1795114223.000	voltex	ASK vomogu works as miner
+1795114224.205	voltex	ASK gutido works as miner
+1795114225.208	voltex	ASK kihemi works as miner
+1795114226.214	voltex	ASK fijoru works as miner
+1795114227.220	voltex	ASK jonusa works as miner
+1795114228.236	voltex	ASK ralogu works as miner
+1795114229.258	voltex	ASK lokihe works as miner
+1795114230.316	voltex	ASK saruka works as miner
+1795114231.409	voltex	ASK nuguhe works as miner
+1795114232.465	voltex	ASK bekagu works as miner
+1795114233.520	voltex	ASK kizeka works as miner
+1795114234.580	voltex	ASK voraki works as miner
+1795114235.634	voltex	ASK hegudo works as miner
+1795114236.714	voltex	ASK moguvo works as miner
+1795114237.785	voltex	ASK jofimo works as miner
+1795114238.845	voltex	ASK lodobe works as miner
+1795114239.855	voltex	ASK joneti works as miner
+1795114240.873	voltex	ASK nekipa works as miner
+1795114241.930	voltex	ASK gukinu works as miner
+1795114243.002	voltex	ASK jojosa works as miner
+1795114244.065	voltex	ASK befipa works as miner
+1795114245.120	voltex	ASK lomido works as miner
+1795114246.209	voltex	ASK lomiti works as miner
+1795114247.246	voltex	ASK hekijo works as miner
+1795114248.325	voltex	ASK beheki works as miner
+1795114249.417	voltex	ASK timivo works as miner
+1795114250.506	voltex	ASK lokabe works as miner
+1795114251.588	voltex	ASK kavofi works as miner
+1795114252.630	voltex	ASK vomifi works as miner
+1795114253.619	voltex	ASK beruze works as miner
+1795114254.639	voltex	ASK rumira works as miner
+1795114255.630	voltex	ASK dofimi works as miner
+1795114256.683	voltex	ASK tihera works as miner

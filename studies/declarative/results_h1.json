@@ -1,0 +1,165 @@
+[
+ {
+  "seed": 1,
+  "probe": "P0_plain",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 1,
+  "probe": "P1_plain_x5",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 1,
+  "probe": "P2_formerly",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": true,
+  "accepted_rules_with_formerly": [
+   "ACCEPT [? formerly lived in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=14 k=6 rate=0.43 lift=5.1 | where answer known: 6, agree=1.00 |"
+  ]
+ },
+ {
+  "seed": 2,
+  "probe": "P0_plain",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 2,
+  "probe": "P1_plain_x5",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 2,
+  "probe": "P2_formerly",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": true,
+  "accepted_rules_with_formerly": [
+   "ACCEPT [? is sibling of ?](a,b) & [? formerly lived in ?](b,c) => [? lives in ?](a,c) n=34 k=15 rate=0.44 lift=15.4 | where answer known: 19, agree=0.",
+   "ACCEPT [? formerly lived in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=23 k=12 rate=0.52 lift=6.3 | where answer known: 12, agree=1.00"
+  ]
+ },
+ {
+  "seed": 3,
+  "probe": "P0_plain",
+  "movers": 28,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 3,
+  "probe": "P1_plain_x5",
+  "movers": 28,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 3,
+  "probe": "P2_formerly",
+  "movers": 28,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": true,
+  "accepted_rules_with_formerly": [
+   "ACCEPT [? formerly lived in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=12 k=7 rate=0.58 lift=7.0 | where answer known: 7, agree=1.00 |"
+  ]
+ },
+ {
+  "seed": 4,
+  "probe": "P0_plain",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 4,
+  "probe": "P1_plain_x5",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 4,
+  "probe": "P2_formerly",
+  "movers": 31,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": true,
+  "accepted_rules_with_formerly": [
+   "ACCEPT [? formerly lived in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=19 k=12 rate=0.63 lift=7.6 | where answer known: 12, agree=1.00"
+  ]
+ },
+ {
+  "seed": 5,
+  "probe": "P0_plain",
+  "movers": 32,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 5,
+  "probe": "P1_plain_x5",
+  "movers": 32,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": false,
+  "accepted_rules_with_formerly": []
+ },
+ {
+  "seed": 5,
+  "probe": "P2_formerly",
+  "movers": 32,
+  "old_still_current": 1.0,
+  "new_value_alone": 0.0,
+  "lives_in_conflicts_on_movers": 0,
+  "formerly_relation_formed": true,
+  "accepted_rules_with_formerly": [
+   "ACCEPT [? is child of ?](a,b) & [? formerly lived in ?](b,c) => [? lives in ?](a,c) n=27 k=10 rate=0.37 lift=13.2 | where answer known: 15, agree=0.67",
+   "ACCEPT [? formerly lived in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=14 k=8 rate=0.57 lift=6.9 | where answer known: 8, agree=1.00 |",
+   "ACCEPT [? is parent of ?](a,b) & [? lives in ?](b,c) => [? formerly lived in ?](a,c) n=209 k=8 rate=0.04 lift=0.7 | where answer known: 10, agree=0.80"
+  ]
+ }
+]

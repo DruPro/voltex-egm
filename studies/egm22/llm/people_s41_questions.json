@@ -1,0 +1,677 @@
+[
+{
+"id": "people_s41_q1",
+"question": "Where does lokipa live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q2",
+"question": "Which region is lokipa from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q3",
+"question": "Has lokipa ever lived in molone?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q4",
+"question": "Where does nuramo live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q5",
+"question": "Which region is nuramo from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q6",
+"question": "Has nuramo ever lived in molone?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q7",
+"question": "Where does ravora live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q8",
+"question": "Which region is ravora from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q9",
+"question": "Has ravora ever lived in kisati?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q10",
+"question": "Where does nepabe live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q11",
+"question": "Which region is nepabe from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q12",
+"question": "Has nepabe ever lived in zegudo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q13",
+"question": "Where does loruti live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q14",
+"question": "Which region is loruti from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q15",
+"question": "Has loruti ever lived in nugupa?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q16",
+"question": "Where does hevoru live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q17",
+"question": "Which region is hevoru from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q18",
+"question": "Has hevoru ever lived in minura?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q19",
+"question": "Where does mihefi live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q20",
+"question": "Which region is mihefi from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q21",
+"question": "Has mihefi ever lived in kavosa?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q22",
+"question": "Where does vonenu live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q23",
+"question": "Which region is vonenu from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q24",
+"question": "Has vonenu ever lived in nerusa?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q25",
+"question": "Where does rumika live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q26",
+"question": "Which region is rumika from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q27",
+"question": "Has rumika ever lived in vokajo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q28",
+"question": "Where does doraki live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q29",
+"question": "Which region is doraki from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q30",
+"question": "Has doraki ever lived in neruhe?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q31",
+"question": "Which region is lonufi from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q32",
+"question": "Where does lonufi live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q33",
+"question": "Which region is nenumo from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q34",
+"question": "Where does nenumo live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q35",
+"question": "Which region is nemiru from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q36",
+"question": "Where does nemiru live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q37",
+"question": "Which region is zezevo from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q38",
+"question": "Where does zezevo live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q39",
+"question": "Which region is mojonu from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q40",
+"question": "Where does mojonu live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q41",
+"question": "Which region is mizeka from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q42",
+"question": "Where does mizeka live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q43",
+"question": "Which region is vokiti from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q44",
+"question": "Where does vokiti live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q45",
+"question": "Which region is gufibe from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q46",
+"question": "Where does gufibe live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q47",
+"question": "Which region is dobelo from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q48",
+"question": "Where does dobelo live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q49",
+"question": "Which region is fifiru from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q50",
+"question": "Where does fifiru live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q51",
+"question": "List every place doloru lives now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q52",
+"question": "Does the evidence contain incompatible claims about where doloru lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q53",
+"question": "List every place lonuki lives now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q54",
+"question": "Does the evidence contain incompatible claims about where lonuki lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q55",
+"question": "List every place jojovo lives now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q56",
+"question": "Does the evidence contain incompatible claims about where jojovo lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q57",
+"question": "List every place rabesa lives now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q58",
+"question": "Does the evidence contain incompatible claims about where rabesa lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q59",
+"question": "List every place pakasa lives now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q60",
+"question": "Does the evidence contain incompatible claims about where pakasa lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q61",
+"question": "Where does lobeka live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q62",
+"question": "Has lobeka ever lived in jodosa?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q63",
+"question": "Where does zepaze live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q64",
+"question": "Has zepaze ever lived in kitivo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q65",
+"question": "Where does rahebe live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q66",
+"question": "Has rahebe ever lived in sagumo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q67",
+"question": "Where does benenu live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q68",
+"question": "Has benenu ever lived in numosa?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q69",
+"question": "Where does mizenu live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q70",
+"question": "Has mizenu ever lived in beguvo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q71",
+"question": "Does the evidence contain incompatible claims about where hevobe lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q72",
+"question": "Where does hevobe live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q73",
+"question": "Does the evidence contain incompatible claims about where dorane lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q74",
+"question": "Where does dorane live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q75",
+"question": "Does the evidence contain incompatible claims about where nelone lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q76",
+"question": "Where does nelone live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q77",
+"question": "Does the evidence contain incompatible claims about where hedonu lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q78",
+"question": "Where does hedonu live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q79",
+"question": "Does the evidence contain incompatible claims about where tinenu lives?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q80",
+"question": "Where does tinenu live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q81",
+"question": "Is there conflicting information about mikimi?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q82",
+"question": "Does mikimi know sakami now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q83",
+"question": "Is there conflicting information about nunehe?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q84",
+"question": "Does nunehe know salosa now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q85",
+"question": "Is there conflicting information about moneru?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q86",
+"question": "Does moneru know berube now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q87",
+"question": "Is there conflicting information about vomoru?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q88",
+"question": "Does vomoru know mirara now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q89",
+"question": "Is there conflicting information about mokiki?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q90",
+"question": "Does mokiki know rahebe now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q91",
+"question": "Which region is hebemi from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q92",
+"question": "Which region is pamifi from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q93",
+"question": "Which region is gukanu from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q94",
+"question": "Which region is vojomi from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q95",
+"question": "Which region is guvobe from now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q96",
+"question": "What is nefibe's profession now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q97",
+"question": "What is katilo's profession now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q98",
+"question": "What is fidomo's profession now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q99",
+"question": "What is hebedo's profession now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q100",
+"question": "What is fimoka's profession now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q101",
+"question": "Where does tikane live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q102",
+"question": "Does tikane know nubenu now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q103",
+"question": "Where does misabe live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q104",
+"question": "Does misabe know sajoze now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q105",
+"question": "Where does tigusa live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q106",
+"question": "Does tigusa know lonufi now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q107",
+"question": "Where does raloti live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q108",
+"question": "Does raloti know jopado now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q109",
+"question": "Where does dotipa live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q110",
+"question": "Does dotipa know rarune now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "people_s41_q111",
+"question": "Where does rupaze live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q112",
+"question": "Has rupaze ever lived in beguvo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q113",
+"question": "Has rupaze ever lived in kitivo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q114",
+"question": "Where does vorura live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q115",
+"question": "Has vorura ever lived in jodosa?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q116",
+"question": "Has vorura ever lived in minura?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q117",
+"question": "Where does zeheze live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q118",
+"question": "Has zeheze ever lived in nerusa?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q119",
+"question": "Has zeheze ever lived in zegudo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q120",
+"question": "Where does kimido live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q121",
+"question": "Has kimido ever lived in kikaka?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q122",
+"question": "Has kimido ever lived in vokimo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q123",
+"question": "Where does zeraze live now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "people_s41_q124",
+"question": "Has zeraze ever lived in mijogu?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q125",
+"question": "Has zeraze ever lived in kikane?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "people_s41_q126",
+"question": "List every place rugube volunteers at now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q127",
+"question": "Does the evidence contain incompatible claims about where rugube volunteers?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q128",
+"question": "List every place vonupa volunteers at now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q129",
+"question": "Does the evidence contain incompatible claims about where vonupa volunteers?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q130",
+"question": "List every place mobevo volunteers at now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q131",
+"question": "Does the evidence contain incompatible claims about where mobevo volunteers?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q132",
+"question": "List every place berado volunteers at now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q133",
+"question": "Does the evidence contain incompatible claims about where berado volunteers?",
+"answer_format": "YES or NO"
+},
+{
+"id": "people_s41_q134",
+"question": "List every place nelojo volunteers at now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "people_s41_q135",
+"question": "Does the evidence contain incompatible claims about where nelojo volunteers?",
+"answer_format": "YES or NO"
+}
+]

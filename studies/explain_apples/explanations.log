@@ -1,0 +1,55 @@
+
+CLAIM: "Apples are blue"   ->   is apple blue?
+VERDICT: CONFLICT. Nothing supports it, and the known facts point elsewhere:
+  1. apple is known to be red, green, yellow:
+       - apple has color red [stated]
+       - apple has color green [stated]
+       - apple has color yellow [inferred]  because apple has variety golden_delicious + golden_delicious has color yellow
+  2. blue is light of 450-495 nm:
+       - blue has wavelength 450to495nm [stated]
+       - red is 620-750 nm -> no overlap with blue
+       - green is 495-570 nm -> no overlap with blue
+     so blue is a different colour, not a shade of any known apple colour.
+  3. none of the 5 known varieties of apple is blue: honeycrisp (red), gala (red), granny_smith (green), fuji (red), pink_lady (red)
+  4. for contrast, things known to be blue: blue_java, blueberry, bluecrop, duke, elliott, banana.
+  Caveat: Voltex only knows what it was told. This says 'contradicts all known facts', not 'proven impossible'.
+
+CLAIM: "Apples are yellow"   ->   is apple yellow?
+VERDICT: SUPPORTED.
+  - apple has color yellow [inferred]  because apple has variety golden_delicious + golden_delicious has color yellow
+
+CLAIM: "Bananas are blue"   ->   is banana blue?
+VERDICT: SUPPORTED.
+  - banana has color blue [inferred]  because banana has variety blue_java + blue_java has color blue
+
+CLAIM: "Granny smith apples are red"   ->   is granny_smith red?
+VERDICT: CONFLICT. Nothing supports it, and the known facts point elsewhere:
+  1. granny_smith is known to be green:
+       - granny_smith has color green [stated]
+  2. red is light of 620-750 nm:
+       - red has wavelength 620to750nm [stated]
+       - green is 495-570 nm -> no overlap with red
+     so red is a different colour, not a shade of any known granny_smith colour.
+  3. granny_smith is a variety of apple and its colour is stated as green.
+  4. for contrast, things known to be red: apple, honeycrisp, gala, fuji, pink_lady, pear, red_anjou, flame, plum, santa_rosa, cherry, bing, lapins, banana, red_dacca, tomato, roma, blood_orange, grape, orange.
+  Caveat: Voltex only knows what it was told. This says 'contradicts all known facts', not 'proven impossible'.
+
+CLAIM: "Blueberries are blue"   ->   is blueberry blue?
+VERDICT: SUPPORTED.
+  - blueberry has color blue [stated]
+
+CLAIM: "Grapes are orange"   ->   is grape orange?
+VERDICT: CONFLICT. Nothing supports it, and the known facts point elsewhere:
+  1. grape is known to be green, purple, red:
+       - grape has color green [stated]
+       - grape has color purple [stated]
+       - grape has color red [inferred]  because grape has variety flame + flame has color red
+  3. none of the 4 known varieties of grape is orange: concord (purple), thompson (green), flame (red), cotton_candy (green)
+  4. for contrast, things known to be orange: tomato, sungold, navel, valencia.
+  Caveat: Voltex only knows what it was told. This says 'contradicts all known facts', not 'proven impossible'.
+
+CLAIM: "Dragonfruit is pink"   ->   is dragonfruit pink?
+VERDICT: UNKNOWN. Voltex holds no facts about 'dragonfruit', so it can neither support nor contradict the claim.
+
+CLAIM: "Apples are teal"   ->   is apple teal?
+VERDICT: UNKNOWN COLOUR. Voltex has no facts about the colour 'teal'.

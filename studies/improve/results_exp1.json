@@ -1,0 +1,3769 @@
+{
+ "rows": [
+  {
+   "cfg": "0.3",
+   "seed": 0,
+   "system": "COV2",
+   "precision_all": 0.9598092643051771,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2936,
+   "tendency_precision": 0.9598092643051771,
+   "recall_law_only": 0.0,
+   "recall_all": 0.43791763791763794,
+   "conflict_recall": 0.3,
+   "conflict_precision": 0.15,
+   "flags": 20
+  },
+  {
+   "cfg": "0.3",
+   "seed": 0,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9598092643051771,
+   "law_n": 1870,
+   "law_precision": 0.9989304812834224,
+   "tendency_n": 1066,
+   "tendency_precision": 0.8911819887429644,
+   "recall_law_only": 0.274786701971168,
+   "recall_all": 0.43791763791763794,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 0,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9598092643051771,
+   "law_n": 1870,
+   "law_precision": 0.9989304812834224,
+   "tendency_n": 1066,
+   "tendency_precision": 0.8911819887429644,
+   "recall_law_only": 0.274786701971168,
+   "recall_all": 0.43791763791763794,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 2
+  },
+  {
+   "cfg": "0.5",
+   "seed": 0,
+   "system": "COV2",
+   "precision_all": 0.9740812379110252,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2585,
+   "tendency_precision": 0.9740812379110252,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5073544227281886,
+   "conflict_recall": 0.25,
+   "conflict_precision": 0.17391304347826086,
+   "flags": 23
+  },
+  {
+   "cfg": "0.5",
+   "seed": 0,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9740812379110252,
+   "law_n": 2302,
+   "law_precision": 0.9991311902693311,
+   "tendency_n": 283,
+   "tendency_precision": 0.7703180212014135,
+   "recall_law_only": 0.4341260853152133,
+   "recall_all": 0.5073544227281886,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 0,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9740812379110252,
+   "law_n": 2302,
+   "law_precision": 0.9991311902693311,
+   "tendency_n": 283,
+   "tendency_precision": 0.7703180212014135,
+   "recall_law_only": 0.4341260853152133,
+   "recall_all": 0.5073544227281886,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 1
+  },
+  {
+   "cfg": "0.7",
+   "seed": 0,
+   "system": "COV2",
+   "precision_all": 0.9701492537313433,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 1876,
+   "tendency_precision": 0.9701492537313433,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5648665425201738,
+   "conflict_recall": 0.2608695652173913,
+   "conflict_precision": 0.0759493670886076,
+   "flags": 79
+  },
+  {
+   "cfg": "0.7",
+   "seed": 0,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9701492537313433,
+   "law_n": 1678,
+   "law_precision": 0.9952324195470799,
+   "tendency_n": 198,
+   "tendency_precision": 0.7575757575757576,
+   "recall_law_only": 0.46831183398766124,
+   "recall_all": 0.5648665425201738,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.7",
+   "seed": 0,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9701492537313433,
+   "law_n": 1678,
+   "law_precision": 0.9952324195470799,
+   "tendency_n": 198,
+   "tendency_precision": 0.7575757575757576,
+   "recall_law_only": 0.46831183398766124,
+   "recall_all": 0.5648665425201738,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 18
+  },
+  {
+   "cfg": "nu",
+   "seed": 0,
+   "system": "COV2",
+   "precision_all": 0.9802754000744325,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2687,
+   "tendency_precision": 0.9802754000744325,
+   "recall_law_only": 0.0,
+   "recall_all": 0.47357065803667747,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 17
+  },
+  {
+   "cfg": "nu",
+   "seed": 0,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9802754000744325,
+   "law_n": 2289,
+   "law_precision": 0.999563128003495,
+   "tendency_n": 398,
+   "tendency_precision": 0.8693467336683417,
+   "recall_law_only": 0.3842149454240134,
+   "recall_all": 0.47357065803667747,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "nu",
+   "seed": 0,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9802754000744325,
+   "law_n": 2289,
+   "law_precision": 0.999563128003495,
+   "tendency_n": 398,
+   "tendency_precision": 0.8693467336683417,
+   "recall_law_only": 0.3842149454240134,
+   "recall_all": 0.47357065803667747,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 4
+  },
+  {
+   "cfg": "0.3",
+   "seed": 1,
+   "system": "COV2",
+   "precision_all": 0.9991759373712402,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2427,
+   "tendency_precision": 0.9991759373712402,
+   "recall_law_only": 0.0,
+   "recall_all": 0.3729621654875423,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 1,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9991759373712402,
+   "law_n": 2415,
+   "law_precision": 0.9991718426501035,
+   "tendency_n": 12,
+   "tendency_precision": 1.0,
+   "recall_law_only": 0.3525200876552228,
+   "recall_all": 0.3729621654875423,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 1,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9991759373712402,
+   "law_n": 2415,
+   "law_precision": 0.9991718426501035,
+   "tendency_n": 12,
+   "tendency_precision": 1.0,
+   "recall_law_only": 0.3525200876552228,
+   "recall_all": 0.3729621654875423,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 1,
+   "system": "COV2",
+   "precision_all": 0.8785271851342051,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2906,
+   "tendency_precision": 0.8785271851342051,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5257413509060955,
+   "conflict_recall": 0.05555555555555555,
+   "conflict_precision": 0.16666666666666666,
+   "flags": 6
+  },
+  {
+   "cfg": "0.5",
+   "seed": 1,
+   "system": "COV2+TIERS",
+   "precision_all": 0.8785271851342051,
+   "law_n": 2391,
+   "law_precision": 0.9966541196152238,
+   "tendency_n": 515,
+   "tendency_precision": 0.3300970873786408,
+   "recall_law_only": 0.4571264147323998,
+   "recall_all": 0.5257413509060955,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 1,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.8785271851342051,
+   "law_n": 2391,
+   "law_precision": 0.9966541196152238,
+   "tendency_n": 515,
+   "tendency_precision": 0.3300970873786408,
+   "recall_law_only": 0.4571264147323998,
+   "recall_all": 0.5257413509060955,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 4
+  },
+  {
+   "cfg": "0.7",
+   "seed": 1,
+   "system": "COV2",
+   "precision_all": 0.9043133366385722,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2017,
+   "tendency_precision": 0.9043133366385722,
+   "recall_law_only": 0.0,
+   "recall_all": 0.554575858923685,
+   "conflict_recall": 0.08695652173913043,
+   "conflict_precision": 0.3333333333333333,
+   "flags": 6
+  },
+  {
+   "cfg": "0.7",
+   "seed": 1,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9043133366385722,
+   "law_n": 1740,
+   "law_precision": 0.9896551724137931,
+   "tendency_n": 277,
+   "tendency_precision": 0.36823104693140796,
+   "recall_law_only": 0.4704918032786885,
+   "recall_all": 0.554575858923685,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.7",
+   "seed": 1,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9043133366385722,
+   "law_n": 1740,
+   "law_precision": 0.9896551724137931,
+   "tendency_n": 277,
+   "tendency_precision": 0.36823104693140796,
+   "recall_law_only": 0.4704918032786885,
+   "recall_all": 0.554575858923685,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 3
+  },
+  {
+   "cfg": "nu",
+   "seed": 1,
+   "system": "COV2",
+   "precision_all": 0.9921813917122753,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2558,
+   "tendency_precision": 0.9921813917122753,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5170095742513751,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 69
+  },
+  {
+   "cfg": "nu",
+   "seed": 1,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9921813917122753,
+   "law_n": 2396,
+   "law_precision": 0.9995826377295493,
+   "tendency_n": 162,
+   "tendency_precision": 0.8827160493827161,
+   "recall_law_only": 0.4531693472090823,
+   "recall_all": 0.5170095742513751,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "nu",
+   "seed": 1,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9921813917122753,
+   "law_n": 2396,
+   "law_precision": 0.9995826377295493,
+   "tendency_n": 162,
+   "tendency_precision": 0.8827160493827161,
+   "recall_law_only": 0.4531693472090823,
+   "recall_all": 0.5170095742513751,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 11
+  },
+  {
+   "cfg": "0.3",
+   "seed": 2,
+   "system": "COV2",
+   "precision_all": 0.9961404862987263,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2591,
+   "tendency_precision": 0.9961404862987263,
+   "recall_law_only": 0.0,
+   "recall_all": 0.39537377450980393,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 2,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9961404862987263,
+   "law_n": 2079,
+   "law_precision": 0.9975949975949976,
+   "tendency_n": 512,
+   "tendency_precision": 0.990234375,
+   "recall_law_only": 0.3012345679012346,
+   "recall_all": 0.39537377450980393,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 2,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9961404862987263,
+   "law_n": 2079,
+   "law_precision": 0.9975949975949976,
+   "tendency_n": 512,
+   "tendency_precision": 0.990234375,
+   "recall_law_only": 0.3012345679012346,
+   "recall_all": 0.39537377450980393,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 2,
+   "system": "COV2",
+   "precision_all": 0.9874544718737354,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2471,
+   "tendency_precision": 0.9874544718737354,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5081216159933362,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 1
+  },
+  {
+   "cfg": "0.5",
+   "seed": 2,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9874544718737354,
+   "law_n": 2232,
+   "law_precision": 0.9986559139784946,
+   "tendency_n": 239,
+   "tendency_precision": 0.8828451882845189,
+   "recall_law_only": 0.4301428020069471,
+   "recall_all": 0.5081216159933362,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 2,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9874544718737354,
+   "law_n": 2232,
+   "law_precision": 0.9986559139784946,
+   "tendency_n": 239,
+   "tendency_precision": 0.8828451882845189,
+   "recall_law_only": 0.4301428020069471,
+   "recall_all": 0.5081216159933362,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 1
+  },
+  {
+   "cfg": "0.7",
+   "seed": 2,
+   "system": "COV2",
+   "precision_all": 0.970736629667003,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 1982,
+   "tendency_precision": 0.970736629667003,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5949288806431664,
+   "conflict_recall": 0.30434782608695654,
+   "conflict_precision": 0.0958904109589041,
+   "flags": 73
+  },
+  {
+   "cfg": "0.7",
+   "seed": 2,
+   "system": "COV2+TIERS",
+   "precision_all": 0.970736629667003,
+   "law_n": 1803,
+   "law_precision": 0.9894620077648364,
+   "tendency_n": 179,
+   "tendency_precision": 0.7821229050279329,
+   "recall_law_only": 0.4922737306843267,
+   "recall_all": 0.5949288806431664,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.7",
+   "seed": 2,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.970736629667003,
+   "law_n": 1803,
+   "law_precision": 0.9894620077648364,
+   "tendency_n": 179,
+   "tendency_precision": 0.7821229050279329,
+   "recall_law_only": 0.4922737306843267,
+   "recall_all": 0.5949288806431664,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 17
+  },
+  {
+   "cfg": "nu",
+   "seed": 2,
+   "system": "COV2",
+   "precision_all": 0.9201149425287356,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 1740,
+   "tendency_precision": 0.9201149425287356,
+   "recall_law_only": 0.0,
+   "recall_all": 0.4735285418515232,
+   "conflict_recall": 0.24242424242424243,
+   "conflict_precision": 0.16326530612244897,
+   "flags": 49
+  },
+  {
+   "cfg": "nu",
+   "seed": 2,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9201149425287356,
+   "law_n": 1413,
+   "law_precision": 0.9957537154989384,
+   "tendency_n": 327,
+   "tendency_precision": 0.5932721712538226,
+   "recall_law_only": 0.3763038245520193,
+   "recall_all": 0.4735285418515232,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "nu",
+   "seed": 2,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9201149425287356,
+   "law_n": 1413,
+   "law_precision": 0.9957537154989384,
+   "tendency_n": 327,
+   "tendency_precision": 0.5932721712538226,
+   "recall_law_only": 0.3763038245520193,
+   "recall_all": 0.4735285418515232,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 3,
+   "system": "COV2",
+   "precision_all": 0.9882648784576697,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2386,
+   "tendency_precision": 0.9882648784576697,
+   "recall_law_only": 0.0,
+   "recall_all": 0.3653548187170747,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 3,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9882648784576697,
+   "law_n": 2340,
+   "law_precision": 0.9880341880341881,
+   "tendency_n": 46,
+   "tendency_precision": 1.0,
+   "recall_law_only": 0.3405508911474444,
+   "recall_all": 0.3653548187170747,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 3,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9882648784576697,
+   "law_n": 2340,
+   "law_precision": 0.9880341880341881,
+   "tendency_n": 46,
+   "tendency_precision": 1.0,
+   "recall_law_only": 0.3405508911474444,
+   "recall_all": 0.3653548187170747,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 3,
+   "system": "COV2",
+   "precision_all": 0.9857918930213122,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2393,
+   "tendency_precision": 0.9857918930213122,
+   "recall_law_only": 0.0,
+   "recall_all": 0.487296013220409,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 1
+  },
+  {
+   "cfg": "0.5",
+   "seed": 3,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9857918930213122,
+   "law_n": 2257,
+   "law_precision": 0.9946832077979619,
+   "tendency_n": 136,
+   "tendency_precision": 0.8382352941176471,
+   "recall_law_only": 0.43173076923076925,
+   "recall_all": 0.487296013220409,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 3,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9857918930213122,
+   "law_n": 2257,
+   "law_precision": 0.9946832077979619,
+   "tendency_n": 136,
+   "tendency_precision": 0.8382352941176471,
+   "recall_law_only": 0.43173076923076925,
+   "recall_all": 0.487296013220409,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 1
+  },
+  {
+   "cfg": "0.7",
+   "seed": 3,
+   "system": "COV2",
+   "precision_all": 0.8379758588672238,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2154,
+   "tendency_precision": 0.8379758588672238,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5564118372379778,
+   "conflict_recall": 0.043478260869565216,
+   "conflict_precision": 0.037037037037037035,
+   "flags": 27
+  },
+  {
+   "cfg": "0.7",
+   "seed": 3,
+   "system": "COV2+TIERS",
+   "precision_all": 0.8379758588672238,
+   "law_n": 1575,
+   "law_precision": 0.9993650793650793,
+   "tendency_n": 579,
+   "tendency_precision": 0.39896373056994816,
+   "recall_law_only": 0.4345665378244064,
+   "recall_all": 0.5564118372379778,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.7",
+   "seed": 3,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.8379758588672238,
+   "law_n": 1575,
+   "law_precision": 0.9993650793650793,
+   "tendency_n": 579,
+   "tendency_precision": 0.39896373056994816,
+   "recall_law_only": 0.4345665378244064,
+   "recall_all": 0.5564118372379778,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 2
+  },
+  {
+   "cfg": "nu",
+   "seed": 3,
+   "system": "COV2",
+   "precision_all": 0.9718614718614719,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 1386,
+   "tendency_precision": 0.9718614718614719,
+   "recall_law_only": 0.0,
+   "recall_all": 0.29833887043189367,
+   "conflict_recall": 0.24242424242424243,
+   "conflict_precision": 0.09195402298850575,
+   "flags": 87
+  },
+  {
+   "cfg": "nu",
+   "seed": 3,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9718614718614719,
+   "law_n": 1233,
+   "law_precision": 0.9854014598540146,
+   "tendency_n": 153,
+   "tendency_precision": 0.8627450980392157,
+   "recall_law_only": 0.25025746652935116,
+   "recall_all": 0.29833887043189367,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "nu",
+   "seed": 3,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9718614718614719,
+   "law_n": 1233,
+   "law_precision": 0.9854014598540146,
+   "tendency_n": 153,
+   "tendency_precision": 0.8627450980392157,
+   "recall_law_only": 0.25025746652935116,
+   "recall_all": 0.29833887043189367,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 9
+  },
+  {
+   "cfg": "0.3",
+   "seed": 4,
+   "system": "COV2",
+   "precision_all": 0.9888803680981595,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2608,
+   "tendency_precision": 0.9888803680981595,
+   "recall_law_only": 0.0,
+   "recall_all": 0.3957949662369552,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 4,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9888803680981595,
+   "law_n": 2540,
+   "law_precision": 0.9937007874015747,
+   "tendency_n": 68,
+   "tendency_precision": 0.8088235294117647,
+   "recall_law_only": 0.3691137759578824,
+   "recall_all": 0.3957949662369552,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.3",
+   "seed": 4,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9888803680981595,
+   "law_n": 2540,
+   "law_precision": 0.9937007874015747,
+   "tendency_n": 68,
+   "tendency_precision": 0.8088235294117647,
+   "recall_law_only": 0.3691137759578824,
+   "recall_all": 0.3957949662369552,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 4,
+   "system": "COV2",
+   "precision_all": 0.9858434919386552,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2543,
+   "tendency_precision": 0.9858434919386552,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5054435483870968,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 2
+  },
+  {
+   "cfg": "0.5",
+   "seed": 4,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9858434919386552,
+   "law_n": 2204,
+   "law_precision": 1.0,
+   "tendency_n": 339,
+   "tendency_precision": 0.8938053097345132,
+   "recall_law_only": 0.4152223059532781,
+   "recall_all": 0.5054435483870968,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.5",
+   "seed": 4,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9858434919386552,
+   "law_n": 2204,
+   "law_precision": 1.0,
+   "tendency_n": 339,
+   "tendency_precision": 0.8938053097345132,
+   "recall_law_only": 0.4152223059532781,
+   "recall_all": 0.5054435483870968,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 2
+  },
+  {
+   "cfg": "0.7",
+   "seed": 4,
+   "system": "COV2",
+   "precision_all": 0.8902671755725191,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2096,
+   "tendency_precision": 0.8902671755725191,
+   "recall_law_only": 0.0,
+   "recall_all": 0.5694232529752823,
+   "conflict_recall": 0.34782608695652173,
+   "conflict_precision": 0.10810810810810811,
+   "flags": 74
+  },
+  {
+   "cfg": "0.7",
+   "seed": 4,
+   "system": "COV2+TIERS",
+   "precision_all": 0.8902671755725191,
+   "law_n": 1702,
+   "law_precision": 0.9894242068155111,
+   "tendency_n": 394,
+   "tendency_precision": 0.4619289340101523,
+   "recall_law_only": 0.46391184573002753,
+   "recall_all": 0.5694232529752823,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "0.7",
+   "seed": 4,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.8902671755725191,
+   "law_n": 1702,
+   "law_precision": 0.9894242068155111,
+   "tendency_n": 394,
+   "tendency_precision": 0.4619289340101523,
+   "recall_law_only": 0.46391184573002753,
+   "recall_all": 0.5694232529752823,
+   "conflict_recall": 0.0,
+   "conflict_precision": 0.0,
+   "flags": 13
+  },
+  {
+   "cfg": "nu",
+   "seed": 4,
+   "system": "COV2",
+   "precision_all": 0.9909695817490495,
+   "law_n": 0,
+   "law_precision": null,
+   "tendency_n": 2104,
+   "tendency_precision": 0.9909695817490495,
+   "recall_law_only": 0.0,
+   "recall_all": 0.47526783679051743,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "nu",
+   "seed": 4,
+   "system": "COV2+TIERS",
+   "precision_all": 0.9909695817490495,
+   "law_n": 1894,
+   "law_precision": 0.996832101372756,
+   "tendency_n": 210,
+   "tendency_precision": 0.9380952380952381,
+   "recall_law_only": 0.39822822189411516,
+   "recall_all": 0.47526783679051743,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  },
+  {
+   "cfg": "nu",
+   "seed": 4,
+   "system": "COV2+distinct-rules",
+   "precision_all": 0.9909695817490495,
+   "law_n": 1894,
+   "law_precision": 0.996832101372756,
+   "tendency_n": 210,
+   "tendency_precision": 0.9380952380952381,
+   "recall_law_only": 0.39822822189411516,
+   "recall_all": 0.47526783679051743,
+   "conflict_recall": 0.0,
+   "conflict_precision": null,
+   "flags": 0
+  }
+ ],
+ "calibration": [
+  {
+   "cfg": "0.3",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 0.92,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 0.88,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 0.95,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is sibling of|lives in=>lives in",
+   "rel": 0.83,
+   "true": 0.7159468438538206,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is sibling of|is from=>is from",
+   "rel": 0.84,
+   "true": 0.739202657807309,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.92,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.85,
+   "true": 0.8559585492227979,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.88,
+   "true": 0.9125,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 1.0,
+   "true": 0.8618090452261307,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.93,
+   "true": 0.956,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 0.97,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is sibling of|lives in=>lives in",
+   "rel": 0.78,
+   "true": 0.7159468438538206,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I borders|None=>borders",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.83,
+   "true": 0.8559585492227979,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.98,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.9,
+   "true": 0.9125,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.83,
+   "true": 0.8618090452261307,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|lives in=>lives in",
+   "rel": 0.65,
+   "true": 0.7159468438538206,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.9,
+   "true": 0.8559585492227979,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.97,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is from=>is from",
+   "rel": 0.7,
+   "true": 0.739202657807309,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.9,
+   "true": 0.9125,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is from=>is from",
+   "rel": 0.59,
+   "true": 0.46375,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I borders|None=>borders",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.88,
+   "true": 0.8618090452261307,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.99,
+   "true": 0.956,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 0.99,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 0.95,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.8,
+   "true": 0.8559585492227979,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|is from=>is from",
+   "rel": 0.81,
+   "true": 0.739202657807309,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.89,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.83,
+   "true": 0.9125,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.83,
+   "true": 0.8618090452261307,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.93,
+   "true": 0.956,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 0.93,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.86,
+   "true": 0.8700102354145343,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.83,
+   "true": 0.905,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.81,
+   "true": 0.8519480519480519,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.98,
+   "true": 0.944,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is sibling of|harvests=>harvests",
+   "rel": 0.25,
+   "true": 0.22574257425742575,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C lives in|produces=>harvests",
+   "rel": 0.15,
+   "true": 0.2576530612244898,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.96,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.84,
+   "true": 0.8700102354145343,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.85,
+   "true": 0.905,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I borders|None=>borders",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.87,
+   "true": 0.8519480519480519,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.95,
+   "true": 0.944,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|harvests=>harvests",
+   "rel": 0.19,
+   "true": 0.22574257425742575,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.86,
+   "true": 0.8700102354145343,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|is from=>is from",
+   "rel": 0.66,
+   "true": 0.6699346405228758,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.76,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is from=>is from",
+   "rel": 0.52,
+   "true": 0.43125,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.89,
+   "true": 0.8519480519480519,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.87,
+   "true": 0.905,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I contains|None=>is located in",
+   "rel": 0.89,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 0.84,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 0.94,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 0.93,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 0.9,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.92,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.83,
+   "true": 0.9225,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.95,
+   "true": 0.946,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 0.98,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 0.96,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.86,
+   "true": 0.8701431492842536,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.99,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.85,
+   "true": 0.9225,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.86,
+   "true": 0.8622448979591837,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.93,
+   "true": 0.946,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|lives in=>lives in",
+   "rel": 0.63,
+   "true": 0.6398104265402843,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.85,
+   "true": 0.8701431492842536,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.96,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.92,
+   "true": 0.9225,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is from=>is from",
+   "rel": 0.61,
+   "true": 0.6761453396524486,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I borders|None=>borders",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.95,
+   "true": 0.8622448979591837,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.96,
+   "true": 0.946,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|lives in=>lives in",
+   "rel": 0.61,
+   "true": 0.6398104265402843,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I contains|None=>is located in",
+   "rel": 0.94,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.82,
+   "true": 0.8701431492842536,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.96,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.84,
+   "true": 0.8622448979591837,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C lives in|produces=>harvests",
+   "rel": 0.14,
+   "true": 0.22876712328767124,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 0.84,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C trades with|is from=>is from",
+   "rel": 1.0,
+   "true": 0.8465499485066942,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 1.0,
+   "true": 0.8676844783715013,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.95,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.84,
+   "true": 0.8465499485066942,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 1.0,
+   "true": 0.948,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.85,
+   "true": 0.8676844783715013,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.84,
+   "true": 0.8465499485066942,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.96,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is located in|None=>contains",
+   "rel": 0.95,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is from=>is from",
+   "rel": 0.62,
+   "true": 0.6142857142857143,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.82,
+   "true": 0.915,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.92,
+   "true": 0.8676844783715013,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.95,
+   "true": 0.948,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C contains|produces=>exports",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C lives in|produces=>harvests",
+   "rel": 0.21,
+   "true": 0.24794359576968272,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 0.8,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|lives in=>lives in",
+   "rel": 0.59,
+   "true": 0.6,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.96,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.86,
+   "true": 0.8465499485066942,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I contains|None=>is located in",
+   "rel": 0.95,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|is from=>is from",
+   "rel": 0.61,
+   "true": 0.6142857142857143,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.88,
+   "true": 0.915,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.94,
+   "true": 0.8676844783715013,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.97,
+   "true": 0.948,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 0.97,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 0.98,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.94,
+   "true": 0.8522727272727273,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.95,
+   "true": 0.93,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.3",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 1.0,
+   "true": 0.8407310704960835,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 0.98,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "I is located in|None=>contains",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.81,
+   "true": 0.8522727272727273,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.93,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.87,
+   "true": 0.91,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.89,
+   "true": 0.8407310704960835,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.5",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.95,
+   "true": 0.93,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|lives in=>lives in",
+   "rel": 0.64,
+   "true": 0.6195826645264848,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.96,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C trades with|is from=>is from",
+   "rel": 0.84,
+   "true": 0.8522727272727273,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "I is located in|None=>contains",
+   "rel": 0.83,
+   "true": 1.0,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C is sibling of|is from=>is from",
+   "rel": 0.63,
+   "true": 0.6452648475120385,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.87,
+   "true": 0.91,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C works as|is overseen by=>is member of",
+   "rel": 0.97,
+   "true": 0.93,
+   "tier": "law"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 0.9,
+   "true": 0.8407310704960835,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "0.7",
+   "rule": "C lives in|produces=>harvests",
+   "rel": 1.0,
+   "true": 0.27419354838709675,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is sibling of|is child of=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is parent of|None=>is child of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is parent of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is sibling of|is sibling of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is child of|is parent of=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is sibling of|None=>is sibling of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is ancestor of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is sibling of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is parent of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C is ancestor of|is parent of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "T is ancestor of|is ancestor of=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I is child of|None=>is ancestor of",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "I contains|None=>is located in",
+   "rel": 1.0,
+   "true": 1.0,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|works as=>works as",
+   "rel": 0.83,
+   "true": 0.91,
+   "tier": "tendency"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C mentors|is member of=>is member of",
+   "rel": 1.0,
+   "true": 0.8407310704960835,
+   "tier": "law"
+  },
+  {
+   "cfg": "nu",
+   "rule": "C lives in|is located in=>is from",
+   "rel": 0.92,
+   "true": 1.0,
+   "tier": "tendency"
+  }
+ ]
+}

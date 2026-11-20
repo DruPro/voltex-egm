@@ -1,0 +1,60 @@
+1795113996.033	voltex	RELATIONS
+1795113998.378	voltex	ASK ? is ancestor of finugu
+1795113999.411	voltex	ASK ? is ancestor of jokihe
+1795114001.014	voltex	ASK ? is ancestor of nukivo
+1795114002.379	voltex	ASK ? is ancestor of lotigu
+1795114003.422	voltex	ASK ? is ancestor of zehemi
+1795114006.282	voltex	ASK rukisa is sibling of ?
+1795114007.473	voltex	ASK saneki is sibling of ?
+1795114008.988	voltex	ASK fihesa is sibling of ?
+1795114010.085	voltex	ASK besane is sibling of ?
+1795114011.121	voltex	ASK mojopa is sibling of ?
+1795114012.241	voltex	ASK ? is from padoia
+1795114013.264	voltex	ASK ? is from paheia
+1795114014.477	voltex	ASK ? is from ramoia
+1795114015.503	voltex	ASK ? is from vokaia
+1795114016.511	voltex	ASK ? is from neraia
+1795114019.922	voltex	ASK ? is from paheia
+1795114021.607	voltex	ASK ? is from ramoia
+1795114023.907	voltex	ASK ? is from vokaia
+1795114028.753	voltex	ASK ? is from rubeia
+1795114029.818	voltex	ASK ? works as scribe
+1795114030.930	voltex	ASK ? is from vokaia
+1795114032.229	voltex	ASK ? works as weaver
+1795114033.740	voltex	ASK ? is from zekaia
+1795114035.292	voltex	ASK ? works as healer
+1795114037.205	voltex	ASK ? is from guguia
+1795114038.799	voltex	ASK ? works as miner
+1795114040.477	voltex	ASK ? is from nunuia
+1795114042.264	voltex	ASK ? works as miner
+1795114052.471	voltex	ASK ? is from rubeia
+1795114054.090	voltex	ASK ? works as scribe
+1795114059.280	voltex	ASK ? is from rubeia
+1795114060.318	voltex	ASK ? is from rubeia
+1795114061.385	voltex	ASK ? works as scribe
+1795114062.463	voltex	ASK ? works as scribe
+1795114063.512	voltex	ASK ? works as scribe
+1795114064.551	voltex	ASK ? works as scribe
+1795114070.116	voltex	ASK ? works as weaver
+1795114071.544	voltex	ASK ? works as weaver
+1795114073.156	voltex	ASK ? works as weaver
+1795114074.707	voltex	ASK ? works as weaver
+1795114080.890	voltex	ASK ? is from zekaia
+1795114082.458	voltex	ASK ? is from zekaia
+1795114083.716	voltex	ASK ? is from zekaia
+1795114084.803	voltex	ASK ? is from guguia
+1795114085.901	voltex	ASK ? is from guguia
+1795114086.998	voltex	ASK ? is from guguia
+1795114088.084	voltex	ASK ? is from nunuia
+1795114089.128	voltex	ASK ? is from nunuia
+1795114090.266	voltex	ASK ? is from nunuia
+1795114091.834	voltex	ASK ? works as healer
+1795114093.360	voltex	ASK ? works as healer
+1795114094.905	voltex	ASK ? works as healer
+1795114096.708	voltex	ASK ? works as healer
+1795114097.904	voltex	ASK ? works as healer
+1795114103.033	voltex	ASK ? works as miner
+1795114104.081	voltex	ASK ? works as miner
+1795114105.106	voltex	ASK ? works as miner
+1795114106.112	voltex	ASK ? works as miner
+1795114107.123	voltex	ASK ? works as miner

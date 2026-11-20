@@ -1,0 +1,1382 @@
+[
+ {
+  "id": "people_s42_q1",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "tinelo",
+  "v": null,
+  "truth": "vodolo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q2",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "tinelo",
+  "v": null,
+  "truth": "zekiia",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "people_s42_q3",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "tinelo",
+  "v": "guzeki",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q4",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "samogu",
+  "v": null,
+  "truth": "fivoru",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q5",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "samogu",
+  "v": null,
+  "truth": "miguia",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "people_s42_q6",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "samogu",
+  "v": "nufimo",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q7",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "zetiru",
+  "v": null,
+  "truth": "kamiti",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q8",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "zetiru",
+  "v": null,
+  "truth": "kaneia",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "people_s42_q9",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "zetiru",
+  "v": "guzemi",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q10",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "vovoka",
+  "v": null,
+  "truth": "kamiti",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q11",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "vovoka",
+  "v": null,
+  "truth": "kaneia",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "people_s42_q12",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "vovoka",
+  "v": "fivoru",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q13",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "fikigu",
+  "v": null,
+  "truth": "timilo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q14",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "fikigu",
+  "v": null,
+  "truth": "doneia",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "people_s42_q15",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "fikigu",
+  "v": "zelojo",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q16",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "mitiru",
+  "v": null,
+  "truth": "nekaze",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q17",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "mitiru",
+  "v": null,
+  "truth": "miguia",
+  "tag": "derived_only"
+ },
+ {
+  "id": "people_s42_q18",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "mitiru",
+  "v": "sahenu",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q19",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "modoru",
+  "v": null,
+  "truth": "guzemi",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q20",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "modoru",
+  "v": null,
+  "truth": "kizeia",
+  "tag": "derived_only"
+ },
+ {
+  "id": "people_s42_q21",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "modoru",
+  "v": "sahenu",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q22",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "tinuze",
+  "v": null,
+  "truth": "zejofi",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q23",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "tinuze",
+  "v": null,
+  "truth": "kazeia",
+  "tag": "derived_only"
+ },
+ {
+  "id": "people_s42_q24",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "tinuze",
+  "v": "timilo",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q25",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "mokiti",
+  "v": null,
+  "truth": "nufimo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q26",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "mokiti",
+  "v": null,
+  "truth": "kizeia",
+  "tag": "derived_only"
+ },
+ {
+  "id": "people_s42_q27",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "mokiti",
+  "v": "kasahe",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q28",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "hekanu",
+  "v": null,
+  "truth": "migune",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q29",
+  "sc": "ch",
+  "kind": "one",
+  "rel": "is from",
+  "x": "hekanu",
+  "v": null,
+  "truth": "miguia",
+  "tag": "derived_only"
+ },
+ {
+  "id": "people_s42_q30",
+  "sc": "ch",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "hekanu",
+  "v": "timodo",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q31",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "is from",
+  "x": "negulo",
+  "v": null,
+  "truth": "zekiia",
+  "tag": "stale_field"
+ },
+ {
+  "id": "people_s42_q32",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "negulo",
+  "v": null,
+  "truth": "sahenu",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q33",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "is from",
+  "x": "logulo",
+  "v": null,
+  "truth": "doneia",
+  "tag": "stale_field"
+ },
+ {
+  "id": "people_s42_q34",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "logulo",
+  "v": null,
+  "truth": "timilo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q35",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "is from",
+  "x": "tiruki",
+  "v": null,
+  "truth": "kizeia",
+  "tag": "stale_field"
+ },
+ {
+  "id": "people_s42_q36",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "tiruki",
+  "v": null,
+  "truth": "voranu",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q37",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "is from",
+  "x": "firamo",
+  "v": null,
+  "truth": "doneia",
+  "tag": "stale_field"
+ },
+ {
+  "id": "people_s42_q38",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "firamo",
+  "v": null,
+  "truth": "timilo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q39",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "is from",
+  "x": "lopafi",
+  "v": null,
+  "truth": "kazeia",
+  "tag": "stale_field"
+ },
+ {
+  "id": "people_s42_q40",
+  "sc": "stale",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "lopafi",
+  "v": null,
+  "truth": "ruvoki",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q41",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "is from",
+  "x": "pavoze",
+  "v": null,
+  "truth": "joraia",
+  "tag": "still_true"
+ },
+ {
+  "id": "people_s42_q42",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "pavoze",
+  "v": null,
+  "truth": "zelojo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q43",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "is from",
+  "x": "mokami",
+  "v": null,
+  "truth": "zekiia",
+  "tag": "still_true"
+ },
+ {
+  "id": "people_s42_q44",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "mokami",
+  "v": null,
+  "truth": "kinegu",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q45",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "is from",
+  "x": "doheze",
+  "v": null,
+  "truth": "kizeia",
+  "tag": "still_true"
+ },
+ {
+  "id": "people_s42_q46",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "doheze",
+  "v": null,
+  "truth": "nufimo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q47",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "is from",
+  "x": "dorujo",
+  "v": null,
+  "truth": "kizeia",
+  "tag": "still_true"
+ },
+ {
+  "id": "people_s42_q48",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "dorujo",
+  "v": null,
+  "truth": "nufimo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q49",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "is from",
+  "x": "jomobe",
+  "v": null,
+  "truth": "kazeia",
+  "tag": "still_true"
+ },
+ {
+  "id": "people_s42_q50",
+  "sc": "samereg",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "jomobe",
+  "v": null,
+  "truth": "ruvoki",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q51",
+  "sc": "multi",
+  "kind": "set",
+  "rel": "lives in",
+  "x": "kakijo",
+  "v": null,
+  "truth": [
+   "rabemi",
+   "safifi"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q52",
+  "sc": "multi",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "kakijo",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q53",
+  "sc": "multi",
+  "kind": "set",
+  "rel": "lives in",
+  "x": "gujohe",
+  "v": null,
+  "truth": [
+   "guzeki",
+   "volodo"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q54",
+  "sc": "multi",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "gujohe",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q55",
+  "sc": "multi",
+  "kind": "set",
+  "rel": "lives in",
+  "x": "rahesa",
+  "v": null,
+  "truth": [
+   "mikipa",
+   "vopami"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q56",
+  "sc": "multi",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "rahesa",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q57",
+  "sc": "multi",
+  "kind": "set",
+  "rel": "lives in",
+  "x": "lomigu",
+  "v": null,
+  "truth": [
+   "sahenu",
+   "voranu"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q58",
+  "sc": "multi",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "lomigu",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q59",
+  "sc": "multi",
+  "kind": "set",
+  "rel": "lives in",
+  "x": "losavo",
+  "v": null,
+  "truth": [
+   "kasahe",
+   "nekimi"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q60",
+  "sc": "multi",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "losavo",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q61",
+  "sc": "corr",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "karuka",
+  "v": null,
+  "truth": "timodo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q62",
+  "sc": "corr",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "karuka",
+  "v": "kizemo",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q63",
+  "sc": "corr",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "katibe",
+  "v": null,
+  "truth": "guzeki",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q64",
+  "sc": "corr",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "katibe",
+  "v": "sahenu",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q65",
+  "sc": "corr",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "dosado",
+  "v": null,
+  "truth": "guzeki",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q66",
+  "sc": "corr",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "dosado",
+  "v": "vonegu",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q67",
+  "sc": "corr",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "jokiki",
+  "v": null,
+  "truth": "nufimo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q68",
+  "sc": "corr",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "jokiki",
+  "v": "vopami",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q69",
+  "sc": "corr",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "tivodo",
+  "v": null,
+  "truth": "mikipa",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q70",
+  "sc": "corr",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "tivodo",
+  "v": "guzeki",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q71",
+  "sc": "src",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "mirafi",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q72",
+  "sc": "src",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "mirafi",
+  "v": null,
+  "truth": "voranu",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q73",
+  "sc": "src",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "mogufi",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q74",
+  "sc": "src",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "mogufi",
+  "v": null,
+  "truth": "tidone",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q75",
+  "sc": "src",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "dofine",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q76",
+  "sc": "src",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "dofine",
+  "v": null,
+  "truth": "timodo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q77",
+  "sc": "src",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "pagura",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q78",
+  "sc": "src",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "pagura",
+  "v": null,
+  "truth": "tidone",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q79",
+  "sc": "src",
+  "kind": "conflict",
+  "rel": "lives in",
+  "x": "nuraka",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q80",
+  "sc": "src",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "nuraka",
+  "v": null,
+  "truth": "tidone",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q81",
+  "sc": "compat",
+  "kind": "conflict",
+  "rel": "*",
+  "x": "mijohe",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q82",
+  "sc": "compat",
+  "kind": "has",
+  "rel": "knows",
+  "x": "mijohe",
+  "v": "lokihe",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q83",
+  "sc": "compat",
+  "kind": "conflict",
+  "rel": "*",
+  "x": "rafivo",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q84",
+  "sc": "compat",
+  "kind": "has",
+  "rel": "knows",
+  "x": "rafivo",
+  "v": "bekilo",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q85",
+  "sc": "compat",
+  "kind": "conflict",
+  "rel": "*",
+  "x": "pabeti",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q86",
+  "sc": "compat",
+  "kind": "has",
+  "rel": "knows",
+  "x": "pabeti",
+  "v": "kisaki",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q87",
+  "sc": "compat",
+  "kind": "conflict",
+  "rel": "*",
+  "x": "lobefi",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q88",
+  "sc": "compat",
+  "kind": "has",
+  "rel": "knows",
+  "x": "lobefi",
+  "v": "nejopa",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q89",
+  "sc": "compat",
+  "kind": "conflict",
+  "rel": "*",
+  "x": "kitihe",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q90",
+  "sc": "compat",
+  "kind": "has",
+  "rel": "knows",
+  "x": "kitihe",
+  "v": "bepavo",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q91",
+  "sc": "miss",
+  "kind": "one",
+  "rel": "is from",
+  "x": "nehefi",
+  "v": null,
+  "truth": "raneia",
+  "tag": "abstain_expected"
+ },
+ {
+  "id": "people_s42_q92",
+  "sc": "miss",
+  "kind": "one",
+  "rel": "is from",
+  "x": "pasati",
+  "v": null,
+  "truth": "gunuia",
+  "tag": "abstain_expected"
+ },
+ {
+  "id": "people_s42_q93",
+  "sc": "miss",
+  "kind": "one",
+  "rel": "is from",
+  "x": "mimomo",
+  "v": null,
+  "truth": "joraia",
+  "tag": "abstain_expected"
+ },
+ {
+  "id": "people_s42_q94",
+  "sc": "miss",
+  "kind": "one",
+  "rel": "is from",
+  "x": "sabefi",
+  "v": null,
+  "truth": "gunuia",
+  "tag": "abstain_expected"
+ },
+ {
+  "id": "people_s42_q95",
+  "sc": "miss",
+  "kind": "one",
+  "rel": "is from",
+  "x": "kaguhe",
+  "v": null,
+  "truth": "paheia",
+  "tag": "abstain_expected"
+ },
+ {
+  "id": "people_s42_q96",
+  "sc": "part1",
+  "kind": "one",
+  "rel": "works as",
+  "x": "palovo",
+  "v": null,
+  "truth": "miner",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q97",
+  "sc": "part1",
+  "kind": "one",
+  "rel": "works as",
+  "x": "guruhe",
+  "v": null,
+  "truth": "farmer",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q98",
+  "sc": "part1",
+  "kind": "one",
+  "rel": "works as",
+  "x": "kihenu",
+  "v": null,
+  "truth": "healer",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q99",
+  "sc": "part1",
+  "kind": "one",
+  "rel": "works as",
+  "x": "rujonu",
+  "v": null,
+  "truth": "merchant",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q100",
+  "sc": "part1",
+  "kind": "one",
+  "rel": "works as",
+  "x": "kirusa",
+  "v": null,
+  "truth": "scribe",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q101",
+  "sc": "part2",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "jojolo",
+  "v": null,
+  "truth": "zelojo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q102",
+  "sc": "part2",
+  "kind": "has",
+  "rel": "knows",
+  "x": "jojolo",
+  "v": "gumoti",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q103",
+  "sc": "part2",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "jokaka",
+  "v": null,
+  "truth": "sahenu",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q104",
+  "sc": "part2",
+  "kind": "has",
+  "rel": "knows",
+  "x": "jokaka",
+  "v": "pasamo",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q105",
+  "sc": "part2",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "fimimo",
+  "v": null,
+  "truth": "kinegu",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q106",
+  "sc": "part2",
+  "kind": "has",
+  "rel": "knows",
+  "x": "fimimo",
+  "v": "jomimo",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q107",
+  "sc": "part2",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "mohebe",
+  "v": null,
+  "truth": "timodo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q108",
+  "sc": "part2",
+  "kind": "has",
+  "rel": "knows",
+  "x": "mohebe",
+  "v": "bedovo",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q109",
+  "sc": "part2",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "rubelo",
+  "v": null,
+  "truth": "loneru",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q110",
+  "sc": "part2",
+  "kind": "has",
+  "rel": "knows",
+  "x": "rubelo",
+  "v": "nelopa",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q111",
+  "sc": "ooo",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "gukifi",
+  "v": null,
+  "truth": "nekimi",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q112",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "gukifi",
+  "v": "dozeru",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q113",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "gukifi",
+  "v": "timodo",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q114",
+  "sc": "ooo",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "zemimo",
+  "v": null,
+  "truth": "migune",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q115",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "zemimo",
+  "v": "mikipa",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q116",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "zemimo",
+  "v": "timodo",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q117",
+  "sc": "ooo",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "guhepa",
+  "v": null,
+  "truth": "guzeki",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q118",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "guhepa",
+  "v": "joruze",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q119",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "guhepa",
+  "v": "nusaki",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q120",
+  "sc": "ooo",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "firagu",
+  "v": null,
+  "truth": "fifinu",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q121",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "firagu",
+  "v": "fivoru",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q122",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "firagu",
+  "v": "joruze",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q123",
+  "sc": "ooo",
+  "kind": "one",
+  "rel": "lives in",
+  "x": "hesanu",
+  "v": null,
+  "truth": "nufimo",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q124",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "hesanu",
+  "v": "volodo",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q125",
+  "sc": "ooo",
+  "kind": "held",
+  "rel": "lives in",
+  "x": "hesanu",
+  "v": "vonegu",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q126",
+  "sc": "vol",
+  "kind": "set",
+  "rel": "volunteers at",
+  "x": "numipa",
+  "v": null,
+  "truth": [
+   "tibegu",
+   "volodo"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q127",
+  "sc": "vol",
+  "kind": "conflict",
+  "rel": "volunteers at",
+  "x": "numipa",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q128",
+  "sc": "vol",
+  "kind": "set",
+  "rel": "volunteers at",
+  "x": "lomibe",
+  "v": null,
+  "truth": [
+   "jomoze",
+   "kihevo"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q129",
+  "sc": "vol",
+  "kind": "conflict",
+  "rel": "volunteers at",
+  "x": "lomibe",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q130",
+  "sc": "vol",
+  "kind": "set",
+  "rel": "volunteers at",
+  "x": "guvovo",
+  "v": null,
+  "truth": [
+   "tibegu",
+   "tizemi"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q131",
+  "sc": "vol",
+  "kind": "conflict",
+  "rel": "volunteers at",
+  "x": "guvovo",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q132",
+  "sc": "vol",
+  "kind": "set",
+  "rel": "volunteers at",
+  "x": "vozesa",
+  "v": null,
+  "truth": [
+   "kihevo",
+   "tibegu"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q133",
+  "sc": "vol",
+  "kind": "conflict",
+  "rel": "volunteers at",
+  "x": "vozesa",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q134",
+  "sc": "vol",
+  "kind": "set",
+  "rel": "volunteers at",
+  "x": "fipagu",
+  "v": null,
+  "truth": [
+   "jomoze",
+   "tibegu"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "people_s42_q135",
+  "sc": "vol",
+  "kind": "conflict",
+  "rel": "volunteers at",
+  "x": "fipagu",
+  "v": null,
+  "truth": false,
+  "tag": ""
+ }
+]

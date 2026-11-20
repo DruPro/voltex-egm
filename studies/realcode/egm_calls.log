@@ -1,0 +1,93 @@
+1795128471 ASK InvalidURL is defined in ?
+1795128471 ASK Response_links is defined in ?
+1795128471 ASK stream_decode_response_unicode is defined in ?
+1795128471 ASK unquote_header_value is defined in ?
+1795128471 ASK HTTPDigestAuth_init_per_thread_state is defined in ?
+1795128471 ASK RequestHooksMixin_register_hook is defined in ?
+1795128471 ASK dispatch_hook is defined in ?
+1795128471 ASK resolve_proxies is defined in ?
+1795128471 ASK ? calls should_bypass_proxies
+1795128471 ASK ? calls extract_cookies_to_jar
+1795128471 ASK ? calls HTTPAdapter_init_poolmanager
+1795128471 ASK ? calls get_netrc_auth
+1795128471 ASK ? calls HTTPDigestAuth_build_digest_header
+1795128471 ASK ? calls MockRequest_get_host
+1795128471 ASK ? calls Response_iter_content
+1795128471 ASK ? calls select_proxy
+1795128471 ASK ? calls requote_uri
+1795128471 ASK ? calls _basic_auth_str
+1795128471 ASK ? calls to_native_string
+1795128471 ASK ? calls get_encoding_from_headers
+1795128472 ASK Response___iter__ raises ?
+1795128472 ASK Response___iter__ calls ?
+1795128472 ASK Request___init__ raises ?
+1795128472 ASK Request___init__ calls ?
+1795128472 ASK Response_iter_lines raises ?
+1795128472 ASK Response_iter_lines calls ?
+1795128472 ASK RequestsCookieJar_get raises ?
+1795128472 ASK RequestsCookieJar_get calls ?
+1795128472 ASK Response_content raises ?
+1795128472 ASK Response_content calls ?
+1795128472 ASK Session_send raises ?
+1795128472 ASK Session_send calls ?
+1795128472 ASK JSONDecodeError inherits from ?
+1795128472 ASK UnrewindableBodyError inherits from ?
+1795128472 ASK RequestsDependencyWarning inherits from ?
+1795128472 ASK Timeout inherits from ?
+1795128472 ASK ConnectionError inherits from ?
+1795128472 ASK status_codes imports ?
+1795128472 ASK cookies imports ?
+1795128472 ASK _internal_utils imports ?
+1795128472 ASK models imports ?
+1795128472 ASK sessions imports ?
+1795128477 ASK Response_iter_content raises ?
+1795128477 ASK Response_iter_content calls ?
+1795128477 ASK default_hooks raises ?
+1795128477 ASK default_hooks calls ?
+1795128477 ASK RequestHooksMixin_register_hook raises ?
+1795128477 ASK RequestHooksMixin_register_hook calls ?
+1795128477 ASK RequestsCookieJar__find_no_duplicates raises ?
+1795128477 ASK RequestsCookieJar__find_no_duplicates calls ?
+1795128477 ASK Session_get_adapter raises ?
+1795128477 ASK Session_get_adapter calls ?
+1795128477 ASK SessionRedirectMixin_resolve_redirects raises ?
+1795128477 ASK SessionRedirectMixin_resolve_redirects calls ?
+1795128477 ASK extract_cookies_to_jar raises ?
+1795128477 ASK extract_cookies_to_jar calls ?
+1795128477 ASK dispatch_hook raises ?
+1795128477 ASK dispatch_hook calls ?
+1795128477 ASK resolve_proxies raises ?
+1795128477 ASK resolve_proxies calls ?
+1795128477 ASK InvalidJSONError inherits from ?
+1795128477 ASK CompatJSONDecodeError inherits from ?
+1795128477 ASK RequestException inherits from ?
+1795128477 ASK RequestsWarning inherits from ?
+1795128478 ASK PreparedRequest_prepare_url is defined in ?
+1795128478 ASK SessionRedirectMixin_resolve_redirects is defined in ?
+1795128478 ASK HTTPAdapter_proxy_headers is defined in ?
+1795128478 ASK HTTPBasicAuth___call__ is defined in ?
+1795128478 ASK HTTPProxyAuth___call__ is defined in ?
+1795128478 ASK SessionRedirectMixin_rebuild_proxies is defined in ?
+1795128478 ASK _basic_auth_str is defined in ?
+1795128478 ASK HTTPAdapter_build_response is defined in ?
+1795128478 ASK get_unicode_from_response is defined in ?
+1795128478 ASK MockRequest_get_full_url is defined in ?
+1795128478 ASK PreparedRequest_prepare_method is defined in ?
+1795128478 ASK PreparedRequest_prepare_headers is defined in ?
+1795128478 ASK SessionRedirectMixin_get_redirect_target is defined in ?
+1795128478 ASK get_environ_proxies is defined in ?
+1795128478 ASK HTTPAdapter_get_connection_with_tls_context is defined in ?
+1795128478 ASK HTTPAdapter_get_connection is defined in ?
+1795128478 ASK HTTPAdapter_request_url is defined in ?
+1795128478 ASK HTTPDigestAuth_handle_401 is defined in ?
+1795128478 ASK HTTPDigestAuth___call__ is defined in ?
+1795128478 ASK SessionRedirectMixin_rebuild_auth is defined in ?
+1795128478 ASK Session_prepare_request is defined in ?
+1795128478 ASK HTTPAdapter___init__ is defined in ?
+1795128478 ASK HTTPAdapter___setstate__ is defined in ?
+1795128478 ASK Response___iter__ is defined in ?
+1795128478 ASK Response_iter_lines is defined in ?
+1795128478 ASK Response_content is defined in ?
+1795128478 ASK MockRequest_get_origin_req_host is defined in ?
+1795128478 ASK MockRequest_host is defined in ?
+1795128478 ASK to_native_string is defined in ?

@@ -1,0 +1,11 @@
+{
+ "samples": 400,
+ "valid": 0.655,
+ "valid_and_novel": 0.357,
+ "uses_heldout_pair": 0.04,
+ "example": [
+  "the broken vase under the harbor.",
+  "the green chair glows under the market.",
+  "ivo hides in the attic."
+ ]
+}

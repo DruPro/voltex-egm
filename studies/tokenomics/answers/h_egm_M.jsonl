@@ -1,0 +1,36 @@
+{"id": "q1", "answer": "requests__exceptions"}
+{"id": "q2", "answer": "requests__models"}
+{"id": "q3", "answer": "requests__cookies"}
+{"id": "q4", "answer": "requests__utils"}
+{"id": "q5", "answer": "requests__auth"}
+{"id": "q6", "answer": "requests__models"}
+{"id": "q7", "answer": "requests__utils"}
+{"id": "q8", "answer": "requests__utils"}
+{"id": "q9", "answer": ["requests__get_environ_proxies", "requests__resolve_proxies"]}
+{"id": "q10", "answer": ["requests__HTTPAdapter_build_response", "requests__HTTPDigestAuth_handle_401", "requests__SessionRedirectMixin_resolve_redirects", "requests__Session_send"]}
+{"id": "q11", "answer": ["requests__HTTPAdapter___init__", "requests__HTTPAdapter___setstate__"]}
+{"id": "q12", "answer": ["requests__SessionRedirectMixin_rebuild_auth", "requests__Session_prepare_request"]}
+{"id": "q13", "answer": ["requests__HTTPDigestAuth___call__", "requests__HTTPDigestAuth_handle_401"]}
+{"id": "q14", "answer": ["requests__MockRequest_get_origin_req_host", "requests__MockRequest_host"]}
+{"id": "q15", "answer": ["requests__Response___iter__", "requests__Response_content", "requests__Response_iter_lines"]}
+{"id": "q16", "answer": ["requests__HTTPAdapter_get_connection", "requests__HTTPAdapter_get_connection_with_tls_context", "requests__HTTPAdapter_request_url"]}
+{"id": "q17", "answer": ["requests__models", "requests__sessions"]}
+{"id": "q18", "answer": ["requests__adapters", "requests__auth", "requests__sessions"]}
+{"id": "q19", "answer": ["requests__cookies", "requests__models", "requests__sessions", "requests__auth"]}
+{"id": "q20", "answer": ["requests__adapters", "requests__utils"]}
+{"id": "q21", "answer": ["requests__ChunkedEncodingError", "requests__ConnectionError", "requests__ContentDecodingError", "requests__StreamConsumedError", "TypeError"]}
+{"id": "q22", "answer": ["ValueError"]}
+{"id": "q23", "answer": ["requests__ChunkedEncodingError", "requests__ConnectionError", "requests__ContentDecodingError", "requests__StreamConsumedError", "TypeError"]}
+{"id": "q24", "answer": ["requests__CookieConflictError", "KeyError"]}
+{"id": "q25", "answer": ["RuntimeError", "requests__ChunkedEncodingError", "requests__ConnectionError", "requests__ContentDecodingError", "requests__StreamConsumedError", "TypeError"]}
+{"id": "q26", "answer": ["ValueError", "requests__TooManyRedirects", "requests__InvalidSchema"]}
+{"id": "q27", "answer": ["requests__RequestException"]}
+{"id": "q28", "answer": ["IOError"]}
+{"id": "q29", "answer": ["Warning"]}
+{"id": "q30", "answer": ["IOError"]}
+{"id": "q31", "answer": ["IOError"]}
+{"id": "q32", "answer": ["requests__structures"]}
+{"id": "q33", "answer": ["requests__compat"]}
+{"id": "q34", "answer": ["requests__auth", "requests__structures", "requests__exceptions", "requests__cookies", "requests__models", "requests__utils", "requests__compat"]}
+{"id": "q35", "answer": ["requests__auth", "requests__structures", "requests__exceptions", "requests__cookies", "requests__status_codes", "requests__utils", "requests__compat", "requests__hooks", "requests___internal_utils"]}
+{"id": "q36", "answer": ["requests__auth", "requests__adapters", "requests__structures", "requests__exceptions", "requests__cookies", "requests__models", "requests__status_codes", "requests__utils", "requests__compat", "requests__hooks", "requests___internal_utils"]}

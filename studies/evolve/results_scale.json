@@ -1,0 +1,662 @@
+[
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 4.47,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 7.82,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 0.31,
+  "status": "ok",
+  "update_cmds": 430
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 0.34,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 0.37,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "A",
+  "seconds": 7.53,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "B",
+  "seconds": 7.67,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "C",
+  "seconds": 7.57,
+  "status": "ok",
+  "update_cmds": 479
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "D",
+  "seconds": 8.35,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 1,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "P",
+  "seconds": 11.18,
+  "status": "ok",
+  "update_cmds": 250
+ },
+ {
+  "scale": 1,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 13.27,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 1,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 158.21,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 1,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 0.32,
+  "status": "ok",
+  "update_cmds": 1634
+ },
+ {
+  "scale": 1,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 0.38,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 1,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 0.47,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 1,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 36.33,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 1,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 68.9,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 1,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 0.3,
+  "status": "ok",
+  "update_cmds": 6651
+ },
+ {
+  "scale": 1,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 0.25,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 1,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 0.24,
+  "status": "ok",
+  "update_cmds": 3201
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 13.4,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 21.12,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 0.73,
+  "status": "ok",
+  "update_cmds": 381
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 0.88,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 0.92,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "A",
+  "seconds": 19.76,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "B",
+  "seconds": 20.83,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "C",
+  "seconds": 17.83,
+  "status": "ok",
+  "update_cmds": 430
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "D",
+  "seconds": 22.73,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 2,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "P",
+  "seconds": 26.6,
+  "status": "ok",
+  "update_cmds": 250
+ },
+ {
+  "scale": 2,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 46.18,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 2,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 81.01,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 2,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 0.77,
+  "status": "ok",
+  "update_cmds": 1674
+ },
+ {
+  "scale": 2,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 0.85,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 2,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 0.92,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 2,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 148.82,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 2,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 292.19,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 2,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 0.74,
+  "status": "ok",
+  "update_cmds": 6833
+ },
+ {
+  "scale": 2,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 0.71,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 2,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 0.72,
+  "status": "ok",
+  "update_cmds": 3201
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 33.15,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 48.05,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 1.67,
+  "status": "ok",
+  "update_cmds": 373
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 2.18,
+  "status": "ok",
+  "update_cmds": 51
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 2.11,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "A",
+  "seconds": 46.86,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "B",
+  "seconds": 48.14,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "C",
+  "seconds": 43.71,
+  "status": "ok",
+  "update_cmds": 422
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "D",
+  "seconds": 55.43,
+  "status": "ok",
+  "update_cmds": 100
+ },
+ {
+  "scale": 4,
+  "updates": 50,
+  "mode": "interactive",
+  "cond": "P",
+  "seconds": 62.58,
+  "status": "ok",
+  "update_cmds": 250
+ },
+ {
+  "scale": 4,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 130.26,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 4,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 191.26,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 4,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 1.84,
+  "status": "ok",
+  "update_cmds": 1584
+ },
+ {
+  "scale": 4,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 2.13,
+  "status": "ok",
+  "update_cmds": 201
+ },
+ {
+  "scale": 4,
+  "updates": 200,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 2.12,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 4,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "A",
+  "seconds": 458.21,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 4,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "B",
+  "seconds": 776.76,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 4,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "C",
+  "seconds": 1.88,
+  "status": "ok",
+  "update_cmds": 6595
+ },
+ {
+  "scale": 4,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "D",
+  "seconds": 2.09,
+  "status": "ok",
+  "update_cmds": 801
+ },
+ {
+  "scale": 4,
+  "updates": 800,
+  "mode": "batch",
+  "cond": "P",
+  "seconds": 2.02,
+  "status": "ok",
+  "update_cmds": 3201
+ },
+ {
+  "scale": 1,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "A",
+  "seconds": 0.15,
+  "status": "ok"
+ },
+ {
+  "scale": 1,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "B",
+  "seconds": 0.16,
+  "status": "ok"
+ },
+ {
+  "scale": 1,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "C",
+  "seconds": 0.16,
+  "status": "ok"
+ },
+ {
+  "scale": 1,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "D",
+  "seconds": 0.18,
+  "status": "ok"
+ },
+ {
+  "scale": 1,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "P",
+  "seconds": 0.17,
+  "status": "ok"
+ },
+ {
+  "scale": 2,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "A",
+  "seconds": 0.41,
+  "status": "ok"
+ },
+ {
+  "scale": 2,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "B",
+  "seconds": 0.42,
+  "status": "ok"
+ },
+ {
+  "scale": 2,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "C",
+  "seconds": 0.39,
+  "status": "ok"
+ },
+ {
+  "scale": 2,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "D",
+  "seconds": 0.45,
+  "status": "ok"
+ },
+ {
+  "scale": 2,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "P",
+  "seconds": 0.39,
+  "status": "ok"
+ },
+ {
+  "scale": 4,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "A",
+  "seconds": 0.93,
+  "status": "ok"
+ },
+ {
+  "scale": 4,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "B",
+  "seconds": 0.98,
+  "status": "ok"
+ },
+ {
+  "scale": 4,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "C",
+  "seconds": 0.93,
+  "status": "ok"
+ },
+ {
+  "scale": 4,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "D",
+  "seconds": 1.04,
+  "status": "ok"
+ },
+ {
+  "scale": 4,
+  "updates": 0,
+  "mode": "base_only",
+  "cond": "P",
+  "seconds": 0.93,
+  "status": "ok"
+ }
+]

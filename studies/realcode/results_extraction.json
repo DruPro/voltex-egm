@@ -1,0 +1,37 @@
+{
+ "defined in": {
+  "truth": 273,
+  "extracted": 276,
+  "correct": 273,
+  "precision": 0.989,
+  "recall": 1.0
+ },
+ "calls": {
+  "truth": 165,
+  "extracted": 170,
+  "correct": 165,
+  "precision": 0.971,
+  "recall": 1.0
+ },
+ "raises": {
+  "truth": 45,
+  "extracted": 48,
+  "correct": 45,
+  "precision": 0.938,
+  "recall": 1.0
+ },
+ "inherits from": {
+  "truth": 47,
+  "extracted": 47,
+  "correct": 47,
+  "precision": 1.0,
+  "recall": 1.0
+ },
+ "imports": {
+  "truth": 55,
+  "extracted": 55,
+  "correct": 55,
+  "precision": 1.0,
+  "recall": 1.0
+ }
+}

@@ -1,0 +1,28 @@
+[RELATIONS] 7 two-argument templates
+  #0  ? assigned to ?                427 facts
+  #1  ? works in ?                   225 facts
+  #2  ? reports to ?                 113 facts
+  #3  ? belongs to ?                 65 facts
+  #4  ? serves ?                     30 facts
+  #5  ? is part of ?                 15 facts
+  #6  ? is managed by ?              14 facts
+[COVERAGE] estimated observation completeness: global -1.00 |
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT [? works in ?](a,b) & [? is managed by ?](b,c) => [? reports to ?](a,c) n=193 k=95 rate=0.49 lift=7.4 | where answer known: 97, agree=0.98 | cov=-1.00 rel=0.98 tier=law
+  ACCEPT [? works in ?](a,b) & [? is part of ?](b,c) => [? belongs to ?](a,c) n=193 k=57 rate=0.30 lift=1.2 | where answer known: 57, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  pajolo works in vododept         stated (per hr)
+  pajolo works in gunudept         historical: held per hr from t=1 until t=2
+  pajolo works in dosadept         historical: held per hr from t=2 until t=3
+  zerabe works in tidodept         stated (per hr)
+  zerabe works in rudodept         corrected: never held per hr (t=1 revision 1 replaced by revision 2)
+  logupa works in tidodept         stated, SOURCES DISAGREE: hr says tidodept; payroll says sapadept
+  logupa works in sapadept         stated, SOURCES DISAGREE: hr says tidodept; payroll says sapadept
+  sapahe works in fikadept         stated (per hr)
+  sapahe works in dobedept         historical: held per hr from t=1 until t=2
+  sapahe reports to beruti         inferred [law] (score 1.00) because sapahe works in fikadept + fikadept is managed by beruti  [rule: [? works in ?](a,b) & [? is managed by ?](b,c) => [? reports to ?](a,c)]  (1 of 1 paths agree)
+[CONFLICTS] 5 stated facts contradict what the rules infer
+CONFLICT	hetido	-	SOURCES DISAGREE: hr says kihedept; payroll says zenudept | relation: works in
+CONFLICT	logupa	-	SOURCES DISAGREE: hr says tidodept; payroll says sapadept | relation: works in
+CONFLICT	mivoti	-	SOURCES DISAGREE: hr says tidodept; payroll says dosadept | relation: works in
+CONFLICT	nudobe	-	SOURCES DISAGREE: payroll says rudodept; hr says fikadept | relation: works in
+CONFLICT	paguhe	-	SOURCES DISAGREE: hr says pafidept; payroll says fikadept | relation: works in

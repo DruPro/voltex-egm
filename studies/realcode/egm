@@ -1,0 +1,9 @@
+#!/bin/bash
+# EGM query tool for the solver agent: only ASK queries over the extracted facts; every call is logged.
+q="$*"
+case "$q" in
+  ASK\ *) ;;
+  *) echo "Only ASK queries are allowed. Examples: egm ASK ? calls select_proxy   |   egm ASK Session_send raises ?"; exit 1;;
+esac
+echo "$(date +%s) $q" >> /home/claude/work/realcode/egm_calls.log
+printf "INGESTFILE /home/claude/work/realcode/public/facts.txt\n%s\nEXIT\n" "$q" | /home/claude/work/egm22/voltex2 | grep -v "^\[INGEST\]" | head -60

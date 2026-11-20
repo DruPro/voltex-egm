@@ -1,0 +1,492 @@
+[
+ {
+  "id": "code_s42_q1",
+  "sc": "code_move",
+  "kind": "one",
+  "rel": "is defined in",
+  "x": "pamopa",
+  "v": null,
+  "truth": "vomomod",
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q2",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "fibebe",
+  "v": "vomomod",
+  "truth": true,
+  "tag": "new_dep"
+ },
+ {
+  "id": "code_s42_q3",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "fibebe",
+  "v": "zesamod",
+  "truth": false,
+  "tag": "derived_only"
+ },
+ {
+  "id": "code_s42_q4",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "lojobe",
+  "v": "vomomod",
+  "truth": true,
+  "tag": "new_dep"
+ },
+ {
+  "id": "code_s42_q5",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "lojobe",
+  "v": "zesamod",
+  "truth": false,
+  "tag": "stale_manifest"
+ },
+ {
+  "id": "code_s42_q6",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "nunudo",
+  "v": "vomomod",
+  "truth": true,
+  "tag": "new_dep"
+ },
+ {
+  "id": "code_s42_q7",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "nunudo",
+  "v": "zesamod",
+  "truth": false,
+  "tag": "derived_only"
+ },
+ {
+  "id": "code_s42_q8",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "mozehe",
+  "v": "vomomod",
+  "truth": true,
+  "tag": "new_dep"
+ },
+ {
+  "id": "code_s42_q9",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "mozehe",
+  "v": "zesamod",
+  "truth": false,
+  "tag": "stale_manifest"
+ },
+ {
+  "id": "code_s42_q10",
+  "sc": "code_move",
+  "kind": "one",
+  "rel": "is defined in",
+  "x": "rafiru",
+  "v": null,
+  "truth": "hevomod",
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q11",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "lorapa",
+  "v": "hevomod",
+  "truth": true,
+  "tag": "new_dep"
+ },
+ {
+  "id": "code_s42_q12",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "lorapa",
+  "v": "kijomod",
+  "truth": false,
+  "tag": "derived_only"
+ },
+ {
+  "id": "code_s42_q13",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "fitinu",
+  "v": "hevomod",
+  "truth": true,
+  "tag": "new_dep"
+ },
+ {
+  "id": "code_s42_q14",
+  "sc": "code_move",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "fitinu",
+  "v": "kijomod",
+  "truth": false,
+  "tag": "derived_only"
+ },
+ {
+  "id": "code_s42_q15",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "vonemi",
+  "v": "nujomod",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q16",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "calls",
+  "x": "vonemi",
+  "v": "kimira",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q17",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "miloki",
+  "v": "zesamod",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q18",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "calls",
+  "x": "miloki",
+  "v": "zejoze",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q19",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "pakati",
+  "v": "hevomod",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q20",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "calls",
+  "x": "pakati",
+  "v": "guloka",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q21",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "heguhe",
+  "v": "zesamod",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q22",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "calls",
+  "x": "heguhe",
+  "v": "tikido",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q23",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "sapami",
+  "v": "kimimod",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q24",
+  "sc": "code_keep",
+  "kind": "has",
+  "rel": "calls",
+  "x": "sapami",
+  "v": "razesa",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q25",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "rutine",
+  "v": "zesamod",
+  "truth": false,
+  "tag": "derived_only"
+ },
+ {
+  "id": "code_s42_q26",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "calls",
+  "x": "rutine",
+  "v": "lomobe",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q27",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "zefiti",
+  "v": "hevomod",
+  "truth": false,
+  "tag": "derived_only"
+ },
+ {
+  "id": "code_s42_q28",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "calls",
+  "x": "zefiti",
+  "v": "jogufi",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q29",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "tisagu",
+  "v": "dodomod",
+  "truth": false,
+  "tag": "derived_only"
+ },
+ {
+  "id": "code_s42_q30",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "calls",
+  "x": "tisagu",
+  "v": "kapanu",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q31",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "sakamo",
+  "v": "kijomod",
+  "truth": false,
+  "tag": "derived_only"
+ },
+ {
+  "id": "code_s42_q32",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "calls",
+  "x": "sakamo",
+  "v": "nufimo",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q33",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "dogupa",
+  "v": "zesamod",
+  "truth": false,
+  "tag": "manifest_updated"
+ },
+ {
+  "id": "code_s42_q34",
+  "sc": "code_drop",
+  "kind": "has",
+  "rel": "calls",
+  "x": "dogupa",
+  "v": "pamoki",
+  "truth": false,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q35",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "loheki",
+  "v": "nelomod",
+  "truth": true,
+  "tag": "new_relationship"
+ },
+ {
+  "id": "code_s42_q36",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "calls",
+  "x": "loheki",
+  "v": "kipaze",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q37",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "joneka",
+  "v": "nelomod",
+  "truth": true,
+  "tag": "new_relationship"
+ },
+ {
+  "id": "code_s42_q38",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "calls",
+  "x": "joneka",
+  "v": "nurapa",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q39",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "henumo",
+  "v": "nelomod",
+  "truth": true,
+  "tag": "new_relationship"
+ },
+ {
+  "id": "code_s42_q40",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "calls",
+  "x": "henumo",
+  "v": "moguka",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q41",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "negura",
+  "v": "nelomod",
+  "truth": true,
+  "tag": "new_relationship"
+ },
+ {
+  "id": "code_s42_q42",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "calls",
+  "x": "negura",
+  "v": "zerafi",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q43",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "depends on",
+  "x": "vomibe",
+  "v": "nelomod",
+  "truth": true,
+  "tag": "new_relationship"
+ },
+ {
+  "id": "code_s42_q44",
+  "sc": "code_add",
+  "kind": "has",
+  "rel": "calls",
+  "x": "vomibe",
+  "v": "hedofi",
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q45",
+  "sc": "code_ooo",
+  "kind": "one",
+  "rel": "is defined in",
+  "x": "hekize",
+  "v": null,
+  "truth": "dodomod",
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q46",
+  "sc": "code_ooo",
+  "kind": "one",
+  "rel": "is defined in",
+  "x": "fivoti",
+  "v": null,
+  "truth": "sasamod",
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q47",
+  "sc": "code_ooo",
+  "kind": "one",
+  "rel": "is defined in",
+  "x": "dosamo",
+  "v": null,
+  "truth": "kijomod",
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q48",
+  "sc": "code_ooo",
+  "kind": "one",
+  "rel": "is defined in",
+  "x": "tizelo",
+  "v": null,
+  "truth": "hevomod",
+  "tag": ""
+ },
+ {
+  "id": "code_s42_q49",
+  "sc": "code_ooo",
+  "kind": "one",
+  "rel": "is defined in",
+  "x": "kimira",
+  "v": null,
+  "truth": "hevomod",
+  "tag": ""
+ }
+]

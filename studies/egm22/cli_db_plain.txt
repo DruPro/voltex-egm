@@ -1,0 +1,24 @@
+[RELATIONS] 7 two-argument templates
+  #0  ? assigned to ?                432 facts
+  #1  ? works in ?                   245 facts
+  #2  ? reports to ?                 126 facts
+  #3  ? belongs to ?                 66 facts
+  #4  ? serves ?                     30 facts
+  #5  ? is managed by ?              15 facts
+  #6  ? is part of ?                 15 facts
+[COVERAGE] estimated observation completeness: global -1.00 |
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT [? works in ?](a,b) & [? is managed by ?](b,c) => [? reports to ?](a,c) n=245 k=126 rate=0.51 lift=6.9 | where answer known: 128, agree=0.98 | cov=-1.00 rel=0.51 tier=tendency
+  ACCEPT [? works in ?](a,b) & [? is part of ?](b,c) => [? belongs to ?](a,c) n=245 k=68 rate=0.28 lift=1.1 | where answer known: 68, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  pajolo works in vododept         stated
+  pajolo works in dosadept         stated
+  pajolo works in gunudept         stated
+  zerabe works in tidodept         stated
+  zerabe works in rudodept         stated
+  logupa works in tidodept         stated
+  logupa works in sapadept         stated
+  sapahe works in dobedept         stated
+  sapahe works in fikadept         stated
+  sapahe reports to jodoze         inferred [tendency] (score 0.98) because sapahe works in dobedept + dobedept is managed by jodoze  [rule: [? works in ?](a,b) & [? is managed by ?](b,c) => [? reports to ?](a,c)]
+  sapahe reports to beruti         inferred [tendency] (score 0.98) because sapahe works in fikadept + fikadept is managed by beruti  [rule: [? works in ?](a,b) & [? is managed by ?](b,c) => [? reports to ?](a,c)]
+[CONFLICTS] 0 stated facts contradict what the rules infer

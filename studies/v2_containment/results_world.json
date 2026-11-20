@@ -1,0 +1,65 @@
+[
+ {
+  "rate_min": 0.1,
+  "accepted_rules": 5,
+  "derived": 7169,
+  "precision": 0.046,
+  "recall_heldout_is_in": 1.0,
+  "recall_heldout_contains": 1.0,
+  "knows_derived(false)": 0
+ },
+ {
+  "rate_min": 0.2,
+  "accepted_rules": 4,
+  "derived": 2630,
+  "precision": 0.125,
+  "recall_heldout_is_in": 1.0,
+  "recall_heldout_contains": 1.0,
+  "knows_derived(false)": 0
+ },
+ {
+  "rate_min": 0.3,
+  "accepted_rules": 3,
+  "derived": 90,
+  "precision": 1.0,
+  "recall_heldout_is_in": 1.0,
+  "recall_heldout_contains": 0.0,
+  "knows_derived(false)": 0
+ },
+ {
+  "rate_min": 0.4,
+  "accepted_rules": 3,
+  "derived": 90,
+  "precision": 1.0,
+  "recall_heldout_is_in": 1.0,
+  "recall_heldout_contains": 0.0,
+  "knows_derived(false)": 0
+ },
+ {
+  "rate_min": 0.5,
+  "accepted_rules": 2,
+  "derived": 9,
+  "precision": 1.0,
+  "recall_heldout_is_in": 0.1,
+  "recall_heldout_contains": 0.0,
+  "knows_derived(false)": 0
+ },
+ {
+  "rate_min": 0.6,
+  "accepted_rules": 2,
+  "derived": 9,
+  "precision": 1.0,
+  "recall_heldout_is_in": 0.1,
+  "recall_heldout_contains": 0.0,
+  "knows_derived(false)": 0
+ },
+ {
+  "rate_min": 0.8,
+  "accepted_rules": 1,
+  "derived": 0,
+  "precision": null,
+  "recall_heldout_is_in": 0.0,
+  "recall_heldout_contains": 0.0,
+  "knows_derived(false)": 0
+ }
+]

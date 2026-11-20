@@ -1,0 +1,68 @@
+1795138741 ASK requests__InvalidURL is defined in ?
+1795138741 ASK requests__Response_links is defined in ?
+1795138742 ASK requests__remove_cookie_by_name is defined in ?
+1795138742 ASK requests__select_proxy is defined in ?
+1795138743 ASK requests__HTTPDigestAuth_init_per_thread_state is defined in ?
+1795138744 ASK requests__RequestHooksMixin_register_hook is defined in ?
+1795138744 ASK requests__check_header_validity is defined in ?
+1795138745 ASK requests__parse_header_links is defined in ?
+1795138745 ASK ? calls requests__should_bypass_proxies
+1795138746 ASK ? calls requests__extract_cookies_to_jar
+1795138747 ASK ? calls requests__HTTPAdapter_init_poolmanager
+1795138747 ASK ? calls requests__get_netrc_auth
+1795138748 ASK ? calls requests__HTTPDigestAuth_build_digest_header
+1795138748 ASK ? calls requests__MockRequest_get_host
+1795138749 ASK ? calls requests__Response_iter_content
+1795138749 ASK ? calls requests__select_proxy
+1795138750 ASK ? calls requests__requote_uri
+1795138751 ASK ? calls requests___basic_auth_str
+1795138751 ASK ? calls requests__to_native_string
+1795138752 ASK ? calls requests__get_encoding_from_headers
+1795138752 ASK requests__Response___iter__ calls ?
+1795138753 ASK requests__Response___iter__ raises ?
+1795138754 ASK requests__Request___init__ calls ?
+1795138754 ASK requests__Request___init__ raises ?
+1795138755 ASK requests__Response_iter_lines calls ?
+1795138755 ASK requests__Response_iter_lines raises ?
+1795138756 ASK requests__RequestsCookieJar_get calls ?
+1795138756 ASK requests__RequestsCookieJar_get raises ?
+1795138757 ASK requests__Response_content calls ?
+1795138758 ASK requests__Response_content raises ?
+1795138758 ASK requests__Session_send calls ?
+1795138759 ASK requests__Session_send raises ?
+1795138759 ASK requests__JSONDecodeError inherits from ?
+1795138760 ASK requests__UnrewindableBodyError inherits from ?
+1795138760 ASK requests__RequestsDependencyWarning inherits from ?
+1795138761 ASK requests__Timeout inherits from ?
+1795138762 ASK requests__ConnectionError inherits from ?
+1795138762 ASK requests__status_codes imports ?
+1795138763 ASK requests__exceptions imports ?
+1795138763 ASK requests__adapters imports ?
+1795138764 ASK requests__models imports ?
+1795138765 ASK requests__sessions imports ?
+1795138784 ASK requests__PreparedRequest_prepare_url is defined in ?
+1795138784 ASK requests__SessionRedirectMixin_resolve_redirects is defined in ?
+1795138785 ASK requests__HTTPAdapter_proxy_headers is defined in ?
+1795138785 ASK requests__HTTPBasicAuth___call__ is defined in ?
+1795138786 ASK requests__HTTPProxyAuth___call__ is defined in ?
+1795138786 ASK requests__SessionRedirectMixin_rebuild_proxies is defined in ?
+1795138787 ASK requests__MockRequest_get_full_url is defined in ?
+1795138788 ASK requests__PreparedRequest_prepare_headers is defined in ?
+1795138788 ASK requests__PreparedRequest_prepare_method is defined in ?
+1795138789 ASK requests__SessionRedirectMixin_get_redirect_target is defined in ?
+1795138789 ASK requests___basic_auth_str is defined in ?
+1795138790 ASK requests__HTTPAdapter_build_response is defined in ?
+1795138790 ASK requests__get_unicode_from_response is defined in ?
+1795138791 ASK requests__Response_iter_content raises ?
+1795138792 ASK requests__RequestHooksMixin_register_hook raises ?
+1795138792 ASK requests__default_hooks raises ?
+1795138793 ASK requests__RequestsCookieJar__find_no_duplicates raises ?
+1795138793 ASK requests__SessionRedirectMixin_resolve_redirects raises ?
+1795138794 ASK requests__Session_get_adapter raises ?
+1795138795 ASK requests__dispatch_hook raises ?
+1795138795 ASK requests__extract_cookies_to_jar raises ?
+1795138796 ASK requests__resolve_proxies raises ?
+1795138796 ASK requests__InvalidJSONError inherits from ?
+1795138797 ASK CompatJSONDecodeError inherits from ?
+1795138798 ASK requests__RequestException inherits from ?
+1795138798 ASK requests__RequestsWarning inherits from ?

@@ -1,0 +1,82 @@
+[
+ {
+  "id": "r01",
+  "question": "List all ancestors of finugu (comma-separated names)."
+ },
+ {
+  "id": "r02",
+  "question": "List all ancestors of jokihe (comma-separated names)."
+ },
+ {
+  "id": "r03",
+  "question": "List all ancestors of nukivo (comma-separated names)."
+ },
+ {
+  "id": "r04",
+  "question": "List all ancestors of lotigu (comma-separated names)."
+ },
+ {
+  "id": "r05",
+  "question": "List all ancestors of zehemi (comma-separated names)."
+ },
+ {
+  "id": "r06",
+  "question": "List all siblings of rukisa (comma-separated names)."
+ },
+ {
+  "id": "r07",
+  "question": "List all siblings of saneki (comma-separated names)."
+ },
+ {
+  "id": "r08",
+  "question": "List all siblings of fihesa (comma-separated names)."
+ },
+ {
+  "id": "r09",
+  "question": "List all siblings of besane (comma-separated names)."
+ },
+ {
+  "id": "r10",
+  "question": "List all siblings of mojopa (comma-separated names)."
+ },
+ {
+  "id": "r11",
+  "question": "List everyone who is from padoia (comma-separated names)."
+ },
+ {
+  "id": "r12",
+  "question": "List everyone who is from paheia (comma-separated names)."
+ },
+ {
+  "id": "r13",
+  "question": "List everyone who is from ramoia (comma-separated names)."
+ },
+ {
+  "id": "r14",
+  "question": "List everyone who is from vokaia (comma-separated names)."
+ },
+ {
+  "id": "r15",
+  "question": "List everyone who is from neraia (comma-separated names)."
+ },
+ {
+  "id": "r16",
+  "question": "How many people who are from rubeia work as scribe? Answer with a number."
+ },
+ {
+  "id": "r17",
+  "question": "How many people who are from vokaia work as weaver? Answer with a number."
+ },
+ {
+  "id": "r18",
+  "question": "How many people who are from zekaia work as healer? Answer with a number."
+ },
+ {
+  "id": "r19",
+  "question": "How many people who are from guguia work as miner? Answer with a number."
+ },
+ {
+  "id": "r20",
+  "question": "How many people who are from nunuia work as miner? Answer with a number."
+ }
+]

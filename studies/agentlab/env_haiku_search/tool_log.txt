@@ -1,0 +1,91 @@
+1795113813.653	kb_search	vokabe
+1795113813.707	kb_search	kisado
+1795113813.748	kb_search	dofilo
+1795113813.771	kb_search	lokapa
+1795113813.794	kb_search	kikibe
+1795113813.817	kb_search	nekaru
+1795113814.304	kb_search	ruvone
+1795113814.340	kb_search	bevomi
+1795113814.380	kb_search	nenemi
+1795113814.420	kb_search	nekajo
+1795113814.461	kb_search	jovobe
+1795113814.520	kb_search	bekara
+1795113814.566	kb_search	nujomo
+1795113814.617	kb_search	zefilo
+1795113815.264	kb_search	hezesa
+1795113815.286	kb_search	fidohe
+1795113815.309	kb_search	jokinu
+1795113815.334	kb_search	vonuru
+1795113815.358	kb_search	samolo
+1795113815.381	kb_search	kanevo
+1795113815.403	kb_search	jokibe
+1795113815.425	kb_search	bekipa
+1795113815.945	kb_search	paguki
+1795113816.018	kb_search	dogune
+1795113816.059	kb_search	bezenu
+1795113816.108	kb_search	rudovo
+1795113816.158	kb_search	jobesa
+1795113816.209	kb_search	migube
+1795113816.272	kb_search	nuloze
+1795113816.333	kb_search	ruvomo
+1795113816.806	kb_search	panube
+1795113816.887	kb_search	samimi
+1795113816.968	kb_search	kivolo
+1795113817.026	kb_search	joberu
+1795113817.074	kb_search	mozeki
+1795113817.129	kb_search	kanedo
+1795113817.689	kb_search	nukihe
+1795113817.751	kb_search	raraia
+1795113817.802	kb_search	tiramo
+1795113817.853	kb_search	paheia
+1795113817.906	kb_search	vopahe
+1795113817.958	kb_search	losaia
+1795113818.009	kb_search	jologu
+1795113818.067	kb_search	lobeia
+1795113818.120	kb_search	bepaze
+1795113818.171	kb_search	loloia
+1795113818.221	kb_search	nugugu
+1795113818.277	kb_search	miloia
+1795113818.711	kb_search	rugufi
+1795113818.735	kb_search	kazejo
+1795113818.759	kb_search	kajodo
+1795113818.785	kb_search	tisabe
+1795113818.808	kb_search	paneki
+1795113818.831	kb_search	kajomi
+1795113818.862	kb_search	nubehe
+1795113818.933	kb_search	neruvo
+1795113818.981	kb_search	rupane
+1795113819.032	kb_search	ruheze
+1795113819.116	kb_search	raralo
+1795113819.170	kb_search	guhedo
+1795113834.882	kb_search	zeruki
+1795113834.949	kb_search	pafihe
+1795113834.993	kb_search	ramipa
+1795113835.044	kb_search	lonuka
+1795113835.098	kb_search	runenu
+1795113835.148	kb_search	gudopa
+1795113835.198	kb_search	mimiti
+1795113835.221	kb_search	mibegu
+1795113835.243	kb_search	nekafi
+1795113835.265	kb_search	farmer
+1795113835.287	kb_search	healer
+1795113835.310	kb_search	guard
+1795113835.332	kb_search	weaver
+1795113835.354	kb_search	tihemi
+1795113835.376	kb_search	midonu
+1795113835.398	kb_search	guhemi
+1795113835.420	kb_search	henene
+1795113835.443	kb_search	sarujo
+1795113835.467	kb_search	firagu
+1795113842.616	kb_search	farmer overseen
+1795113842.676	kb_search	healer overseen
+1795113842.738	kb_search	weaver overseen
+1795113842.785	kb_search	guard overseen
+1795113842.834	kb_search	hekaguild
+1795113842.888	kb_search	jobesa member
+1795113847.967	kb_add	rugufi lives in kajodo
+1795113847.981	kb_add	tisabe lives in kajomi
+1795113847.995	kb_add	nubehe lives in rupane
+1795113848.011	kb_add	ruheze lives in guhedo
+1795113848.030	kb_search	rugufi lives
+1795113848.063	kb_search	ruheze lives

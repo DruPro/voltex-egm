@@ -1,0 +1,362 @@
+[
+{
+"id": "database_s42_q1",
+"question": "Who manages department tipadept now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q2",
+"question": "Has department tipadept ever been managed by kafilo?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q3",
+"question": "Who does gupahe report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q4",
+"question": "Who does kabelo report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q5",
+"question": "Who does neruki report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q6",
+"question": "Who does lozevo report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q7",
+"question": "Who does dofize report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q8",
+"question": "Who does vorasa report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q9",
+"question": "Who does guhehe report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q10",
+"question": "Who does gudoti report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q11",
+"question": "Who does bekido report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q12",
+"question": "Who does kivoze report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q13",
+"question": "Who does numolo report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q14",
+"question": "Who does zeguru report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q15",
+"question": "Who does kaloze report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q16",
+"question": "Who does paheki report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q17",
+"question": "Who does miruka report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q18",
+"question": "Which department does kamolo work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q19",
+"question": "Who does kamolo report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q20",
+"question": "Has kamolo ever worked in department pasadept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q21",
+"question": "Which department does kibefi work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q22",
+"question": "Who does kibefi report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q23",
+"question": "Has kibefi ever worked in department domodept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q24",
+"question": "Which department does ranegu work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q25",
+"question": "Who does ranegu report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q26",
+"question": "Has ranegu ever worked in department domodept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q27",
+"question": "Which department does bedora work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q28",
+"question": "Who does bedora report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q29",
+"question": "Has bedora ever worked in department kavodept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q30",
+"question": "Which department does nemijo work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q31",
+"question": "Who does nemijo report to now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q32",
+"question": "Has nemijo ever worked in department kihedept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q33",
+"question": "List every project tirunu is assigned to now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "database_s42_q34",
+"question": "Has tirunu ever been assigned to project heheproj?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q35",
+"question": "List every project fidoze is assigned to now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "database_s42_q36",
+"question": "Has fidoze ever been assigned to project kiguproj?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q37",
+"question": "List every project raneze is assigned to now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "database_s42_q38",
+"question": "Has raneze ever been assigned to project heheproj?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q39",
+"question": "List every project gumigu is assigned to now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "database_s42_q40",
+"question": "Has gumigu ever been assigned to project paguproj?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q41",
+"question": "List every project pazemo is assigned to now.",
+"answer_format": "a list of values; or UNKNOWN; or CONFLICT"
+},
+{
+"id": "database_s42_q42",
+"question": "Has pazemo ever been assigned to project tifiproj?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q43",
+"question": "Which department does tikimi work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q44",
+"question": "Has tikimi ever worked in department ralodept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q45",
+"question": "Which department does zesamo work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q46",
+"question": "Has zesamo ever worked in department timodept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q47",
+"question": "Which department does hepagu work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q48",
+"question": "Has hepagu ever worked in department vorudept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q49",
+"question": "Which department does berami work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q50",
+"question": "Has berami ever worked in department hedodept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q51",
+"question": "Which department does pasajo work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q52",
+"question": "Has pasajo ever worked in department pasadept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q53",
+"question": "Does the evidence contain incompatible claims about which department nepafi works in?",
+"answer_format": "YES or NO"
+},
+{
+"id": "database_s42_q54",
+"question": "Which department does nepafi work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q55",
+"question": "Does the evidence contain incompatible claims about which department doguki works in?",
+"answer_format": "YES or NO"
+},
+{
+"id": "database_s42_q56",
+"question": "Which department does doguki work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q57",
+"question": "Does the evidence contain incompatible claims about which department nuzejo works in?",
+"answer_format": "YES or NO"
+},
+{
+"id": "database_s42_q58",
+"question": "Which department does nuzejo work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q59",
+"question": "Does the evidence contain incompatible claims about which department zeneze works in?",
+"answer_format": "YES or NO"
+},
+{
+"id": "database_s42_q60",
+"question": "Which department does zeneze work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q61",
+"question": "Does the evidence contain incompatible claims about which department panegu works in?",
+"answer_format": "YES or NO"
+},
+{
+"id": "database_s42_q62",
+"question": "Which department does panegu work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q63",
+"question": "Which department does mifibe work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q64",
+"question": "Has mifibe ever worked in department samidept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q65",
+"question": "Which department does paloka work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q66",
+"question": "Has paloka ever worked in department sagudept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q67",
+"question": "Which department does kiloki work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q68",
+"question": "Has kiloki ever worked in department hezedept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q69",
+"question": "Which department does gurumi work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q70",
+"question": "Has gurumi ever worked in department timodept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+},
+{
+"id": "database_s42_q71",
+"question": "Which department does razehe work in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "database_s42_q72",
+"question": "Has razehe ever worked in department timodept?",
+"answer_format": "CURRENT (true now), PAST (true before but not now), NEVER (never true, e.g. the record saying so was corrected or withdrawn) or UNKNOWN"
+}
+]

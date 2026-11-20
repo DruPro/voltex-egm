@@ -1,0 +1,92 @@
+1795113999.930	kb_search	finugu
+1795113999.961	kb_search	ancestor
+1795113999.999	kb_search	parent
+1795114000.376	kb_search	jokihe
+1795114000.424	kb_search	nukivo
+1795114000.470	kb_search	lotigu
+1795114000.523	kb_search	zehemi
+1795114000.938	kb_search	rukisa
+1795114000.985	kb_search	saneki
+1795114001.031	kb_search	fihesa
+1795114001.099	kb_search	besane
+1795114001.157	kb_search	mojopa
+1795114001.524	kb_search	padoia
+1795114001.580	kb_search	paheia
+1795114001.619	kb_search	ramoia
+1795114001.641	kb_search	vokaia
+1795114001.662	kb_search	neraia
+1795114002.091	kb_search	rubeia
+1795114002.114	kb_search	zekaia
+1795114002.136	kb_search	guguia
+1795114002.158	kb_search	nunuia
+1795114002.180	kb_search	scribe
+1795114002.207	kb_search	weaver
+1795114002.229	kb_search	healer
+1795114002.251	kb_search	miner
+1795114007.524	kb_search	pasajo
+1795114007.561	kb_search	joparu
+1795114007.602	kb_search	guvogu
+1795114007.637	kb_search	mopati
+1795114007.935	kb_search	hesavo
+1795114007.989	kb_search	gunefi
+1795114008.045	kb_search	monuru
+1795114008.330	kb_search	bebegu
+1795114008.375	kb_search	bemilo
+1795114008.398	kb_search	nusajo
+1795114008.420	kb_search	kakaka
+1795114008.705	kb_search	morudo
+1795114008.769	kb_search	mojohe
+1795114008.813	kb_search	padobe
+1795114009.143	kb_search	zetize
+1795114009.193	kb_search	ravovo
+1795114009.241	kb_search	bevosa
+1795114009.267	kb_search	nuguti
+1795114009.291	kb_search	vonera
+1795114017.708	kb_search	dokabe
+1795114017.732	kb_search	firati
+1795114017.756	kb_search	lomosa
+1795114017.779	kb_search	jovora
+1795114035.403	kb_search	molojo
+1795114035.465	kb_search	sajomo
+1795114035.524	kb_search	votiti
+1795114035.572	kb_search	kikalo
+1795114035.621	kb_search	vorafi
+1795114035.670	kb_search	tivobe
+1795114036.057	kb_search	from paheia --page 2
+1795114036.110	kb_search	from ramoia --page 2
+1795114036.161	kb_search	from vokaia --page 2
+1795114036.209	kb_search	from neraia --page 2
+1795114051.325	kb_search	sajomo --page 2
+1795114051.368	kb_search	mosami
+1795114051.390	kb_search	from paheia
+1795114051.412	kb_search	from ramoia
+1795114051.750	kb_search	from vokaia
+1795114051.798	kb_search	from neraia
+1795114051.849	kb_search	from rubeia
+1795114051.894	kb_search	from zekaia
+1795114052.396	kb_search	from guguia
+1795114052.458	kb_search	from nunuia
+1795114052.503	kb_search	from guguia --page 2
+1795114052.549	kb_search	from nunuia --page 2
+1795114052.596	kb_search	from rubeia --page 2
+1795114052.638	kb_search	from zekaia --page 2
+1795114066.285	kb_search	works as scribe --page 1
+1795114066.312	kb_search	works as scribe --page 2
+1795114066.336	kb_search	works as scribe --page 3
+1795114066.359	kb_search	works as scribe --page 4
+1795114066.382	kb_search	works as scribe --page 5
+1795114066.589	kb_search	works as weaver --page 1
+1795114066.612	kb_search	works as weaver --page 2
+1795114066.636	kb_search	works as weaver --page 3
+1795114066.659	kb_search	works as weaver --page 4
+1795114066.682	kb_search	works as weaver --page 5
+1795114066.889	kb_search	works as healer --page 1
+1795114066.917	kb_search	works as healer --page 2
+1795114066.940	kb_search	works as healer --page 3
+1795114066.965	kb_search	works as healer --page 4
+1795114066.990	kb_search	works as healer --page 5
+1795114067.213	kb_search	works as miner --page 1
+1795114067.240	kb_search	works as miner --page 2
+1795114067.264	kb_search	works as miner --page 3
+1795114067.290	kb_search	works as miner --page 4
+1795114067.314	kb_search	works as miner --page 5

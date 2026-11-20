@@ -1,0 +1,36 @@
+COMMANDS:
+SET EXPLAIN 2
+INGESTFILE /home/claude/work/improve/data/obs_s1_c50.txt
+ASK lozera is from ?
+AMEND lozera lives in hesafi
+AMEND nevora lives in rumomi
+AMEND CORRECT domodo lives in hesafi
+ASK lozera lives in ?
+ASK lozera is from ?
+ASK nevora is from ?
+HISTORY lozera
+WAS lozera lives in zenebe
+WAS domodo lives in numomo
+WAS lozera lives in hesafi
+EXIT
+
+OUTPUT:
+[SET] EXPLAIN = 2
+[INGEST] 4248 records, 107082 bytes in 0.014 s (7.32 MB/s)
+  lozera is from befiia            stated
+[SUSPECT] law=0 any=0	lozera lives in zenebe
+[AMEND] 1 stated fact(s) followed from the old value and will be re-checked
+[AMEND] relation matched; replaced 1 earlier value(s) (change); id 4248
+[SUSPECT] law=0 any=0	nevora lives in nedoka
+[AMEND] 1 stated fact(s) followed from the old value and will be re-checked
+[AMEND] relation matched; replaced 1 earlier value(s) (change); id 4249
+[SUSPECT] law=0 any=0	domodo lives in numomo
+[AMEND] relation matched; replaced 1 earlier value(s) (correction); id 4250
+  lozera lives in hesafi           stated
+  lozera is from befiia            stated, STALE
+  lozera is from mikiia            current, because STALE: it followed from 'lozera lives in zenebe', which amendment #1 changed to 'lozera lives in hesafi'; now lozera lives in hesafi + hesafi is located in mikiia  [rule: [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c)]
+  nevora is from kavoia            stated, STALE: it followed from 'nevora lives in nedoka', which amendment #2 changed to 'nevora lives in rumomi'; current value unknown (the rule [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) has no premise for the new value)
+  #1 changed: 'lozera lives in zenebe' -> 'lozera lives in hesafi'
+[WAS] yes, until amendment #1 changed it to 'lozera lives in hesafi'
+[WAS] no: recorded in error, corrected by amendment #3 to 'domodo lives in hesafi'
+[WAS] yes, current: lozera lives in hesafi

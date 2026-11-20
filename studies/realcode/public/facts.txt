@@ -1,0 +1,597 @@
+check_compatibility is defined in __init__
+_check_cryptography is defined in __init__
+to_native_string is defined in _internal_utils
+unicode_is_ascii is defined in _internal_utils
+_urllib3_request_context is defined in adapters
+SOCKSProxyManager is defined in adapters
+BaseAdapter is defined in adapters
+BaseAdapter___init__ is defined in adapters
+BaseAdapter_send is defined in adapters
+BaseAdapter_close is defined in adapters
+HTTPAdapter is defined in adapters
+HTTPAdapter___init__ is defined in adapters
+HTTPAdapter___getstate__ is defined in adapters
+HTTPAdapter___setstate__ is defined in adapters
+HTTPAdapter_init_poolmanager is defined in adapters
+HTTPAdapter_proxy_manager_for is defined in adapters
+HTTPAdapter_cert_verify is defined in adapters
+HTTPAdapter_build_response is defined in adapters
+HTTPAdapter_build_connection_pool_key_attributes is defined in adapters
+HTTPAdapter_get_connection_with_tls_context is defined in adapters
+HTTPAdapter_get_connection is defined in adapters
+HTTPAdapter_close is defined in adapters
+HTTPAdapter_request_url is defined in adapters
+HTTPAdapter_add_headers is defined in adapters
+HTTPAdapter_proxy_headers is defined in adapters
+HTTPAdapter_send is defined in adapters
+request is defined in api
+get is defined in api
+options is defined in api
+head is defined in api
+post is defined in api
+put is defined in api
+patch is defined in api
+delete is defined in api
+_basic_auth_str is defined in auth
+AuthBase is defined in auth
+AuthBase___call__ is defined in auth
+HTTPBasicAuth is defined in auth
+HTTPBasicAuth___init__ is defined in auth
+HTTPBasicAuth___eq__ is defined in auth
+HTTPBasicAuth___ne__ is defined in auth
+HTTPBasicAuth___call__ is defined in auth
+HTTPProxyAuth is defined in auth
+HTTPProxyAuth___call__ is defined in auth
+HTTPDigestAuth is defined in auth
+HTTPDigestAuth___init__ is defined in auth
+HTTPDigestAuth_init_per_thread_state is defined in auth
+HTTPDigestAuth_build_digest_header is defined in auth
+HTTPDigestAuth_handle_redirect is defined in auth
+HTTPDigestAuth_handle_401 is defined in auth
+HTTPDigestAuth___call__ is defined in auth
+HTTPDigestAuth___eq__ is defined in auth
+HTTPDigestAuth___ne__ is defined in auth
+_resolve_char_detection is defined in compat
+extract_cookies_to_jar is defined in cookies
+get_cookie_header is defined in cookies
+remove_cookie_by_name is defined in cookies
+_copy_cookie_jar is defined in cookies
+create_cookie is defined in cookies
+morsel_to_cookie is defined in cookies
+cookiejar_from_dict is defined in cookies
+merge_cookies is defined in cookies
+MockRequest is defined in cookies
+MockRequest___init__ is defined in cookies
+MockRequest_get_type is defined in cookies
+MockRequest_get_host is defined in cookies
+MockRequest_get_origin_req_host is defined in cookies
+MockRequest_get_full_url is defined in cookies
+MockRequest_is_unverifiable is defined in cookies
+MockRequest_has_header is defined in cookies
+MockRequest_get_header is defined in cookies
+MockRequest_add_header is defined in cookies
+MockRequest_add_unredirected_header is defined in cookies
+MockRequest_get_new_headers is defined in cookies
+MockRequest_unverifiable is defined in cookies
+MockRequest_origin_req_host is defined in cookies
+MockRequest_host is defined in cookies
+MockResponse is defined in cookies
+MockResponse___init__ is defined in cookies
+MockResponse_info is defined in cookies
+MockResponse_getheaders is defined in cookies
+CookieConflictError is defined in cookies
+RequestsCookieJar is defined in cookies
+RequestsCookieJar_get is defined in cookies
+RequestsCookieJar_set is defined in cookies
+RequestsCookieJar_iterkeys is defined in cookies
+RequestsCookieJar_keys is defined in cookies
+RequestsCookieJar_itervalues is defined in cookies
+RequestsCookieJar_values is defined in cookies
+RequestsCookieJar_iteritems is defined in cookies
+RequestsCookieJar_items is defined in cookies
+RequestsCookieJar_list_domains is defined in cookies
+RequestsCookieJar_list_paths is defined in cookies
+RequestsCookieJar_multiple_domains is defined in cookies
+RequestsCookieJar_get_dict is defined in cookies
+RequestsCookieJar___contains__ is defined in cookies
+RequestsCookieJar___getitem__ is defined in cookies
+RequestsCookieJar___setitem__ is defined in cookies
+RequestsCookieJar___delitem__ is defined in cookies
+RequestsCookieJar_set_cookie is defined in cookies
+RequestsCookieJar_update is defined in cookies
+RequestsCookieJar__find is defined in cookies
+RequestsCookieJar__find_no_duplicates is defined in cookies
+RequestsCookieJar___getstate__ is defined in cookies
+RequestsCookieJar___setstate__ is defined in cookies
+RequestsCookieJar_copy is defined in cookies
+RequestsCookieJar_get_policy is defined in cookies
+RequestException is defined in exceptions
+RequestException___init__ is defined in exceptions
+InvalidJSONError is defined in exceptions
+JSONDecodeError is defined in exceptions
+JSONDecodeError___init__ is defined in exceptions
+JSONDecodeError___reduce__ is defined in exceptions
+HTTPError is defined in exceptions
+ConnectionError is defined in exceptions
+ProxyError is defined in exceptions
+SSLError is defined in exceptions
+Timeout is defined in exceptions
+ConnectTimeout is defined in exceptions
+ReadTimeout is defined in exceptions
+URLRequired is defined in exceptions
+TooManyRedirects is defined in exceptions
+MissingSchema is defined in exceptions
+InvalidSchema is defined in exceptions
+InvalidURL is defined in exceptions
+InvalidHeader is defined in exceptions
+InvalidProxyURL is defined in exceptions
+ChunkedEncodingError is defined in exceptions
+ContentDecodingError is defined in exceptions
+StreamConsumedError is defined in exceptions
+RetryError is defined in exceptions
+UnrewindableBodyError is defined in exceptions
+RequestsWarning is defined in exceptions
+FileModeWarning is defined in exceptions
+RequestsDependencyWarning is defined in exceptions
+_implementation is defined in help
+info is defined in help
+main is defined in help
+default_hooks is defined in hooks
+dispatch_hook is defined in hooks
+RequestEncodingMixin is defined in models
+RequestEncodingMixin_path_url is defined in models
+RequestEncodingMixin__encode_params is defined in models
+RequestEncodingMixin__encode_files is defined in models
+RequestHooksMixin is defined in models
+RequestHooksMixin_register_hook is defined in models
+RequestHooksMixin_deregister_hook is defined in models
+Request is defined in models
+Request___init__ is defined in models
+Request___repr__ is defined in models
+Request_prepare is defined in models
+PreparedRequest is defined in models
+PreparedRequest___init__ is defined in models
+PreparedRequest_prepare is defined in models
+PreparedRequest___repr__ is defined in models
+PreparedRequest_copy is defined in models
+PreparedRequest_prepare_method is defined in models
+PreparedRequest__get_idna_encoded_host is defined in models
+PreparedRequest_prepare_url is defined in models
+PreparedRequest_prepare_headers is defined in models
+PreparedRequest_prepare_body is defined in models
+PreparedRequest_prepare_content_length is defined in models
+PreparedRequest_prepare_auth is defined in models
+PreparedRequest_prepare_cookies is defined in models
+PreparedRequest_prepare_hooks is defined in models
+Response is defined in models
+Response___init__ is defined in models
+Response___enter__ is defined in models
+Response___exit__ is defined in models
+Response___getstate__ is defined in models
+Response___setstate__ is defined in models
+Response___repr__ is defined in models
+Response___bool__ is defined in models
+Response___nonzero__ is defined in models
+Response___iter__ is defined in models
+Response_ok is defined in models
+Response_is_redirect is defined in models
+Response_is_permanent_redirect is defined in models
+Response_next is defined in models
+Response_apparent_encoding is defined in models
+Response_iter_content is defined in models
+Response_iter_lines is defined in models
+Response_content is defined in models
+Response_text is defined in models
+Response_json is defined in models
+Response_links is defined in models
+Response_raise_for_status is defined in models
+Response_close is defined in models
+merge_setting is defined in sessions
+merge_hooks is defined in sessions
+session is defined in sessions
+SessionRedirectMixin is defined in sessions
+SessionRedirectMixin_get_redirect_target is defined in sessions
+SessionRedirectMixin_should_strip_auth is defined in sessions
+SessionRedirectMixin_resolve_redirects is defined in sessions
+SessionRedirectMixin_rebuild_auth is defined in sessions
+SessionRedirectMixin_rebuild_proxies is defined in sessions
+SessionRedirectMixin_rebuild_method is defined in sessions
+Session is defined in sessions
+Session___init__ is defined in sessions
+Session___enter__ is defined in sessions
+Session___exit__ is defined in sessions
+Session_prepare_request is defined in sessions
+Session_request is defined in sessions
+Session_get is defined in sessions
+Session_options is defined in sessions
+Session_head is defined in sessions
+Session_post is defined in sessions
+Session_put is defined in sessions
+Session_patch is defined in sessions
+Session_delete is defined in sessions
+Session_send is defined in sessions
+Session_merge_environment_settings is defined in sessions
+Session_get_adapter is defined in sessions
+Session_close is defined in sessions
+Session_mount is defined in sessions
+Session___getstate__ is defined in sessions
+Session___setstate__ is defined in sessions
+_init is defined in status_codes
+CaseInsensitiveDict is defined in structures
+CaseInsensitiveDict___init__ is defined in structures
+CaseInsensitiveDict___setitem__ is defined in structures
+CaseInsensitiveDict___getitem__ is defined in structures
+CaseInsensitiveDict___delitem__ is defined in structures
+CaseInsensitiveDict___iter__ is defined in structures
+CaseInsensitiveDict___len__ is defined in structures
+CaseInsensitiveDict_lower_items is defined in structures
+CaseInsensitiveDict___eq__ is defined in structures
+CaseInsensitiveDict_copy is defined in structures
+CaseInsensitiveDict___repr__ is defined in structures
+LookupDict is defined in structures
+LookupDict___init__ is defined in structures
+LookupDict___repr__ is defined in structures
+LookupDict___getitem__ is defined in structures
+LookupDict_get is defined in structures
+proxy_bypass_registry is defined in utils
+proxy_bypass is defined in utils
+dict_to_sequence is defined in utils
+super_len is defined in utils
+get_netrc_auth is defined in utils
+guess_filename is defined in utils
+extract_zipped_paths is defined in utils
+atomic_open is defined in utils
+from_key_val_list is defined in utils
+to_key_val_list is defined in utils
+parse_list_header is defined in utils
+parse_dict_header is defined in utils
+unquote_header_value is defined in utils
+dict_from_cookiejar is defined in utils
+add_dict_to_cookiejar is defined in utils
+get_encodings_from_content is defined in utils
+_parse_content_type_header is defined in utils
+get_encoding_from_headers is defined in utils
+stream_decode_response_unicode is defined in utils
+iter_slices is defined in utils
+get_unicode_from_response is defined in utils
+unquote_unreserved is defined in utils
+requote_uri is defined in utils
+address_in_network is defined in utils
+dotted_netmask is defined in utils
+is_ipv4_address is defined in utils
+is_valid_cidr is defined in utils
+set_environ is defined in utils
+should_bypass_proxies is defined in utils
+get_environ_proxies is defined in utils
+select_proxy is defined in utils
+resolve_proxies is defined in utils
+default_user_agent is defined in utils
+default_headers is defined in utils
+parse_header_links is defined in utils
+guess_json_utf is defined in utils
+prepend_scheme_if_needed is defined in utils
+get_auth_from_url is defined in utils
+check_header_validity is defined in utils
+_validate_header_part is defined in utils
+urldefragauth is defined in utils
+rewind_body is defined in utils
+__init__ imports exceptions
+__init__ imports packages
+__init__ imports utils
+__init__ imports __version__
+__init__ imports api
+__init__ imports models
+__init__ imports sessions
+__init__ imports status_codes
+_internal_utils imports compat
+adapters imports auth
+adapters imports compat
+adapters imports cookies
+adapters imports exceptions
+adapters imports models
+adapters imports structures
+adapters imports utils
+api imports sessions
+auth imports _internal_utils
+auth imports compat
+auth imports cookies
+auth imports utils
+cookies imports _internal_utils
+cookies imports compat
+exceptions imports compat
+help imports __version__
+models imports _internal_utils
+models imports auth
+models imports compat
+models imports cookies
+models imports exceptions
+models imports hooks
+models imports status_codes
+models imports structures
+models imports utils
+packages imports compat
+sessions imports _internal_utils
+sessions imports adapters
+sessions imports auth
+sessions imports compat
+sessions imports cookies
+sessions imports exceptions
+sessions imports hooks
+sessions imports models
+sessions imports status_codes
+sessions imports structures
+sessions imports utils
+status_codes imports structures
+structures imports compat
+utils imports certs
+utils imports __version__
+utils imports _internal_utils
+utils imports compat
+utils imports cookies
+utils imports exceptions
+utils imports structures
+HTTPAdapter inherits from BaseAdapter
+HTTPBasicAuth inherits from AuthBase
+HTTPProxyAuth inherits from HTTPBasicAuth
+HTTPDigestAuth inherits from AuthBase
+CookieConflictError inherits from RuntimeError
+RequestsCookieJar inherits from CookieJar
+RequestsCookieJar inherits from MutableMapping
+RequestException inherits from IOError
+InvalidJSONError inherits from RequestException
+JSONDecodeError inherits from InvalidJSONError
+JSONDecodeError inherits from CompatJSONDecodeError
+HTTPError inherits from RequestException
+ConnectionError inherits from RequestException
+ProxyError inherits from ConnectionError
+SSLError inherits from ConnectionError
+Timeout inherits from RequestException
+ConnectTimeout inherits from ConnectionError
+ConnectTimeout inherits from Timeout
+ReadTimeout inherits from Timeout
+URLRequired inherits from RequestException
+TooManyRedirects inherits from RequestException
+MissingSchema inherits from RequestException
+MissingSchema inherits from ValueError
+InvalidSchema inherits from RequestException
+InvalidSchema inherits from ValueError
+InvalidURL inherits from RequestException
+InvalidURL inherits from ValueError
+InvalidHeader inherits from RequestException
+InvalidHeader inherits from ValueError
+InvalidProxyURL inherits from InvalidURL
+ChunkedEncodingError inherits from RequestException
+ContentDecodingError inherits from RequestException
+ContentDecodingError inherits from BaseHTTPError
+StreamConsumedError inherits from RequestException
+StreamConsumedError inherits from TypeError
+RetryError inherits from RequestException
+UnrewindableBodyError inherits from RequestException
+RequestsWarning inherits from Warning
+FileModeWarning inherits from RequestsWarning
+FileModeWarning inherits from DeprecationWarning
+RequestsDependencyWarning inherits from RequestsWarning
+Request inherits from RequestHooksMixin
+PreparedRequest inherits from RequestEncodingMixin
+PreparedRequest inherits from RequestHooksMixin
+Session inherits from SessionRedirectMixin
+CaseInsensitiveDict inherits from MutableMapping
+LookupDict inherits from dict
+HTTPAdapter___init__ calls BaseAdapter___init__
+HTTPAdapter___init__ calls HTTPAdapter_init_poolmanager
+HTTPAdapter___setstate__ calls HTTPAdapter_init_poolmanager
+HTTPAdapter_proxy_manager_for calls HTTPAdapter_proxy_headers
+HTTPAdapter_proxy_manager_for calls get_auth_from_url
+HTTPAdapter_proxy_manager_for calls SOCKSProxyManager
+HTTPAdapter_build_response calls get_encoding_from_headers
+HTTPAdapter_build_response calls extract_cookies_to_jar
+HTTPAdapter_build_connection_pool_key_attributes calls _urllib3_request_context
+HTTPAdapter_get_connection_with_tls_context calls select_proxy
+HTTPAdapter_get_connection_with_tls_context calls HTTPAdapter_build_connection_pool_key_attributes
+HTTPAdapter_get_connection_with_tls_context calls prepend_scheme_if_needed
+HTTPAdapter_get_connection_with_tls_context calls HTTPAdapter_proxy_manager_for
+HTTPAdapter_get_connection calls select_proxy
+HTTPAdapter_get_connection calls prepend_scheme_if_needed
+HTTPAdapter_get_connection calls HTTPAdapter_proxy_manager_for
+HTTPAdapter_request_url calls select_proxy
+HTTPAdapter_request_url calls urldefragauth
+HTTPAdapter_proxy_headers calls get_auth_from_url
+HTTPAdapter_proxy_headers calls _basic_auth_str
+HTTPAdapter_send calls HTTPAdapter_get_connection_with_tls_context
+HTTPAdapter_send calls HTTPAdapter_cert_verify
+HTTPAdapter_send calls HTTPAdapter_request_url
+HTTPAdapter_send calls HTTPAdapter_add_headers
+HTTPAdapter_send calls HTTPAdapter_build_response
+_basic_auth_str calls to_native_string
+HTTPBasicAuth___call__ calls _basic_auth_str
+HTTPProxyAuth___call__ calls _basic_auth_str
+HTTPDigestAuth___call__ calls HTTPDigestAuth_init_per_thread_state
+HTTPDigestAuth___call__ calls HTTPDigestAuth_build_digest_header
+HTTPDigestAuth_handle_401 calls parse_dict_header
+HTTPDigestAuth_handle_401 calls extract_cookies_to_jar
+HTTPDigestAuth_handle_401 calls HTTPDigestAuth_build_digest_header
+get calls request
+options calls request
+head calls request
+post calls request
+put calls request
+patch calls request
+delete calls request
+morsel_to_cookie calls create_cookie
+cookiejar_from_dict calls create_cookie
+merge_cookies calls cookiejar_from_dict
+MockRequest_get_origin_req_host calls MockRequest_get_host
+MockRequest_get_full_url calls to_native_string
+MockRequest_origin_req_host calls MockRequest_get_origin_req_host
+MockRequest_host calls MockRequest_get_host
+MockRequest_unverifiable calls MockRequest_is_unverifiable
+RequestsCookieJar_get calls RequestsCookieJar__find_no_duplicates
+RequestsCookieJar_set calls remove_cookie_by_name
+RequestsCookieJar_set calls morsel_to_cookie
+RequestsCookieJar_set calls create_cookie
+RequestsCookieJar_set calls RequestsCookieJar_set_cookie
+RequestsCookieJar_keys calls RequestsCookieJar_iterkeys
+RequestsCookieJar_values calls RequestsCookieJar_itervalues
+RequestsCookieJar_items calls RequestsCookieJar_iteritems
+RequestsCookieJar___getitem__ calls RequestsCookieJar__find_no_duplicates
+RequestsCookieJar___setitem__ calls RequestsCookieJar_set
+RequestsCookieJar___delitem__ calls remove_cookie_by_name
+RequestsCookieJar_update calls RequestsCookieJar_set_cookie
+RequestsCookieJar_copy calls RequestsCookieJar_get_policy
+JSONDecodeError___init__ calls RequestException___init__
+RequestEncodingMixin__encode_params calls to_key_val_list
+RequestEncodingMixin__encode_files calls to_key_val_list
+RequestEncodingMixin__encode_files calls guess_filename
+Request___init__ calls default_hooks
+Request___init__ calls RequestHooksMixin_register_hook
+PreparedRequest___init__ calls default_hooks
+PreparedRequest_prepare calls PreparedRequest_prepare_method
+PreparedRequest_prepare calls PreparedRequest_prepare_url
+PreparedRequest_prepare calls PreparedRequest_prepare_headers
+PreparedRequest_prepare calls PreparedRequest_prepare_cookies
+PreparedRequest_prepare calls PreparedRequest_prepare_body
+PreparedRequest_prepare calls PreparedRequest_prepare_auth
+PreparedRequest_prepare calls PreparedRequest_prepare_hooks
+PreparedRequest_copy calls _copy_cookie_jar
+PreparedRequest_prepare_method calls to_native_string
+PreparedRequest_prepare_url calls PreparedRequest__get_idna_encoded_host
+PreparedRequest_prepare_url calls unicode_is_ascii
+PreparedRequest_prepare_url calls RequestEncodingMixin__encode_params
+PreparedRequest_prepare_url calls requote_uri
+PreparedRequest_prepare_url calls to_native_string
+PreparedRequest_prepare_headers calls check_header_validity
+PreparedRequest_prepare_headers calls to_native_string
+PreparedRequest_prepare_body calls PreparedRequest_prepare_content_length
+PreparedRequest_prepare_body calls RequestEncodingMixin__encode_files
+PreparedRequest_prepare_body calls RequestEncodingMixin__encode_params
+PreparedRequest_prepare_body calls super_len
+PreparedRequest_prepare_content_length calls super_len
+PreparedRequest_prepare_auth calls get_auth_from_url
+PreparedRequest_prepare_auth calls PreparedRequest_prepare_content_length
+PreparedRequest_prepare_cookies calls cookiejar_from_dict
+PreparedRequest_prepare_cookies calls get_cookie_header
+PreparedRequest_prepare_hooks calls RequestHooksMixin_register_hook
+Response___init__ calls cookiejar_from_dict
+Response___exit__ calls Response_close
+Response___iter__ calls Response_iter_content
+Response_ok calls Response_raise_for_status
+Response_iter_content calls iter_slices
+Response_iter_content calls stream_decode_response_unicode
+Response_iter_lines calls Response_iter_content
+Response_content calls Response_iter_content
+Response_json calls guess_json_utf
+Response_links calls parse_header_links
+info calls _implementation
+main calls info
+merge_setting calls to_key_val_list
+merge_hooks calls merge_setting
+SessionRedirectMixin_get_redirect_target calls to_native_string
+SessionRedirectMixin_resolve_redirects calls SessionRedirectMixin_get_redirect_target
+SessionRedirectMixin_resolve_redirects calls SessionRedirectMixin_rebuild_method
+SessionRedirectMixin_resolve_redirects calls to_native_string
+SessionRedirectMixin_resolve_redirects calls requote_uri
+SessionRedirectMixin_resolve_redirects calls SessionRedirectMixin_rebuild_proxies
+SessionRedirectMixin_resolve_redirects calls SessionRedirectMixin_rebuild_auth
+SessionRedirectMixin_resolve_redirects calls extract_cookies_to_jar
+SessionRedirectMixin_resolve_redirects calls merge_cookies
+SessionRedirectMixin_resolve_redirects calls rewind_body
+SessionRedirectMixin_rebuild_auth calls SessionRedirectMixin_should_strip_auth
+SessionRedirectMixin_rebuild_auth calls get_netrc_auth
+SessionRedirectMixin_rebuild_proxies calls resolve_proxies
+SessionRedirectMixin_rebuild_proxies calls get_auth_from_url
+SessionRedirectMixin_rebuild_proxies calls _basic_auth_str
+Session___init__ calls default_headers
+Session___init__ calls default_hooks
+Session___init__ calls cookiejar_from_dict
+Session___init__ calls Session_mount
+Session___exit__ calls Session_close
+Session_prepare_request calls cookiejar_from_dict
+Session_prepare_request calls merge_cookies
+Session_prepare_request calls get_netrc_auth
+Session_prepare_request calls merge_setting
+Session_prepare_request calls merge_hooks
+Session_request calls Session_prepare_request
+Session_request calls Session_merge_environment_settings
+Session_request calls Session_send
+Session_get calls Session_request
+Session_options calls Session_request
+Session_head calls Session_request
+Session_post calls Session_request
+Session_put calls Session_request
+Session_patch calls Session_request
+Session_delete calls Session_request
+Session_send calls resolve_proxies
+Session_send calls Session_get_adapter
+Session_send calls dispatch_hook
+Session_send calls extract_cookies_to_jar
+Session_send calls SessionRedirectMixin_resolve_redirects
+Session_merge_environment_settings calls get_environ_proxies
+Session_merge_environment_settings calls merge_setting
+proxy_bypass calls proxy_bypass_registry
+extract_zipped_paths calls atomic_open
+parse_list_header calls unquote_header_value
+parse_dict_header calls unquote_header_value
+add_dict_to_cookiejar calls cookiejar_from_dict
+get_encoding_from_headers calls _parse_content_type_header
+get_unicode_from_response calls get_encoding_from_headers
+requote_uri calls unquote_unreserved
+address_in_network calls dotted_netmask
+should_bypass_proxies calls is_ipv4_address
+should_bypass_proxies calls is_valid_cidr
+should_bypass_proxies calls address_in_network
+should_bypass_proxies calls set_environ
+should_bypass_proxies calls proxy_bypass
+get_environ_proxies calls should_bypass_proxies
+resolve_proxies calls should_bypass_proxies
+resolve_proxies calls get_environ_proxies
+default_headers calls default_user_agent
+check_header_validity calls _validate_header_part
+CaseInsensitiveDict___eq__ calls CaseInsensitiveDict_lower_items
+SOCKSProxyManager raises InvalidSchema
+BaseAdapter_send raises NotImplementedError
+BaseAdapter_close raises NotImplementedError
+HTTPAdapter_cert_verify raises OSError
+HTTPAdapter_get_connection_with_tls_context raises InvalidURL
+HTTPAdapter_get_connection_with_tls_context raises InvalidProxyURL
+HTTPAdapter_get_connection raises InvalidProxyURL
+HTTPAdapter_send raises InvalidURL
+HTTPAdapter_send raises ValueError
+HTTPAdapter_send raises ConnectionError
+HTTPAdapter_send raises ConnectTimeout
+HTTPAdapter_send raises RetryError
+HTTPAdapter_send raises ProxyError
+HTTPAdapter_send raises SSLError
+HTTPAdapter_send raises ReadTimeout
+HTTPAdapter_send raises InvalidHeader
+AuthBase___call__ raises NotImplementedError
+MockRequest_add_header raises NotImplementedError
+RequestsCookieJar__find raises KeyError
+RequestsCookieJar__find_no_duplicates raises CookieConflictError
+RequestsCookieJar__find_no_duplicates raises KeyError
+create_cookie raises TypeError
+morsel_to_cookie raises TypeError
+merge_cookies raises ValueError
+RequestEncodingMixin__encode_files raises ValueError
+RequestHooksMixin_register_hook raises ValueError
+PreparedRequest__get_idna_encoded_host raises UnicodeError
+PreparedRequest_prepare_url raises InvalidURL
+PreparedRequest_prepare_url raises MissingSchema
+PreparedRequest_prepare_body raises InvalidJSONError
+PreparedRequest_prepare_body raises NotImplementedError
+Response_iter_content raises StreamConsumedError
+Response_iter_content raises TypeError
+Response_iter_content raises ChunkedEncodingError
+Response_iter_content raises ContentDecodingError
+Response_iter_content raises ConnectionError
+Response_iter_content raises SSLError
+Response_content raises RuntimeError
+Response_json raises JSONDecodeError
+Response_raise_for_status raises HTTPError
+SessionRedirectMixin_resolve_redirects raises TooManyRedirects
+Session_send raises ValueError
+Session_get_adapter raises InvalidSchema
+from_key_val_list raises ValueError
+to_key_val_list raises ValueError
+unquote_unreserved raises InvalidURL
+_validate_header_part raises InvalidHeader
+rewind_body raises UnrewindableBodyError

@@ -1,0 +1,82 @@
+{
+ "data/evo_1000.txt": {
+  "raw_bytes": 199855,
+  "gzip9": 36084,
+  "xz9": 29508,
+  "v2": {
+   "seconds": 0.044,
+   "save_bytes": 73056,
+   "exact_after_save_load": "1000/1000",
+   "grammar": "1324 rules, 16967 symbols  (0.200 symbols per input token)",
+   "rss": "9.4 MB",
+   "invariants": "0 duplicate pairs, 0 under-used rules",
+   "ingest_line": "[INGEST] 1000 records, 199855 bytes in 0.034 s (5.68 MB/s)"
+  },
+  "v1": {
+   "seconds": 8.783,
+   "store_bytes": 18677780,
+   "distinct_ids_for_distinct_lines": 1000,
+   "unique_lines": 1000
+  }
+ },
+ "data/license.txt": {
+  "raw_bytes": 143750,
+  "gzip9": 43740,
+  "xz9": 33752,
+  "v2": {
+   "seconds": 0.039,
+   "save_bytes": 68643,
+   "exact_after_save_load": "2169/2169",
+   "grammar": "3576 rules, 22883 symbols  (0.495 symbols per input token)",
+   "rss": "9.4 MB",
+   "invariants": "0 duplicate pairs, 0 under-used rules",
+   "ingest_line": "[INGEST] 2290 records, 143750 bytes in 0.027 s (5.09 MB/s)"
+  },
+  "v1": {
+   "seconds": 0.999,
+   "store_bytes": 7040498,
+   "distinct_ids_for_distinct_lines": 2214,
+   "unique_lines": 2169
+  }
+ },
+ "data/grammar_train.txt": {
+  "raw_bytes": 103882,
+  "gzip9": 12969,
+  "xz9": 11240,
+  "v2": {
+   "seconds": 0.012,
+   "save_bytes": 18503,
+   "exact_after_save_load": "2455/2455",
+   "grammar": "778 rules, 6984 symbols  (0.198 symbols per input token)",
+   "rss": "5.0 MB",
+   "invariants": "0 duplicate pairs, 0 under-used rules",
+   "ingest_line": "[INGEST] 3000 records, 103882 bytes in 0.008 s (12.09 MB/s)"
+  },
+  "v1": {
+   "seconds": 0.353,
+   "store_bytes": 1413060,
+   "distinct_ids_for_distinct_lines": 2457,
+   "unique_lines": 2455
+  }
+ },
+ "data/evo_20000.txt": {
+  "raw_bytes": 4059855,
+  "gzip9": 713636,
+  "xz9": 570012,
+  "v2": {
+   "seconds": 1.445,
+   "save_bytes": 1281110,
+   "exact_after_save_load": "20000/20000",
+   "grammar": "15669 rules, 277001 symbols  (0.163 symbols per input token)",
+   "rss": "84.2 MB",
+   "invariants": "0 duplicate pairs, 0 under-used rules",
+   "ingest_line": "[INGEST] 20000 records, 4059855 bytes in 1.034 s (3.74 MB/s)"
+  },
+  "v1": {
+   "seconds": 247.783,
+   "store_bytes": 375082269,
+   "distinct_ids_for_distinct_lines": 20000,
+   "unique_lines": 20000
+  }
+ }
+}

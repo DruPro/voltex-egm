@@ -1,0 +1,16 @@
+You are an analyst answering questions about a large knowledge base of short facts about a fictional country (people, settlements, regions, professions, institutions, families). The knowledge base is incomplete and contains some errors. Many answers are not stated directly and must be worked out by combining facts.
+
+Working directory: /home/claude/work/agentlab/r2_haiku_search
+Questions: /home/claude/work/agentlab/r2_haiku_search/questions.json (20 questions).
+
+Tools available:
+  ./kb_search WORD [WORD...] [--page N]   prints up to 30 knowledge-base lines per page containing all the given words (whole words, case-insensitive). Facts look like: "kiruki lives in sadobe", "sadobe is located in loneia", "kiruki is from loneia", "kiruki works as farmer", "farmer is overseen by kagulguild", "kiruki is member of kagulguild", "kiruki is parent of mimoru", "mimoru is child of kiruki", "kiruki is ancestor of mimoru", "kiruki is sibling of panesa".
+  ./kb_add "FACT"              appends a new fact to your notes, which kb_search also searches.
+
+Rules for this task:
+- Use ONLY the tool(s) described above, run through Bash from the working directory. Do not open, read, grep or parse any other file except questions.json, and do not write programs or scripts. Write your final answers file once at the end.
+- Do not guess. If the knowledge base does not let you determine an answer, answer "unknown". Answer yes/no questions with yes, no, or unknown. Answer claim questions with supported, contradicted, or unknown.
+- For questions that give "new information", record the change using the tool before answering.
+- For list questions, answer with all names, comma-separated, lowercase, exactly as written in the knowledge base. For count questions, answer with a number. Answer "unknown" only if nothing can be determined.
+
+When done, write /home/claude/work/agentlab/r2_haiku_search/answers.json as a JSON list: [{"id": "r01", "answer": "...", "evidence": "one line: which facts you relied on"}, ...] covering all 20 ids. Then reply with one line saying it is written.

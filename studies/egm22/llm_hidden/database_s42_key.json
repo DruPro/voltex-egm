@@ -1,0 +1,737 @@
+[
+ {
+  "id": "database_s42_q1",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "is managed by",
+  "x": "tipadept",
+  "v": null,
+  "truth": "zedomi",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q2",
+  "sc": "db_mgr",
+  "kind": "held",
+  "rel": "is managed by",
+  "x": "tipadept",
+  "v": "kafilo",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q3",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "gupahe",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q4",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "kabelo",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q5",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "neruki",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s42_q6",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "lozevo",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s42_q7",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "dofize",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s42_q8",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "vorasa",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q9",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "guhehe",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s42_q10",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "gudoti",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q11",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "bekido",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q12",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "kivoze",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s42_q13",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "numolo",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s42_q14",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "zeguru",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s42_q15",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "kaloze",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q16",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "paheki",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q17",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "miruka",
+  "v": null,
+  "truth": "zedomi",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q18",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "kamolo",
+  "v": null,
+  "truth": "ralodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q19",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "kamolo",
+  "v": null,
+  "truth": "nepaze",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "database_s42_q20",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "kamolo",
+  "v": "pasadept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q21",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "kibefi",
+  "v": null,
+  "truth": "samidept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q22",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "kibefi",
+  "v": null,
+  "truth": "nutilo",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q23",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "kibefi",
+  "v": "domodept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q24",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "ranegu",
+  "v": null,
+  "truth": "ralodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q25",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "ranegu",
+  "v": null,
+  "truth": "nepaze",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "database_s42_q26",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "ranegu",
+  "v": "domodept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q27",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "bedora",
+  "v": null,
+  "truth": "ralodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q28",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "bedora",
+  "v": null,
+  "truth": "nepaze",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s42_q29",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "bedora",
+  "v": "kavodept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q30",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "nemijo",
+  "v": null,
+  "truth": "pasadept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q31",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "nemijo",
+  "v": null,
+  "truth": "samomo",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "database_s42_q32",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "nemijo",
+  "v": "kihedept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q33",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "tirunu",
+  "v": null,
+  "truth": [
+   "lozeproj",
+   "rufiproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q34",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "tirunu",
+  "v": "heheproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q35",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "fidoze",
+  "v": null,
+  "truth": [
+   "kinuproj",
+   "loloproj",
+   "rusaproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q36",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "fidoze",
+  "v": "kiguproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q37",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "raneze",
+  "v": null,
+  "truth": [
+   "beheproj",
+   "kiguproj",
+   "paguproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q38",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "raneze",
+  "v": "heheproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q39",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "gumigu",
+  "v": null,
+  "truth": [
+   "kizeproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q40",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "gumigu",
+  "v": "paguproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q41",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "pazemo",
+  "v": null,
+  "truth": [
+   "lomiproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q42",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "pazemo",
+  "v": "tifiproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q43",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "tikimi",
+  "v": null,
+  "truth": "samidept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q44",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "tikimi",
+  "v": "ralodept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q45",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "zesamo",
+  "v": null,
+  "truth": "vorudept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q46",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "zesamo",
+  "v": "timodept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q47",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "hepagu",
+  "v": null,
+  "truth": "kavodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q48",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "hepagu",
+  "v": "vorudept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q49",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "berami",
+  "v": null,
+  "truth": "dotidept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q50",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "berami",
+  "v": "hedodept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q51",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "pasajo",
+  "v": null,
+  "truth": "sagudept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q52",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "pasajo",
+  "v": "pasadept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q53",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "nepafi",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q54",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "nepafi",
+  "v": null,
+  "truth": "kihedept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q55",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "doguki",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q56",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "doguki",
+  "v": null,
+  "truth": "hedodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q57",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "nuzejo",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q58",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "nuzejo",
+  "v": null,
+  "truth": "dotidept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q59",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "zeneze",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q60",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "zeneze",
+  "v": null,
+  "truth": "samidept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q61",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "panegu",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q62",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "panegu",
+  "v": null,
+  "truth": "hedodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q63",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "mifibe",
+  "v": null,
+  "truth": "kavodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q64",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "mifibe",
+  "v": "samidept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q65",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "paloka",
+  "v": null,
+  "truth": "dotidept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q66",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "paloka",
+  "v": "sagudept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q67",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "kiloki",
+  "v": null,
+  "truth": "timodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q68",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "kiloki",
+  "v": "hezedept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q69",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "gurumi",
+  "v": null,
+  "truth": "samidept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q70",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "gurumi",
+  "v": "timodept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q71",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "razehe",
+  "v": null,
+  "truth": "kavodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s42_q72",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "razehe",
+  "v": "timodept",
+  "truth": "past",
+  "tag": ""
+ }
+]

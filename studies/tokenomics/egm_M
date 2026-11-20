@@ -1,0 +1,6 @@
+#!/bin/bash
+# EGM query tool over corpus M: only ASK queries; every call is logged.
+q="$*"
+case "$q" in ASK\ *) ;; *) echo "Only ASK queries are allowed. Example: egm_M ASK ? calls requests__select_proxy"; exit 1;; esac
+echo "$(date +%s) $q" >> /home/claude/work/scale_econ/logs/egm_M_calls.log
+printf "INGESTFILE /home/claude/work/scale_econ/corpus/M.txt\n%s\nEXIT\n" "$q" | /home/claude/work/egm22/voltex2 | grep -v "^\[INGEST\]" | head -60
