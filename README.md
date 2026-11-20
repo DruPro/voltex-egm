@@ -255,6 +255,8 @@ voltex-egm/
 |---|---|
 | [docs/SDK.md](docs/SDK.md) | Python SDK reference, including an LLM-tool example |
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
+| [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
+| [studies/](studies/) | Pre-registered studies: inference depth, multi-premise rules, configuration |
 
 ---
 

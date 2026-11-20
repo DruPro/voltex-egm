@@ -52,7 +52,8 @@ class Engine:
         kb: a saved knowledge base (.vtx) to load.
         facts: facts files to ingest (one ``A relation B`` per line).
         binary: path to voltex2 (otherwise found automatically).
-        settings: engine settings applied first, e.g. ``{"RATE": 0.4, "REFRESH": 0.02}``.
+        settings: engine settings, applied after ``kb`` is loaded so they override the profile saved with it,
+            e.g. ``{"RATE": 0.4, "DEPTH": 0}``. ``config()`` lists every setting.
     """
 
     def __init__(self, kb: Optional[str] = None, facts: Iterable[str] = (), binary: Optional[str] = None,
@@ -65,10 +66,10 @@ class Engine:
         self._p = subprocess.Popen([self.binary], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                    stderr=subprocess.STDOUT, text=True, bufsize=1)
         try:
-            for k, v in (settings or {}).items():
-                self.set(k, v)
             if kb:
-                self.load(kb)
+                self.load(kb)            # restores the profile saved with the knowledge base (kb.vtx.cfg), if any
+            for k, v in (settings or {}).items():
+                self.set(k, v)           # explicit settings override the saved profile
             for f in facts:
                 self.ingest_file(f)
         except Exception:
@@ -259,6 +260,10 @@ class Engine:
         return self.find(text) is not None
 
     # --- settings and persistence -------------------------------------------------------
+    def config(self) -> dict:
+        """Every engine setting: {name: {"value", "default", "layer", "experimental", "help"}}."""
+        return parse.config(self._checked("CONFIG"))
+
     def set(self, key: str, value) -> None:
         """Engine setting, e.g. ``set("RATE", 0.4)``. See ``SET`` in the engine's HELP for the list."""
         out = self._checked(f"SET {key} {value}")

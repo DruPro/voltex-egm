@@ -145,3 +145,16 @@ def metrics(lines):
             k, v = l.split(":", 1)
             out[k.strip().lower().replace(" ", "_").replace("(", "").replace(")", "")] = v.strip()
     return out
+
+
+_CFG = re.compile(r"^\[CONFIG\] (\S+)\s+(\S+)\s+\(default (\S+)\)\s+(\S+)\s+(EXPERIMENTAL )?(.*)$")
+
+
+def config(lines):
+    out = {}
+    for l in lines:
+        m = _CFG.match(l)
+        if m:
+            out[m.group(1)] = {"value": float(m.group(2)), "default": float(m.group(3)), "layer": m.group(4),
+                               "experimental": bool(m.group(5)), "help": m.group(6).strip()}
+    return out

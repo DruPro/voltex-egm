@@ -1198,6 +1198,87 @@ static Invariants checkInvariants(const Grammar& g) {
 // ─────────────────────────────────────────────
 static Vault V;
 
+// ─────────────────────────────────────────────
+//  SETTINGS REGISTRY: every setting declared once. SET, CONFIG, SAVE and LOAD all read this table.
+//  layer = the layer that owns it; experimental = a study option, off by default;
+//  saved = travels with the knowledge base in <file>.cfg (diagnostics are not saved).
+// ─────────────────────────────────────────────
+struct Setting {
+    const char* name; const char* layer; bool experimental, saved; const char* help;
+    std::function<double()> get; std::function<void(double)> set; double def = 0;
+};
+#define VTX_SETTING(NAME, LAYER, EXP, SAVED, HELP, FIELD, TYPE) \
+    {NAME, LAYER, EXP, SAVED, HELP, [] { return double(V.FIELD); }, [](double v) { V.FIELD = (TYPE)v; }}
+static std::vector<Setting>& settings() {
+    static std::vector<Setting> s;
+    if (s.empty()) {
+        s = {
+            VTX_SETTING("CLASS", "statistics", false, true, "similarity needed to merge words into a category", classThresh, double),
+            VTX_SETTING("RATE", "induction", false, true, "minimum share of chains whose conclusion is stated", RATE_MIN, double),
+            VTX_SETTING("LIFT", "induction", false, true, "minimum rate over the conclusion's base rate", LIFT_MIN, double),
+            VTX_SETTING("SUPPORT", "induction", false, true, "minimum confirming chains for a rule", K_MIN, u64),
+            VTX_SETTING("PCA", "induction", false, true, "minimum agreement where the answer is known", PCA_MIN, double),
+            VTX_SETTING("LAW", "induction", false, true, "reliability needed for the law tier", LAW_MIN, double),
+            VTX_SETTING("COVERAGE", "induction", false, true, "relax the rate bar when data looks sparse (1/0)", F_COV, int),
+            VTX_SETTING("LABELS", "induction", false, true, "label rules and facts law or tendency (1/0)", F_LABELS, int),
+            {"CHAIN", "induction", true, true, "longest rule body, 2-8 premises (studies/multipremise)",
+             [] { return double(V.CHAIN_L); }, [](double v) { V.CHAIN_L = std::max(2, std::min(8, (int)v)); }},
+            VTX_SETTING("CONDITIONS", "induction", true, true, "learn group conditions on accepted rules (1/0) (studies/multipremise)", F_COND, int),
+            VTX_SETTING("DEPTH", "inference", false, true, "inference rounds, 0 = until nothing new (studies/depth)", DEPTH, int),
+            VTX_SETTING("CORROBORATE", "inference", false, true, "a contradiction needs two distinct rules (1/0)", F_CORROB, int),
+            VTX_SETTING("OBS", "evidence", false, true, "project the observation log (1/0)", F_OBS, int),
+            VTX_SETTING("STALE", "evidence", false, true, "staleness checks after updates (1/0)", F_STALE, int),
+            VTX_SETTING("CHGREMOVALS", "evidence", false, true, "only removals feed the change signal (1/0)", F_CHG_REMOVALS, int),
+            VTX_SETTING("SAMEFIX", "evidence", false, true, "same-rule re-derivation confirms a stale candidate (1/0)", F_SAMEFIX, int),
+            VTX_SETTING("DX", "evidence", true, true, "explained staleness for observations (1/0)", F_DX, int),
+            VTX_SETTING("DECL", "evidence", true, true, "declarative amendment records (1/0) (earlier study)", F_DECL, int),
+            VTX_SETTING("DECLMINE", "evidence", true, true, "mine amendment records as facts (1/0) (earlier study)", F_DECL_MINE, int),
+            VTX_SETTING("DECLFN", "evidence", true, true, "one-value fix for amendments (1/0) (earlier study)", F_DECLFN, int),
+            VTX_SETTING("REFRESH", "build", true, true, "reuse classes and rules for small changes (share of records, 0 = off)", F_REFRESH, double),
+            VTX_SETTING("PROFILE", "diagnostics", false, false, "print timings (1/0)", F_PROFILE, int),
+        };
+        for (auto& x : s) x.def = x.get();   // defaults are whatever the engine starts with
+    }
+    return s;
+}
+static Setting* findSetting(std::string k) {
+    for (auto& c : k) c = (char)std::toupper((unsigned char)c);
+    for (auto& x : settings()) if (k == x.name) return &x;
+    return nullptr;
+}
+static std::string nonDefault(bool experimentalOnly) {
+    std::string out; char buf[64];
+    for (auto& x : settings()) if (x.saved && x.get() != x.def && (!experimentalOnly || x.experimental)) {
+        std::snprintf(buf, sizeof buf, " %s=%g", x.name, x.get()); out += buf;
+    }
+    return out;
+}
+static void showConfig() {
+    for (auto& x : settings())
+        std::printf("[CONFIG] %-12s %-8g (default %g)  %-11s %s%s\n", x.name, x.get(), x.def, x.layer,
+                    x.experimental ? "EXPERIMENTAL " : "", x.help);
+}
+static bool saveConfig(const std::string& path) {
+    std::ofstream o(path + ".cfg"); if (!o) return false;
+    o << "# voltex settings 1\n";
+    char buf[64];
+    for (auto& x : settings()) if (x.saved && x.get() != x.def) { std::snprintf(buf, sizeof buf, "%.17g", x.get()); o << x.name << " " << buf << "\n"; }
+    return true;
+}
+static void loadConfig(const std::string& path) {   // no .cfg (saved by 2.2.1 or earlier): settings are left as they are
+    std::ifstream in(path + ".cfg"); if (!in) return;
+    for (auto& x : settings()) if (x.saved) x.set(x.def);
+    std::string line;
+    while (std::getline(in, line)) {
+        if (line.empty() || line[0] == '#') continue;
+        std::istringstream ss(line); std::string k; double v; if (!(ss >> k >> v)) continue;
+        Setting* st = findSetting(k); if (st && st->saved) st->set(v);
+    }
+    V.dirty = true;
+    std::string nd = nonDefault(false);
+    if (!nd.empty()) std::printf("[CONFIG] restored from %s.cfg:%s\n", path.c_str(), nd.c_str());
+}
+
 static void metrics() {
     Invariants inv = checkInvariants(V.g);
     std::printf("--- VOLTEX v2 METRICS ---\n");
@@ -1310,6 +1391,7 @@ static void showClasses() {
 
 static void showRelations() {
     V.ensureModel();
+    { std::string ex = nonDefault(true); if (!ex.empty()) std::printf("[CONFIG] experimental settings on:%s\n", ex.c_str()); }
     std::printf("[RELATIONS] %zu two-argument templates\n", V.rels.size());
     for (size_t i = 0; i < V.rels.size() && i < 15; ++i) std::printf("  #%zu  %-30s %zu facts\n", i, V.words(V.rels[i].tmpl).c_str(), V.rels[i].stated.size());
     int shown = 0;
@@ -1445,6 +1527,7 @@ static void help() {
         "  GENERATE [prefix]    sample a continuation (HUNT is an alias)\n"
         "  QUERY <pattern ?>    fill one blank, e.g. QUERY the ? lamp\n"
         "  CLASSES [thresh]     discovered categories (default threshold 0.5)\n"
+        "  CONFIG               every setting: value, default, owning layer, experimental or not\n"
         "  RELATIONS            two-argument templates and scored rules\n"
         "  INFER [ALL]          derive facts that were never stated, with proofs\n"
         "  ASK <pattern ?>      stated + inferred answers, e.g. ASK ana is in ?\n"
@@ -1460,6 +1543,7 @@ static void help() {
 int main(int argc, char** argv) {
     if (argc > 1 && std::string(argv[1]) == "--selftest") return selftest();
     if (argc > 1 && std::string(argv[1]) == "--version") { std::puts("voltex2 2.2.1"); return 0; }
+    settings();   // capture every setting's default before anything can change it
 #ifndef _WIN32
     bool tty = isatty(0);
 #else
@@ -1537,6 +1621,7 @@ int main(int argc, char** argv) {
                     o << "\n";
                 }
             }
+            if (ok) ok = saveConfig(arg);   // settings travel with the knowledge base
             std::puts(ok ? "[SAVE] ok" : "[ERROR] save failed");
         }
         else if (cmd == "LOAD") {
@@ -1552,21 +1637,17 @@ int main(int argc, char** argv) {
             }
             V.dirty = true;
             std::puts(ok ? "[LOAD] ok" : "[ERROR] load failed");
+            if (ok) loadConfig(arg);
         }
         else if (cmd == "SET") {
             std::istringstream ss(arg); std::string k; double v; ss >> k >> v;
             for (auto& c : k) c = (char)std::toupper((unsigned char)c);
-            if (k == "RATE") V.RATE_MIN = v; else if (k == "LIFT") V.LIFT_MIN = v; else if (k == "SUPPORT") V.K_MIN = (u64)v;
-            else if (k == "CLASS") V.classThresh = v; else if (k == "PCA") V.PCA_MIN = v;
-            else if (k == "COVERAGE") V.F_COV = (int)v; else if (k == "LABELS") V.F_LABELS = (int)v; else if (k == "CORROBORATE") V.F_CORROB = (int)v;
-            else if (k == "STALE") V.F_STALE = (int)v; else if (k == "LAW") V.LAW_MIN = v; else if (k == "PROFILE") V.F_PROFILE = (int)v;
-            else if (k == "DECL") V.F_DECL = (int)v; else if (k == "DECLMINE") V.F_DECL_MINE = (int)v; else if (k == "DECLFN") V.F_DECLFN = (int)v;
-            else if (k == "OBS") V.F_OBS = (int)v; else if (k == "DX") V.F_DX = (int)v;
-            else if (k == "DEPTH") V.DEPTH = (int)v; else if (k == "CHAIN") V.CHAIN_L = std::max(2, std::min(8, (int)v)); else if (k == "CONDITIONS") V.F_COND = (int)v;
-            else if (k == "CHGREMOVALS") V.F_CHG_REMOVALS = (int)v; else if (k == "SAMEFIX") V.F_SAMEFIX = (int)v; else if (k == "REFRESH") V.F_REFRESH = v;
-            else { std::puts("[SET] RATE | LIFT | SUPPORT | CLASS | PCA | LAW <value>, or COVERAGE | LABELS | CORROBORATE | STALE | PROFILE 0/1"); continue; }
+            Setting* st = findSetting(k);
+            if (!st) { std::string names; for (auto& x : settings()) { if (!names.empty()) names += " | "; names += x.name; } std::printf("[SET] unknown setting; one of: %s (CONFIG shows them all)\n", names.c_str()); continue; }
+            st->set(v);
             V.dirty = true; std::printf("[SET] %s = %g\n", k.c_str(), v);
         }
+        else if (cmd == "CONFIG") showConfig();
         else if (cmd == "RETRACT") { auto ids = V.toIds(arg); std::puts(V.retractIds(ids) ? "[RETRACT] removed" : "[RETRACT] not stored"); }
         else if (cmd == "UPDATE") {   // replace the subject's previous value in a one-value relation, then ingest
             V.ensureModel();

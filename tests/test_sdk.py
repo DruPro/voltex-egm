@@ -210,6 +210,40 @@ class TestPersistence(unittest.TestCase):
             with egm.open(kb, settings={"DX": 1}) as e:
                 self.assertEqual([x.to_dict() for x in e.ask("p0 lives in ?")], before)
 
+    def test_settings_travel_with_the_knowledge_base(self):
+        """C2/C4 (studies/config): a saved knowledge base keeps its settings; explicit settings override them."""
+        with tempfile.TemporaryDirectory() as td:
+            kb = os.path.join(td, "m.vtx")
+            with egm.Engine(facts=[M]) as e:
+                default_n = len(e.infer_all())
+            with egm.Engine(facts=[M], settings={"RATE": 0.1, "PCA": 0.5}) as e:
+                loose_n = len(e.infer_all()); e.save(kb)
+            self.assertNotEqual(loose_n, default_n)
+            self.assertTrue(os.path.exists(kb + ".cfg"))
+            with egm.open(kb) as e:                                   # profile restored
+                self.assertEqual(len(e.infer_all()), loose_n)
+                self.assertEqual(e.config()["RATE"]["value"], 0.1)
+            with egm.open(kb, settings={"RATE": 0.4, "PCA": 0.8}) as e:   # explicit settings win
+                self.assertEqual(len(e.infer_all()), default_n)
+
+    def test_knowledge_base_without_profile_keeps_old_behaviour(self):
+        """C3: a .vtx without .cfg (saved by 2.2.1) loads with the current settings, as before."""
+        with tempfile.TemporaryDirectory() as td:
+            kb = os.path.join(td, "m.vtx")
+            with egm.Engine(facts=[M]) as e:
+                n = len(e.infer_all()); e.save(kb)
+            os.remove(kb + ".cfg")
+            with egm.open(kb) as e:
+                self.assertEqual(len(e.infer_all()), n)
+
+    def test_config_lists_every_setting(self):
+        with egm.Engine() as e:
+            c = e.config()
+        self.assertGreaterEqual(len(c), 22)
+        self.assertTrue(c["CHAIN"]["experimental"] and c["CONDITIONS"]["experimental"])
+        self.assertFalse(c["DEPTH"]["experimental"])
+        self.assertEqual((c["DEPTH"]["value"], c["CHAIN"]["value"]), (4, 2))
+
     def test_load_errors(self):
         with self.assertRaises(FileNotFoundError):
             egm.open("/nonexistent/kb.vtx")
