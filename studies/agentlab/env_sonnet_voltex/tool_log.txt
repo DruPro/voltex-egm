@@ -1,0 +1,61 @@
+1795113808.462	voltex	RELATIONS
+1795113811.798	voltex	ASK vokabe lives in ?
+1795113813.116	voltex	ASK kisado lives in ?
+1795113814.338	voltex	ASK dofilo lives in ?
+1795113815.737	voltex	ASK lokapa lives in ?
+1795113817.663	voltex	ASK kikibe lives in ?
+1795113819.563	voltex	ASK nekaru lives in ?
+1795113820.860	voltex	ASK panube lives in ?
+1795113821.955	voltex	ASK samimi lives in ?
+1795113822.975	voltex	ASK kivolo lives in ?
+1795113824.306	voltex	ASK joberu lives in ?
+1795113825.336	voltex	ASK mozeki lives in ?
+1795113826.508	voltex	ASK kanedo lives in ?
+1795113830.639	voltex	ASK ruvone is from ?
+1795113831.778	voltex	ASK bevomi is from ?
+1795113832.835	voltex	ASK nenemi is from ?
+1795113833.895	voltex	ASK nekajo is from ?
+1795113835.461	voltex	ASK jovobe is from ?
+1795113836.586	voltex	ASK bekara is from ?
+1795113837.585	voltex	ASK nujomo is from ?
+1795113838.564	voltex	ASK zefilo is from ?
+1795113839.607	voltex	ASK nukihe is from ?
+1795113840.665	voltex	ASK tiramo is from ?
+1795113841.666	voltex	ASK vopahe is from ?
+1795113842.923	voltex	ASK jologu is from ?
+1795113844.006	voltex	ASK bepaze is from ?
+1795113845.065	voltex	ASK nugugu is from ?
+1795113846.115	voltex	ASK jobesa is member of ?
+1795113847.182	voltex	ASK migube is member of ?
+1795113848.249	voltex	ASK nuloze is member of ?
+1795113849.299	voltex	ASK ruvomo is member of ?
+1795113850.509	voltex	ASK hezesa is ancestor of ?
+1795113851.510	voltex	ASK ? is ancestor of fidohe
+1795113852.521	voltex	ASK jokinu is ancestor of ?
+1795113853.520	voltex	ASK ? is ancestor of vonuru
+1795113854.549	voltex	ASK samolo is ancestor of ?
+1795113855.560	voltex	ASK ? is ancestor of kanevo
+1795113856.548	voltex	ASK jokibe is ancestor of ?
+1795113857.569	voltex	ASK ? is ancestor of bekipa
+1795113858.708	voltex	ASK paguki is ancestor of ?
+1795113859.717	voltex	ASK ? is ancestor of dogune
+1795113860.724	voltex	ASK bezenu is ancestor of ?
+1795113861.747	voltex	ASK ? is ancestor of rudovo
+1795113865.269	voltex	ASK bezenu is ancestor of ?
+1795113866.399	voltex	ASK ? is ancestor of rudovo
+1795113867.428	voltex	UPDATE rugufi lives in kajodo
+1795113868.155	voltex	ASK rugufi is from ?
+1795113869.847	voltex	UPDATE tisabe lives in kajomi
+1795113871.184	voltex	ASK tisabe is from ?
+1795113873.604	voltex	UPDATE nubehe lives in rupane
+1795113875.729	voltex	ASK nubehe is from ?
+1795113878.943	voltex	UPDATE ruheze lives in guhedo
+1795113881.895	voltex	ASK ruheze is from ?
+1795113887.707	voltex	ASK kajodo is located in ?
+1795113891.707	voltex	ASK rupane is located in ?
+1795113895.590	voltex	ASK kazejo is located in ?
+1795113899.412	voltex	ASK neruvo is located in ?
+1795113903.181	voltex	CONFLICTS
+1795113909.319	voltex	ASK bezenu is ancestor of ?
+1795113913.151	voltex	ASK ? is ancestor of rudovo
+1795113917.040	voltex	ASK paguki is ancestor of ?

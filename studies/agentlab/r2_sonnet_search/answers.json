@@ -1,0 +1,22 @@
+[
+{"id":"r01","answer":"pasajo, joparu, guvogu, mopati, dokabe","evidence":"finugu child of pasajo/joparu; guvogu, mopati ancestors; dokabe parent of pasajo"},
+{"id":"r02","answer":"hesavo, monuru, gunefi, firati","evidence":"hesavo parent of jokihe; monuru, gunefi ancestors; firati parent of hesavo"},
+{"id":"r03","answer":"bebegu, kakaka, bemilo, nusajo, lomosa","evidence":"bebegu,kakaka parents; bemilo, nusajo ancestors; lomosa parent of kakaka"},
+{"id":"r04","answer":"morudo, mojohe, padobe, jovora","evidence":"morudo parent; mojohe, padobe ancestors; jovora parent of morudo"},
+{"id":"r05","answer":"ravovo, zetize, bevosa, vonera, nuguti","evidence":"ravovo parent; ancestor facts for others"},
+{"id":"r06","answer":"mizejo, heneti, lorati, hekifi, jomoru","evidence":"sibling facts and shared parent molojo"},
+{"id":"r07","answer":"nukiti, nukinu, rujofi, pazesa, nufilo, ruzevo","evidence":"sibling facts and shared parent sajomo"},
+{"id":"r08","answer":"jomojo, johegu, tibesa","evidence":"sibling facts and shared parent votiti"},
+{"id":"r09","answer":"mipaki, moheka, razeka","evidence":"mipaki sibling; kikalo/vorafi children"},
+{"id":"r10","answer":"mokibe, sazebe, nuheti","evidence":"sibling facts; nuheti child of mosami"},
+{"id":"r11","answer":"sanelo, rujomi, dosaka, gutimi, neberu, kakisa, lohera, domilo, lozeze, rufiki, vokara, titiru, finehe, fijopa, lolojo","evidence":"is from padoia"},
+{"id":"r12","answer":"doguka, zemisa, jorara, miguvo, gupasa, sazebe, lonegu, neguvo, rulofi, betifi, ragujo, neminu, hevodo, vohejo, zekika, sajomi, hetihe, lokanu, panura, zesafi, helohe, logufi, hefifi, nebenu, guramo, pazeti, vorugu, mokibe, kabebe","evidence":"is from paheia"},
+{"id":"r13","answer":"kabepa, fikibe, rupado, runegu, nubesa, ravosa, vonera, nupajo, guvomo, gusati, lohefi, mimojo, karunu, ranuki, ruzebe, behegu, saruvo, dovodo, hegupa, nusasa, raneti, tifivo, parapa","evidence":"is from ramoia"},
+{"id":"r14","answer":"begugu, tizelo, vopado, lorumi, kavoka, jokara, bemolo, bemoka, lonemo, voloka, mijofi, fimipa, rahenu, jodosa, dokamo, jovolo, morabe, nulolo, rugulo, tilodo, panuru, monuvo, tizene, vonulo, sarara, sanumo, loraki, saguvo, heguze, fizefi, netijo, benudo, nukijo, nukavo, gubegu, logumi, nehene","evidence":"is from vokaia (2 pages)"},
+{"id":"r15","answer":"mimipa, zebebe, tikihe, lofira, vosati, mijoru, fisaru, mirado, rakifi, mokize, heramo, pamiti, bevoze, dozelo, tinura, zekiti, nudoti, mopara, gumodo, nezera, kalone, runupa, fibejo, pakanu, raneze, gufimi","evidence":"is from neraia"},
+{"id":"r16","answer":"3","evidence":"rubeia natives bekiki, tibemo, bekaze work as scribe"},
+{"id":"r17","answer":"2","evidence":"vokaia natives mijofi, nulolo work as weaver"},
+{"id":"r18","answer":"0","evidence":"no zekaia native works as healer"},
+{"id":"r19","answer":"1","evidence":"zekavo from guguia works as miner"},
+{"id":"r20","answer":"1","evidence":"hekijo from nunuia works as miner"}
+]

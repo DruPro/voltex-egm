@@ -1,0 +1,75 @@
+scale 1 U=  50 batch       A: 4.47 s
+scale 1 U=  50 batch       B: 7.82 s
+scale 1 U=  50 batch       C: 0.31 s
+scale 1 U=  50 batch       D: 0.34 s
+scale 1 U=  50 batch       P: 0.37 s
+scale 1 U=  50 interactive A: 7.53 s
+scale 1 U=  50 interactive B: 7.67 s
+scale 1 U=  50 interactive C: 7.57 s
+scale 1 U=  50 interactive D: 8.35 s
+scale 1 U=  50 interactive P: 11.18 s
+scale 1 U= 200 batch       A: 13.27 s
+scale 1 U= 200 batch       B: 158.21 s
+scale 1 U= 200 batch       C: 0.32 s
+scale 1 U= 200 batch       D: 0.38 s
+scale 1 U= 200 batch       P: 0.47 s
+scale 1 U= 800 batch       A: 36.33 s
+scale 1 U= 800 batch       B: 68.90 s
+scale 1 U= 800 batch       C: 0.30 s
+scale 1 U= 800 batch       D: 0.25 s
+scale 1 U= 800 batch       P: 0.24 s
+scale 2 U=  50 batch       A: 13.40 s
+scale 2 U=  50 batch       B: 21.12 s
+scale 2 U=  50 batch       C: 0.73 s
+scale 2 U=  50 batch       D: 0.88 s
+scale 2 U=  50 batch       P: 0.92 s
+scale 2 U=  50 interactive A: 19.76 s
+scale 2 U=  50 interactive B: 20.83 s
+scale 2 U=  50 interactive C: 17.83 s
+scale 2 U=  50 interactive D: 22.73 s
+scale 2 U=  50 interactive P: 26.60 s
+scale 2 U= 200 batch       A: 46.18 s
+scale 2 U= 200 batch       B: 81.01 s
+scale 2 U= 200 batch       C: 0.77 s
+scale 2 U= 200 batch       D: 0.85 s
+scale 2 U= 200 batch       P: 0.92 s
+scale 2 U= 800 batch       A: 148.82 s
+scale 2 U= 800 batch       B: 292.19 s
+scale 2 U= 800 batch       C: 0.74 s
+scale 2 U= 800 batch       D: 0.71 s
+scale 2 U= 800 batch       P: 0.72 s
+scale 4 U=  50 batch       A: 33.15 s
+scale 4 U=  50 batch       B: 48.05 s
+scale 4 U=  50 batch       C: 1.67 s
+scale 4 U=  50 batch       D: 2.18 s
+scale 4 U=  50 batch       P: 2.11 s
+scale 4 U=  50 interactive A: 46.86 s
+scale 4 U=  50 interactive B: 48.14 s
+scale 4 U=  50 interactive C: 43.71 s
+scale 4 U=  50 interactive D: 55.43 s
+scale 4 U=  50 interactive P: 62.58 s
+scale 4 U= 200 batch       A: 130.26 s
+scale 4 U= 200 batch       B: 191.26 s
+scale 4 U= 200 batch       C: 1.84 s
+scale 4 U= 200 batch       D: 2.13 s
+scale 4 U= 200 batch       P: 2.12 s
+scale 4 U= 800 batch       A: 458.21 s
+scale 4 U= 800 batch       B: 776.76 s
+scale 4 U= 800 batch       C: 1.88 s
+scale 4 U= 800 batch       D: 2.09 s
+scale 4 U= 800 batch       P: 2.02 s
+scale 1 base only A: 0.15 s
+scale 1 base only B: 0.16 s
+scale 1 base only C: 0.16 s
+scale 1 base only D: 0.18 s
+scale 1 base only P: 0.17 s
+scale 2 base only A: 0.41 s
+scale 2 base only B: 0.42 s
+scale 2 base only C: 0.39 s
+scale 2 base only D: 0.45 s
+scale 2 base only P: 0.39 s
+scale 4 base only A: 0.93 s
+scale 4 base only B: 0.98 s
+scale 4 base only C: 0.93 s
+scale 4 base only D: 1.04 s
+scale 4 base only P: 0.93 s

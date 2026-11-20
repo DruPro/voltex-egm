@@ -1,0 +1,19 @@
+relation             unstated true  recovered  derived  correct
+is based in                    359         16       16       16   recall 4%   precision 100%
+is on                            0          0        0        0
+belongs to                       0          0        0        0
+works under                    607        550      550      550   recall 91%   precision 100%
+collaborates with              251        251      251      251   recall 100%   precision 100%
+knows                            0          0        0        0
+likes                            0          0        0        0
+ALL derived 817, correct 817 -> precision 100.0%
+  ACCEPT [? collaborates with ?](a,b) => [? collaborates with ?](b,a) n=1159 k=908 rate=0.78 lift=106.8 | where answer known: 1159, agree=0.78
+  ACCEPT [? works under ?](a,b) & [? is on ?](b,c) => [? is on ?](a,c) n=400 k=400 rate=1.00 lift=40.0 | where answer known: 400, agree=1.00
+  ACCEPT [? collaborates with ?](a,b) & [? is on ?](b,c) => [? is on ?](a,c) n=1159 k=1159 rate=1.00 lift=40.0 | where answer known: 1159, agree=1.00
+  ACCEPT [? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c) n=1798 k=1344 rate=0.75 lift=24.6 | where answer known: 1798, agree=0.75
+  ACCEPT [? belongs to ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c) n=40 k=24 rate=0.60 lift=3.6 | where answer known: 24, agree=1.00
+  reject [? collaborates with ?](a,b) & [? collaborates with ?](b,c) => [? collaborates with ?](a,c) n=2713 k=660 rate=0.24 lift=33.2 | where answer known: 2713, agree=0.24
+  reject [? works under ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c) n=686 k=195 rate=0.28 lift=9.3 | where answer known: 686, agree=0.28
+  reject [? works under ?](a,b) & [? knows ?](b,c) => [? collaborates with ?](a,c) n=795 k=13 rate=0.02 lift=2.2 | where answer known: 795, agree=0.02
+  reject [? knows ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c) n=1374 k=68 rate=0.05 lift=1.6 | where answer known: 1374, agree=0.05
+NOISE: 41 corrupted facts | 0 flagged as conflicts | 0 of the flags are real corruptions (recall 0%, precision 0%)

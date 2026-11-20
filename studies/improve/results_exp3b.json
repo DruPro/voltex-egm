@@ -1,0 +1,82 @@
+[
+ {
+  "scale": 1,
+  "seed": 0,
+  "policy": "full rebuild",
+  "cycle_ms_mean": 131.87658762666615,
+  "cycle_ms_p95": 149.78584300001785,
+  "precision": 0.9747706422018348,
+  "recall": 0.5029585798816568,
+  "recall_derivable": 0.9657960199004975
+ },
+ {
+  "scale": 1,
+  "seed": 0,
+  "policy": "refresh 10%",
+  "cycle_ms_mean": 60.39152891999871,
+  "cycle_ms_p95": 67.2364980000566,
+  "precision": 0.9747706422018348,
+  "recall": 0.5029585798816568,
+  "recall_derivable": 0.9657960199004975
+ },
+ {
+  "scale": 1,
+  "seed": 1,
+  "policy": "full rebuild",
+  "cycle_ms_mean": 140.27298163332867,
+  "cycle_ms_p95": 152.89606900000763,
+  "precision": 0.9389256806475349,
+  "recall": 0.5124497991967871,
+  "recall_derivable": 0.9782739891369946
+ },
+ {
+  "scale": 1,
+  "seed": 1,
+  "policy": "refresh 10%",
+  "cycle_ms_mean": 61.917107823332266,
+  "cycle_ms_p95": 65.84858899987012,
+  "precision": 0.8945888966971187,
+  "recall": 0.5112449799196788,
+  "recall_derivable": 0.9806879903439951
+ },
+ {
+  "scale": 1,
+  "seed": 2,
+  "policy": "full rebuild",
+  "cycle_ms_mean": 142.0996055366686,
+  "cycle_ms_p95": 160.6863039999098,
+  "precision": 0.9876788553259142,
+  "recall": 0.5046709991876523,
+  "recall_derivable": 0.9831019915509958
+ },
+ {
+  "scale": 1,
+  "seed": 2,
+  "policy": "refresh 10%",
+  "cycle_ms_mean": 62.79451353999017,
+  "cycle_ms_p95": 68.1215339998289,
+  "precision": 0.988673139158576,
+  "recall": 0.49634443541835904,
+  "recall_derivable": 0.9831019915509958
+ },
+ {
+  "scale": 8,
+  "seed": 0,
+  "policy": "full rebuild",
+  "cycle_ms_mean": 2388.0348974666617,
+  "cycle_ms_p95": 2504.9503369998547,
+  "precision": 0.9869358086537989,
+  "recall": 0.4760269105036244,
+  "recall_derivable": 0.9824144486692015
+ },
+ {
+  "scale": 8,
+  "seed": 0,
+  "policy": "refresh 10%",
+  "cycle_ms_mean": 578.252070283323,
+  "cycle_ms_p95": 629.5898280000074,
+  "precision": 0.9869358086537989,
+  "recall": 0.4760269105036244,
+  "recall_derivable": 0.9824144486692015
+ }
+]

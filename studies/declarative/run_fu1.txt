@@ -1,0 +1,120 @@
+S2 s1 A  B1_cur_right=20 B1_held_abstain=20 persist=True
+S2 s1 B  B1_cur_right=20 B1_held_right=20 persist=True
+S2 s1 C2 B1_cur_right=20 B1_held_right=20 persist=True
+S2 s1 A  B2_cur_right=11 B2_held_abstain=11 persist=True
+S2 s1 B  B2_cur_right=11 B2_held_right=11 persist=True
+S2 s1 C2 B2_cur_right=11 B2_held_right=11 persist=True
+S2 s1 A  D1_cur_right=20 D1_held_abstain=40 persist=True
+S2 s1 B  D1_cur_right=20 D1_held_right=40 persist=True
+S2 s1 C2 D1_cur_right=20 D1_held_right=40 persist=True
+S2 s1 A  D2_cur_wrong=20 D2_held_abstain=20 D2_held_wrong=20 persist=True
+S2 s1 B  D2_cur_wrong=20 D2_held_right=20 D2_held_wrong=20 persist=True
+S2 s1 C2 D2_cur_right=20 D2_held_right=40 persist=True
+S2 s1 A  D3_cur_right=20 D3_held_abstain=20 D3_n=20 D3_one_amendment=0 persist=True
+S2 s1 B  D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s1 C2 D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s1 A  E_ambiguous_unflagged=20 persist=True
+S2 s1 B  E_ambiguous_unflagged=20 persist=True
+S2 s1 C2 E_flagged=20 persist=True
+S2 s1 A  F1_cur_right=20 F1_held_abstain=20 F1_log_kept=0 F1_n=20 persist=True
+S2 s1 B  F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s1 C2 F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s1 A  F2_cur_right=20 F2_held_abstain=20 persist=True
+S2 s1 B  F2_cur_right=20 F2_held_right=20 persist=True
+S2 s1 C2 F2_cur_right=20 F2_held_right=20 persist=True
+S2 s2 A  B1_cur_right=20 B1_held_abstain=20 persist=True
+S2 s2 B  B1_cur_right=20 B1_held_right=20 persist=True
+S2 s2 C2 B1_cur_right=20 B1_held_right=20 persist=True
+S2 s2 A  B2_cur_right=13 B2_held_abstain=13 persist=True
+S2 s2 B  B2_cur_right=13 B2_held_right=13 persist=True
+S2 s2 C2 B2_cur_right=13 B2_held_right=13 persist=True
+S2 s2 A  D1_cur_right=20 D1_held_abstain=40 persist=True
+S2 s2 B  D1_cur_right=20 D1_held_right=40 persist=True
+S2 s2 C2 D1_cur_right=20 D1_held_right=40 persist=True
+S2 s2 A  D2_cur_wrong=20 D2_held_abstain=20 D2_held_wrong=20 persist=True
+S2 s2 B  D2_cur_wrong=20 D2_held_right=20 D2_held_wrong=20 persist=True
+S2 s2 C2 D2_cur_right=20 D2_held_right=40 persist=True
+S2 s2 A  D3_cur_right=20 D3_held_abstain=20 D3_n=20 D3_one_amendment=0 persist=True
+S2 s2 B  D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s2 C2 D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s2 A  E_ambiguous_unflagged=20 persist=True
+S2 s2 B  E_ambiguous_unflagged=20 persist=True
+S2 s2 C2 E_flagged=20 persist=True
+S2 s2 A  F1_cur_right=20 F1_held_abstain=20 F1_log_kept=0 F1_n=20 persist=True
+S2 s2 B  F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s2 C2 F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s2 A  F2_cur_right=20 F2_held_abstain=20 persist=True
+S2 s2 B  F2_cur_right=20 F2_held_right=20 persist=True
+S2 s2 C2 F2_cur_right=20 F2_held_right=20 persist=True
+S2 s3 A  B1_cur_right=20 B1_held_abstain=20 persist=True
+S2 s3 B  B1_cur_right=20 B1_held_right=20 persist=True
+S2 s3 C2 B1_cur_right=20 B1_held_right=20 persist=True
+S2 s3 A  B2_cur_right=14 B2_held_abstain=14 persist=True
+S2 s3 B  B2_cur_right=14 B2_held_right=14 persist=True
+S2 s3 C2 B2_cur_right=14 B2_held_right=14 persist=True
+S2 s3 A  D1_cur_right=20 D1_held_abstain=40 persist=True
+S2 s3 B  D1_cur_right=20 D1_held_right=40 persist=True
+S2 s3 C2 D1_cur_right=20 D1_held_right=40 persist=True
+S2 s3 A  D2_cur_wrong=20 D2_held_abstain=20 D2_held_wrong=20 persist=True
+S2 s3 B  D2_cur_wrong=20 D2_held_right=20 D2_held_wrong=20 persist=True
+S2 s3 C2 D2_cur_right=20 D2_held_right=40 persist=True
+S2 s3 A  D3_cur_right=20 D3_held_abstain=20 D3_n=20 D3_one_amendment=0 persist=True
+S2 s3 B  D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s3 C2 D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s3 A  E_ambiguous_unflagged=20 persist=True
+S2 s3 B  E_ambiguous_unflagged=20 persist=True
+S2 s3 C2 E_flagged=20 persist=True
+S2 s3 A  F1_cur_right=20 F1_held_abstain=20 F1_log_kept=0 F1_n=20 persist=True
+S2 s3 B  F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s3 C2 F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s3 A  F2_cur_right=20 F2_held_abstain=20 persist=True
+S2 s3 B  F2_cur_right=20 F2_held_right=20 persist=True
+S2 s3 C2 F2_cur_right=20 F2_held_right=20 persist=True
+S2 s4 A  B1_cur_right=20 B1_held_abstain=20 persist=True
+S2 s4 B  B1_cur_right=20 B1_held_right=20 persist=True
+S2 s4 C2 B1_cur_right=20 B1_held_right=20 persist=True
+S2 s4 A  B2_cur_right=13 B2_held_abstain=13 persist=True
+S2 s4 B  B2_cur_right=13 B2_held_right=13 persist=True
+S2 s4 C2 B2_cur_right=13 B2_held_right=13 persist=True
+S2 s4 A  D1_cur_right=20 D1_held_abstain=40 persist=True
+S2 s4 B  D1_cur_right=20 D1_held_right=40 persist=True
+S2 s4 C2 D1_cur_right=20 D1_held_right=40 persist=True
+S2 s4 A  D2_cur_wrong=20 D2_held_abstain=20 D2_held_wrong=20 persist=True
+S2 s4 B  D2_cur_wrong=20 D2_held_right=20 D2_held_wrong=20 persist=True
+S2 s4 C2 D2_cur_right=20 D2_held_right=40 persist=True
+S2 s4 A  D3_cur_right=20 D3_held_abstain=20 D3_n=20 D3_one_amendment=0 persist=True
+S2 s4 B  D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s4 C2 D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s4 A  E_ambiguous_unflagged=20 persist=True
+S2 s4 B  E_ambiguous_unflagged=20 persist=True
+S2 s4 C2 E_flagged=20 persist=True
+S2 s4 A  F1_cur_right=20 F1_held_abstain=20 F1_log_kept=0 F1_n=20 persist=True
+S2 s4 B  F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s4 C2 F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s4 A  F2_cur_right=20 F2_held_abstain=20 persist=True
+S2 s4 B  F2_cur_right=20 F2_held_right=20 persist=True
+S2 s4 C2 F2_cur_right=20 F2_held_right=20 persist=True
+S2 s5 A  B1_cur_right=20 B1_held_abstain=20 persist=True
+S2 s5 B  B1_cur_right=20 B1_held_right=20 persist=True
+S2 s5 C2 B1_cur_right=20 B1_held_right=20 persist=True
+S2 s5 A  B2_cur_right=10 B2_held_abstain=10 persist=True
+S2 s5 B  B2_cur_right=10 B2_held_right=10 persist=True
+S2 s5 C2 B2_cur_right=10 B2_held_right=10 persist=True
+S2 s5 A  D1_cur_right=20 D1_held_abstain=40 persist=True
+S2 s5 B  D1_cur_right=20 D1_held_right=40 persist=True
+S2 s5 C2 D1_cur_right=20 D1_held_right=40 persist=True
+S2 s5 A  D2_cur_wrong=20 D2_held_abstain=20 D2_held_wrong=20 persist=True
+S2 s5 B  D2_cur_wrong=20 D2_held_right=20 D2_held_wrong=20 persist=True
+S2 s5 C2 D2_cur_right=20 D2_held_right=40 persist=True
+S2 s5 A  D3_cur_right=20 D3_held_abstain=20 D3_n=20 D3_one_amendment=0 persist=True
+S2 s5 B  D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s5 C2 D3_cur_right=20 D3_held_right=20 D3_n=20 D3_one_amendment=20 persist=True
+S2 s5 A  E_ambiguous_unflagged=20 persist=True
+S2 s5 B  E_ambiguous_unflagged=20 persist=True
+S2 s5 C2 E_flagged=20 persist=True
+S2 s5 A  F1_cur_right=20 F1_held_abstain=20 F1_log_kept=0 F1_n=20 persist=True
+S2 s5 B  F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s5 C2 F1_cur_right=20 F1_held_right=20 F1_log_kept=20 F1_n=20 persist=True
+S2 s5 A  F2_cur_right=20 F2_held_abstain=20 persist=True
+S2 s5 B  F2_cur_right=20 F2_held_right=20 persist=True
+S2 s5 C2 F2_cur_right=20 F2_held_right=20 persist=True

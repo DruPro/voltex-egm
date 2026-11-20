@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+"""kb_search WORD [WORD...] [--page N] : print up to 30 knowledge-base lines containing all words (whole words, case-insensitive)."""
+import sys, os, re, time
+here = os.path.dirname(os.path.abspath(__file__)); args = sys.argv[1:]; page = 1
+if "--page" in args: i = args.index("--page"); page = int(args[i + 1]); args = args[:i] + args[i + 2:]
+words = [w.lower() for w in args]
+open(os.path.join(here, "tool_log.txt"), "a").write(f"{time.time():.3f}\tkb_search\t{' '.join(sys.argv[1:])}\n")
+if not words: print("usage: kb_search WORD [WORD...]"); sys.exit(1)
+pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in words]; hits = []
+for fn in ("facts.txt", "notes.txt"):
+    p = os.path.join(here, fn)
+    if os.path.exists(p):
+        for l in open(p):
+            if all(pt.search(l.lower()) for pt in pats): hits.append(l.rstrip())
+sl = hits[(page - 1) * 30: page * 30]
+print(("\n".join(sl) + (f"\n... {len(hits) - page * 30} more matches: use --page {page + 1}" if len(hits) > page * 30 else "")) if sl else "no matches")

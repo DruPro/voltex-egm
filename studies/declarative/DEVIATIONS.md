@@ -1,0 +1,1 @@
+- S1 region changes: seed 3 had fewer than 3 eligible settlements; harness takes min(3, available). Recorded before seeing seed 3-5 results.

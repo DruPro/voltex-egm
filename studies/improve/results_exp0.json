@@ -1,0 +1,617 @@
+[
+ {
+  "seed": 0,
+  "cfg": "0.3",
+  "global_est": 0.31,
+  "true_mean": 0.319,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.32,
+    0.304
+   ],
+   [
+    "is sibling of",
+    0.31,
+    0.306
+   ],
+   [
+    "is child of",
+    0.26,
+    0.309
+   ],
+   [
+    "is parent of",
+    0.23,
+    0.279
+   ]
+  ],
+  "per_rel_abs_err": 0.03,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 0,
+  "cfg": "0.5",
+  "global_est": 0.44,
+  "true_mean": 0.465,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.44,
+    0.478
+   ],
+   [
+    "is sibling of",
+    0.46,
+    0.508
+   ],
+   [
+    "is child of",
+    0.42,
+    0.487
+   ],
+   [
+    "is parent of",
+    0.41,
+    0.499
+   ]
+  ],
+  "per_rel_abs_err": 0.061,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 0,
+  "cfg": "0.7",
+  "global_est": 0.62,
+  "true_mean": 0.711,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.62,
+    0.704
+   ],
+   [
+    "is sibling of",
+    0.63,
+    0.696
+   ],
+   [
+    "is parent of",
+    0.61,
+    0.687
+   ],
+   [
+    "is child of",
+    0.61,
+    0.685
+   ]
+  ],
+  "per_rel_abs_err": 0.076,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 0,
+  "cfg": "nu",
+  "global_est": 0.38,
+  "true_mean": 0.457,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.38,
+    0.43
+   ],
+   [
+    "is parent of",
+    0.55,
+    0.661
+   ],
+   [
+    "is sibling of",
+    0.27,
+    0.298
+   ],
+   [
+    "is child of",
+    0.24,
+    0.301
+   ]
+  ],
+  "per_rel_abs_err": 0.063,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 1,
+  "cfg": "0.3",
+  "global_est": 0.27,
+  "true_mean": 0.292,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.26,
+    0.312
+   ],
+   [
+    "is sibling of",
+    0.27,
+    0.318
+   ],
+   [
+    "is child of",
+    0.28,
+    0.298
+   ],
+   [
+    "is parent of",
+    0.26,
+    0.284
+   ]
+  ],
+  "per_rel_abs_err": 0.036,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 1,
+  "cfg": "0.5",
+  "global_est": 0.46,
+  "true_mean": 0.514,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.45,
+    0.528
+   ],
+   [
+    "is sibling of",
+    0.43,
+    0.482
+   ],
+   [
+    "is parent of",
+    0.47,
+    0.522
+   ],
+   [
+    "is child of",
+    0.46,
+    0.508
+   ]
+  ],
+  "per_rel_abs_err": 0.057,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 1,
+  "cfg": "0.7",
+  "global_est": 0.62,
+  "true_mean": 0.693,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.62,
+    0.685
+   ],
+   [
+    "is sibling of",
+    0.62,
+    0.705
+   ],
+   [
+    "is parent of",
+    0.64,
+    0.704
+   ],
+   [
+    "is child of",
+    0.62,
+    0.686
+   ]
+  ],
+  "per_rel_abs_err": 0.07,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 1,
+  "cfg": "nu",
+  "global_est": 0.33,
+  "true_mean": 0.47,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.31,
+    0.338
+   ],
+   [
+    "is sibling of",
+    0.37,
+    0.442
+   ],
+   [
+    "is child of",
+    0.33,
+    0.43
+   ],
+   [
+    "is parent of",
+    0.27,
+    0.348
+   ]
+  ],
+  "per_rel_abs_err": 0.069,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 2,
+  "cfg": "0.3",
+  "global_est": 0.27,
+  "true_mean": 0.311,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.26,
+    0.286
+   ],
+   [
+    "is sibling of",
+    0.25,
+    0.295
+   ],
+   [
+    "is parent of",
+    0.28,
+    0.323
+   ],
+   [
+    "is child of",
+    0.27,
+    0.326
+   ]
+  ],
+  "per_rel_abs_err": 0.042,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 2,
+  "cfg": "0.5",
+  "global_est": 0.46,
+  "true_mean": 0.517,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.43,
+    0.486
+   ],
+   [
+    "is sibling of",
+    0.47,
+    0.518
+   ],
+   [
+    "is parent of",
+    0.46,
+    0.533
+   ],
+   [
+    "is child of",
+    0.44,
+    0.495
+   ]
+  ],
+  "per_rel_abs_err": 0.058,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 2,
+  "cfg": "0.7",
+  "global_est": 0.64,
+  "true_mean": 0.732,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.66,
+    0.712
+   ],
+   [
+    "is sibling of",
+    0.64,
+    0.722
+   ],
+   [
+    "is parent of",
+    0.64,
+    0.702
+   ],
+   [
+    "is child of",
+    0.63,
+    0.698
+   ]
+  ],
+  "per_rel_abs_err": 0.066,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 2,
+  "cfg": "nu",
+  "global_est": 0.71,
+  "true_mean": 0.598,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.68,
+    0.755
+   ],
+   [
+    "is sibling of",
+    0.75,
+    0.859
+   ],
+   [
+    "is child of",
+    0.71,
+    0.781
+   ],
+   [
+    "is parent of",
+    0.61,
+    0.653
+   ]
+  ],
+  "per_rel_abs_err": 0.074,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 3,
+  "cfg": "0.3",
+  "global_est": 0.3,
+  "true_mean": 0.294,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.27,
+    0.283
+   ],
+   [
+    "is sibling of",
+    0.22,
+    0.278
+   ],
+   [
+    "is parent of",
+    0.31,
+    0.311
+   ],
+   [
+    "is child of",
+    0.3,
+    0.299
+   ]
+  ],
+  "per_rel_abs_err": 0.018,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 3,
+  "cfg": "0.5",
+  "global_est": 0.47,
+  "true_mean": 0.491,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.47,
+    0.478
+   ],
+   [
+    "is sibling of",
+    0.47,
+    0.49
+   ],
+   [
+    "is child of",
+    0.46,
+    0.529
+   ],
+   [
+    "is parent of",
+    0.44,
+    0.5
+   ]
+  ],
+  "per_rel_abs_err": 0.039,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 3,
+  "cfg": "0.7",
+  "global_est": 0.62,
+  "true_mean": 0.691,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.62,
+    0.71
+   ],
+   [
+    "is sibling of",
+    0.63,
+    0.713
+   ],
+   [
+    "is child of",
+    0.59,
+    0.689
+   ],
+   [
+    "is parent of",
+    0.58,
+    0.681
+   ]
+  ],
+  "per_rel_abs_err": 0.093,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 3,
+  "cfg": "nu",
+  "global_est": 0.54,
+  "true_mean": 0.542,
+  "per_relation": [
+   [
+    "is sibling of",
+    0.7,
+    0.79
+   ],
+   [
+    "is child of",
+    0.54,
+    0.611
+   ],
+   [
+    "is parent of",
+    0.43,
+    0.482
+   ]
+  ],
+  "per_rel_abs_err": 0.071,
+  "relations_with_estimate": 3,
+  "relations_total": 18
+ },
+ {
+  "seed": 4,
+  "cfg": "0.3",
+  "global_est": 0.29,
+  "true_mean": 0.317,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.28,
+    0.308
+   ],
+   [
+    "is sibling of",
+    0.27,
+    0.299
+   ],
+   [
+    "is child of",
+    0.31,
+    0.325
+   ],
+   [
+    "is parent of",
+    0.29,
+    0.305
+   ]
+  ],
+  "per_rel_abs_err": 0.022,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 4,
+  "cfg": "0.5",
+  "global_est": 0.45,
+  "true_mean": 0.502,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.43,
+    0.502
+   ],
+   [
+    "is sibling of",
+    0.47,
+    0.512
+   ],
+   [
+    "is parent of",
+    0.45,
+    0.503
+   ],
+   [
+    "is child of",
+    0.45,
+    0.491
+   ]
+  ],
+  "per_rel_abs_err": 0.052,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 4,
+  "cfg": "0.7",
+  "global_est": 0.65,
+  "true_mean": 0.671,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.66,
+    0.707
+   ],
+   [
+    "is sibling of",
+    0.56,
+    0.659
+   ],
+   [
+    "is parent of",
+    0.65,
+    0.732
+   ],
+   [
+    "is child of",
+    0.64,
+    0.714
+   ]
+  ],
+  "per_rel_abs_err": 0.076,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ },
+ {
+  "seed": 4,
+  "cfg": "nu",
+  "global_est": 0.62,
+  "true_mean": 0.507,
+  "per_relation": [
+   [
+    "is ancestor of",
+    0.51,
+    0.561
+   ],
+   [
+    "is child of",
+    0.65,
+    0.736
+   ],
+   [
+    "is sibling of",
+    0.39,
+    0.452
+   ],
+   [
+    "is parent of",
+    0.62,
+    0.678
+   ]
+  ],
+  "per_rel_abs_err": 0.064,
+  "relations_with_estimate": 4,
+  "relations_total": 18
+ }
+]

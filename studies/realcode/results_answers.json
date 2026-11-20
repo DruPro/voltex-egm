@@ -1,0 +1,1474 @@
+{
+ "EGM-script": [
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q1",
+   "kind": "lookup",
+   "ans": [
+    "exceptions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q2",
+   "kind": "lookup",
+   "ans": [
+    "models"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q3",
+   "kind": "lookup",
+   "ans": [
+    "utils"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q4",
+   "kind": "lookup",
+   "ans": [
+    "utils"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q5",
+   "kind": "lookup",
+   "ans": [
+    "auth"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q6",
+   "kind": "lookup",
+   "ans": [
+    "models"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q7",
+   "kind": "lookup",
+   "ans": [
+    "hooks"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q8",
+   "kind": "lookup",
+   "ans": [
+    "utils"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q9",
+   "kind": "callers",
+   "ans": [
+    "get_environ_proxies",
+    "resolve_proxies"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q10",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter_build_response",
+    "HTTPDigestAuth_handle_401",
+    "SessionRedirectMixin_resolve_redirects",
+    "Session_send"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q11",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter___init__",
+    "HTTPAdapter___setstate__"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q12",
+   "kind": "callers",
+   "ans": [
+    "SessionRedirectMixin_rebuild_auth",
+    "Session_prepare_request"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q13",
+   "kind": "callers",
+   "ans": [
+    "HTTPDigestAuth___call__",
+    "HTTPDigestAuth_handle_401"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q14",
+   "kind": "callers",
+   "ans": [
+    "MockRequest_get_origin_req_host",
+    "MockRequest_host"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q15",
+   "kind": "callers",
+   "ans": [
+    "Response___iter__",
+    "Response_content",
+    "Response_iter_lines"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q16",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter_get_connection",
+    "HTTPAdapter_get_connection_with_tls_context",
+    "HTTPAdapter_request_url"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q17",
+   "kind": "caller_modules",
+   "ans": [
+    "models",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q18",
+   "kind": "caller_modules",
+   "ans": [
+    "adapters",
+    "auth",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q19",
+   "kind": "caller_modules",
+   "ans": [
+    "auth",
+    "cookies",
+    "models",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q20",
+   "kind": "caller_modules",
+   "ans": [
+    "adapters",
+    "utils"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.9090909090909091,
+   "id": "q21",
+   "kind": "raises_1hop",
+   "ans": [
+    "ChunkedEncodingError",
+    "ConnectionError",
+    "ContentDecodingError",
+    "SSLError",
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q22",
+   "kind": "raises_1hop",
+   "ans": [
+    "ValueError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.9090909090909091,
+   "id": "q23",
+   "kind": "raises_1hop",
+   "ans": [
+    "ChunkedEncodingError",
+    "ConnectionError",
+    "ContentDecodingError",
+    "SSLError",
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q24",
+   "kind": "raises_1hop",
+   "ans": [
+    "CookieConflictError",
+    "KeyError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.923076923076923,
+   "id": "q25",
+   "kind": "raises_1hop",
+   "ans": [
+    "ChunkedEncodingError",
+    "ConnectionError",
+    "ContentDecodingError",
+    "RuntimeError",
+    "SSLError",
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q26",
+   "kind": "raises_1hop",
+   "ans": [
+    "InvalidSchema",
+    "TooManyRedirects",
+    "ValueError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q27",
+   "kind": "grandparent",
+   "ans": [
+    "RequestException"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q28",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q29",
+   "kind": "grandparent",
+   "ans": [
+    "Warning"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q30",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q31",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q32",
+   "kind": "imports",
+   "ans": [
+    "structures"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q33",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "compat"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q34",
+   "kind": "imports",
+   "ans": [
+    "compat"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q35",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "auth",
+    "compat",
+    "cookies",
+    "exceptions",
+    "hooks",
+    "status_codes",
+    "structures",
+    "utils"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q36",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "adapters",
+    "auth",
+    "compat",
+    "cookies",
+    "exceptions",
+    "hooks",
+    "models",
+    "status_codes",
+    "structures",
+    "utils"
+   ]
+  }
+ ],
+ "H+EGM": [
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q1",
+   "kind": "lookup",
+   "ans": "exceptions"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q2",
+   "kind": "lookup",
+   "ans": "models"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q3",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q4",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q5",
+   "kind": "lookup",
+   "ans": "auth"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q6",
+   "kind": "lookup",
+   "ans": "models"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q7",
+   "kind": "lookup",
+   "ans": "hooks"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q8",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q9",
+   "kind": "callers",
+   "ans": [
+    "get_environ_proxies",
+    "resolve_proxies"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q10",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter_build_response",
+    "HTTPDigestAuth_handle_401",
+    "SessionRedirectMixin_resolve_redirects",
+    "Session_send"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q11",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter___init__",
+    "HTTPAdapter___setstate__"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q12",
+   "kind": "callers",
+   "ans": [
+    "SessionRedirectMixin_rebuild_auth",
+    "Session_prepare_request"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q13",
+   "kind": "callers",
+   "ans": [
+    "HTTPDigestAuth_handle_401",
+    "HTTPDigestAuth___call__"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q14",
+   "kind": "callers",
+   "ans": [
+    "MockRequest_get_origin_req_host",
+    "MockRequest_host"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q15",
+   "kind": "callers",
+   "ans": [
+    "Response___iter__",
+    "Response_iter_lines",
+    "Response_content"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q16",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter_get_connection_with_tls_context",
+    "HTTPAdapter_get_connection",
+    "HTTPAdapter_request_url"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q17",
+   "kind": "caller_modules",
+   "ans": [
+    "models",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q18",
+   "kind": "caller_modules",
+   "ans": [
+    "adapters",
+    "auth",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q19",
+   "kind": "caller_modules",
+   "ans": [
+    "auth",
+    "cookies",
+    "models",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q20",
+   "kind": "caller_modules",
+   "ans": [
+    "adapters",
+    "utils"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.9090909090909091,
+   "id": "q21",
+   "kind": "raises_1hop",
+   "ans": [
+    "ConnectionError",
+    "SSLError",
+    "ChunkedEncodingError",
+    "ContentDecodingError",
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q22",
+   "kind": "raises_1hop",
+   "ans": [
+    "ValueError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.9090909090909091,
+   "id": "q23",
+   "kind": "raises_1hop",
+   "ans": [
+    "ConnectionError",
+    "SSLError",
+    "ChunkedEncodingError",
+    "ContentDecodingError",
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q24",
+   "kind": "raises_1hop",
+   "ans": [
+    "CookieConflictError",
+    "KeyError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.923076923076923,
+   "id": "q25",
+   "kind": "raises_1hop",
+   "ans": [
+    "RuntimeError",
+    "ConnectionError",
+    "SSLError",
+    "ChunkedEncodingError",
+    "ContentDecodingError",
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q26",
+   "kind": "raises_1hop",
+   "ans": [
+    "ValueError",
+    "TooManyRedirects",
+    "InvalidSchema"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q27",
+   "kind": "grandparent",
+   "ans": [
+    "RequestException"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q28",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q29",
+   "kind": "grandparent",
+   "ans": [
+    "Warning"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q30",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q31",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q32",
+   "kind": "imports",
+   "ans": [
+    "structures"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q33",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "compat"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q34",
+   "kind": "imports",
+   "ans": [
+    "compat"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q35",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "auth",
+    "compat",
+    "cookies",
+    "exceptions",
+    "hooks",
+    "status_codes",
+    "structures",
+    "utils"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q36",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "adapters",
+    "auth",
+    "compat",
+    "cookies",
+    "exceptions",
+    "hooks",
+    "models",
+    "status_codes",
+    "structures",
+    "utils"
+   ]
+  }
+ ],
+ "H+notes": [
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q1",
+   "kind": "lookup",
+   "ans": "exceptions"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q2",
+   "kind": "lookup",
+   "ans": "models"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q3",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q4",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q5",
+   "kind": "lookup",
+   "ans": "auth"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q6",
+   "kind": "lookup",
+   "ans": "models"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q7",
+   "kind": "lookup",
+   "ans": "hooks"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q8",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q9",
+   "kind": "callers",
+   "ans": [
+    "get_environ_proxies",
+    "resolve_proxies"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q10",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter_build_response",
+    "HTTPDigestAuth_handle_401",
+    "SessionRedirectMixin_resolve_redirects",
+    "Session_send"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q11",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter___init__",
+    "HTTPAdapter___setstate__"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q12",
+   "kind": "callers",
+   "ans": [
+    "SessionRedirectMixin_rebuild_auth",
+    "Session_prepare_request"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q13",
+   "kind": "callers",
+   "ans": [
+    "HTTPDigestAuth___call__",
+    "HTTPDigestAuth_handle_401"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q14",
+   "kind": "callers",
+   "ans": [
+    "MockRequest_get_origin_req_host",
+    "MockRequest_host"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q15",
+   "kind": "callers",
+   "ans": [
+    "Response___iter__",
+    "Response_iter_lines",
+    "Response_content"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q16",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter_get_connection_with_tls_context",
+    "HTTPAdapter_get_connection",
+    "HTTPAdapter_request_url"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q17",
+   "kind": "caller_modules",
+   "ans": [
+    "models",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q18",
+   "kind": "caller_modules",
+   "ans": [
+    "adapters",
+    "auth",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q19",
+   "kind": "caller_modules",
+   "ans": [
+    "auth",
+    "cookies",
+    "models",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q20",
+   "kind": "caller_modules",
+   "ans": [
+    "adapters",
+    "utils"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.9090909090909091,
+   "id": "q21",
+   "kind": "raises_1hop",
+   "ans": [
+    "StreamConsumedError",
+    "TypeError",
+    "ChunkedEncodingError",
+    "ContentDecodingError",
+    "ConnectionError",
+    "SSLError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q22",
+   "kind": "raises_1hop",
+   "ans": [
+    "ValueError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.9090909090909091,
+   "id": "q23",
+   "kind": "raises_1hop",
+   "ans": [
+    "StreamConsumedError",
+    "TypeError",
+    "ChunkedEncodingError",
+    "ContentDecodingError",
+    "ConnectionError",
+    "SSLError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q24",
+   "kind": "raises_1hop",
+   "ans": [
+    "CookieConflictError",
+    "KeyError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.923076923076923,
+   "id": "q25",
+   "kind": "raises_1hop",
+   "ans": [
+    "RuntimeError",
+    "StreamConsumedError",
+    "TypeError",
+    "ChunkedEncodingError",
+    "ContentDecodingError",
+    "ConnectionError",
+    "SSLError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q26",
+   "kind": "raises_1hop",
+   "ans": [
+    "ValueError",
+    "InvalidSchema",
+    "TooManyRedirects"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q27",
+   "kind": "grandparent",
+   "ans": [
+    "RequestException"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q28",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q29",
+   "kind": "grandparent",
+   "ans": [
+    "Warning"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q30",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q31",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q32",
+   "kind": "imports",
+   "ans": [
+    "structures"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q33",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "compat"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q34",
+   "kind": "imports",
+   "ans": [
+    "compat"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q35",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "auth",
+    "compat",
+    "cookies",
+    "exceptions",
+    "hooks",
+    "status_codes",
+    "structures",
+    "utils"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q36",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "adapters",
+    "auth",
+    "compat",
+    "cookies",
+    "exceptions",
+    "hooks",
+    "models",
+    "status_codes",
+    "structures",
+    "utils"
+   ]
+  }
+ ],
+ "H+code": [
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q1",
+   "kind": "lookup",
+   "ans": "exceptions"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q2",
+   "kind": "lookup",
+   "ans": "models"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q3",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q4",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q5",
+   "kind": "lookup",
+   "ans": "auth"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q6",
+   "kind": "lookup",
+   "ans": "models"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q7",
+   "kind": "lookup",
+   "ans": "hooks"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q8",
+   "kind": "lookup",
+   "ans": "utils"
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q9",
+   "kind": "callers",
+   "ans": [
+    "get_environ_proxies",
+    "resolve_proxies"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q10",
+   "kind": "callers",
+   "ans": [
+    "SessionRedirectMixin_resolve_redirects",
+    "Session_send",
+    "HTTPDigestAuth_handle_401",
+    "HTTPAdapter_build_response"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q11",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter___init__",
+    "HTTPAdapter___setstate__"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q12",
+   "kind": "callers",
+   "ans": [
+    "SessionRedirectMixin_rebuild_auth",
+    "Session_prepare_request"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q13",
+   "kind": "callers",
+   "ans": [
+    "HTTPDigestAuth_handle_401",
+    "HTTPDigestAuth___call__"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q14",
+   "kind": "callers",
+   "ans": [
+    "MockRequest_get_origin_req_host",
+    "MockRequest_host"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q15",
+   "kind": "callers",
+   "ans": [
+    "Response___iter__",
+    "Response_iter_lines",
+    "Response_content"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q16",
+   "kind": "callers",
+   "ans": [
+    "HTTPAdapter_get_connection_with_tls_context",
+    "HTTPAdapter_get_connection",
+    "HTTPAdapter_request_url"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q17",
+   "kind": "caller_modules",
+   "ans": [
+    "models",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q18",
+   "kind": "caller_modules",
+   "ans": [
+    "auth",
+    "adapters",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q19",
+   "kind": "caller_modules",
+   "ans": [
+    "auth",
+    "cookies",
+    "models",
+    "sessions"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q20",
+   "kind": "caller_modules",
+   "ans": [
+    "adapters",
+    "utils"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.5714285714285715,
+   "id": "q21",
+   "kind": "raises_1hop",
+   "ans": [
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q22",
+   "kind": "raises_1hop",
+   "ans": [
+    "ValueError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.5714285714285715,
+   "id": "q23",
+   "kind": "raises_1hop",
+   "ans": [
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.6666666666666666,
+   "id": "q24",
+   "kind": "raises_1hop",
+   "ans": [
+    "CookieConflictError"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.6666666666666666,
+   "id": "q25",
+   "kind": "raises_1hop",
+   "ans": [
+    "RuntimeError",
+    "StreamConsumedError",
+    "TypeError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q26",
+   "kind": "raises_1hop",
+   "ans": [
+    "ValueError",
+    "InvalidSchema",
+    "TooManyRedirects"
+   ]
+  },
+  {
+   "exact": false,
+   "f1": 0.6666666666666666,
+   "id": "q27",
+   "kind": "grandparent",
+   "ans": [
+    "RequestException",
+    "ValueError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q28",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q29",
+   "kind": "grandparent",
+   "ans": [
+    "Warning"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q30",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q31",
+   "kind": "grandparent",
+   "ans": [
+    "IOError"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q32",
+   "kind": "imports",
+   "ans": [
+    "structures"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q33",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "compat"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q34",
+   "kind": "imports",
+   "ans": [
+    "compat"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q35",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "auth",
+    "compat",
+    "cookies",
+    "exceptions",
+    "hooks",
+    "status_codes",
+    "structures",
+    "utils"
+   ]
+  },
+  {
+   "exact": true,
+   "f1": 1.0,
+   "id": "q36",
+   "kind": "imports",
+   "ans": [
+    "_internal_utils",
+    "adapters",
+    "auth",
+    "compat",
+    "cookies",
+    "exceptions",
+    "hooks",
+    "models",
+    "status_codes",
+    "structures",
+    "utils"
+   ]
+  }
+ ]
+}

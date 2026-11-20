@@ -1,0 +1,4 @@
+{
+ "pre": [],
+ "why": "V4 failed by its pre-registered rule (20% abstention on same-region moves > 5%), so Part 2 uses v2.2 defaults (DX 0)"
+}

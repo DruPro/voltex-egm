@@ -1,0 +1,37 @@
+{
+ "h_egm_S": {
+  "tokens": 81414,
+  "tool_uses": 4,
+  "seconds": 35.7
+ },
+ "h_egm_M": {
+  "tokens": 85822,
+  "tool_uses": 11,
+  "seconds": 51.6
+ },
+ "h_egm_L": {
+  "tokens": 89340,
+  "tool_uses": 70,
+  "seconds": 89.0
+ },
+ "h_notes_S": {
+  "tokens": 89063,
+  "tool_uses": 3,
+  "seconds": 18.8
+ },
+ "h_notes_M": {
+  "tokens": 143547,
+  "tool_uses": 5,
+  "seconds": 24.4
+ },
+ "h_notes_L": {
+  "tokens": 276328,
+  "tool_uses": 15,
+  "seconds": 37.0
+ },
+ "h_code_L": {
+  "tokens": 162580,
+  "tool_uses": 20,
+  "seconds": 61.7
+ }
+}

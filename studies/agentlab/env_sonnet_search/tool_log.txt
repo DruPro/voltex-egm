@@ -1,0 +1,78 @@
+1795113809.769	kb_search	vokabe
+1795113809.800	kb_search	kisado
+1795113809.823	kb_search	dofilo
+1795113809.845	kb_search	lokapa
+1795113809.866	kb_search	kikibe
+1795113809.888	kb_search	nekaru
+1795113809.910	kb_search	ruvone
+1795113809.932	kb_search	bevomi
+1795113809.956	kb_search	nenemi
+1795113809.979	kb_search	nekajo
+1795113810.002	kb_search	jovobe
+1795113810.024	kb_search	bekara
+1795113810.046	kb_search	nujomo
+1795113810.069	kb_search	zefilo
+1795113812.642	kb_search	zeruki located
+1795113812.709	kb_search	pafihe located
+1795113812.753	kb_search	paneki located
+1795113812.775	kb_search	ramipa located
+1795113812.798	kb_search	lonuka located
+1795113812.820	kb_search	raralo located
+1795113812.842	kb_search	hezesa ancestor
+1795113812.863	kb_search	fidohe ancestor
+1795113812.885	kb_search	jokinu ancestor
+1795113812.906	kb_search	vonuru ancestor
+1795113812.928	kb_search	samolo ancestor
+1795113812.951	kb_search	kanevo ancestor
+1795113812.973	kb_search	jokibe ancestor
+1795113812.995	kb_search	bekipa ancestor
+1795113813.017	kb_search	paguki ancestor
+1795113813.039	kb_search	dogune ancestor
+1795113813.060	kb_search	bezenu ancestor
+1795113813.096	kb_search	rudovo ancestor
+1795113818.919	kb_search	dogune parent
+1795113818.968	kb_search	dogune child
+1795113819.019	kb_search	rudovo child
+1795113819.078	kb_search	rudovo parent
+1795113819.165	kb_search	fidohe
+1795113819.231	kb_search	vonuru child
+1795113819.277	kb_search	vonuru parent
+1795113819.331	kb_search	kanevo parent
+1795113819.395	kb_search	jobesa
+1795113819.462	kb_search	migube
+1795113819.518	kb_search	nuloze
+1795113819.568	kb_search	ruvomo
+1795113819.858	kb_search	panube
+1795113819.931	kb_search	samimi
+1795113819.981	kb_search	kivolo
+1795113820.033	kb_search	joberu
+1795113820.077	kb_search	mozeki
+1795113820.134	kb_search	kanedo
+1795113823.272	kb_search	weaver overseen
+1795113823.332	kb_search	farmer overseen
+1795113823.388	kb_search	healer overseen
+1795113823.433	kb_search	guard overseen
+1795113823.471	kb_search	nukihe
+1795113823.493	kb_search	tiramo
+1795113823.515	kb_search	vopahe
+1795113823.537	kb_search	jologu
+1795113823.559	kb_search	bepaze
+1795113823.581	kb_search	nugugu
+1795113823.604	kb_search	rugufi
+1795113823.627	kb_search	tisabe
+1795113823.650	kb_search	nubehe
+1795113823.673	kb_search	ruheze
+1795113825.837	kb_search	katika located
+1795113825.893	kb_search	runenu located
+1795113825.965	kb_search	salora located
+1795113826.016	kb_search	gudopa located
+1795113826.039	kb_search	dodofi located
+1795113826.062	kb_search	mimiti located
+1795113826.086	kb_search	kajodo located
+1795113826.109	kb_search	kajomi located
+1795113826.132	kb_search	rupane located
+1795113826.156	kb_search	guhedo located
+1795113836.137	kb_add	rugufi lives in kajodo
+1795113836.176	kb_add	tisabe lives in kajomi
+1795113836.200	kb_add	nubehe lives in rupane
+1795113836.228	kb_add	ruheze lives in guhedo

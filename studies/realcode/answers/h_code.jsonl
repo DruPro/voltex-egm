@@ -1,0 +1,36 @@
+{"id": "q1", "answer": "exceptions"}
+{"id": "q2", "answer": "models"}
+{"id": "q3", "answer": "utils"}
+{"id": "q4", "answer": "utils"}
+{"id": "q5", "answer": "auth"}
+{"id": "q6", "answer": "models"}
+{"id": "q7", "answer": "hooks"}
+{"id": "q8", "answer": "utils"}
+{"id": "q9", "answer": ["get_environ_proxies", "resolve_proxies"]}
+{"id": "q10", "answer": ["SessionRedirectMixin_resolve_redirects", "Session_send", "HTTPDigestAuth_handle_401", "HTTPAdapter_build_response"]}
+{"id": "q11", "answer": ["HTTPAdapter___init__", "HTTPAdapter___setstate__"]}
+{"id": "q12", "answer": ["SessionRedirectMixin_rebuild_auth", "Session_prepare_request"]}
+{"id": "q13", "answer": ["HTTPDigestAuth_handle_401", "HTTPDigestAuth___call__"]}
+{"id": "q14", "answer": ["MockRequest_get_origin_req_host", "MockRequest_host"]}
+{"id": "q15", "answer": ["Response___iter__", "Response_iter_lines", "Response_content"]}
+{"id": "q16", "answer": ["HTTPAdapter_get_connection_with_tls_context", "HTTPAdapter_get_connection", "HTTPAdapter_request_url"]}
+{"id": "q17", "answer": ["models", "sessions"]}
+{"id": "q18", "answer": ["auth", "adapters", "sessions"]}
+{"id": "q19", "answer": ["auth", "cookies", "models", "sessions"]}
+{"id": "q20", "answer": ["adapters", "utils"]}
+{"id": "q21", "answer": ["StreamConsumedError", "TypeError"]}
+{"id": "q22", "answer": ["ValueError"]}
+{"id": "q23", "answer": ["StreamConsumedError", "TypeError"]}
+{"id": "q24", "answer": ["CookieConflictError"]}
+{"id": "q25", "answer": ["RuntimeError", "StreamConsumedError", "TypeError"]}
+{"id": "q26", "answer": ["ValueError", "InvalidSchema", "TooManyRedirects"]}
+{"id": "q27", "answer": ["RequestException", "ValueError"]}
+{"id": "q28", "answer": ["IOError"]}
+{"id": "q29", "answer": ["Warning"]}
+{"id": "q30", "answer": ["IOError"]}
+{"id": "q31", "answer": ["IOError"]}
+{"id": "q32", "answer": ["structures"]}
+{"id": "q33", "answer": ["_internal_utils", "compat"]}
+{"id": "q34", "answer": ["compat"]}
+{"id": "q35", "answer": ["_internal_utils", "auth", "compat", "cookies", "exceptions", "hooks", "status_codes", "structures", "utils"]}
+{"id": "q36", "answer": ["_internal_utils", "adapters", "auth", "compat", "cookies", "exceptions", "hooks", "models", "status_codes", "structures", "utils"]}

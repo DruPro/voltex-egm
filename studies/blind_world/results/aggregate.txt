@@ -1,0 +1,82 @@
+
+=== coverage 30%  (n=5 seeds, observations 2560.000 ± 39.906)
+system             derived       precision  recall(all heldout)  recall(derivable)             FPR             FNR
+voltex_on   202.800 ± 163.253   0.874 ± 0.068        0.027 ± 0.021      0.071 ± 0.043   0.001 ± 0.001   0.967 ± 0.028
+voltex_off   0.000 ± 0.000             n/a        0.000 ± 0.000      0.000 ± 0.000   0.000 ± 0.000   1.000 ± 0.000
+graph       19899.400 ± 692.834   0.035 ± 0.002        0.106 ± 0.005      0.226 ± 0.013   0.032 ± 0.013   0.913 ± 0.014
+oracle      1385.600 ± 80.357   0.993 ± 0.003        0.212 ± 0.011      1.000 ± 0.000   0.001 ± 0.001   0.825 ± 0.020
+  recall by inference depth (voltex_on vs oracle):
+    depth 1              heldout 907.400 ± 42.122  voltex   0.096 ± 0.047  oracle   1.000 ± 0.000
+    depth 2              heldout 365.200 ± 36.479  voltex   0.029 ± 0.053  oracle   1.000 ± 0.000
+    depth 3              heldout 103.600 ± 10.644  voltex   0.000 ± 0.000  oracle   1.000 ± 0.000
+    depth not derivable  heldout 5110.800 ± 54.099  voltex   0.015 ± 0.015  oracle   0.000 ± 0.000
+  rules accepted 4.000 ± 3.000, valid 2.400 ± 1.673, rule precision 0.678 ± 0.305, designed true rules found 2.000 ± 1.225 of 13
+  contradictions: injected 10.800 ± 0.447, flagged 1.000 ± 2.236, detection recall 0.020 ± 0.045, flag precision 0.200
+  sparse entities (only 'lives in' + 'works as' ingested): heldout 802.800 ± 24.570, recovered 35.200 ± 18.794, wrong 2.200 ± 1.304
+  unseen entities: facts derived about them 0.000 ± 0.000
+  latency ms: ingest 9.953 ± 1.122, model_build(classes+relations+rule mining) 47.520 ± 6.029, infer_all 1.977 ± 1.519, ask_mean 0.032 ± 0.008, ask_p95 0.038 ± 0.004 | RSS MB 9.440 ± 0.055
+
+=== coverage 50%  (n=5 seeds, observations 4160.400 ± 74.972)
+system             derived       precision  recall(all heldout)  recall(derivable)             FPR             FNR
+voltex_on   2553.400 ± 204.226   0.966 ± 0.049        0.503 ± 0.016      0.973 ± 0.007   0.003 ± 0.002   0.624 ± 0.023
+voltex_off   0.000 ± 0.000             n/a        0.000 ± 0.000      0.000 ± 0.000   0.001 ± 0.001   1.000 ± 0.000
+graph       60927.200 ± 3093.264   0.016 ± 0.001        0.202 ± 0.015      0.310 ± 0.027   0.088 ± 0.020   0.825 ± 0.029
+oracle      1674.600 ± 38.637   0.990 ± 0.004        0.340 ± 0.011      1.000 ± 0.000   0.001 ± 0.002   0.714 ± 0.022
+  recall by inference depth (voltex_on vs oracle):
+    depth 1              heldout 1173.000 ± 36.028  voltex   0.966 ± 0.010  oracle   1.000 ± 0.000
+    depth 2              heldout 363.800 ± 17.384  voltex   0.986 ± 0.007  oracle   1.000 ± 0.000
+    depth 3              heldout 121.600 ± 12.759  voltex   1.000 ± 0.000  oracle   1.000 ± 0.000
+    depth not derivable  heldout 3226.000 ± 100.404  voltex   0.261 ± 0.021  oracle   0.000 ± 0.000
+  rules accepted 21.000 ± 1.414, valid 18.600 ± 0.894, rule precision 0.887 ± 0.034, designed true rules found 10.800 ± 0.447 of 13
+  contradictions: injected 17.000 ± 1.000, flagged 2.400 ± 2.074, detection recall 0.011 ± 0.025, flag precision 0.033 ± 0.075
+  sparse entities (only 'lives in' + 'works as' ingested): heldout 864.800 ± 71.577, recovered 469.000 ± 65.483, wrong 11.000 ± 19.039
+  unseen entities: facts derived about them 0.000 ± 0.000
+  latency ms: ingest 14.044 ± 0.707, model_build(classes+relations+rule mining) 83.708 ± 5.905, infer_all 57.433 ± 3.804, ask_mean 0.034 ± 0.002, ask_p95 0.059 ± 0.008 | RSS MB 10.280 ± 0.084
+
+=== coverage 70%  (n=5 seeds, observations 5776.800 ± 46.575)
+system             derived       precision  recall(all heldout)  recall(derivable)             FPR             FNR
+voltex_on   2025.000 ± 107.000   0.915 ± 0.057        0.568 ± 0.016      0.970 ± 0.010   0.005 ± 0.003   0.521 ± 0.021
+voltex_off   0.000 ± 0.000             n/a        0.000 ± 0.000      0.000 ± 0.000   0.002 ± 0.002   1.000 ± 0.000
+graph       116786.800 ± 8124.342   0.007 ± 0.000        0.243 ± 0.015      0.342 ± 0.018   0.143 ± 0.019   0.779 ± 0.023
+oracle      1505.000 ± 41.334   0.978 ± 0.005        0.452 ± 0.010      1.000 ± 0.000   0.003 ± 0.002   0.595 ± 0.010
+  recall by inference depth (voltex_on vs oracle):
+    depth 1              heldout 1146.200 ± 30.801  voltex   0.967 ± 0.012  oracle   1.000 ± 0.000
+    depth 2              heldout 235.600 ± 19.642  voltex   0.974 ± 0.013  oracle   1.000 ± 0.000
+    depth 3              heldout  90.000 ± 12.510  voltex   1.000 ± 0.000  oracle   1.000 ± 0.000
+    depth not derivable  heldout 1781.400 ± 35.858  voltex   0.236 ± 0.022  oracle   0.000 ± 0.000
+  rules accepted 24.000 ± 0.707, valid 19.800 ± 0.447, rule precision 0.826 ± 0.031, designed true rules found 11.800 ± 0.447 of 13
+  contradictions: injected 23.000 ± 0.000, flagged 51.800 ± 33.147, detection recall 0.209 ± 0.135, flag precision 0.130 ± 0.117
+  sparse entities (only 'lives in' + 'works as' ingested): heldout 841.000 ± 31.032, recovered 501.400 ± 37.487, wrong 22.800 ± 17.499
+  unseen entities: facts derived about them 0.000 ± 0.000
+  latency ms: ingest 18.388 ± 0.421, model_build(classes+relations+rule mining) 128.948 ± 9.608, infer_all 70.317 ± 5.322, ask_mean 0.033 ± 0.001, ask_p95 0.053 ± 0.002 | RSS MB 10.940 ± 0.055
+
+=== every rule Voltex accepted in any run (15 runs) ===
+rule                                                                            runs 30/50/70 true conf  agree           label
+lives in(x,y) & is located in(y,z) => is from(x,z)                                5/5/5          1.00   0.97   designed-true
+mentors(x,y) & is member of(y,z) => is member of(x,z)                             3/5/5          0.86   0.90      weak/decoy
+trades with(x,y) & is from(y,z) => is from(x,z)                                   3/5/5          0.86   0.87  designed-decoy
+works as(x,y) & is overseen by(y,z) => is member of(x,z)                          3/4/5          0.94   0.96   designed-true
+contains(x,y) => is located in(y,x)                                               1/5/5          1.00   1.00   designed-true
+is ancestor of(x,y) & is parent of(y,z) => is ancestor of(x,z)                    1/5/5          1.00   0.58   designed-true
+mentors(x,y) & works as(y,z) => works as(x,z)                                     2/4/5          0.91   0.87  designed-decoy
+is ancestor of(x,y) & is ancestor of(y,z) => is ancestor of(x,z)                  0/5/5          1.00   0.61   designed-true
+is ancestor of(x,y) & is sibling of(y,z) => is ancestor of(x,z)                   0/5/5          1.00   0.60 valid (found, not designed)
+is child of(x,y) & is parent of(y,z) => is sibling of(x,z)                        0/5/5          1.00   0.65   designed-true
+is child of(x,y) => is ancestor of(y,x)                                           0/5/5          1.00   0.63 valid (found, not designed)
+is child of(x,y) => is parent of(y,x)                                             0/5/5          1.00   0.65   designed-true
+is parent of(x,y) & is ancestor of(y,z) => is ancestor of(x,z)                    0/5/5          1.00   0.60   designed-true
+is parent of(x,y) & is parent of(y,z) => is ancestor of(x,z)                      0/5/5          1.00   0.60 valid (found, not designed)
+is parent of(x,y) & is sibling of(y,z) => is ancestor of(x,z)                     0/5/5          1.00   0.61 valid (found, not designed)
+is parent of(x,y) & is sibling of(y,z) => is parent of(x,z)                       0/5/5          1.00   0.59 valid (found, not designed)
+is parent of(x,y) => is child of(y,x)                                             0/5/5          1.00   0.72   designed-true
+is sibling of(x,y) & is child of(y,z) => is child of(x,z)                         0/5/5          1.00   0.73 valid (found, not designed)
+is sibling of(x,y) & is sibling of(y,z) => is sibling of(x,z)                     0/5/5          1.00   0.60 valid (found, not designed)
+is sibling of(x,y) => is sibling of(y,x)                                          0/5/5          1.00   0.65   designed-true
+is located in(x,y) => contains(y,x)                                               0/4/5          1.00   0.65   designed-true
+is sibling of(x,y) & is from(y,z) => is from(x,z)                                 1/0/4          0.68   0.68      weak/decoy
+borders(x,y) => borders(y,x)                                                      0/1/3          1.00   0.76   designed-true
+is sibling of(x,y) & lives in(y,z) => lives in(x,z)                               1/0/3          0.67   0.69      weak/decoy
+lives in(x,y) & produces(y,z) => harvests(x,z)                                    0/1/2          0.26   0.84      weak/decoy
+is sibling of(x,y) & harvests(y,z) => harvests(x,z)                               0/1/1          0.23   0.84      weak/decoy
+contains(x,y) & produces(y,z) => exports(x,z)                                     0/0/1          1.00   0.90   designed-true
+is parent of(x,y) & is from(y,z) => is from(x,z)                                  0/0/1          0.46   0.59      weak/decoy

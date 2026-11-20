@@ -1,0 +1,758 @@
+[
+ {
+  "id": "database_s41_q1",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "is managed by",
+  "x": "ramidept",
+  "v": null,
+  "truth": "jozesa",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q2",
+  "sc": "db_mgr",
+  "kind": "held",
+  "rel": "is managed by",
+  "x": "ramidept",
+  "v": "kaheru",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q3",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "nesane",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q4",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "pagune",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q5",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "katira",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q6",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "lofijo",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q7",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "momimi",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q8",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "radopa",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q9",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "kahefi",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q10",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "rudomo",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q11",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "behemi",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q12",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "molora",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q13",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "kativo",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q14",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "doruka",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q15",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "loloru",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q16",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "jofiti",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q17",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "lotinu",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q18",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "nuloka",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q19",
+  "sc": "db_mgr",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "vorami",
+  "v": null,
+  "truth": "jozesa",
+  "tag": "stale_field"
+ },
+ {
+  "id": "database_s41_q20",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "sapahe",
+  "v": null,
+  "truth": "fikadept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q21",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "sapahe",
+  "v": null,
+  "truth": "beruti",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q22",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "sapahe",
+  "v": "dobedept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q23",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "midora",
+  "v": null,
+  "truth": "nenudept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q24",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "midora",
+  "v": null,
+  "truth": "pasapa",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "database_s41_q25",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "midora",
+  "v": "dobedept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q26",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "ranunu",
+  "v": null,
+  "truth": "vododept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q27",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "ranunu",
+  "v": null,
+  "truth": "nubenu",
+  "tag": "derived_only"
+ },
+ {
+  "id": "database_s41_q28",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "ranunu",
+  "v": "rudodept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q29",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "midogu",
+  "v": null,
+  "truth": "dovodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q30",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "midogu",
+  "v": null,
+  "truth": "dovovo",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "database_s41_q31",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "midogu",
+  "v": "fikadept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q32",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "works in",
+  "x": "nemopa",
+  "v": null,
+  "truth": "zenudept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q33",
+  "sc": "db_move",
+  "kind": "one",
+  "rel": "reports to",
+  "x": "nemopa",
+  "v": null,
+  "truth": "gujofi",
+  "tag": "stated_updated"
+ },
+ {
+  "id": "database_s41_q34",
+  "sc": "db_move",
+  "kind": "held",
+  "rel": "works in",
+  "x": "nemopa",
+  "v": "sapadept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q35",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "nebehe",
+  "v": null,
+  "truth": [
+   "benuproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q36",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "nebehe",
+  "v": "hemiproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q37",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "hehehe",
+  "v": null,
+  "truth": [
+   "kapaproj",
+   "momiproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q38",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "hehehe",
+  "v": "dofiproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q39",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "misaru",
+  "v": null,
+  "truth": [
+   "mitiproj",
+   "numiproj",
+   "tivoproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q40",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "misaru",
+  "v": "momiproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q41",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "rujovo",
+  "v": null,
+  "truth": [
+   "gudoproj",
+   "raraproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q42",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "rujovo",
+  "v": "fimiproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q43",
+  "sc": "db_proj",
+  "kind": "set",
+  "rel": "assigned to",
+  "x": "helobe",
+  "v": null,
+  "truth": [
+   "gudoproj",
+   "miguproj",
+   "ravoproj"
+  ],
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q44",
+  "sc": "db_proj",
+  "kind": "held",
+  "rel": "assigned to",
+  "x": "helobe",
+  "v": "kikiproj",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q45",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "zerabe",
+  "v": null,
+  "truth": "tidodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q46",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "zerabe",
+  "v": "rudodept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q47",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "ruguhe",
+  "v": null,
+  "truth": "dosadept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q48",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "ruguhe",
+  "v": "gunudept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q49",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "zeramo",
+  "v": null,
+  "truth": "rudodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q50",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "zeramo",
+  "v": "dobedept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q51",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "nerami",
+  "v": null,
+  "truth": "kihedept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q52",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "nerami",
+  "v": "rudodept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q53",
+  "sc": "db_corr",
+  "kind": "one",
+  "rel": "works in",
+  "x": "rukilo",
+  "v": null,
+  "truth": "hebedept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q54",
+  "sc": "db_corr",
+  "kind": "held",
+  "rel": "works in",
+  "x": "rukilo",
+  "v": "kihedept",
+  "truth": "never",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q55",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "logupa",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q56",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "logupa",
+  "v": null,
+  "truth": "tidodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q57",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "paguhe",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q58",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "paguhe",
+  "v": null,
+  "truth": "pafidept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q59",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "hetido",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q60",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "hetido",
+  "v": null,
+  "truth": "kihedept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q61",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "nudobe",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q62",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "nudobe",
+  "v": null,
+  "truth": "fikadept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q63",
+  "sc": "db_src",
+  "kind": "conflict",
+  "rel": "works in",
+  "x": "mivoti",
+  "v": null,
+  "truth": true,
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q64",
+  "sc": "db_src",
+  "kind": "one",
+  "rel": "works in",
+  "x": "mivoti",
+  "v": null,
+  "truth": "tidodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q65",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "pajolo",
+  "v": null,
+  "truth": "vododept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q66",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "pajolo",
+  "v": "dosadept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q67",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "padora",
+  "v": null,
+  "truth": "tidodept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q68",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "padora",
+  "v": "rudodept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q69",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "rajolo",
+  "v": null,
+  "truth": "nenudept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q70",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "rajolo",
+  "v": "vododept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q71",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "mitine",
+  "v": null,
+  "truth": "nenudept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q72",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "mitine",
+  "v": "gunudept",
+  "truth": "past",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q73",
+  "sc": "db_ooo",
+  "kind": "one",
+  "rel": "works in",
+  "x": "zesami",
+  "v": null,
+  "truth": "hebedept",
+  "tag": ""
+ },
+ {
+  "id": "database_s41_q74",
+  "sc": "db_ooo",
+  "kind": "held",
+  "rel": "works in",
+  "x": "zesami",
+  "v": "zenudept",
+  "truth": "past",
+  "tag": ""
+ }
+]

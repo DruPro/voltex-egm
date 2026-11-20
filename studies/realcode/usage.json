@@ -1,0 +1,27 @@
+{
+ "extract": {
+  "tokens": 205610,
+  "tool_uses": 20,
+  "seconds": 199.0
+ },
+ "h_egm": {
+  "tokens": 79658,
+  "tool_uses": 6,
+  "seconds": 24.4
+ },
+ "h_notes": {
+  "tokens": 85418,
+  "tool_uses": 3,
+  "seconds": 17.5
+ },
+ "h_code": {
+  "tokens": 158287,
+  "tool_uses": 19,
+  "seconds": 40.8
+ },
+ "egm_script": {
+  "tokens": 0,
+  "tool_uses": 0,
+  "seconds": 0.39
+ }
+}

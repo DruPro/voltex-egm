@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""voltex "COMMAND" : query or update the Voltex memory.
+  ASK <pattern with ?>      e.g. voltex "ASK kiruki lives in ?"   (stated + inferred answers, with proofs)
+  UPDATE <fact>             replace the subject's earlier value, e.g. voltex "UPDATE kiruki lives in sadobe"
+  RETRACT <fact> | INGEST <fact> | RELATIONS | CONFLICTS"""
+import sys, os, subprocess, time
+here = os.path.dirname(os.path.abspath(__file__)); cmd = " ".join(sys.argv[1:]).strip()
+open(os.path.join(here, "tool_log.txt"), "a").write(f"{time.time():.3f}\tvoltex\t{cmd}\n")
+verb = cmd.split()[0].upper() if cmd else ""
+if verb not in ("ASK", "UPDATE", "RETRACT", "INGEST", "RELATIONS", "CONFLICTS"):
+    print(__doc__); sys.exit(1)
+jpath = os.path.join(here, "journal.txt"); journal = open(jpath).read().splitlines() if os.path.exists(jpath) else []
+out = subprocess.run([os.path.join(here, ".engine", "voltex2")], input="\n".join([f"LOAD {os.path.join(here, '.engine', 'base.vtx2')}"] + journal + ["FIND __mark__", cmd, "EXIT"]) + "\n",
+                     capture_output=True, text=True).stdout
+res = out.split("[FIND] not stored\n", 1)[-1].rstrip().splitlines()
+if verb in ("UPDATE", "RETRACT", "INGEST"): open(jpath, "a").write(cmd + "\n")
+limit = 40
+print("\n".join(res[:limit]) + (f"\n... {len(res) - limit} more lines" if len(res) > limit else ""))

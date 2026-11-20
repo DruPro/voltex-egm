@@ -1,0 +1,3194 @@
+[
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "pagulo works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "runera lives in vogura",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "hekine lives in nedoka",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "nuruki is from kavoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "lojomi is from raheia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "kimimi lives in panedo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "zekika works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "tinebe is located in kakiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "hemoze is from mosaia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "mivobe works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "rabenu is from raheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "ruzemo lives in vovojo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "hegura is from raheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "hebefi works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "rusasa is from raheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "tihevo lives in kaguhe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "jogura is from mosaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "pazebe works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "bevodo works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "ravoka is located in jonuia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "gumolo is located in sakiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "kakaki is located in sakiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "kajora works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "sarati is from nudoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "vomira works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "ruzevo lives in vojobe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "hepamo is from zeloia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "kimora lives in gusasa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "vofimo is from kinuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "zetinu is from kavoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "domopa is from befiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "zenebe is located in befiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "kakine works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "jobegu is located in hefiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "dobeki is from befiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "kaguti is located in mosaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "lozera is from befiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "jodovo lives in pakahe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "beguki works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "kamize lives in vovojo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "helojo works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "panedo is located in kinuia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "rudopa works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "lodohe works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "saragu is located in befiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "nulolo lives in gumolo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "bejofi works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "fimofi is located in mosaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "nunuhe is from nudoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "fibeti works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "gukimo is from kinuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "vopamo is from zeloia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "domimo is from mosaia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "lozelo is from nudoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "nuheze lives in kaguti",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "hekara is located in mikiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "nehehe is from befiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "kitihe is located in befiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "nudomo lives in vojobe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "kikajo works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 3
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "sahesa lives in vogura",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "voraka works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "nekisa lives in kakaki",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "sajonu lives in mobera",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "rapati lives in kaguti",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "bedone works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "tibedo lives in nedoka",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "mokiti is located in kakiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "sajogu works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "firuhe lives in gumolo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "vovojo is located in befiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "kamogu is from kavoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "vodogu is from mikiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "nelopa is from mikiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_job",
+  "old": "kalofi works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "kigune lives in vovojo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "legit_move",
+  "old": "lorulo lives in rarura",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "rakafi is from sakiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 1,
+  "kind": "odd_from",
+  "old": "rujolo is from kavoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 1,
+  "kind": "odd_loc",
+  "old": "kinesa is located in kakiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "palone works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "doraze lives in johera",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "rubefi works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "jokaki works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "lomoze is from lokaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "vomine is from nepaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "sajolo lives in lolofi",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "nevovo is from lokaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "sahepa lives in lomimi",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "kisavo is located in dobeia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "berara is located in finuia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "molone lives in nulomo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "gudoze works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "fipaki works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "sakira works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "kamivo works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "nejopa is from mikaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "rulosa works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "kisasa lives in rarafi",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "tikido lives in zenuti",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "finumi is located in moloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "mifize is from nepaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "rasaki is from fizeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "kitine lives in kisavo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "mojovo is from lokaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "vofilo works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "hepapa is from lokaia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "miravo is from fizeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "nelomo is located in finuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "hetihe is from lokaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "tinulo works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "ranegu is from lokaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "rafihe lives in zebepa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "zenuti is located in fizeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "gujora is located in moloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "tibera is located in kaguia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "tineka works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "jomofi lives in rakisa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "nuvojo lives in fisavo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "kipami is from moloia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "dosanu is located in mikaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "mipapa is from lokaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "rumiki is from lokaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "belopa lives in vonera",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "fijosa is located in kaguia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "zedopa is from kaguia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "vokivo lives in rarafi",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "lokafi is located in voruia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "zebepa is located in lokaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "vohefi is from nepaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "figudo works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "zenegu works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "gujone works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "josado is from moloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "domipa is from rusaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "fijojo is located in nepaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "guneze works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "hepami works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "firupa works as healer",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "tirajo lives in rarafi",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "lokilo lives in kisavo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "firura lives in lozemo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "ruheti lives in rarafi",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "heneki works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "sasalo is from lokaia",
+  "checked": true,
+  "law": 0,
+  "any": 2
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "nesafi is from rusaia",
+  "checked": true,
+  "law": 0,
+  "any": 2
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "milora is from rusaia",
+  "checked": true,
+  "law": 0,
+  "any": 2
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "lonuru is from lokaia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "sahegu is located in saraia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "loruru is from mikaia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "tipaki is from saraia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "kipabe lives in mohepa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_from",
+  "old": "besafi is from fizeia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "dopagu lives in paraki",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "guvodo lives in lolofi",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "fiheti works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "lozemo is located in nepaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 2,
+  "kind": "legit_move",
+  "old": "saheze lives in tilohe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "legit_job",
+  "old": "neloti works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 2,
+  "kind": "odd_loc",
+  "old": "rarafi is located in lokaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "herane lives in raguka",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "kibegu is located in paheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "zerafi is from dokaia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "bedovo lives in heragu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "gubebe is from paheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "moneti is located in gunuia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "jomiti lives in moneti",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "dopapa lives in mozepa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "panevo is from hemoia",
+  "checked": true,
+  "law": 0,
+  "any": 2
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "henumo lives in mohemo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "gupanu lives in lododo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "guguti works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "runeki is from zeraia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "nebepa works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "ravohe lives in mojoru",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "fijodo works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "nehemi is from dokaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "hekapa lives in moneti",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "lodobe is from hevoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "sajora is from zeraia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "nuhene lives in zenusa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "panudo works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "hejoki is from hemoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "doneka is from zeraia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "kijogu is from pakiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "ramigu works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "safijo is from hevoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "voruvo is from dokaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "jonupa lives in firugu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "tijomo is from nukiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "kavoze works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "samora is from pakiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "lokido lives in kizera",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "bemomi is located in nukiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "nesavo works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "nekagu works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "joguka works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "rukami is from hemoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "hevomi works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "ranupa is from gunuia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "rukika is from gunuia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "hemigu is from hevoia",
+  "checked": true,
+  "law": 0,
+  "any": 2
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "filolo works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "firugu is located in nenuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "nerafi is from gujoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "berajo lives in zekivo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "sadosa works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "ruzeze works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "fitira lives in nemibe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "rajoka works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "vodoru is from paheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "lomofi is from gujoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "zebenu is located in gunuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "tihepa is located in gujoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "zegumo is from hemoia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "fizenu lives in rufinu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "lododo is located in nukiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "rumoki works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "beloti works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "sazemo lives in kizera",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "finumi works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "ratiru lives in zekivo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "heragu is located in hevoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "rubeti is located in nenuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "kalodo lives in zebenu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "paguki lives in henelo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "lopaka is located in hemoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "rarabe lives in zenusa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "hevohe is from nukiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "kizera is located in pakiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "karaka is from pakiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "dokimo is located in hemoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_move",
+  "old": "rudora lives in lododo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "mojoru is located in raguia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "raruze works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_from",
+  "old": "jonugu is from dokaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "vomido works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "legit_job",
+  "old": "dokati works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 3,
+  "kind": "odd_loc",
+  "old": "zekivo is located in razeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "modoki is located in josaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "pajoka is located in tineia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "tineze is from loloia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "nuvolo is from josaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "dovofi lives in saneze",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "filogu lives in ruzegu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "jomoki works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "kitiki works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "bekilo is from nejoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "kinebe works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "ravogu is from nuruia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "jopafi is from filoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "gumoti lives in dopado",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "midonu lives in ruhenu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "zeneru is from filoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "tikaze is located in tineia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "fibefi is from nuruia",
+  "checked": true,
+  "law": 0,
+  "any": 2
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "saruhe works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "miravo works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "safihe is located in filoia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "pahelo works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "zetisa is located in loloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "rutimi is from tineia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "vokami is from loloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "rafihe is from fifiia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "radodo works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "lonesa lives in minudo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "rumomo works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "pazelo is located in tineia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "mozebe is from filoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "zejosa lives in guberu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "benumi works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "nusado is located in fifiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "zefibe works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "modopa works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "parulo works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "ruhenu is located in nuloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "gugulo lives in lofimi",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "lovoze is located in pamoia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "sabeze works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "guruze works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "hejomi is from loloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "vonudo lives in safihe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "rumiki lives in vopane",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "rasalo works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "mineze is from loloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "tidodo is from filoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "benufi is from loloia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "moruze is from filoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "zevoze is from pamoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "hefibe is from nejoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "kafiki is from loloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "zehene is from fifiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "vopane is located in mokaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "jovomi works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "parahe is from losaia",
+  "checked": true,
+  "law": 0,
+  "any": 2
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "kazene is from nuloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "gubesa lives in ruzegu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "molora lives in ruzegu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "fimohe works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "zekiru lives in mopara",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "dozeka is from tineia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "lomoze lives in savobe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "kavomo works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "neruhe lives in nupahe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "samobe lives in gukipa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "tihehe is located in pamoia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "momine lives in gukipa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "zeraki is located in losaia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "mijofi works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_job",
+  "old": "hejopa works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "ruvomi lives in dopado",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "helosa is from nejoia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "papaki lives in nupahe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "nedosa is located in tiheia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "sahelo lives in dopado",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "legit_move",
+  "old": "monusa lives in josavo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "savobe is located in mokaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 4,
+  "kind": "odd_from",
+  "old": "safifi is from tiheia",
+  "checked": true,
+  "law": 0,
+  "any": 3
+ },
+ {
+  "seed": 4,
+  "kind": "odd_loc",
+  "old": "padoka is located in losaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "dotiki is located in nukiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "betika works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "rupaze is from joheia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "heramo works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "rusanu works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 3
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "misafi lives in sasapa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "nurapa is from lobeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "nubepa is from nukiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "heruti lives in fipalo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "jokavo is from ruloia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "fipalo is located in rumoia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "mimomo is from vonuia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "loguti is from ruheia",
+  "checked": true,
+  "law": 1,
+  "any": 2
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "zedojo works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "rafihe works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "johelo is from ruloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "mogube lives in losanu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "nuhejo is from nesaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "nukaka works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "kijone lives in mokanu",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "hezeru works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "gurugu is from dotiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "guloru works as smith",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "lohegu is from joheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "mopati is from vonuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "donebe lives in sasapa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "tizedo works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "mimipa lives in rakajo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "rufiki is from joheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "gumomo lives in dosabe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "nuzefi is located in lomiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "vozepa lives in rakajo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "nenemo works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "mimira is from guloia",
+  "checked": true,
+  "law": 0,
+  "any": 2
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "mikamo lives in gukaki",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "jozenu lives in domipa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "sasapa is located in lomiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "mokajo is located in vonuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "dopanu is located in ruloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "monehe is from dotiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "vosahe lives in katihe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "titido works as farmer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "hevoze lives in nefibe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "nunujo is located in rumoia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "voguki is located in fizeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "gukane works as weaver",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "doranu is located in nesaia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "samone lives in fipalo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "finugu is from fizeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "donura is from nukiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "finube lives in rakajo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "kisafi is from nukiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "padopa is located in guloia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "ruruki works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "voruvo is from ruloia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "rukahe lives in nefibe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "nudogu works as miner",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "milobe lives in domipa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "firudo is located in lomiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "kadomo works as guard",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "vosabe is from fizeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "kadohe works as scribe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "kirado is from rumoia",
+  "checked": true,
+  "law": 0,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "karuka works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "karumo is from dotiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "zesagu is located in lobeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "rakaki lives in voguki",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "pafisa lives in dosabe",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "dosabe is located in ruheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "lojomo is from dotiia",
+  "checked": true,
+  "law": 1,
+  "any": 1
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "sazejo is from ruheia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "momoti works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "kiheki works as merchant",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "runugu is from fizeia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "gupaka is located in vonuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_loc",
+  "old": "domipa is located in dotiia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_job",
+  "old": "fihenu works as healer",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "misami lives in fipalo",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "odd_from",
+  "old": "fimoru is from vonuia",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ },
+ {
+  "seed": 5,
+  "kind": "legit_move",
+  "old": "hekaru lives in domipa",
+  "checked": true,
+  "law": 0,
+  "any": 0
+ }
+]

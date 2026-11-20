@@ -1,0 +1,50 @@
+{
+ "A append": {
+  "mover lives in: new + stale": 150,
+  "mover is from: stale only": 96,
+  "mover is from: correct only": 25,
+  "mover is from: none/other": 29,
+  "resident is from: stale only": 10,
+  "resident is from: none/other": 9,
+  "settlement located in: new + stale": 5,
+  "region contains settlement: new + stale": 5,
+  "UPDATE replaced": 0
+ },
+ "B UPDATE all": {
+  "mover lives in: correct only": 150,
+  "mover is from: stale only": 80,
+  "mover is from: correct only": 30,
+  "mover is from: none/other": 40,
+  "resident is from: correct only": 10,
+  "resident is from: stale only": 7,
+  "settlement located in: correct only": 5,
+  "region contains settlement: new + stale": 3,
+  "UPDATE replaced": 157,
+  "resident is from: none/other": 2,
+  "region contains settlement: correct only": 2
+ },
+ "C UPDATE+RETRACT": {
+  "mover lives in: correct only": 150,
+  "mover is from: stale only": 80,
+  "mover is from: correct only": 30,
+  "mover is from: none/other": 40,
+  "resident is from: correct only": 10,
+  "resident is from: stale only": 7,
+  "settlement located in: correct only": 5,
+  "region contains settlement: correct only": 5,
+  "UPDATE replaced": 157,
+  "resident is from: none/other": 2
+ },
+ "D C + staleness check": {
+  "mover lives in: correct only": 150,
+  "mover is from: stale only": 80,
+  "mover is from: correct only": 30,
+  "mover is from: none/other": 40,
+  "resident is from: correct only": 10,
+  "resident is from: stale only": 7,
+  "settlement located in: correct only": 5,
+  "region contains settlement: correct only": 5,
+  "UPDATE replaced": 157,
+  "resident is from: none/other": 2
+ }
+}

@@ -1,0 +1,50 @@
+1795113677.962	voltex	ASK vokabe lives in ?
+1795113679.015	voltex	ASK kisado lives in ?
+1795113680.101	voltex	ASK dofilo lives in ?
+1795113681.149	voltex	ASK lokapa lives in ?
+1795113682.190	voltex	ASK kikibe lives in ?
+1795113683.204	voltex	ASK nekaru lives in ?
+1795113684.248	voltex	ASK ruvone is from ?
+1795113685.255	voltex	ASK bevomi is from ?
+1795113686.312	voltex	ASK nenemi is from ?
+1795113687.318	voltex	ASK nekajo is from ?
+1795113688.328	voltex	ASK jovobe is from ?
+1795113689.322	voltex	ASK bekara is from ?
+1795113690.322	voltex	ASK nujomo is from ?
+1795113691.307	voltex	ASK zefilo is from ?
+1795113692.360	voltex	ASK hezesa is ancestor of ?
+1795113693.347	voltex	ASK jokinu is ancestor of ?
+1795113694.336	voltex	ASK samolo is ancestor of ?
+1795113695.400	voltex	ASK jokibe is ancestor of ?
+1795113696.452	voltex	ASK paguki is ancestor of ?
+1795113697.496	voltex	ASK bezenu is ancestor of ?
+1795113698.530	voltex	ASK jobesa is member of ?
+1795113699.594	voltex	ASK migube is member of ?
+1795113700.644	voltex	ASK nuloze is member of ?
+1795113701.719	voltex	ASK ruvomo is member of ?
+1795113702.777	voltex	ASK panube lives in ?
+1795113703.764	voltex	ASK samimi lives in ?
+1795113704.745	voltex	ASK kivolo lives in ?
+1795113705.726	voltex	ASK joberu lives in ?
+1795113706.719	voltex	ASK mozeki lives in ?
+1795113707.712	voltex	ASK kanedo lives in ?
+1795113708.700	voltex	ASK nukihe is from ?
+1795113709.703	voltex	ASK tiramo is from ?
+1795113710.789	voltex	ASK vopahe is from ?
+1795113711.865	voltex	ASK jologu is from ?
+1795113712.911	voltex	ASK bepaze is from ?
+1795113713.905	voltex	ASK nugugu is from ?
+1795113714.907	voltex	UPDATE rugufi lives in kajodo
+1795113715.637	voltex	ASK rugufi is from ?
+1795113717.337	voltex	UPDATE tisabe lives in kajomi
+1795113718.790	voltex	ASK tisabe is from ?
+1795113721.216	voltex	UPDATE nubehe lives in rupane
+1795113723.266	voltex	ASK nubehe is from ?
+1795113726.526	voltex	UPDATE ruheze lives in guhedo
+1795113729.428	voltex	ASK ruheze is from ?
+1795113733.355	voltex	ASK rugufi is from ?
+1795113737.101	voltex	ASK tisabe is from ?
+1795113740.833	voltex	ASK nubehe is from ?
+1795113744.593	voltex	ASK ruheze is from ?
+1795113748.376	voltex	CONFLICTS
+1795113752.061	voltex	CONFLICTS

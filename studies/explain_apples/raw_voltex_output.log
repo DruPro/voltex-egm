@@ -1,0 +1,49 @@
+voltex2# INGESTFILE explain/facts.txt
+[INGEST] 91 records, 2312 bytes in 0.000 s (5.94 MB/s)
+voltex2# RELATIONS
+[RELATIONS] 3 two-argument templates
+  #0  ? has color ?                  52 facts
+  #1  ? has variety ?                33 facts
+  #2  ? has wavelength ?             6 facts
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT [? has variety ?](a,b) & [? has color ?](b,c) => [? has color ?](a,c) n=31 k=27 rate=0.87 lift=4.1 | where answer known: 30, agree=0.90
+voltex2# INFER
+[INFER] 4 new facts derived from 1 accepted rules
+  apple has color yellow           score=0.90  because apple has variety golden_delicious + golden_delicious has color yellow  [rule: [? has variety ?](a,b) & [? has color ?](b,c) => [? has color ?](a,c)]
+  grape has color red              score=0.90  because grape has variety flame + flame has color red  [rule: [? has variety ?](a,b) & [? has color ?](b,c) => [? has color ?](a,c)]
+  banana has color blue            score=0.90  because banana has variety blue_java + blue_java has color blue  [rule: [? has variety ?](a,b) & [? has color ?](b,c) => [? has color ?](a,c)]
+  orange has color red             score=0.90  because orange has variety blood_orange + blood_orange has color red  [rule: [? has variety ?](a,b) & [? has color ?](b,c) => [? has color ?](a,c)]
+voltex2# ASK apple has color ?
+  apple has color red              stated
+  apple has color green            stated
+  apple has color yellow           inferred (score 0.90) because apple has variety golden_delicious + golden_delicious has color yellow  [rule: [? has variety ?](a,b) & [? has color ?](b,c) => [? has color ?](a,c)]
+voltex2# ASK apple has variety ?
+  apple has variety honeycrisp     stated
+  apple has variety gala           stated
+  apple has variety granny_smith   stated
+  apple has variety golden_delicious stated
+  apple has variety fuji           stated
+  apple has variety pink_lady      stated
+voltex2# ASK ? has color blue
+  blue_java has color blue         stated
+  blueberry has color blue         stated
+  bluecrop has color blue          stated
+  duke has color blue              stated
+  elliott has color blue           stated
+  banana has color blue            inferred (score 0.90) because banana has variety blue_java + blue_java has color blue  [rule: [? has variety ?](a,b) & [? has color ?](b,c) => [? has color ?](a,c)]
+voltex2# ASK blue has wavelength ?
+  blue has wavelength 450to495nm   stated
+voltex2# ASK red has wavelength ?
+  red has wavelength 620to750nm    stated
+voltex2# ASK green has wavelength ?
+  green has wavelength 495to570nm  stated
+voltex2# ASK yellow has wavelength ?
+  yellow has wavelength 570to590nm stated
+voltex2# ASK banana has color ?
+  banana has color red             stated
+  banana has color yellow          stated
+  banana has color blue            inferred (score 0.90) because banana has variety blue_java + blue_java has color blue  [rule: [? has variety ?](a,b) & [? has color ?](b,c) => [? has color ?](a,c)]
+voltex2# ASK granny_smith has color ?
+  granny_smith has color green     stated
+voltex2# ASK dragonfruit has color ?
+  no stated or inferred answer

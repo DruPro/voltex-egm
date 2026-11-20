@@ -1,0 +1,162 @@
+[
+ {
+  "id": "q01",
+  "question": "Which settlement does vokabe live in?"
+ },
+ {
+  "id": "q02",
+  "question": "Which settlement does kisado live in?"
+ },
+ {
+  "id": "q03",
+  "question": "Which settlement does dofilo live in?"
+ },
+ {
+  "id": "q04",
+  "question": "Which settlement does lokapa live in?"
+ },
+ {
+  "id": "q05",
+  "question": "Which settlement does kikibe live in?"
+ },
+ {
+  "id": "q06",
+  "question": "Which settlement does nekaru live in?"
+ },
+ {
+  "id": "q07",
+  "question": "Which region is ruvone from?"
+ },
+ {
+  "id": "q08",
+  "question": "Which region is bevomi from?"
+ },
+ {
+  "id": "q09",
+  "question": "Which region is nenemi from?"
+ },
+ {
+  "id": "q10",
+  "question": "Which region is nekajo from?"
+ },
+ {
+  "id": "q11",
+  "question": "Which region is jovobe from?"
+ },
+ {
+  "id": "q12",
+  "question": "Which region is bekara from?"
+ },
+ {
+  "id": "q13",
+  "question": "Which region is nujomo from?"
+ },
+ {
+  "id": "q14",
+  "question": "Which region is zefilo from?"
+ },
+ {
+  "id": "q15",
+  "question": "Is hezesa an ancestor of fidohe? Answer yes, no, or unknown."
+ },
+ {
+  "id": "q16",
+  "question": "Is jokinu an ancestor of vonuru? Answer yes, no, or unknown."
+ },
+ {
+  "id": "q17",
+  "question": "Is samolo an ancestor of kanevo? Answer yes, no, or unknown."
+ },
+ {
+  "id": "q18",
+  "question": "Is jokibe an ancestor of bekipa? Answer yes, no, or unknown."
+ },
+ {
+  "id": "q19",
+  "question": "Is paguki an ancestor of dogune? Answer yes, no, or unknown."
+ },
+ {
+  "id": "q20",
+  "question": "Is bezenu an ancestor of rudovo? Answer yes, no, or unknown."
+ },
+ {
+  "id": "q21",
+  "question": "Which institution is jobesa a member of?"
+ },
+ {
+  "id": "q22",
+  "question": "Which institution is migube a member of?"
+ },
+ {
+  "id": "q23",
+  "question": "Which institution is nuloze a member of?"
+ },
+ {
+  "id": "q24",
+  "question": "Which institution is ruvomo a member of?"
+ },
+ {
+  "id": "q25",
+  "question": "Which settlement does panube live in? If the knowledge base cannot answer, say unknown."
+ },
+ {
+  "id": "q26",
+  "question": "Which settlement does samimi live in? If the knowledge base cannot answer, say unknown."
+ },
+ {
+  "id": "q27",
+  "question": "Which settlement does kivolo live in? If the knowledge base cannot answer, say unknown."
+ },
+ {
+  "id": "q28",
+  "question": "Which settlement does joberu live in? If the knowledge base cannot answer, say unknown."
+ },
+ {
+  "id": "q29",
+  "question": "Which settlement does mozeki live in? If the knowledge base cannot answer, say unknown."
+ },
+ {
+  "id": "q30",
+  "question": "Which settlement does kanedo live in? If the knowledge base cannot answer, say unknown."
+ },
+ {
+  "id": "q31",
+  "question": "Claim: nukihe is from raraia. Answer supported, contradicted, or unknown."
+ },
+ {
+  "id": "q32",
+  "question": "Claim: tiramo is from paheia. Answer supported, contradicted, or unknown."
+ },
+ {
+  "id": "q33",
+  "question": "Claim: vopahe is from losaia. Answer supported, contradicted, or unknown."
+ },
+ {
+  "id": "q34",
+  "question": "Claim: jologu is from lobeia. Answer supported, contradicted, or unknown."
+ },
+ {
+  "id": "q35",
+  "question": "Claim: bepaze is from loloia. Answer supported, contradicted, or unknown."
+ },
+ {
+  "id": "q36",
+  "question": "Claim: nugugu is from miloia. Answer supported, contradicted, or unknown."
+ },
+ {
+  "id": "q37",
+  "question": "New information: rugufi has moved and now lives in kajodo (no longer in kazejo). Record this change in the knowledge base, then answer: which region is rugufi from now?"
+ },
+ {
+  "id": "q38",
+  "question": "New information: tisabe has moved and now lives in kajomi (no longer in paneki). Record this change in the knowledge base, then answer: which region is tisabe from now?"
+ },
+ {
+  "id": "q39",
+  "question": "New information: nubehe has moved and now lives in rupane (no longer in neruvo). Record this change in the knowledge base, then answer: which region is nubehe from now?"
+ },
+ {
+  "id": "q40",
+  "question": "New information: ruheze has moved and now lives in guhedo (no longer in raralo). Record this change in the knowledge base, then answer: which region is ruheze from now?"
+ }
+]

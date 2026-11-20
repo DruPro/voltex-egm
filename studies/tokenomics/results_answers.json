@@ -1,0 +1,2182 @@
+{
+"egm_script_S": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+],
+"egm_script_M": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": false,
+"f1": 0.6666666666666666,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": false,
+"f1": 0.6666666666666666,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": false,
+"f1": 0.782608695652174,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": false,
+"f1": 0.88,
+"kind": "imports",
+"id": "q36"
+}
+],
+"egm_script_L": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+],
+"h_egm_S": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": false,
+"f1": 0.75,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+],
+"h_egm_M": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+],
+"h_egm_L": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": false,
+"f1": 0.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+],
+"h_notes_S": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+],
+"h_notes_M": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+],
+"h_notes_L": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+],
+"h_code_L": [
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q1"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q2"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q3"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q4"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q5"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q6"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q7"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "lookup",
+"id": "q8"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q9"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q10"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q11"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q12"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q13"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q14"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q15"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "callers",
+"id": "q16"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q17"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q18"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q19"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "caller_modules",
+"id": "q20"
+},
+{
+"exact": false,
+"f1": 0.9090909090909091,
+"kind": "raises_1hop",
+"id": "q21"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q22"
+},
+{
+"exact": false,
+"f1": 0.9090909090909091,
+"kind": "raises_1hop",
+"id": "q23"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q24"
+},
+{
+"exact": false,
+"f1": 0.923076923076923,
+"kind": "raises_1hop",
+"id": "q25"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "raises_1hop",
+"id": "q26"
+},
+{
+"exact": false,
+"f1": 0.6666666666666666,
+"kind": "grandparent",
+"id": "q27"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q28"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q29"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q30"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "grandparent",
+"id": "q31"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q32"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q33"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q34"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q35"
+},
+{
+"exact": true,
+"f1": 1.0,
+"kind": "imports",
+"id": "q36"
+}
+]
+}

@@ -1,0 +1,122 @@
+{
+ "r2_sonnet_search": {
+  "A ancestors": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.767,
+   "beyond_kb_but_true": 0,
+   "false": 0
+  },
+  "B siblings": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.909,
+   "beyond_kb_but_true": 0,
+   "false": 0
+  },
+  "C region residents": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.456,
+   "beyond_kb_but_true": 0,
+   "false": 0
+  }
+ },
+ "r2_sonnet_voltex": {
+  "A ancestors": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.967,
+   "beyond_kb_but_true": 6,
+   "false": 0
+  },
+  "B siblings": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.955,
+   "beyond_kb_but_true": 1,
+   "false": 0
+  },
+  "C region residents": {
+   "precision_vs_world": 0.986,
+   "recall_vs_world": 0.761,
+   "beyond_kb_but_true": 40,
+   "false": 3
+  }
+ },
+ "r2_haiku_search": {
+  "A ancestors": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.767,
+   "beyond_kb_but_true": 0,
+   "false": 0
+  },
+  "B siblings": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.909,
+   "beyond_kb_but_true": 0,
+   "false": 0
+  },
+  "C region residents": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.456,
+   "beyond_kb_but_true": 0,
+   "false": 0
+  }
+ },
+ "r2_haiku_voltex": {
+  "A ancestors": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.967,
+   "beyond_kb_but_true": 6,
+   "false": 0
+  },
+  "B siblings": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.955,
+   "beyond_kb_but_true": 1,
+   "false": 0
+  },
+  "C region residents": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.456,
+   "beyond_kb_but_true": 0,
+   "false": 0
+  }
+ },
+ "r2_scripted_voltex": {
+  "A ancestors": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.967,
+   "beyond_kb_but_true": 6,
+   "false": 0
+  },
+  "B siblings": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.955,
+   "beyond_kb_but_true": 1,
+   "false": 0
+  },
+  "C region residents": {
+   "precision_vs_world": 0.986,
+   "recall_vs_world": 0.761,
+   "beyond_kb_but_true": 40,
+   "false": 3
+  }
+ },
+ "r2_scripted_voltex_lawonly": {
+  "A ancestors": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.967,
+   "beyond_kb_but_true": 6,
+   "false": 0
+  },
+  "B siblings": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.955,
+   "beyond_kb_but_true": 1,
+   "false": 0
+  },
+  "C region residents": {
+   "precision_vs_world": 1.0,
+   "recall_vs_world": 0.456,
+   "beyond_kb_but_true": 0,
+   "false": 0
+  }
+ }
+}

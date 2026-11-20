@@ -1,0 +1,63 @@
+{
+ "train_sentences": 3000,
+ "test_sentences_all_unseen_pairs": 300,
+ "vocab": 52,
+ "uniform_bits_per_word": 5.7,
+ "M1_word_trigram": {
+  "bits_seen_combos": 2.021,
+  "bits_unseen_combos": 3.779
+ },
+ "M2_discovered_class_trigram": {
+  "bits_seen_combos": 2.033,
+  "bits_unseen_combos": 2.155,
+  "n_classes": 9,
+  "purity": 1.0,
+  "completeness": {
+   "NAME": 1.0,
+   "VERB": 1.0,
+   "ADJ": 1.0,
+   "NOUN": 1.0,
+   "VINT": 1.0,
+   "PREP": 1.0,
+   "PLACE": 1.0
+  }
+ },
+ "M3_mix_0.5": {
+  "bits_seen_combos": 2.019,
+  "bits_unseen_combos": 2.281
+ },
+ "noun_after_unseen_adj_bits": {
+  "ideal": 3.322,
+  "M1": 17.137,
+  "M2": 3.507
+ },
+ "gen_M1": {
+  "valid": 0.725,
+  "valid_and_novel": 0.375,
+  "uses_heldout_pair": 0.0
+ },
+ "gen_M2": {
+  "valid": 0.71,
+  "valid_and_novel": 0.453,
+  "uses_heldout_pair": 0.085
+ },
+ "voltex_on_train": {
+  "raw_bytes": 103881,
+  "vtxe_bytes": 444381,
+  "xz_bytes": 11244,
+  "nodes": 6543
+ },
+ "hunt": {
+  "jump_fraction": 0.97,
+  "emitted_tokens_that_are_vocab_words": 0.469,
+  "grammatical_sentence_fragments": 0,
+  "examples": [
+   " drops",
+   "ttic .",
+   "chen .",
+   "ows"
+  ],
+  "mean_outgoing_edges_per_node_with_any": 60.68,
+  "fraction_atoms_with_no_outgoing_edge": 0.441
+ }
+}

@@ -1,0 +1,1773 @@
+[
+ {
+  "seed": 0,
+  "cfg": "0.3",
+  "system": "frozen",
+  "precision": 0.8235294117647058,
+  "recall": 0.06091686091686092,
+  "recall_derivable": 0.13956941351150706,
+  "derived": 476,
+  "wrong": 84,
+  "rules": 9,
+  "valid_rules": 5,
+  "designed_found": 4,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.3",
+  "system": "COV",
+  "precision": 0.9598092643051771,
+  "recall": 0.43791763791763794,
+  "recall_derivable": 0.985894580549369,
+  "derived": 2936,
+  "wrong": 118,
+  "rules": 21,
+  "valid_rules": 17,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.3",
+  "system": "COV-lower",
+  "precision": 0.9598092643051771,
+  "recall": 0.43791763791763794,
+  "recall_derivable": 0.985894580549369,
+  "derived": 2936,
+  "wrong": 118,
+  "rules": 21,
+  "valid_rules": 17,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.3",
+  "system": "REP",
+  "precision": 0.8235294117647058,
+  "recall": 0.06091686091686092,
+  "recall_derivable": 0.13956941351150706,
+  "derived": 476,
+  "wrong": 84,
+  "rules": 9,
+  "valid_rules": 5,
+  "designed_found": 4,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.5",
+  "system": "frozen",
+  "precision": 0.9906275468622657,
+  "recall": 0.4898247028007254,
+  "recall_derivable": 0.971875,
+  "derived": 2454,
+  "wrong": 23,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.5",
+  "system": "COV",
+  "precision": 0.9740812379110252,
+  "recall": 0.5073544227281886,
+  "recall_derivable": 0.971875,
+  "derived": 2585,
+  "wrong": 67,
+  "rules": 22,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.5",
+  "system": "COV-lower",
+  "precision": 0.9740812379110252,
+  "recall": 0.5073544227281886,
+  "recall_derivable": 0.971875,
+  "derived": 2585,
+  "wrong": 67,
+  "rules": 22,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.5",
+  "system": "REP",
+  "precision": 0.9906275468622657,
+  "recall": 0.4898247028007254,
+  "recall_derivable": 0.971875,
+  "derived": 2454,
+  "wrong": 23,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.7",
+  "system": "frozen",
+  "precision": 0.9701492537313433,
+  "recall": 0.5648665425201738,
+  "recall_derivable": 0.958041958041958,
+  "derived": 1876,
+  "wrong": 56,
+  "rules": 25,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is parent of|is from=>is from",
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.7",
+  "system": "COV",
+  "precision": 0.9893438025799215,
+  "recall": 0.547486033519553,
+  "recall_derivable": 0.9636363636363636,
+  "derived": 1783,
+  "wrong": 19,
+  "rules": 22,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.7",
+  "system": "COV-lower",
+  "precision": 0.9701492537313433,
+  "recall": 0.5648665425201738,
+  "recall_derivable": 0.958041958041958,
+  "derived": 1876,
+  "wrong": 56,
+  "rules": 25,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is parent of|is from=>is from",
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "0.7",
+  "system": "REP",
+  "precision": 0.9701492537313433,
+  "recall": 0.5648665425201738,
+  "recall_derivable": 0.958041958041958,
+  "derived": 1876,
+  "wrong": 56,
+  "rules": 25,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is parent of|is from=>is from",
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "nu",
+  "system": "frozen",
+  "precision": 0.9580952380952381,
+  "recall": 0.18087019057892845,
+  "recall_derivable": 0.35736196319018404,
+  "derived": 1050,
+  "wrong": 44,
+  "rules": 13,
+  "valid_rules": 10,
+  "designed_found": 6,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "nu",
+  "system": "COV",
+  "precision": 0.9802754000744325,
+  "recall": 0.47357065803667747,
+  "recall_derivable": 0.9815950920245399,
+  "derived": 2687,
+  "wrong": 53,
+  "rules": 22,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "nu",
+  "system": "COV-lower",
+  "precision": 0.9802754000744325,
+  "recall": 0.47357065803667747,
+  "recall_derivable": 0.9815950920245399,
+  "derived": 2687,
+  "wrong": 53,
+  "rules": 22,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 0,
+  "cfg": "nu",
+  "system": "REP",
+  "precision": 0.9580952380952381,
+  "recall": 0.18087019057892845,
+  "recall_derivable": 0.35736196319018404,
+  "derived": 1050,
+  "wrong": 44,
+  "rules": 13,
+  "valid_rules": 10,
+  "designed_found": 6,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "0.3",
+  "system": "frozen",
+  "precision": 0.9555555555555556,
+  "recall": 0.006613349738541987,
+  "recall_derivable": 0.03187546330615271,
+  "derived": 45,
+  "wrong": 2,
+  "rules": 1,
+  "valid_rules": 1,
+  "designed_found": 1,
+  "harvest_wrong": 0,
+  "decoys": [],
+  "invalid_rules": []
+ },
+ {
+  "seed": 1,
+  "cfg": "0.3",
+  "system": "COV",
+  "precision": 0.9991759373712402,
+  "recall": 0.3729621654875423,
+  "recall_derivable": 0.9243884358784284,
+  "derived": 2427,
+  "wrong": 2,
+  "rules": 15,
+  "valid_rules": 15,
+  "designed_found": 8,
+  "harvest_wrong": 0,
+  "decoys": [],
+  "invalid_rules": []
+ },
+ {
+  "seed": 1,
+  "cfg": "0.3",
+  "system": "COV-lower",
+  "precision": 0.9991759373712402,
+  "recall": 0.3729621654875423,
+  "recall_derivable": 0.9243884358784284,
+  "derived": 2427,
+  "wrong": 2,
+  "rules": 15,
+  "valid_rules": 15,
+  "designed_found": 8,
+  "harvest_wrong": 0,
+  "decoys": [],
+  "invalid_rules": []
+ },
+ {
+  "seed": 1,
+  "cfg": "0.3",
+  "system": "REP",
+  "precision": 0.9555555555555556,
+  "recall": 0.006613349738541987,
+  "recall_derivable": 0.03187546330615271,
+  "derived": 45,
+  "wrong": 2,
+  "rules": 1,
+  "valid_rules": 1,
+  "designed_found": 1,
+  "harvest_wrong": 0,
+  "decoys": [],
+  "invalid_rules": []
+ },
+ {
+  "seed": 1,
+  "cfg": "0.5",
+  "system": "frozen",
+  "precision": 0.8785271851342051,
+  "recall": 0.5257413509060955,
+  "recall_derivable": 0.9792038027332145,
+  "derived": 2906,
+  "wrong": 353,
+  "rules": 23,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 318,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|harvests=>harvests",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "0.5",
+  "system": "COV",
+  "precision": 0.8785271851342051,
+  "recall": 0.5257413509060955,
+  "recall_derivable": 0.9792038027332145,
+  "derived": 2906,
+  "wrong": 353,
+  "rules": 23,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 318,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|harvests=>harvests",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "0.5",
+  "system": "COV-lower",
+  "precision": 0.8785271851342051,
+  "recall": 0.5257413509060955,
+  "recall_derivable": 0.9792038027332145,
+  "derived": 2906,
+  "wrong": 353,
+  "rules": 23,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 318,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|harvests=>harvests",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "0.5",
+  "system": "REP",
+  "precision": 0.9862583431488026,
+  "recall": 0.5172981878088962,
+  "recall_derivable": 0.9738562091503268,
+  "derived": 2547,
+  "wrong": 35,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "0.7",
+  "system": "frozen",
+  "precision": 0.9043133366385722,
+  "recall": 0.554575858923685,
+  "recall_derivable": 0.9688979039891819,
+  "derived": 2017,
+  "wrong": 193,
+  "rules": 23,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 167,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|harvests=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "0.7",
+  "system": "COV",
+  "precision": 0.9043133366385722,
+  "recall": 0.554575858923685,
+  "recall_derivable": 0.9688979039891819,
+  "derived": 2017,
+  "wrong": 193,
+  "rules": 23,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 167,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|harvests=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "0.7",
+  "system": "COV-lower",
+  "precision": 0.9043133366385722,
+  "recall": 0.554575858923685,
+  "recall_derivable": 0.9688979039891819,
+  "derived": 2017,
+  "wrong": 193,
+  "rules": 23,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 167,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|harvests=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "0.7",
+  "system": "REP",
+  "precision": 0.9858233369683751,
+  "recall": 0.5497111584068106,
+  "recall_derivable": 0.9655172413793104,
+  "derived": 1834,
+  "wrong": 26,
+  "rules": 22,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "nu",
+  "system": "frozen",
+  "precision": 0.9825268817204301,
+  "recall": 0.14891016500305562,
+  "recall_derivable": 0.2978589420654912,
+  "derived": 744,
+  "wrong": 13,
+  "rules": 11,
+  "valid_rules": 7,
+  "designed_found": 4,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is parent of|is from=>is from",
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "nu",
+  "system": "COV",
+  "precision": 0.9921813917122753,
+  "recall": 0.5170095742513751,
+  "recall_derivable": 0.9767002518891688,
+  "derived": 2558,
+  "wrong": 20,
+  "rules": 22,
+  "valid_rules": 18,
+  "designed_found": 10,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is parent of|is from=>is from",
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "nu",
+  "system": "COV-lower",
+  "precision": 0.9921813917122753,
+  "recall": 0.5170095742513751,
+  "recall_derivable": 0.9767002518891688,
+  "derived": 2558,
+  "wrong": 20,
+  "rules": 22,
+  "valid_rules": 18,
+  "designed_found": 10,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is parent of|is from=>is from",
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 1,
+  "cfg": "nu",
+  "system": "REP",
+  "precision": 0.9825268817204301,
+  "recall": 0.14891016500305562,
+  "recall_derivable": 0.2978589420654912,
+  "derived": 744,
+  "wrong": 13,
+  "rules": 11,
+  "valid_rules": 7,
+  "designed_found": 4,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is parent of|is from=>is from",
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "0.3",
+  "system": "frozen",
+  "precision": 0.9319727891156463,
+  "recall": 0.020986519607843136,
+  "recall_derivable": 0.06827309236947791,
+  "derived": 147,
+  "wrong": 10,
+  "rules": 3,
+  "valid_rules": 3,
+  "designed_found": 2,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')"
+  ],
+  "invalid_rules": []
+ },
+ {
+  "seed": 2,
+  "cfg": "0.3",
+  "system": "COV",
+  "precision": 0.9961404862987263,
+  "recall": 0.39537377450980393,
+  "recall_derivable": 0.9384203480589023,
+  "derived": 2591,
+  "wrong": 10,
+  "rules": 16,
+  "valid_rules": 16,
+  "designed_found": 8,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')"
+  ],
+  "invalid_rules": []
+ },
+ {
+  "seed": 2,
+  "cfg": "0.3",
+  "system": "COV-lower",
+  "precision": 0.9961404862987263,
+  "recall": 0.39537377450980393,
+  "recall_derivable": 0.9384203480589023,
+  "derived": 2591,
+  "wrong": 10,
+  "rules": 16,
+  "valid_rules": 16,
+  "designed_found": 8,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')"
+  ],
+  "invalid_rules": []
+ },
+ {
+  "seed": 2,
+  "cfg": "0.3",
+  "system": "REP",
+  "precision": 0.9319727891156463,
+  "recall": 0.020986519607843136,
+  "recall_derivable": 0.06827309236947791,
+  "derived": 147,
+  "wrong": 10,
+  "rules": 3,
+  "valid_rules": 3,
+  "designed_found": 2,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')"
+  ],
+  "invalid_rules": []
+ },
+ {
+  "seed": 2,
+  "cfg": "0.5",
+  "system": "frozen",
+  "precision": 0.9874544718737354,
+  "recall": 0.5081216159933362,
+  "recall_derivable": 0.9802513464991023,
+  "derived": 2471,
+  "wrong": 31,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "0.5",
+  "system": "COV",
+  "precision": 0.9874544718737354,
+  "recall": 0.5081216159933362,
+  "recall_derivable": 0.9802513464991023,
+  "derived": 2471,
+  "wrong": 31,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "0.5",
+  "system": "COV-lower",
+  "precision": 0.9874544718737354,
+  "recall": 0.5081216159933362,
+  "recall_derivable": 0.9802513464991023,
+  "derived": 2471,
+  "wrong": 31,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "0.5",
+  "system": "REP",
+  "precision": 0.9874544718737354,
+  "recall": 0.5081216159933362,
+  "recall_derivable": 0.9802513464991023,
+  "derived": 2471,
+  "wrong": 31,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "0.7",
+  "system": "frozen",
+  "precision": 0.970736629667003,
+  "recall": 0.5949288806431664,
+  "recall_derivable": 0.9715608465608465,
+  "derived": 1982,
+  "wrong": 58,
+  "rules": 24,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "0.7",
+  "system": "COV",
+  "precision": 0.985239852398524,
+  "recall": 0.577922077922078,
+  "recall_derivable": 0.9708994708994709,
+  "derived": 1897,
+  "wrong": 28,
+  "rules": 22,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "0.7",
+  "system": "COV-lower",
+  "precision": 0.970736629667003,
+  "recall": 0.5949288806431664,
+  "recall_derivable": 0.9715608465608465,
+  "derived": 1982,
+  "wrong": 58,
+  "rules": 24,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "0.7",
+  "system": "REP",
+  "precision": 0.970736629667003,
+  "recall": 0.5949288806431664,
+  "recall_derivable": 0.9715608465608465,
+  "derived": 1982,
+  "wrong": 58,
+  "rules": 24,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "nu",
+  "system": "frozen",
+  "precision": 0.9201149425287356,
+  "recall": 0.4735285418515232,
+  "recall_derivable": 0.9577689243027888,
+  "derived": 1740,
+  "wrong": 139,
+  "rules": 21,
+  "valid_rules": 17,
+  "designed_found": 10,
+  "harvest_wrong": 107,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|lives in=>lives in",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "nu",
+  "system": "COV",
+  "precision": 0.9284037558685446,
+  "recall": 0.46790890269151136,
+  "recall_derivable": 0.9577689243027888,
+  "derived": 1704,
+  "wrong": 122,
+  "rules": 20,
+  "valid_rules": 17,
+  "designed_found": 10,
+  "harvest_wrong": 100,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "nu",
+  "system": "COV-lower",
+  "precision": 0.9201149425287356,
+  "recall": 0.4735285418515232,
+  "recall_derivable": 0.9577689243027888,
+  "derived": 1740,
+  "wrong": 139,
+  "rules": 21,
+  "valid_rules": 17,
+  "designed_found": 10,
+  "harvest_wrong": 107,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|lives in=>lives in",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 2,
+  "cfg": "nu",
+  "system": "REP",
+  "precision": 0.9802834257547751,
+  "recall": 0.4705708370304644,
+  "recall_derivable": 0.9545816733067729,
+  "derived": 1623,
+  "wrong": 32,
+  "rules": 20,
+  "valid_rules": 17,
+  "designed_found": 10,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.3",
+  "system": "frozen",
+  "precision": 0.8,
+  "recall": 0.01735357917570499,
+  "recall_derivable": 0.03660436137071651,
+  "derived": 140,
+  "wrong": 28,
+  "rules": 3,
+  "valid_rules": 1,
+  "designed_found": 1,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.3",
+  "system": "COV",
+  "precision": 0.9882648784576697,
+  "recall": 0.3653548187170747,
+  "recall_derivable": 0.9034267912772586,
+  "derived": 2386,
+  "wrong": 28,
+  "rules": 13,
+  "valid_rules": 11,
+  "designed_found": 7,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.3",
+  "system": "COV-lower",
+  "precision": 0.9882648784576697,
+  "recall": 0.3653548187170747,
+  "recall_derivable": 0.9034267912772586,
+  "derived": 2386,
+  "wrong": 28,
+  "rules": 13,
+  "valid_rules": 11,
+  "designed_found": 7,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.3",
+  "system": "REP",
+  "precision": 0.8,
+  "recall": 0.01735357917570499,
+  "recall_derivable": 0.03660436137071651,
+  "derived": 140,
+  "wrong": 28,
+  "rules": 3,
+  "valid_rules": 1,
+  "designed_found": 1,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.5",
+  "system": "frozen",
+  "precision": 0.9857918930213122,
+  "recall": 0.487296013220409,
+  "recall_derivable": 0.9702203692674211,
+  "derived": 2393,
+  "wrong": 34,
+  "rules": 19,
+  "valid_rules": 17,
+  "designed_found": 10,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.5",
+  "system": "COV",
+  "precision": 0.9857918930213122,
+  "recall": 0.487296013220409,
+  "recall_derivable": 0.9702203692674211,
+  "derived": 2393,
+  "wrong": 34,
+  "rules": 19,
+  "valid_rules": 17,
+  "designed_found": 10,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.5",
+  "system": "COV-lower",
+  "precision": 0.9857918930213122,
+  "recall": 0.487296013220409,
+  "recall_derivable": 0.9702203692674211,
+  "derived": 2393,
+  "wrong": 34,
+  "rules": 19,
+  "valid_rules": 17,
+  "designed_found": 10,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.5",
+  "system": "REP",
+  "precision": 0.9857918930213122,
+  "recall": 0.487296013220409,
+  "recall_derivable": 0.9702203692674211,
+  "derived": 2393,
+  "wrong": 34,
+  "rules": 19,
+  "valid_rules": 17,
+  "designed_found": 10,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.7",
+  "system": "frozen",
+  "precision": 0.8379758588672238,
+  "recall": 0.5564118372379778,
+  "recall_derivable": 0.9860821155184412,
+  "derived": 2154,
+  "wrong": 349,
+  "rules": 24,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 303,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.7",
+  "system": "COV",
+  "precision": 0.8452547919588593,
+  "recall": 0.5573366214549939,
+  "recall_derivable": 0.9916492693110647,
+  "derived": 2139,
+  "wrong": 331,
+  "rules": 23,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 303,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.7",
+  "system": "COV-lower",
+  "precision": 0.8379758588672238,
+  "recall": 0.5564118372379778,
+  "recall_derivable": 0.9860821155184412,
+  "derived": 2154,
+  "wrong": 349,
+  "rules": 24,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 303,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "0.7",
+  "system": "REP",
+  "precision": 0.9744869661674986,
+  "recall": 0.5416152897657214,
+  "recall_derivable": 0.9589422407794015,
+  "derived": 1803,
+  "wrong": 46,
+  "rules": 23,
+  "valid_rules": 20,
+  "designed_found": 12,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "nu",
+  "system": "frozen",
+  "precision": 0.9718614718614719,
+  "recall": 0.29833887043189367,
+  "recall_derivable": 0.5140961857379768,
+  "derived": 1386,
+  "wrong": 39,
+  "rules": 17,
+  "valid_rules": 13,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "nu",
+  "system": "COV",
+  "precision": 0.9713445995591476,
+  "recall": 0.29280177187153933,
+  "recall_derivable": 0.5002763957987839,
+  "derived": 1361,
+  "wrong": 39,
+  "rules": 16,
+  "valid_rules": 12,
+  "designed_found": 8,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "nu",
+  "system": "COV-lower",
+  "precision": 0.9718614718614719,
+  "recall": 0.29833887043189367,
+  "recall_derivable": 0.5140961857379768,
+  "derived": 1386,
+  "wrong": 39,
+  "rules": 17,
+  "valid_rules": 13,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 3,
+  "cfg": "nu",
+  "system": "REP",
+  "precision": 0.9718614718614719,
+  "recall": 0.29833887043189367,
+  "recall_derivable": 0.5140961857379768,
+  "derived": 1386,
+  "wrong": 39,
+  "rules": 17,
+  "valid_rules": 13,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.3",
+  "system": "frozen",
+  "precision": 0.8592233009708737,
+  "recall": 0.02716390423572744,
+  "recall_derivable": 0.07746979388770434,
+  "derived": 206,
+  "wrong": 29,
+  "rules": 4,
+  "valid_rules": 2,
+  "designed_found": 2,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.3",
+  "system": "COV",
+  "precision": 0.9888803680981595,
+  "recall": 0.3957949662369552,
+  "recall_derivable": 0.9509594882729211,
+  "derived": 2608,
+  "wrong": 29,
+  "rules": 18,
+  "valid_rules": 16,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.3",
+  "system": "COV-lower",
+  "precision": 0.9888803680981595,
+  "recall": 0.3957949662369552,
+  "recall_derivable": 0.9509594882729211,
+  "derived": 2608,
+  "wrong": 29,
+  "rules": 18,
+  "valid_rules": 16,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.3",
+  "system": "REP",
+  "precision": 0.8592233009708737,
+  "recall": 0.02716390423572744,
+  "recall_derivable": 0.07746979388770434,
+  "derived": 206,
+  "wrong": 29,
+  "rules": 4,
+  "valid_rules": 2,
+  "designed_found": 2,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.5",
+  "system": "frozen",
+  "precision": 0.9858434919386552,
+  "recall": 0.5054435483870968,
+  "recall_derivable": 0.9644364074743822,
+  "derived": 2543,
+  "wrong": 36,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.5",
+  "system": "COV",
+  "precision": 0.9858434919386552,
+  "recall": 0.5054435483870968,
+  "recall_derivable": 0.9644364074743822,
+  "derived": 2543,
+  "wrong": 36,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.5",
+  "system": "COV-lower",
+  "precision": 0.9858434919386552,
+  "recall": 0.5054435483870968,
+  "recall_derivable": 0.9644364074743822,
+  "derived": 2543,
+  "wrong": 36,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.5",
+  "system": "REP",
+  "precision": 0.9858434919386552,
+  "recall": 0.5054435483870968,
+  "recall_derivable": 0.9644364074743822,
+  "derived": 2543,
+  "wrong": 36,
+  "rules": 21,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.7",
+  "system": "frozen",
+  "precision": 0.8902671755725191,
+  "recall": 0.5694232529752823,
+  "recall_derivable": 0.9646902065289806,
+  "derived": 2096,
+  "wrong": 230,
+  "rules": 24,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 155,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.7",
+  "system": "COV",
+  "precision": 0.9192073170731707,
+  "recall": 0.5520292950869697,
+  "recall_derivable": 0.9653564290473018,
+  "derived": 1968,
+  "wrong": 159,
+  "rules": 22,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 123,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.7",
+  "system": "COV-lower",
+  "precision": 0.8902671755725191,
+  "recall": 0.5694232529752823,
+  "recall_derivable": 0.9646902065289806,
+  "derived": 2096,
+  "wrong": 230,
+  "rules": 24,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 155,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "lives in|produces=>harvests",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "0.7",
+  "system": "REP",
+  "precision": 0.961038961038961,
+  "recall": 0.5645407384803174,
+  "recall_derivable": 0.9560293137908061,
+  "derived": 1925,
+  "wrong": 75,
+  "rules": 23,
+  "valid_rules": 19,
+  "designed_found": 11,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')",
+   "('C', 'trades with', 'is from', 'is from')"
+  ],
+  "invalid_rules": [
+   "is sibling of|is from=>is from",
+   "is sibling of|lives in=>lives in",
+   "mentors|is member of=>is member of",
+   "trades with|is from=>is from"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "nu",
+  "system": "frozen",
+  "precision": 0.9909695817490495,
+  "recall": 0.47526783679051743,
+  "recall_derivable": 0.9539614561027837,
+  "derived": 2104,
+  "wrong": 19,
+  "rules": 17,
+  "valid_rules": 16,
+  "designed_found": 8,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "nu",
+  "system": "COV",
+  "precision": 0.9909695817490495,
+  "recall": 0.47526783679051743,
+  "recall_derivable": 0.9539614561027837,
+  "derived": 2104,
+  "wrong": 19,
+  "rules": 18,
+  "valid_rules": 17,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "nu",
+  "system": "COV-lower",
+  "precision": 0.9909695817490495,
+  "recall": 0.47526783679051743,
+  "recall_derivable": 0.9539614561027837,
+  "derived": 2104,
+  "wrong": 19,
+  "rules": 18,
+  "valid_rules": 17,
+  "designed_found": 9,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of"
+  ]
+ },
+ {
+  "seed": 4,
+  "cfg": "nu",
+  "system": "REP",
+  "precision": 0.9958137100994244,
+  "recall": 0.43378162753590155,
+  "recall_derivable": 0.8565310492505354,
+  "derived": 1911,
+  "wrong": 8,
+  "rules": 16,
+  "valid_rules": 15,
+  "designed_found": 7,
+  "harvest_wrong": 0,
+  "decoys": [
+   "('C', 'mentors', 'works as', 'works as')"
+  ],
+  "invalid_rules": [
+   "mentors|is member of=>is member of"
+  ]
+ }
+]

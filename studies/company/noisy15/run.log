@@ -1,0 +1,1172 @@
+[INGEST] 3807 records, 95218 bytes in 0.009 s (9.99 MB/s)
+[SET] COV = 2
+[SET] TIERS = 2
+[SET] STALE = 1
+--- VOLTEX v2 METRICS ---
+ Records:          3807 unique / 3807 ingested
+ Tokens (unique records): 24355
+ Vocabulary:       529 tokens
+ Grammar:          870 rules, 9509 symbols  (0.390 symbols per input token)
+ Pair map:         4832 entries
+ Count tables:     4147 bigrams, 6942 trigrams
+ Invariants:       0 duplicate pairs, 0 under-used rules
+ Process RSS:      6.2 MB
+[RELATIONS] 7 two-argument templates
+  #0  ? collaborates with ?          1159 facts
+  #1  ? knows ?                      877 facts
+  #2  ? works under ?                681 facts
+  #3  ? is on ?                      440 facts
+  #4  ? likes ?                      440 facts
+  #5  ? is based in ?                170 facts
+  #6  ? belongs to ?                 40 facts
+[COVERAGE] estimated observation completeness: global 0.78 | [? collaborates with ?] 0.78
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT [? collaborates with ?](a,b) => [? collaborates with ?](b,a) n=1159 k=908 rate=0.78 lift=106.8 | where answer known: 1159, agree=0.78 | cov=0.78 rel=1.00 tier=law
+  ACCEPT [? collaborates with ?](a,b) & [? is on ?](b,c) => [? is on ?](a,c) n=1159 k=1159 rate=1.00 lift=40.0 | where answer known: 1159, agree=1.00 | cov=0.78 rel=1.00 tier=law
+  ACCEPT [? works under ?](a,b) & [? is on ?](b,c) => [? is on ?](a,c) n=400 k=400 rate=1.00 lift=40.0 | where answer known: 400, agree=1.00 | cov=0.78 rel=1.00 tier=law
+  ACCEPT [? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c) n=1798 k=1344 rate=0.75 lift=24.6 | where answer known: 1798, agree=0.75 | cov=0.78 rel=0.95 tier=law
+  ACCEPT [? belongs to ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c) n=40 k=24 rate=0.60 lift=3.6 | where answer known: 24, agree=1.00 | cov=0.78 rel=1.00 tier=law
+  ACCEPT [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c) n=264 k=65 rate=0.25 lift=1.5 | where answer known: 80, agree=0.81 | cov=0.78 rel=0.81 tier=tendency
+  ACCEPT [? collaborates with ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c) n=351 k=86 rate=0.25 lift=1.5 | where answer known: 107, agree=0.80 | cov=0.78 rel=0.80 tier=tendency
+  reject [? collaborates with ?](a,b) & [? collaborates with ?](b,c) => [? collaborates with ?](a,c) n=2713 k=660 rate=0.24 lift=33.2 | where answer known: 2713, agree=0.24 | cov=0.78 rel=0.31 tier=tendency
+  reject [? works under ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c) n=686 k=195 rate=0.28 lift=9.3 | where answer known: 686, agree=0.28 | cov=0.78 rel=0.36 tier=tendency
+  reject [? works under ?](a,b) & [? knows ?](b,c) => [? collaborates with ?](a,c) n=795 k=13 rate=0.02 lift=2.2 | where answer known: 795, agree=0.02 | cov=0.78 rel=0.02 tier=tendency
+  reject [? knows ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c) n=1374 k=68 rate=0.05 lift=1.6 | where answer known: 1374, agree=0.05 | cov=0.78 rel=0.06 tier=tendency
+[INFER] 1119 new facts derived from 7 accepted rules
+FACT	pahegu collaborates with kadolo	law
+FACT	pahegu collaborates with sapajo	law
+FACT	nedodo collaborates with jopagu	law
+FACT	jologu collaborates with gujobe	law
+FACT	tirube collaborates with loneka	law
+FACT	tirube collaborates with betilo	law
+FACT	lofize collaborates with hetika	law
+FACT	ruvosa collaborates with gurugu	law
+FACT	salobe collaborates with titihe	law
+FACT	salobe collaborates with jokaze	law
+FACT	vozemi collaborates with tizegu	law
+FACT	bebegu collaborates with paguka	law
+FACT	hefigu collaborates with rupabe	law
+FACT	jokajo collaborates with lohelo	law
+FACT	jokajo collaborates with dotifi	law
+FACT	bemigu collaborates with samifi	law
+FACT	tijoru collaborates with netipa	law
+FACT	tijoru collaborates with joruhe	law
+FACT	nezejo collaborates with doruru	law
+FACT	karune collaborates with nebejo	law
+FACT	karune collaborates with vovomi	law
+FACT	kamimi collaborates with tihegu	law
+FACT	mitifi collaborates with satilo	law
+FACT	mirusa collaborates with gugube	law
+FACT	lorusa collaborates with kasabe	law
+FACT	kazeze collaborates with misajo	law
+FACT	sadoti collaborates with hejovo	law
+FACT	losaru collaborates with lolobe	law
+FACT	losaru collaborates with fidohe	law
+FACT	lokagu collaborates with gutilo	law
+FACT	gubesa collaborates with votihe	law
+FACT	dolovo collaborates with savoze	law
+FACT	loneka collaborates with dofika	law
+FACT	besami collaborates with rulodo	law
+FACT	besami collaborates with josabe	law
+FACT	gugudo collaborates with paguka	law
+FACT	lonevo collaborates with bebesa	law
+FACT	figufi collaborates with zeloru	law
+FACT	gubeka collaborates with jovobe	law
+FACT	samifi collaborates with mitigu	law
+FACT	misami collaborates with pagujo	law
+FACT	hejoze collaborates with misami	law
+FACT	hejoze collaborates with zegusa	law
+FACT	papaka collaborates with lobebe	law
+FACT	papaka collaborates with zerufi	law
+FACT	bezelo collaborates with lokapa	law
+FACT	jotilo collaborates with bezelo	law
+FACT	joguhe collaborates with dolone	law
+FACT	dovosa collaborates with gupajo	law
+FACT	nepaka collaborates with dozehe	law
+FACT	fizejo collaborates with kafiru	law
+FACT	fizejo collaborates with mipavo	law
+FACT	sahegu collaborates with parugu	law
+FACT	zefilo collaborates with bebesa	law
+FACT	kalolo collaborates with vobeti	law
+FACT	kalolo collaborates with hezepa	law
+FACT	rufipa collaborates with kalolo	law
+FACT	volofi collaborates with pamibe	law
+FACT	jojone collaborates with rulofi	law
+FACT	kavojo collaborates with pamilo	law
+FACT	kaheti collaborates with kavojo	law
+FACT	dokasa collaborates with rujopa	law
+FACT	lozevo collaborates with bezeze	law
+FACT	bedojo collaborates with ruruze	law
+FACT	dodobe collaborates with bepavo	law
+FACT	hevoze collaborates with bezeti	law
+FACT	hevoze collaborates with vojodo	law
+FACT	nepami collaborates with lofize	law
+FACT	fitisa collaborates with pahegu	law
+FACT	fitisa collaborates with nezefi	law
+FACT	safiti collaborates with kadolo	law
+FACT	guvobe collaborates with lokapa	law
+FACT	guvobe collaborates with zesahe	law
+FACT	gutilo collaborates with minepa	law
+FACT	kagusa collaborates with paguti	law
+FACT	fimivo collaborates with gusafi	law
+FACT	nesaze collaborates with tisasa	law
+FACT	sarune collaborates with rurumi	law
+FACT	rukasa collaborates with neneti	law
+FACT	hejovo collaborates with befiti	law
+FACT	kaloka collaborates with paheze	law
+FACT	kaloka collaborates with vopahe	law
+FACT	tinesa collaborates with kaloka	law
+FACT	pabejo collaborates with tidomi	law
+FACT	pabejo collaborates with tifido	law
+FACT	benehe collaborates with hejoru	law
+FACT	dozefi collaborates with gunefi	law
+FACT	fibeze collaborates with hefilo	law
+FACT	rutipa collaborates with mibehe	law
+FACT	lopavo collaborates with hevolo	law
+FACT	dotifi collaborates with pabene	law
+FACT	netipa collaborates with zetiru	law
+FACT	mimibe collaborates with nebejo	law
+FACT	tidofi collaborates with tizemi	law
+FACT	figumi collaborates with rudohe	law
+FACT	jofika collaborates with kamilo	law
+FACT	filoti collaborates with rulofi	law
+FACT	nemimi collaborates with pabene	law
+FACT	nemimi collaborates with patimi	law
+FACT	nepati collaborates with fisaru	law
+FACT	jokafi collaborates with jonedo	law
+FACT	doruru collaborates with henebe	law
+FACT	neneti collaborates with tikami	law
+FACT	tidomi collaborates with misagu	law
+FACT	tidomi collaborates with gupane	law
+FACT	zevopa collaborates with dozehe	law
+FACT	dotigu collaborates with timijo	law
+FACT	rulofi collaborates with guneru	law
+FACT	kamilo collaborates with vokaru	law
+FACT	vovojo collaborates with netifi	law
+FACT	helopa collaborates with gujojo	law
+FACT	heguhe collaborates with guguka	law
+FACT	kadolo collaborates with fitisa	law
+FACT	kadolo collaborates with mizesa	law
+FACT	tifido collaborates with miguvo	law
+FACT	negupa collaborates with hefilo	law
+FACT	jovobe collaborates with padoru	law
+FACT	jovobe collaborates with mijone	law
+FACT	guguka collaborates with timivo	law
+FACT	hekati collaborates with fisaze	law
+FACT	vopado collaborates with kaheti	law
+FACT	vopado collaborates with pamilo	law
+FACT	vozedo collaborates with kahejo	law
+FACT	gujogu collaborates with hejoze	law
+FACT	gujogu collaborates with nesahe	law
+FACT	vomijo collaborates with gujosa	law
+FACT	milobe collaborates with nedodo	law
+FACT	sanefi collaborates with sapaze	law
+FACT	gudoti collaborates with nebebe	law
+FACT	rufibe collaborates with joguhe	law
+FACT	zedodo collaborates with rusaka	law
+FACT	zedodo collaborates with josati	law
+FACT	zedodo collaborates with mifibe	law
+FACT	jomipa collaborates with figumi	law
+FACT	hezepa collaborates with zeloru	law
+FACT	hezepa collaborates with doloru	law
+FACT	guvoze collaborates with mitifi	law
+FACT	guvoze collaborates with gubeti	law
+FACT	hetika collaborates with vohehe	law
+FACT	hetika collaborates with guzesa	law
+FACT	lobepa collaborates with palone	law
+FACT	zeloru collaborates with kalolo	law
+FACT	nepane collaborates with vobedo	law
+FACT	nepane collaborates with heruhe	law
+FACT	bemibe collaborates with gujobe	law
+FACT	doguti collaborates with mirusa	law
+FACT	doguti collaborates with zetika	law
+FACT	gurugu collaborates with betiti	law
+FACT	jozevo collaborates with sadoti	law
+FACT	paguvo collaborates with nedodo	law
+FACT	mizemi collaborates with pajoka	law
+FACT	saneka collaborates with zesapa	law
+FACT	mimivo collaborates with finepa	law
+FACT	mimivo collaborates with jopagu	law
+FACT	joruhe collaborates with nemivo	law
+FACT	joruhe collaborates with zetiti	law
+FACT	joruhe collaborates with pafisa	law
+FACT	nevohe collaborates with fisafi	law
+FACT	mifigu collaborates with mizehe	law
+FACT	mifigu collaborates with gusaka	law
+FACT	tizesa collaborates with fiberu	law
+FACT	vovone collaborates with kagupa	law
+FACT	vovone collaborates with votihe	law
+FACT	gusafi collaborates with vopajo	law
+FACT	gusafi collaborates with paguti	law
+FACT	kahejo collaborates with gukafi	law
+FACT	kajovo collaborates with tirube	law
+FACT	rupabe collaborates with jomipa	law
+FACT	hehevo collaborates with dodojo	law
+FACT	zerufi collaborates with vovojo	law
+FACT	midovo collaborates with salobe	law
+FACT	netiti collaborates with jofika	law
+FACT	netiti collaborates with kamilo	law
+FACT	gudogu collaborates with bezemi	law
+FACT	gudogu collaborates with jobepa	law
+FACT	gudogu collaborates with sagugu	law
+FACT	karuka collaborates with sapaze	law
+FACT	karuka collaborates with sanefi	law
+FACT	palone collaborates with tifiti	law
+FACT	hejoru collaborates with nepaka	law
+FACT	pafisa collaborates with tijoru	law
+FACT	pafisa collaborates with jokafi	law
+FACT	betiti collaborates with bezelo	law
+FACT	vosavo collaborates with dokasa	law
+FACT	mitigu collaborates with fijosa	law
+FACT	sasasa collaborates with lokagu	law
+FACT	doloru collaborates with tifibe	law
+FACT	sanegu collaborates with ruvone	law
+FACT	mizejo collaborates with rupabe	law
+FACT	vokaru collaborates with fisaru	law
+FACT	firuka collaborates with fisaze	law
+FACT	dozehe collaborates with hejoru	law
+FACT	dozehe collaborates with dodojo	law
+FACT	midohe collaborates with lohelo	law
+FACT	ruruze collaborates with netido	law
+FACT	gugube collaborates with nerumi	law
+FACT	vorune collaborates with vovomi	law
+FACT	vorune collaborates with lojoka	law
+FACT	tifibe collaborates with zehevo	law
+FACT	gukafi collaborates with mimivo	law
+FACT	vopahe collaborates with sadovo	law
+FACT	minepa collaborates with jomigu	law
+FACT	ruvone collaborates with rukasa	law
+FACT	sadovo collaborates with rudosa	law
+FACT	tirupa collaborates with vojobe	law
+FACT	votihe collaborates with kagupa	law
+FACT	tivone collaborates with tibeti	law
+FACT	netido collaborates with figujo	law
+FACT	jodoze collaborates with pahegu	law
+FACT	jodoze collaborates with safiti	law
+FACT	rusahe collaborates with saneka	law
+FACT	voruru collaborates with joruhe	law
+FACT	voruru collaborates with pafisa	law
+FACT	fizehe collaborates with lonevo	law
+FACT	fizehe collaborates with jokaze	law
+FACT	fizehe collaborates with lotine	law
+FACT	bebeze collaborates with kabeze	law
+FACT	hefilo collaborates with kakaru	law
+FACT	hefilo collaborates with dopasa	law
+FACT	saheti collaborates with hekati	law
+FACT	fisaru collaborates with helopa	law
+FACT	fisaru collaborates with saguze	law
+FACT	fisaru collaborates with gujojo	law
+FACT	bepavo collaborates with lomiti	law
+FACT	vohemi collaborates with rutipa	law
+FACT	vohemi collaborates with lorube	law
+FACT	pamilo collaborates with fiberu	law
+FACT	pajoka collaborates with lohevo	law
+FACT	pajoka collaborates with dofipa	law
+FACT	sasagu collaborates with dovosa	law
+FACT	jokaze collaborates with lotine	law
+FACT	gusati collaborates with rutipa	law
+FACT	fijosa collaborates with begudo	law
+FACT	mimisa collaborates with vovojo	law
+FACT	dofiru collaborates with vopado	law
+FACT	dofiru collaborates with tizesa	law
+FACT	sanene collaborates with sagugu	law
+FACT	karupa collaborates with mihemi	law
+FACT	jopagu collaborates with kahejo	law
+FACT	jopagu collaborates with gukafi	law
+FACT	tikami collaborates with ruvone	law
+FACT	kamijo collaborates with mihefi	law
+FACT	guneru collaborates with karupa	law
+FACT	befiti collaborates with jozevo	law
+FACT	kaparu collaborates with zesapa	law
+FACT	hevovo collaborates with doguti	law
+FACT	pafize collaborates with finejo	law
+FACT	befivo collaborates with sarune	law
+FACT	befivo collaborates with timivo	law
+FACT	dodojo collaborates with benehe	law
+FACT	vopami collaborates with mihefi	law
+FACT	pahegu works under sahehe	law
+FACT	pahegu works under besavo	law
+FACT	nedodo works under sahehe	law
+FACT	nedodo works under hehejo	law
+FACT	bebejo works under nefika	law
+FACT	jologu works under sahehe	law
+FACT	tirube works under sahehe	law
+FACT	tirube works under hemiru	law
+FACT	vobegu works under pabeti	law
+FACT	vobegu works under kakafi	law
+FACT	mizelo works under kakafi	law
+FACT	midone works under sahehe	law
+FACT	midone works under besavo	law
+FACT	ruvosa works under besavo	law
+FACT	vodohe works under lodobe	law
+FACT	vodohe works under pabeti	law
+FACT	salobe works under sahehe	law
+FACT	salobe works under nefika	law
+FACT	johevo works under lodobe	law
+FACT	lohelo works under pabeti	law
+FACT	bebegu works under hemiru	law
+FACT	hefigu works under rumine	law
+FACT	hefigu works under pabeti	law
+FACT	rudohe works under rumine	law
+FACT	vofigu works under sahehe	law
+FACT	tisado works under sahehe	law
+FACT	tisado works under nefika	law
+FACT	lolobe works under lodobe	law
+FACT	begugu works under pabeti	law
+FACT	jokajo works under pabeti	law
+FACT	jokajo works under kakafi	law
+FACT	bemigu works under lodobe	law
+FACT	bemigu works under pabeti	law
+FACT	jonedo works under sahehe	law
+FACT	tijoru works under hemiru	law
+FACT	dohesa works under lodobe	law
+FACT	dohesa works under pabeti	law
+FACT	nezejo works under pabeti	law
+FACT	henebe works under pabeti	law
+FACT	finejo works under sahehe	law
+FACT	finejo works under besavo	law
+FACT	mitifi works under sahehe	law
+FACT	mitifi works under besavo	law
+FACT	mirusa works under sahehe	law
+FACT	mirusa works under besavo	law
+FACT	lorusa works under hemiru	law
+FACT	katigu works under rumine	law
+FACT	kazeze works under pabeti	law
+FACT	sadoti works under hemiru	law
+FACT	paguru works under hemiru	law
+FACT	gubeti works under besavo	law
+FACT	dodoru works under vovolo	law
+FACT	losaru works under lodobe	law
+FACT	sagujo works under lodobe	law
+FACT	sagujo works under pabeti	law
+FACT	sapaze works under pabeti	law
+FACT	sapaze works under vovolo	law
+FACT	panesa works under pabeti	law
+FACT	gurupa works under sahehe	law
+FACT	gurupa works under besavo	law
+FACT	lokagu works under besavo	law
+FACT	lobelo works under sahehe	law
+FACT	lobelo works under hehejo	law
+FACT	gubesa works under sahehe	law
+FACT	gubesa works under hehejo	law
+FACT	vodoti works under sahehe	law
+FACT	mibedo works under sahehe	law
+FACT	mibedo works under hemiru	law
+FACT	dolovo works under sahehe	law
+FACT	loneka works under sahehe	law
+FACT	loneka works under hemiru	law
+FACT	padofi works under sahehe	law
+FACT	padofi works under hehejo	law
+FACT	besami works under sahehe	law
+FACT	besami works under hehejo	law
+FACT	lozehe works under hemiru	law
+FACT	vobeti works under pabeti	law
+FACT	vobeti works under vovolo	law
+FACT	lobesa works under sahehe	law
+FACT	gugudo works under sahehe	law
+FACT	zetiru works under sahehe	law
+FACT	zetiru works under hemiru	law
+FACT	lonevo works under nefika	law
+FACT	figufi works under pabeti	law
+FACT	figufi works under vovolo	law
+FACT	vojovo works under hemiru	law
+FACT	begudo works under pabeti	law
+FACT	gubeka works under pabeti	law
+FACT	samifi works under pabeti	law
+FACT	misami works under pabeti	law
+FACT	misami works under vovolo	law
+FACT	hejoze works under pabeti	law
+FACT	hejoze works under vovolo	law
+FACT	papaka works under lodobe	law
+FACT	papaka works under pabeti	law
+FACT	tibeti works under rumine	law
+FACT	tibeti works under pabeti	law
+FACT	dovosa works under lodobe	law
+FACT	dovosa works under pabeti	law
+FACT	rulodo works under sahehe	law
+FACT	tihegu works under lodobe	law
+FACT	tihegu works under pabeti	law
+FACT	nepaka works under sahehe	law
+FACT	nepaka works under hehejo	law
+FACT	lobebe works under lodobe	law
+FACT	lobebe works under pabeti	law
+FACT	rusaka works under vovolo	law
+FACT	josati works under pabeti	law
+FACT	josati works under vovolo	law
+FACT	fizejo works under pabeti	law
+FACT	josasa works under pabeti	law
+FACT	josasa works under kakafi	law
+FACT	bezesa works under sahehe	law
+FACT	kahepa works under nefika	law
+FACT	nemivo works under hemiru	law
+FACT	satilo works under sahehe	law
+FACT	satilo works under besavo	law
+FACT	sahegu works under rumine	law
+FACT	sahegu works under pabeti	law
+FACT	misajo works under rumine	law
+FACT	bebesa works under sahehe	law
+FACT	bebesa works under nefika	law
+FACT	josabe works under sahehe	law
+FACT	josabe works under hehejo	law
+FACT	zefilo works under sahehe	law
+FACT	zefilo works under nefika	law
+FACT	kalolo works under vovolo	law
+FACT	rufipa works under vovolo	law
+FACT	volofi works under lodobe	law
+FACT	volofi works under pabeti	law
+FACT	mihemi works under besavo	law
+FACT	kavojo works under sahehe	law
+FACT	kavojo works under nefika	law
+FACT	kaheti works under sahehe	law
+FACT	kaheti works under nefika	law
+FACT	dokasa works under lodobe	law
+FACT	dokasa works under pabeti	law
+FACT	kaheze works under sahehe	law
+FACT	tifiti works under lodobe	law
+FACT	tifiti works under pabeti	law
+FACT	bezeze works under rumine	law
+FACT	bezeze works under pabeti	law
+FACT	lozevo works under rumine	law
+FACT	lozevo works under pabeti	law
+FACT	bedojo works under pabeti	law
+FACT	bedojo works under kakafi	law
+FACT	kafiru works under pabeti	law
+FACT	vozegu works under sahehe	law
+FACT	vozegu works under hemiru	law
+FACT	lojojo works under sahehe	law
+FACT	dodobe works under pabeti	law
+FACT	dodobe works under vovolo	law
+FACT	hevoze works under pabeti	law
+FACT	hevoze works under vovolo	law
+FACT	nepami works under sahehe	law
+FACT	nepami works under hehejo	law
+FACT	vohehe works under sahehe	law
+FACT	fitisa works under sahehe	law
+FACT	fitisa works under besavo	law
+FACT	safiti works under sahehe	law
+FACT	safiti works under besavo	law
+FACT	guvobe works under besavo	law
+FACT	gutilo works under sahehe	law
+FACT	gutilo works under besavo	law
+FACT	kagusa works under rumine	law
+FACT	kagusa works under pabeti	law
+FACT	fimivo works under rumine	law
+FACT	nesahe works under pabeti	law
+FACT	nesahe works under vovolo	law
+FACT	dofihe works under sahehe	law
+FACT	dofihe works under hehejo	law
+FACT	sarune works under lodobe	law
+FACT	sarune works under pabeti	law
+FACT	mihevo works under lodobe	law
+FACT	mihevo works under pabeti	law
+FACT	nerumi works under besavo	law
+FACT	rukasa works under pabeti	law
+FACT	rukasa works under vovolo	law
+FACT	hejovo works under sahehe	law
+FACT	kaloka works under pabeti	law
+FACT	tinesa works under pabeti	law
+FACT	hetiru works under lodobe	law
+FACT	hetiru works under pabeti	law
+FACT	pabejo works under rumine	law
+FACT	pabejo works under pabeti	law
+FACT	benehe works under sahehe	law
+FACT	benehe works under hehejo	law
+FACT	gunefi works under pabeti	law
+FACT	gunefi works under vovolo	law
+FACT	dozefi works under pabeti	law
+FACT	dozefi works under vovolo	law
+FACT	fibeze works under pabeti	law
+FACT	zeloze works under kakafi	law
+FACT	jonesa works under sahehe	law
+FACT	bezemi works under sahehe	law
+FACT	bezemi works under nefika	law
+FACT	savoze works under sahehe	law
+FACT	netipa works under sahehe	law
+FACT	netipa works under hemiru	law
+FACT	tidofi works under vovolo	law
+FACT	rutivo works under vovolo	law
+FACT	bezeti works under pabeti	law
+FACT	figumi works under pabeti	law
+FACT	jofika works under sahehe	law
+FACT	mivoka works under pabeti	law
+FACT	mivoka works under kakafi	law
+FACT	vosane works under lodobe	law
+FACT	nemimi works under kakafi	law
+FACT	rupado works under sahehe	law
+FACT	rupado works under besavo	law
+FACT	jokafi works under hemiru	law
+FACT	vojodo works under pabeti	law
+FACT	vojodo works under vovolo	law
+FACT	lohevo works under pabeti	law
+FACT	neneti works under pabeti	law
+FACT	neneti works under vovolo	law
+FACT	tidomi works under pabeti	law
+FACT	mibefi works under rumine	law
+FACT	zebedo works under rumine	law
+FACT	zevopa works under hehejo	law
+FACT	mikati works under sahehe	law
+FACT	mikati works under nefika	law
+FACT	zetigu works under pabeti	law
+FACT	paheze works under kakafi	law
+FACT	dotigu works under pabeti	law
+FACT	sadomi works under pabeti	law
+FACT	fidohe works under lodobe	law
+FACT	fidohe works under pabeti	law
+FACT	vojobe works under hemiru	law
+FACT	rulofi works under sahehe	law
+FACT	padoru works under pabeti	law
+FACT	padoru works under vovolo	law
+FACT	miguvo works under rumine	law
+FACT	miguvo works under pabeti	law
+FACT	kamilo works under sahehe	law
+FACT	vovojo works under lodobe	law
+FACT	vovojo works under pabeti	law
+FACT	guvoka works under sahehe	law
+FACT	fikasa works under rumine	law
+FACT	fikasa works under pabeti	law
+FACT	jomigu works under sahehe	law
+FACT	jomigu works under besavo	law
+FACT	helopa works under sahehe	law
+FACT	pabene works under pabeti	law
+FACT	heguhe works under lodobe	law
+FACT	heguhe works under pabeti	law
+FACT	rurumi works under pabeti	law
+FACT	kadolo works under besavo	law
+FACT	tifido works under rumine	law
+FACT	tifido works under pabeti	law
+FACT	lobegu works under pabeti	law
+FACT	lobegu works under kakafi	law
+FACT	negupa works under pabeti	law
+FACT	negupa works under kakafi	law
+FACT	zetiti works under sahehe	law
+FACT	guguka works under lodobe	law
+FACT	hekati works under rumine	law
+FACT	hekati works under pabeti	law
+FACT	lodopa works under kakafi	law
+FACT	vopado works under sahehe	law
+FACT	vopado works under nefika	law
+FACT	paguhe works under hehejo	law
+FACT	beheze works under sahehe	law
+FACT	vozedo works under sahehe	law
+FACT	vozedo works under hehejo	law
+FACT	dolone works under sahehe	law
+FACT	dolone works under nefika	law
+FACT	jobepa works under sahehe	law
+FACT	jobepa works under nefika	law
+FACT	mibehe works under nefika	law
+FACT	zesahe works under besavo	law
+FACT	gujogu works under pabeti	law
+FACT	vohejo works under besavo	law
+FACT	vomijo works under pabeti	law
+FACT	jofijo works under pabeti	law
+FACT	jofijo works under kakafi	law
+FACT	vomilo works under lodobe	law
+FACT	vomilo works under pabeti	law
+FACT	milobe works under sahehe	law
+FACT	gudoti works under pabeti	law
+FACT	dofipa works under rumine	law
+FACT	dofipa works under pabeti	law
+FACT	rufibe works under sahehe	law
+FACT	gubevo works under sahehe	law
+FACT	gubevo works under besavo	law
+FACT	misagu works under pabeti	law
+FACT	zedodo works under pabeti	law
+FACT	zedodo works under vovolo	law
+FACT	jomipa works under rumine	law
+FACT	dojomi works under pabeti	law
+FACT	dojomi works under kakafi	law
+FACT	lologu works under pabeti	law
+FACT	kakaru works under pabeti	law
+FACT	kakaru works under kakafi	law
+FACT	hezepa works under pabeti	law
+FACT	hezepa works under vovolo	law
+FACT	zejosa works under sahehe	law
+FACT	zejosa works under besavo	law
+FACT	guvoze works under sahehe	law
+FACT	guvoze works under besavo	law
+FACT	hetika works under sahehe	law
+FACT	bezegu works under sahehe	law
+FACT	bezegu works under hehejo	law
+FACT	mizehe works under sahehe	law
+FACT	mizehe works under hemiru	law
+FACT	dofika works under sahehe	law
+FACT	lobepa works under lodobe	law
+FACT	lobepa works under pabeti	law
+FACT	zeloru works under vovolo	law
+FACT	nepane works under kakafi	law
+FACT	bemibe works under hemiru	law
+FACT	zetika works under sahehe	law
+FACT	doguti works under sahehe	law
+FACT	doguti works under besavo	law
+FACT	gurugu works under besavo	law
+FACT	jozevo works under sahehe	law
+FACT	paguvo works under sahehe	law
+FACT	paguvo works under hehejo	law
+FACT	bezehe works under rumine	law
+FACT	bezehe works under pabeti	law
+FACT	nepasa works under sahehe	law
+FACT	dopasa works under pabeti	law
+FACT	dopasa works under kakafi	law
+FACT	mizemi works under rumine	law
+FACT	vobedo works under pabeti	law
+FACT	saneka works under hemiru	law
+FACT	vopajo works under pabeti	law
+FACT	mimivo works under sahehe	law
+FACT	mimivo works under hehejo	law
+FACT	mipasa works under pabeti	law
+FACT	mipasa works under kakafi	law
+FACT	zehevo works under pabeti	law
+FACT	joruhe works under hemiru	law
+FACT	nevohe works under pabeti	law
+FACT	nevohe works under vovolo	law
+FACT	mifigu works under hemiru	law
+FACT	fiberu works under sahehe	law
+FACT	gusaka works under sahehe	law
+FACT	gusaka works under hemiru	law
+FACT	tizesa works under sahehe	law
+FACT	tizesa works under nefika	law
+FACT	vovone works under hehejo	law
+FACT	hekaze works under pabeti	law
+FACT	hekaze works under kakafi	law
+FACT	gusafi works under rumine	law
+FACT	gusafi works under pabeti	law
+FACT	paguti works under rumine	law
+FACT	paguti works under pabeti	law
+FACT	kahejo works under sahehe	law
+FACT	kahejo works under hehejo	law
+FACT	titihe works under sahehe	law
+FACT	titihe works under nefika	law
+FACT	kasabe works under sahehe	law
+FACT	kasabe works under hemiru	law
+FACT	kajovo works under sahehe	law
+FACT	kajovo works under hemiru	law
+FACT	rupabe works under pabeti	law
+FACT	hehevo works under sahehe	law
+FACT	hehevo works under hehejo	law
+FACT	zerufi works under pabeti	law
+FACT	bedoru works under pabeti	law
+FACT	midovo works under sahehe	law
+FACT	midovo works under nefika	law
+FACT	jotibe works under pabeti	law
+FACT	pagujo works under pabeti	law
+FACT	pagujo works under vovolo	law
+FACT	nezefi works under sahehe	law
+FACT	nezefi works under besavo	law
+FACT	mizesa works under sahehe	law
+FACT	mizesa works under besavo	law
+FACT	timivo works under lodobe	law
+FACT	timivo works under pabeti	law
+FACT	rusaru works under sahehe	law
+FACT	rusaru works under besavo	law
+FACT	gudogu works under sahehe	law
+FACT	gudogu works under nefika	law
+FACT	karuka works under pabeti	law
+FACT	karuka works under vovolo	law
+FACT	rujopa works under lodobe	law
+FACT	palone works under lodobe	law
+FACT	palone works under pabeti	law
+FACT	hejoru works under hehejo	law
+FACT	betiti works under besavo	law
+FACT	netifi works under pabeti	law
+FACT	vosavo works under lodobe	law
+FACT	vosavo works under pabeti	law
+FACT	mitigu works under lodobe	law
+FACT	sasasa works under sahehe	law
+FACT	doloru works under pabeti	law
+FACT	doloru works under vovolo	law
+FACT	sanegu works under pabeti	law
+FACT	sanegu works under vovolo	law
+FACT	mizejo works under rumine	law
+FACT	hepalo works under rumine	law
+FACT	hepalo works under pabeti	law
+FACT	firuka works under rumine	law
+FACT	firuka works under pabeti	law
+FACT	dozehe works under sahehe	law
+FACT	dozehe works under hehejo	law
+FACT	lorube works under nefika	law
+FACT	midohe works under kakafi	law
+FACT	ruruze works under pabeti	law
+FACT	ruruze works under kakafi	law
+FACT	gugube works under sahehe	law
+FACT	gugube works under besavo	law
+FACT	mipavo works under pabeti	law
+FACT	mipavo works under kakafi	law
+FACT	vorune works under nefika	law
+FACT	zesane works under nefika	law
+FACT	tifibe works under pabeti	law
+FACT	tifibe works under vovolo	law
+FACT	fisafi works under pabeti	law
+FACT	fisafi works under vovolo	law
+FACT	mifibe works under pabeti	law
+FACT	mifibe works under vovolo	law
+FACT	gukafi works under hehejo	law
+FACT	kabeze works under sahehe	law
+FACT	kabeze works under hemiru	law
+FACT	vopahe works under pabeti	law
+FACT	vopahe works under kakafi	law
+FACT	kalofi works under sahehe	law
+FACT	tizegu works under hehejo	law
+FACT	minepa works under sahehe	law
+FACT	minepa works under besavo	law
+FACT	gusagu works under rumine	law
+FACT	gusagu works under pabeti	law
+FACT	sadovo works under kakafi	law
+FACT	kagupa works under sahehe	law
+FACT	kagupa works under hehejo	law
+FACT	tirupa works under sahehe	law
+FACT	tirupa works under hemiru	law
+FACT	pavolo works under lodobe	law
+FACT	pavolo works under pabeti	law
+FACT	mijoka works under sahehe	law
+FACT	votihe works under sahehe	law
+FACT	votihe works under hehejo	law
+FACT	timijo works under pabeti	law
+FACT	tivone works under rumine	law
+FACT	tivone works under pabeti	law
+FACT	netido works under pabeti	law
+FACT	gupane works under rumine	law
+FACT	jodoze works under sahehe	law
+FACT	rusahe works under sahehe	law
+FACT	figujo works under pabeti	law
+FACT	figujo works under kakafi	law
+FACT	gujobe works under sahehe	law
+FACT	gujobe works under hemiru	law
+FACT	gupajo works under lodobe	law
+FACT	nebebe works under rumine	law
+FACT	nebebe works under pabeti	law
+FACT	betilo works under sahehe	law
+FACT	betilo works under hemiru	law
+FACT	voruru works under sahehe	law
+FACT	mizene works under kakafi	law
+FACT	fizehe works under nefika	law
+FACT	hevolo works under rumine	law
+FACT	hevolo works under pabeti	law
+FACT	bebeze works under sahehe	law
+FACT	bebeze works under hemiru	law
+FACT	hefilo works under pabeti	law
+FACT	hefilo works under kakafi	law
+FACT	mijone works under pabeti	law
+FACT	mijone works under vovolo	law
+FACT	saheti works under rumine	law
+FACT	fisaru works under sahehe	law
+FACT	lojoka works under nefika	law
+FACT	saguze works under sahehe	law
+FACT	bepavo works under pabeti	law
+FACT	vohemi works under nefika	law
+FACT	sabepa works under pabeti	law
+FACT	sabepa works under kakafi	law
+FACT	pamilo works under sahehe	law
+FACT	pamilo works under nefika	law
+FACT	tizemi works under pabeti	law
+FACT	hevohe works under rumine	law
+FACT	papagu works under pabeti	law
+FACT	pajoka works under rumine	law
+FACT	pajoka works under pabeti	law
+FACT	sasagu works under lodobe	law
+FACT	tisaka works under hehejo	law
+FACT	gusati works under sahehe	law
+FACT	hefibe works under lodobe	law
+FACT	hefibe works under pabeti	law
+FACT	mihefi works under sahehe	law
+FACT	mihefi works under hemiru	law
+FACT	fijosa works under lodobe	law
+FACT	fijosa works under pabeti	law
+FACT	sapajo works under sahehe	law
+FACT	sapajo works under besavo	law
+FACT	gujojo works under sahehe	law
+FACT	beloru works under rumine	law
+FACT	beloru works under pabeti	law
+FACT	guloze works under sahehe	law
+FACT	guloze works under nefika	law
+FACT	mimisa works under lodobe	law
+FACT	mimisa works under pabeti	law
+FACT	rudosa works under kakafi	law
+FACT	patimi works under pabeti	law
+FACT	dofiru works under sahehe	law
+FACT	dofiru works under nefika	law
+FACT	sanene works under sahehe	law
+FACT	heruhe works under pabeti	law
+FACT	heruhe works under kakafi	law
+FACT	lomize works under sahehe	law
+FACT	zesapa works under sahehe	law
+FACT	zesapa works under hemiru	law
+FACT	karupa works under sahehe	law
+FACT	karupa works under besavo	law
+FACT	gujosa works under pabeti	law
+FACT	gujosa works under kakafi	law
+FACT	parugu works under rumine	law
+FACT	parugu works under pabeti	law
+FACT	fiheka works under sahehe	law
+FACT	fiheka works under hemiru	law
+FACT	pamibe works under lodobe	law
+FACT	lomiti works under pabeti	law
+FACT	lomiti works under vovolo	law
+FACT	tilofi works under sahehe	law
+FACT	tilofi works under nefika	law
+FACT	fisaze works under rumine	law
+FACT	fisaze works under pabeti	law
+FACT	jopagu works under hehejo	law
+FACT	sagugu works under sahehe	law
+FACT	sagugu works under nefika	law
+FACT	gupalo works under pabeti	law
+FACT	gupalo works under kakafi	law
+FACT	tikami works under vovolo	law
+FACT	kamijo works under sahehe	law
+FACT	doneti works under sahehe	law
+FACT	doneti works under nefika	law
+FACT	befiti works under hemiru	law
+FACT	kaparu works under sahehe	law
+FACT	kaparu works under hemiru	law
+FACT	hevovo works under sahehe	law
+FACT	hevovo works under besavo	law
+FACT	pafize works under sahehe	law
+FACT	tisasa works under pabeti	law
+FACT	tisasa works under vovolo	law
+FACT	guzesa works under sahehe	law
+FACT	guzesa works under hehejo	law
+FACT	befivo works under pabeti	law
+FACT	dodojo works under sahehe	law
+FACT	dodojo works under hehejo	law
+FACT	lotine works under sahehe	law
+FACT	lotine works under nefika	law
+FACT	patilo works under pabeti	law
+FACT	patilo works under vovolo	law
+FACT	dojopa works under besavo	law
+FACT	vopami works under sahehe	law
+FACT	vopami works under hemiru	law
+FACT	lokapa is based in denver	tendency
+FACT	lozesa is based in chicago	tendency
+FACT	pahegu is based in denver	tendency
+FACT	nedodo is based in miami	tendency
+FACT	bebejo is based in denver	tendency
+FACT	team38 is based in denver	law
+FACT	lofize is based in miami	tendency
+FACT	vobegu is based in boston	tendency
+FACT	mizelo is based in boston	tendency
+FACT	midone is based in denver	tendency
+FACT	samisa is based in denver	tendency
+FACT	team08 is based in denver	law
+FACT	vozemi is based in miami	tendency
+FACT	johevo is based in chicago	tendency
+FACT	bebegu is based in austin	tendency
+FACT	hefigu is based in boston	tendency
+FACT	rudohe is based in boston	tendency
+FACT	tisado is based in denver	tendency
+FACT	lolobe is based in chicago	tendency
+FACT	jokajo is based in boston	tendency
+FACT	team00 is based in denver	law
+FACT	jonedo is based in austin	tendency
+FACT	tijoru is based in austin	tendency
+FACT	dohesa is based in chicago	tendency
+FACT	nezejo is based in chicago	tendency
+FACT	mivodo is based in miami	tendency
+FACT	karune is based in denver	tendency
+FACT	henebe is based in chicago	tendency
+FACT	kamimi is based in chicago	tendency
+FACT	finejo is based in denver	tendency
+FACT	nesasa is based in chicago	tendency
+FACT	mitifi is based in denver	tendency
+FACT	mirusa is based in denver	tendency
+FACT	lorusa is based in austin	tendency
+FACT	kazeze is based in boston	tendency
+FACT	rukaze is based in austin	tendency
+FACT	sadoti is based in austin	tendency
+FACT	paguru is based in austin	tendency
+FACT	losaru is based in chicago	tendency
+FACT	sagujo is based in chicago	tendency
+FACT	sapaze is based in seattle	tendency
+FACT	dovohe is based in seattle	tendency
+FACT	gurupa is based in denver	tendency
+FACT	lokagu is based in denver	tendency
+FACT	gubesa is based in miami	tendency
+FACT	vodoti is based in austin	tendency
+FACT	mibedo is based in austin	tendency
+FACT	dolovo is based in denver	tendency
+FACT	loneka is based in austin	tendency
+FACT	zepalo is based in denver	tendency
+FACT	padofi is based in miami	tendency
+FACT	lozehe is based in austin	tendency
+FACT	gugudo is based in austin	tendency
+FACT	lonevo is based in denver	tendency
+FACT	figufi is based in seattle	tendency
+FACT	gubeka is based in seattle	tendency
+FACT	samifi is based in chicago	tendency
+FACT	misami is based in seattle	tendency
+FACT	hejoze is based in seattle	tendency
+FACT	tibeti is based in boston	tendency
+FACT	nebejo is based in denver	tendency
+FACT	bezelo is based in denver	tendency
+FACT	jotilo is based in denver	tendency
+FACT	rurune is based in chicago	tendency
+FACT	dovosa is based in chicago	tendency
+FACT	nepaka is based in miami	tendency
+FACT	lozeru is based in miami	tendency
+FACT	rusaka is based in seattle	tendency
+FACT	fizejo is based in boston	tendency
+FACT	josasa is based in boston	tendency
+FACT	satilo is based in denver	tendency
+FACT	sahegu is based in boston	tendency
+FACT	misajo is based in boston	tendency
+FACT	josabe is based in miami	tendency
+FACT	zefilo is based in denver	tendency
+FACT	kalolo is based in seattle	tendency
+FACT	volofi is based in chicago	tendency
+FACT	mihemi is based in denver	tendency
+FACT	kavojo is based in denver	tendency
+FACT	kaheti is based in denver	tendency
+FACT	dokasa is based in chicago	tendency
+FACT	kaheze is based in denver	tendency
+FACT	tifiti is based in chicago	tendency
+FACT	bezeze is based in boston	tendency
+FACT	lozevo is based in boston	tendency
+FACT	bedojo is based in boston	tendency
+FACT	kafiru is based in boston	tendency
+FACT	vozegu is based in austin	tendency
+FACT	hevoze is based in seattle	tendency
+FACT	nepami is based in miami	tendency
+FACT	vohehe is based in miami	tendency
+FACT	safiti is based in denver	tendency
+FACT	guvobe is based in denver	tendency
+FACT	gutilo is based in denver	tendency
+FACT	nesaze is based in seattle	tendency
+FACT	dofihe is based in miami	tendency
+FACT	sarune is based in chicago	tendency
+FACT	mihevo is based in chicago	tendency
+FACT	rukasa is based in seattle	tendency
+FACT	hejovo is based in austin	tendency
+FACT	kaloka is based in boston	tendency
+FACT	tinesa is based in boston	tendency
+FACT	pabejo is based in boston	tendency
+FACT	fibeze is based in boston	tendency
+FACT	zeloze is based in boston	tendency
+FACT	rutipa is based in denver	tendency
+FACT	jonesa is based in denver	tendency
+FACT	lopavo is based in boston	tendency
+FACT	bezemi is based in denver	tendency
+FACT	savoze is based in denver	tendency
+FACT	dotifi is based in denver	tendency
+FACT	bekabe is based in seattle	tendency
+FACT	tidofi is based in seattle	tendency
+FACT	rutivo is based in seattle	tendency
+FACT	figumi is based in boston	tendency
+FACT	hebebe is based in boston	tendency
+FACT	jogudo is based in denver	tendency
+FACT	jofika is based in miami	tendency
+FACT	rusalo is based in austin	tendency
+FACT	mivoka is based in boston	tendency
+FACT	vosane is based in chicago	tendency
+FACT	doruru is based in chicago	tendency
+FACT	vojodo is based in seattle	tendency
+FACT	neneti is based in seattle	tendency
+FACT	mibefi is based in boston	tendency
+FACT	zevopa is based in miami	tendency
+FACT	mikati is based in denver	tendency
+FACT	zetigu is based in boston	tendency
+FACT	sadomi is based in chicago	tendency
+FACT	fidohe is based in chicago	tendency
+FACT	vojobe is based in austin	tendency
+FACT	padoru is based in seattle	tendency
+FACT	vovojo is based in chicago	tendency
+FACT	team01 is based in boston	law
+FACT	dogube is based in boston	tendency
+FACT	fikasa is based in boston	tendency
+FACT	kajoru is based in boston	tendency
+FACT	helopa is based in miami	tendency
+FACT	pabene is based in boston	tendency
+FACT	heguhe is based in chicago	tendency
+FACT	rurumi is based in chicago	tendency
+FACT	team26 is based in austin	law
+FACT	tifido is based in boston	tendency
+FACT	negupa is based in boston	tendency
+FACT	jovobe is based in seattle	tendency
+FACT	zetiti is based in austin	tendency
+FACT	team34 is based in austin	law
+FACT	hekati is based in boston	tendency
+FACT	lodopa is based in boston	tendency
+FACT	saloti is based in denver	tendency
+FACT	vopado is based in denver	tendency
+FACT	beheze is based in miami	tendency
+FACT	vozedo is based in miami	tendency
+FACT	dolone is based in denver	tendency
+FACT	jobepa is based in denver	tendency
+FACT	mibehe is based in denver	tendency
+FACT	gujogu is based in seattle	tendency
+FACT	loruka is based in boston	tendency
+FACT	team35 is based in seattle	law
+FACT	vohejo is based in denver	tendency
+FACT	vomijo is based in boston	tendency
+FACT	jofijo is based in boston	tendency
+FACT	vomilo is based in chicago	tendency
+FACT	sanefi is based in seattle	tendency
+FACT	kamisa is based in austin	tendency
+FACT	gudoti is based in boston	tendency
+FACT	dofipa is based in boston	tendency
+FACT	team23 is based in boston	law
+FACT	gubevo is based in denver	tendency
+FACT	misagu is based in boston	tendency
+FACT	zedodo is based in seattle	tendency
+FACT	jomipa is based in boston	tendency
+FACT	dojomi is based in boston	tendency
+FACT	lologu is based in seattle	tendency
+FACT	hezepa is based in seattle	tendency
+FACT	kadoze is based in seattle	tendency
+FACT	guvoze is based in denver	tendency
+FACT	hetika is based in miami	tendency
+FACT	team10 is based in austin	law
+FACT	lobepa is based in chicago	tendency
+FACT	zeloru is based in miami	tendency
+FACT	paruze is based in denver	tendency
+FACT	nepane is based in boston	tendency
+FACT	zetika is based in denver	tendency
+FACT	doguti is based in denver	tendency
+FACT	gurugu is based in denver	tendency
+FACT	papabe is based in denver	tendency
+FACT	vovomi is based in denver	tendency
+FACT	jozevo is based in austin	tendency
+FACT	paguvo is based in miami	tendency
+FACT	bezehe is based in boston	tendency
+FACT	vobedo is based in boston	tendency
+FACT	rukagu is based in boston	tendency
+FACT	zeguru is based in miami	tendency
+FACT	saneka is based in austin	tendency
+FACT	vopajo is based in boston	tendency
+FACT	mipasa is based in boston	tendency
+FACT	zehevo is based in seattle	tendency
+FACT	joruhe is based in austin	tendency
+FACT	mifigu is based in austin	tendency
+FACT	fiberu is based in denver	tendency
+FACT	gusaka is based in austin	tendency
+FACT	tizesa is based in denver	tendency
+FACT	tidoru is based in denver	tendency
+FACT	vovone is based in miami	tendency
+FACT	hekaze is based in boston	tendency
+FACT	gusafi is based in boston	tendency
+FACT	paguti is based in boston	tendency
+FACT	titihe is based in denver	tendency
+FACT	kajovo is based in austin	tendency
+FACT	team31 is based in boston	law
+FACT	hehevo is based in miami	tendency
+FACT	bedoru is based in chicago	tendency
+FACT	midovo is based in denver	tendency
+FACT	jotibe is based in boston	tendency
+FACT	pagujo is based in seattle	tendency
+FACT	team19 is based in seattle	law
+FACT	nezefi is based in denver	tendency
+FACT	netiti is based in miami	tendency
+FACT	timivo is based in chicago	tendency
+FACT	zegusa is based in seattle	tendency
+FACT	rusaru is based in denver	tendency
+FACT	gudogu is based in denver	tendency
+FACT	palone is based in chicago	tendency
+FACT	hejoru is based in miami	tendency
+FACT	pafisa is based in denver	tendency
+FACT	betiti is based in denver	tendency
+FACT	netifi is based in chicago	tendency
+FACT	team05 is based in chicago	law
+FACT	fidofi is based in denver	tendency
+FACT	doloru is based in seattle	tendency
+FACT	sanegu is based in seattle	tendency
+FACT	mizejo is based in boston	tendency
+FACT	vokaru is based in miami	tendency
+FACT	firuka is based in boston	tendency
+FACT	dozehe is based in miami	tendency
+FACT	lorube is based in denver	tendency
+FACT	ruruze is based in boston	tendency
+FACT	gugube is based in denver	tendency
+FACT	firufi is based in denver	tendency
+FACT	zesane is based in denver	tendency
+FACT	hepafi is based in boston	tendency
+FACT	team02 is based in austin	law
+FACT	tizegu is based in miami	tendency
+FACT	sadovo is based in boston	tendency
+FACT	kagupa is based in miami	tendency
+FACT	tirupa is based in austin	tendency
+FACT	votihe is based in miami	tendency
+FACT	team14 is based in denver	law
+FACT	timijo is based in boston	tendency
+FACT	tivone is based in boston	tendency
+FACT	netido is based in boston	tendency
+FACT	gupane is based in boston	tendency
+FACT	jodoze is based in denver	tendency
+FACT	rusahe is based in austin	tendency
+FACT	figujo is based in boston	tendency
+FACT	gujobe is based in austin	tendency
+FACT	gupajo is based in chicago	tendency
+FACT	nebebe is based in boston	tendency
+FACT	betilo is based in austin	tendency
+FACT	voruru is based in austin	tendency
+FACT	mizene is based in boston	tendency
+FACT	beguze is based in boston	tendency
+FACT	fizehe is based in denver	tendency
+FACT	hevolo is based in boston	tendency
+FACT	bebeze is based in austin	tendency
+FACT	hefilo is based in boston	tendency
+FACT	mijone is based in seattle	tendency
+FACT	fisaru is based in miami	tendency
+FACT	bepavo is based in seattle	tendency
+FACT	vohemi is based in denver	tendency
+FACT	sabepa is based in boston	tendency
+FACT	pavone is based in boston	tendency
+FACT	pamilo is based in denver	tendency
+FACT	tizemi is based in seattle	tendency
+FACT	hevohe is based in boston	tendency
+FACT	vobelo is based in boston	tendency
+FACT	pajoka is based in boston	tendency
+FACT	sasagu is based in chicago	tendency
+FACT	jokaze is based in denver	tendency
+FACT	tisaka is based in miami	tendency
+FACT	gusati is based in denver	tendency
+FACT	hefibe is based in chicago	tendency
+FACT	mihefi is based in austin	tendency
+FACT	fijosa is based in chicago	tendency
+FACT	sapajo is based in denver	tendency
+FACT	gujojo is based in miami	tendency
+FACT	team27 is based in seattle	law
+FACT	rudosa is based in boston	tendency
+FACT	patimi is based in boston	tendency
+FACT	sanene is based in denver	tendency
+FACT	lomize is based in miami	tendency
+FACT	zesapa is based in austin	tendency
+FACT	gujosa is based in boston	tendency
+FACT	parugu is based in boston	tendency
+FACT	fiheka is based in austin	tendency
+FACT	nebegu is based in chicago	tendency
+FACT	pamibe is based in chicago	tendency
+FACT	lomiti is based in seattle	tendency
+FACT	tilofi is based in denver	tendency
+FACT	jopagu is based in miami	tendency
+FACT	sagugu is based in denver	tendency
+FACT	gupalo is based in boston	tendency
+FACT	tikami is based in seattle	tendency
+FACT	kamijo is based in austin	tendency
+FACT	guneru is based in denver	tendency
+FACT	befiti is based in austin	tendency
+FACT	hevosa is based in boston	tendency
+FACT	kaparu is based in austin	tendency
+FACT	hevovo is based in denver	tendency
+FACT	pafize is based in denver	tendency
+FACT	tisasa is based in seattle	tendency
+FACT	guzesa is based in miami	tendency
+FACT	team09 is based in boston	law
+FACT	dodojo is based in miami	tendency
+FACT	lotine is based in denver	tendency
+FACT	dojopa is based in denver	tendency
+FACT	vopami is based in austin	tendency
+[CONFLICTS] 17 stated facts contradict what the rules infer
+CONFLICT	lojojo	boston	stated: lojojo is based in boston | inferred: lojojo is based in miami | because lojojo is on team36 + team36 is based in miami  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	kagusa	denver	stated: kagusa is based in denver | inferred: kagusa is based in boston | because kagusa is on team07 + team07 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	filoti	chicago	stated: filoti is based in chicago | inferred: filoti is based in denver | because filoti is on team32 + team32 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	nepati	chicago	stated: nepati is based in chicago | inferred: nepati is based in miami | because nepati is on team04 + team04 is based in miami  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	zebedo	chicago	stated: zebedo is based in chicago | inferred: zebedo is based in boston | because zebedo is on team39 + team39 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	lobegu	miami	stated: lobegu is based in miami | inferred: lobegu is based in boston | because lobegu is on team25 + team25 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 3 paths)
+CONFLICT	patilo	chicago	stated: patilo is based in chicago | inferred: patilo is based in seattle | because patilo is on team11 + team11 is based in seattle  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	lohelo	denver	stated: lohelo is based in denver | inferred: lohelo is based in boston | because lohelo is on team01 + team01 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 4 paths)
+CONFLICT	gubeti	chicago	stated: gubeti is based in chicago | inferred: gubeti is based in denver | because gubeti is on team24 + team24 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	netipa	denver	stated: netipa is based in denver | inferred: netipa is based in austin | because netipa is on team34 + team34 is based in austin  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 3 paths)
+CONFLICT	tidomi	miami	stated: tidomi is based in miami | inferred: tidomi is based in boston | because tidomi is on team39 + team39 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	kadolo	austin	stated: kadolo is based in austin | inferred: kadolo is based in denver | because kadolo is on team16 + team16 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 5 paths)
+CONFLICT	dopasa	seattle	stated: dopasa is based in seattle | inferred: dopasa is based in boston | because dopasa is on team25 + team25 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 5 paths)
+CONFLICT	mifibe	chicago	stated: mifibe is based in chicago | inferred: mifibe is based in seattle | because mifibe is on team11 + team11 is based in seattle  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	pavolo	miami	stated: pavolo is based in miami | inferred: pavolo is based in chicago | because pavolo is on team29 + team29 is based in chicago  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 3 paths)
+CONFLICT	tifibe	miami	stated: tifibe is based in miami | inferred: tifibe is based in seattle | because tifibe is on team27 + team27 is based in seattle  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 4 paths)
+CONFLICT	papagu	miami	stated: papagu is based in miami | inferred: papagu is based in chicago | because papagu is on team13 + team13 is based in chicago  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 4 paths)
