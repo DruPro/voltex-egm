@@ -2,7 +2,7 @@
 
 <img src="media/images/voltex-egm-logo.png" alt="Voltex EGM" width="640">
 
-### A CPU-only, evidence-grounded knowledge engine
+### A CPU-only, evidential grammar memory knowledge engine
 
 Extract facts · build a knowledge base · query it · score it — with one command.<br>
 **No GPU. No training. No API keys.**
