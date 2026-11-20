@@ -222,6 +222,15 @@ class Engine:
             r = [x for x in r if x.accepted]
         return [x for x in r if x.shape == shape] if shape else r
 
+    def chains(self) -> List[dict]:
+        """How each derived fact was reached: {"fact", "round", "tendency_steps"} (rounds count from 1; tendency steps
+        are tendency-tier rule steps anywhere in its proof). See SET TENDENCYSTEPS."""
+        return parse.chains(self._checked("CHAINS ALL"))
+
+    def limits(self) -> List[str]:
+        """Capacity limits the last build hit (e.g. more words than MAXWORDS), as the engine reports them."""
+        return [l[len("[LIMIT] "):] for l in self._checked("RELATIONS") if l.startswith("[LIMIT] ")]
+
     def experimental(self) -> dict:
         """Experimental settings that are currently not at their default: {name: value}."""
         return {k: v["value"] for k, v in self.config().items() if v["experimental"] and v["value"] != v["default"]}

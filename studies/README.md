@@ -30,6 +30,7 @@ scorers, raw answers, agent audit logs, and the results files the write-ups cite
 | [`multipremise/`](multipremise/) | Rules with 3+ premises (`CHAIN`) and group conditions (`CONDITIONS`) | `studies/multipremise/RESULTS.md` |
 | [`trees/`](trees/) | Tree-shaped rules (`TREES`): gates, 4-bit adders, hidden world | `studies/trees/RESULTS.md` |
 | [`noise/`](noise/) | Noise: does it recede with data? `VOTE`, `QUARANTINE`, `REPLICATE`, and `egm tune` | `studies/noise/RESULTS.md` |
+| [`tendency/`](tendency/) | A user control for answers resting on tendencies (`TENDENCYSTEPS`), `CHAINS`, capacity limits, rebuild time, redundancy in the pipeline | `studies/tendency/RESULTS.md` |
 
 ## How the earlier studies were archived
 
@@ -45,7 +46,7 @@ The first 18 folders were copied from the working area where they ran by
 - **Absolute paths.** Scripts that name `/home/claude/...`, where the studies ran. Adjust those
   paths, or recreate that layout, to rerun.
 
-The five later studies (`config`, `depth`, `multipremise`, `trees`, `noise`) were written in place and run
+The six later studies (`config`, `depth`, `multipremise`, `trees`, `noise`, `tendency`) were written in place and run
 against this repository's engine; their tools take the engine path from the `VOLTEX` variable.
 
 ## Ground rules all studies followed

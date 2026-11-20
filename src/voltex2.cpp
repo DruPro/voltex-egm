@@ -278,6 +278,7 @@ struct Relation {
     std::map<std::pair<u32, u32>, std::string> outvoted;     // VOTE: stated facts outvoted by a value reported more often
     std::set<u32> disputed;                                  // VOTE: subjects of a one-value relation whose reports have no majority
     std::map<std::pair<u32, u32>, std::string> quarantined;  // QUARANTINE: stated facts two rules contradict, kept out of the evidence
+    std::map<std::pair<u32, u32>, std::pair<int, int>> chain; // every derived fact: (inference round, tendency-tier steps in its proof)
 };
 struct TBranch { int r, s; u32 k; };   // tree branch: R(g,k) when s < 0, else R(g,y) & S(y,k)
 inline bool operator<(const TBranch& a, const TBranch& b) { return std::tie(a.r, a.s, a.k) < std::tie(b.r, b.s, b.k); }
@@ -321,6 +322,10 @@ struct Vault {
     int DEPTH = 4, lastRounds = 0;   // multi-premise study: inference rounds (0 = until nothing new)
     int CHAIN_L = 2;                 // longest rule body (2 = shipped shapes; >= 3 adds evidence-guided path rules)
     int F_COND = 0;                  // learn conditions that restrict an accepted rule to a group of subjects
+    int F_TSTEPS = -1;               // TENDENCYSTEPS (studies/tendency): most tendency-tier rule steps a proof may contain; -1 = no limit
+    u64 MAX_WORDS = 12000;           // categories are built for this many most frequent words; rarer words are not slots
+    u64 MAX_RELS = 40;               // relations kept, largest first
+    u64 wordsSeen = 0, relsSeen = 0; // before those caps (reported when a cap is hit)
     int F_REPL = 0;                  // REPLICATE (studies/noise): a rule must also pass in each half of its subjects
     int F_VOTE = 0;                  // VOTE (studies/noise): in a one-value relation, the value reported most outvotes the rest
     int F_QUAR = 0;                  // QUARANTINE (studies/noise): stated facts two rules contradict are kept out of the evidence
@@ -446,12 +451,14 @@ struct Vault {
     }
 
     // ── LAYER 2: categories from context counts (derived, not stored as weights) ──
-    void buildClasses(size_t maxWords = 12000) {
+    void buildClasses() {
+        size_t maxWords = MAX_WORDS;
         size_t V = voc.str.size();
         cls.assign(V, 0); for (u32 i = 0; i < V; ++i) cls[i] = i;
         std::vector<u32> wordsv;
         for (u32 w = 2; w < V; ++w) if (w < wc.uni.size() && wc.uni[w] && !voc.space[w]) wordsv.push_back(w);
         std::sort(wordsv.begin(), wordsv.end(), [&](u32 a, u32 b) { return wc.uni[a] > wc.uni[b]; });
+        wordsSeen = wordsv.size();
         if (wordsv.size() > maxWords) wordsv.resize(maxWords);
         std::vector<std::vector<std::pair<u32, u64>>> L(V), R(V);
         for (auto& kv : wc.big) { u32 b = u32(kv.first >> 32), w = u32(kv.first & 0xFFFFFFFFu); L[w].push_back({b, kv.second}); R[b].push_back({w, kv.second}); }
@@ -549,7 +556,8 @@ struct Vault {
             if (F_VOTE) rels[ri].reports[{c[bi], c[bj]}] += recs[recRid[ci]].count;
         }
         std::sort(rels.begin(), rels.end(), [](auto& a, auto& b) { return a.stated.size() > b.stated.size(); });
-        if (rels.size() > 40) rels.resize(40);
+        relsSeen = rels.size();
+        if (rels.size() > MAX_RELS) rels.resize(MAX_RELS);
         if (F_VOTE) applyVote(); else voteList.clear();
         if (F_DECL) interpretAmendments();
         if (useObs) annotateObservations(support);
@@ -1222,7 +1230,7 @@ struct Vault {
         conflicts.clear(); staleAlt.clear();
     }
     void inferCore(int maxDepth) {
-        for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); }
+        for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); R.chain.clear(); }
         conflicts.clear(); staleAlt.clear();
         std::map<std::pair<int, u32>, std::pair<u32, std::string>> pendingUnknown;
         std::vector<bool> functional(rels.size());
@@ -1244,11 +1252,18 @@ struct Vault {
             std::map<std::pair<int, u32>, std::map<u32, std::pair<int, std::string>>> votes;
             std::map<std::pair<int, u32>, std::map<u32, int>> lawVotes;   // law-tier paths per value
             std::set<std::tuple<int, u32, u32>> lawAdd;
-            bool curLaw = false; int curRule = -1;
+            bool curLaw = false; int curRule = -1, curTs = 0;   // curTs: tendency-tier steps in the current proof's premises
+            std::map<std::pair<int, u32>, std::map<u32, int>> voteTs;   // fewest tendency steps among the paths to each value
+            std::map<std::tuple<int, u32, u32>, int> addTs;
+            auto tsOf = [&](int r, u32 a, u32 b) { auto it = rels[r].chain.find({a, b}); return it == rels[r].chain.end() ? 0 : it->second.second; };
             std::map<std::pair<int, u32>, std::map<u32, std::set<int>>> ruleVotes;   // distinct rules per value
             auto isLaw = [&](int r, u32 a, u32 b) { return rels[r].stated.count({a, b}) || rels[r].lawDerived.count({a, b}); };
             auto propose = [&](int r3, u32 a, u32 c, double score, std::string why) {
                 if (capture && curRule >= 0) (*capture)[curRule].insert({a, c});
+                int ts = curTs + ((F_LABELS && curRule >= 0 && ruleList[curRule].law) ? 0 : 1);
+                if (F_TSTEPS >= 0 && ts > F_TSTEPS) return;   // TENDENCYSTEPS: this proof rests on too many tendency steps
+                if (functional[r3]) { auto& m = voteTs[{r3, a}]; auto it = m.find(c); if (it == m.end() || ts < it->second) m[c] = ts; }
+                else { auto k = std::make_tuple(r3, a, c); auto it = addTs.find(k); if (it == addTs.end() || ts < it->second) addTs[k] = ts; }
                 if (functional[r3]) { auto& v = votes[{r3, a}][c]; if (v.first++ == 0) v.second = why; if (curLaw) lawVotes[{r3, a}][c]++; ruleVotes[{r3, a}][c].insert(curRule); return; }
                 if (!has(r3, a, c)) { add.emplace_back(r3, a, c, score, why); if (curLaw) lawAdd.insert({r3, a, c}); }
             };
@@ -1271,18 +1286,19 @@ struct Vault {
                             std::string why = h.anchorInv ? renderFact(rels[h.r1], g, x) : renderFact(rels[h.r1], x, g);
                             double mc = h.anchorInv ? conf(h.r1, g, x) : conf(h.r1, x, g);
                             bool law = h.anchorInv ? isLaw(h.r1, g, x) : isLaw(h.r1, x, g), ok = true;
+                            int tsp = h.anchorInv ? tsOf(h.r1, g, x) : tsOf(h.r1, x, g);
                             for (auto& b : h.branches) {
                                 if (b.k == x) { ok = false; break; }
                                 if (b.s < 0) { if (b.k == g || !has(b.r, g, b.k)) { ok = false; break; }
-                                    why += " + " + renderFact(rels[b.r], g, b.k); mc = std::min(mc, conf(b.r, g, b.k)); law = law && isLaw(b.r, g, b.k); continue; }
+                                    why += " + " + renderFact(rels[b.r], g, b.k); mc = std::min(mc, conf(b.r, g, b.k)); law = law && isLaw(b.r, g, b.k); tsp = std::max(tsp, tsOf(b.r, g, b.k)); continue; }
                                 bool found = false; auto it = F[b.r].find(g);
                                 if (it != F[b.r].end()) for (u32 y : it->second) if (y != x && y != g && y != b.k && has(b.s, y, b.k)) {
                                     why += " + " + renderFact(rels[b.r], g, y) + " + " + renderFact(rels[b.s], y, b.k);
-                                    mc = std::min({mc, conf(b.r, g, y), conf(b.s, y, b.k)}); law = law && isLaw(b.r, g, y) && isLaw(b.s, y, b.k); found = true; break; }
+                                    mc = std::min({mc, conf(b.r, g, y), conf(b.s, y, b.k)}); law = law && isLaw(b.r, g, y) && isLaw(b.s, y, b.k); tsp = std::max({tsp, tsOf(b.r, g, y), tsOf(b.s, y, b.k)}); found = true; break; }
                                 if (!found) { ok = false; break; }
                             }
                             if (!ok) continue;
-                            curLaw = F_LABELS && h.law && law;
+                            curLaw = F_LABELS && h.law && law; curTs = tsp;
                             propose(h.r3, x, h.headVal, h.pca * mc, why + "  [rule: " + ruleText(h) + "]");
                         }
                     }
@@ -1294,12 +1310,12 @@ struct Vault {
                     for (auto& s0 : adjP[0]) {
                         u32 x0 = s0.first; if (!condOK(x0)) continue;
                         std::set<u32> done; u64 steps = 0; nodes.assign(1, x0);
-                        std::function<void(size_t, u32, double, bool)> go = [&](size_t i, u32 x, double mc, bool law) {
+                        std::function<void(size_t, u32, double, bool, int)> go = [&](size_t i, u32 x, double mc, bool law, int tsp) {
                             if (i == L) {
                                 if (x == x0 || !done.insert(x).second) return;
                                 std::string why;
                                 for (size_t j = 0; j < L; ++j) { if (j) why += " + "; why += renderFact(rels[h.path[j]], nodes[j], nodes[j + 1]); }
-                                curLaw = F_LABELS && h.law && law;
+                                curLaw = F_LABELS && h.law && law; curTs = tsp;
                                 propose(h.r3, x0, x, std::max(h.rate, h.pca) * mc, why + "  [rule: " + ruleText(h) + "]");
                                 return;
                             }
@@ -1307,13 +1323,13 @@ struct Vault {
                             for (u32 y : it->second) {
                                 if (++steps > 10000) return;
                                 if (std::find(nodes.begin(), nodes.end(), y) != nodes.end()) continue;   // simple paths only
-                                nodes.push_back(y); go(i + 1, y, std::min(mc, conf(h.path[i], x, y)), law && isLaw(h.path[i], x, y)); nodes.pop_back();
+                                nodes.push_back(y); go(i + 1, y, std::min(mc, conf(h.path[i], x, y)), law && isLaw(h.path[i], x, y), std::max(tsp, tsOf(h.path[i], x, y))); nodes.pop_back();
                             }
                         };
-                        go(0, x0, 1.0, true);
+                        go(0, x0, 1.0, true, 0);
                     }
                 } else if (h.type == 'I') {
-                    for (auto& f : all(h.r1)) if (f.first != f.second && condOK(f.second) && ((curLaw = F_LABELS && h.law && isLaw(h.r1, f.first, f.second)) || true))
+                    for (auto& f : all(h.r1)) if (f.first != f.second && condOK(f.second) && ((curLaw = F_LABELS && h.law && isLaw(h.r1, f.first, f.second)) || true) && ((curTs = tsOf(h.r1, f.first, f.second)) || true))
                         propose(h.r3, f.second, f.first, h.rate * conf(h.r1, f.first, f.second),
                                 renderFact(rels[h.r1], f.first, f.second) + "  [rule: " + ruleText(h) + "]");
                 } else {
@@ -1321,7 +1337,7 @@ struct Vault {
                     for (auto& f : all(h.r1)) {
                         if (!condOK(f.first)) continue;
                         auto it = out2.find(f.second); if (it == out2.end()) continue;
-                        for (u32 c : it->second) if (c != f.first && ((curLaw = F_LABELS && h.law && isLaw(h.r1, f.first, f.second) && isLaw(h.r2, f.second, c)) || true))
+                        for (u32 c : it->second) if (c != f.first && ((curLaw = F_LABELS && h.law && isLaw(h.r1, f.first, f.second) && isLaw(h.r2, f.second, c)) || true) && ((curTs = std::max(tsOf(h.r1, f.first, f.second), tsOf(h.r2, f.second, c))) || true))
                             propose(h.r3, f.first, c, std::max(h.rate, h.pca) * std::min(conf(h.r1, f.first, f.second), conf(h.r2, f.second, c)),
                                     renderFact(rels[h.r1], f.first, f.second) + " + " + renderFact(rels[h.r2], f.second, c) + "  [rule: " + ruleText(h) + "]");
                     }
@@ -1387,6 +1403,12 @@ struct Vault {
             for (auto& t : add) {
                 auto& D = rels[std::get<0>(t)].derived; auto key = std::make_pair(std::get<1>(t), std::get<2>(t));
                 auto it = D.find(key);
+                if (it == D.end()) {   // round and tendency steps of the proof that first derived it
+                    int ri = std::get<0>(t); int ts = 0;
+                    if (functional[ri]) { auto& m = voteTs[{ri, key.first}]; auto f = m.find(key.second); if (f != m.end()) ts = f->second; }
+                    else { auto f = addTs.find({ri, key.first, key.second}); if (f != addTs.end()) ts = f->second; }
+                    rels[ri].chain[key] = {depth + 1, ts};
+                }
                 if (it == D.end() || it->second.first < std::get<3>(t)) D[key] = {std::get<3>(t), std::get<4>(t)};
                 if (lawAdd.count({std::get<0>(t), std::get<1>(t), std::get<2>(t)})) rels[std::get<0>(t)].lawDerived.insert(key);
             }
@@ -1526,6 +1548,8 @@ static std::vector<Setting>& settings() {
     static std::vector<Setting> s;
     if (s.empty()) {
         s = {
+            VTX_SETTING("MAXWORDS", "statistics", false, true, "categories for this many most frequent words; rarer words are not slots", MAX_WORDS, u64),
+            VTX_SETTING("MAXRELATIONS", "statistics", false, true, "relations kept, largest first", MAX_RELS, u64),
             VTX_SETTING("CLASS", "statistics", false, true, "similarity needed to merge words into a category", classThresh, double),
             VTX_SETTING("RATE", "induction", false, true, "minimum share of chains whose conclusion is stated", RATE_MIN, double),
             VTX_SETTING("LIFT", "induction", false, true, "minimum rate over the conclusion's base rate", LIFT_MIN, double),
@@ -1539,6 +1563,7 @@ static std::vector<Setting>& settings() {
             VTX_SETTING("CONDITIONS", "induction", true, true, "learn group conditions on accepted rules (1/0) (studies/multipremise)", F_COND, int),
             VTX_SETTING("TREES", "induction", true, true, "tree-shaped rules joining several branches at one entity (1/0) (studies/trees)", F_TREES, int),
             VTX_SETTING("REPLICATE", "induction", true, true, "a rule must also hold in each half of its subjects (1/0) (studies/noise)", F_REPL, int),
+            VTX_SETTING("TENDENCYSTEPS", "inference", true, true, "most tendency-tier steps one proof may contain, -1 = no limit (studies/tendency)", F_TSTEPS, int),
             VTX_SETTING("DEPTH", "inference", false, true, "inference rounds, 0 = until nothing new (studies/depth)", DEPTH, int),
             VTX_SETTING("CORROBORATE", "inference", false, true, "a contradiction needs two distinct rules (1/0)", F_CORROB, int),
             VTX_SETTING("OBS", "evidence", false, true, "project the observation log (1/0)", F_OBS, int),
@@ -1710,6 +1735,11 @@ static void showRelations() {
     V.ensureModel();
     { std::string ex = nonDefault(true); if (!ex.empty()) std::printf("[CONFIG] experimental settings on:%s\n", ex.c_str()); }
     std::printf("[RELATIONS] %zu two-argument templates\n", V.rels.size());
+    if (V.wordsSeen > V.MAX_WORDS)   // capacity limits are reported, never silent
+        std::printf("[LIMIT] categories cover the %llu most frequent of %llu words; facts naming rarer words are in no relation (SET MAXWORDS)\n",
+                    (unsigned long long)V.MAX_WORDS, (unsigned long long)V.wordsSeen);
+    if (V.relsSeen > V.MAX_RELS)
+        std::printf("[LIMIT] %llu of %llu relations kept, largest first (SET MAXRELATIONS)\n", (unsigned long long)V.MAX_RELS, (unsigned long long)V.relsSeen);
     for (size_t i = 0; i < V.rels.size() && i < 15; ++i) std::printf("  #%zu  %-30s %zu facts\n", i, V.words(V.rels[i].tmpl).c_str(), V.rels[i].stated.size());
     int shown = 0;
     if (V.F_COV || V.F_LABELS) {
@@ -1851,6 +1881,7 @@ static void help() {
         "  INFER [ALL]          derive facts that were never stated, with proofs\n"
         "  ASK <pattern ?>      stated + inferred answers, e.g. ASK ana is in ?\n"
         "  CONFLICTS            stated facts that contradict what the rules infer\n"
+        "  CHAINS [ALL]         derived facts by inference round and tendency-tier steps (ALL: one line per fact)\n"
         "  RETRACT <text>       remove a stored fact and its evidence exactly\n"
         "  UPDATE <text>        replace the subject's earlier value (one-value relations only)\n"
         "  EVAL <path>          held-out bits per token (word / category / mix)\n"
@@ -1899,6 +1930,16 @@ int main(int argc, char** argv) {
         else if (cmd == "RELATIONS") showRelations();
         else if (cmd == "INFER") inferCmd(arg);
         else if (cmd == "ASK") ask(arg);
+        else if (cmd == "CHAINS") {   // how each derived fact was reached: inference round, tendency-tier steps in its proof
+            V.ensureInferred();
+            std::map<std::pair<int, int>, u64> by; size_t total = 0;
+            for (auto& R : V.rels) for (auto& c : R.chain) { by[c.second]++; ++total; }
+            std::printf("[CHAINS] %zu derived facts by inference round and tendency-tier steps in the proof\n", total);
+            for (auto& b : by) std::printf("  round %d, tendency steps %d: %llu\n", b.first.first, b.first.second, (unsigned long long)b.second);
+            if (arg == "ALL")
+                for (auto& R : V.rels) for (auto& c : R.chain)
+                    std::printf("CHAIN\t%s\tround=%d\ttendency_steps=%d\n", V.renderFact(R, c.first.first, c.first.second).c_str(), c.second.first, c.second.second);
+        }
         else if (cmd == "CONFLICTS") {
             V.ensureInferred();
             std::printf("[CONFLICTS] %zu stated facts contradict what the rules infer\n", V.conflicts.size());

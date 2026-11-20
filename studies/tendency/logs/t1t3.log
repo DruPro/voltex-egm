@@ -1,0 +1,90 @@
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 off 2937 2825 0.9619 0.44
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 ts1 2810 2751 0.979 0.428
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 ts0 1963 1961 0.999 0.305
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 off 2425 2425 1.0 0.374
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 ts1 2425 2425 1.0 0.374
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 ts0 2425 2425 1.0 0.374
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 off 2588 2583 0.9981 0.396
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 ts1 2585 2580 0.9981 0.396
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 ts0 2352 2349 0.9987 0.36
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 0 off 2936 2818 0.9598 0.438
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 0 ts1 2784 2729 0.9802 0.424
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 0 ts0 1914 1912 0.999 0.297
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 1 off 2427 2425 0.9992 0.373
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 1 ts1 2427 2425 0.9992 0.373
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 1 ts0 2427 2425 0.9992 0.373
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 2 off 2591 2581 0.9961 0.395
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 2 ts1 2588 2578 0.9961 0.395
+hidden {'scale': 1, 'coverage': 0.3, 'noise': 0.03, 'reports': 1} 2 ts0 2312 2307 0.9978 0.353
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 off 2598 2533 0.975 0.512
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 ts1 2572 2513 0.9771 0.508
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 ts0 2311 2311 1.0 0.467
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 off 2904 2565 0.8833 0.53
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 ts1 2787 2549 0.9146 0.527
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 ts0 2412 2406 0.9975 0.497
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 off 2470 2443 0.9891 0.51
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 ts1 2449 2426 0.9906 0.507
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 ts0 2322 2312 0.9957 0.483
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 0 off 2585 2518 0.9741 0.507
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 0 ts1 2559 2498 0.9762 0.503
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 0 ts0 2307 2305 0.9991 0.464
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 1 off 2906 2553 0.8785 0.526
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 1 ts1 2785 2538 0.9113 0.523
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 1 ts0 2408 2397 0.9954 0.494
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 2 off 2471 2440 0.9875 0.508
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 2 ts1 2446 2420 0.9894 0.504
+hidden {'scale': 1, 'coverage': 0.5, 'noise': 0.03, 'reports': 1} 2 ts0 2240 2234 0.9973 0.465
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 off 2147 1852 0.8626 0.578
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 ts1 2100 1847 0.8795 0.577
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 ts0 1717 1712 0.9971 0.535
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 off 2110 1896 0.8986 0.58
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 ts1 2105 1892 0.8988 0.579
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 ts0 1761 1749 0.9932 0.535
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 off 1983 1927 0.9718 0.6
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 ts1 1981 1926 0.9722 0.599
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 ts0 1862 1842 0.9893 0.573
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 0 off 1876 1820 0.9701 0.565
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 0 ts1 1872 1818 0.9712 0.564
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 0 ts0 1716 1706 0.9942 0.529
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 1 off 2017 1824 0.9043 0.555
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 1 ts1 2012 1819 0.9041 0.553
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 1 ts0 1762 1742 0.9886 0.53
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 2 off 1982 1924 0.9707 0.595
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 2 ts1 1978 1921 0.9712 0.594
+hidden {'scale': 1, 'coverage': 0.7, 'noise': 0.03, 'reports': 1} 2 ts0 1819 1798 0.9885 0.556
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 off 41694 1049 0.0252 0.645
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 ts1 40624 1042 0.0256 0.641
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 0 ts0 1004 984 0.9801 0.605
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 off 50682 1050 0.0207 0.643
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 ts1 49489 1044 0.0211 0.639
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 1 ts0 1005 984 0.9791 0.603
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 off 1403 1035 0.7377 0.603
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 ts1 1387 1035 0.7462 0.603
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.0, 'reports': 1, 'contradict': 0.0} 2 ts0 998 983 0.985 0.573
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 0 off 41753 1040 0.0249 0.629
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 0 ts1 40634 1034 0.0254 0.626
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 0 ts0 915 889 0.9716 0.538
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 1 off 50691 1038 0.0205 0.625
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 1 ts1 49495 1031 0.0208 0.621
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 1 ts0 924 897 0.9708 0.54
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 2 off 1400 1033 0.7379 0.593
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 2 ts1 1384 1033 0.7464 0.593
+hidden {'scale': 1, 'coverage': 0.9, 'noise': 0.03, 'reports': 1} 2 ts0 907 891 0.9824 0.511
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 0 off 1142 1142 1.0 0.968
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 0 ts1 964 964 1.0 0.817
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 0 ts0 580 580 1.0 0.492
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 1 off 1117 1117 1.0 0.96
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 1 ts1 1004 1004 1.0 0.863
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 1 ts0 596 596 1.0 0.512
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 2 off 1095 1095 1.0 0.961
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 2 ts1 959 959 1.0 0.841
+company {'scale': 1.0, 'noise': 0.0, 'reports': 1} 2 ts0 563 563 1.0 0.494
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 0 off 833 833 1.0 0.655
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 0 ts1 655 655 1.0 0.515
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 0 ts0 271 271 1.0 0.213
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 1 off 1117 1097 0.9821 0.875
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 1 ts1 987 967 0.9797 0.772
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 1 ts0 279 279 1.0 0.223
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 2 off 1095 1080 0.9863 0.879
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 2 ts1 948 931 0.9821 0.758
+company {'scale': 1.0, 'noise': 0.15, 'reports': 1} 2 ts0 271 271 1.0 0.221

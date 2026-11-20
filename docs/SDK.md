@@ -204,3 +204,16 @@ knowledge base. What `studies/noise` measured:
 
 New fields: `Rule.replication` (why `REPLICATE` rejected a rule), `Conflict.kind` (`value`,
 `quarantined`, `outvoted`, `other`), and the ASK flags `outvoted` and `quarantined`.
+
+## Proof chains and limits
+
+```python
+with egm.open("facts.txt") as e:
+    e.chains()      # [{"fact": "...", "round": 2, "tendency_steps": 1}, ...]: how each derived fact was reached
+    e.limits()      # capacity limits the build hit, e.g. ["categories cover the 12000 most frequent of 16016 words; ..."]
+with egm.open("facts.txt", settings={"TENDENCYSTEPS": 0}) as e:
+    e.infer_all()   # only answers whose whole proof uses law-tier rules
+```
+
+Count `chains()` by round and tendency steps before choosing `TENDENCYSTEPS`. It shows whether
+your answers rest on tendencies, and whether a single tendency is being amplified over later rounds.
