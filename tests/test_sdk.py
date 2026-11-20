@@ -11,6 +11,8 @@ if os.environ.get("EGM_TEST_INSTALLED") != "1":     # test the checkout unless t
     sys.path.insert(0, ROOT)
 import egm  # noqa: E402
 from egm import bench, parse  # noqa: E402
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import worlds  # noqa: E402
 
 EX = os.path.join(ROOT, "examples")
 M = os.path.join(EX, "tokenomics", "M.txt")
@@ -239,8 +241,8 @@ class TestPersistence(unittest.TestCase):
     def test_config_lists_every_setting(self):
         with egm.Engine() as e:
             c = e.config()
-        self.assertGreaterEqual(len(c), 22)
-        self.assertTrue(c["CHAIN"]["experimental"] and c["CONDITIONS"]["experimental"])
+        self.assertGreaterEqual(len(c), 23)
+        self.assertTrue(c["CHAIN"]["experimental"] and c["CONDITIONS"]["experimental"] and c["TREES"]["experimental"])
         self.assertFalse(c["DEPTH"]["experimental"])
         self.assertEqual((c["DEPTH"]["value"], c["CHAIN"]["value"]), (4, 2))
 
@@ -257,6 +259,75 @@ class TestPersistence(unittest.TestCase):
             e.set("REFRESH", 0.02)
             with self.assertRaises(ValueError):
                 e.set("NO_SUCH_SETTING", 1)
+
+
+class TestExperimentalSettings(unittest.TestCase):
+    """DEPTH, CHAIN, CONDITIONS and TREES through the SDK, on small worlds from tests/worlds.py (studies/ hold the full studies)."""
+
+    @staticmethod
+    def kb(lines, **settings):
+        td = tempfile.mkdtemp(); path = os.path.join(td, "facts.txt")
+        with open(path, "w") as fh:
+            fh.write("\n".join(lines) + "\n")
+        return egm.open(path, settings=settings)
+
+    def test_depth_unlimited_reaches_further_without_errors(self):
+        lines, hidden = worlds.remainders()
+        got = {}
+        for d in (4, 0):
+            with self.kb(lines, DEPTH=d) as e:
+                got[d] = {f.subject: f.object for f in e.infer_all() if f.relation == "has remainder"}
+        right = {d: sum(got[d].get(a) == v for a, v in hidden.items()) for d in got}
+        self.assertGreater(right[0], right[4])
+        for d in got:
+            self.assertEqual(sum(a in got[d] and got[d][a] != v for a, v in hidden.items()), 0)
+
+    def test_chain_learns_three_step_rule(self):
+        lines, unseen = worlds.lineage()
+        with self.kb(lines) as e:   # CHAIN 2: a three-step relation cannot be expressed
+            self.assertFalse(any(f.relation == "is great grandparent of" for f in e.infer_all()))
+        with self.kb(lines, CHAIN=3) as e:
+            got = {(f.subject, f.object) for f in e.infer_all() if f.relation == "is great grandparent of"}
+            self.assertEqual(got, unseen)
+            paths = e.rules(shape="path")
+            self.assertTrue(paths and paths[0].premises == 3)
+            self.assertEqual(e.experimental(), {"CHAIN": 3})
+            f = [x for x in e.ask(f"{next(iter(unseen))[0]} is great grandparent of ?") if x.status == "inferred"][0]
+            self.assertEqual(len(f.because), 3)
+
+    def test_conditions_restrict_an_over_general_rule(self):
+        lines, wrong = worlds.harvest()
+        with self.kb(lines) as e:
+            base = {(f.subject, f.object) for f in e.infer_all() if f.relation == "harvests"}
+        with self.kb(lines, CONDITIONS=1) as e:
+            cond = {(f.subject, f.object) for f in e.infer_all() if f.relation == "harvests"}
+            rules = [r for r in e.rules() if r.condition]
+        self.assertGreater(len(base & wrong), 100)          # the general rule fires for everyone
+        self.assertEqual(len(cond & wrong), 0)              # the conditional rule only for farmers and miners
+        self.assertTrue(rules and "works as" in rules[0].condition and "farmer" in rules[0].condition and "miner" in rules[0].condition)
+
+    def test_trees_learn_gates(self):
+        lines, hidden = worlds.gates()
+        with self.kb(lines) as e:
+            self.assertEqual(e.rules(shape="tree"), [])
+        with self.kb(lines, TREES=1) as e:
+            got = {f.subject: f.object for f in e.infer_all() if f.relation == "has value"}
+            trees = e.rules(shape="tree")
+            w = next(iter(hidden)); ans = [f for f in e.ask(f"{w} has value ?") if f.status == "inferred"]
+        self.assertEqual(sum(got.get(w) == v for w, v in hidden.items()), len(hidden))
+        self.assertTrue(trees and all(r.text.startswith("TREE ") and r.premises >= 3 for r in trees))
+        self.assertTrue(ans and ans[0].rule.startswith("TREE ") and len(ans[0].because) >= 4)
+
+    def test_experimental_settings_are_saved_and_announced(self):
+        lines, hidden = worlds.gates(per_kind=120)
+        td = tempfile.mkdtemp(); kb = os.path.join(td, "g.vtx")
+        with self.kb(lines, TREES=1, DEPTH=0) as e:
+            n = len(e.infer_all()); e.save(kb)
+            self.assertTrue(any("experimental settings on: TREES=1" in l for l in e.cmd("RELATIONS")))
+        with egm.open(kb) as e:
+            self.assertEqual(e.experimental(), {"TREES": 1})
+            self.assertEqual(e.config()["DEPTH"]["value"], 0)
+            self.assertEqual(len(e.infer_all()), n)
 
 
 class TestBinaryLookup(unittest.TestCase):

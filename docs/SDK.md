@@ -82,7 +82,8 @@ Properties: `is_current`, `is_history`, `is_strict`. `to_dict()` is JSON-ready.
 | Method | Returns |
 |---|---|
 | `relations()` | `list[Relation]`: `template`, `relation`, `facts` (count). |
-| `rules(include_rejected=False)` | `list[Rule]`: `text`, `accepted`, `n` (chains seen), `k` (conclusion also stated), `rate`, `lift`, `known`, `agree`, `tier`. |
+| `rules(include_rejected=False, shape=None)` | `list[Rule]`: `text`, `accepted`, `n` (chains seen), `k` (conclusion also stated), `rate`, `lift`, `known`, `agree`, `tier`, `shape` (`inverse`, `chain`, `path`, `tree`), `premises`, `condition` (set for a rule restricted to a group). `shape=` filters. |
+| `experimental()` | `dict` of experimental settings currently on, e.g. `{"TREES": 1}`. |
 | `categories(threshold=None)` | `list[Category]`: word classes induced from shared contexts. |
 | `metrics()` | `dict`: records, vocabulary, grammar size, memory. |
 
@@ -146,3 +147,28 @@ def egm_tool(pattern: str, strict: bool = True) -> str:
         return json.dumps({"error": str(e), "learned": e.learned})
     return json.dumps([{k: f.to_dict()[k] for k in ("fact", "status", "tier", "because")} for f in facts])
 ```
+
+## Experimental settings
+
+All are off by default and saved with the knowledge base (`docs/SETTINGS.md`).
+
+```python
+import egm
+with egm.open("gates.txt", settings={"TREES": 1, "DEPTH": 0}) as e:
+    for r in e.rules(shape="tree"):
+        print(r.premises, r.text)        # TREE [? is output of ?](a,g) & [? has kind ?](g,or) & ...
+    f = [x for x in e.ask("w17 has value ?") if x.status == "inferred"][0]
+    print(f.rule, f.because)             # the tree rule and every premise fact
+    print(e.experimental())              # {'TREES': 1}
+```
+
+| Setting | What the SDK shows |
+|---|---|
+| `DEPTH` | more facts from `infer_all()`; `0` runs to a fixpoint |
+| `CHAIN` 3-8 | rules with `shape == "path"` and `premises == CHAIN`; facts with that many `because` entries |
+| `CONDITIONS` | rules with `condition` set, e.g. `[? works as ?](a,farmer|miner)` |
+| `TREES` | rules with `shape == "tree"`, text starting `TREE `; facts whose `because` lists every branch |
+
+The tests in `tests/test_sdk.py` (`TestExperimentalSettings`) run each one on a small world from
+`tests/worlds.py`. The MCP tool `egm_relations` reports each rule's `shape`, `premises` and
+`condition`, and `experimental_settings` when any is on.

@@ -1,0 +1,11 @@
+[SET] TREES = 0
+[INGEST] 6666 records, 165282 bytes in 0.028 s (5.62 MB/s)
+[RELATIONS] 5 two-argument templates
+  #0  ? has value ?                  2666 facts
+  #1  ? has second input ?           1000 facts
+  #2  ? is output of ?               1000 facts
+  #3  ? has first input ?            1000 facts
+  #4  ? has kind ?                   1000 facts
+[COVERAGE] estimated observation completeness: global -1.00 |
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+[INFER] 0 new facts derived from 0 accepted rules

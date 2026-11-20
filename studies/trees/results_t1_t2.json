@@ -1,0 +1,38 @@
+{
+ "trees0": {
+  "real_right": 0,
+  "real_wrong": 0,
+  "real_hidden": 1332,
+  "rnd_inferred": 0,
+  "rnd_hidden": 337,
+  "rnd_rules": 0,
+  "rules": 0,
+  "seconds": 2.268202066421509,
+  "rules_seed0": []
+ },
+ "trees1": {
+  "real_right": 1319,
+  "real_wrong": 0,
+  "real_hidden": 1332,
+  "rnd_inferred": 0,
+  "rnd_hidden": 337,
+  "rnd_rules": 0,
+  "rules": 66,
+  "seconds": 2.894270181655884,
+  "rules_seed0": [
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one) n",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has second input ?](g,y1) & [? has value ?](y1,one) => [? has value ?](a,one) n=94 k=65 rate=0.69 lift=1.4 | where answer known: 65, agr",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has first input ?](g,y1) & [? has value ?](y1,one) => [? has value ?](a,one) n=91 k=62 rate=0.68 lift=1.4 | where answer known: 62, agre",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,xor) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero) ",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,xor) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has second input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,zero) n=109 k=74 rate=0.68 lift=1.3 | where answer known: 74,",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,zero) n=100 k=67 rate=0.67 lift=1.3 | where answer known: 67, ",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,nand) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero)",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,xor) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,one) ",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,xor) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one) ",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,nand) & [? has second input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one) n=102 k=63 rate=0.62 lift=1.3 | where answer known: 63,",
+   "ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,nand) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one) n=99 k=61 rate=0.62 lift=1.2 | where answer known: 61, a"
+  ]
+ }
+}

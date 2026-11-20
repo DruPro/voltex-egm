@@ -1,0 +1,1377 @@
+[INGEST] 3807 records, 95218 bytes in 0.010 s (9.21 MB/s)
+[SET] TREES = 1
+--- VOLTEX v2 METRICS ---
+ Records:          3807 unique / 3807 ingested
+ Tokens (unique records): 24355
+ Vocabulary:       529 tokens
+ Grammar:          870 rules, 9509 symbols  (0.390 symbols per input token)
+ Pair map:         4832 entries
+ Count tables:     4147 bigrams, 6942 trigrams
+ Invariants:       0 duplicate pairs, 0 under-used rules
+ Process RSS:      6.4 MB
+[CONFIG] experimental settings on: TREES=1
+[RELATIONS] 7 two-argument templates
+  #0  ? collaborates with ?          1159 facts
+  #1  ? knows ?                      877 facts
+  #2  ? works under ?                681 facts
+  #3  ? is on ?                      440 facts
+  #4  ? likes ?                      440 facts
+  #5  ? is based in ?                170 facts
+  #6  ? belongs to ?                 40 facts
+[COVERAGE] estimated observation completeness: global 0.78 | [? collaborates with ?] 0.78
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT [? collaborates with ?](a,b) => [? collaborates with ?](b,a) n=1159 k=908 rate=0.78 lift=106.8 | where answer known: 1159, agree=0.78 | cov=0.78 rel=1.00 tier=law
+  ACCEPT [? collaborates with ?](a,b) & [? is on ?](b,c) => [? is on ?](a,c) n=1159 k=1159 rate=1.00 lift=40.0 | where answer known: 1159, agree=1.00 | cov=0.78 rel=1.00 tier=law
+  ACCEPT [? works under ?](a,b) & [? is on ?](b,c) => [? is on ?](a,c) n=400 k=400 rate=1.00 lift=40.0 | where answer known: 400, agree=1.00 | cov=0.78 rel=1.00 tier=law
+  ACCEPT [? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c) n=1798 k=1344 rate=0.75 lift=24.6 | where answer known: 1798, agree=0.75 | cov=0.78 rel=0.95 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,hemiru) => [? belongs to ?](a,finance) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,kakafi) => [? belongs to ?](a,legal) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,kakafi) => [? belongs to ?](a,legal) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,kakafi) => [? belongs to ?](a,legal) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? collaborates with ?](g,y2) & [? likes ?](y2,ramen) & [? collaborates with ?](g,y3) & [? is based in ?](y3,boston) => [? belongs to ?](a,logistics) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,rumine) => [? belongs to ?](a,logistics) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,rumine) => [? belongs to ?](a,logistics) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,rumine) => [? belongs to ?](a,logistics) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,austin) & [? works under ?](g,y2) & [? works under ?](y2,sahehe) => [? belongs to ?](a,finance) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,hemiru) => [? belongs to ?](a,finance) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,besavo) => [? belongs to ?](a,sales) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,nefika) => [? belongs to ?](a,security) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,hemiru) => [? belongs to ?](a,finance) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,vovolo) => [? belongs to ?](a,research) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,vovolo) => [? belongs to ?](a,research) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,vovolo) => [? belongs to ?](a,research) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,nefika) => [? belongs to ?](a,security) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,besavo) => [? belongs to ?](a,sales) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,besavo) => [? belongs to ?](a,sales) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,lodobe) => [? belongs to ?](a,design) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,lodobe) => [? belongs to ?](a,design) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,nefika) => [? belongs to ?](a,security) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,hehejo) => [? belongs to ?](a,support) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,hehejo) => [? belongs to ?](a,support) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,miami) & [? works under ?](g,sahehe) => [? belongs to ?](a,support) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,sahehe) & [? collaborates with ?](g,y2) & [? is based in ?](y2,miami) => [? belongs to ?](a,support) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,sahehe) & [? is based in ?](g,miami) => [? belongs to ?](a,support) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,sahehe) & [? is based in ?](g,miami) => [? belongs to ?](a,support) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,lodobe) => [? belongs to ?](a,design) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,austin) => [? belongs to ?](a,finance) n=6 k=5 rate=0.83 lift=6.7 | where answer known: 6, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,seattle) => [? belongs to ?](a,research) n=6 k=5 rate=0.83 lift=6.7 | where answer known: 6, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? is on ?](g,a) & [? is based in ?](g,austin) => [? belongs to ?](a,finance) n=6 k=5 rate=0.83 lift=6.7 | where answer known: 6, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,miami) & [? knows ?](g,y2) & [? works under ?](y2,pabeti) => [? belongs to ?](a,support) n=6 k=5 rate=0.83 lift=6.7 | where answer known: 6, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? collaborates with ?](g,y2) & [? likes ?](y2,ramen) & [? knows ?](g,y3) & [? likes ?](y3,soup) => [? belongs to ?](a,logistics) n=6 k=5 rate=0.83 lift=6.7 | where answer known: 6, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? collaborates with ?](g,y2) & [? is based in ?](y2,boston) & [? knows ?](g,y3) & [? is based in ?](y3,denver) => [? belongs to ?](a,logistics) n=6 k=5 rate=0.83 lift=6.7 | where answer known: 6, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,ramen) & [? collaborates with ?](g,y2) & [? is based in ?](y2,boston) & [? knows ?](g,y3) & [? likes ?](y3,soup) => [? belongs to ?](a,logistics) n=6 k=5 rate=0.83 lift=6.7 | where answer known: 6, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,ramen) & [? collaborates with ?](g,y2) & [? is based in ?](y2,boston) & [? works under ?](g,y3) & [? works under ?](y3,pabeti) => [? belongs to ?](a,logistics) n=6 k=5 rate=0.83 lift=6.7 | where answer known: 6, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,salad) & [? collaborates with ?](g,y2) & [? is based in ?](y2,seattle) => [? is based in ?](a,seattle) n=16 k=7 rate=0.44 lift=3.7 | where answer known: 8, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT [? belongs to ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c) n=40 k=24 rate=0.60 lift=3.6 | where answer known: 24, agree=1.00 | cov=0.78 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,chicago) & [? knows ?](g,y2) & [? likes ?](y2,sushi) => [? is based in ?](a,chicago) n=22 k=12 rate=0.55 lift=3.4 | where answer known: 13, agree=0.92 | cov=-1.00 rel=0.92 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,zepalo) & [? works under ?](g,y2) & [? works under ?](y2,sahehe) => [? is based in ?](a,austin) n=20 k=7 rate=0.35 lift=3.3 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? is on ?](y1,team24) & [? works under ?](g,y2) & [? works under ?](y2,sahehe) => [? is based in ?](a,austin) n=20 k=7 rate=0.35 lift=3.3 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? collaborates with ?](y1,guvoze) & [? works under ?](g,y2) & [? works under ?](y2,sahehe) => [? is based in ?](a,austin) n=20 k=7 rate=0.35 lift=3.3 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? collaborates with ?](y1,gugube) => [? is based in ?](a,austin) n=20 k=7 rate=0.35 lift=3.3 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,lodobe) & [? is based in ?](g,chicago) => [? is based in ?](a,chicago) n=25 k=13 rate=0.52 lift=3.3 | where answer known: 13, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,design) & [? is based in ?](g,chicago) => [? is based in ?](a,chicago) n=25 k=13 rate=0.52 lift=3.3 | where answer known: 13, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,dumplings) & [? works under ?](g,y2) & [? works under ?](y2,vovolo) => [? is based in ?](a,seattle) n=27 k=10 rate=0.37 lift=3.1 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,dumplings) & [? is on ?](g,y2) & [? belongs to ?](y2,research) => [? is based in ?](a,seattle) n=27 k=10 rate=0.37 lift=3.1 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? collaborates with ?](g,y2) & [? likes ?](y2,salad) & [? works under ?](g,y3) & [? works under ?](y3,vovolo) => [? is based in ?](a,seattle) n=19 k=7 rate=0.37 lift=3.1 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,vovolo) & [? knows ?](g,y2) & [? likes ?](y2,pizza) => [? is based in ?](a,seattle) n=19 k=7 rate=0.37 lift=3.1 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,dumplings) & [? collaborates with ?](g,y2) & [? is based in ?](y2,seattle) => [? is based in ?](a,seattle) n=19 k=7 rate=0.37 lift=3.1 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,design) & [? is based in ?](g,chicago) => [? is based in ?](a,chicago) n=23 k=11 rate=0.48 lift=3.0 | where answer known: 11, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,lodobe) & [? is based in ?](g,chicago) => [? is based in ?](a,chicago) n=23 k=11 rate=0.48 lift=3.0 | where answer known: 11, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? is based in ?](y1,miami) & [? works under ?](g,y2) & [? works under ?](y2,pabeti) => [? is based in ?](a,seattle) n=20 k=7 rate=0.35 lift=3.0 | where answer known: 8, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,rumine) & [? works under ?](g,vovolo) => [? is based in ?](a,seattle) n=20 k=7 rate=0.35 lift=3.0 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,rumine) & [? is on ?](g,y2) & [? belongs to ?](y2,research) => [? is based in ?](a,seattle) n=20 k=7 rate=0.35 lift=3.0 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,lodobe) & [? works under ?](g,y2) & [? likes ?](y2,salad) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? likes ?](y1,pizza) & [? works under ?](g,y2) & [? works under ?](y2,pabeti) & [? likes ?](g,salad) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,lodobe) & [? works under ?](g,y2) & [? likes ?](y2,salad) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? likes ?](y1,pizza) & [? is on ?](g,y2) & [? belongs to ?](y2,design) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,kakafi) & [? works under ?](g,y2) & [? works under ?](y2,pabeti) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? likes ?](y1,salad) & [? is on ?](g,y2) & [? belongs to ?](y2,design) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? works under ?](g,lodobe) & [? likes ?](g,salad) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,kakafi) & [? is on ?](g,y2) & [? belongs to ?](y2,design) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,kakafi) & [? works under ?](g,lodobe) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,kakafi) & [? knows ?](g,y2) & [? likes ?](y2,pizza) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? likes ?](y1,pizza) & [? works under ?](g,lodobe) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,design) & [? likes ?](g,salad) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? collaborates with ?](y1,lobepa) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,nesasa) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? is on ?](y1,team13) => [? is based in ?](a,chicago) n=20 k=9 rate=0.45 lift=2.8 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? likes ?](y1,dumplings) & [? is on ?](g,y2) & [? belongs to ?](y2,research) => [? is based in ?](a,seattle) n=30 k=10 rate=0.33 lift=2.8 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? likes ?](y1,dumplings) & [? works under ?](g,y2) & [? works under ?](y2,vovolo) => [? is based in ?](a,seattle) n=30 k=10 rate=0.33 lift=2.8 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? knows ?](g,y1) & [? is based in ?](y1,miami) & [? works under ?](g,y2) & [? works under ?](y2,vovolo) => [? is based in ?](a,seattle) n=21 k=7 rate=0.33 lift=2.8 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,hemiru) => [? is based in ?](a,austin) n=41 k=12 rate=0.29 lift=2.8 | where answer known: 13, agree=0.92 | cov=-1.00 rel=0.92 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? likes ?](y1,dumplings) & [? collaborates with ?](g,y2) & [? is based in ?](y2,seattle) => [? is based in ?](a,seattle) n=22 k=7 rate=0.32 lift=2.7 | where answer known: 7, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,chicago) & [? knows ?](g,y2) & [? works under ?](y2,pabeti) => [? is based in ?](a,chicago) n=21 k=9 rate=0.43 lift=2.7 | where answer known: 10, agree=0.90 | cov=-1.00 rel=0.90 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,finance) => [? is based in ?](a,austin) n=49 k=14 rate=0.29 lift=2.7 | where answer known: 15, agree=0.93 | cov=-1.00 rel=0.93 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,hemiru) => [? is based in ?](a,austin) n=42 k=12 rate=0.29 lift=2.7 | where answer known: 13, agree=0.92 | cov=-1.00 rel=0.92 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,hemiru) => [? is based in ?](a,austin) n=49 k=14 rate=0.29 lift=2.7 | where answer known: 15, agree=0.93 | cov=-1.00 rel=0.93 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,finance) => [? is based in ?](a,austin) n=50 k=14 rate=0.28 lift=2.6 | where answer known: 15, agree=0.93 | cov=-1.00 rel=0.93 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,hemiru) => [? is based in ?](a,austin) n=50 k=14 rate=0.28 lift=2.6 | where answer known: 15, agree=0.93 | cov=-1.00 rel=0.93 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,finance) => [? is based in ?](a,austin) n=50 k=14 rate=0.28 lift=2.6 | where answer known: 15, agree=0.93 | cov=-1.00 rel=0.93 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? works under ?](g,hemiru) => [? is based in ?](a,austin) n=50 k=14 rate=0.28 lift=2.6 | where answer known: 15, agree=0.93 | cov=-1.00 rel=0.93 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,vovolo) => [? is based in ?](a,seattle) n=29 k=9 rate=0.31 lift=2.6 | where answer known: 11, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,burgers) & [? collaborates with ?](g,y2) & [? is based in ?](y2,chicago) => [? is based in ?](a,chicago) n=24 k=10 rate=0.42 lift=2.6 | where answer known: 11, agree=0.91 | cov=-1.00 rel=0.91 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is based in ?](g,austin) => [? is based in ?](a,austin) n=29 k=8 rate=0.28 lift=2.6 | where answer known: 10, agree=0.80 | cov=-1.00 rel=0.80 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,y1) & [? is based in ?](y1,austin) => [? is based in ?](a,austin) n=55 k=15 rate=0.27 lift=2.6 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,finance) => [? is based in ?](a,austin) n=55 k=15 rate=0.27 lift=2.6 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is based in ?](g,seattle) => [? is based in ?](a,seattle) n=30 k=9 rate=0.30 lift=2.5 | where answer known: 11, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,sushi) & [? works under ?](g,y2) & [? works under ?](y2,lodobe) => [? is based in ?](a,chicago) n=25 k=10 rate=0.40 lift=2.5 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? is based in ?](y1,austin) => [? is based in ?](a,austin) n=45 k=12 rate=0.27 lift=2.5 | where answer known: 12, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? is based in ?](y1,chicago) & [? knows ?](g,y2) & [? likes ?](y2,sushi) => [? is based in ?](a,chicago) n=23 k=9 rate=0.39 lift=2.5 | where answer known: 11, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,chicago) & [? works under ?](g,y2) & [? likes ?](y2,salad) => [? is based in ?](a,chicago) n=23 k=9 rate=0.39 lift=2.5 | where answer known: 11, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? knows ?](g,y1) & [? likes ?](y1,soup) & [? is on ?](g,y2) & [? belongs to ?](y2,support) => [? is based in ?](a,miami) n=20 k=8 rate=0.40 lift=2.4 | where answer known: 8, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? knows ?](y1,firufi) => [? is based in ?](a,miami) n=20 k=8 rate=0.40 lift=2.4 | where answer known: 9, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? knows ?](g,y1) & [? likes ?](y1,soup) & [? works under ?](g,y2) & [? works under ?](y2,hehejo) => [? is based in ?](a,miami) n=20 k=8 rate=0.40 lift=2.4 | where answer known: 8, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? knows ?](g,y1) & [? likes ?](y1,soup) & [? is on ?](g,y2) & [? is based in ?](y2,miami) => [? is based in ?](a,miami) n=20 k=8 rate=0.40 lift=2.4 | where answer known: 8, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? is based in ?](y1,miami) & [? likes ?](g,dumplings) => [? is based in ?](a,miami) n=23 k=9 rate=0.39 lift=2.4 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,support) & [? likes ?](g,dumplings) => [? is based in ?](a,miami) n=23 k=9 rate=0.39 lift=2.4 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,hehejo) & [? likes ?](g,dumplings) => [? is based in ?](a,miami) n=23 k=9 rate=0.39 lift=2.4 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,austin) => [? is based in ?](a,austin) n=48 k=12 rate=0.25 lift=2.4 | where answer known: 13, agree=0.92 | cov=-1.00 rel=0.92 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,vovolo) => [? is based in ?](a,seattle) n=29 k=8 rate=0.28 lift=2.3 | where answer known: 9, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is based in ?](g,seattle) => [? is based in ?](a,seattle) n=33 k=9 rate=0.27 lift=2.3 | where answer known: 11, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,vovolo) => [? is based in ?](a,seattle) n=33 k=9 rate=0.27 lift=2.3 | where answer known: 10, agree=0.90 | cov=-1.00 rel=0.90 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,vovolo) => [? is based in ?](a,seattle) n=37 k=10 rate=0.27 lift=2.3 | where answer known: 12, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,hemiru) => [? is based in ?](a,austin) n=33 k=8 rate=0.24 lift=2.3 | where answer known: 9, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is based in ?](g,austin) => [? is based in ?](a,austin) n=33 k=8 rate=0.24 lift=2.3 | where answer known: 9, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,vovolo) => [? is based in ?](a,seattle) n=49 k=13 rate=0.27 lift=2.3 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,research) => [? is based in ?](a,seattle) n=49 k=13 rate=0.27 lift=2.3 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,sahehe) & [? collaborates with ?](g,y2) & [? likes ?](y2,ramen) & [? collaborates with ?](g,y3) & [? is based in ?](y3,miami) => [? is based in ?](a,miami) n=27 k=10 rate=0.37 lift=2.2 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? works under ?](g,vovolo) => [? is based in ?](a,seattle) n=50 k=13 rate=0.26 lift=2.2 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,research) => [? is based in ?](a,seattle) n=50 k=13 rate=0.26 lift=2.2 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,vovolo) => [? is based in ?](a,seattle) n=50 k=13 rate=0.26 lift=2.2 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,research) => [? is based in ?](a,seattle) n=50 k=13 rate=0.26 lift=2.2 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,sahehe) & [? collaborates with ?](g,y2) & [? likes ?](y2,ramen) & [? collaborates with ?](g,y3) & [? is based in ?](y3,miami) => [? is based in ?](a,miami) n=23 k=8 rate=0.35 lift=2.1 | where answer known: 8, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,lodobe) => [? is based in ?](a,chicago) n=36 k=12 rate=0.33 lift=2.1 | where answer known: 14, agree=0.86 | cov=-1.00 rel=0.86 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,hemiru) => [? is based in ?](a,austin) n=32 k=7 rate=0.22 lift=2.1 | where answer known: 8, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,hehejo) & [? collaborates with ?](g,y2) & [? likes ?](y2,ramen) => [? is based in ?](a,miami) n=25 k=8 rate=0.32 lift=1.9 | where answer known: 8, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,y1) & [? is based in ?](y1,miami) => [? is based in ?](a,miami) n=55 k=17 rate=0.31 lift=1.9 | where answer known: 19, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,support) => [? is based in ?](a,miami) n=55 k=17 rate=0.31 lift=1.9 | where answer known: 19, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? is based in ?](g,miami) => [? is based in ?](a,miami) n=55 k=17 rate=0.31 lift=1.9 | where answer known: 19, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? is based in ?](y1,miami) => [? is based in ?](a,miami) n=49 k=15 rate=0.31 lift=1.9 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,support) => [? is based in ?](a,miami) n=49 k=15 rate=0.31 lift=1.9 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,hehejo) => [? is based in ?](a,miami) n=49 k=15 rate=0.31 lift=1.9 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,y1) & [? is based in ?](y1,chicago) => [? is based in ?](a,chicago) n=55 k=16 rate=0.29 lift=1.8 | where answer known: 18, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,design) => [? is based in ?](a,chicago) n=55 k=16 rate=0.29 lift=1.8 | where answer known: 18, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? is based in ?](y1,miami) => [? is based in ?](a,miami) n=50 k=15 rate=0.30 lift=1.8 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,support) => [? is based in ?](a,miami) n=50 k=15 rate=0.30 lift=1.8 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? works under ?](g,hehejo) => [? is based in ?](a,miami) n=50 k=15 rate=0.30 lift=1.8 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,support) => [? is based in ?](a,miami) n=50 k=15 rate=0.30 lift=1.8 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? is based in ?](y1,miami) => [? is based in ?](a,miami) n=50 k=15 rate=0.30 lift=1.8 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,hehejo) => [? is based in ?](a,miami) n=50 k=15 rate=0.30 lift=1.8 | where answer known: 17, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,hehejo) => [? is based in ?](a,miami) n=27 k=8 rate=0.30 lift=1.8 | where answer known: 9, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,lodobe) => [? is based in ?](a,chicago) n=42 k=12 rate=0.29 lift=1.8 | where answer known: 14, agree=0.86 | cov=-1.00 rel=0.86 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,hehejo) => [? is based in ?](a,miami) n=27 k=8 rate=0.30 lift=1.8 | where answer known: 9, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,lodobe) => [? is based in ?](a,chicago) n=50 k=14 rate=0.28 lift=1.8 | where answer known: 16, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,design) => [? is based in ?](a,chicago) n=50 k=14 rate=0.28 lift=1.8 | where answer known: 16, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? works under ?](g,lodobe) => [? is based in ?](a,chicago) n=50 k=14 rate=0.28 lift=1.8 | where answer known: 16, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,design) => [? is based in ?](a,chicago) n=50 k=14 rate=0.28 lift=1.8 | where answer known: 16, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,lodobe) => [? is based in ?](a,chicago) n=50 k=14 rate=0.28 lift=1.8 | where answer known: 16, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,design) => [? is based in ?](a,chicago) n=50 k=14 rate=0.28 lift=1.8 | where answer known: 16, agree=0.88 | cov=-1.00 rel=0.88 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,boston) & [? knows ?](g,y2) & [? likes ?](y2,ramen) => [? is based in ?](a,boston) n=33 k=11 rate=0.33 lift=1.7 | where answer known: 12, agree=0.92 | cov=-1.00 rel=0.92 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? likes ?](y1,soup) & [? is on ?](g,y2) & [? is based in ?](y2,boston) => [? is based in ?](a,boston) n=30 k=10 rate=0.33 lift=1.7 | where answer known: 11, agree=0.91 | cov=-1.00 rel=0.91 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,sahehe) & [? collaborates with ?](g,y2) & [? is based in ?](y2,miami) => [? is based in ?](a,miami) n=40 k=11 rate=0.28 lift=1.7 | where answer known: 13, agree=0.85 | cov=-1.00 rel=0.85 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,rumine) => [? is based in ?](a,boston) n=32 k=10 rate=0.31 lift=1.6 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,denver) & [? works under ?](g,y2) & [? is based in ?](y2,denver) => [? is based in ?](a,denver) n=29 k=12 rate=0.41 lift=1.6 | where answer known: 12, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,rumine) => [? is based in ?](a,boston) n=33 k=10 rate=0.30 lift=1.6 | where answer known: 11, agree=0.91 | cov=-1.00 rel=0.91 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? is based in ?](y1,denver) & [? works under ?](g,y2) & [? is based in ?](y2,denver) => [? is based in ?](a,denver) n=30 k=12 rate=0.40 lift=1.5 | where answer known: 12, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,denver) & [? knows ?](g,y2) & [? works under ?](y2,rukagu) => [? is based in ?](a,denver) n=23 k=9 rate=0.39 lift=1.5 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,rumine) => [? is based in ?](a,boston) n=45 k=13 rate=0.29 lift=1.5 | where answer known: 15, agree=0.87 | cov=-1.00 rel=0.87 tier=tendency
+  ACCEPT [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c) n=264 k=65 rate=0.25 lift=1.5 | where answer known: 80, agree=0.81 | cov=0.78 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,pabeti) & [? is on ?](g,y2) & [? is based in ?](y2,boston) => [? is based in ?](a,boston) n=42 k=12 rate=0.29 lift=1.5 | where answer known: 14, agree=0.86 | cov=-1.00 rel=0.86 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? is based in ?](y1,boston) & [? knows ?](g,y2) & [? likes ?](y2,ramen) => [? is based in ?](a,boston) n=35 k=10 rate=0.29 lift=1.5 | where answer known: 11, agree=0.91 | cov=-1.00 rel=0.91 tier=tendency
+  ACCEPT [? collaborates with ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c) n=351 k=86 rate=0.25 lift=1.5 | where answer known: 107, agree=0.80 | cov=0.78 rel=0.80 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? knows ?](g,y1) & [? likes ?](y1,salad) & [? is on ?](g,y2) & [? is based in ?](y2,denver) => [? is based in ?](a,denver) n=32 k=12 rate=0.38 lift=1.4 | where answer known: 12, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,rumine) => [? is based in ?](a,boston) n=50 k=14 rate=0.28 lift=1.4 | where answer known: 17, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,logistics) => [? is based in ?](a,boston) n=50 k=14 rate=0.28 lift=1.4 | where answer known: 17, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? works under ?](g,rumine) => [? is based in ?](a,boston) n=50 k=14 rate=0.28 lift=1.4 | where answer known: 17, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,logistics) => [? is based in ?](a,boston) n=50 k=14 rate=0.28 lift=1.4 | where answer known: 17, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,rumine) => [? is based in ?](a,boston) n=50 k=14 rate=0.28 lift=1.4 | where answer known: 17, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,logistics) => [? is based in ?](a,boston) n=50 k=14 rate=0.28 lift=1.4 | where answer known: 17, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? is based in ?](g,chicago) => [? is based in ?](a,chicago) n=44 k=10 rate=0.23 lift=1.4 | where answer known: 12, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,denver) & [? likes ?](g,pizza) => [? is based in ?](a,denver) n=27 k=10 rate=0.37 lift=1.4 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,sahehe) & [? collaborates with ?](g,y2) & [? is based in ?](y2,miami) => [? is based in ?](a,miami) n=34 k=8 rate=0.24 lift=1.4 | where answer known: 10, agree=0.80 | cov=-1.00 rel=0.80 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,logistics) => [? is based in ?](a,boston) n=55 k=15 rate=0.27 lift=1.4 | where answer known: 18, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? knows ?](g,y2) & [? works under ?](y2,rumine) => [? is based in ?](a,boston) n=33 k=9 rate=0.27 lift=1.4 | where answer known: 11, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? is based in ?](y1,boston) & [? knows ?](g,y2) & [? likes ?](y2,soup) => [? is based in ?](a,boston) n=37 k=10 rate=0.27 lift=1.4 | where answer known: 12, agree=0.83 | cov=-1.00 rel=0.83 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,sahehe) & [? is on ?](g,y1) & [? is based in ?](y1,denver) => [? is based in ?](a,denver) n=31 k=11 rate=0.35 lift=1.4 | where answer known: 11, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,nefika) => [? is based in ?](a,denver) n=34 k=12 rate=0.35 lift=1.4 | where answer known: 12, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,rumine) => [? is based in ?](a,boston) n=46 k=12 rate=0.26 lift=1.3 | where answer known: 15, agree=0.80 | cov=-1.00 rel=0.80 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,nefika) => [? is based in ?](a,denver) n=32 k=11 rate=0.34 lift=1.3 | where answer known: 11, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,nefika) => [? is based in ?](a,denver) n=41 k=14 rate=0.34 lift=1.3 | where answer known: 14, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,nefika) => [? is based in ?](a,denver) n=42 k=14 rate=0.33 lift=1.3 | where answer known: 14, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,besavo) => [? is based in ?](a,denver) n=40 k=13 rate=0.33 lift=1.3 | where answer known: 15, agree=0.87 | cov=-1.00 rel=0.87 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? knows ?](g,y1) & [? likes ?](y1,salad) & [? is on ?](g,y2) & [? belongs to ?](y2,sales) => [? is based in ?](a,denver) n=31 k=10 rate=0.32 lift=1.2 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? knows ?](g,y1) & [? likes ?](y1,salad) & [? is on ?](g,y2) & [? is based in ?](y2,denver) => [? is based in ?](a,denver) n=31 k=10 rate=0.32 lift=1.2 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? knows ?](g,y1) & [? likes ?](y1,salad) & [? works under ?](g,y2) & [? works under ?](y2,besavo) => [? is based in ?](a,denver) n=31 k=10 rate=0.32 lift=1.2 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? collaborates with ?](g,y2) & [? is based in ?](y2,boston) => [? is based in ?](a,boston) n=58 k=14 rate=0.24 lift=1.2 | where answer known: 17, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,boston) & [? knows ?](g,y2) & [? works under ?](y2,pabeti) => [? is based in ?](a,boston) n=47 k=11 rate=0.23 lift=1.2 | where answer known: 13, agree=0.85 | cov=-1.00 rel=0.85 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,security) => [? is based in ?](a,denver) n=55 k=17 rate=0.31 lift=1.2 | where answer known: 17, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,security) => [? is based in ?](a,denver) n=49 k=15 rate=0.31 lift=1.2 | where answer known: 15, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,nefika) => [? is based in ?](a,denver) n=49 k=15 rate=0.31 lift=1.2 | where answer known: 15, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? collaborates with ?](g,y2) & [? is based in ?](y2,boston) => [? is based in ?](a,boston) n=57 k=13 rate=0.23 lift=1.2 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? is based in ?](y1,boston) & [? knows ?](g,y2) & [? works under ?](y2,pabeti) => [? is based in ?](a,boston) n=53 k=12 rate=0.23 lift=1.2 | where answer known: 15, agree=0.80 | cov=-1.00 rel=0.80 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,kakafi) => [? is based in ?](a,boston) n=40 k=9 rate=0.23 lift=1.2 | where answer known: 10, agree=0.90 | cov=-1.00 rel=0.90 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,security) => [? is based in ?](a,denver) n=50 k=15 rate=0.30 lift=1.2 | where answer known: 15, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,security) => [? is based in ?](a,denver) n=50 k=15 rate=0.30 lift=1.2 | where answer known: 15, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,nefika) => [? is based in ?](a,denver) n=50 k=15 rate=0.30 lift=1.2 | where answer known: 15, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? works under ?](a,g) & [? works under ?](g,nefika) => [? is based in ?](a,denver) n=50 k=15 rate=0.30 lift=1.2 | where answer known: 15, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,denver) & [? knows ?](g,y2) & [? likes ?](y2,salad) => [? is based in ?](a,denver) n=34 k=10 rate=0.29 lift=1.1 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? is based in ?](y1,boston) & [? works under ?](g,y2) & [? works under ?](y2,pabeti) => [? is based in ?](a,boston) n=55 k=12 rate=0.22 lift=1.1 | where answer known: 15, agree=0.80 | cov=-1.00 rel=0.80 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? knows ?](g,y1) & [? works under ?](y1,pabeti) & [? is on ?](g,y2) & [? is based in ?](y2,denver) => [? is based in ?](a,denver) n=35 k=10 rate=0.29 lift=1.1 | where answer known: 10, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,y1) & [? is based in ?](y1,denver) => [? is based in ?](a,denver) n=110 k=31 rate=0.28 lift=1.1 | where answer known: 34, agree=0.91 | cov=-1.00 rel=0.91 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,salad) & [? is on ?](g,y2) & [? belongs to ?](y2,legal) => [? is based in ?](a,boston) n=38 k=8 rate=0.21 lift=1.1 | where answer known: 9, agree=0.89 | cov=-1.00 rel=0.89 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,kakafi) => [? is based in ?](a,boston) n=43 k=9 rate=0.21 lift=1.1 | where answer known: 11, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? is based in ?](y1,denver) => [? is based in ?](a,denver) n=59 k=16 rate=0.27 lift=1.0 | where answer known: 19, agree=0.84 | cov=-1.00 rel=0.84 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? is based in ?](y1,denver) => [? is based in ?](a,denver) n=60 k=16 rate=0.27 lift=1.0 | where answer known: 19, agree=0.84 | cov=-1.00 rel=0.84 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? is based in ?](y1,denver) => [? is based in ?](a,denver) n=60 k=16 rate=0.27 lift=1.0 | where answer known: 19, agree=0.84 | cov=-1.00 rel=0.84 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? is on ?](g,y1) & [? belongs to ?](y1,sales) => [? is based in ?](a,denver) n=49 k=13 rate=0.27 lift=1.0 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? works under ?](g,y1) & [? works under ?](y1,besavo) => [? is based in ?](a,denver) n=49 k=13 rate=0.27 lift=1.0 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? likes ?](y1,dumplings) & [? collaborates with ?](g,y2) & [? is based in ?](y2,denver) => [? is based in ?](a,denver) n=34 k=9 rate=0.26 lift=1.0 | where answer known: 9, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,sales) => [? is based in ?](a,denver) n=50 k=13 rate=0.26 lift=1.0 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? works under ?](g,besavo) => [? is based in ?](a,denver) n=50 k=13 rate=0.26 lift=1.0 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? works under ?](g,y1) & [? works under ?](y1,besavo) => [? is based in ?](a,denver) n=50 k=13 rate=0.26 lift=1.0 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? works under ?](a,g) & [? is on ?](g,y1) & [? belongs to ?](y1,sales) => [? is based in ?](a,denver) n=50 k=13 rate=0.26 lift=1.0 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? is based in ?](g,denver) => [? is based in ?](a,denver) n=66 k=17 rate=0.26 lift=1.0 | where answer known: 20, agree=0.85 | cov=-1.00 rel=0.85 tier=tendency
+  ACCEPT TREE [? is on ?](a,g) & [? belongs to ?](g,sales) => [? is based in ?](a,denver) n=55 k=14 rate=0.25 lift=1.0 | where answer known: 17, agree=0.82 | cov=-1.00 rel=0.82 tier=tendency
+  ACCEPT TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,denver) => [? is based in ?](a,denver) n=88 k=20 rate=0.23 lift=0.9 | where answer known: 25, agree=0.80 | cov=-1.00 rel=0.80 tier=tendency
+  ACCEPT TREE [? collaborates with ?](a,g) & [? is based in ?](g,denver) => [? is based in ?](a,denver) n=65 k=13 rate=0.20 lift=0.8 | where answer known: 16, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+[INFER] 1119 new facts derived from 214 accepted rules
+FACT	pahegu collaborates with kadolo	law
+FACT	pahegu collaborates with sapajo	law
+FACT	nedodo collaborates with jopagu	law
+FACT	jologu collaborates with gujobe	law
+FACT	tirube collaborates with loneka	law
+FACT	tirube collaborates with betilo	law
+FACT	lofize collaborates with hetika	law
+FACT	ruvosa collaborates with gurugu	law
+FACT	salobe collaborates with titihe	law
+FACT	salobe collaborates with jokaze	law
+FACT	vozemi collaborates with tizegu	law
+FACT	bebegu collaborates with paguka	law
+FACT	hefigu collaborates with rupabe	law
+FACT	jokajo collaborates with lohelo	law
+FACT	jokajo collaborates with dotifi	law
+FACT	bemigu collaborates with samifi	law
+FACT	tijoru collaborates with netipa	law
+FACT	tijoru collaborates with joruhe	law
+FACT	nezejo collaborates with doruru	law
+FACT	karune collaborates with nebejo	law
+FACT	karune collaborates with vovomi	law
+FACT	kamimi collaborates with tihegu	law
+FACT	mitifi collaborates with satilo	law
+FACT	mirusa collaborates with gugube	law
+FACT	lorusa collaborates with kasabe	law
+FACT	kazeze collaborates with misajo	law
+FACT	sadoti collaborates with hejovo	law
+FACT	losaru collaborates with lolobe	law
+FACT	losaru collaborates with fidohe	law
+FACT	lokagu collaborates with gutilo	law
+FACT	gubesa collaborates with votihe	law
+FACT	dolovo collaborates with savoze	law
+FACT	loneka collaborates with dofika	law
+FACT	besami collaborates with rulodo	law
+FACT	besami collaborates with josabe	law
+FACT	gugudo collaborates with paguka	law
+FACT	lonevo collaborates with bebesa	law
+FACT	figufi collaborates with zeloru	law
+FACT	gubeka collaborates with jovobe	law
+FACT	samifi collaborates with mitigu	law
+FACT	misami collaborates with pagujo	law
+FACT	hejoze collaborates with misami	law
+FACT	hejoze collaborates with zegusa	law
+FACT	papaka collaborates with lobebe	law
+FACT	papaka collaborates with zerufi	law
+FACT	bezelo collaborates with lokapa	law
+FACT	jotilo collaborates with bezelo	law
+FACT	joguhe collaborates with dolone	law
+FACT	dovosa collaborates with gupajo	law
+FACT	nepaka collaborates with dozehe	law
+FACT	fizejo collaborates with kafiru	law
+FACT	fizejo collaborates with mipavo	law
+FACT	sahegu collaborates with parugu	law
+FACT	zefilo collaborates with bebesa	law
+FACT	kalolo collaborates with vobeti	law
+FACT	kalolo collaborates with hezepa	law
+FACT	rufipa collaborates with kalolo	law
+FACT	volofi collaborates with pamibe	law
+FACT	jojone collaborates with rulofi	law
+FACT	kavojo collaborates with pamilo	law
+FACT	kaheti collaborates with kavojo	law
+FACT	dokasa collaborates with rujopa	law
+FACT	lozevo collaborates with bezeze	law
+FACT	bedojo collaborates with ruruze	law
+FACT	dodobe collaborates with bepavo	law
+FACT	hevoze collaborates with bezeti	law
+FACT	hevoze collaborates with vojodo	law
+FACT	nepami collaborates with lofize	law
+FACT	fitisa collaborates with pahegu	law
+FACT	fitisa collaborates with nezefi	law
+FACT	safiti collaborates with kadolo	law
+FACT	guvobe collaborates with lokapa	law
+FACT	guvobe collaborates with zesahe	law
+FACT	gutilo collaborates with minepa	law
+FACT	kagusa collaborates with paguti	law
+FACT	fimivo collaborates with gusafi	law
+FACT	nesaze collaborates with tisasa	law
+FACT	sarune collaborates with rurumi	law
+FACT	rukasa collaborates with neneti	law
+FACT	hejovo collaborates with befiti	law
+FACT	kaloka collaborates with paheze	law
+FACT	kaloka collaborates with vopahe	law
+FACT	tinesa collaborates with kaloka	law
+FACT	pabejo collaborates with tidomi	law
+FACT	pabejo collaborates with tifido	law
+FACT	benehe collaborates with hejoru	law
+FACT	dozefi collaborates with gunefi	law
+FACT	fibeze collaborates with hefilo	law
+FACT	rutipa collaborates with mibehe	law
+FACT	lopavo collaborates with hevolo	law
+FACT	dotifi collaborates with pabene	law
+FACT	netipa collaborates with zetiru	law
+FACT	mimibe collaborates with nebejo	law
+FACT	tidofi collaborates with tizemi	law
+FACT	figumi collaborates with rudohe	law
+FACT	jofika collaborates with kamilo	law
+FACT	filoti collaborates with rulofi	law
+FACT	nemimi collaborates with pabene	law
+FACT	nemimi collaborates with patimi	law
+FACT	nepati collaborates with fisaru	law
+FACT	jokafi collaborates with jonedo	law
+FACT	doruru collaborates with henebe	law
+FACT	neneti collaborates with tikami	law
+FACT	tidomi collaborates with misagu	law
+FACT	tidomi collaborates with gupane	law
+FACT	zevopa collaborates with dozehe	law
+FACT	dotigu collaborates with timijo	law
+FACT	rulofi collaborates with guneru	law
+FACT	kamilo collaborates with vokaru	law
+FACT	vovojo collaborates with netifi	law
+FACT	helopa collaborates with gujojo	law
+FACT	heguhe collaborates with guguka	law
+FACT	kadolo collaborates with fitisa	law
+FACT	kadolo collaborates with mizesa	law
+FACT	tifido collaborates with miguvo	law
+FACT	negupa collaborates with hefilo	law
+FACT	jovobe collaborates with padoru	law
+FACT	jovobe collaborates with mijone	law
+FACT	guguka collaborates with timivo	law
+FACT	hekati collaborates with fisaze	law
+FACT	vopado collaborates with kaheti	law
+FACT	vopado collaborates with pamilo	law
+FACT	vozedo collaborates with kahejo	law
+FACT	gujogu collaborates with hejoze	law
+FACT	gujogu collaborates with nesahe	law
+FACT	vomijo collaborates with gujosa	law
+FACT	milobe collaborates with nedodo	law
+FACT	sanefi collaborates with sapaze	law
+FACT	gudoti collaborates with nebebe	law
+FACT	rufibe collaborates with joguhe	law
+FACT	zedodo collaborates with rusaka	law
+FACT	zedodo collaborates with josati	law
+FACT	zedodo collaborates with mifibe	law
+FACT	jomipa collaborates with figumi	law
+FACT	hezepa collaborates with zeloru	law
+FACT	hezepa collaborates with doloru	law
+FACT	guvoze collaborates with mitifi	law
+FACT	guvoze collaborates with gubeti	law
+FACT	hetika collaborates with vohehe	law
+FACT	hetika collaborates with guzesa	law
+FACT	lobepa collaborates with palone	law
+FACT	zeloru collaborates with kalolo	law
+FACT	nepane collaborates with vobedo	law
+FACT	nepane collaborates with heruhe	law
+FACT	bemibe collaborates with gujobe	law
+FACT	doguti collaborates with mirusa	law
+FACT	doguti collaborates with zetika	law
+FACT	gurugu collaborates with betiti	law
+FACT	jozevo collaborates with sadoti	law
+FACT	paguvo collaborates with nedodo	law
+FACT	mizemi collaborates with pajoka	law
+FACT	saneka collaborates with zesapa	law
+FACT	mimivo collaborates with finepa	law
+FACT	mimivo collaborates with jopagu	law
+FACT	joruhe collaborates with nemivo	law
+FACT	joruhe collaborates with zetiti	law
+FACT	joruhe collaborates with pafisa	law
+FACT	nevohe collaborates with fisafi	law
+FACT	mifigu collaborates with mizehe	law
+FACT	mifigu collaborates with gusaka	law
+FACT	tizesa collaborates with fiberu	law
+FACT	vovone collaborates with kagupa	law
+FACT	vovone collaborates with votihe	law
+FACT	gusafi collaborates with vopajo	law
+FACT	gusafi collaborates with paguti	law
+FACT	kahejo collaborates with gukafi	law
+FACT	kajovo collaborates with tirube	law
+FACT	rupabe collaborates with jomipa	law
+FACT	hehevo collaborates with dodojo	law
+FACT	zerufi collaborates with vovojo	law
+FACT	midovo collaborates with salobe	law
+FACT	netiti collaborates with jofika	law
+FACT	netiti collaborates with kamilo	law
+FACT	gudogu collaborates with bezemi	law
+FACT	gudogu collaborates with jobepa	law
+FACT	gudogu collaborates with sagugu	law
+FACT	karuka collaborates with sapaze	law
+FACT	karuka collaborates with sanefi	law
+FACT	palone collaborates with tifiti	law
+FACT	hejoru collaborates with nepaka	law
+FACT	pafisa collaborates with tijoru	law
+FACT	pafisa collaborates with jokafi	law
+FACT	betiti collaborates with bezelo	law
+FACT	vosavo collaborates with dokasa	law
+FACT	mitigu collaborates with fijosa	law
+FACT	sasasa collaborates with lokagu	law
+FACT	doloru collaborates with tifibe	law
+FACT	sanegu collaborates with ruvone	law
+FACT	mizejo collaborates with rupabe	law
+FACT	vokaru collaborates with fisaru	law
+FACT	firuka collaborates with fisaze	law
+FACT	dozehe collaborates with hejoru	law
+FACT	dozehe collaborates with dodojo	law
+FACT	midohe collaborates with lohelo	law
+FACT	ruruze collaborates with netido	law
+FACT	gugube collaborates with nerumi	law
+FACT	vorune collaborates with vovomi	law
+FACT	vorune collaborates with lojoka	law
+FACT	tifibe collaborates with zehevo	law
+FACT	gukafi collaborates with mimivo	law
+FACT	vopahe collaborates with sadovo	law
+FACT	minepa collaborates with jomigu	law
+FACT	ruvone collaborates with rukasa	law
+FACT	sadovo collaborates with rudosa	law
+FACT	tirupa collaborates with vojobe	law
+FACT	votihe collaborates with kagupa	law
+FACT	tivone collaborates with tibeti	law
+FACT	netido collaborates with figujo	law
+FACT	jodoze collaborates with pahegu	law
+FACT	jodoze collaborates with safiti	law
+FACT	rusahe collaborates with saneka	law
+FACT	voruru collaborates with joruhe	law
+FACT	voruru collaborates with pafisa	law
+FACT	fizehe collaborates with lonevo	law
+FACT	fizehe collaborates with jokaze	law
+FACT	fizehe collaborates with lotine	law
+FACT	bebeze collaborates with kabeze	law
+FACT	hefilo collaborates with kakaru	law
+FACT	hefilo collaborates with dopasa	law
+FACT	saheti collaborates with hekati	law
+FACT	fisaru collaborates with helopa	law
+FACT	fisaru collaborates with saguze	law
+FACT	fisaru collaborates with gujojo	law
+FACT	bepavo collaborates with lomiti	law
+FACT	vohemi collaborates with rutipa	law
+FACT	vohemi collaborates with lorube	law
+FACT	pamilo collaborates with fiberu	law
+FACT	pajoka collaborates with lohevo	law
+FACT	pajoka collaborates with dofipa	law
+FACT	sasagu collaborates with dovosa	law
+FACT	jokaze collaborates with lotine	law
+FACT	gusati collaborates with rutipa	law
+FACT	fijosa collaborates with begudo	law
+FACT	mimisa collaborates with vovojo	law
+FACT	dofiru collaborates with vopado	law
+FACT	dofiru collaborates with tizesa	law
+FACT	sanene collaborates with sagugu	law
+FACT	karupa collaborates with mihemi	law
+FACT	jopagu collaborates with kahejo	law
+FACT	jopagu collaborates with gukafi	law
+FACT	tikami collaborates with ruvone	law
+FACT	kamijo collaborates with mihefi	law
+FACT	guneru collaborates with karupa	law
+FACT	befiti collaborates with jozevo	law
+FACT	kaparu collaborates with zesapa	law
+FACT	hevovo collaborates with doguti	law
+FACT	pafize collaborates with finejo	law
+FACT	befivo collaborates with sarune	law
+FACT	befivo collaborates with timivo	law
+FACT	dodojo collaborates with benehe	law
+FACT	vopami collaborates with mihefi	law
+FACT	pahegu works under sahehe	law
+FACT	pahegu works under besavo	law
+FACT	nedodo works under sahehe	law
+FACT	nedodo works under hehejo	law
+FACT	bebejo works under nefika	law
+FACT	jologu works under sahehe	law
+FACT	tirube works under sahehe	law
+FACT	tirube works under hemiru	law
+FACT	vobegu works under pabeti	law
+FACT	vobegu works under kakafi	law
+FACT	mizelo works under kakafi	law
+FACT	midone works under sahehe	law
+FACT	midone works under besavo	law
+FACT	ruvosa works under besavo	law
+FACT	vodohe works under lodobe	law
+FACT	vodohe works under pabeti	law
+FACT	salobe works under sahehe	law
+FACT	salobe works under nefika	law
+FACT	johevo works under lodobe	law
+FACT	lohelo works under pabeti	law
+FACT	bebegu works under hemiru	law
+FACT	hefigu works under rumine	law
+FACT	hefigu works under pabeti	law
+FACT	rudohe works under rumine	law
+FACT	vofigu works under sahehe	law
+FACT	tisado works under sahehe	law
+FACT	tisado works under nefika	law
+FACT	lolobe works under lodobe	law
+FACT	begugu works under pabeti	law
+FACT	jokajo works under pabeti	law
+FACT	jokajo works under kakafi	law
+FACT	bemigu works under lodobe	law
+FACT	bemigu works under pabeti	law
+FACT	jonedo works under sahehe	law
+FACT	tijoru works under hemiru	law
+FACT	dohesa works under lodobe	law
+FACT	dohesa works under pabeti	law
+FACT	nezejo works under pabeti	law
+FACT	henebe works under pabeti	law
+FACT	finejo works under sahehe	law
+FACT	finejo works under besavo	law
+FACT	mitifi works under sahehe	law
+FACT	mitifi works under besavo	law
+FACT	mirusa works under sahehe	law
+FACT	mirusa works under besavo	law
+FACT	lorusa works under hemiru	law
+FACT	katigu works under rumine	law
+FACT	kazeze works under pabeti	law
+FACT	sadoti works under hemiru	law
+FACT	paguru works under hemiru	law
+FACT	gubeti works under besavo	law
+FACT	dodoru works under vovolo	law
+FACT	losaru works under lodobe	law
+FACT	sagujo works under lodobe	law
+FACT	sagujo works under pabeti	law
+FACT	sapaze works under pabeti	law
+FACT	sapaze works under vovolo	law
+FACT	panesa works under pabeti	law
+FACT	gurupa works under sahehe	law
+FACT	gurupa works under besavo	law
+FACT	lokagu works under besavo	law
+FACT	lobelo works under sahehe	law
+FACT	lobelo works under hehejo	law
+FACT	gubesa works under sahehe	law
+FACT	gubesa works under hehejo	law
+FACT	vodoti works under sahehe	law
+FACT	mibedo works under sahehe	law
+FACT	mibedo works under hemiru	law
+FACT	dolovo works under sahehe	law
+FACT	loneka works under sahehe	law
+FACT	loneka works under hemiru	law
+FACT	padofi works under sahehe	law
+FACT	padofi works under hehejo	law
+FACT	besami works under sahehe	law
+FACT	besami works under hehejo	law
+FACT	lozehe works under hemiru	law
+FACT	vobeti works under pabeti	law
+FACT	vobeti works under vovolo	law
+FACT	lobesa works under sahehe	law
+FACT	gugudo works under sahehe	law
+FACT	zetiru works under sahehe	law
+FACT	zetiru works under hemiru	law
+FACT	lonevo works under nefika	law
+FACT	figufi works under pabeti	law
+FACT	figufi works under vovolo	law
+FACT	vojovo works under hemiru	law
+FACT	begudo works under pabeti	law
+FACT	gubeka works under pabeti	law
+FACT	samifi works under pabeti	law
+FACT	misami works under pabeti	law
+FACT	misami works under vovolo	law
+FACT	hejoze works under pabeti	law
+FACT	hejoze works under vovolo	law
+FACT	papaka works under lodobe	law
+FACT	papaka works under pabeti	law
+FACT	tibeti works under rumine	law
+FACT	tibeti works under pabeti	law
+FACT	dovosa works under lodobe	law
+FACT	dovosa works under pabeti	law
+FACT	rulodo works under sahehe	law
+FACT	tihegu works under lodobe	law
+FACT	tihegu works under pabeti	law
+FACT	nepaka works under sahehe	law
+FACT	nepaka works under hehejo	law
+FACT	lobebe works under lodobe	law
+FACT	lobebe works under pabeti	law
+FACT	rusaka works under vovolo	law
+FACT	josati works under pabeti	law
+FACT	josati works under vovolo	law
+FACT	fizejo works under pabeti	law
+FACT	josasa works under pabeti	law
+FACT	josasa works under kakafi	law
+FACT	bezesa works under sahehe	law
+FACT	kahepa works under nefika	law
+FACT	nemivo works under hemiru	law
+FACT	satilo works under sahehe	law
+FACT	satilo works under besavo	law
+FACT	sahegu works under rumine	law
+FACT	sahegu works under pabeti	law
+FACT	misajo works under rumine	law
+FACT	bebesa works under sahehe	law
+FACT	bebesa works under nefika	law
+FACT	josabe works under sahehe	law
+FACT	josabe works under hehejo	law
+FACT	zefilo works under sahehe	law
+FACT	zefilo works under nefika	law
+FACT	kalolo works under vovolo	law
+FACT	rufipa works under vovolo	law
+FACT	volofi works under lodobe	law
+FACT	volofi works under pabeti	law
+FACT	mihemi works under besavo	law
+FACT	kavojo works under sahehe	law
+FACT	kavojo works under nefika	law
+FACT	kaheti works under sahehe	law
+FACT	kaheti works under nefika	law
+FACT	dokasa works under lodobe	law
+FACT	dokasa works under pabeti	law
+FACT	kaheze works under sahehe	law
+FACT	tifiti works under lodobe	law
+FACT	tifiti works under pabeti	law
+FACT	bezeze works under rumine	law
+FACT	bezeze works under pabeti	law
+FACT	lozevo works under rumine	law
+FACT	lozevo works under pabeti	law
+FACT	bedojo works under pabeti	law
+FACT	bedojo works under kakafi	law
+FACT	kafiru works under pabeti	law
+FACT	vozegu works under sahehe	law
+FACT	vozegu works under hemiru	law
+FACT	lojojo works under sahehe	law
+FACT	dodobe works under pabeti	law
+FACT	dodobe works under vovolo	law
+FACT	hevoze works under pabeti	law
+FACT	hevoze works under vovolo	law
+FACT	nepami works under sahehe	law
+FACT	nepami works under hehejo	law
+FACT	vohehe works under sahehe	law
+FACT	fitisa works under sahehe	law
+FACT	fitisa works under besavo	law
+FACT	safiti works under sahehe	law
+FACT	safiti works under besavo	law
+FACT	guvobe works under besavo	law
+FACT	gutilo works under sahehe	law
+FACT	gutilo works under besavo	law
+FACT	kagusa works under rumine	law
+FACT	kagusa works under pabeti	law
+FACT	fimivo works under rumine	law
+FACT	nesahe works under pabeti	law
+FACT	nesahe works under vovolo	law
+FACT	dofihe works under sahehe	law
+FACT	dofihe works under hehejo	law
+FACT	sarune works under lodobe	law
+FACT	sarune works under pabeti	law
+FACT	mihevo works under lodobe	law
+FACT	mihevo works under pabeti	law
+FACT	nerumi works under besavo	law
+FACT	rukasa works under pabeti	law
+FACT	rukasa works under vovolo	law
+FACT	hejovo works under sahehe	law
+FACT	kaloka works under pabeti	law
+FACT	tinesa works under pabeti	law
+FACT	hetiru works under lodobe	law
+FACT	hetiru works under pabeti	law
+FACT	pabejo works under rumine	law
+FACT	pabejo works under pabeti	law
+FACT	benehe works under sahehe	law
+FACT	benehe works under hehejo	law
+FACT	gunefi works under pabeti	law
+FACT	gunefi works under vovolo	law
+FACT	dozefi works under pabeti	law
+FACT	dozefi works under vovolo	law
+FACT	fibeze works under pabeti	law
+FACT	zeloze works under kakafi	law
+FACT	jonesa works under sahehe	law
+FACT	bezemi works under sahehe	law
+FACT	bezemi works under nefika	law
+FACT	savoze works under sahehe	law
+FACT	netipa works under sahehe	law
+FACT	netipa works under hemiru	law
+FACT	tidofi works under vovolo	law
+FACT	rutivo works under vovolo	law
+FACT	bezeti works under pabeti	law
+FACT	figumi works under pabeti	law
+FACT	jofika works under sahehe	law
+FACT	mivoka works under pabeti	law
+FACT	mivoka works under kakafi	law
+FACT	vosane works under lodobe	law
+FACT	nemimi works under kakafi	law
+FACT	rupado works under sahehe	law
+FACT	rupado works under besavo	law
+FACT	jokafi works under hemiru	law
+FACT	vojodo works under pabeti	law
+FACT	vojodo works under vovolo	law
+FACT	lohevo works under pabeti	law
+FACT	neneti works under pabeti	law
+FACT	neneti works under vovolo	law
+FACT	tidomi works under pabeti	law
+FACT	mibefi works under rumine	law
+FACT	zebedo works under rumine	law
+FACT	zevopa works under hehejo	law
+FACT	mikati works under sahehe	law
+FACT	mikati works under nefika	law
+FACT	zetigu works under pabeti	law
+FACT	paheze works under kakafi	law
+FACT	dotigu works under pabeti	law
+FACT	sadomi works under pabeti	law
+FACT	fidohe works under lodobe	law
+FACT	fidohe works under pabeti	law
+FACT	vojobe works under hemiru	law
+FACT	rulofi works under sahehe	law
+FACT	padoru works under pabeti	law
+FACT	padoru works under vovolo	law
+FACT	miguvo works under rumine	law
+FACT	miguvo works under pabeti	law
+FACT	kamilo works under sahehe	law
+FACT	vovojo works under lodobe	law
+FACT	vovojo works under pabeti	law
+FACT	guvoka works under sahehe	law
+FACT	fikasa works under rumine	law
+FACT	fikasa works under pabeti	law
+FACT	jomigu works under sahehe	law
+FACT	jomigu works under besavo	law
+FACT	helopa works under sahehe	law
+FACT	pabene works under pabeti	law
+FACT	heguhe works under lodobe	law
+FACT	heguhe works under pabeti	law
+FACT	rurumi works under pabeti	law
+FACT	kadolo works under besavo	law
+FACT	tifido works under rumine	law
+FACT	tifido works under pabeti	law
+FACT	lobegu works under pabeti	law
+FACT	lobegu works under kakafi	law
+FACT	negupa works under pabeti	law
+FACT	negupa works under kakafi	law
+FACT	zetiti works under sahehe	law
+FACT	guguka works under lodobe	law
+FACT	hekati works under rumine	law
+FACT	hekati works under pabeti	law
+FACT	lodopa works under kakafi	law
+FACT	vopado works under sahehe	law
+FACT	vopado works under nefika	law
+FACT	paguhe works under hehejo	law
+FACT	beheze works under sahehe	law
+FACT	vozedo works under sahehe	law
+FACT	vozedo works under hehejo	law
+FACT	dolone works under sahehe	law
+FACT	dolone works under nefika	law
+FACT	jobepa works under sahehe	law
+FACT	jobepa works under nefika	law
+FACT	mibehe works under nefika	law
+FACT	zesahe works under besavo	law
+FACT	gujogu works under pabeti	law
+FACT	vohejo works under besavo	law
+FACT	vomijo works under pabeti	law
+FACT	jofijo works under pabeti	law
+FACT	jofijo works under kakafi	law
+FACT	vomilo works under lodobe	law
+FACT	vomilo works under pabeti	law
+FACT	milobe works under sahehe	law
+FACT	gudoti works under pabeti	law
+FACT	dofipa works under rumine	law
+FACT	dofipa works under pabeti	law
+FACT	rufibe works under sahehe	law
+FACT	gubevo works under sahehe	law
+FACT	gubevo works under besavo	law
+FACT	misagu works under pabeti	law
+FACT	zedodo works under pabeti	law
+FACT	zedodo works under vovolo	law
+FACT	jomipa works under rumine	law
+FACT	dojomi works under pabeti	law
+FACT	dojomi works under kakafi	law
+FACT	lologu works under pabeti	law
+FACT	kakaru works under pabeti	law
+FACT	kakaru works under kakafi	law
+FACT	hezepa works under pabeti	law
+FACT	hezepa works under vovolo	law
+FACT	zejosa works under sahehe	law
+FACT	zejosa works under besavo	law
+FACT	guvoze works under sahehe	law
+FACT	guvoze works under besavo	law
+FACT	hetika works under sahehe	law
+FACT	bezegu works under sahehe	law
+FACT	bezegu works under hehejo	law
+FACT	mizehe works under sahehe	law
+FACT	mizehe works under hemiru	law
+FACT	dofika works under sahehe	law
+FACT	lobepa works under lodobe	law
+FACT	lobepa works under pabeti	law
+FACT	zeloru works under vovolo	law
+FACT	nepane works under kakafi	law
+FACT	bemibe works under hemiru	law
+FACT	zetika works under sahehe	law
+FACT	doguti works under sahehe	law
+FACT	doguti works under besavo	law
+FACT	gurugu works under besavo	law
+FACT	jozevo works under sahehe	law
+FACT	paguvo works under sahehe	law
+FACT	paguvo works under hehejo	law
+FACT	bezehe works under rumine	law
+FACT	bezehe works under pabeti	law
+FACT	nepasa works under sahehe	law
+FACT	dopasa works under pabeti	law
+FACT	dopasa works under kakafi	law
+FACT	mizemi works under rumine	law
+FACT	vobedo works under pabeti	law
+FACT	saneka works under hemiru	law
+FACT	vopajo works under pabeti	law
+FACT	mimivo works under sahehe	law
+FACT	mimivo works under hehejo	law
+FACT	mipasa works under pabeti	law
+FACT	mipasa works under kakafi	law
+FACT	zehevo works under pabeti	law
+FACT	joruhe works under hemiru	law
+FACT	nevohe works under pabeti	law
+FACT	nevohe works under vovolo	law
+FACT	mifigu works under hemiru	law
+FACT	fiberu works under sahehe	law
+FACT	gusaka works under sahehe	law
+FACT	gusaka works under hemiru	law
+FACT	tizesa works under sahehe	law
+FACT	tizesa works under nefika	law
+FACT	vovone works under hehejo	law
+FACT	hekaze works under pabeti	law
+FACT	hekaze works under kakafi	law
+FACT	gusafi works under rumine	law
+FACT	gusafi works under pabeti	law
+FACT	paguti works under rumine	law
+FACT	paguti works under pabeti	law
+FACT	kahejo works under sahehe	law
+FACT	kahejo works under hehejo	law
+FACT	titihe works under sahehe	law
+FACT	titihe works under nefika	law
+FACT	kasabe works under sahehe	law
+FACT	kasabe works under hemiru	law
+FACT	kajovo works under sahehe	law
+FACT	kajovo works under hemiru	law
+FACT	rupabe works under pabeti	law
+FACT	hehevo works under sahehe	law
+FACT	hehevo works under hehejo	law
+FACT	zerufi works under pabeti	law
+FACT	bedoru works under pabeti	law
+FACT	midovo works under sahehe	law
+FACT	midovo works under nefika	law
+FACT	jotibe works under pabeti	law
+FACT	pagujo works under pabeti	law
+FACT	pagujo works under vovolo	law
+FACT	nezefi works under sahehe	law
+FACT	nezefi works under besavo	law
+FACT	mizesa works under sahehe	law
+FACT	mizesa works under besavo	law
+FACT	timivo works under lodobe	law
+FACT	timivo works under pabeti	law
+FACT	rusaru works under sahehe	law
+FACT	rusaru works under besavo	law
+FACT	gudogu works under sahehe	law
+FACT	gudogu works under nefika	law
+FACT	karuka works under pabeti	law
+FACT	karuka works under vovolo	law
+FACT	rujopa works under lodobe	law
+FACT	palone works under lodobe	law
+FACT	palone works under pabeti	law
+FACT	hejoru works under hehejo	law
+FACT	betiti works under besavo	law
+FACT	netifi works under pabeti	law
+FACT	vosavo works under lodobe	law
+FACT	vosavo works under pabeti	law
+FACT	mitigu works under lodobe	law
+FACT	sasasa works under sahehe	law
+FACT	doloru works under pabeti	law
+FACT	doloru works under vovolo	law
+FACT	sanegu works under pabeti	law
+FACT	sanegu works under vovolo	law
+FACT	mizejo works under rumine	law
+FACT	hepalo works under rumine	law
+FACT	hepalo works under pabeti	law
+FACT	firuka works under rumine	law
+FACT	firuka works under pabeti	law
+FACT	dozehe works under sahehe	law
+FACT	dozehe works under hehejo	law
+FACT	lorube works under nefika	law
+FACT	midohe works under kakafi	law
+FACT	ruruze works under pabeti	law
+FACT	ruruze works under kakafi	law
+FACT	gugube works under sahehe	law
+FACT	gugube works under besavo	law
+FACT	mipavo works under pabeti	law
+FACT	mipavo works under kakafi	law
+FACT	vorune works under nefika	law
+FACT	zesane works under nefika	law
+FACT	tifibe works under pabeti	law
+FACT	tifibe works under vovolo	law
+FACT	fisafi works under pabeti	law
+FACT	fisafi works under vovolo	law
+FACT	mifibe works under pabeti	law
+FACT	mifibe works under vovolo	law
+FACT	gukafi works under hehejo	law
+FACT	kabeze works under sahehe	law
+FACT	kabeze works under hemiru	law
+FACT	vopahe works under pabeti	law
+FACT	vopahe works under kakafi	law
+FACT	kalofi works under sahehe	law
+FACT	tizegu works under hehejo	law
+FACT	minepa works under sahehe	law
+FACT	minepa works under besavo	law
+FACT	gusagu works under rumine	law
+FACT	gusagu works under pabeti	law
+FACT	sadovo works under kakafi	law
+FACT	kagupa works under sahehe	law
+FACT	kagupa works under hehejo	law
+FACT	tirupa works under sahehe	law
+FACT	tirupa works under hemiru	law
+FACT	pavolo works under lodobe	law
+FACT	pavolo works under pabeti	law
+FACT	mijoka works under sahehe	law
+FACT	votihe works under sahehe	law
+FACT	votihe works under hehejo	law
+FACT	timijo works under pabeti	law
+FACT	tivone works under rumine	law
+FACT	tivone works under pabeti	law
+FACT	netido works under pabeti	law
+FACT	gupane works under rumine	law
+FACT	jodoze works under sahehe	law
+FACT	rusahe works under sahehe	law
+FACT	figujo works under pabeti	law
+FACT	figujo works under kakafi	law
+FACT	gujobe works under sahehe	law
+FACT	gujobe works under hemiru	law
+FACT	gupajo works under lodobe	law
+FACT	nebebe works under rumine	law
+FACT	nebebe works under pabeti	law
+FACT	betilo works under sahehe	law
+FACT	betilo works under hemiru	law
+FACT	voruru works under sahehe	law
+FACT	mizene works under kakafi	law
+FACT	fizehe works under nefika	law
+FACT	hevolo works under rumine	law
+FACT	hevolo works under pabeti	law
+FACT	bebeze works under sahehe	law
+FACT	bebeze works under hemiru	law
+FACT	hefilo works under pabeti	law
+FACT	hefilo works under kakafi	law
+FACT	mijone works under pabeti	law
+FACT	mijone works under vovolo	law
+FACT	saheti works under rumine	law
+FACT	fisaru works under sahehe	law
+FACT	lojoka works under nefika	law
+FACT	saguze works under sahehe	law
+FACT	bepavo works under pabeti	law
+FACT	vohemi works under nefika	law
+FACT	sabepa works under pabeti	law
+FACT	sabepa works under kakafi	law
+FACT	pamilo works under sahehe	law
+FACT	pamilo works under nefika	law
+FACT	tizemi works under pabeti	law
+FACT	hevohe works under rumine	law
+FACT	papagu works under pabeti	law
+FACT	pajoka works under rumine	law
+FACT	pajoka works under pabeti	law
+FACT	sasagu works under lodobe	law
+FACT	tisaka works under hehejo	law
+FACT	gusati works under sahehe	law
+FACT	hefibe works under lodobe	law
+FACT	hefibe works under pabeti	law
+FACT	mihefi works under sahehe	law
+FACT	mihefi works under hemiru	law
+FACT	fijosa works under lodobe	law
+FACT	fijosa works under pabeti	law
+FACT	sapajo works under sahehe	law
+FACT	sapajo works under besavo	law
+FACT	gujojo works under sahehe	law
+FACT	beloru works under rumine	law
+FACT	beloru works under pabeti	law
+FACT	guloze works under sahehe	law
+FACT	guloze works under nefika	law
+FACT	mimisa works under lodobe	law
+FACT	mimisa works under pabeti	law
+FACT	rudosa works under kakafi	law
+FACT	patimi works under pabeti	law
+FACT	dofiru works under sahehe	law
+FACT	dofiru works under nefika	law
+FACT	sanene works under sahehe	law
+FACT	heruhe works under pabeti	law
+FACT	heruhe works under kakafi	law
+FACT	lomize works under sahehe	law
+FACT	zesapa works under sahehe	law
+FACT	zesapa works under hemiru	law
+FACT	karupa works under sahehe	law
+FACT	karupa works under besavo	law
+FACT	gujosa works under pabeti	law
+FACT	gujosa works under kakafi	law
+FACT	parugu works under rumine	law
+FACT	parugu works under pabeti	law
+FACT	fiheka works under sahehe	law
+FACT	fiheka works under hemiru	law
+FACT	pamibe works under lodobe	law
+FACT	lomiti works under pabeti	law
+FACT	lomiti works under vovolo	law
+FACT	tilofi works under sahehe	law
+FACT	tilofi works under nefika	law
+FACT	fisaze works under rumine	law
+FACT	fisaze works under pabeti	law
+FACT	jopagu works under hehejo	law
+FACT	sagugu works under sahehe	law
+FACT	sagugu works under nefika	law
+FACT	gupalo works under pabeti	law
+FACT	gupalo works under kakafi	law
+FACT	tikami works under vovolo	law
+FACT	kamijo works under sahehe	law
+FACT	doneti works under sahehe	law
+FACT	doneti works under nefika	law
+FACT	befiti works under hemiru	law
+FACT	kaparu works under sahehe	law
+FACT	kaparu works under hemiru	law
+FACT	hevovo works under sahehe	law
+FACT	hevovo works under besavo	law
+FACT	pafize works under sahehe	law
+FACT	tisasa works under pabeti	law
+FACT	tisasa works under vovolo	law
+FACT	guzesa works under sahehe	law
+FACT	guzesa works under hehejo	law
+FACT	befivo works under pabeti	law
+FACT	dodojo works under sahehe	law
+FACT	dodojo works under hehejo	law
+FACT	lotine works under sahehe	law
+FACT	lotine works under nefika	law
+FACT	patilo works under pabeti	law
+FACT	patilo works under vovolo	law
+FACT	dojopa works under besavo	law
+FACT	vopami works under sahehe	law
+FACT	vopami works under hemiru	law
+FACT	lokapa is based in denver	law
+FACT	lozesa is based in chicago	law
+FACT	pahegu is based in denver	tendency
+FACT	nedodo is based in miami	law
+FACT	bebejo is based in denver	law
+FACT	team38 is based in denver	law
+FACT	lofize is based in miami	law
+FACT	vobegu is based in boston	tendency
+FACT	mizelo is based in boston	tendency
+FACT	midone is based in denver	tendency
+FACT	samisa is based in denver	tendency
+FACT	team08 is based in denver	law
+FACT	vozemi is based in miami	law
+FACT	johevo is based in chicago	law
+FACT	bebegu is based in austin	law
+FACT	hefigu is based in boston	law
+FACT	rudohe is based in boston	law
+FACT	tisado is based in denver	law
+FACT	lolobe is based in chicago	tendency
+FACT	jokajo is based in boston	tendency
+FACT	team00 is based in denver	law
+FACT	jonedo is based in austin	law
+FACT	tijoru is based in austin	law
+FACT	dohesa is based in chicago	tendency
+FACT	nezejo is based in chicago	tendency
+FACT	mivodo is based in miami	tendency
+FACT	karune is based in denver	law
+FACT	henebe is based in chicago	tendency
+FACT	kamimi is based in chicago	law
+FACT	finejo is based in denver	tendency
+FACT	nesasa is based in chicago	tendency
+FACT	mitifi is based in denver	law
+FACT	mirusa is based in denver	law
+FACT	lorusa is based in austin	law
+FACT	kazeze is based in boston	law
+FACT	rukaze is based in austin	tendency
+FACT	sadoti is based in austin	law
+FACT	paguru is based in austin	law
+FACT	losaru is based in chicago	law
+FACT	sagujo is based in chicago	law
+FACT	sapaze is based in seattle	law
+FACT	dovohe is based in seattle	tendency
+FACT	gurupa is based in denver	law
+FACT	lokagu is based in denver	law
+FACT	gubesa is based in miami	law
+FACT	vodoti is based in austin	law
+FACT	mibedo is based in austin	law
+FACT	dolovo is based in denver	law
+FACT	loneka is based in austin	law
+FACT	zepalo is based in denver	tendency
+FACT	padofi is based in miami	law
+FACT	lozehe is based in austin	law
+FACT	gugudo is based in austin	law
+FACT	lonevo is based in denver	law
+FACT	figufi is based in seattle	law
+FACT	gubeka is based in seattle	law
+FACT	samifi is based in chicago	law
+FACT	misami is based in seattle	law
+FACT	hejoze is based in seattle	law
+FACT	tibeti is based in boston	law
+FACT	nebejo is based in denver	law
+FACT	bezelo is based in denver	law
+FACT	jotilo is based in denver	law
+FACT	rurune is based in chicago	tendency
+FACT	dovosa is based in chicago	law
+FACT	nepaka is based in miami	law
+FACT	lozeru is based in miami	tendency
+FACT	rusaka is based in seattle	law
+FACT	fizejo is based in boston	tendency
+FACT	josasa is based in boston	tendency
+FACT	satilo is based in denver	law
+FACT	sahegu is based in boston	law
+FACT	misajo is based in boston	law
+FACT	josabe is based in miami	law
+FACT	zefilo is based in denver	law
+FACT	kalolo is based in seattle	law
+FACT	volofi is based in chicago	tendency
+FACT	mihemi is based in denver	law
+FACT	kavojo is based in denver	law
+FACT	kaheti is based in denver	law
+FACT	dokasa is based in chicago	law
+FACT	kaheze is based in denver	tendency
+FACT	tifiti is based in chicago	tendency
+FACT	bezeze is based in boston	law
+FACT	lozevo is based in boston	law
+FACT	bedojo is based in boston	tendency
+FACT	kafiru is based in boston	tendency
+FACT	vozegu is based in austin	tendency
+FACT	hevoze is based in seattle	law
+FACT	nepami is based in miami	law
+FACT	vohehe is based in miami	law
+FACT	safiti is based in denver	tendency
+FACT	guvobe is based in denver	law
+FACT	gutilo is based in denver	law
+FACT	nesaze is based in seattle	law
+FACT	dofihe is based in miami	tendency
+FACT	sarune is based in chicago	law
+FACT	mihevo is based in chicago	law
+FACT	rukasa is based in seattle	tendency
+FACT	hejovo is based in austin	law
+FACT	kaloka is based in boston	tendency
+FACT	tinesa is based in boston	tendency
+FACT	pabejo is based in boston	tendency
+FACT	fibeze is based in boston	tendency
+FACT	zeloze is based in boston	tendency
+FACT	rutipa is based in denver	law
+FACT	jonesa is based in denver	law
+FACT	lopavo is based in boston	tendency
+FACT	bezemi is based in denver	law
+FACT	savoze is based in denver	law
+FACT	dotifi is based in boston	tendency
+FACT	bekabe is based in seattle	tendency
+FACT	tidofi is based in seattle	law
+FACT	rutivo is based in seattle	law
+FACT	figumi is based in boston	tendency
+FACT	hebebe is based in boston	tendency
+FACT	jogudo is based in denver	tendency
+FACT	jofika is based in miami	tendency
+FACT	rusalo is based in austin	tendency
+FACT	mivoka is based in boston	tendency
+FACT	vosane is based in chicago	law
+FACT	doruru is based in chicago	tendency
+FACT	vojodo is based in seattle	law
+FACT	neneti is based in seattle	law
+FACT	mibefi is based in boston	law
+FACT	zevopa is based in miami	tendency
+FACT	mikati is based in denver	law
+FACT	zetigu is based in boston	tendency
+FACT	sadomi is based in chicago	tendency
+FACT	fidohe is based in chicago	law
+FACT	vojobe is based in austin	law
+FACT	padoru is based in seattle	law
+FACT	vovojo is based in chicago	law
+FACT	team01 is based in boston	law
+FACT	dogube is based in boston	tendency
+FACT	fikasa is based in boston	law
+FACT	kajoru is based in boston	tendency
+FACT	helopa is based in miami	tendency
+FACT	pabene is based in boston	tendency
+FACT	heguhe is based in chicago	law
+FACT	rurumi is based in chicago	law
+FACT	team26 is based in austin	law
+FACT	tifido is based in boston	tendency
+FACT	negupa is based in boston	tendency
+FACT	jovobe is based in seattle	law
+FACT	zetiti is based in austin	law
+FACT	team34 is based in austin	law
+FACT	hekati is based in boston	law
+FACT	lodopa is based in boston	tendency
+FACT	saloti is based in denver	law
+FACT	vopado is based in denver	law
+FACT	beheze is based in miami	law
+FACT	vozedo is based in miami	law
+FACT	dolone is based in denver	law
+FACT	jobepa is based in denver	law
+FACT	mibehe is based in denver	law
+FACT	gujogu is based in seattle	law
+FACT	loruka is based in boston	tendency
+FACT	team35 is based in seattle	law
+FACT	vohejo is based in denver	law
+FACT	vomijo is based in boston	tendency
+FACT	jofijo is based in boston	tendency
+FACT	vomilo is based in chicago	law
+FACT	sanefi is based in seattle	law
+FACT	kamisa is based in austin	tendency
+FACT	gudoti is based in boston	law
+FACT	dofipa is based in boston	law
+FACT	team23 is based in boston	law
+FACT	gubevo is based in denver	law
+FACT	misagu is based in boston	law
+FACT	zedodo is based in seattle	law
+FACT	jomipa is based in boston	law
+FACT	dojomi is based in boston	tendency
+FACT	lologu is based in seattle	law
+FACT	hezepa is based in seattle	law
+FACT	kadoze is based in seattle	law
+FACT	guvoze is based in denver	law
+FACT	hetika is based in miami	law
+FACT	team10 is based in austin	law
+FACT	lobepa is based in chicago	tendency
+FACT	zeloru is based in seattle	law
+FACT	paruze is based in denver	tendency
+FACT	nepane is based in boston	tendency
+FACT	zetika is based in denver	law
+FACT	doguti is based in denver	tendency
+FACT	gurugu is based in denver	law
+FACT	papabe is based in denver	law
+FACT	vovomi is based in denver	law
+FACT	jozevo is based in austin	tendency
+FACT	paguvo is based in miami	law
+FACT	bezehe is based in boston	law
+FACT	vobedo is based in boston	tendency
+FACT	rukagu is based in boston	tendency
+FACT	zeguru is based in miami	tendency
+FACT	saneka is based in austin	law
+FACT	vopajo is based in boston	tendency
+FACT	mipasa is based in boston	tendency
+FACT	zehevo is based in seattle	tendency
+FACT	joruhe is based in austin	tendency
+FACT	mifigu is based in austin	law
+FACT	fiberu is based in denver	law
+FACT	gusaka is based in austin	law
+FACT	tizesa is based in denver	law
+FACT	tidoru is based in denver	law
+FACT	vovone is based in miami	law
+FACT	hekaze is based in boston	tendency
+FACT	gusafi is based in boston	tendency
+FACT	paguti is based in boston	law
+FACT	titihe is based in denver	law
+FACT	kajovo is based in austin	law
+FACT	team31 is based in boston	law
+FACT	hehevo is based in miami	tendency
+FACT	bedoru is based in chicago	law
+FACT	midovo is based in denver	law
+FACT	jotibe is based in boston	tendency
+FACT	pagujo is based in seattle	law
+FACT	team19 is based in seattle	law
+FACT	nezefi is based in denver	tendency
+FACT	netiti is based in miami	law
+FACT	timivo is based in chicago	law
+FACT	zegusa is based in seattle	law
+FACT	rusaru is based in denver	law
+FACT	gudogu is based in denver	law
+FACT	palone is based in chicago	tendency
+FACT	hejoru is based in miami	tendency
+FACT	pafisa is based in austin	tendency
+FACT	betiti is based in denver	law
+FACT	netifi is based in chicago	law
+FACT	team05 is based in chicago	law
+FACT	fidofi is based in denver	law
+FACT	doloru is based in seattle	law
+FACT	sanegu is based in seattle	law
+FACT	mizejo is based in boston	tendency
+FACT	vokaru is based in miami	law
+FACT	firuka is based in boston	tendency
+FACT	dozehe is based in miami	law
+FACT	lorube is based in denver	law
+FACT	ruruze is based in boston	tendency
+FACT	gugube is based in denver	law
+FACT	firufi is based in denver	law
+FACT	zesane is based in denver	law
+FACT	hepafi is based in boston	tendency
+FACT	team02 is based in austin	law
+FACT	tizegu is based in miami	law
+FACT	sadovo is based in boston	tendency
+FACT	kagupa is based in miami	tendency
+FACT	tirupa is based in austin	law
+FACT	votihe is based in miami	tendency
+FACT	team14 is based in denver	law
+FACT	timijo is based in boston	tendency
+FACT	tivone is based in boston	tendency
+FACT	netido is based in boston	tendency
+FACT	gupane is based in boston	law
+FACT	jodoze is based in denver	law
+FACT	rusahe is based in austin	law
+FACT	figujo is based in boston	tendency
+FACT	gujobe is based in austin	law
+FACT	gupajo is based in chicago	tendency
+FACT	nebebe is based in boston	law
+FACT	betilo is based in austin	law
+FACT	voruru is based in austin	tendency
+FACT	mizene is based in boston	tendency
+FACT	beguze is based in boston	tendency
+FACT	fizehe is based in denver	law
+FACT	hevolo is based in boston	law
+FACT	bebeze is based in austin	law
+FACT	hefilo is based in boston	tendency
+FACT	mijone is based in seattle	law
+FACT	fisaru is based in miami	law
+FACT	bepavo is based in seattle	law
+FACT	vohemi is based in denver	law
+FACT	sabepa is based in boston	tendency
+FACT	pavone is based in boston	tendency
+FACT	pamilo is based in denver	law
+FACT	tizemi is based in seattle	law
+FACT	hevohe is based in boston	tendency
+FACT	vobelo is based in boston	tendency
+FACT	pajoka is based in boston	law
+FACT	sasagu is based in chicago	law
+FACT	jokaze is based in denver	law
+FACT	tisaka is based in miami	law
+FACT	gusati is based in denver	law
+FACT	hefibe is based in chicago	law
+FACT	mihefi is based in austin	law
+FACT	fijosa is based in chicago	law
+FACT	sapajo is based in denver	law
+FACT	gujojo is based in miami	law
+FACT	team27 is based in seattle	law
+FACT	rudosa is based in boston	tendency
+FACT	patimi is based in boston	tendency
+FACT	sanene is based in denver	law
+FACT	lomize is based in miami	law
+FACT	zesapa is based in austin	law
+FACT	gujosa is based in boston	tendency
+FACT	parugu is based in boston	law
+FACT	fiheka is based in austin	law
+FACT	nebegu is based in chicago	tendency
+FACT	pamibe is based in chicago	tendency
+FACT	lomiti is based in seattle	law
+FACT	tilofi is based in denver	law
+FACT	jopagu is based in miami	law
+FACT	sagugu is based in denver	law
+FACT	gupalo is based in boston	tendency
+FACT	tikami is based in seattle	tendency
+FACT	kamijo is based in austin	tendency
+FACT	guneru is based in denver	law
+FACT	befiti is based in austin	law
+FACT	hevosa is based in boston	tendency
+FACT	kaparu is based in austin	tendency
+FACT	hevovo is based in denver	law
+FACT	pafize is based in denver	law
+FACT	tisasa is based in seattle	law
+FACT	guzesa is based in miami	law
+FACT	team09 is based in boston	law
+FACT	dodojo is based in miami	law
+FACT	lotine is based in denver	law
+FACT	dojopa is based in denver	law
+FACT	vopami is based in austin	tendency
+[CONFLICTS] 20 stated facts contradict what the rules infer
+CONFLICT	lohelo	denver	stated: lohelo is based in denver | inferred: lohelo is based in boston | because lohelo collaborates with midohe + midohe is based in boston  [rule: [? collaborates with ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (4 of 5 paths)
+CONFLICT	gumido	denver	stated: gumido is based in denver | inferred: gumido is based in austin | because gumido is on team26 + team26 belongs to finance + finance is based in austin  [rule: TREE [? is on ?](a,g) & [? belongs to ?](g,y1) & [? is based in ?](y1,austin) => [? is based in ?](a,austin)]  (2 of 2 paths)
+CONFLICT	gubeti	chicago	stated: gubeti is based in chicago | inferred: gubeti is based in denver | because gubeti is on team24 + team24 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (14 of 17 paths)
+CONFLICT	lojojo	boston	stated: lojojo is based in boston | inferred: lojojo is based in miami | because lojojo works under zeguru + zeguru knows saneka + saneka knows firufi  [rule: TREE [? works under ?](a,g) & [? knows ?](g,y1) & [? knows ?](y1,firufi) => [? is based in ?](a,miami)]  (19 of 25 paths)
+CONFLICT	kagusa	denver	stated: kagusa is based in denver | inferred: kagusa is based in boston | because fimivo collaborates with kagusa + fimivo collaborates with panesa + panesa is based in boston + fimivo knows gupane + gupane likes ramen  [rule: TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,boston) & [? knows ?](g,y2) & [? likes ?](y2,ramen) => [? is based in ?](a,boston)]  (20 of 33 paths)
+CONFLICT	netipa	denver	stated: netipa is based in denver | inferred: netipa is based in austin | because zetiru collaborates with netipa + zetiru collaborates with zetiti + zetiti works under hemiru  [rule: TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,hemiru) => [? is based in ?](a,austin)]  (14 of 20 paths)
+CONFLICT	filoti	chicago	stated: filoti is based in chicago | inferred: filoti is based in denver | because filoti is on team32 + team32 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (16 of 26 paths)
+CONFLICT	nepati	chicago	stated: nepati is based in chicago | inferred: nepati is based in miami | because nepati is on team04 + team04 belongs to support + support is based in miami  [rule: TREE [? is on ?](a,g) & [? belongs to ?](g,y1) & [? is based in ?](y1,miami) => [? is based in ?](a,miami)]  (16 of 31 paths)
+CONFLICT	tidomi	miami	stated: tidomi is based in miami | inferred: tidomi is based in boston | because misagu collaborates with tidomi + misagu works under rumine  [rule: TREE [? collaborates with ?](g,a) & [? works under ?](g,rumine) => [? is based in ?](a,boston)]  (11 of 18 paths)
+CONFLICT	zebedo	chicago	stated: zebedo is based in chicago | inferred: zebedo is based in boston | because zebedo collaborates with mibefi + mibefi collaborates with tidomi + tidomi works under rumine  [rule: TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,rumine) => [? is based in ?](a,boston)]  (13 of 23 paths)
+CONFLICT	kadolo	austin	stated: kadolo is based in austin | inferred: kadolo is based in denver | because kadolo is on team16 + team16 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (14 of 21 paths)
+CONFLICT	lobegu	miami	stated: lobegu is based in miami | inferred: lobegu is based in boston | because lobegu is on team25 + team25 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (5 of 9 paths)
+CONFLICT	dopasa	seattle	stated: dopasa is based in seattle | inferred: dopasa is based in boston | because dopasa is on team25 + team25 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (9 of 13 paths)
+CONFLICT	tifibe	miami	stated: tifibe is based in miami | inferred: tifibe is based in seattle | because zehevo collaborates with tifibe + zehevo collaborates with dodoru + dodoru likes salad + zehevo collaborates with dodoru + dodoru is based in seattle  [rule: TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? likes ?](y1,salad) & [? collaborates with ?](g,y2) & [? is based in ?](y2,seattle) => [? is based in ?](a,seattle)]  (9 of 13 paths)
+CONFLICT	mifibe	chicago	stated: mifibe is based in chicago | inferred: mifibe is based in seattle | because mifibe collaborates with zedodo + zedodo collaborates with ruvone + ruvone works under vovolo  [rule: TREE [? collaborates with ?](a,g) & [? collaborates with ?](g,y1) & [? works under ?](y1,vovolo) => [? is based in ?](a,seattle)]  (8 of 10 paths)
+CONFLICT	pavolo	miami	stated: pavolo is based in miami | inferred: pavolo is based in chicago | because dokasa collaborates with pavolo + dokasa collaborates with vosavo + vosavo is based in chicago + dokasa knows kaheze + kaheze likes sushi  [rule: TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? is based in ?](y1,chicago) & [? knows ?](g,y2) & [? likes ?](y2,sushi) => [? is based in ?](a,chicago)]  (15 of 19 paths)
+CONFLICT	papagu	miami	stated: papagu is based in miami | inferred: papagu is based in chicago | because dohesa collaborates with papagu + dohesa collaborates with nezejo + nezejo works under lodobe  [rule: TREE [? collaborates with ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,lodobe) => [? is based in ?](a,chicago)]  (12 of 22 paths)
+CONFLICT	patilo	chicago	stated: patilo is based in chicago | inferred: patilo is based in seattle | because ruvone collaborates with patilo + ruvone works under vovolo  [rule: TREE [? collaborates with ?](g,a) & [? works under ?](g,vovolo) => [? is based in ?](a,seattle)]  (14 of 18 paths)
+CONFLICT	team17	legal	stated: team17 belongs to legal | inferred: team17 belongs to logistics | because kaloka is on team17 + kaloka collaborates with dotigu + dotigu works under pabeti + kaloka collaborates with vopahe + vopahe likes ramen + kaloka collaborates with tinesa + tinesa is based in boston  [rule: TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? collaborates with ?](g,y2) & [? likes ?](y2,ramen) & [? collaborates with ?](g,y3) & [? is based in ?](y3,boston) => [? belongs to ?](a,logistics)]  (5 of 43 paths)
+CONFLICT	team09	legal	stated: team09 belongs to legal | inferred: team09 belongs to logistics | because fizejo is on team09 + fizejo collaborates with vobelo + vobelo works under pabeti + fizejo collaborates with kafiru + kafiru likes ramen + fizejo collaborates with jotibe + jotibe is based in boston  [rule: TREE [? is on ?](g,a) & [? collaborates with ?](g,y1) & [? works under ?](y1,pabeti) & [? collaborates with ?](g,y2) & [? likes ?](y2,ramen) & [? collaborates with ?](g,y3) & [? is based in ?](y3,boston) => [? belongs to ?](a,logistics)]  (5 of 42 paths)

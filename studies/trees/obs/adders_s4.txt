@@ -1,0 +1,5720 @@
+binaba has kind xor
+petobu has kind and
+vufuba has value one
+faluba has first input nefefe
+merubi has first input fugobe
+nurida has kind or
+mobedo has value one
+delubi is output of vusodi
+kebobe is output of guroda
+voziba has value zero
+lemobi has value zero
+dutada has kind and
+lasobe has value one
+lavudo has value one
+rimofe has second input kezufe
+vufefa has value one
+gerada is output of mezefe
+bomida has kind xor
+bevido has second input bavodu
+gatado has value zero
+nazidi has value zero
+fitifa is output of rilide
+puvofe has value zero
+tusube has value zero
+tavudu has value one
+zerafa is output of kuvebu
+fezobu has first input soludi
+punabo has first input zoredo
+nosibu has first input didado
+gokobu has value zero
+dipade has second input balaba
+zuzabo has second input lagobo
+rikidi has value zero
+mekaba has value one
+bidibe has first input zikufe
+surobe has first input vebodi
+nuzada has value one
+sinofa is output of popubo
+gelibi is output of gofeba
+kapede has second input tudade
+robifa has value one
+nitubi is output of nutido
+futebu has first input kekadu
+gipobo has first input mumido
+rumeda has first input lomefe
+vezufe has first input zufido
+popubo has kind xor
+latedo has second input kolidi
+meribu has kind xor
+sisefa has kind xor
+dorebe has second input gozadi
+tonaba has value one
+kodibu has value zero
+lokifa has kind and
+sotudi has value zero
+bakibu has value one
+vidobo has value zero
+lamodo has second input zuvudo
+vozada has first input zasido
+zazodo has value zero
+fafudi has kind and
+gadedo has first input mofubi
+tozaba has value zero
+romada is output of metodu
+godede has second input tisabu
+merubi has kind or
+tubibu is output of samidu
+dinadu is output of sazobe
+bofufe has value zero
+midebu has first input rarifa
+zakede has kind xor
+vabudo is output of mufobe
+sakibe has kind xor
+rumobe has value one
+lavebu has second input tasidu
+fokebe is output of kokofe
+zuvibi has value one
+gefedo has kind xor
+ruzodo has first input telodo
+zisada has value one
+kebuba has value one
+gufabo has value one
+borade has kind or
+derufe has kind xor
+simebe is output of bivabe
+lofadu has first input devife
+mizabi is output of limodo
+vivodo has first input mimudu
+zibida has second input zolude
+kamadu has kind and
+kofidu is output of zamebi
+sitade is output of tevadi
+vapobe is output of vagadu
+vivide has first input pemefe
+kusiba is output of solabi
+tudibi is output of zazebo
+gibabu has value one
+tabubi has kind xor
+nitibi has value one
+nozedo is output of gapudi
+gutiba has second input kekobo
+bidibe has second input nodebu
+kedude has value one
+tubifa is output of fopife
+ramaba has first input fifobo
+musafa has kind and
+liveba has kind and
+namobo has first input zirada
+mibidu has value zero
+pafobu has second input vakudi
+zugibo has value one
+kukabi is output of vatedi
+titubu has kind or
+roladi is output of kirudi
+bivife has value one
+fuvabe has second input remibo
+musebe has value one
+napefe has kind and
+kuvibo has second input lerifa
+divubo has second input nalabo
+didadu has value one
+bemadu has value one
+muluda is output of rosife
+kifedi has second input totide
+demubo has second input nerabi
+veribe has value zero
+nuredi has value zero
+pofafe has first input sibade
+sotudi is output of tutaba
+gumode has kind xor
+gupifa has value zero
+mamadu has value zero
+masodu has second input bileba
+gosedo has value zero
+muzadu has second input pazabu
+bonibe has kind or
+dituda has value one
+dupebe is output of binaba
+lemebo has second input venodo
+vuroba has second input kukedu
+rebido has value zero
+gideda has value one
+mugodi has kind or
+fupoda has value one
+rugufe is output of raredo
+tipeda has value zero
+bogede has value zero
+mifube has first input sekofe
+sinodi has value zero
+numode has value zero
+rupide has second input robedo
+zarudi has value one
+nalobe has value zero
+limade is output of tevobo
+nepafa has first input zebibo
+kitada has kind or
+ridebe has value zero
+zegobo has value zero
+terobi is output of bifabu
+gumuda has second input zozudi
+nivafa has value zero
+sabido has value one
+vedabi is output of dafabu
+salodu has second input vizedo
+relibi has value zero
+gogebu has kind xor
+kosidu is output of pakubi
+mukudo has value one
+turuda has value one
+somobe has kind and
+tofabe has first input dunada
+nefobi has second input tilife
+lenodo is output of kodabu
+fefufa has first input tafude
+zokofe has first input geteda
+momebi has kind xor
+laruda has value one
+larido has kind or
+disife has value one
+lavebu has first input nodeda
+kupobe has value one
+kukedu has value one
+kivada has kind xor
+darafa is output of dokodo
+lenedo has value zero
+pufadi is output of remabo
+rivubi has second input mipebe
+gozado has kind and
+genabi has value zero
+fagidi has kind or
+buzado has first input kirabi
+mobodu has value one
+dakodu has first input sevoba
+menabi has first input bodebu
+dezudo has value one
+pukiba has first input nazidi
+lafifa has kind or
+senodo is output of nagobe
+ripudi is output of kupede
+vonidu has first input zanafe
+sadadu has first input pavufa
+ranubu has value one
+nizufa has first input viguda
+vupibo has first input sorifa
+sulude has value zero
+nokibi is output of kezeda
+zozudi has value one
+guvodo is output of tenufe
+daledo has value one
+mubida has value one
+sozoda has second input filofa
+gobafa has value zero
+lasife is output of fodefe
+vinuba is output of modade
+dipife has value zero
+rasobe has value one
+zigobe has value one
+fizubo has value zero
+lunebe has first input kikaba
+vimibu is output of vopedi
+savede has second input mikeba
+lofube has second input gokida
+rerafa has value zero
+midube has kind and
+rafodi has value zero
+fufafa has first input punado
+rafidi has first input nipubi
+kodudi has first input ninofe
+pifaba has value one
+gukude has kind and
+tagido has kind xor
+falobe is output of zibabu
+simebe has value one
+letefe has second input budobe
+fupoda is output of sogife
+folafe has first input zenebo
+basadi has kind and
+sikedo is output of dunebe
+raruda has value one
+fizodi is output of tobife
+bimado has value one
+zuzado is output of nagefe
+tezabo is output of busibi
+lutodo has first input dakudi
+pezofe is output of pakobo
+silada has value one
+didadu is output of maleba
+gerida has value zero
+tazibe has value one
+favefa has second input zubudi
+fetafa is output of ginebu
+gapodu has kind and
+bilede has value zero
+zupibu is output of tosade
+sipibi has value one
+pufode has value zero
+mesoda has value zero
+likefe has second input vutubu
+bezadu has value one
+punibu has first input moduba
+vesibu has kind or
+sugebe has kind xor
+lebede has second input latada
+salafa has first input tovedi
+fupufa has value one
+dimube has kind and
+vurida has first input lasedi
+sosuba has second input nezife
+nenofe has kind xor
+berudu has value zero
+zobibi has value zero
+lugobi has first input lokufe
+zuvudo has value zero
+puzadu has value one
+fenabe has second input liledo
+kogife has first input fivibo
+vodubi has first input lugube
+lezudi has value zero
+difobo has value zero
+pelida has value zero
+zugubu is output of menabi
+tenufe has first input vakubu
+fezido has first input gogabu
+lovude is output of denudo
+tumabo has value zero
+rozibi has kind or
+nipaba has value zero
+nasedu has first input pezabe
+rolibu has second input nokada
+zamodi has second input tenada
+busido has value zero
+tidabi is output of gutiba
+gasude has second input parubu
+migofe has first input pizode
+zozoda has kind xor
+lavida has value one
+lezadi is output of vovabu
+losedi has kind and
+nezibu has second input nepudi
+vopedi has second input fuvife
+levafe has first input leneba
+gakidu has value zero
+faradu has second input tezodo
+dezeda has value zero
+kizedi has first input nafudo
+poroba has kind xor
+nasedu has second input dafofa
+defube has second input kotido
+remudo is output of futefe
+bidada has kind or
+pelufe has kind xor
+getidu has second input lamofa
+dagibu has second input mududi
+rakabo has value zero
+rasado has kind xor
+nagobe has first input kikaba
+napefe has second input lunufa
+ferobe has value zero
+ribudi has first input gepidi
+ninada is output of mimuda
+kigebi has first input novida
+puvode has first input fofafe
+momobe has value one
+dudude is output of fosubo
+dafedi has second input gakede
+gefibi has first input dasefa
+faradu has first input nisebi
+nimebo is output of mugodi
+dutudi has value zero
+befube has second input vububo
+mumuda has second input nafudo
+felubu has second input tigidu
+tozedu has second input fuzebo
+fuvabe has first input gokobu
+kazabi has kind or
+zibida has first input romada
+fibiba has value one
+nizufe has second input milefa
+kurudu has value one
+pobeda has value zero
+mazabe is output of poroba
+gisodo has value one
+funeda has kind xor
+vufeda has kind and
+gepufa is output of zobuda
+naledo has value one
+bemubu has kind xor
+bofade is output of desubi
+sadadu has second input buleda
+kumuda has second input rafabo
+zobuda has first input pebodi
+kikaba has value one
+dolede is output of mutedu
+sideda is output of mozebu
+nenobo has kind xor
+nizufe has first input gitudi
+megodu has kind xor
+losuba has kind or
+butubi has value zero
+ninebo is output of kalibi
+ponabu is output of lofede
+bobifa has kind xor
+zokabu has kind or
+kulodi is output of penade
+fopide has first input sakubi
+fenabe has kind or
+gedabo has second input debobu
+fuzebi has kind and
+zotade is output of bidebu
+latifa has value one
+duvaba has kind and
+kesabu has value one
+nagefe has second input ditofa
+foneba has kind xor
+risuda has kind and
+vopedi has kind or
+defube has first input rulabe
+begide has value zero
+lipebu has value one
+tefido has second input semafa
+fuvabe has kind xor
+tudibi has value zero
+sorudi has kind or
+totobi has value zero
+takuba has value zero
+sokofa has value one
+losufe has kind or
+nomefa is output of tegefa
+panife has first input todabi
+bodeba has second input laruda
+vizido has value zero
+nerudu has first input nunude
+zezife is output of tisobe
+givedo is output of zizibo
+benoba has kind and
+gosedi has value one
+meribo is output of losuba
+bamoda is output of donadu
+tefebi has first input bogadu
+pirudi has value one
+zitobi has first input litobo
+rovedu has value zero
+tavuba is output of votobu
+nosibo has first input kadife
+sinefe has kind and
+nasabe is output of fotofa
+larabe has second input nuzeba
+dedube has value one
+nerudu has second input pubiba
+pakubi has second input mazabe
+sakubi is output of gebudo
+favafe has second input rebido
+sevude has second input temeba
+disefa is output of vekebo
+ruvube has value zero
+mebofe has kind xor
+pumiba has first input mutufe
+kivada has second input gikibo
+bugubo has value zero
+gilido has value one
+forebo has value zero
+nafubo has value zero
+ravobo has value one
+venabe has second input pugabe
+togide has value one
+lubidu has kind and
+semafa has value zero
+puruda has value one
+lunebe has kind xor
+mufefe has value zero
+terade has kind and
+sevibu has value one
+kuride has second input dumifa
+takeda has value zero
+mimofa has value one
+vegebi is output of vinidu
+ritedo has value one
+firobo has kind xor
+fukife has second input zepabo
+rutibi has first input delidu
+kalofa has first input raguda
+mopade has kind xor
+rufobe has kind and
+kutobi has first input fogebo
+kozabi has value zero
+fikedu has value zero
+vavudu has first input pemido
+sesede has second input gedabe
+gapudi has kind and
+lenida has first input famafa
+raride has second input masubu
+lemiba is output of kivada
+vufuda has value one
+suzodu is output of zalofa
+panoda has value zero
+sedodi is output of zozoda
+pikado has kind or
+novudi is output of zuzube
+fetofe has kind or
+latabo has value one
+ripudi has value zero
+fegidi has value zero
+pogabu is output of nogudu
+zakudo has value one
+bemubu has second input pidobu
+pafida has value zero
+sitade has value one
+tugubi has first input ginedi
+rumodo has kind and
+tafude has value zero
+dinifa has value one
+defade is output of fasubo
+ferabo has kind and
+kolafa has kind and
+rufudi has value one
+tubifa has value zero
+nunobi has value one
+mivabi has value zero
+lemedo has second input vimidi
+kavafe has value one
+dobudo is output of fuzibo
+telede has second input getabi
+bisadu has second input dumibu
+vezufe has kind and
+rifada has second input levebu
+vonedu is output of fokedo
+ruvoda has second input ligufa
+getidu has kind or
+zunado has value zero
+velade is output of petuda
+larida is output of zumobe
+vetudi has second input kanabu
+fakebi has kind and
+denibi has first input zuledo
+roladi has value one
+zalofa has kind xor
+demubo has first input fuleda
+nakudu has first input fidefe
+nafudo is output of gisodu
+vodubi has kind and
+medifa has first input gepobu
+bikedo has second input fifedu
+kavado is output of sotado
+butibu has second input kamida
+nikufe has kind and
+tufedu has second input badofe
+gitudi has value one
+barafe has value zero
+vorefa is output of fazeda
+tilibu has value one
+medifa has second input fesedu
+zugebo has value zero
+mivafe is output of bikedo
+masubu has value zero
+zikido has value one
+nefide is output of rafobe
+rafidi has kind and
+pazedi has second input nitebe
+limubo has first input tufobi
+pigefe has value zero
+gazibe has kind or
+ronube is output of sigobe
+durobo has value zero
+nogudu has kind or
+vedido is output of gosadi
+bevido has first input kevado
+gukuda is output of vofodo
+fevabi has value zero
+modade has kind and
+magebu has kind xor
+kedade has first input gilido
+nitefa is output of nitide
+rotidi has value zero
+gemedu has first input lalebu
+mapudu has second input kasobe
+mineba has value one
+gudofe has kind xor
+vofodo has second input pokafa
+mimodi is output of latadi
+tedaba has value one
+zebibo has value zero
+lakudi is output of futebu
+gisodu has first input pirudi
+vagofa has value one
+votobu has first input zupube
+nerabi has value one
+ledoba has value zero
+nagude has kind and
+zamifa has value one
+rukodu has second input luzado
+larabe has kind or
+difudo has value zero
+fesedu has value one
+lafufe is output of duzudu
+lekadu is output of tidode
+bopibe has value one
+vitodu has first input nazado
+kezabu has value one
+pofedo has value one
+balabo is output of zupadi
+penade has second input gumibe
+giludo has value zero
+nigodo has first input zigafa
+pupobu has kind xor
+ludufa has value zero
+sirida has value zero
+puzeda has value zero
+nunuba has kind or
+depibo is output of basiba
+gasude has kind or
+palade is output of pazidu
+morode has kind and
+pitobi has value one
+tusobo has value zero
+pefudo has second input popobe
+petuda has kind and
+loradu has second input vufufa
+pufode is output of betode
+fubadi has second input kubibi
+fezobu has second input kosidu
+botefa is output of gumode
+robedo has value zero
+gukodo has second input mizuda
+fibada has value zero
+dodidu has second input digodo
+dovife has kind and
+depudu has first input domuba
+volufe has second input mipade
+vorado has second input dubibi
+nogedi has kind and
+futefe has kind and
+salafa has second input ninebo
+fufubi has second input vazufe
+mapife has kind xor
+dorifa has value zero
+gozadi is output of dovife
+ragadu is output of tuvifa
+zomobu has value one
+temaba has value one
+rukodu has kind and
+kemefe has value zero
+sepobu is output of rafidi
+fakifa has value one
+nigibi is output of runabe
+kozeba has value one
+vazodi has value zero
+visedi has first input vodubo
+pavabo has value one
+mopadi has value one
+regado has value zero
+lunibi has value zero
+ponedi has first input fazube
+latufe is output of turabi
+kufuba is output of ratobe
+begudo has value one
+badide has second input rirabo
+lutafa has first input gurido
+tebibe has value one
+midube has second input vudofe
+renofe is output of venide
+fenufa has value one
+somefa has kind xor
+pumiba has second input kiluda
+kefifa has first input tozabi
+lagafa has second input mobodo
+tegefa has first input zigobe
+tagido has first input legoba
+zuribo has value one
+limubo has second input kodibu
+nitufa has value zero
+suludi has value one
+sofabu is output of takobu
+dinebe has second input kabiba
+popubo has first input fezibe
+fagedi has value one
+sisibo has value zero
+fiduba has first input darede
+nosibo has second input sumode
+nozibu has value one
+tudade has value one
+venide has first input rebebo
+litabo has value one
+febufe has second input takifa
+dokudo has kind or
+vamebu has second input nepudi
+degebo has second input butido
+mipudu has value zero
+punado is output of dogede
+nogidi has value zero
+lekofe is output of kuvade
+kapede has first input mepuba
+fezido has kind xor
+mitudu has value one
+vufufa has value one
+zupube has value zero
+namobo has kind xor
+divubo has kind xor
+vadube has value zero
+maleba has first input famodi
+vapubu has second input dukabi
+lesofa has value one
+fivefe has value zero
+vizufa has second input koveda
+fopife has first input regado
+sareda has value zero
+defedi has value one
+dalobi has kind or
+vatedu is output of kifedi
+ratobe has first input gimufe
+semoda has value one
+ginedi has value one
+nesobi has first input zosofa
+zapebe has value zero
+sedido has value one
+pukudi has value one
+sufefe has value zero
+fidefa has kind xor
+pafobu has first input zilude
+pinade has value one
+fididi has first input kiredi
+momebi has first input pafebu
+nasodo has value one
+fifubu is output of zasedu
+darudi has first input lomudu
+mumabo has value zero
+mutedu has kind xor
+pudibi has kind or
+gumibe has value one
+kupidu has value one
+kopodu has value zero
+vulida has value zero
+revibo has value one
+lisobe is output of zavodi
+mipida has value zero
+tevufa is output of rivubi
+sitidi is output of gepife
+tazobu is output of mupidu
+roteba has second input gadubu
+tevadi has second input davaba
+vafode has second input vudofe
+nobofa has first input bigede
+mikudu has value zero
+ledoda has second input bemida
+momafa has value one
+setebi has value one
+vafede has second input pofube
+logadu has value zero
+pavabu has value one
+makifa has value one
+nozibi has kind xor
+kamadu has first input pokafa
+fikobi has value one
+zabuda has value zero
+tavidi has value zero
+godede has first input kifidu
+korodo is output of faludo
+ramadi is output of rimofe
+pegefe is output of semife
+pakubi has kind and
+zififa has value zero
+tagafe has value zero
+tegefa has kind and
+munabu has value zero
+zuzabo has first input fezibe
+nozoda is output of tinodo
+malebi has value one
+poroba has second input vufefa
+pavuda has first input pedoda
+sozoda has first input zudobu
+rafabu has value one
+gunefe is output of godede
+kizedi has second input dofobu
+fiteba has second input pavabu
+bebide has kind xor
+bemida has value one
+zirudu has kind or
+guside has kind xor
+zonudi has kind and
+sisodu has second input nidodo
+sanoda is output of ralude
+gopudo has second input sosabi
+fesodo has kind or
+sapibo has first input dituba
+patabi is output of kukoda
+dutodo has first input sareba
+ravife has value zero
+gefubo has value one
+getabi has value zero
+pifabo has value one
+betida is output of kamadu
+tezebe has value one
+ruvide is output of telede
+mafede is output of labifa
+ripefa is output of keludi
+simabi is output of salodu
+futodu has kind and
+kapedu has value zero
+sosife is output of kukobo
+ranedu is output of mezode
+suvobe has value zero
+fadubo has value zero
+debadu has kind or
+bivabe has first input zebode
+vapubu has kind or
+ravebe has value one
+badofe has value zero
+guvida is output of difudi
+tadubi is output of sezeda
+tivodo is output of punabo
+vobodi has value zero
+tilibu is output of fibeba
+vadobo has value zero
+fusedi has second input dukaba
+mapedi has kind and
+vagubo has second input zekabo
+darudi has second input mekaba
+samidu has second input zegadi
+zafobi has first input razubo
+gebudo has first input zevobu
+gepufa has value zero
+kinefa has first input tazede
+sezeda has kind and
+pezoda has second input liguda
+pivida has first input robafa
+kobufa has second input fakifa
+pibeba is output of niguba
+rupedi has kind and
+niguba has first input nadubu
+rovida is output of vusube
+vemidi has first input gibadu
+renode has value one
+nododi has first input pimibo
+dumibu has value zero
+nunude has value one
+rukabi is output of lemebo
+lurefe has kind and
+benudo has kind and
+gelofa has value zero
+bamife has second input gazebi
+mopade has second input kamidu
+dalebu has second input nopuda
+mudife has kind xor
+banabi has value one
+fekoba has second input nezufa
+favebi has kind xor
+zibida has kind or
+pafida is output of mizoba
+fikedu is output of kunobo
+mafubo has value zero
+bipuda has value zero
+litobo has value one
+lepebe is output of rutibi
+lerofa has first input meneda
+turebu has first input nikeba
+devefa has second input rukibe
+sivibu has value zero
+vudodu has first input ninidu
+gunido has kind or
+sevude has kind or
+bofuda has value one
+tavedu has first input dorufa
+gudefe has value one
+timodu has first input vizadi
+sefide has value one
+pavuda has kind xor
+fukadi has first input kudube
+gitaba has first input totibo
+zadefe is output of bitubi
+korabi has second input tubibu
+dolefe has second input vevibi
+vufida has kind and
+setede has value one
+deseba has value one
+segefe is output of pitabu
+tesedi is output of pasebo
+zasido has value one
+sazobe has kind or
+nokada is output of pepudo
+vafibo has value one
+ferefe has second input retuda
+modofe has value zero
+leredu is output of subidi
+fomuda has value one
+lovodu has first input meribo
+virube is output of zimedo
+pokede is output of kuzebi
+zivebe has value zero
+sefibe has kind and
+larida has value one
+kolafa has second input dotudu
+pusudi has second input sopedo
+vafode has first input gapadu
+lofede has second input dubibo
+patadu is output of ramaba
+delufa is output of vamabu
+zopodu is output of lenida
+zilodo has value zero
+zizibo has kind and
+lefabu has value zero
+rifida is output of ritofa
+nezibu has kind and
+remabo has second input vapedi
+lidube has kind and
+durebe has value one
+vusobo has first input nesoba
+mizoba has second input fepedo
+zosefa has value one
+latadi has kind xor
+mogida has value zero
+zopobo has kind or
+mifube has second input sutobu
+fuzebi has second input bozibo
+tovobi has value one
+gonifa has value zero
+nogudu has second input rotidi
+tevobo has kind and
+tiboba has value one
+duzudu has second input rivadu
+lufobu has kind or
+foneba has second input pazibo
+pideda has second input rulofa
+depebe has value one
+tulibi has kind and
+daloba is output of benudi
+dupabo has first input rizade
+godado has kind and
+momada has kind xor
+vegibu has value zero
+sogado has value zero
+tigidi has first input ruvofe
+lutido is output of pefudo
+magebu has first input lelafa
+pedabe has value one
+sofafa has value one
+pimibo has value one
+telodo has value one
+nuzeba has value one
+nododi has kind and
+vedoba has first input rusubo
+nagabo has second input zunado
+fesefa has first input gegudu
+pamodi has kind and
+folodo has first input dezeda
+gaseda has second input dafide
+metobi has value zero
+kugido has kind or
+legube has second input mekibu
+basadi has first input boludo
+todabi has value one
+punibu has kind or
+debebi has first input sosabi
+perobo is output of fomada
+dagibu has first input mobudo
+fibeba has first input gosedi
+bapado has kind or
+mudife has second input faribu
+potebe has kind or
+mupida has value one
+gidifa has kind and
+kufada has kind xor
+metodu has kind and
+zigudu has kind and
+zotabu has second input bovidi
+firobo has second input punifa
+rurube has second input gonobo
+kolafa has first input dasadi
+zukidu is output of tumodi
+fopebe has kind xor
+ramaba has second input rerafa
+bezoba has value zero
+godide has value zero
+liledu has kind and
+nisufe has value zero
+turabi has first input mipudu
+getiba has value one
+zotabu has first input fulude
+letefe has kind and
+vekebo has first input fuzabo
+rapife has value zero
+femabu has value one
+dutodo has second input kavodi
+nepafa has second input rurofa
+gosibo has first input rufiba
+rifobu has value one
+noribu is output of duledu
+mugabe has first input pavudi
+boroba is output of zabube
+kelife has second input pipeba
+sedodi has value zero
+zeladi has value one
+ruraba has second input nevuda
+gerada has value zero
+tofube has value one
+pedudo has value one
+mutufe has value one
+kuzudo has first input loviba
+ratefa has kind and
+zumodi has value one
+tumebo is output of mitibu
+venabe has first input pinifa
+sosuba has first input runada
+dudefe has value one
+nalabu is output of kulude
+gipebo has value zero
+duboda has value zero
+kunobo has second input bagida
+lupife has second input sulofe
+vusodi has second input felada
+vafebe has kind or
+gogofe has second input gisibe
+kirudi has kind or
+gidifa has first input tivoda
+dofefa has value one
+monubu has first input repibu
+nelefe is output of gosude
+loviba has value zero
+ponudo has value zero
+tapabo has value one
+ragobe has kind or
+foribi has second input kinubo
+rukobo has value one
+rofibo has kind and
+modade has second input kepibi
+buvuba is output of nozibi
+pizodo has second input favefe
+ramude has value one
+mefibo has first input galeba
+bifabu has first input kapafe
+subuda has value one
+kuzudo has second input tatode
+bibide has value one
+sogufe has first input gemeba
+bamife has kind or
+vemede has value one
+nuvuda has first input nofedo
+mizoba has first input zikido
+suzodu has value zero
+vofido is output of kodudi
+febufe has kind and
+velade has value zero
+tomado has value one
+zatebu has first input bigabi
+femefa has first input godobo
+sarode has kind and
+ribufa has value zero
+belide is output of dimube
+roruba is output of nerudu
+gemedu has second input bidube
+kupede has second input tavobi
+goledi has first input fumaba
+pizodo has first input volabo
+meleba has value one
+turife has kind or
+gokebe is output of fakebi
+lalafa has second input gatado
+botebi has value one
+gadedo has kind xor
+komufa has second input puvido
+fefabe has value one
+zamebi has kind xor
+zitadi has second input bomafe
+fagidi has second input rudafa
+sezobo has first input momoda
+nopode has value zero
+dafofa is output of vonidu
+tatobi has value zero
+mukife has value zero
+romobu has kind or
+falebi is output of debadu
+dugadu has second input ropudu
+tovufa is output of surobe
+fafufa has first input buboba
+dorebe has kind or
+titubu has first input defade
+zusufe is output of merubi
+demuda has value zero
+tuvifa has first input nuzada
+rafidi has second input pukudi
+tapidu has second input kovabe
+namobo has second input baladu
+lotobo has value one
+govebu has value one
+losubo has first input nibuba
+tesedi has value one
+bitofe is output of zezufe
+nazibe is output of dokudo
+vukedo has second input mureda
+fumeba has value zero
+daloda has value one
+povada has second input reduba
+bitubi has kind and
+venodo has value one
+gugudu has value one
+gozebi has first input tizibe
+duzudu has kind or
+denoda has first input terubu
+botefa has value zero
+desubi has kind or
+rapede is output of gevube
+futebo has kind and
+zimafe has second input ponada
+sizofa has value one
+kifedi has kind xor
+modibo has value zero
+vomobu has second input fosofe
+zuluba has value one
+gepife has kind or
+pazofe has kind xor
+vasubo has first input tumabo
+folodo has kind or
+kifibo has first input tesubo
+rugedi is output of sasefe
+bikiba has value zero
+pitude has first input kisufa
+funiba has kind and
+ratibi has value zero
+gevafa has kind and
+kemobo has value one
+panife has second input rozufe
+penade has first input ponufa
+pomibu has kind or
+benoba has second input piribe
+gelufa has first input napudu
+ruvoda has first input makeba
+lomadi has first input nafafa
+pikabe is output of folafe
+befebe is output of nagabo
+lenida has kind or
+pezebo has second input nodebu
+ninofe has value zero
+zuvide is output of dupabo
+kuribu is output of venabe
+tumebo has value one
+tobube has value zero
+susubo has first input relibi
+vibubo has second input dipife
+birobu is output of tefebi
+dolefe has first input ludobe
+nebabo has value one
+repadi is output of puvode
+tiradu is output of fukadi
+bavidu has value one
+vamebu has first input pebodu
+fetide has value one
+potobu has second input fimuba
+zumabe has value zero
+molubi has value one
+tagido has second input nekebi
+lufede is output of namobo
+giviba has value one
+mezode has first input fomuda
+genabi is output of vitodu
+mupidu has kind xor
+bazubu has value one
+tibudu has value zero
+sesodu has first input samubi
+doseba has value one
+foribi has first input tipeda
+totibu is output of kufada
+kuzudo has kind xor
+vatede has first input valobi
+zigodi is output of lalafa
+mepuba has value one
+merubi has second input futabe
+narodi has value one
+femube is output of kapide
+badide has first input gukadi
+bafodo has first input gelabi
+nabudo has value zero
+tepebe has value zero
+dodidu has first input vokebu
+lazabo has value one
+falidi has second input fifedu
+firodu has second input zelubu
+tivofe has first input zibedo
+rinibi has value zero
+sifida is output of lutubo
+noribu has value one
+pufufe has value one
+mirefa is output of movudo
+vurodi is output of domada
+mizoba has kind and
+ramiba has value one
+pudabu has value one
+megodu has first input lezufa
+rolibu has kind or
+vokefe is output of pideda
+sapobe has value zero
+lirobe has kind or
+ralude has kind and
+penida has second input pafafe
+fuzibo has second input vakudi
+ribofa has second input nifeba
+tosude has kind xor
+febobo has value one
+bitubi has second input larafe
+telude has second input mesoda
+dafebo is output of fasudu
+rofibu has first input polabu
+sapibo has kind xor
+posibi has value one
+bavofe is output of gikofe
+rigobu has second input fupedu
+zenide has kind xor
+nimibu has value zero
+mesaba has value one
+maraba is output of zitadi
+tolafa has kind xor
+kumuda has first input berabe
+pitaba has kind and
+dunade is output of momada
+ravife is output of tapidu
+lemabu has value one
+geredo has value one
+ronube has value one
+lulodo has value one
+fasubo has second input bapebe
+ziruda has value one
+kitiba has value zero
+tenufe has second input labebi
+tofadi is output of goloda
+mepabe has value one
+vufuba is output of vorado
+firobo has first input zevobu
+salodu has kind and
+kulebu has value one
+fuzebo is output of divubo
+budifa has first input nebabo
+gogubi has first input tadudu
+bisaba has first input renada
+kifedi has first input lavudu
+nolefa has value one
+metadi has first input boludo
+bapado has first input kovaba
+nenobo has first input sorudu
+famafa has value one
+zunodu is output of pupobu
+lopefe has value one
+mumuda has kind and
+domada has second input ralebe
+zutebo has value one
+midebu has second input mobeda
+fezido has second input koveda
+gigedo has first input piribe
+fepedo has value zero
+vufeda has first input kifode
+zugeda has kind or
+zanebo has value one
+gopudo has first input tonadi
+rugobo has second input mubida
+nakobi has first input gadoda
+kunobo has kind and
+ripobe has first input bovoda
+kogife has second input basufe
+zulebe has value zero
+bokede has value zero
+lezife has value one
+zenebo has value one
+bamofa is output of fumudi
+bunafe has value zero
+kamiba has value one
+losuba has second input putodi
+ponoba has value zero
+zilude has value one
+fevifa has value one
+legeda has kind xor
+dilude has value one
+nafedi has first input dopebo
+ditabo has first input dobabe
+belade is output of mapudu
+vivafa has second input turabo
+fetubo is output of tapibe
+kafofa has value zero
+denibi has second input bulobi
+kolefa has first input fapidu
+mefada has value zero
+gapudi has first input zifibu
+vodubi has second input futide
+gepife has second input finadu
+kitidi has kind and
+ginubo has second input rigubi
+vopafa has value zero
+kuvudo has second input bekidi
+manifa has second input legoba
+nebibe is output of gedabo
+ruvafe has value zero
+nunuba has first input mimife
+zunede has value zero
+lezube is output of rebifa
+fovada has value zero
+nuvedi has value one
+lasedi has value zero
+tirofa has second input digodo
+davadi has value one
+zazebo has second input ludifa
+bedaba has value one
+darabi has kind and
+nevuda has value one
+niguba has second input veneba
+ribudi has kind and
+gerebo has second input zedabi
+nisebi has value one
+sobobi has first input dofabi
+tevadi has kind or
+sibadi has second input zafide
+divubo has first input toguba
+mopufe has value zero
+lokifa has second input nifibo
+mumuda has first input dofobu
+mimabi has second input vobado
+balabo has value one
+rofodo has kind xor
+betode has first input zikabo
+natabo has first input bovoda
+sunadu has second input zarudi
+bepobi has first input fazeba
+zurufe has value one
+tisubu is output of bidibe
+sugabu has value zero
+gokabu has first input pitudo
+balodi has value zero
+tofadi has value zero
+zumufe is output of bapado
+pakeda has value zero
+fibefa has kind xor
+basufe has value zero
+ruraba has kind or
+fubobi is output of sezobo
+fiduba has kind or
+petaba has value zero
+pakobo has kind and
+rimofa has first input kazafa
+sidube has kind xor
+vorado has kind or
+gadeda is output of lofebi
+vabubo has kind or
+liveba has second input lepebe
+dusudi has kind and
+zokafe has value zero
+kasaba has kind and
+dugadu has first input gokode
+benudi has kind xor
+gebudo has kind and
+debedo has first input gubudu
+domada has kind xor
+monidu has kind and
+zitobi has second input zebafe
+tabubi has second input mibuba
+vimofe has value one
+rofibo has first input tibudu
+dufedo has kind xor
+dotede has first input dadudu
+veveba has first input mukudo
+povada has kind xor
+bigedu has value one
+digifa has first input rolido
+buruda is output of vapubu
+piroba is output of midube
+poteba has first input gomade
+dibufa is output of mebofe
+sifibu has second input zegobe
+legube has first input fevabi
+muzadu has first input subuda
+noredu is output of volube
+gelibi has value one
+roredo has value one
+mepedo is output of tadebi
+tabubi has first input domebe
+pidobu has value one
+rupobe has kind or
+lubidu has second input reteba
+vogida has value zero
+mupufe is output of folodo
+remabe is output of meribu
+kubedo has kind and
+pobabu has value one
+papade has kind xor
+safofe has value one
+vafobe has value one
+nozida has value one
+kevado has value zero
+manebu is output of budifa
+sodado has value one
+rudido has kind and
+sobobi has kind and
+bidebo has value one
+futodu has second input robifa
+gagibi has value one
+napudu has value one
+sutidi has value zero
+kufuba has value one
+tulibi has second input dipadu
+mududi has value zero
+dububu is output of tabubi
+ratefa has first input vilabo
+luzidu has kind xor
+fapudi has kind or
+fukife has kind or
+ziroda has value one
+kavafe is output of sesodu
+lisobe has value one
+lamabo has value zero
+dopebo has value one
+sebedo has kind xor
+giteda has first input zepuda
+vagadu has first input fuzudo
+ligabo has value zero
+tumidi has first input manife
+dipade has first input zivebe
+bibefa has value one
+tavuba has value zero
+zazebo has first input vonuba
+fanebo has value one
+mizebu has first input kafofa
+ginide has first input pipeba
+gofodi has value one
+zimodi has value zero
+bogobo has value zero
+sumude has second input gipebo
+zobuda has kind xor
+mezefe has kind and
+febuda has second input dureda
+nedafe has first input dafede
+bimibu has value one
+zekabi has kind and
+kutuba has kind or
+bifabu has kind and
+gebido has value one
+dugida has value zero
+dezafa has kind or
+gubabo has value one
+susubo has second input pebuda
+voboda has value one
+kuguda has value zero
+debobu has value zero
+zadobi has value one
+gevafa has first input dituba
+pufubi has kind and
+nudufa has value zero
+fitebe has second input mudide
+bodeba has first input pasido
+budifa has kind or
+fatodi has first input patabi
+mefoba has value one
+denoda has kind and
+kededo has first input sumoda
+bapado has second input rapife
+garebu has second input ponudo
+pofefe is output of fufafa
+popubo has second input lagobo
+ratefa has second input gazabu
+tomefa has first input vitida
+mezefe has second input kitiba
+taludu has value one
+nedodu has value one
+mineba is output of rozubi
+favedo is output of lurefe
+nezibu has first input pebodu
+sarode has first input lonedo
+nidoda has value zero
+munibo has value one
+letubo is output of vizufa
+pagadi has value zero
+sugebe has first input fibada
+mididu has kind or
+nabefe has first input nolefa
+vezida is output of fafudi
+rozubi has kind xor
+laluda has value zero
+gavadi has value one
+tidebi has kind and
+retafa has value zero
+dibufe has kind and
+ponedi has second input lepeba
+suvada has first input sizube
+danodu has value one
+zanudo is output of tirofa
+bileba has value zero
+geteda has value one
+pepudo has kind and
+kotofe has value zero
+sapede has value one
+geride has value zero
+pogeda is output of vurida
+nakudu has kind or
+rusebu has value one
+salubu has value zero
+fefifa has value zero
+kilebu is output of gogofe
+dekoda has value one
+vurida has kind or
+bodefa has value one
+fapidu has value one
+ripobe has kind xor
+leredu has value one
+mezode has second input zulebe
+suvada has second input zumodi
+ramobo has kind and
+nalabo has value zero
+vamabu has kind xor
+kedade has second input pusode
+fekodi has first input lutofa
+ditabo has kind or
+gozeda has value one
+ranedu has value zero
+mupifa has value one
+sabobu has first input kirabi
+vevofa has value one
+zokiba is output of gopudo
+mobebi is output of lokede
+pafebu has value one
+vugife has value one
+lakaba has value zero
+nakofa has value zero
+fovefe has first input pebode
+repadi has value zero
+vofidu is output of fusofa
+disebu is output of titubu
+sogife has second input fafafa
+sazobe has second input kinede
+zomabo has kind or
+kuvudo has first input zorefe
+lapofe has kind and
+savede has first input pobabu
+zobebu has value one
+lemabu is output of ledoda
+lamodo has kind or
+fasubo has kind and
+fekoba has first input rakobu
+sorife is output of rapodi
+zimedo has kind xor
+larafe is output of bobifa
+tetebu has kind or
+dizadu has value zero
+temade is output of giveda
+taludu is output of logeda
+visufe has value one
+kinede has value one
+fivuda has value zero
+kegobe has value zero
+gumobu has value zero
+kivabu has first input siluda
+kuvufe is output of vanubi
+potibo has value one
+lebubu is output of gefedo
+teduda has second input mefoba
+ritofa has kind or
+fadabe has kind and
+feraba has value one
+delafa has second input sibibe
+pukobo has value zero
+fanubo has first input nemabu
+nofado has first input zepobu
+zepebu is output of natabo
+tatode has value one
+lakodu is output of garebu
+sorudu has value zero
+tozibe has value zero
+divodu has value one
+nanoda has value zero
+fosubo has kind and
+gegobi has second input mobafa
+fusofa has second input vavoda
+zelebu has kind and
+gumuda has kind and
+futodu has first input sakabu
+tedido has value zero
+rakudu has kind and
+fegabo has value zero
+satibi has kind or
+bovabe is output of gugudo
+bufibo is output of kigebi
+vamabu has second input gupifa
+divodu is output of veveba
+seraba is output of nurida
+sokuba has value zero
+nagabo has first input kozabi
+zerode has kind xor
+semife has second input vamido
+balida has value zero
+gitobe has kind xor
+mesefa has kind and
+vodubo has value zero
+lovebu has value one
+ganibi has value one
+guseda has value one
+vobado has value one
+kazafa has value zero
+sobuda has first input timabe
+nitefa has value zero
+zebubi has second input fefuba
+dededo has second input kuteba
+setafa has value zero
+dekeba has second input rukobo
+fafufa has second input faribu
+kepobo is output of famode
+tufedu has kind or
+fovefe has second input legodu
+timadi has value zero
+lefobi has value zero
+negube has kind and
+pifabo is output of davibu
+vazabe is output of fidefa
+zavodi has kind and
+poguba has kind and
+gumidu is output of gipado
+busibi has kind xor
+pedoda has value zero
+lunobu is output of kinefa
+legube has kind xor
+luzidu has first input kubebo
+vikibu is output of gozado
+fesifa has value zero
+bigufa has first input tazibe
+raride has kind xor
+vinodu has value one
+dalebu has kind and
+gubede is output of dibufe
+turabi has kind and
+bobabi has kind xor
+zurodi has first input fidodo
+zamodi has kind or
+nadubu has value zero
+navudo has value zero
+nigodo has kind and
+tigidu has value one
+momobe is output of fuveda
+mipibe has value one
+robefa has kind or
+lavube has second input pilebi
+gikofe has kind xor
+zepabo is output of kezido
+dafabu has second input fetubo
+sazide has kind xor
+pazabu has value one
+dagibu has kind or
+pazibo has value zero
+davibu has first input disife
+gorebe has value one
+romebu is output of zotudo
+bogadu has value one
+lidebe has value one
+givubu has value zero
+nafudi has second input gogidi
+kufidu has kind or
+kiridu is output of fodibu
+roguba is output of zobadu
+zikufe has value one
+sibadi has first input munibo
+dopido has value one
+dububu has value one
+zakodu has value zero
+sebabe is output of nikufe
+tozida has second input banaba
+rupedi has second input mupifa
+pilebi has value zero
+karida has value zero
+debadu has second input pedebe
+gubabo is output of nakobi
+zomabo has first input pesibu
+gofeba has kind or
+boludi has value zero
+lebede has first input zififa
+natobi has value zero
+zepibi has kind xor
+pifaba is output of napefe
+metadi has kind xor
+turabi has second input mipida
+kazubu has kind or
+gukadu is output of kasaba
+rikidi is output of gosuba
+kudoba has second input zadobi
+vinofe has value one
+fonubo has value zero
+goloda has second input sizofa
+fedeba has value one
+sutidi is output of susubo
+zozoda has first input kovobe
+keveba has kind xor
+sesodu has second input soneda
+zekabi has first input sokuda
+mubafe has value one
+tafiba has kind xor
+todefa has second input tavudu
+fitebe has first input sisadi
+fugebo has first input vedido
+gutiba has kind xor
+depiba is output of kufidu
+fusodo has first input sadefe
+domebe has value zero
+mozebu has second input muzife
+gitede has value one
+sogufe has kind or
+samidu has first input tesebo
+zirudu has second input lobaba
+ribafe has value zero
+tatefa has second input mekode
+dumabu has second input gekafa
+tivofe has second input mubafe
+vogida is output of sebebi
+gerebo has first input fivuda
+temebi is output of kivabu
+feroba has second input lubifa
+nikufe has second input barodo
+rasado has second input lubadu
+darabi has second input dopiba
+nelefe has value zero
+nagude has first input rugaba
+safubi has second input tobube
+pukufe has value zero
+gugudo has second input zotade
+sumoda has value one
+tabobo has value one
+givedo has value zero
+mitibu has first input genidi
+popobe has value one
+solabi has second input gerudi
+badubo has value zero
+zopadi has kind and
+lakudi has value zero
+gopide is output of rofibo
+losufe has first input natobi
+gitobe has second input bipubi
+nifibo has value one
+lolade has value one
+tepede is output of kafido
+vitada has second input dibibe
+gukadi has value one
+ginide has kind xor
+gosude has second input tekeda
+fupode has value zero
+viladu has value zero
+boludo has value zero
+nomefa has value zero
+dunebe has kind and
+bodubu has value zero
+tobudo is output of gilibu
+venide has second input temaba
+gamodu has kind and
+maleba has kind and
+befubo has value zero
+tobife has kind xor
+nisofa has second input sulude
+lunufa has value one
+zagefe has value zero
+gabedo has kind xor
+mukedo is output of metadi
+fibufe is output of zurodi
+bofade has value one
+bamife has first input mitudu
+mavade has value zero
+gokuba has value zero
+zuvide has value zero
+lofebi has second input zaladi
+navufa has value zero
+dapabu has value one
+sudubi has value one
+duledu has first input bufobe
+kukoda has first input bivodo
+derude has value zero
+falobe has value one
+fagaba has value zero
+fanube has value one
+sorifa has value zero
+bigabi has value zero
+turebu has second input muribu
+vesubo has value zero
+zobefe has value one
+nagubu has value one
+rapodi has kind xor
+pazofe has second input kegobe
+femefa has second input kozeba
+ginide has second input sepobu
+lugobi has kind and
+mipabe has first input todifa
+dugadu has kind and
+sifibe is output of nilufa
+raride has first input funufa
+milefa has value one
+movofa has value one
+nasibo is output of lebede
+tivoda is output of dakodu
+zikabo has value one
+zodidu has value zero
+sireba has first input fifobi
+kovodu has value zero
+rafobe has first input popofa
+kogabe has value one
+duvaba has first input latubi
+tuvobi has value one
+lofodu is output of volufa
+depibo has value zero
+gabifa has value zero
+bagodu has second input suvobe
+veveba has second input nozida
+tidabi has value one
+kekadu has value one
+nebabu is output of mugabe
+zapebe is output of fopedu
+gumuda has first input fitibo
+kumide has value one
+larido has first input sufefe
+vugodo has value zero
+bisaba has kind or
+pofafe has kind and
+pulido has first input gezabi
+vikadu has kind and
+fasudu has first input nubodo
+kutuba has first input muteda
+pusudi has first input virufe
+lunodu has value zero
+rababu has first input situbo
+futebo has first input guzubu
+bozabu is output of debedo
+salide has second input durobo
+fefufa has second input rokiba
+kiladu has kind or
+mimife has value one
+luzidu has second input balodi
+tisobe has second input belade
+metodu has first input zuzabe
+sebida has kind xor
+fekuda has kind xor
+buzebu has second input taboba
+bunafe is output of bekufa
+negube has second input sabido
+tebuda is output of pizefe
+kilodu has value zero
+gukodo has kind and
+vizido is output of vukedo
+sezeda has second input febedi
+zonudi has second input kozufa
+rumafe is output of fopide
+zudufe has value one
+befebu has first input vozado
+rodudi is output of tofabe
+lesedu has second input lebabu
+kutobi has second input lavudo
+rofodo has first input motafa
+tamabo has first input tupedo
+pakobo has second input zilodo
+dezafa has second input lubefe
+faribu has value zero
+povabu has kind xor
+zerudi has value one
+sinefe has first input lavidi
+damibi has value one
+nebefa has kind and
+nakobi has kind xor
+mokede has value zero
+tuludo is output of rukodu
+limudu has first input pagidi
+rapede has value one
+luvufa is output of mirado
+rokebu has kind and
+dusudi has first input tedaba
+zusufe has value zero
+fugebo has kind and
+kugido has first input gavifa
+megodu has second input robabo
+dekaba is output of vuroba
+fididi has second input fanube
+saneba has value zero
+vededo has value one
+kezeda has first input zesebo
+leviba has kind xor
+pezoda has first input milafe
+mipabu has kind and
+galufa has second input lafobu
+sidobi has value zero
+gazube has value zero
+gizobi has kind xor
+rurufa has value one
+dumufa is output of sunadu
+fafabe has value one
+gemuda has value one
+sinabo has value one
+vufeda has second input babudu
+matabe has value zero
+mudife has first input buboba
+pokoba has value zero
+mepedo has value one
+finibe has value one
+vomude has value one
+gavobu has first input munabu
+vokudu has second input bigedu
+kasaba has first input zizeba
+pekafe has value one
+vumofa has second input zunado
+boludi is output of nododi
+nosebe has first input katebe
+gosadi has first input palifa
+mapaba is output of pitude
+lofede has first input ligaba
+sofafa is output of nobofa
+nosiba has second input rurofa
+dokudo has second input bubibo
+nabudo is output of devefa
+nenofe has second input tasibu
+pafife has second input lepabe
+mukode is output of gupaba
+famodi has value one
+depudu has second input vodido
+totide has value zero
+zabube has kind xor
+lunibi is output of tolafa
+punabo has second input vadidi
+turabo has value one
+gidifa has second input vakofe
+kogabi has value zero
+fufuba has value zero
+vededi has value one
+manifa has first input nekebi
+fodefe has first input nagibe
+zagiba has second input mudubo
+zanebo is output of kumodi
+taboba has value zero
+pibeba has value one
+papade has second input lekobi
+lufofa has first input vetodu
+takifa has value zero
+lerofa has kind xor
+dulife has kind and
+mitido has value one
+kavado has value zero
+mirado has first input godidu
+tugubi has second input difide
+tefido has kind and
+pepudo has first input nasabe
+popade has value one
+vasubo has second input novade
+bumuba is output of sumude
+nomidi has value zero
+gogoba is output of fitebe
+sokefa has value zero
+rosife has second input zakudo
+sesede has first input gatidu
+difubu has value zero
+dunebe has first input tifibo
+gasada has value one
+sotado has kind and
+pakife has kind or
+didobe has second input mumabo
+bodidu has value zero
+zukidu has value zero
+bonuba is output of rovibe
+zigodi has value zero
+morode has second input vogibu
+tadofa has kind or
+tafiba has second input rifobu
+kapide has kind and
+dadodu is output of rugobo
+desubi has second input tapabo
+pafadu has second input kesuda
+foroba is output of pedabo
+gefedo has second input nazibe
+sopedo has value one
+dasebe has second input mivafe
+gikofe has second input zoredo
+ninidu is output of mapedi
+kokofe has second input rivebu
+salubu is output of buzebu
+vigobo has value one
+nalabu has value zero
+gimebo has value zero
+mepidu is output of lapaba
+lokobi has value one
+nonofe is output of guside
+bilede is output of zotabu
+mutedu has second input rinudo
+ramofa is output of ragodu
+rilide has first input rulubi
+goribi has second input sugabu
+roguba has value one
+bogefa is output of fenabe
+rifida has value one
+likefe has kind xor
+rumeda has kind or
+foroba has value one
+latadi has second input darodu
+nubodo has value one
+zopobo has second input tinodu
+fetofe has first input zedubi
+pidedo is output of kudoba
+fudedi has first input pirudi
+fudedi has second input rirudo
+pasebo has kind or
+suvada has kind and
+pasebo has second input tigedo
+kumide is output of foneba
+zigudu has second input zimufe
+funefe has value one
+pugadi has value zero
+gadebi is output of lafifa
+gipofa has value one
+tisobe has first input bazode
+zolubu is output of tavedu
+zopobo has first input befebe
+labuba has kind xor
+modebe has value one
+kisufa has value zero
+favebi has first input bibide
+vumofa has first input kozabi
+febifa is output of kikado
+vikadu has second input sogubo
+zupadi has kind xor
+zedubi is output of nezibu
+tolido has first input kuvado
+sapobe is output of faluba
+kulude has kind and
+furiba has value zero
+botifa is output of sorudi
+lezube has value zero
+lopude is output of depudu
+munefe has first input vulada
+gosibo has kind xor
+tedabi has value one
+robabo has value one
+zegobe has value one
+kepibi has value one
+ledoda has kind or
+vonidu has second input gukedo
+kudube has value zero
+zumobe has second input gugudu
+nitebe has value one
+zebodo has first input vikedo
+salodu has first input mafodi
+vizufa has first input gogabu
+pitudo has value one
+lavaba has value one
+subidi has second input fikobi
+gisodo is output of sevude
+rimofa has second input gokube
+nefobi has first input lufebe
+salide has first input dokubu
+garebu has first input dorufa
+pigobi is output of gapubo
+legobu has value one
+sidube has first input pesufa
+givado has second input kogabe
+kimuda is output of ferabo
+fufafa has second input nigibi
+begedo has second input fefuba
+bidube has value zero
+posibi is output of kitada
+nuvuda has kind and
+ganubu has value one
+nabefe has second input gutife
+novida is output of pezebo
+vebadu has kind and
+nuribe has value zero
+movido has first input mibidu
+kulodi has value one
+doribe has value one
+vamido is output of rolibu
+gofeba has first input rifabi
+banabi is output of bisaba
+nosuda has kind and
+rozide has kind and
+vesodu has first input rezufe
+guroda has second input meribo
+pumide has value zero
+dogudu is output of rupedi
+terobi has value zero
+ragodu has kind xor
+zebode has value zero
+kavodi has value zero
+norade has second input polabu
+kugifa has value one
+tiredi has first input gatuba
+nazude has first input difofe
+tapibe has first input gubede
+mefibo has kind or
+nozife has value zero
+vesibu has second input zezife
+tomefa has kind or
+fokodu is output of degebo
+bemudi has value zero
+gizufa has first input dobudo
+lalafa has kind xor
+getibu is output of fufubi
+redube has value zero
+goruda has value zero
+bugibu has value zero
+delufa has value one
+runabe has second input zekedu
+mobedo is output of bokeba
+nafedi has kind and
+febabi has value zero
+fodada has first input zuzabe
+deludi has second input davabu
+fumudi has first input tesebo
+nudufa is output of favafe
+banaba has value zero
+kuzebi has second input mafofe
+febuda has kind xor
+panife has kind xor
+futefe has first input rupade
+zegabe has value zero
+benafa has second input bofufe
+robefa has second input rufudi
+nobofa has kind or
+lupafa has value one
+sazide has second input ninada
+sasefe has kind xor
+nopefe has second input bodaba
+bonuba has value one
+ruvoda has kind xor
+vofiba is output of gofaba
+vofido has value zero
+digifa has kind or
+zugeda has second input kitibu
+leviba has first input vudobe
+napude has first input vabode
+mikeba has value one
+dogede has kind and
+lorafe has first input badubo
+busibi has first input motubu
+vusube has kind xor
+dusoba has second input bofida
+tarudo has value one
+fezobu has kind or
+sizube has value zero
+vededu is output of lutodo
+dumudi has value one
+fefufa has kind and
+lepedu is output of gogubi
+mapedi has first input sufode
+subeda has kind xor
+nepudi has value one
+lubadu has value zero
+romobu has second input bifidu
+tizibe has value zero
+rumobe is output of fokede
+pukudu has value zero
+sibadi has kind xor
+fibefa has second input bamoda
+fopide has kind or
+dedube is output of kifibo
+nagibe has value zero
+lepedu has value zero
+guside has second input pukeba
+susufa is output of ruvoda
+denibi has kind and
+vazabe has value one
+vafubi has kind and
+gigedo has kind xor
+solabi has kind and
+keveba has first input mavade
+ladefe has value one
+zorubu has value zero
+kemefe is output of pukiba
+muvobe is output of pirife
+budibo has value zero
+kanado has value zero
+fukibu has value one
+gelufa has second input legobu
+serudo has value one
+nanudu has first input senodo
+nakudu has second input bipuda
+gosude has first input nozibu
+vumofa has kind xor
+kokode has value one
+fatodi has second input lovude
+gopaba is output of banebo
+zavabe is output of sisodu
+fasube has value zero
+mefebu has value one
+bikibe has first input volebi
+rilide has second input giridu
+mobodu is output of fididi
+zopidu has kind or
+giridu is output of tigidi
+likibu has second input gazuda
+kuvudo has kind and
+bidudi has value one
+zalofa has first input mofade
+tuzofa has value one
+varafa has first input miduba
+suzife has kind xor
+tufobi has value zero
+daboda has value zero
+kitada has first input tifeda
+vorobu has value zero
+musafa has first input tonaba
+manife has value one
+lenodo has value one
+badadu has value one
+lofube has first input mivude
+kipudu has value zero
+nofado has kind and
+fabada has value zero
+pamedu is output of gavobu
+torofa has value zero
+govubi has value zero
+bivodo has value zero
+kodabu has second input lulode
+muvado has second input dotodi
+tevobi has value one
+fuzibo has kind and
+mimudu has value one
+pakeda is output of pafife
+vuridu has value zero
+rumodo has first input situdi
+sinobu has first input vevoda
+digodo has value one
+kudoba has first input mipibe
+tadebi has first input kebude
+samoda is output of sobuda
+pepabo has value zero
+fazeba has value zero
+rusude has value one
+difudi has second input gurido
+didobe has kind or
+voredu has value one
+fudidi is output of gipefa
+dukode has value one
+gosade has kind xor
+pedabo has first input bikiba
+pifobu has value one
+kenubo is output of dezafa
+gebubi has first input tipido
+vusobo has second input dafubi
+gofodi is output of savede
+bivabe has second input zirede
+domuba has value one
+nitufa is output of gitobe
+romefe has value zero
+batoda is output of denoda
+pilado has kind xor
+semife has kind xor
+dutodo has kind or
+nesobi has kind or
+vabubo has first input tovobi
+fekifa has second input lunodu
+soneda has value zero
+zafobi has kind and
+kumodi has first input fefifa
+zedafe is output of losidi
+keveba has second input lubobo
+rutibi has second input gegife
+lapaba has second input nalabo
+bevadi has second input mupida
+kunobo has first input fogado
+ponabu has value one
+dekeba has kind or
+fifobo has value zero
+runada has value one
+pinedi is output of febufe
+fasufa has value zero
+katidi has value zero
+narado has value one
+bodoba has value zero
+nifufe has value one
+ravobo is output of pumiba
+sakibe has first input sinada
+rolibu has first input sifibe
+nonedu has kind xor
+lokofa has kind and
+vatedi has first input venabu
+mivibi has kind xor
+veveba has kind and
+tinodo has first input norido
+takubu is output of benafa
+megode has value zero
+zubibo has second input geride
+gopide has value zero
+kolidi has value zero
+gevube has kind xor
+tolido has kind or
+nafudi has kind and
+nilufa has kind and
+purude has first input fenufe
+mipufa has value one
+fesefa has second input rafabu
+pigidu has first input kufibo
+daviba has value zero
+virube has value zero
+busobe has value one
+bamodi has second input zolubo
+tutaba has second input dumode
+nazebi is output of gosade
+pedabo has kind or
+mipadu has value one
+kugabu has value zero
+zezodi has value zero
+fafudi has first input ganiba
+benudo has second input gukedo
+limodo has kind xor
+zudobu is output of fuzebi
+nikufe has first input pumide
+fonubo is output of lekife
+rovibe has second input doseba
+kidife has value zero
+dipadu has value zero
+zomabo has second input tofede
+zimedo has first input nirefe
+gegobi has kind or
+fufedi has value one
+vagubo has first input fufedi
+gedabe has value zero
+felada has value zero
+vadobo is output of lerofa
+pirife has kind or
+genidi has value one
+zuzube has second input nipeba
+lapaba has first input toguba
+vebadu has first input burudi
+feroda has value one
+gipado has kind xor
+rekidu has value one
+tolafa has first input rulide
+tizodo is output of gitaba
+bozibo has value one
+tugubi has kind and
+potobu has kind xor
+dituba has value zero
+rovibe has kind xor
+folobi has value zero
+pakife has second input gekeba
+detadu has kind and
+dadodu has value one
+pogeda has value one
+bozeba has value one
+ralobo is output of bomida
+fanobi has value one
+sobobi has second input kogabi
+didado is output of sefibe
+vivodo has kind xor
+gibubu has value one
+sevubo has value zero
+pipabu has value zero
+poteba has second input sidobi
+zozubo has value zero
+zumufe has value zero
+misidu is output of kolafa
+totibo has value zero
+zobadu has first input tovudi
+gifodu has value one
+lefoba has value one
+boroba has value zero
+gugudo has kind or
+ketibe is output of favebi
+nekebi is output of dodidu
+gipefa has second input vulada
+dufuda is output of lekide
+visube is output of gedoba
+muribu has value zero
+manebu has value one
+nidodo has value zero
+vusube has second input voziba
+bozabu has value one
+zepibi has first input renodo
+dasefa has value one
+karife has value one
+zelebu has second input romofe
+fupufa is output of dipide
+nogidi is output of gemedu
+pasido has value one
+faluba has kind or
+zebodo has second input ladefe
+bozafe is output of gabedo
+dokodo has kind xor
+rorife is output of lafafe
+denudo has second input fesedu
+tuludo has value zero
+pukiba has kind xor
+murebi has second input povedu
+butibu has kind and
+dasebe has first input lezadi
+zuzida has value one
+vozado has value zero
+fadidi has value one
+fudubo is output of bagodu
+sibade has value zero
+badebe has second input besube
+gilibu has first input mipudu
+gupaba has kind xor
+ligaba has value one
+volufa has second input bitofe
+fafudi has second input navabo
+ragodu has second input balobe
+pizubu is output of legube
+fokede has first input molubi
+pegofa has kind or
+kevufe has value one
+bilefa has kind or
+kulida has first input lefude
+robafa has value zero
+kikado has kind xor
+zelubu has value zero
+siteda has value one
+tutebe has second input bubebo
+tobife has first input visufe
+rotodu has first input poraba
+basadi has second input nivobu
+sezobo has kind xor
+selebo has value zero
+fuzabo has value one
+basiba has second input rodebo
+turebu has kind and
+vinidu has second input tefafa
+ponedi has kind or
+sogidu has first input dedudo
+gasude has first input mepidu
+fesefa has kind and
+sorabe is output of nakudu
+gekadi has value one
+lutubo has second input petadi
+lupodi has value one
+gogebu has first input sibudi
+pafife has first input zazefe
+vivafa has first input pomifa
+subeda has first input kanado
+bagufa has value zero
+febifa has value zero
+galufa has kind and
+topibu has value zero
+korodo has value one
+tegefa has second input sarida
+bukidi has value one
+muteda is output of lapofe
+bigudi has second input bokede
+gumode has first input katidi
+duvoda has kind xor
+kukoda has second input lunodu
+mobeba has value zero
+gatobo has value zero
+fodedi has second input bagufa
+pozabi has value zero
+nutido has kind and
+nelibi has value zero
+soguba has value zero
+damibi is output of kobufa
+roteba has kind xor
+sopide is output of zopobo
+gedoba has kind or
+dafabu has first input fuzebo
+dotudu has value zero
+deludi has kind or
+lafodu is output of zopidu
+romobu has first input kameba
+gadoda has value one
+napibe has value zero
+dedudo has value zero
+mirude is output of volebu
+fodibe has value one
+dadiba is output of vivafa
+tosade has first input kazobo
+poridu is output of dalobi
+dufedo has second input pezabe
+lavube has first input mekudu
+tinodu is output of benoba
+rokiba has value one
+givado has first input zifubo
+pisada has value one
+fusofa has first input kakide
+menibu is output of manifa
+perubi has value zero
+fifebe has value zero
+vatede has second input pidudo
+rofibo has second input lisebo
+pogobi is output of vivodo
+galido has kind and
+mesebo has value one
+dosebi is output of deludi
+gisodu has kind xor
+gukadu has value one
+nedafe has second input rizedi
+vipude is output of zigudu
+tozedu has first input fetubo
+zitobi has kind and
+lefuda has kind or
+navudo is output of tadofa
+vafebe has second input ponodu
+gerida is output of lagafa
+damede has value zero
+bimodi has value zero
+nosibu has kind or
+lamofa is output of lutafa
+mezode has kind and
+bonibe has first input nuvedi
+poroba has first input mipadu
+kemobo is output of gozebi
+piledu is output of losubo
+fizodi has value one
+gaseda has first input sisibo
+delafa has kind xor
+pelofa has value one
+fekuda has first input povabo
+lovodu has kind and
+palade has value one
+lofebi has kind xor
+ditabo has second input zelibu
+nuvofa has value one
+terubu has value zero
+sukudu is output of fefufa
+dimube has second input puvofe
+bidada has first input mamadu
+mufobe has kind xor
+ripobe has second input pugide
+mimuda has first input fogobi
+lefude has value one
+vikadu has first input bidudi
+lamife has value one
+tefafa is output of mifube
+reteba has value one
+tepede has value zero
+vakudi has value zero
+gudofe has first input kapobu
+mobafa is output of zalabu
+muzadu has kind xor
+mukufa has first input bodibe
+butaba has value zero
+firodu has first input kapode
+gipefa has first input muvobe
+lebabu has value one
+gapodu has first input ninada
+vomobu has first input vufuda
+puvabo has value zero
+sugebe has second input pirabu
+siribu has kind xor
+kivabu has second input gunodu
+kosidi is output of zuzabo
+nifube has value one
+tedudi has value zero
+kufidu has first input govebu
+ketibe has value zero
+vofodo has kind xor
+futobu has value one
+dodidu has kind and
+kamobe has value zero
+mobudo has value zero
+zapebi has value one
+titibi has value zero
+fotofa has second input boridi
+namaba has value zero
+vurida has second input lenobu
+bonibe has second input vazodi
+ropufe is output of kuvudo
+zasedu has second input kasobe
+tefebi has kind or
+kiladu has second input nunobi
+lagafa has kind and
+mopade has first input zegobo
+nufufa has value zero
+nazadu has value one
+vavoda has value zero
+gezebe is output of papade
+notade has value one
+nabefe has kind and
+nebabu has value zero
+lulode has value one
+musafa has second input bodefa
+korebi has value one
+lekide has kind or
+tukudo is output of detadu
+folafa is output of bevadi
+gofeba has second input lepibo
+disifa is output of fezabo
+nabiba has value zero
+rozide has second input kidife
+fodefe has second input korifa
+daloba has value one
+doribe is output of tubidu
+fokibe is output of lesedu
+fovefa has value one
+rotodu has kind xor
+tasibu has value zero
+kupede has first input takeda
+vakibo has value zero
+dakudi has value zero
+bugodo has value zero
+mimubu is output of povabu
+nozibi has first input malebi
+sakebi has value one
+mididu has second input lofodu
+vusodi has kind xor
+nigodo has second input mimubu
+benoba has first input rulaba
+zuraba is output of lunebe
+vavudu has kind xor
+pinedi has value zero
+dinaba has second input zubofe
+nikibe has kind and
+kuzafe has value one
+ronaba has value zero
+vipude has value zero
+tadebi has kind or
+selefe has value one
+vatibi has kind xor
+fozede has second input vabidi
+gabade has first input repibu
+napefe has first input rurufa
+nizufa has second input lakabo
+momebi has second input katubi
+rozubi has first input gorebe
+lidube has first input kupidu
+bufobe has value zero
+tetebu has second input fasube
+bevofa has second input bavodu
+ruzado is output of fupedo
+zimedo has second input fokada
+pivida has kind xor
+sevoba is output of monubu
+masadu has kind xor
+rifada has kind xor
+vomude is output of larabe
+pavudi has value zero
+bebide has first input ranade
+nagade has value one
+rifude has second input nabodu
+lasabi has second input kakibu
+movido has second input vededi
+nomofa has value one
+situdi is output of digifa
+zasidu has value one
+nekabu is output of fesefa
+sutabe has value zero
+muvifa is output of rifada
+ropudu has value zero
+budifa has second input munobe
+fopedu has second input ribife
+zetode has first input lakida
+butido has value zero
+vigebu has kind xor
+fodibu has first input pugabe
+posodu is output of varafa
+lasebu has second input gonifa
+pulodo has value one
+kepebi has value zero
+serebe has value zero
+polabu is output of tosude
+gunido has second input diladu
+kumodi has second input kupidi
+savadi is output of sozoda
+likibu has first input damadu
+gosuba has first input ruvube
+puzude is output of muvado
+pifode has value zero
+kazubu has first input daledo
+topibu is output of fovefe
+godado has second input motofa
+gikabi has first input tedudi
+bevido has kind xor
+dimedi has value zero
+selufa is output of fibefa
+robade has value zero
+roredo is output of vebadu
+netufa has value zero
+begobo has first input tedabi
+lopidu is output of vavudu
+zupadi has first input fisode
+robefa has first input suvido
+rinudo has value zero
+susubo has kind or
+bugibu is output of vusobo
+likobe has value zero
+potobu has first input sezeba
+noredu has value zero
+tekudi is output of kededo
+legeba has value zero
+fekifa has first input bivodo
+nekabu has value zero
+dumabu has first input pukudu
+fogobi is output of vufida
+rofibu has kind xor
+kalofa has kind and
+duzoba has value one
+pazidu has first input zeladi
+zavabe has value zero
+menabi has kind or
+bavedo is output of goribi
+ralude has second input zuraba
+gunebo has value one
+fafuda has value one
+sivaba has value zero
+kodudi has kind and
+nakibe has second input degude
+momoda has value zero
+pebuda has value zero
+komufa has kind or
+dokodo has first input larafe
+ralude has first input ralebe
+ledodo is output of zugeda
+zalabu has kind and
+lovife is output of rekida
+rupobe has second input ratibi
+zokofe has kind or
+sorabe has value zero
+tebeba has value zero
+ferabo has first input ninebo
+mirefa has value one
+maboda has value one
+kuvade has second input ziruda
+kokofe has kind xor
+lorafe has kind and
+somobe has first input savadi
+kozabe has value one
+gemedu has kind and
+bebide has second input zagefe
+bupebi has kind and
+gelube has value one
+luzado has value zero
+zetode has second input gelubo
+duvoda has first input lenabi
+samidu has kind xor
+tevadi has first input mesebo
+tafada is output of kuvibo
+tomefa has second input fidudo
+pusudo has value zero
+bomafe has value zero
+fofabi is output of poteba
+povabo has value zero
+sidube has second input mesedo
+tasubu is output of rasado
+gikubo has value zero
+rimeda has value one
+mapedi has second input radebi
+kukobo has first input zobebu
+nutido has first input volabu
+volebu has kind or
+sogufe has second input fasufa
+fopedu has kind or
+kufida has value zero
+nidoda is output of limubo
+kerebo has value zero
+kutuba has second input fudidi
+kapede has kind or
+borade has first input fafuda
+tinodo has kind xor
+minebo has second input bozibo
+potebe has first input bapada
+dinadu has value one
+bikibe has second input penodu
+selibe has value one
+bekafe has first input foredu
+gapudi has second input vabudo
+bodebu is output of begobo
+munefe has second input muvobe
+galufa has first input mimofa
+gedoba has first input rafodi
+gisodu has second input rirudo
+liveba has first input nazibe
+guroda has first input vodabe
+devoba is output of bobabi
+raredo has kind xor
+lizifa has value zero
+vogeda has value zero
+murebi has first input totobi
+ludedo is output of rakudu
+mupibi has value zero
+poridu has value zero
+lekife has first input dorifa
+tatefa has kind xor
+temefa has value zero
+dofode has value one
+dulife has first input gekoba
+dokodo has second input tovode
+lafafe has second input vegebi
+nosibu has second input butada
+norade has first input bufibo
+binudi is output of mididu
+kolefa has kind xor
+lasabi has kind xor
+kuvade has kind xor
+kulude has first input meleba
+rirudo has value zero
+benafa has kind and
+nonidu has value one
+ropabi has value one
+vozada has second input nasubu
+manibo is output of kuride
+befube has first input linode
+lapodu has first input nakofa
+zelebu has first input geredo
+pazedi has first input pupidi
+guvodo has value one
+dolefe has kind or
+gikibo has value one
+nesede has value zero
+tutebe has kind and
+funeda has first input vagofa
+zokabu has second input gunefe
+mafubo is output of terade
+levafe has kind xor
+logadi is output of rizidi
+kalibi has kind or
+vinuba has value one
+fuzebi has first input bugifa
+timodu has kind and
+febadu is output of galufa
+fomada has second input lekadu
+gukodo has first input senibe
+runefa is output of nizufa
+gogubi has second input ridebe
+vakida has value one
+tamabo has kind and
+patadu has value zero
+tivide has second input punodu
+gepuda has value zero
+gulade is output of tafiba
+kabiba is output of risuda
+viguda is output of buzado
+pazidu has kind or
+lalebu has value zero
+zezufe has kind xor
+borade has second input sedede
+filofa is output of timodu
+duvube has value one
+feroba has kind xor
+semife has first input bitofe
+nenobo has second input dofife
+pagidi has value one
+lenobu has value one
+fenabe has first input pitobi
+kekobo has value zero
+lupube has value one
+ramabo has value one
+kasobe has value zero
+ropufe has value zero
+sidabe has value one
+tonufa has value one
+derufe has second input bapebe
+govodo has first input givubu
+ferefe has first input zuribo
+fibiba is output of sakibe
+surebi has value zero
+fugebo has second input segefe
+fasudu has kind xor
+zerode has second input babudu
+folafe has second input zakodu
+litabo is output of vivide
+dapabo is output of lopebo
+zuledo has value zero
+zalabu has second input leneba
+lufobu has first input sunoda
+dotudo is output of kapede
+vitida has value zero
+pasufe has value zero
+zufubi has first input mivafe
+makeba has value zero
+gavabe has value zero
+pirofe has value zero
+limudu has second input gefebo
+pupidi has value zero
+nafedi has second input nipaba
+ribudi has second input kuteba
+rogabe is output of rogube
+fifedo has first input dopido
+sigado is output of duvoda
+mukufa has second input mububo
+kedafa has value one
+bedibu has value one
+tozedu has kind and
+mavode has kind and
+befebu has second input zilodo
+degebo has first input giviba
+favefa has first input refida
+gilebo has second input ferobe
+ranade has value one
+tadebi has second input febobo
+nabiba is output of latedo
+vovido has value zero
+dopiba has value one
+fupedo has first input kedide
+rakobu is output of gizufa
+pikida has value zero
+gegife has value zero
+kapide has first input nuzada
+pafadu has first input zepebu
+famedi is output of mefibo
+sareda is output of nagude
+metodu has second input rotedu
+falidi has kind xor
+foneba has first input ponudi
+dulife has second input zavabu
+sivabi is output of midebu
+ribife has value zero
+goledi has second input naledo
+sisodu has kind and
+kelade has second input vububo
+bobifa has first input zimodi
+tufado has second input purobu
+nisofa has first input tugobo
+zekedu is output of pusudi
+gibadu has value one
+gizufa has second input kimuda
+bigede has value one
+tasidu has value one
+vetodu has value zero
+bipaba has second input gefufe
+zufide has value one
+kukoda has kind and
+katebe has value one
+sazodu has value one
+fafafa has value one
+nemofe has value zero
+fidefa has first input sokofa
+rokadi is output of ponife
+poguba has first input gepuda
+gefibi has second input silada
+tapibe has kind or
+kumodi has kind xor
+masadu has first input bemobu
+zegedo has value one
+fasudu has second input pafubu
+vapubu has first input bodefe
+nepafa has kind xor
+rurofa has value one
+giveda has kind and
+faluba has second input pirado
+gogofe has kind xor
+nogudu has first input durebe
+nitide has first input napibe
+vatedi has second input malufe
+telude has first input pusudo
+muzebo has value one
+rulubi is output of fezido
+povada has first input vimofe
+vufida has first input volabo
+govaba is output of bonibe
+tatobi is output of fusodo
+zemebe has value one
+kezeda has kind or
+pipeba is output of zakede
+fopedu has first input difudo
+tofofa is output of nenudo
+nedido has value zero
+mukode has value one
+kovabe has value one
+makufe has value zero
+tesebo has value one
+fodedi has kind xor
+mitibu has second input bimibu
+divedo is output of nafedi
+vinidu has first input kusiba
+subeda has second input gerudi
+nilufa has second input lezudi
+pebode has value one
+zafobi has second input vokuda
+didobe has first input zonabe
+kufifa has value one
+butibu has first input senabu
+merefa has value one
+fupedo has kind or
+fesodo has first input nimibu
+monidu has second input vevofa
+fazudi is output of mapife
+sigobe has first input rotuda
+benudi has second input nalodo
+pogabu has value one
+tiradu has value zero
+pemebe has value zero
+ponife has second input kamiba
+suzadu is output of munefe
+zukide has value one
+tobobu has value zero
+zimafe has kind and
+lovodu has second input vodabe
+kovaba has value zero
+muvifa has value one
+fopife has kind and
+mizeda is output of satibi
+tevufa has value one
+guzubu has value one
+sebedo has second input nasabe
+kamadu has second input tisubu
+tanibu has kind and
+sireba has second input duvabu
+fazeda has kind and
+kevufe is output of lufofa
+fusodo has kind and
+romebu has value one
+mimabi has kind or
+vusebu has value one
+labifa has first input ramiba
+petobu has first input dureda
+fokudu has value zero
+rasado has first input gatuba
+bevadi has kind xor
+rifude has first input vemede
+teduda has first input befubo
+barodo has value zero
+takofe is output of dinaba
+selubi has value one
+fosubo has first input mefebu
+gerebo has kind and
+ginebu has first input galuda
+rofebe has value zero
+defube has kind or
+mokodu has value zero
+vozoda has value zero
+misufe is output of befube
+nilufa has first input debubi
+sakadi has first input fanebo
+renobe has value zero
+tofofa has value zero
+lasabi has first input sorifa
+kinefa has second input pozabi
+rosife has kind xor
+kafido has first input gokobo
+senabu has value one
+volufa has first input vamido
+mipabe has kind or
+petuda has second input farebe
+natabo has second input pugide
+ditobo has first input duvube
+zimabu has value zero
+dumufa has value zero
+duvide has first input funube
+ribida is output of nigodo
+potebe has second input zegabe
+debedo has kind or
+piliba has second input zimado
+sopobi is output of dafedi
+gepife has first input sokuba
+nikeba has value one
+bogefa has value one
+vufabo has value zero
+nebefa has first input rifefe
+gizobi has second input zolubu
+rekadi has value one
+mokodu is output of tududo
+kuzudu is output of givado
+tipido has value one
+zorefe has value one
+mozebu has first input pidufe
+mirado has second input bovabe
+movido has kind and
+bugodo is output of sugebe
+modefa is output of zopadi
+nasubu has value zero
+falebi has value one
+gogidi has value zero
+zaruba has value zero
+narado is output of morode
+delafa has first input musebe
+zegedo is output of fiteba
+zemedu has value zero
+tovode is output of keradi
+pobefa has value one
+zobadu has kind or
+begobo has kind and
+vekife is output of befebu
+dapabo has value zero
+nikibe has second input modofe
+demubo has kind xor
+lurefe has first input sideda
+tebeba is output of nosibo
+pekafe is output of funeda
+kedide is output of sabobu
+gileba has value one
+lofedo has value zero
+rebifa has kind or
+felufa has value one
+kitabu is output of gilebo
+bomida has first input poribo
+rulaba is output of zirudu
+tisobe has kind and
+nepadu has value one
+gelabi has value zero
+bipubi has value zero
+dakodu has second input menibu
+fofafe has value zero
+banebo has second input polofa
+virubi has value one
+kitibu has value one
+toboda has first input vobodi
+gosade has first input rimabo
+bozafe has value zero
+lutofa has value zero
+kaneda has value one
+tidode has second input tadubi
+ramubu is output of vikadu
+nododi has second input fetabu
+duledu has second input lusada
+mezefe has first input kavuba
+mobebi has value one
+rufobe has first input fivefe
+rimefe is output of gizobi
+zokofe has second input lizudo
+tigebo is output of luzidu
+zasedi is output of nonedu
+dinado has value zero
+kuride has first input pedoda
+bidebu has second input kilebu
+toboda has kind or
+movudo has first input kukubi
+kuvebu has kind or
+pumiba has kind or
+dimedi is output of rufobe
+nuredi is output of safubi
+bekufa has second input ragebo
+bofida has value zero
+kogife has kind or
+tafidu has value one
+zubibo has first input zasudu
+kikado has second input nedodu
+foribi has kind or
+pemefe has value one
+bevofa has first input kevado
+latadi has first input peredo
+futabo has kind or
+kolefa has second input zegobe
+basudi has value one
+gebudo has second input punifa
+petuda has first input pifebu
+ponufa has value zero
+fekode is output of ribudi
+kuzafe is output of vetudi
+dipoba has first input mefebu
+tanibu has second input gisibe
+berabe has value zero
+kepebi is output of gumuda
+terade has first input mogida
+vudofe has value one
+zonudi has first input zivefa
+zibabu has first input vovibo
+redebo has value zero
+pamoba is output of vafode
+fudubo has value one
+kazabi has first input lupube
+godobo has value one
+vonede has value one
+zivida is output of darudi
+rutibi has kind xor
+bidibe has kind xor
+fodibu has second input pinifa
+tididi has value one
+movofa is output of sosuba
+dudebi has value zero
+fididi has kind or
+fupedu has value one
+pelufe has first input godide
+kuvebu has second input somadi
+sisafe has value one
+nalobe is output of pegubu
+tiboba is output of femefa
+fububu is output of gebubi
+lufebu has second input vogeda
+kelife has kind and
+nozibi has second input korebi
+vabafa is output of kumuda
+sezeda has first input vimidi
+pegofa has second input zovoba
+kenubo has value one
+puvida is output of likeda
+pegubu has kind xor
+nagade is output of gazibe
+suzife has second input revibo
+derufe has first input pifode
+fotofa has kind or
+vovuba is output of gesudu
+subodu has value one
+pulifa has kind and
+gosedo is output of tufedu
+gikofe has first input vadidi
+tafoda is output of potobu
+ritofe is output of tutebe
+funeda has second input pinuda
+belide has value zero
+lemebo has first input folobi
+mefobu has value one
+bamodi has kind xor
+tatedo has value one
+zerudi is output of feroba
+gatuba has value one
+gonodi is output of sebedo
+mopufe is output of mesefa
+kifode has value one
+sabobu has kind and
+toribe has value zero
+vudido has value one
+kapode has value one
+gofaba has kind or
+putodi is output of korabi
+fozede has kind and
+tidebi has second input tazife
+pabiba is output of bilefa
+gazebi has value zero
+vagadu has kind xor
+depife is output of foribi
+rerodo has value one
+favafe has first input monedu
+gonobo has value one
+korifa has value one
+dituda is output of kubedo
+vukedo has first input pivifa
+dinado is output of ruzodo
+pizodo has kind xor
+gikabi has second input kozabe
+zumobe has first input bufeba
+gomafe has kind and
+zifubo has value zero
+kazobo has value zero
+lazifa is output of vibubo
+tadofa has first input vegoda
+masodu has first input mopadi
+poguba has second input viladu
+ratobe has second input pifobu
+subidi has kind and
+sivoda has value one
+ramabo is output of fuvabe
+darudi has kind and
+pirife has first input manibo
+votobu has second input gokuba
+bomebo has value zero
+vugodo is output of rudido
+rezudi has value one
+zalabu has first input vabade
+nomofa is output of piliba
+bodefe has value zero
+nogedi has second input gulefa
+lemobi is output of dalebu
+nodeda has value zero
+fezabo has second input polubi
+vatedi has kind or
+pomibu has first input nekeda
+supabe has second input buvodi
+dinaba has first input zekedu
+tebibe is output of godado
+sibado is output of vigebu
+kofefe has value one
+kipado is output of fugebo
+pogobi has value zero
+vofidu has value zero
+futabo has first input sebifa
+sedede has value one
+kepobo has value one
+zadido has value one
+badadu is output of zamodi
+vogibu has value one
+zapubi is output of bamaba
+logeda has second input dofafe
+lomadi has second input pitubi
+bepobi has kind xor
+ritofa has second input pedode
+sinada has value zero
+rifada has first input begudo
+matofa has value one
+zebubi has kind xor
+salide has kind xor
+pabibe has value zero
+gogebu has second input govubi
+ledoba is output of bidada
+kikado has first input pisada
+kumede has second input fesifa
+ponada has value zero
+lapodu has kind xor
+lupife has first input lupebo
+malufe has value zero
+gevafa has second input notade
+vusodi has first input panoda
+pakubi has first input seraba
+bagodu has first input mipobe
+debebi has kind and
+remabe has value zero
+befube has kind xor
+labuba has second input bibefa
+letefe has first input zazidi
+sareba has value one
+sisadi is output of begedo
+dupubo is output of panife
+fodada has second input rotedu
+tisabu is output of nizufe
+vegoda has value zero
+lomefe has value zero
+nulabi has value zero
+titubu has second input kiridu
+lofibe has value zero
+lubobo has value one
+nafudi has first input devife
+gadedo has second input sopide
+rotobe has value one
+dadabo is output of dutada
+vanubi has second input futudu
+zesebi has value one
+duneba has first input nedido
+lofede has kind and
+dibibe has value zero
+nikibe has first input vudobe
+surobe has kind xor
+tosade has kind or
+dipoba has kind xor
+gosade has second input funefe
+bimebe is output of mumuda
+gulade has value one
+tafoda has value zero
+kifibo has second input vedebo
+kilodu is output of zepibi
+valede is output of turife
+pikabe has value one
+kavuba has value one
+vekebo has second input simida
+vodabe is output of purude
+funufa has value zero
+kufada has second input sideda
+tusobo is output of movido
+bubiba has value one
+sunadu has kind xor
+somefa has first input dokiba
+zutuda is output of lufobu
+seriba has second input fobabo
+serefa has value zero
+sulofe has value zero
+depife has value one
+delubi has value zero
+pidibi has value zero
+movudo has second input bedibu
+fosubo has second input nufabe
+nosiba has kind and
+fazube is output of nofado
+lisebo has value one
+bokeba has second input lazabo
+forubi has value one
+mesedo has value one
+mofubi is output of lasabi
+tosade has second input fadubo
+ragobe has second input lipede
+sogubo has value one
+zesebu has value one
+zamebi has first input lokufe
+bufeba has value zero
+vemidu has value one
+famode has first input fanobi
+bimado is output of loradu
+fuleda has value zero
+disubo has value one
+liledu has second input pedabe
+vamebu has kind xor
+nupedo is output of fekifa
+fotofa has first input losifa
+fasebi has value one
+safubi has kind or
+tanafe is output of rofibu
+mumido has value one
+lomadi has kind and
+ponife has kind or
+zazefe has value one
+vatede has kind xor
+nibadu is output of masodu
+tagafe is output of vatibi
+nolabo is output of dipade
+lorafe has second input tegide
+zizada has value zero
+nazude has kind and
+dodibo has value one
+famedi has value zero
+levafe has second input vabade
+gapubo has first input tezebe
+fumudi has kind and
+vepubo has second input somedi
+kumuda has kind and
+piliba has kind xor
+lalafa has first input pabibe
+fifedo has second input kumada
+pazodi has value zero
+fokodu has value one
+mabide is output of dogifa
+parude has kind and
+gemudu is output of falidi
+logude has first input retafa
+devoba has value zero
+bakafe has kind and
+nitide has second input tatebo
+makufe is output of bepobi
+fazeda has second input kedafa
+dapubu has value zero
+mutedu has first input latubi
+lerado is output of sogidu
+nosuda has second input voboda
+titibi is output of larido
+rakudu has first input basudi
+gekeba has value zero
+kukubi has value one
+kumoda has value zero
+mapudu has first input furiba
+tumodi has kind and
+kazabi has second input zopedu
+nabubi has first input rivebu
+sarida has value zero
+lavudu has value zero
+rulabe is output of medifa
+mufobe has second input budobe
+vakofe is output of regufa
+dofode is output of balobo
+nopefe has kind xor
+desido is output of zokabu
+nizofe has first input sudubi
+lorebo has value one
+fizadu has value zero
+pivedo has value zero
+kasaba has second input mesaba
+zabube has first input lolade
+gumode has second input pepabo
+venabe has kind xor
+lasebu has kind xor
+kunede has first input fizubo
+lupife has kind or
+dovife has second input napabe
+kedude is output of pilado
+tugobo has value zero
+lupodi is output of lirobe
+fifedu has value one
+mesefa has second input gitede
+tavobi has value one
+kapafe has value zero
+morode has first input vusebu
+zizibo has first input rofebe
+turife has first input pibodi
+fomobu has value zero
+kezufe is output of vamebu
+tuvifa has second input bibabo
+nirodu has first input mazabe
+rakudu has second input fimeda
+nomida has value zero
+vovido is output of nakibe
+vapobe has value zero
+zedabi has value zero
+vukedo has kind xor
+mapife has second input ruzado
+pafubu has value one
+nomebe is output of vesibu
+kuvebu has first input pezofe
+rimofe has first input kabiba
+robade is output of mukibi
+zopidu has second input gegebe
+fumudi has second input zegadi
+nufebi has value one
+niridu has value one
+dekoda is output of tatefa
+vedoba has second input bimebe
+rivadi has value one
+keludi has kind xor
+pitude has second input zaruba
+kimuba has value one
+lovedo has second input tivoda
+mimedu is output of duvide
+sotedi has value zero
+ludobe is output of nosiba
+mimodi has value one
+sodefe has value zero
+likeda has first input nipubi
+vulude has value zero
+nosuda has first input feraba
+difobo is output of dotede
+nirodu has second input seraba
+kelade has kind and
+gipefa has kind and
+tidode has first input fekode
+gavobu has kind and
+vereba has value one
+gunodu has value one
+fezabo has kind or
+fopife has second input vufabo
+dosebi has value one
+diladu has value one
+gogubi has kind and
+botifa has value one
+lazifa has value zero
+sopobi has value one
+zekabo has value one
+zupida has value zero
+muzife is output of gidifa
+dorufa has value one
+zuzube has kind or
+pokoba is output of lasebu
+fafufa has kind and
+kaneda is output of ragobe
+lezufa has value zero
+vuroba has first input vobibo
+fadabe has first input sureba
+timode has value zero
+befebu has kind xor
+rumeda has second input ramude
+rokida has value one
+zomobu is output of fapudi
+purobu has value zero
+vefodu has value zero
+binida has value one
+nunofe has value one
+bivedu has value zero
+kinefa has kind or
+zuziba is output of lamodo
+sebifa has value zero
+takobu has first input sufode
+mugodi has first input zapebi
+sigabe has value zero
+duvide has second input dopifa
+misidu has value zero
+dafubi has value zero
+rapodi has first input sobede
+maneba has value zero
+lekife has second input nozife
+zubudi has value one
+gupaba has second input lamife
+risuda has second input rekadi
+ferabo has second input tovedi
+puzeda is output of gosibo
+makebo has value one
+rotodu has second input piroba
+sakebi is output of limudu
+varobe has value one
+gasabi has value zero
+nofado has second input pavabo
+fezabo has first input ritofe
+papade has first input vipobe
+zozubo is output of tefido
+rifefe has value zero
+lakaba is output of somefa
+vafede has first input ropabi
+fubobi has value zero
+lubefe has value one
+ligufa has value zero
+volebu has first input budibo
+tutaba has first input gasabi
+tekeda has value one
+sepebo has value one
+pegubu has second input dozoda
+kibifa has value zero
+gikubo is output of visedi
+tidebi has first input sutabe
+munobe has value one
+muvado has first input lopuba
+kugifa is output of firodu
+pitabu has first input sizube
+lavebu has kind or
+fopibe has value zero
+futubo has value zero
+rarifa has value one
+tebuda has value one
+dutada has second input sipibi
+zizode has value zero
+zasedu has kind and
+bakafe has first input pelida
+bodaba has value zero
+rozibi has first input lesibe
+legeda has first input patede
+rokida is output of likibu
+nagubu is output of dusudi
+risufa is output of zebodo
+mipobe has value one
+vudido is output of tivide
+labuba has first input ledefa
+tarubo is output of kazabi
+tinebu has value one
+losidi has first input dudude
+nupifa has first input kosidi
+lepabe has value zero
+mimabi has first input kubebe
+dunada has value one
+gipado has first input lenedo
+zizode is output of pulido
+ragebo has value one
+sekofe is output of losedi
+zopadi has second input tatode
+sunabe has value one
+pugadi is output of napude
+fodedi has first input manibi
+vudobe has value zero
+nosibo has kind xor
+takubu has value zero
+fusofa has kind or
+pulifa has first input zusibo
+rozubi has second input daboda
+dinede has value one
+zerode has first input kifode
+sobuda has kind xor
+didofe has value one
+varafa has second input zadido
+ralebe is output of zibida
+losifa is output of rokebu
+lomudu has value one
+vatofe has value zero
+bigudi has first input gideda
+niguba has kind xor
+lufebu has first input bamibi
+bidada has second input nesede
+purude has second input bubebo
+zavodi has first input beside
+nezife has value zero
+saruda has value one
+fodada has kind xor
+telede has first input bogobo
+tafudu has value zero
+lufebu has kind and
+rizede has value zero
+mirado has kind xor
+setoba has second input gadubu
+zazebo has kind or
+zozife has value zero
+pabiba has value one
+vapebo is output of norade
+kulida has second input fagedi
+fipida is output of nisofa
+lavaba is output of pazofe
+pakife has first input fadidi
+sosuba has kind or
+fesodo has second input fevifa
+binaba has second input zigafa
+tirofa has first input vokebu
+pofube has value one
+lutubo has kind and
+sifibu has kind and
+fakado has value zero
+lofube has kind or
+buzofa has value one
+dofabi has value zero
+fetabu has value zero
+vokudu has kind xor
+zolude is output of debebi
+pepudo has second input logadi
+gulefa has value one
+rirabo has value zero
+purude has kind xor
+nibuba has value one
+renode is output of futodu
+dofobu is output of nikibe
+kozubo has value zero
+tukado has first input vokuda
+tifibi is output of dinebe
+tefebi has second input setobu
+mapebi has value zero
+bamaba has first input lovude
+gegabe has value one
+likefe has first input lavida
+girufe is output of fodedi
+satobo has value zero
+vitada has first input lozede
+fibodi is output of tufado
+gapadu has value zero
+telede has kind or
+vesodu has kind and
+kifibo has kind xor
+lonedo has value zero
+rebifa has first input bububu
+momada has first input segefe
+gogabu has value zero
+defedi is output of nosebe
+lerifa has value one
+nakibe has first input niridu
+dotudo has value one
+rozibi has second input foladu
+mupidu has first input selebo
+vinidu has kind or
+nifufe is output of nenofe
+rubibo has first input vabudo
+busido is output of todefa
+sesodu has kind xor
+nabobu has value zero
+denudo has first input gepobu
+pizife is output of bamife
+fufubi has first input tegobu
+pukeba is output of lofube
+tamabo has second input nabobu
+rafobe has kind and
+sakabu has value one
+tunida is output of nirodu
+tapibe has second input murodo
+tatefa has first input gipofa
+zivadu has value zero
+futubo is output of fekodi
+fekodi has kind and
+zimafe has first input mobeba
+minebo has first input bugifa
+pusode has value zero
+fakebi has first input puvede
+zitadi has kind and
+pidedo has value one
+vorefa has value zero
+tesubo has value zero
+gokebu is output of ginide
+sikedo has value zero
+gisibe has value zero
+limodo has first input vusobe
+bivabe has kind or
+nokibi has value one
+fitibo has value zero
+gegiba is output of ribofa
+birobo has value one
+gokobo has value zero
+bovidi has value one
+zoredo is output of ponedi
+bupebi has first input kofefe
+domafa has value zero
+tamobi is output of rigobu
+kuvado has value zero
+kededo has kind xor
+tavedu has second input ponudo
+sebebi has second input rezebo
+ramobo has first input vulida
+bipobo has value zero
+davibu has second input dizibe
+sogife has kind or
+fomada has first input momebo
+logeda has first input vofubi
+maraba has value zero
+dibufe has first input karida
+sagifa has value one
+volufa has kind and
+zafide has value one
+sigobe has second input bakube
+nirodu has kind xor
+gomafe has second input maboda
+rigobu has first input selubi
+babubi has kind xor
+sokuda has value zero
+gopaba has value one
+gigedo has second input rulaba
+rekida has second input sekofe
+pabobi is output of bevofa
+sutidu has value one
+vafode has kind xor
+komodi has value zero
+govaba has value one
+fivibo has value zero
+vetudi has kind or
+devefa has first input nopode
+kalofa has second input motafa
+bivedu is output of likofe
+telude has kind and
+tufedu has first input fulida
+pipabu is output of pofafe
+balife has value zero
+maneba is output of gukude
+sasefe has first input mububo
+setode is output of mipabe
+mozebu has kind or
+sotado has second input ludufa
+felubu has first input rezudi
+girufe has value one
+rotuda has value one
+nirefe has value zero
+vivide has second input felode
+zitadi has first input tofube
+vofiba has value one
+nenudo has second input napife
+lovedo has first input vakofe
+zifibu is output of dulife
+rogube has kind and
+linoba has value zero
+tozabi has value zero
+norade has kind and
+davibu has kind or
+zupadi has second input gozeda
+modade has first input ganibi
+burudi has value one
+povabu has first input funube
+vafibo is output of bisadu
+nemabu has value zero
+fogabu is output of firobo
+likeda has kind xor
+surobe has second input lopuda
+dofefa is output of lidube
+tubidu has second input zobibi
+kibife is output of fanubo
+vipobe has value one
+masadu has second input dipadu
+losidi has kind or
+keludi has first input nezufa
+posuba has value zero
+sufode has value one
+benafa has first input pimedo
+nagidi has value zero
+zegudo is output of lapodu
+sebedo has first input logadi
+fededi has second input detobu
+pamedu has value zero
+lodefa is output of zagiba
+fapudi has first input sepebo
+remudo has value zero
+lirobe has first input selefe
+dufedo has first input dafofa
+kudoba has kind and
+dukaba has value zero
+balobu has value one
+labifa has second input mepabe
+fuvidu has value zero
+povedu has value zero
+davaba has value one
+sanedo has value one
+bitubi has first input tovode
+bamibi has value one
+suzoba has kind and
+senibe has value one
+vededu has value zero
+pulido has second input rizede
+vokefe has value zero
+moduba has value zero
+benudi has first input dinede
+tigudi has first input tegobi
+ribofa has kind and
+pizode has value zero
+figuda is output of basadi
+zabube has second input lidebe
+rodudi has value one
+tiredi has kind and
+dazefa has value one
+katubi has value one
+begedo has kind and
+femefa has kind and
+kodabu has kind or
+zuzado has value one
+vodife is output of dasebe
+vedefe has second input bebabi
+tigedo has value zero
+tududo has first input gafobu
+roteba has first input lefeba
+punido has second input mofubi
+bobabi has second input gimebo
+vosedu is output of nopefe
+punodu has value zero
+kuzudu has value one
+kulafa is output of murebi
+vorida has value zero
+renebe has kind xor
+zupibu has value zero
+siluda has value one
+nusefe is output of rumodo
+dikeda is output of bipaba
+fodefe has kind or
+mukibi has kind xor
+pukobo is output of ratefa
+lirado has kind and
+lavube has kind and
+gikabi has kind xor
+sebebi has first input sogado
+gumebi has value one
+temade has value zero
+dozoda has value zero
+zivida has value one
+sogife has first input bopibe
+betode has second input fovefa
+nerudu has kind xor
+runabe has first input zubofe
+fitebe has kind or
+deludi has first input nepadu
+dubibe is output of zokofe
+mapudu has kind xor
+suzife has first input sinabo
+pomifa has value zero
+fusedi has kind xor
+lebede has kind and
+pegaba has value zero
+konidi has value one
+vusobo has kind xor
+ratobe has kind or
+rezebo has value zero
+pofafe has second input balida
+zekabi has second input febabi
+danodu is output of nosuda
+pinifa is output of derufe
+vivodo has second input dezudo
+takobu has kind xor
+zorebu is output of musafa
+fupedo has second input lipufe
+pelidu has value zero
+gegebe has value zero
+fidefa has second input vevidu
+safafa has value one
+lodudi is output of bamodi
+keradi has second input mekibu
+kakibu has value one
+gufado has value zero
+sivoda is output of fopebe
+mofade has value one
+ragodu has first input zavoba
+bobabi has first input kugabu
+zamifa is output of bodeba
+lemedo has first input febedi
+pafife has kind and
+lugibe has value zero
+sebida has second input bazode
+guseda is output of vozada
+pemoda has value one
+lutafa has second input tobudo
+kifidu is output of gasude
+murebi has kind xor
+zubofe is output of zomabo
+pazedo has value one
+rugobo has first input susade
+vizufa has kind and
+bozibu has kind and
+rafeda is output of tidebi
+pasufa has value zero
+rizidi has first input debubi
+mupidu has second input zemebe
+vuridu is output of nedafe
+rusubo is output of fudedi
+butada is output of liveba
+lefuda has second input ronaba
+fetada has value zero
+lufadi has value zero
+vupebo has value zero
+pigefe is output of favefa
+nagefe has first input safofe
+nofedo has value zero
+navabo has value one
+kalibi has second input ribida
+godado has first input dosibi
+gokida is output of parude
+sukudu has value zero
+setoba has kind and
+bemufe has value zero
+lotebe is output of nesobi
+fuzibo has first input zilude
+surebi is output of telude
+rotedu has value zero
+getibu has value zero
+lopebo has second input pimabe
+sezobo has second input mokede
+modaba has value zero
+rukodu has first input nifube
+miluba has value zero
+kuvibo has kind or
+katudi has value one
+dipide has kind or
+puruda is output of pigidu
+gifodu is output of delafa
+gokube has value zero
+nagobe has kind and
+lutido has value one
+sinobu has kind xor
+dizibe has value zero
+visedi has second input kebeba
+rurube has first input karida
+zebodo has kind xor
+liguda has value zero
+vozada has kind or
+zabebo has value zero
+mufobe has first input zazidi
+vivide has kind and
+tigebo has value one
+bekufa has first input dafudi
+dusoba has kind and
+donadu has second input zaladi
+fodibu has kind and
+kulida has kind xor
+ravode has value one
+bububu has value zero
+gepobu has value zero
+pitaba has second input poziba
+sebebi has kind and
+buzado has kind xor
+penida has kind xor
+vatofe is output of vesodu
+keradi has first input fevabi
+likobe is output of volufe
+lekide has first input rirudu
+gatibo has value one
+napude has second input kamobe
+fefuba has value one
+pazade is output of sobobi
+futide has value one
+donadu has kind and
+korabi has kind and
+pimedo has value one
+lutodo has second input fupode
+fozede has first input pubobi
+basabo is output of tukado
+famoda has value zero
+giveda has second input subodu
+farede is output of zenide
+zubibo has kind and
+futabo has second input kumoda
+sigobe has kind or
+rifude has kind xor
+ruraba has first input netufa
+pideda has first input levibe
+dekeba has first input dudefe
+pesibu is output of lugobi
+kuvade has first input tatedo
+levebu has value zero
+tezodo has value one
+lepeba is output of zafobi
+somedi has value zero
+punibu has second input ganubu
+gekafa has value zero
+patudo has value zero
+gelube is output of pomibu
+tududo has kind xor
+polofa has value one
+zalofa has second input lovebu
+lubidu has first input gelabi
+nunuba has second input legeba
+folubo has value one
+kupidi has value one
+mupada has value one
+lebode is output of levafe
+figufa has value one
+rifabi has value one
+lakabo is output of fubadi
+fukedi has value one
+vabidi has value zero
+lesofa is output of gomafe
+fapudi has second input sutodo
+lekide has second input sivibu
+tiredi has second input lubadu
+donadu has first input saroba
+rokadi has value one
+bidebu has kind and
+lapaba has kind and
+rupide has kind xor
+pufubi has first input lakabo
+fuvife has value one
+rimofe has kind and
+kezeda has second input zozobe
+vutede has kind and
+vorado has first input ronibo
+lipobu has value one
+megode is output of suzoba
+tarofa has value one
+lenabi has value one
+fibufe has value zero
+vafebe has first input femube
+supabe has kind xor
+rerodo is output of sinobu
+sevubo is output of mipabu
+tisubo has value zero
+rosife has first input garubi
+losidi has second input nusefe
+susobo has value one
+kirudi has second input tabobo
+vikifa has value zero
+sobuda has second input dosefa
+tapidu has first input takuba
+nonedu has second input savadi
+funube has value one
+vatufa has value zero
+fusodo has second input kovodu
+lafafe has kind xor
+modibo is output of lirado
+zarebu has value one
+nizofe has second input saruda
+zufada has first input leludu
+gonodo has value zero
+zepuda has value one
+nagobe has second input potibo
+nobofa has second input pikida
+zigudu has first input butaba
+pinibi has kind and
+tikeda has value one
+manifa has kind and
+fofabi has value one
+serefa is output of renebe
+lafafe has first input poziba
+terade has second input balife
+nupifa has second input nitubi
+mekufa has value zero
+fadabe has second input zimube
+deledu has value zero
+zesebo has value zero
+fakebi has second input litofa
+penidi is output of punido
+kapobu has value one
+setode has value one
+tasobi has value one
+kurodu has value one
+zotudo has first input popade
+denife has value zero
+tutubo has value one
+buvodi has value zero
+dofife has value one
+lubude is output of vepubo
+rekida has first input sutobu
+faledi has value zero
+vovabu has second input mavebi
+firubu is output of kumede
+pizife has value one
+gabedo has second input gavadi
+vedefe has kind and
+vobibo has value zero
+medifa has kind and
+nifeba has value zero
+pulifa has second input pedudo
+gosadi has kind or
+fetofe has second input ramadi
+febuda has first input kelobe
+ludibe has second input milefa
+desubi has first input ribafe
+gevube has first input petaba
+gosuba has kind xor
+rureda has value zero
+livida has value one
+zavabu has value one
+pazidu has second input tizibo
+sibudi has value one
+dufuda has value zero
+zobuda has second input sunabe
+rufobe has second input navufa
+bavodu has value zero
+sinodi is output of tamabo
+dusudi has second input lezife
+lezafa is output of dipoba
+kukobo has second input mikudu
+zozoda has second input tegadu
+degebo has kind xor
+godede has kind and
+vafubi has first input piroba
+dubibi has value zero
+bozibu has second input pitedo
+nududi has value one
+zimube has value one
+fokede has kind or
+disefa has value zero
+kakide has value zero
+renebe has first input zumabe
+garebu has kind xor
+rafobe has second input kotofe
+kozufa has value one
+lafodu has value one
+lopebo has first input pofofe
+tevobo has first input deseba
+mavibu has value zero
+fiteba has kind or
+tevobo has second input mupada
+sakadi has kind and
+ledodo has value one
+pemubu is output of pitaba
+pasufa is output of nazude
+bikafe has value one
+sosife has value zero
+firodu has kind or
+rupide has first input noneba
+tamobi has value zero
+mitibu has kind and
+pamida has value zero
+peribu has value one
+pudibi has first input modefa
+tivide has kind or
+kubedo has first input nateba
+musubi has kind and
+ginubo has kind and
+pigobi has value zero
+zerabo has value zero
+tovufa has value one
+fimuba has value one
+nanidu has kind or
+bazido has value zero
+vokudu has first input vonede
+zagiba has kind and
+vosedu has value zero
+sivadu has first input mipadu
+midube has first input gapadu
+kobufa has first input sevibu
+bigufa has kind and
+depibu is output of pegofa
+bazode is output of kugido
+tofabe has kind and
+vusube has first input dodibo
+tigudi has kind or
+rupedi has first input pivedo
+pipufe has value zero
+magabo has value zero
+vedoba has kind or
+popofa has value zero
+bivibo has first input zimodi
+zovebo has value one
+dusoba has first input zobefe
+puzude has value zero
+nufebi is output of povada
+tolido has second input vupude
+gekodu has value one
+rufiba has value one
+futebu has kind xor
+vilabo has value zero
+setobu has value one
+napife has value zero
+nonidu is output of fagidi
+zidabo is output of nogedi
+kebuba is output of gogebu
+lopudo is output of lefuda
+kavedu has value one
+pazofe has first input fafabe
+mudubo has value one
+sidabe is output of giteda
+zebubi has first input pasufe
+tofede is output of somobe
+nanudu has kind or
+zisada is output of mizebu
+sotado has first input zokafe
+tutubo is output of pamodi
+turife has second input penidi
+tumidi has second input dapubu
+zabebo is output of kitidi
+rulofa has value zero
+debubi has value zero
+zepobu has value zero
+gizufa has kind or
+gatidu has value one
+zovoba has value one
+dafida has value one
+simabi has value zero
+sudude has value zero
+pinibi has first input peribu
+gefedo has first input lepebe
+zapibu is output of febuda
+sevude has first input binida
+depiba has value one
+kuzebi has kind or
+lilobo has value one
+metode has value zero
+lodefa has value one
+lamabo is output of vomobu
+ribofa has first input semoda
+fezibe has value zero
+satibi has first input bivife
+milafe has value one
+zivefa has value zero
+nedafe has kind and
+zelibu is output of zufubi
+faridi has value one
+suzofe is output of fiduba
+favefa has kind and
+volabu is output of nanudu
+badebe has first input pipufe
+ludedo has value one
+vutede has second input mukedo
+zimabu is output of tomefa
+duneba has second input gekodu
+gosadi has second input nozedo
+mizuda has value zero
+nasade has second input rasobe
+lafifa has second input rogabe
+lefeba has value zero
+lofadu has kind xor
+lirado has second input barafe
+remabo has first input mivabi
+fidodo has value zero
+darodu has value zero
+lokufe has value one
+pafobu has kind xor
+vudodu has kind and
+suzido is output of ginubo
+zuziba has value one
+vomobu has kind xor
+tenufe has kind xor
+soludi is output of sivadu
+nosebe has second input kulebu
+sufafe has value zero
+pelufe has second input daridu
+liledu has first input lotobo
+rimabo has value zero
+retuda has value zero
+dafudi has value one
+musubi has first input numode
+fukadi has second input setafa
+gizobi has first input ragadu
+sibibe has value zero
+mumedu is output of kefifa
+kirudi has first input zivadu
+vasubo has kind xor
+dupabo has kind or
+losubo has kind xor
+begedo has first input pasufe
+kamida has value zero
+kimuba is output of keveba
+davabu has value zero
+kedade has kind and
+zezodi is output of futabo
+kunede has kind or
+batoda has value zero
+fokedo has kind xor
+kapide has second input bibabo
+tomubu is output of negube
+rukudu is output of rofodo
+bibabo has value one
+bevadi has first input redube
+kubebo has value one
+pavuda has second input dumifa
+ludibe has first input gitudi
+ramobo has second input veribe
+suzido has value zero
+gegudu has value zero
+napabe is output of bafodo
+lokofa has first input redebo
+vufida has second input favefe
+gosibo has second input makebo
+kivabu has kind xor
+gokebe has value zero
+fekoba has kind and
+fidudo has value zero
+fifobi has value one
+tazobu has value one
+tonode is output of dolefe
+lorebo is output of vagubo
+bomebo is output of vokudu
+lulodo is output of nenobo
+vatuda is output of gikabi
+besube has value one
+zesebi is output of goledi
+zurodi has kind or
+bilefa has first input bemudi
+punido has kind and
+gozebi has second input tevobi
+bekidi has value zero
+pedabo has second input gagibi
+pedode has value zero
+goledi has kind xor
+mebofe has second input sutidu
+pazade has value zero
+liledo has value one
+sogidu has kind xor
+vabade is output of defube
+fatodi has kind and
+murodo is output of vudodu
+tufado has first input gudefe
+dulude has value one
+sivabi has value zero
+vimibu has value one
+tovudi has value zero
+futebo has second input zerabo
+tumidi has kind xor
+duboda is output of pelufe
+mesefa has first input berudu
+galido has second input gonodo
+dasedu has value one
+nesoba has value zero
+zobadu has second input tomado
+mububo is output of zebubi
+vakubu has value one
+mifube has kind and
+fekodi has second input muzebo
+dukode is output of liruba
+nadidi is output of zubibo
+migofe has kind and
+ramofa has value zero
+bilefa has second input bedaba
+sisafe is output of funiba
+vinodu is output of megodu
+dubibe has value one
+tavedu has kind and
+mimuda has second input tukudo
+napudo has value zero
+raredo has first input sinofa
+fibodi has value one
+temebi has value zero
+vevoda has value one
+losubo has second input mavibu
+tefido has first input devafa
+kiladu has first input bemadu
+sakibe has second input tinebu
+nesobi has second input vesubo
+varobe is output of sesede
+gepabu has value zero
+garubi has value one
+liruba has kind xor
+nebefa has second input zasidu
+basiba has first input gikibi
+fulida has value zero
+bikibe has kind and
+ruzodo has second input fasebi
+visedi has kind and
+gedoba has second input dobabu
+gurido is output of fetofe
+takobu has second input radebi
+magebu has second input miluba
+rogube has first input bovabe
+sozoda has kind or
+pikado has second input zemedu
+pegofa has first input sazodu
+mugabe has kind or
+gelubo has value one
+ditofa has value one
+tozida has kind or
+sarode has second input lipobu
+fifebe is output of turebu
+sadefe has value zero
+kefubu has value zero
+nabodu has value zero
+gusida has value one
+dibufe has second input gonobo
+debebi has second input tonadi
+fanubo has kind xor
+ramaba has kind xor
+banebo has kind xor
+zibedo has value one
+darede has value zero
+dureda is output of nosibu
+zatebu has kind or
+meribu has second input sefide
+mipufa is output of dutodo
+gipobo has second input fetide
+tekudi has value zero
+zuzabe has value one
+zivudi has value zero
+funiba has second input dasedu
+suzoba has second input tozafa
+lakida has value one
+ponodu is output of mavode
+mapaba has value zero
+munodi is output of rozibi
+renebe has second input vorobu
+pezabe is output of vedoba
+lobaba is output of vutede
+sivadu has kind and
+lenodi is output of nabubi
+gogofe has first input zavado
+vokuda is output of sisefa
+maleba has second input zuvibi
+duvabu has value one
+zuzabo has kind and
+lokifa has first input rakabo
+kigebi has kind or
+mavode has second input ragadu
+zopidu has first input pelofa
+susade has value one
+galido has first input tepebe
+dokiba has value zero
+sotobe has value one
+goruda is output of supabe
+logude has second input pofedo
+lubifa has value one
+lagede has value zero
+vabubo has second input pidibi
+renodo has value zero
+nanudu has second input sanoda
+fanubo has second input gelofa
+buruda has value zero
+kinubo has value one
+likofe has kind xor
+buleda has value one
+ronufa has value one
+rodebo has value zero
+babudu has value one
+rivebu is output of getidu
+vapedi has value one
+lesibe has value one
+limodo has second input tozaba
+vikifa is output of pulifa
+vanubi has kind xor
+tigofa is output of kutuba
+didofe is output of zelebu
+solabi has first input kanado
+fubadi has first input satobo
+kitidi has second input dapabu
+vibubo has kind and
+muluda has value zero
+nafafa has value one
+lopuda has value one
+zavado has value zero
+tamufe has value zero
+subidi has first input gibubu
+sebida has first input belade
+pidufe is output of nebefa
+mipebe has value one
+bukedo has value one
+tanibu has first input zavado
+depudu has kind xor
+balobe has value zero
+vovadi has value one
+bidebu has first input pukeba
+likibu has kind or
+dogudu has value zero
+sumude has kind or
+dazefa is output of zetode
+felufa is output of nefobi
+fazeda has first input kefubu
+gapodu has second input vekife
+zezufe has first input mefobu
+bevofa has kind and
+ludibe has kind and
+badide has kind or
+litofa has value one
+vedefe has first input vidobo
+risufa has value one
+kezido has second input rulubi
+sasadu is output of vafede
+ritofa has first input nududi
+badebe has kind or
+rizedi has value one
+buzebu has kind or
+sunadu has first input kurodu
+tigudi has second input zuzida
+lopude has value zero
+lodudi has value zero
+kiboba is output of gunido
+fugobe has value zero
+nitibi is output of teduda
+lotubi has value one
+tarudo is output of bemubu
+sisefa has first input zepobu
+mivibi has second input mitido
+bipaba has kind and
+venabu has value one
+boridi is output of kelife
+vemidi has second input pudabu
+badedi has value one
+likofe has first input gepebu
+fumaba has value zero
+dafede has value zero
+fibefa has first input mukedo
+mafodi has value zero
+kumada has value one
+nosiba has first input zebibo
+balobo has kind and
+depibu has value one
+lutafa has kind and
+bubiba is output of lupife
+dalobi has first input gazube
+dipide has second input livida
+gosude has kind xor
+palifa is output of letefe
+zavodi has second input kufifa
+gedabo has kind or
+bekafe has kind or
+zurodi has second input lasibi
+duvide has kind and
+tarubo has value one
+kokode is output of kutobi
+pobidu is output of pikado
+babubi has first input lofibe
+vagubo has kind or
+detadu has second input momebo
+dobabe is output of musubi
+bivibo has kind and
+tazede has value one
+munodi has value one
+pizefe has first input gusida
+duneba has kind xor
+zopodu has value one
+suzofe has value one
+zasobu has first input tisabu
+sasadu has value one
+nelibi is output of kogife
+bezadu is output of liledu
+manibi has value one
+volube has first input kapedu
+rapodi has second input nogufa
+sazobe has first input talibe
+zozobe has value one
+kazubu has second input lipebu
+bokeba has first input lilobo
+regufa has kind xor
+vozibi has value one
+gegiba has value zero
+bosafe is output of fozede
+ruzeba is output of lubidu
+somadi is output of gapodu
+sosabi is output of kelade
+vutubu has value zero
+mizeda has value one
+ramubu has value one
+pilado has second input vopafa
+darabi has first input gikedu
+futefe has second input lofedo
+tupedo has value zero
+debife has value zero
+mipabe has second input fukedi
+tafada has value one
+teduda has kind xor
+fogebo has value one
+rivubi has kind xor
+nanidu has second input favedo
+dededo has first input gepidi
+likofe has second input supeda
+bozibu has first input tuzofa
+gutife has value zero
+vupibo has kind and
+talibe has value one
+sebabe has value zero
+sorife has value zero
+zamebi has second input bodubu
+pokafa is output of ditabo
+gozado has second input sokubo
+razubo is output of setoba
+pitubi has value one
+gumidu has value zero
+rudafa has value one
+reduba has value zero
+bamaba has second input patabi
+divedo has value zero
+nefefe has value zero
+zufido has value zero
+kanabu has value one
+kebude has value zero
+nogedi has first input fefado
+fededi has kind xor
+vepubo has first input dapibu
+refida has value zero
+gebido is output of lomadi
+vopobe is output of lorafe
+tivofe has kind and
+galeba has value zero
+sitidi has value zero
+zirudu has first input figuda
+piliba has first input kimabe
+pupobu has second input zodidu
+lomobo has value zero
+timode is output of zonudi
+tegobu has value zero
+lafobu has value one
+zudufe is output of mimabi
+poribo is output of rurube
+tumodi has first input gafafe
+zakede has first input setede
+dasadi has value zero
+lozede has value zero
+fisode has value zero
+genubu has value one
+gokode has value zero
+gepebu has value one
+safubi has first input pelidu
+lerado has value zero
+zugibo is output of rifude
+zezufe has second input vevofa
+nodebu has value one
+digefe is output of pakife
+mugabe has second input logadu
+benibe is output of bikibe
+zufada has kind or
+leneba is output of mudife
+vuzifa is output of raride
+zavoba has value zero
+lokobi is output of vatede
+fuzudo has value one
+nenudo has kind xor
+vatuda has value one
+vigebu has first input lezafa
+favefe has value one
+mobeda has value zero
+roruba has value zero
+tolafa has second input sodefe
+kukobo has kind and
+sisodu has first input lefoba
+vazufe has value zero
+faludo has first input sosubo
+ginebu has kind xor
+bodoba is output of rupobe
+nakobi has second input pagadi
+vubedu is output of bozibu
+bapada has value zero
+gimufe has value zero
+gofaba has second input buzofa
+pamodi has second input bofuda
+lemebo has kind and
+tatebo has value zero
+vigebu has second input situdi
+ginebu has second input rekadi
+temede has value zero
+gikibi has value zero
+vuvida has value one
+lasebu has first input matabe
+zigafa is output of gevafa
+vozibi is output of fesodo
+bumuba has value zero
+vavudu has second input gatibo
+fopebe has second input dizadu
+dukabi has value zero
+keludi has second input rakobu
+febufe has first input rebada
+vukoba is output of monidu
+pirabu has value zero
+fefabe is output of labuba
+penida has first input tarofa
+larabe has first input kurudu
+lekife has kind and
+poziba is output of pavuda
+lasife has value one
+lagufa has kind or
+rubibo has kind xor
+zibabu has kind or
+muvado has kind or
+kubedo has second input safafa
+futebu has second input zukide
+pukufe is output of vedefe
+gegobi has first input rezada
+lutodo has kind or
+nizufa has kind xor
+lokofa has second input dugida
+vofubi has value one
+pebodi has value one
+pibodi is output of vupibo
+sokodo has value one
+gatibi is output of sapibo
+suvido has value one
+sefibe has first input delidu
+gevube has second input sanedo
+zopedu has value one
+bobifa has second input fodibe
+puvode has second input lasobe
+kafido has kind or
+pizefe has second input nasobu
+nipeba has value zero
+zapudi is output of nanidu
+difubu is output of zatebu
+pigidu has second input zufide
+gelufa has kind xor
+bamaba has kind xor
+pivifa has value one
+dovife has first input bulibe
+zokabu has first input foseda
+gebubi has kind xor
+latubi has value zero
+todefa has kind xor
+lipufe is output of pufubi
+lugibe is output of rababu
+dibufa has value one
+fomada has kind xor
+petadi has value one
+vulada is output of vasubo
+gezebe has value one
+luzude has value zero
+lemedo has kind xor
+gafobu has value zero
+tumodi has second input pemebe
+pelobo has value one
+kidede is output of fezobu
+romofe has value one
+felubu has kind and
+pinibi has second input pamida
+kebeba has value one
+nunofe is output of tolido
+bupebi has second input nisufe
+parubu is output of tozedu
+busobe is output of pezoda
+kitidi has first input mufefe
+fubadi has kind and
+rilide has kind xor
+supabe has first input mukife
+lefuda has first input zulubo
+ditobo has kind and
+setoba has first input lefeba
+pitedo has value one
+zotabu has kind xor
+mizabi has value one
+gilibu has second input mipida
+lupebo has value one
+fokedo has first input kulidi
+lizifa is output of gelufa
+lopudo has value zero
+rizidi has second input lezudi
+genibo is output of tagido
+kufada has first input fububu
+vokebu has value one
+butubi is output of dumabu
+bivibo has second input fodibe
+vafubi has second input poraba
+tamufe is output of gaseda
+zevobu has value one
+gamodu has first input guruba
+tofabe has second input bozeba
+ledefa has value zero
+fefadu is output of lemedo
+vibufe is output of lovedo
+vesodu has second input magabo
+famode has second input fovada
+pegaba is output of lavube
+somobe has second input kofidu
+kitabu has value zero
+pamodi has first input zurufe
+keradi has kind and
+mebofe has first input sirida
+luzibi is output of lagufa
+dogifa has second input zavabu
+rezufe has value zero
+mapebi is output of dagibu
+zosofa has value zero
+dimube has first input soguba
+kivada has first input kavedu
+rosufe has value zero
+nurada is output of leviba
+difido has value one
+vavabu is output of pivida
+leviba has second input modofe
+kiluda has value zero
+zidabo has value zero
+fokedo has second input vizadi
+nenudo has first input gosabu
+ratobu is output of kunede
+gatobo is output of didobe
+rezada is output of fafufa
+mipabu has first input sivaba
+gikedu has value one
+ratobu has value one
+gipado has second input tavidi
+rababu has kind or
+loradu has first input danuba
+lagufa has first input romefe
+pazodi is output of denibi
+vutede has first input bamoda
+poraba is output of zerode
+volebu has second input fukibu
+kunede has second input togide
+dudebi is output of bigudi
+zasobu has second input kifidu
+libibe has value one
+guzibe is output of sireba
+raredo has second input volabu
+metadi has second input nivobu
+kusube has value one
+tubidu has kind or
+vulude is output of faradu
+vupude has value one
+bafodo has kind xor
+zizibo has second input zovebo
+mugodi has second input nazadu
+nivafa is output of butibu
+dusidu has value zero
+dogifa has first input gekoba
+feroba has first input zizada
+likeda has second input pukudi
+benudo has first input zanafe
+safudi has value zero
+dopifa has value zero
+toguba has value zero
+nolabo has value zero
+lerofa has second input famoda
+puvido has value one
+vofodo has first input tisubu
+nalodo has value zero
+dasebe has kind xor
+fiteba has first input ragaba
+davadi is output of sakadi
+badedi is output of vabubo
+legoba is output of gabade
+guzadi has value one
+guroda has kind xor
+pefudo has first input vemidu
+lopuba has value zero
+gipobo has kind xor
+tusube is output of rupide
+fimeda has value one
+dadiba has value one
+kupede has kind and
+sireba has kind or
+gesudu has second input gepabu
+meribu has first input tasobi
+pusudi has kind xor
+mafofe has value zero
+zaladi has value one
+sorudi has first input vakida
+vavabu has value one
+gekoba has value zero
+gezabi has value zero
+gesudu has kind and
+kirabi has value zero
+vanubi has first input pazedo
+dipoba has second input nufabe
+zasudu has value zero
+musubi has second input mavebi
+fugodo is output of gipobo
+dafabu has kind xor
+kesuda is output of kalofa
+rovibe has first input dutobu
+tegadu has value one
+legodu has value one
+favafe has kind xor
+birobu has value one
+zanafe has value one
+levibe has value zero
+bapebe has value zero
+kelife has first input sepobu
+parude has second input zirada
+dupubo has value one
+gavobu has second input sotebi
+gilebo has first input fuvidu
+lunebe has second input potibo
+sogidu has second input vupebo
+pigidu has kind xor
+renada has value one
+bikedo has kind and
+kumede has kind or
+bisaba has second input latabo
+mirude has value one
+pimabe has value zero
+seriba has first input sapede
+gazuda has value zero
+volufe has first input kibifa
+nogufa has value zero
+sutodo has value zero
+futabe has value zero
+pezebo has first input zikufe
+gepidi has value zero
+vopedi has first input linoba
+vekebo has kind and
+gadubu has value one
+zemidu is output of ditobo
+tukado has second input razubo
+zimufe has value one
+rizidi has kind xor
+tozibe is output of dusoba
+lufofa has second input guzadi
+kodabu has first input genubu
+dinifa is output of babubi
+lapofe has second input novade
+dokudo has first input rizebu
+fosofe has value one
+begobo has second input rusude
+vuroba has kind xor
+zegadi has value zero
+savede has kind and
+bisobe is output of gadedo
+zopadi has first input loviba
+kizedi has kind xor
+laluda is output of sidube
+suzebi is output of dorebe
+kagadu has value zero
+nudadi has value zero
+sokubo has value one
+labebi has value zero
+rebada has value zero
+mivude is output of sifibu
+linode has value zero
+lofadu has second input gogidi
+kasode is output of zasobu
+mizafa has value zero
+bemobu has value one
+pegubu has first input fumeba
+sakadi has second input nifudu
+nagabo has kind and
+mivibi has first input katudi
+momebo is output of pizodo
+kovudi has value zero
+kuride has kind and
+pitabu has kind xor
+toboda has second input duzoba
+golobo is output of nupifa
+guside has first input kilebu
+tapidu has kind and
+vodido has value one
+larido has second input vakibo
+mupibi is output of migofe
+bovoda has value zero
+kiboba has value one
+loradu has kind or
+digibi has value one
+mosidu is output of tanibu
+didebo is output of fededi
+fobabo has value one
+nazado has value zero
+gilibu has kind xor
+giteda has second input puzadu
+lepibo has value one
+latedo has kind and
+rukabi has value zero
+tidode has kind or
+sutobu is output of subeda
+fibeba has kind and
+kiredi has value zero
+kufidu has second input vugife
+budobe has value zero
+tozida has first input kupobe
+motubu has value zero
+dosibi has value one
+mekude is output of nasedu
+vibubo has first input fokudu
+posodu has value zero
+libibe is output of mopade
+ruzodo has kind xor
+nazebi has value one
+konidi is output of govodo
+gileba is output of badide
+nefobi has kind xor
+kadaba is output of tumidi
+peredo has value one
+vamabu has first input gufabo
+folafe has kind or
+fopebe has first input rimeda
+gedabo has first input sodado
+gefibi has kind xor
+ponudi has value one
+nufabe has value zero
+pubiba has value one
+kedado is output of siribu
+goribi has first input renobe
+debife is output of sadadu
+bukedo is output of zufada
+regufa has second input zasidu
+meruba has value one
+vonuba has value zero
+mekode has value zero
+kadaba has value one
+ponife has first input sokodo
+fiduba has second input ruzibu
+rupobe has first input torofa
+fededi has first input faledi
+safudi is output of rozide
+kameba has value one
+monubu has kind and
+bugifa has value one
+lusada has value one
+fusedi has first input deledu
+lagafa has first input rotobe
+momada has second input vedido
+satibi has second input sudude
+gavifa is output of suvada
+zunodu has value one
+dumode has value one
+nurida has first input suzedu
+faludo has second input rusebu
+damede is output of nuvuda
+febedi is output of dededo
+birobo is output of logude
+zaneda is output of roteba
+vimidi is output of tiredi
+govuda is output of zitobi
+domada has first input zuraba
+rudedu is output of masadu
+mabedi has second input vovadi
+pirado has value zero
+mibuba has value one
+nenofe has first input merefa
+dinaba has kind xor
+nulabi is output of mivibi
+tirofa has kind xor
+gazibe has first input bakibu
+pukiba has second input zupida
+bifabu has second input nanoda
+daridu has value zero
+vovibo has value one
+gapubo has kind xor
+dutada has first input sufafe
+suzoba has first input nomidi
+repibu has value one
+fegabo is output of futebo
+busibi has second input serudo
+tobife has second input vadube
+tulibi has first input bemobu
+nimebo has value one
+bamodi has first input vigobo
+ludifa has value zero
+gazibe has second input bipobo
+situbo has value zero
+dekaba has value one
+zumobe has kind xor
+gokabu has second input pubidi
+giveda has first input metobi
+solodo is output of rotodu
+kubibi has value zero
+pufobe is output of tigudi
+bikafe is output of magebu
+pitude has kind xor
+penade has kind or
+futudu has value one
+kukabi has value one
+zamodi has first input dulude
+pokede has value zero
+favebi has second input futobu
+pinuda has value zero
+kezido has first input giridu
+bugubo is output of vezufe
+fomobu is output of gamodu
+novade has value zero
+zepibi has second input fagaba
+vovabu has kind xor
+nuvuda has second input depebe
+vupibo has second input kakibu
+gosabu has value zero
+sivadu has second input vufefa
+dalobi has second input bemufe
+buroda is output of punibu
+gudofe has second input lufadi
+bazido is output of bigufa
+monidu has first input mefobu
+debedo has second input gefubo
+lugube has value one
+regufa has first input rifefe
+bolude is output of dugadu
+rupade has value zero
+dadabo has value zero
+fuveda has kind or
+nateba has value one
+farebe has value one
+getidu has first input latufe
+lovedo has kind xor
+punido has first input sopide
+batodo has value zero
+nurida has second input mekude
+folafa has value one
+mudide is output of mukufa
+kefifa has second input modaba
+gafodi is output of sebida
+lirado has first input mefada
+lekobi has value zero
+volube has second input ribufa
+karife is output of likefe
+vabafa has value zero
+nopefe has first input toribe
+bifidu has value one
+nutido has second input sinofa
+gegabe is output of darabi
+vikibu has value one
+zusibo has value zero
+domafa is output of gukodo
+fuveda has first input nedudi
+mukufa has kind and
+temefa is output of zekabi
+rofodo has second input raguda
+vezida has value zero
+dumifa has value zero
+virufe has value zero
+vuzifa has value zero
+sadadu has kind and
+nabubi has second input fogabu
+todifa has value zero
+risuda has first input galuda
+nilefe has value zero
+lugobi has second input bodubu
+tufado has kind or
+tutaba has kind and
+balaba has value zero
+losedi has second input nitebe
+denedi has value one
+monedu has value zero
+pikabu is output of kizedi
+sumode has value zero
+bagida has value one
+ruvofe is output of bivibo
+sunoda has value zero
+pomibu has second input kezabu
+goloda has kind and
+piribe is output of vumofa
+pafafe has value zero
+zabuda is output of gefibi
+movudo has kind and
+dosefa has value zero
+nabubi has kind and
+mimuda has kind or
+gabade has kind xor
+lemiba has value zero
+zafidu has value one
+pegobu is output of bebide
+somefa has second input nilefe
+limubo has kind or
+lefabu is output of muzadu
+ruvide has value zero
+povabu has second input dopifa
+tovedi is output of pafobu
+pobidu has value zero
+losufe has second input sagifa
+gekadi is output of losufe
+volufe has kind or
+kuteba has value one
+fufafa has kind or
+funiba has first input tikeda
+zugeda has first input forubi
+kenobe has value one
+patudo is output of nizofe
+bilobi is output of dufedo
+supeda has value one
+pavufa has value zero
+dorebe has first input ruzeba
+dokubu has value zero
+basiba has kind or
+mavebi has value one
+godidu is output of bevido
+lopebo has kind or
+kufibo has value zero
+rizade has value zero
+susufa has value zero
+rafeda has value zero
+lagobo has value one
+saroba has value zero
+kovobe has value one
+gaseda has kind and
+lafufe has value one
+fenufe has value zero
+dakodu has kind or
+robuba is output of pazedi
+fekifa has kind xor
+fegidi is output of fusedi
+bigufa has second input nemofe
+fukadi has kind and
+tegobi has value zero
+gitaba has second input ligabo
+remabo has kind xor
+vepubo has kind xor
+kumede has first input bimodi
+rovedu is output of sinefe
+lofebi has first input saroba
+pufobe has value one
+foredu has value one
+rizebu is output of vufeda
+digefe has value one
+femabu is output of rumeda
+mapife has first input tubibu
+lupafa is output of legeda
+fovefe has kind xor
+gutiba has first input gasada
+rudido has second input temede
+bafodo has second input reteba
+lirobe has second input tuvobi
+fodofe has value zero
+buzado has second input vereba
+nifudu has value one
+bebabi has value zero
+vizedo has value one
+volube has kind or
+rurube has kind xor
+bodeba has kind and
+mukibi has first input virubi
+lagufa has second input nuribe
+zimado has value one
+ginubo has first input kipudu
+kebadi is output of sibadi
+vuvida is output of dekeba
+parude has first input baladu
+vevibi is output of petobu
+zolubo has value one
+dafedi has kind or
+sabobu has second input vereba
+pazedi has kind xor
+vivifa has value one
+benibe has value zero
+tusodu has value zero
+zebafe has value one
+dofafe has value one
+mevadu is output of sazide
+tusabi has value one
+temeba has value zero
+ditobo has second input nafubo
+guzibe has value one
+sorudi has second input zafidu
+tonufa is output of nunuba
+bigudi has kind and
+nadidi has value zero
+dutobu has value zero
+difido is output of badebe
+varafa has kind xor
+pofofe has value zero
+zugebo is output of bupebi
+zozife is output of bakafe
+dogede has first input virufe
+lenida has second input zarebu
+pilado has first input sedido
+ravebe is output of komufa
+renofe has value one
+dogifa has kind xor
+rebifa has second input gobafa
+fufuba is output of momebi
+dubibo has value one
+kezido has kind and
+kuvibo has first input vilofa
+nasade has kind xor
+metode is output of fekuda
+bulibe is output of pafadu
+lafifa has first input pabobi
+mafede has value one
+rivadu has value one
+nagude has second input tididi
+gupaba has first input gufado
+balobo has second input zikedi
+lokede has kind xor
+nasedu has kind and
+rumodo has second input lezafa
+fifedo has kind and
+lapofe has first input tumabo
+miduba has value one
+zemidu has value zero
+sumude has first input mizafa
+mizebu has kind or
+gugudo has first input mosidu
+sifida has value one
+punifa has value one
+sapibo has second input notade
+bokeba has kind and
+balobo has first input pulodo
+nisofa has kind xor
+losedi has first input pupidi
+vubedu has value one
+pozufe is output of rubibo
+noneba has value zero
+devefa has kind and
+rovida has value one
+munefe has kind xor
+batodo is output of nabefe
+lagede is output of lokifa
+vebadu has second input suludi
+sesede has kind or
+pukubu has value one
+pebodu has value one
+vovabu has first input numode
+lidube has second input disubo
+vitada has kind or
+dupabo has second input begide
+sezeba has value one
+vafede has kind or
+kotido is output of fatodi
+zonabe has value zero
+mefibo has second input bezoba
+punabo has kind and
+tivide has first input dafida
+mizebu has second input modebe
+logude has kind xor
+vesibu has first input fifubu
+babubi has second input tusabi
+samubi has value one
+vatibi has first input vivifa
+tifeda has value one
+denedi is output of duneba
+pifebu has value zero
+kelade has first input linode
+betode has kind xor
+ragaba has value one
+negube has first input momafa
+zorebu has value one
+sobede has value zero
+pitaba has first input vegebi
+norido has value zero
+gosuba has second input gabifa
+daloda is output of fifedo
+gemeba has value one
+nanidu has first input vovuba
+finadu has value zero
+komufa has first input pemoda
+vezufe has second input sotedi
+nekeda has value zero
+kibife has value zero
+tadudu has value one
+korabi has first input ruzado
+siribu has second input bulibe
+zatebu has second input ruvafe
+debadu has first input nasodo
+nasobu has value zero
+tukado has kind xor
+gukedo has value zero
+gozebi has kind or
+nitide has kind and
+kagadu is output of salide
+pitabu has second input zumodi
+giteda has kind and
+demuda is output of lufebu
+fopide has second input lenodi
+gafafe has value one
+lufobu has second input gibabu
+lufebe has value zero
+foseda is output of ludibe
+rolido is output of nafudi
+vizadi is output of duvaba
+vebodi has value zero
+fakado is output of ferefe
+volabo has value zero
+napude has kind xor
+timabe has value one
+rirudu has value zero
+rofibu has second input bufibo
+masodu has kind and
+vevidu has value zero
+rigubi has value zero
+rinibi is output of potebe
+lavidi has value zero
+duvoda has second input kopodu
+gokabu has kind xor
+mureda has value one
+zasedu has first input furiba
+buroda has value one
+sureba has value zero
+tegide has value one
+monubu has second input gakidu
+fefado has value zero
+fokada has value zero
+kimabe has value zero
+tafidu is output of demubo
+gofaba has first input nomida
+mavode has first input zolubu
+damadu has value one
+vilofa has value one
+lokede has second input bagaba
+nipubi has value one
+dededo has kind xor
+todefa has first input balobu
+pugabe is output of gegobi
+tafiba has first input sigabe
+kamidu has value one
+rivubi has first input bogede
+veneba has value one
+puvabo is output of rimofa
+pemido has value one
+folodo has second input dupobe
+vadidi is output of lofadu
+fogado has value zero
+tizodo has value zero
+lokede has first input tobobu
+fugodo has value zero
+ronufa is output of lavebu
+tilife has value one
+tosude has second input rusude
+gefufe has value one
+tonadi is output of fodada
+ragobe has first input fodofe
+lelafa has value one
+pirife has second input pemubu
+rigobu has kind xor
+kalibi has first input mimedu
+vatibi has second input matofa
+dumabu has kind or
+fokede has second input gavabe
+kigebi has second input betida
+zakede has second input vegibu
+tozafa has value one
+fedeba is output of tivofe
+dupobe has value zero
+lufofa has kind xor
+fukife has first input letubo
+fipida has value zero
+gabade has second input gakidu
+ravode is output of nasade
+fekuda has second input nudadi
+nuvofa is output of vemidi
+ronibo has value one
+kuzebi has first input fabada
+mabedi has first input dutudi
+vabode has value zero
+rozufe has value zero
+sefibe has second input gegife
+voredu is output of gudofe
+pesufa has value one
+dilude is output of romobu
+sinobu has second input lefobi
+zetode has kind and
+rogube has second input godidu
+dikeda has value zero
+pivida has second input kesabu
+goribi has kind and
+ferefe has kind and
+kelobe is output of nepafa
+difudi has first input tobudo
+zegudo has value zero
+rubibo has second input zifibu
+gabedo has first input ranubu
+pezoda has kind or
+dapibu has value one
+forebo is output of pinibi
+rokebu has second input vegibu
+turuda is output of borade
+foladu has value zero
+lipede has value one
+nosebe has kind or
+duledu has kind xor
+nasibo has value zero
+lunobu has value one
+lomobo is output of zimafe
+lekofe has value zero
+natabo has kind and
+nupifa has kind or
+givado has kind xor
+dogede has second input sopedo
+kafido has second input gumobu
+labifa has kind and
+rababu has second input zorubu
+detadu has first input lekadu
+rozide has first input posuba
+samoda has value one
+menabi has second input vapebo
+bakube has value one
+zotudo has kind or
+pobefa is output of vodubi
+galuda has value zero
+piledu has value one
+volebi has value zero
+gamodu has second input kerebo
+pulido has kind or
+bulobi has value one
+tafudu is output of suzife
+dipide has first input susobo
+poteba has kind or
+denoda has second input fetada
+bosafe has value zero
+kugido has second input kipado
+midebu has kind and
+vivafa has kind xor
+buzebu has first input fizadu
+duvaba has second input rinudo
+falidi has first input zosefa
+bisadu has kind xor
+famode has kind or
+difide has value zero
+kulafa has value zero
+tetebu has first input botebi
+polubi is output of lovodu
+losuba has first input bamofa
+vatedu has value zero
+gapubo has second input gumebi
+nonedu has first input kofidu
+dadudu has value zero
+buboba has value zero
+pugide has value one
+gakede has value one
+zutuda has value one
+gebubi has second input gepabu
+vebude is output of gigedo
+gerudi has value zero
+kosifa is output of salafa
+ganiba has value zero
+dotede has kind xor
+felode has value one
+kozubo is output of tugubi
+rugaba has value zero
+vagadu has second input vafobe
+mupufe has value zero
+zotudo has second input ritedo
+faradu has kind xor
+salafa has kind xor
+vikedo has value zero
+raguda is output of vafebe
+pupobu has first input raruda
+gomafe has first input rivadi
+tazife has value zero
+ruzibu has value one
+zenide has first input satobo
+vusobe has value one
+bubibo is output of vafubi
+bagaba has value one
+sigado has value one
+tugide has value zero
+rokebu has first input setede
+minebo has kind xor
+mipade has value zero
+koveda has value zero
+gukude has second input lopefe
+nibadu has value zero
+rebebo has value one
+zikedi has value one
+remibo has value one
+zazodo is output of kulida
+fokibe has value one
+tigidi has kind or
+setebi is output of ruraba
+serebe is output of gokabu
+gunido has first input siteda
+dobabu has value zero
+rudido has first input mekufa
+digifa has second input tivodo
+sosubo has value zero
+digibi is output of penida
+pafadu has kind or
+lubude has value one
+gitaba has kind or
+zufubi has second input lezadi
+lesedu has kind or
+vetudi has first input pufufe
+penodu has value zero
+pudibi has second input lenife
+latifa is output of bekafe
+didebo has value zero
+tifibo has value one
+bipaba has first input komodi
+fasubo has first input pifode
+tigidi has second input zadefe
+mekudu has value zero
+fulude has value one
+pedebe has value one
+nizufe has kind xor
+lasibi has value zero
+nivobu has value one
+lapodu has second input dusidu
+tuvifa has kind xor
+puvede has value zero
+zuzube has first input vefodu
+puvode has kind and
+lotebe has value zero
+tisubo is output of ramobo
+fuveda has second input kusube
+giludo is output of galido
+tomubu has value one
+limade has value one
+pizefe has kind or
+zufubi has kind and
+fufubi has kind and
+mobodo has value zero
+nakibe has kind xor
+pidudo has value zero
+limudu has kind or
+petobu has second input kelobe
+nefide has value zero
+pufadi has value one
+danuba has value zero
+firubu has value zero
+motofa has value one
+mipabu has second input napudo
+liruba has second input rosufe
+pegobu has value one
+bisadu has first input lotubi
+govodo has second input zuluba
+kubebe has value one
+bavidu is output of tetebu
+kitada has second input kuguda
+latedo has first input zutebo
+baladu is output of tulibi
+bikedo has first input zosefa
+kadife has value zero
+simida has value zero
+dezafa has first input nagidi
+vonidu has kind xor
+pubobi has value one
+mabedi has kind xor
+ziroda is output of felubu
+kefifa has kind or
+venide has kind or
+vububo has value one
+denudo has kind xor
+tadofa has second input kovudi
+mukibi has second input getiba
+zufada has second input bodidu
+duzudu has first input pobeda
+zagiba has first input sotobe
+nolibo is output of pudibi
+tenada has value zero
+ganide has value one
+lurefe has second input fububu
+migofe has second input feroda
+gefebo has value zero
+sazide has first input vekife
+pakobo has first input vozado
+finibe is output of seriba
+selibe is output of mabedi
+buvuba has value zero
+gukude has first input tedido
+logeda has kind and
+motafa is output of ripobe
+kebadi has value zero
+latada has value zero
+nizofe has kind xor
+nezufa is output of kuzudo
+rugobo has kind and
+kokofe has first input fogabu
+guruba has value zero
+bepobi has second input zunede
+zazidi has value one
+goloda has first input kibabi
+liruba has first input gunebo
+seriba has kind or
+nebibe has value one
+bodibe is output of fukife
+kulidi is output of minebo
+lamodo has first input pelobo
+vorida is output of lokofa
+timadi is output of fadabe
+zenide has second input kubibi
+vedebo has value one
+bidebo is output of toboda
+rekida has kind xor
+siribu has first input napabe
+bomida has second input ninidu
+difudi has kind xor
+ledoda has first input derude
+nopuda has value zero
+patede has value zero
+pefudo has kind and
+pasebo has first input narodi
+votobu has kind xor
+lenife is output of fekoba
+pideda has kind or
+mididu has first input vukoba
+sinefe has second input kenobe
+tusodu is output of kedade
+dinebe has kind xor
+govodo has kind or
+sasefe has second input bodibe
+gazabu has value one
+binaba has first input mimubu
+bekafe has second input nufufa
+gilebo has kind and
+legeda has second input bukidi
+perubi is output of sarode
+zivudi is output of poguba
+bekufa has kind xor
+rulide has value zero
+rukibe has value zero
+timodu has second input kulidi
+dumudi is output of kiladu
+gopudo has kind xor
+vitodu has kind and
+bakafe has second input faridi
+sisefa has second input pavabo
+fibeba has second input fenufa
+delidu has value zero
+devife has value zero
+nazude has second input pukubu
+pubidi has value one
+nagefe has kind and
+bolude has value zero
+fudedi has kind and
+tubidu has first input figufa
+gesudu has first input tipido
+mekibu has value one
+nedudi has value zero
+beside has value one
+faludo has kind xor
+lopidu has value zero
+pufubi has second input viguda
+kibabi has value zero
+dalebu has first input denife
+gomade has value one
+bavedo has value zero
+tizibo has value zero
+fidefe has value zero
+zirede has value one
+dipade has kind xor
+dafedi has first input vonofe
+gozado has first input makifa
+dunebe has second input luzude
+kuvufe has value zero
+tududo has second input vatufa
+dafide has value one
+kodudi has second input vededo
+zizeba has value one
+ponoba is output of gerebo
+gubudu has value zero
+tinodo has second input gemuda
+kulude has second input tugide
+zibabu has second input fopibe
+bubebo has value zero
+dinebe has first input kezufe
+nasade has first input kufida
+tezabo has value one
+detobu has value zero
+vinofe is output of sogufe
+pezebo has kind and
+pinade is output of kazubu
+febadu has value one
+pikado has first input daviba
+valobi has value one
+rafabo has value zero
+kobufa has kind or
+lesedu has first input vozoda
+bemubu has first input saneba
+devafa has value one
+sokefa is output of vitada
+sifibu has first input fapidu
+runabe has kind and
+vopobe has value zero
+meneda has value zero
+gitobe has first input namaba
+vudodu has second input poribo
+banebo has first input pirofe
+vitodu has second input bazubu
+vonofe has value one
+fagidi has first input folubo
+dotede has second input rureda
+visube has value zero
+luzibi has value zero
+suzedu is output of benudo
+dotodi has value zero
+tosude has first input tedabi
+zasobu has kind xor
+meruba is output of robefa
+novudi has value zero
+kededo has second input ganide
+lizudo has value zero
+zesebu is output of tozida
+bagodu has kind or
+dafebo has value zero
+lutubo has first input rekidu
+vemidi has kind or
+nozoda has value one
+radebi has value zero
+sotebi has value zero
+zulubo has value zero
+tutebe has first input fenufe
+govuda has value one
+zirada is output of kolefa
+leludu has value one
+kutobi has kind or
+difofe has value zero
+mumedu has value zero
+degude has value one
+rimofa has kind xor

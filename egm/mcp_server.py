@@ -151,9 +151,12 @@ class Server:
         return {"pattern": a["pattern"], "history": [_fact(f) for f in self.engine.history(a["pattern"])]}
 
     def t_egm_relations(self, a):
-        return {"relations": [{"template": r.template, "facts": r.facts} for r in self.engine.relations()],
+        exp = self.engine.experimental()
+        return {**({"experimental_settings": exp} if exp else {}),
+                "relations": [{"template": r.template, "facts": r.facts} for r in self.engine.relations()],
                 "rules": [{"rule": r.text, "accepted": r.accepted, "tier": r.tier, "rate": r.rate, "lift": r.lift,
-                           "chains_seen": r.n, "conclusion_stated": r.k}
+                           "chains_seen": r.n, "conclusion_stated": r.k, "shape": r.shape, "premises": r.premises,
+                           **({"condition": r.condition} if r.condition else {})}
                           for r in self.engine.rules(include_rejected=a.get("include_rejected", False))]}
 
     def t_egm_conflicts(self, a):

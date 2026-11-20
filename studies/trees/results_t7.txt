@@ -1,0 +1,9 @@
+gates TREES 0: [PROFILE] classes 388.5 ms | relations 6.3 ms | rule mining 14.3 ms [PROFILE] infer 0.7 ms, 1 rounds 
+gates TREES 1: [PROFILE] classes 390.6 ms | relations 4.9 ms | rule mining 127.3 ms [PROFILE] infer 36.8 ms, 2 rounds 
+adders TREES 0: [PROFILE] classes 227.2 ms | relations 4.5 ms | rule mining 11.6 ms [PROFILE] infer 0.5 ms, 1 rounds 
+adders TREES 1: [PROFILE] classes 257.8 ms | relations 4.4 ms | rule mining 79.3 ms [PROFILE] infer 131.1 ms, 8 rounds 
+hidden TREES 0: [PROFILE] classes 14.9 ms | relations 5.4 ms | rule mining 122.2 ms [PROFILE] infer 152.5 ms, 5 rounds 
+hidden TREES 1: [PROFILE] classes 14.8 ms | relations 5.4 ms | rule mining 56205.3 ms [PROFILE] infer 126.3 ms, 5 rounds 
+gates TREES 1 (optimized): [PROFILE] classes 415.6 ms | relations 5.1 ms | rule mining 134.8 ms [PROFILE] infer 38.5 ms, 2 rounds 
+adders TREES 1 (optimized): [PROFILE] classes 257.7 ms | relations 4.6 ms | rule mining 81.9 ms [PROFILE] infer 136.1 ms, 8 rounds 
+hidden TREES 1 (optimized): [PROFILE] classes 15.5 ms | relations 5.5 ms | rule mining 9028.0 ms [PROFILE] infer 123.4 ms, 5 rounds 
