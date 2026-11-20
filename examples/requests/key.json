@@ -1,0 +1,364 @@
+[
+ {
+  "id": "q1",
+  "kind": "lookup",
+  "question": "In which module (file name without .py) is `InvalidURL` defined?",
+  "answer_format": "one module name",
+  "truth": "exceptions"
+ },
+ {
+  "id": "q2",
+  "kind": "lookup",
+  "question": "In which module (file name without .py) is `Response_links` defined?",
+  "answer_format": "one module name",
+  "truth": "models"
+ },
+ {
+  "id": "q3",
+  "kind": "lookup",
+  "question": "In which module (file name without .py) is `stream_decode_response_unicode` defined?",
+  "answer_format": "one module name",
+  "truth": "utils"
+ },
+ {
+  "id": "q4",
+  "kind": "lookup",
+  "question": "In which module (file name without .py) is `unquote_header_value` defined?",
+  "answer_format": "one module name",
+  "truth": "utils"
+ },
+ {
+  "id": "q5",
+  "kind": "lookup",
+  "question": "In which module (file name without .py) is `HTTPDigestAuth_init_per_thread_state` defined?",
+  "answer_format": "one module name",
+  "truth": "auth"
+ },
+ {
+  "id": "q6",
+  "kind": "lookup",
+  "question": "In which module (file name without .py) is `RequestHooksMixin_register_hook` defined?",
+  "answer_format": "one module name",
+  "truth": "models"
+ },
+ {
+  "id": "q7",
+  "kind": "lookup",
+  "question": "In which module (file name without .py) is `dispatch_hook` defined?",
+  "answer_format": "one module name",
+  "truth": "hooks"
+ },
+ {
+  "id": "q8",
+  "kind": "lookup",
+  "question": "In which module (file name without .py) is `resolve_proxies` defined?",
+  "answer_format": "one module name",
+  "truth": "utils"
+ },
+ {
+  "id": "q9",
+  "kind": "callers",
+  "question": "We are changing the signature of `should_bypass_proxies`. List every function or method in the package that calls `should_bypass_proxies` directly.",
+  "answer_format": "a list of function/method names",
+  "truth": [
+   "get_environ_proxies",
+   "resolve_proxies"
+  ]
+ },
+ {
+  "id": "q10",
+  "kind": "callers",
+  "question": "We are changing the signature of `extract_cookies_to_jar`. List every function or method in the package that calls `extract_cookies_to_jar` directly.",
+  "answer_format": "a list of function/method names",
+  "truth": [
+   "HTTPAdapter_build_response",
+   "HTTPDigestAuth_handle_401",
+   "SessionRedirectMixin_resolve_redirects",
+   "Session_send"
+  ]
+ },
+ {
+  "id": "q11",
+  "kind": "callers",
+  "question": "We are changing the signature of `HTTPAdapter_init_poolmanager`. List every function or method in the package that calls `HTTPAdapter_init_poolmanager` directly.",
+  "answer_format": "a list of function/method names",
+  "truth": [
+   "HTTPAdapter___init__",
+   "HTTPAdapter___setstate__"
+  ]
+ },
+ {
+  "id": "q12",
+  "kind": "callers",
+  "question": "We are changing the signature of `get_netrc_auth`. List every function or method in the package that calls `get_netrc_auth` directly.",
+  "answer_format": "a list of function/method names",
+  "truth": [
+   "SessionRedirectMixin_rebuild_auth",
+   "Session_prepare_request"
+  ]
+ },
+ {
+  "id": "q13",
+  "kind": "callers",
+  "question": "We are changing the signature of `HTTPDigestAuth_build_digest_header`. List every function or method in the package that calls `HTTPDigestAuth_build_digest_header` directly.",
+  "answer_format": "a list of function/method names",
+  "truth": [
+   "HTTPDigestAuth___call__",
+   "HTTPDigestAuth_handle_401"
+  ]
+ },
+ {
+  "id": "q14",
+  "kind": "callers",
+  "question": "We are changing the signature of `MockRequest_get_host`. List every function or method in the package that calls `MockRequest_get_host` directly.",
+  "answer_format": "a list of function/method names",
+  "truth": [
+   "MockRequest_get_origin_req_host",
+   "MockRequest_host"
+  ]
+ },
+ {
+  "id": "q15",
+  "kind": "callers",
+  "question": "We are changing the signature of `Response_iter_content`. List every function or method in the package that calls `Response_iter_content` directly.",
+  "answer_format": "a list of function/method names",
+  "truth": [
+   "Response___iter__",
+   "Response_content",
+   "Response_iter_lines"
+  ]
+ },
+ {
+  "id": "q16",
+  "kind": "callers",
+  "question": "We are changing the signature of `select_proxy`. List every function or method in the package that calls `select_proxy` directly.",
+  "answer_format": "a list of function/method names",
+  "truth": [
+   "HTTPAdapter_get_connection",
+   "HTTPAdapter_get_connection_with_tls_context",
+   "HTTPAdapter_request_url"
+  ]
+ },
+ {
+  "id": "q17",
+  "kind": "caller_modules",
+  "question": "If `requote_uri` changes, which modules (file names without .py) contain code that calls it directly?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "models",
+   "sessions"
+  ]
+ },
+ {
+  "id": "q18",
+  "kind": "caller_modules",
+  "question": "If `_basic_auth_str` changes, which modules (file names without .py) contain code that calls it directly?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "adapters",
+   "auth",
+   "sessions"
+  ]
+ },
+ {
+  "id": "q19",
+  "kind": "caller_modules",
+  "question": "If `to_native_string` changes, which modules (file names without .py) contain code that calls it directly?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "auth",
+   "cookies",
+   "models",
+   "sessions"
+  ]
+ },
+ {
+  "id": "q20",
+  "kind": "caller_modules",
+  "question": "If `get_encoding_from_headers` changes, which modules (file names without .py) contain code that calls it directly?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "adapters",
+   "utils"
+  ]
+ },
+ {
+  "id": "q21",
+  "kind": "raises_1hop",
+  "question": "Which exception types can `Response___iter__` raise, either with its own raise statements or through package functions/methods it calls directly?",
+  "answer_format": "a list of exception class names",
+  "truth": [
+   "ChunkedEncodingError",
+   "ConnectionError",
+   "ContentDecodingError",
+   "StreamConsumedError",
+   "TypeError"
+  ]
+ },
+ {
+  "id": "q22",
+  "kind": "raises_1hop",
+  "question": "Which exception types can `Request___init__` raise, either with its own raise statements or through package functions/methods it calls directly?",
+  "answer_format": "a list of exception class names",
+  "truth": [
+   "ValueError"
+  ]
+ },
+ {
+  "id": "q23",
+  "kind": "raises_1hop",
+  "question": "Which exception types can `Response_iter_lines` raise, either with its own raise statements or through package functions/methods it calls directly?",
+  "answer_format": "a list of exception class names",
+  "truth": [
+   "ChunkedEncodingError",
+   "ConnectionError",
+   "ContentDecodingError",
+   "StreamConsumedError",
+   "TypeError"
+  ]
+ },
+ {
+  "id": "q24",
+  "kind": "raises_1hop",
+  "question": "Which exception types can `RequestsCookieJar_get` raise, either with its own raise statements or through package functions/methods it calls directly?",
+  "answer_format": "a list of exception class names",
+  "truth": [
+   "CookieConflictError",
+   "KeyError"
+  ]
+ },
+ {
+  "id": "q25",
+  "kind": "raises_1hop",
+  "question": "Which exception types can `Response_content` raise, either with its own raise statements or through package functions/methods it calls directly?",
+  "answer_format": "a list of exception class names",
+  "truth": [
+   "ChunkedEncodingError",
+   "ConnectionError",
+   "ContentDecodingError",
+   "RuntimeError",
+   "StreamConsumedError",
+   "TypeError"
+  ]
+ },
+ {
+  "id": "q26",
+  "kind": "raises_1hop",
+  "question": "Which exception types can `Session_send` raise, either with its own raise statements or through package functions/methods it calls directly?",
+  "answer_format": "a list of exception class names",
+  "truth": [
+   "InvalidSchema",
+   "TooManyRedirects",
+   "ValueError"
+  ]
+ },
+ {
+  "id": "q27",
+  "kind": "grandparent",
+  "question": "What are the base classes of the base classes of `JSONDecodeError` (its grandparent classes)?",
+  "answer_format": "a list of class names",
+  "truth": [
+   "RequestException"
+  ]
+ },
+ {
+  "id": "q28",
+  "kind": "grandparent",
+  "question": "What are the base classes of the base classes of `UnrewindableBodyError` (its grandparent classes)?",
+  "answer_format": "a list of class names",
+  "truth": [
+   "IOError"
+  ]
+ },
+ {
+  "id": "q29",
+  "kind": "grandparent",
+  "question": "What are the base classes of the base classes of `RequestsDependencyWarning` (its grandparent classes)?",
+  "answer_format": "a list of class names",
+  "truth": [
+   "Warning"
+  ]
+ },
+ {
+  "id": "q30",
+  "kind": "grandparent",
+  "question": "What are the base classes of the base classes of `Timeout` (its grandparent classes)?",
+  "answer_format": "a list of class names",
+  "truth": [
+   "IOError"
+  ]
+ },
+ {
+  "id": "q31",
+  "kind": "grandparent",
+  "question": "What are the base classes of the base classes of `ConnectionError` (its grandparent classes)?",
+  "answer_format": "a list of class names",
+  "truth": [
+   "IOError"
+  ]
+ },
+ {
+  "id": "q32",
+  "kind": "imports",
+  "question": "Which other modules of the package does module `status_codes` import (file names without .py)?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "structures"
+  ]
+ },
+ {
+  "id": "q33",
+  "kind": "imports",
+  "question": "Which other modules of the package does module `cookies` import (file names without .py)?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "_internal_utils",
+   "compat"
+  ]
+ },
+ {
+  "id": "q34",
+  "kind": "imports",
+  "question": "Which other modules of the package does module `_internal_utils` import (file names without .py)?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "compat"
+  ]
+ },
+ {
+  "id": "q35",
+  "kind": "imports",
+  "question": "Which other modules of the package does module `models` import (file names without .py)?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "_internal_utils",
+   "auth",
+   "compat",
+   "cookies",
+   "exceptions",
+   "hooks",
+   "status_codes",
+   "structures",
+   "utils"
+  ]
+ },
+ {
+  "id": "q36",
+  "kind": "imports",
+  "question": "Which other modules of the package does module `sessions` import (file names without .py)?",
+  "answer_format": "a list of module names",
+  "truth": [
+   "_internal_utils",
+   "adapters",
+   "auth",
+   "compat",
+   "cookies",
+   "exceptions",
+   "hooks",
+   "models",
+   "status_codes",
+   "structures",
+   "utils"
+  ]
+ }
+]
