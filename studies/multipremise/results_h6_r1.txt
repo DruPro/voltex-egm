@@ -1,0 +1,3 @@
+CHAIN 2: [PROFILE] classes 15.5 ms | relations 5.5 ms | rule mining 117.4 ms [PROFILE] infer 88.2 ms, 4 rounds 
+CHAIN 3: [PROFILE] classes 15.0 ms | relations 5.4 ms | rule mining 419.9 ms [PROFILE] infer 291.0 ms, 4 rounds 
+CHAIN 4: [PROFILE] classes 15.8 ms | relations 5.8 ms | rule mining 1429.2 ms [PROFILE] infer 912.4 ms, 4 rounds 

@@ -281,6 +281,8 @@ struct RuleH {
     u64 n = 0, k = 0;   // chains seen, chains whose conclusion is also stated
     double rate = 0, base = 0, lift = 0; u64 pn = 0; double pca = 0; bool accepted = false;
     double cov = -1, rel = 0; bool law = false;   // completeness used, reliability, label
+    std::vector<int> path;                        // multi-premise study: 'P' rules, premise relations in order (CHAIN >= 3)
+    int condRel = -1; std::set<u32> condVals, condSubj;   // CONDITIONS: fires only for head subjects with a value in condVals
 };
 
 // ─────────────────────────────────────────────
@@ -307,6 +309,9 @@ struct Vault {
     std::vector<double> covRel;
     std::set<u32> touched;   // subjects affected by UPDATE (enables change-triggered staleness checks)
     int F_STALE = 1;  // rel, subject, stated obj, inferred obj, proof
+    int DEPTH = 4, lastRounds = 0;   // multi-premise study: inference rounds (0 = until nothing new)
+    int CHAIN_L = 2;                 // longest rule body (2 = shipped shapes; >= 3 adds evidence-guided path rules)
+    int F_COND = 0;                  // learn conditions that restrict an accepted rule to a group of subjects
     // ---- declarative amendments (experimental condition C) ----
     int F_DECL = 0;        // amendment-record interpretation from the earlier study: off in this build
     // ---- source-aware evidence (condition D) ----
@@ -735,8 +740,131 @@ struct Vault {
             }
             finish(h);
         }
+        if (CHAIN_L >= 3) minePaths(out, subj, finish);
         if (F_COV || F_LABELS) rescoreRules(subj);
+        if (F_COND && (F_COV || F_LABELS)) specialize(out, subj, base);
         std::sort(ruleList.begin(), ruleList.end(), [](auto& a, auto& b) { return a.accepted != b.accepted ? a.accepted : a.lift > b.lift; });
+    }
+    // ── multi-premise study: path rules R1 & ... & Rl => T, 3 <= l <= CHAIN_L, proposed only from paths that connect stated T pairs ──
+    template <class Fin>
+    void minePaths(const std::vector<std::map<u32, std::vector<u32>>>& out, const std::vector<std::set<u32>>& subj, Fin& finish) {
+        size_t m = rels.size();
+        std::map<u32, std::vector<std::pair<int, u32>>> adj;
+        for (size_t r = 0; r < m; ++r) for (auto& f : rels[r].stated) adj[f.first].push_back({(int)r, f.second});
+        std::map<std::pair<u32, u32>, std::vector<int>> pairT;
+        for (size_t t = 0; t < m; ++t) for (auto& f : rels[t].stated) pairT[f].push_back((int)t);
+        std::set<u32> starts; for (auto& kv : pairT) starts.insert(kv.first.first);
+        std::vector<std::map<std::vector<int>, u64>> sup(m);
+        std::vector<int> seq;
+        for (u32 a : starts) {
+            u64 steps = 0; std::vector<u32> onPath{a};
+            std::function<void(u32, int)> dfs = [&](u32 x, int d) {
+                auto it = adj.find(x); if (it == adj.end()) return;
+                for (auto& e : it->second) {
+                    if (++steps > 50000) return;
+                    if (std::find(onPath.begin(), onPath.end(), e.second) != onPath.end()) continue;   // simple paths only
+                    seq.push_back(e.first); onPath.push_back(e.second); int l = d + 1;
+                    if (l >= 3) { auto pt = pairT.find({a, e.second}); if (pt != pairT.end()) for (int t : pt->second) sup[t][seq]++; }
+                    if (l < CHAIN_L) dfs(e.second, l);
+                    seq.pop_back(); onPath.pop_back();
+                }
+            };
+            dfs(a, 0);
+        }
+        for (size_t t = 0; t < m; ++t) {
+            std::vector<std::pair<u64, std::vector<int>>> cand;
+            for (auto& kv : sup[t]) if (kv.second >= K_MIN) cand.push_back({kv.second, kv.first});
+            std::sort(cand.begin(), cand.end(), [](auto& x, auto& y) { return x.first != y.first ? x.first > y.first : x.second < y.second; });
+            if (cand.size() > 200) cand.resize(200);
+            for (auto& c : cand) {
+                RuleH h{'P', c.second[0], -1, (int)t}; h.path = c.second;
+                std::set<u32> s0; for (auto& f : rels[h.path[0]].stated) s0.insert(f.first);
+                for (u32 x0 : s0) {
+                    if (F_STALE && touched.count(x0)) continue;
+                    std::set<u32> ends; std::vector<u32> onPath{x0}; u64 steps = 0;
+                    std::function<void(size_t, u32)> walk = [&](size_t i, u32 x) {
+                        if (i == h.path.size()) { ends.insert(x); return; }
+                        auto it = out[h.path[i]].find(x); if (it == out[h.path[i]].end()) return;
+                        for (u32 y : it->second) {
+                            if (++steps > 50000) return;
+                            if (std::find(onPath.begin(), onPath.end(), y) != onPath.end()) continue;
+                            onPath.push_back(y); walk(i + 1, y); onPath.pop_back();
+                        }
+                    };
+                    walk(0, x0);
+                    bool known = subj[t].count(x0) > 0;
+                    for (u32 e : ends) { h.n++; if (known) h.pn++; if (rels[t].stated.count({x0, e})) h.k++; }
+                }
+                finish(h);
+            }
+        }
+    }
+    // the shipped acceptance test and reliability label, for a rule whose statistics were recomputed
+    bool passes(RuleH& x, const std::vector<bool>& functional) {
+        double cR = (x.r3 < (int)covRel.size() && covRel[x.r3] > 0) ? covRel[x.r3] : covGlobal; x.cov = cR;
+        double bar = (F_COV && cR > 0) ? std::min(RATE_MIN, RATE_REL * cR) : RATE_MIN;
+        bool classic = x.lift >= LIFT_MIN && x.rate >= bar;
+        double ex = double(x.pn) * x.base, sd = std::sqrt(std::max(1e-9, ex * (1 - x.base)));
+        bool pcaOk = x.pn >= 5 && x.pca >= PCA_MIN && (double(x.k) - ex) / sd >= 3.0;
+        x.accepted = x.k >= K_MIN && (classic || pcaOk);
+        x.rel = functional[x.r3] ? x.pca : (cR > 0 ? std::min(1.0, x.rate / cR) : x.rate);
+        x.law = x.rel >= LAW_MIN;
+        return x.accepted;
+    }
+    // ── multi-premise study: a condition restricts an accepted rule to the group where its conclusions are actually observed ──
+    void specialize(const std::vector<std::map<u32, std::vector<u32>>>& out, const std::vector<std::set<u32>>& subj, const std::vector<double>& base) {
+        size_t m = rels.size();
+        std::vector<std::map<u32, std::set<u32>>> vals(m);
+        for (size_t q = 0; q < m; ++q) for (auto& f : rels[q].stated) vals[q][f.first].insert(f.second);
+        std::vector<bool> functional(m);
+        for (size_t i = 0; i < m; ++i) { size_t single = 0; for (auto& x : vals[i]) if (x.second.size() == 1) ++single; functional[i] = !vals[i].empty() && double(single) / double(vals[i].size()) >= 0.95; }
+        for (auto& h : ruleList) {
+            if (!h.accepted || h.type == 'P') continue;
+            std::map<u32, std::pair<u64, u64>> cs;   // head subject -> (chains, conclusions stated)
+            if (h.type == 'I') {
+                for (auto& f : rels[h.r1].stated) { if (f.first == f.second) continue; if (F_STALE && (touched.count(f.first) || touched.count(f.second))) continue;
+                    auto& x = cs[f.second]; x.first++; if (rels[h.r3].stated.count({f.second, f.first})) x.second++; }
+            } else {
+                for (auto& f : rels[h.r1].stated) { if (F_STALE && touched.count(f.first)) continue;
+                    auto it = out[h.r2].find(f.second); if (it == out[h.r2].end()) continue;
+                    for (u32 c : it->second) { if (c == f.first) continue; auto& x = cs[f.first]; x.first++; if (rels[h.r3].stated.count({f.first, c})) x.second++; } }
+            }
+            if (cs.size() < 10) continue;
+            double bestZ = 0; RuleH best = h; bool found = false;
+            for (size_t q = 0; q < m; ++q) {
+                if ((int)q == h.r3) continue;
+                std::map<u32, std::pair<double, double>> g;   // value -> (subjects, subjects whose answer in T is known)
+                for (auto& sc : cs) { auto it = vals[q].find(sc.first); if (it == vals[q].end()) continue; bool kn = subj[h.r3].count(sc.first) > 0;
+                    for (u32 v : it->second) { g[v].first++; if (kn) g[v].second++; } }
+                double bs = 0; for (auto& x : g) if (x.second.first >= 5) bs = std::max(bs, x.second.second / x.second.first);
+                if (bs <= 0) continue;
+                std::set<u32> K; for (auto& x : g) if (x.second.first >= 5 && x.second.second / x.second.first >= bs / 2) K.insert(x.first);
+                size_t eligible = 0; for (auto& x : g) if (x.second.first >= 5) ++eligible;
+                if (2 * K.size() > eligible) continue;                 // R2-F2(ii): a condition names at most half of the eligible values
+                double nI = 0, kI = 0, pnI = 0, nO = 0, kO = 0, sI = 0, knI = 0, sO = 0, knO = 0;
+                for (auto& sc : cs) {
+                    auto it = vals[q].find(sc.first); if (it == vals[q].end()) continue;   // R2-F2(i): value unknown = neither inside nor outside
+                    bool in = false; for (u32 v : it->second) if (K.count(v)) in = true;
+                    bool kn = subj[h.r3].count(sc.first) > 0;
+                    if (in) { nI += sc.second.first; kI += sc.second.second; if (kn) pnI += sc.second.first; sI++; if (kn) knI++; }
+                    else { nO += sc.second.first; kO += sc.second.second; sO++; if (kn) knO++; }
+                }
+                if (sI < 5 || sO < 5 || nI == 0 || nO == 0) continue;
+                double pin = knI / sI, pout = knO / sO, pp = (knI + knO) / (sI + sO);
+                double z = (pp > 0 && pp < 1) ? (pin - pout) / std::sqrt(pp * (1 - pp) * (1 / sI + 1 / sO)) : 0;
+                if (!(pin >= 3 * pout && z >= 3)) continue;            // (b) expected evidence is missing outside the group
+                if (!(kO / nO <= 0.1 * (kI / nI))) continue;           // (c) the rule's conclusions are (almost) never stated outside it
+                RuleH hi = h; hi.n = (u64)nI; hi.k = (u64)kI; hi.pn = (u64)pnI; hi.rate = kI / nI; hi.base = base[h.r3];
+                hi.lift = hi.base > 0 ? hi.rate / hi.base : 0; hi.pca = pnI > 0 ? kI / pnI : 0;
+                if (!passes(hi, functional)) continue;                 // (a) inside the group the rule passes the shipped test
+                if (z > bestZ) { bestZ = z; hi.condRel = (int)q; hi.condVals = K; best = hi; found = true; }
+            }
+            if (found) {
+                best.condSubj.clear();
+                for (auto& sv : vals[best.condRel]) for (u32 v : sv.second) if (best.condVals.count(v)) best.condSubj.insert(sv.first);
+                h = best;
+            }
+        }
     }
     // completeness estimate from inverse/symmetric redundancy; coverage-aware acceptance; reliability labels
     void rescoreRules(const std::vector<std::set<u32>>& subj) {
@@ -753,20 +881,30 @@ struct Vault {
         }
         for (auto& h : ruleList) {
             double cR = covRel[h.r3] > 0 ? covRel[h.r3] : covGlobal; h.cov = cR;
-            double bar = (F_COV && cR > 0) ? std::min(RATE_MIN, RATE_REL * cR) : RATE_MIN;   // relax for sparse data, never tighten
+            double bar = (F_COV && cR > 0 && h.type != 'P') ? std::min(RATE_MIN, RATE_REL * cR) : RATE_MIN;   // relax for sparse data, never tighten (R2-F1: not for path rules)
             bool classic = h.lift >= LIFT_MIN && h.rate >= bar;
             double ex = double(h.pn) * h.base, sd = std::sqrt(std::max(1e-9, ex * (1 - h.base)));
             bool pcaOk = h.pn >= 5 && h.pca >= PCA_MIN && (double(h.k) - ex) / sd >= 3.0;
             h.accepted = h.k >= K_MIN && (classic || pcaOk);
-            h.rel = functional[h.r3] ? h.pca : (cR > 0 ? std::min(1.0, h.rate / cR) : h.rate);
+            h.rel = functional[h.r3] ? h.pca : ((cR > 0 && h.type != 'P') ? std::min(1.0, h.rate / cR) : h.rate);   // R2-F1
             h.law = h.rel >= LAW_MIN;
         }
         (void)subj;
     }
     std::string ruleText(const RuleH& h) const {
         auto nm = [&](int r) { return "[" + words(rels[r].tmpl) + "]"; };
-        if (h.type == 'I') return nm(h.r1) + "(a,b) => " + nm(h.r3) + "(b,a)";
-        return nm(h.r1) + "(a,b) & " + nm(h.r2) + "(b,c) => " + nm(h.r3) + "(a,c)";
+        std::string cond;
+        if (h.condRel >= 0) {
+            std::string vs; for (u32 v : h.condVals) { if (!vs.empty()) vs += "|"; vs += voc.str[v]; }
+            cond = " if " + nm(h.condRel) + "(" + (h.type == 'I' ? "b" : "a") + "," + vs + ")";
+        }
+        if (h.type == 'I') return nm(h.r1) + "(a,b) => " + nm(h.r3) + "(b,a)" + cond;
+        if (h.type == 'P') {
+            static const char* var = "abcdefghijk"; std::string t;
+            for (size_t i = 0; i < h.path.size(); ++i) { if (i) t += " & "; t += nm(h.path[i]) + "(" + var[i] + "," + var[i + 1] + ")"; }
+            return t + " => " + nm(h.r3) + "(a," + var[h.path.size()] + ")" + cond;
+        }
+        return nm(h.r1) + "(a,b) & " + nm(h.r2) + "(b,c) => " + nm(h.r3) + "(a,c)" + cond;
     }
 
     // deduction to a fixpoint: every derived fact carries its proof
@@ -777,7 +915,7 @@ struct Vault {
             int ri = std::get<0>(sf); u32 x = std::get<1>(sf), o = std::get<2>(sf); int idx = std::get<3>(sf);
             std::vector<std::tuple<int, u32, u32, std::string>> cand;
             for (auto& h : ruleList) {
-                if (!h.accepted) continue;
+                if (!h.accepted || h.type == 'P') continue;
                 if (h.type == 'I') { if (h.r1 == ri) cand.emplace_back(h.r3, o, x, ruleText(h)); continue; }
                 if (h.r1 == ri) for (auto& f : all(h.r2)) if (f.first == o && f.second != x) cand.emplace_back(h.r3, x, f.second, ruleText(h));
                 if (h.r2 == ri) for (auto& f : all(h.r1)) if (f.second == x && f.first != o) cand.emplace_back(h.r3, f.first, o, ruleText(h));
@@ -815,7 +953,9 @@ struct Vault {
         std::set<std::pair<int, u32>> conflicted;
         auto has = [&](int r, u32 a, u32 b) { return rels[r].stated.count({a, b}) || rels[r].derived.count({a, b}); };
         auto conf = [&](int r, u32 a, u32 b) { if (rels[r].stated.count({a, b})) return 1.0; return rels[r].derived.at({a, b}).first; };
+        lastRounds = 0;
         for (int depth = 0; depth < maxDepth; ++depth) {
+            ++lastRounds;
             std::vector<std::tuple<int, u32, u32, double, std::string>> add;
             // functional relations: every derivation path is a vote, including paths that agree with what is stated
             std::map<std::pair<int, u32>, std::map<u32, std::pair<int, std::string>>> votes;
@@ -832,13 +972,41 @@ struct Vault {
                 if (!h.accepted) continue;
                 curRule = int(&h - &ruleList[0]);
                 auto all = [&](int r) { std::vector<std::pair<u32, u32>> v(rels[r].stated.begin(), rels[r].stated.end()); for (auto& d : rels[r].derived) v.push_back(d.first); return v; };
-                if (h.type == 'I') {
-                    for (auto& f : all(h.r1)) if (f.first != f.second && ((curLaw = F_LABELS && h.law && isLaw(h.r1, f.first, f.second)) || true))
+                auto condOK = [&](u32 s) { return h.condRel < 0 || h.condSubj.count(s) > 0; };
+                if (h.type == 'P') {
+                    size_t L = h.path.size();
+                    std::vector<std::map<u32, std::vector<u32>>> adjP(L);
+                    for (size_t i = 0; i < L; ++i) for (auto& f : all(h.path[i])) adjP[i][f.first].push_back(f.second);
+                    std::vector<u32> nodes;
+                    for (auto& s0 : adjP[0]) {
+                        u32 x0 = s0.first; if (!condOK(x0)) continue;
+                        std::set<u32> done; u64 steps = 0; nodes.assign(1, x0);
+                        std::function<void(size_t, u32, double, bool)> go = [&](size_t i, u32 x, double mc, bool law) {
+                            if (i == L) {
+                                if (x == x0 || !done.insert(x).second) return;
+                                std::string why;
+                                for (size_t j = 0; j < L; ++j) { if (j) why += " + "; why += renderFact(rels[h.path[j]], nodes[j], nodes[j + 1]); }
+                                curLaw = F_LABELS && h.law && law;
+                                propose(h.r3, x0, x, std::max(h.rate, h.pca) * mc, why + "  [rule: " + ruleText(h) + "]");
+                                return;
+                            }
+                            auto it = adjP[i].find(x); if (it == adjP[i].end()) return;
+                            for (u32 y : it->second) {
+                                if (++steps > 10000) return;
+                                if (std::find(nodes.begin(), nodes.end(), y) != nodes.end()) continue;   // simple paths only
+                                nodes.push_back(y); go(i + 1, y, std::min(mc, conf(h.path[i], x, y)), law && isLaw(h.path[i], x, y)); nodes.pop_back();
+                            }
+                        };
+                        go(0, x0, 1.0, true);
+                    }
+                } else if (h.type == 'I') {
+                    for (auto& f : all(h.r1)) if (f.first != f.second && condOK(f.second) && ((curLaw = F_LABELS && h.law && isLaw(h.r1, f.first, f.second)) || true))
                         propose(h.r3, f.second, f.first, h.rate * conf(h.r1, f.first, f.second),
                                 renderFact(rels[h.r1], f.first, f.second) + "  [rule: " + ruleText(h) + "]");
                 } else {
                     std::map<u32, std::vector<u32>> out2; for (auto& f : all(h.r2)) out2[f.first].push_back(f.second);
                     for (auto& f : all(h.r1)) {
+                        if (!condOK(f.first)) continue;
                         auto it = out2.find(f.second); if (it == out2.end()) continue;
                         for (u32 c : it->second) if (c != f.first && ((curLaw = F_LABELS && h.law && isLaw(h.r1, f.first, f.second) && isLaw(h.r2, f.second, c)) || true))
                             propose(h.r3, f.first, c, std::max(h.rate, h.pca) * std::min(conf(h.r1, f.first, f.second), conf(h.r2, f.second, c)),
@@ -935,7 +1103,7 @@ struct Vault {
     }
     void ensureModel() {
         if (!dirty) return;
-        bool small = F_REFRESH > 0 && haveCache && voc.str.size() == vocAtFull && double(recordsIngested - recsAtFull) <= F_REFRESH * double(std::max<u64>(1, recs.size()));
+        bool small = F_REFRESH > 0 && CHAIN_L < 3 && !F_COND && haveCache && voc.str.size() == vocAtFull && double(recordsIngested - recsAtFull) <= F_REFRESH * double(std::max<u64>(1, recs.size()));
         if (small) {   // evidence changed a little: re-project and rebuild relations, keep the learned classes and rules
             double t0 = nowms(); buildRelations(); remapRules(); ++refreshBuilds;
             if (F_PROFILE) std::printf("[PROFILE] refresh: relations %.1f ms (classes and rules reused)\n", nowms() - t0);
@@ -946,7 +1114,7 @@ struct Vault {
         }
         dirty = false; inferred = false;
     }
-    void ensureInferred() { ensureModel(); if (!inferred) { double t0 = nowms(); infer(); if (F_PROFILE) std::printf("[PROFILE] infer %.1f ms\n", nowms() - t0); } }
+    void ensureInferred() { ensureModel(); if (!inferred) { double t0 = nowms(); infer(DEPTH > 0 ? DEPTH : 1000000); if (F_PROFILE) std::printf("[PROFILE] infer %.1f ms, %d rounds\n", nowms() - t0, lastRounds); } }
 
     // ── SAVE / LOAD: vocab + grammar + record counts. Counts are rebuilt by replay. ──
     static void wv(std::ostream& o, u64 x) { while (x >= 128) { o.put(char((x & 127) | 128)); x >>= 7; } o.put(char(x)); }
@@ -1394,6 +1562,7 @@ int main(int argc, char** argv) {
             else if (k == "STALE") V.F_STALE = (int)v; else if (k == "LAW") V.LAW_MIN = v; else if (k == "PROFILE") V.F_PROFILE = (int)v;
             else if (k == "DECL") V.F_DECL = (int)v; else if (k == "DECLMINE") V.F_DECL_MINE = (int)v; else if (k == "DECLFN") V.F_DECLFN = (int)v;
             else if (k == "OBS") V.F_OBS = (int)v; else if (k == "DX") V.F_DX = (int)v;
+            else if (k == "DEPTH") V.DEPTH = (int)v; else if (k == "CHAIN") V.CHAIN_L = std::max(2, std::min(8, (int)v)); else if (k == "CONDITIONS") V.F_COND = (int)v;
             else if (k == "CHGREMOVALS") V.F_CHG_REMOVALS = (int)v; else if (k == "SAMEFIX") V.F_SAMEFIX = (int)v; else if (k == "REFRESH") V.F_REFRESH = v;
             else { std::puts("[SET] RATE | LIFT | SUPPORT | CLASS | PCA | LAW <value>, or COVERAGE | LABELS | CORROBORATE | STALE | PROFILE 0/1"); continue; }
             V.dirty = true; std::printf("[SET] %s = %g\n", k.c_str(), v);

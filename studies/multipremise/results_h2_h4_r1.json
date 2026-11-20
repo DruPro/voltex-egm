@@ -1,0 +1,1273 @@
+[
+ {
+  "seed": 0,
+  "coverage": 30,
+  "base": {
+   "precision": 0.9598092643051771,
+   "recall": 0.43791763791763794,
+   "derived": 2936,
+   "wrong": 118,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 21,
+   "rules_valid": 16,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=86 k=15 rate=0.17 lift=6.1 | where answer known: 18, agree=0.83 | cov=0.31 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=79 k=27 rate=0.34 lift=4.1 | where answer known: 32, agree=0.84 | cov=0.31 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=55 k=11 rate=0.20 lift=2.4 | where answer known: 13, agree=0.85 | cov=0.31 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=29 k=7 rate=0.24 lift=1.9 | where answer known: 8, agree=0.88 | cov=0.31 rel=0.88 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=27 k=6 rate=0.22 lift=0.9 | where answer known: 6, agree=1.00 | cov=0.31 rel=1.00 tier=law"
+   ]
+  },
+  "chain3": {
+   "precision": 0.960995292535306,
+   "recall": 0.44413364413364415,
+   "derived": 2974,
+   "wrong": 116,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 39,
+   "rules_valid": 32,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? lives in ?](c,d) => [? lives in ?](a,d) n=50 k=13 rate=0.26 lift=9.0 | where answer known: 17, agree=0.76 | cov=0.31 rel=0.76 tier=tendency",
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=86 k=15 rate=0.17 lift=6.1 | where answer known: 18, agree=0.83 | cov=0.31 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=79 k=27 rate=0.34 lift=4.1 | where answer known: 32, agree=0.84 | cov=0.31 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=21 k=5 rate=0.24 lift=2.9 | where answer known: 5, agree=1.00 | cov=0.31 rel=1.00 tier=law",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=55 k=11 rate=0.20 lift=2.4 | where answer known: 13, agree=0.85 | cov=0.31 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=29 k=7 rate=0.24 lift=1.9 | where answer known: 8, agree=0.88 | cov=0.31 rel=0.88 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=27 k=6 rate=0.22 lift=0.9 | where answer known: 6, agree=1.00 | cov=0.31 rel=1.00 tier=law"
+   ]
+  },
+  "chain4": {
+   "precision": 0.13868886187225288,
+   "recall": 0.4609168609168609,
+   "derived": 21386,
+   "wrong": 18420,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 82,
+   "rules_valid": 68,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is ancestor of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is child of ?](d,e) => [? is parent of ?](a,e) n=24 k=6 rate=0.25 lift=28.3 | where answer known: 14, agree=0.43 | cov=0.23 rel=1.00 tier=law",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? lives in ?](c,d) => [? lives in ?](a,d) n=50 k=13 rate=0.26 lift=9.0 | where answer known: 17, agree=0.76 | cov=0.31 rel=0.76 tier=tendency",
+    "[? is child of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? lives in ?](d,e) => [? lives in ?](a,e) n=24 k=6 rate=0.25 lift=8.7 | where answer known: 9, agree=0.67 | cov=0.31 rel=0.67 tier=tendency",
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=86 k=15 rate=0.17 lift=6.1 | where answer known: 18, agree=0.83 | cov=0.31 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? trades with ?](b,c) & [? is parent of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=13 k=5 rate=0.38 lift=4.6 | where answer known: 6, agree=0.83 | cov=0.31 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=79 k=27 rate=0.34 lift=4.1 | where answer known: 32, agree=0.84 | cov=0.31 rel=0.84 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=37 k=10 rate=0.27 lift=3.2 | where answer known: 11, agree=0.91 | cov=0.31 rel=0.91 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=15 k=4 rate=0.27 lift=3.2 | where answer known: 5, agree=0.80 | cov=0.31 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=21 k=5 rate=0.24 lift=2.9 | where answer known: 5, agree=1.00 | cov=0.31 rel=1.00 tier=law",
+    "[? is parent of ?](a,b) & [? is sibling of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=18 k=4 rate=0.22 lift=2.7 | where answer known: 5, agree=0.80 | cov=0.31 rel=0.80 tier=tendency",
+    "[? is sibling of ?](a,b) & [? trades with ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=32 k=7 rate=0.22 lift=2.6 | where answer known: 8, agree=0.88 | cov=0.31 rel=0.88 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=55 k=11 rate=0.20 lift=2.4 | where answer known: 13, agree=0.85 | cov=0.31 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=29 k=7 rate=0.24 lift=1.9 | where answer known: 8, agree=0.88 | cov=0.31 rel=0.88 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=27 k=6 rate=0.22 lift=0.9 | where answer known: 6, agree=1.00 | cov=0.31 rel=1.00 tier=law"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9598092643051771,
+   "recall": 0.43791763791763794,
+   "derived": 2936,
+   "wrong": 118,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 21,
+   "rules_valid": 16,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=86 k=15 rate=0.17 lift=6.1 | where answer known: 18, agree=0.83 | cov=0.31 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=79 k=27 rate=0.34 lift=4.1 | where answer known: 32, agree=0.84 | cov=0.31 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=55 k=11 rate=0.20 lift=2.4 | where answer known: 13, agree=0.85 | cov=0.31 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=29 k=7 rate=0.24 lift=1.9 | where answer known: 8, agree=0.88 | cov=0.31 rel=0.88 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=27 k=6 rate=0.22 lift=0.9 | where answer known: 6, agree=1.00 | cov=0.31 rel=1.00 tier=law"
+   ]
+  }
+ },
+ {
+  "seed": 0,
+  "coverage": 50,
+  "base": {
+   "precision": 0.9740812379110252,
+   "recall": 0.5073544227281886,
+   "derived": 2585,
+   "wrong": 67,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 22,
+   "rules_valid": 18,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=261 k=104 rate=0.40 lift=15.0 | where answer known: 133, agree=0.78 | cov=0.44 rel=0.78 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=186 k=76 rate=0.41 lift=4.9 | where answer known: 92, agree=0.83 | cov=0.44 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=88 k=45 rate=0.51 lift=4.1 | where answer known: 50, agree=0.90 | cov=0.44 rel=0.90 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=81 k=34 rate=0.42 lift=1.7 | where answer known: 41, agree=0.83 | cov=0.44 rel=0.83 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.9725923106204797,
+   "recall": 0.5148095909732017,
+   "derived": 2627,
+   "wrong": 72,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 47,
+   "rules_valid": 39,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=261 k=104 rate=0.40 lift=15.0 | where answer known: 133, agree=0.78 | cov=0.44 rel=0.78 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=186 k=76 rate=0.41 lift=4.9 | where answer known: 92, agree=0.83 | cov=0.44 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=133 k=53 rate=0.40 lift=4.8 | where answer known: 66, agree=0.80 | cov=0.44 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=111 k=43 rate=0.39 lift=4.6 | where answer known: 51, agree=0.84 | cov=0.44 rel=0.84 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=9 k=5 rate=0.56 lift=4.4 | where answer known: 6, agree=0.83 | cov=0.44 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=88 k=45 rate=0.51 lift=4.1 | where answer known: 50, agree=0.90 | cov=0.44 rel=0.90 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=81 k=34 rate=0.42 lift=1.7 | where answer known: 41, agree=0.83 | cov=0.44 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? is member of ?](c,d) => [? is member of ?](a,d) n=15 k=5 rate=0.33 lift=1.3 | where answer known: 5, agree=1.00 | cov=0.44 rel=1.00 tier=law"
+   ]
+  },
+  "chain4": {
+   "precision": 0.7748643761301989,
+   "recall": 0.5180334475115858,
+   "derived": 3318,
+   "wrong": 747,
+   "harvest_correct": 19,
+   "harvest_wrong": 673,
+   "rules": 96,
+   "rules_valid": 88,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=261 k=104 rate=0.40 lift=15.0 | where answer known: 133, agree=0.78 | cov=0.44 rel=0.78 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=186 k=76 rate=0.41 lift=4.9 | where answer known: 92, agree=0.83 | cov=0.44 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=133 k=53 rate=0.40 lift=4.8 | where answer known: 66, agree=0.80 | cov=0.44 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=111 k=43 rate=0.39 lift=4.6 | where answer known: 51, agree=0.84 | cov=0.44 rel=0.84 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=91 k=34 rate=0.37 lift=4.5 | where answer known: 41, agree=0.83 | cov=0.44 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=88 k=45 rate=0.51 lift=4.1 | where answer known: 50, agree=0.90 | cov=0.44 rel=0.90 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=81 k=34 rate=0.42 lift=1.7 | where answer known: 41, agree=0.83 | cov=0.44 rel=0.83 tier=tendency",
+    "[? is child of ?](a,b) & [? is sibling of ?](b,c) & [? trades with ?](c,d) & [? harvests ?](d,e) => [? harvests ?](a,e) n=25 k=4 rate=0.16 lift=0.8 | where answer known: 5, agree=0.80 | cov=0.44 rel=0.36 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9740812379110252,
+   "recall": 0.5073544227281886,
+   "derived": 2585,
+   "wrong": 67,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 22,
+   "rules_valid": 18,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=261 k=104 rate=0.40 lift=15.0 | where answer known: 133, agree=0.78 | cov=0.44 rel=0.78 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=186 k=76 rate=0.41 lift=4.9 | where answer known: 92, agree=0.83 | cov=0.44 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=88 k=45 rate=0.51 lift=4.1 | where answer known: 50, agree=0.90 | cov=0.44 rel=0.90 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=81 k=34 rate=0.42 lift=1.7 | where answer known: 41, agree=0.83 | cov=0.44 rel=0.83 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 0,
+  "coverage": 70,
+  "base": {
+   "precision": 0.9701492537313433,
+   "recall": 0.5648665425201738,
+   "derived": 1876,
+   "wrong": 56,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 25,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=503 k=225 rate=0.45 lift=16.9 | where answer known: 345, agree=0.65 | cov=0.62 rel=0.65 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=349 k=229 rate=0.66 lift=7.9 | where answer known: 254, agree=0.90 | cov=0.62 rel=0.90 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=415 k=195 rate=0.47 lift=5.6 | where answer known: 277, agree=0.70 | cov=0.62 rel=0.70 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=175 k=115 rate=0.66 lift=5.3 | where answer known: 128, agree=0.90 | cov=0.62 rel=0.90 tier=tendency",
+    "[? is parent of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=275 k=118 rate=0.43 lift=5.1 | where answer known: 201, agree=0.59 | cov=0.62 rel=0.59 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=163 k=101 rate=0.62 lift=2.4 | where answer known: 115, agree=0.88 | cov=0.62 rel=0.88 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.9677760169043845,
+   "recall": 0.5685909373060211,
+   "derived": 1893,
+   "wrong": 61,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 55,
+   "rules_valid": 40,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=503 k=225 rate=0.45 lift=16.9 | where answer known: 345, agree=0.65 | cov=0.62 rel=0.65 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? lives in ?](c,d) => [? lives in ?](a,d) n=290 k=122 rate=0.42 lift=15.8 | where answer known: 225, agree=0.54 | cov=0.62 rel=0.54 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? lives in ?](c,d) => [? lives in ?](a,d) n=283 k=115 rate=0.41 lift=15.3 | where answer known: 206, agree=0.56 | cov=0.62 rel=0.56 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=349 k=229 rate=0.66 lift=7.9 | where answer known: 254, agree=0.90 | cov=0.62 rel=0.90 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=242 k=145 rate=0.60 lift=7.2 | where answer known: 168, agree=0.86 | cov=0.62 rel=0.86 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=303 k=157 rate=0.52 lift=6.2 | where answer known: 214, agree=0.73 | cov=0.62 rel=0.73 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=415 k=195 rate=0.47 lift=5.6 | where answer known: 277, agree=0.70 | cov=0.62 rel=0.70 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=249 k=117 rate=0.47 lift=5.6 | where answer known: 178, agree=0.66 | cov=0.62 rel=0.66 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=175 k=115 rate=0.66 lift=5.3 | where answer known: 128, agree=0.90 | cov=0.62 rel=0.90 tier=tendency",
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=222 k=97 rate=0.44 lift=5.2 | where answer known: 155, agree=0.63 | cov=0.62 rel=0.63 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=232 k=101 rate=0.44 lift=5.2 | where answer known: 162, agree=0.62 | cov=0.62 rel=0.62 tier=tendency",
+    "[? is parent of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=275 k=118 rate=0.43 lift=5.1 | where answer known: 201, agree=0.59 | cov=0.62 rel=0.59 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=34 k=20 rate=0.59 lift=4.7 | where answer known: 25, agree=0.80 | cov=0.62 rel=0.80 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=78 k=51 rate=0.65 lift=2.5 | where answer known: 53, agree=0.96 | cov=0.62 rel=0.96 tier=law",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=163 k=101 rate=0.62 lift=2.4 | where answer known: 115, agree=0.88 | cov=0.62 rel=0.88 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.956725755995829,
+   "recall": 0.569522036002483,
+   "derived": 1918,
+   "wrong": 83,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 111,
+   "rules_valid": 89,
+   "rules_unscored": 1,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=503 k=225 rate=0.45 lift=16.9 | where answer known: 345, agree=0.65 | cov=0.62 rel=0.65 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? lives in ?](c,d) => [? lives in ?](a,d) n=290 k=122 rate=0.42 lift=15.8 | where answer known: 225, agree=0.54 | cov=0.62 rel=0.54 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? lives in ?](c,d) => [? lives in ?](a,d) n=283 k=115 rate=0.41 lift=15.3 | where answer known: 206, agree=0.56 | cov=0.62 rel=0.56 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is sibling of ?](c,d) & [? lives in ?](d,e) => [? lives in ?](a,e) n=245 k=99 rate=0.40 lift=15.2 | where answer known: 183, agree=0.54 | cov=0.62 rel=0.54 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=349 k=229 rate=0.66 lift=7.9 | where answer known: 254, agree=0.90 | cov=0.62 rel=0.90 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=242 k=145 rate=0.60 lift=7.2 | where answer known: 168, agree=0.86 | cov=0.62 rel=0.86 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=303 k=157 rate=0.52 lift=6.2 | where answer known: 214, agree=0.73 | cov=0.62 rel=0.73 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=263 k=126 rate=0.48 lift=5.7 | where answer known: 182, agree=0.69 | cov=0.62 rel=0.69 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=214 k=102 rate=0.48 lift=5.7 | where answer known: 151, agree=0.68 | cov=0.62 rel=0.68 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=415 k=195 rate=0.47 lift=5.6 | where answer known: 277, agree=0.70 | cov=0.62 rel=0.70 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=249 k=117 rate=0.47 lift=5.6 | where answer known: 178, agree=0.66 | cov=0.62 rel=0.66 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=158 k=73 rate=0.46 lift=5.5 | where answer known: 104, agree=0.70 | cov=0.62 rel=0.70 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=183 k=83 rate=0.45 lift=5.4 | where answer known: 130, agree=0.64 | cov=0.62 rel=0.64 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=200 k=88 rate=0.44 lift=5.3 | where answer known: 138, agree=0.64 | cov=0.62 rel=0.64 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=175 k=115 rate=0.66 lift=5.3 | where answer known: 128, agree=0.90 | cov=0.62 rel=0.90 tier=tendency",
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=222 k=97 rate=0.44 lift=5.2 | where answer known: 155, agree=0.63 | cov=0.62 rel=0.63 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=232 k=101 rate=0.44 lift=5.2 | where answer known: 162, agree=0.62 | cov=0.62 rel=0.62 tier=tendency",
+    "[? trades with ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=260 k=113 rate=0.43 lift=5.2 | where answer known: 186, agree=0.61 | cov=0.62 rel=0.61 tier=tendency",
+    "[? is parent of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=275 k=118 rate=0.43 lift=5.1 | where answer known: 201, agree=0.59 | cov=0.62 rel=0.59 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=179 k=76 rate=0.42 lift=5.1 | where answer known: 126, agree=0.60 | cov=0.62 rel=0.60 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=163 k=101 rate=0.62 lift=2.4 | where answer known: 115, agree=0.88 | cov=0.62 rel=0.88 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9701492537313433,
+   "recall": 0.5648665425201738,
+   "derived": 1876,
+   "wrong": 56,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 25,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=503 k=225 rate=0.45 lift=16.9 | where answer known: 345, agree=0.65 | cov=0.62 rel=0.65 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=349 k=229 rate=0.66 lift=7.9 | where answer known: 254, agree=0.90 | cov=0.62 rel=0.90 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=415 k=195 rate=0.47 lift=5.6 | where answer known: 277, agree=0.70 | cov=0.62 rel=0.70 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=175 k=115 rate=0.66 lift=5.3 | where answer known: 128, agree=0.90 | cov=0.62 rel=0.90 tier=tendency",
+    "[? is parent of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=275 k=118 rate=0.43 lift=5.1 | where answer known: 201, agree=0.59 | cov=0.62 rel=0.59 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=163 k=101 rate=0.62 lift=2.4 | where answer known: 115, agree=0.88 | cov=0.62 rel=0.88 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 1,
+  "coverage": 30,
+  "base": {
+   "precision": 0.9991759373712402,
+   "recall": 0.3729621654875423,
+   "derived": 2427,
+   "wrong": 2,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 15,
+   "rules_valid": 15,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": []
+  },
+  "chain3": {
+   "precision": 0.9842670759785112,
+   "recall": 0.394494001845586,
+   "derived": 2606,
+   "wrong": 41,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 36,
+   "rules_valid": 34,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=58 k=16 rate=0.28 lift=3.3 | where answer known: 20, agree=0.80 | cov=0.27 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=30 k=5 rate=0.17 lift=2.0 | where answer known: 6, agree=0.83 | cov=0.27 rel=0.83 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.9790555978674791,
+   "recall": 0.39541679483235925,
+   "derived": 2626,
+   "wrong": 55,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 76,
+   "rules_valid": 70,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? is parent of ?](b,c) & [? trades with ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=6 k=3 rate=0.50 lift=6.0 | where answer known: 5, agree=0.60 | cov=0.27 rel=0.60 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=13 k=5 rate=0.38 lift=4.6 | where answer known: 6, agree=0.83 | cov=0.27 rel=0.83 tier=tendency",
+    "[? trades with ?](a,b) & [? is sibling of ?](b,c) & [? trades with ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=16 k=5 rate=0.31 lift=3.8 | where answer known: 6, agree=0.83 | cov=0.27 rel=0.83 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=13 k=4 rate=0.31 lift=3.7 | where answer known: 5, agree=0.80 | cov=0.27 rel=0.80 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=58 k=16 rate=0.28 lift=3.3 | where answer known: 20, agree=0.80 | cov=0.27 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=30 k=5 rate=0.17 lift=2.0 | where answer known: 6, agree=0.83 | cov=0.27 rel=0.83 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9991759373712402,
+   "recall": 0.3729621654875423,
+   "derived": 2427,
+   "wrong": 2,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 15,
+   "rules_valid": 15,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": []
+  }
+ },
+ {
+  "seed": 1,
+  "coverage": 50,
+  "base": {
+   "precision": 0.8785271851342051,
+   "recall": 0.5257413509060955,
+   "derived": 2906,
+   "wrong": 353,
+   "harvest_correct": 41,
+   "harvest_wrong": 318,
+   "rules": 23,
+   "rules_valid": 18,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=181 k=62 rate=0.34 lift=4.1 | where answer known: 72, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=109 k=43 rate=0.39 lift=3.2 | where answer known: 52, agree=0.83 | cov=0.46 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=65 k=34 rate=0.52 lift=2.1 | where answer known: 42, agree=0.81 | cov=0.46 rel=0.81 tier=tendency",
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) n=86 k=10 rate=0.12 lift=0.6 | where answer known: 12, agree=0.83 | cov=0.46 rel=0.25 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=129 k=9 rate=0.07 lift=0.4 | where answer known: 11, agree=0.82 | cov=0.46 rel=0.15 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.6786558151745865,
+   "recall": 0.532331136738056,
+   "derived": 3809,
+   "wrong": 1224,
+   "harvest_correct": 66,
+   "harvest_wrong": 1185,
+   "rules": 46,
+   "rules_valid": 39,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=100 k=47 rate=0.47 lift=5.6 | where answer known: 55, agree=0.85 | cov=0.46 rel=0.85 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=181 k=62 rate=0.34 lift=4.1 | where answer known: 72, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=109 k=43 rate=0.39 lift=3.2 | where answer known: 52, agree=0.83 | cov=0.46 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=65 k=34 rate=0.52 lift=2.1 | where answer known: 42, agree=0.81 | cov=0.46 rel=0.81 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? harvests ?](c,d) => [? harvests ?](a,d) n=77 k=9 rate=0.12 lift=0.6 | where answer known: 11, agree=0.82 | cov=0.46 rel=0.25 tier=tendency",
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) n=86 k=10 rate=0.12 lift=0.6 | where answer known: 12, agree=0.83 | cov=0.46 rel=0.25 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=129 k=9 rate=0.07 lift=0.4 | where answer known: 11, agree=0.82 | cov=0.46 rel=0.15 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.6142721669037459,
+   "recall": 0.5335667215815486,
+   "derived": 4218,
+   "wrong": 1627,
+   "harvest_correct": 72,
+   "harvest_wrong": 1588,
+   "rules": 96,
+   "rules_valid": 88,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=100 k=47 rate=0.47 lift=5.6 | where answer known: 55, agree=0.85 | cov=0.46 rel=0.85 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=181 k=62 rate=0.34 lift=4.1 | where answer known: 72, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=109 k=43 rate=0.39 lift=3.2 | where answer known: 52, agree=0.83 | cov=0.46 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=65 k=34 rate=0.52 lift=2.1 | where answer known: 42, agree=0.81 | cov=0.46 rel=0.81 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? harvests ?](c,d) => [? harvests ?](a,d) n=77 k=9 rate=0.12 lift=0.6 | where answer known: 11, agree=0.82 | cov=0.46 rel=0.25 tier=tendency",
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) n=86 k=10 rate=0.12 lift=0.6 | where answer known: 12, agree=0.83 | cov=0.46 rel=0.25 tier=tendency",
+    "[? mentors ?](a,b) & [? trades with ?](b,c) & [? knows ?](c,d) & [? harvests ?](d,e) => [? harvests ?](a,e) n=41 k=4 rate=0.10 lift=0.5 | where answer known: 5, agree=0.80 | cov=0.46 rel=0.21 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=129 k=9 rate=0.07 lift=0.4 | where answer known: 11, agree=0.82 | cov=0.46 rel=0.15 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9836575875486381,
+   "recall": 0.5205930807248764,
+   "derived": 2570,
+   "wrong": 42,
+   "harvest_correct": 16,
+   "harvest_wrong": 7,
+   "rules": 23,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) if [? works as ?](a,farmer|miner) n=16 k=9 rate=0.56 lift=2.8 | where answer known: 11, agree=0.82 | cov=0.46 rel=1.00 tier=law",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) if [? works as ?](a,farmer|miner) n=13 k=5 rate=0.38 lift=1.9 | where answer known: 6, agree=0.83 | cov=0.46 rel=0.84 tier=tendency"
+   ],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=181 k=62 rate=0.34 lift=4.1 | where answer known: 72, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=109 k=43 rate=0.39 lift=3.2 | where answer known: 52, agree=0.83 | cov=0.46 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) if [? works as ?](a,farmer|miner) n=16 k=9 rate=0.56 lift=2.8 | where answer known: 11, agree=0.82 | cov=0.46 rel=1.00 tier=law",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=65 k=34 rate=0.52 lift=2.1 | where answer known: 42, agree=0.81 | cov=0.46 rel=0.81 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 1,
+  "coverage": 70,
+  "base": {
+   "precision": 0.9043133366385722,
+   "recall": 0.554575858923685,
+   "derived": 2017,
+   "wrong": 193,
+   "harvest_correct": 16,
+   "harvest_wrong": 167,
+   "rules": 23,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=328 k=184 rate=0.56 lift=6.7 | where answer known: 219, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=104 rate=0.63 lift=5.1 | where answer known: 122, agree=0.85 | cov=0.62 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=133 k=81 rate=0.61 lift=2.4 | where answer known: 93, agree=0.87 | cov=0.62 rel=0.87 tier=tendency",
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) n=153 k=18 rate=0.12 lift=0.5 | where answer known: 21, agree=0.86 | cov=0.62 rel=0.19 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.9002469135802469,
+   "recall": 0.5542718151413804,
+   "derived": 2025,
+   "wrong": 202,
+   "harvest_correct": 16,
+   "harvest_wrong": 167,
+   "rules": 47,
+   "rules_valid": 40,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=231 k=135 rate=0.58 lift=7.0 | where answer known: 171, agree=0.79 | cov=0.62 rel=0.79 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=328 k=184 rate=0.56 lift=6.7 | where answer known: 219, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=282 k=143 rate=0.51 lift=6.1 | where answer known: 200, agree=0.71 | cov=0.62 rel=0.71 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=104 rate=0.63 lift=5.1 | where answer known: 122, agree=0.85 | cov=0.62 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=133 k=81 rate=0.61 lift=2.4 | where answer known: 93, agree=0.87 | cov=0.62 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=78 k=47 rate=0.60 lift=2.4 | where answer known: 54, agree=0.87 | cov=0.62 rel=0.87 tier=tendency",
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) n=153 k=18 rate=0.12 lift=0.5 | where answer known: 21, agree=0.86 | cov=0.62 rel=0.19 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.8996539792387543,
+   "recall": 0.5533596837944664,
+   "derived": 2023,
+   "wrong": 203,
+   "harvest_correct": 16,
+   "harvest_wrong": 167,
+   "rules": 97,
+   "rules_valid": 89,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=231 k=135 rate=0.58 lift=7.0 | where answer known: 171, agree=0.79 | cov=0.62 rel=0.79 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=328 k=184 rate=0.56 lift=6.7 | where answer known: 219, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=282 k=143 rate=0.51 lift=6.1 | where answer known: 200, agree=0.71 | cov=0.62 rel=0.71 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=233 k=113 rate=0.48 lift=5.8 | where answer known: 162, agree=0.70 | cov=0.62 rel=0.70 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=104 rate=0.63 lift=5.1 | where answer known: 122, agree=0.85 | cov=0.62 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=133 k=81 rate=0.61 lift=2.4 | where answer known: 93, agree=0.87 | cov=0.62 rel=0.87 tier=tendency",
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) n=153 k=18 rate=0.12 lift=0.5 | where answer known: 21, agree=0.86 | cov=0.62 rel=0.19 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is sibling of ?](c,d) & [? harvests ?](d,e) => [? harvests ?](a,e) n=86 k=8 rate=0.09 lift=0.4 | where answer known: 10, agree=0.80 | cov=0.62 rel=0.15 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9842133913990201,
+   "recall": 0.5497111584068106,
+   "derived": 1837,
+   "wrong": 29,
+   "harvest_correct": 0,
+   "harvest_wrong": 3,
+   "rules": 23,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) if [? is from ?](a,kavoia) n=9 k=7 rate=0.78 lift=3.6 | where answer known: 7, agree=1.00 | cov=0.62 rel=1.00 tier=law"
+   ],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=328 k=184 rate=0.56 lift=6.7 | where answer known: 219, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=104 rate=0.63 lift=5.1 | where answer known: 122, agree=0.85 | cov=0.62 rel=0.85 tier=tendency",
+    "[? is sibling of ?](a,b) & [? harvests ?](b,c) => [? harvests ?](a,c) if [? is from ?](a,kavoia) n=9 k=7 rate=0.78 lift=3.6 | where answer known: 7, agree=1.00 | cov=0.62 rel=1.00 tier=law",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=133 k=81 rate=0.61 lift=2.4 | where answer known: 93, agree=0.87 | cov=0.62 rel=0.87 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 2,
+  "coverage": 30,
+  "base": {
+   "precision": 0.9961404862987263,
+   "recall": 0.39537377450980393,
+   "derived": 2591,
+   "wrong": 10,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 16,
+   "rules_valid": 15,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=34 k=5 rate=0.15 lift=1.2 | where answer known: 6, agree=0.83 | cov=0.27 rel=0.83 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.9782055938975663,
+   "recall": 0.41253063725490197,
+   "derived": 2753,
+   "wrong": 60,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 39,
+   "rules_valid": 36,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? lives in ?](c,d) => [? lives in ?](a,d) n=58 k=14 rate=0.24 lift=9.1 | where answer known: 28, agree=0.50 | cov=0.27 rel=0.50 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=22 k=10 rate=0.45 lift=5.5 | where answer known: 12, agree=0.83 | cov=0.27 rel=0.83 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=34 k=5 rate=0.15 lift=1.2 | where answer known: 6, agree=0.83 | cov=0.27 rel=0.83 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.04959388102380576,
+   "recall": 0.4330575980392157,
+   "derived": 57003,
+   "wrong": 54176,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 91,
+   "rules_valid": 81,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is ancestor of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is child of ?](d,e) => [? is ancestor of ?](a,e) n=16 k=6 rate=0.38 lift=35.0 | where answer known: 16, agree=0.38 | cov=0.26 rel=1.00 tier=law",
+    "[? is ancestor of ?](a,b) & [? is child of ?](b,c) & [? is ancestor of ?](c,d) & [? is child of ?](d,e) => [? is parent of ?](a,e) n=39 k=10 rate=0.26 lift=28.7 | where answer known: 34, agree=0.29 | cov=0.28 rel=0.91 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? lives in ?](c,d) => [? lives in ?](a,d) n=58 k=14 rate=0.24 lift=9.1 | where answer known: 28, agree=0.50 | cov=0.27 rel=0.50 tier=tendency",
+    "[? is parent of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? lives in ?](d,e) => [? lives in ?](a,e) n=13 k=3 rate=0.23 lift=8.7 | where answer known: 7, agree=0.43 | cov=0.27 rel=0.43 tier=tendency",
+    "[? trades with ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=16 k=8 rate=0.50 lift=6.0 | where answer known: 10, agree=0.80 | cov=0.27 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=22 k=10 rate=0.45 lift=5.5 | where answer known: 12, agree=0.83 | cov=0.27 rel=0.83 tier=tendency",
+    "[? trades with ?](a,b) & [? is parent of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=14 k=6 rate=0.43 lift=5.1 | where answer known: 9, agree=0.67 | cov=0.27 rel=0.67 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=12 k=4 rate=0.33 lift=4.0 | where answer known: 5, agree=0.80 | cov=0.27 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is sibling of ?](c,d) & [? works as ?](d,e) => [? works as ?](a,e) n=23 k=4 rate=0.17 lift=1.4 | where answer known: 5, agree=0.80 | cov=0.27 rel=0.80 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=34 k=5 rate=0.15 lift=1.2 | where answer known: 6, agree=0.83 | cov=0.27 rel=0.83 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9961404862987263,
+   "recall": 0.39537377450980393,
+   "derived": 2591,
+   "wrong": 10,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 16,
+   "rules_valid": 15,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=34 k=5 rate=0.15 lift=1.2 | where answer known: 6, agree=0.83 | cov=0.27 rel=0.83 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 2,
+  "coverage": 50,
+  "base": {
+   "precision": 0.9874544718737354,
+   "recall": 0.5081216159933362,
+   "derived": 2471,
+   "wrong": 31,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 21,
+   "rules_valid": 18,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=177 k=76 rate=0.43 lift=5.2 | where answer known: 88, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=97 k=33 rate=0.34 lift=2.7 | where answer known: 39, agree=0.85 | cov=0.46 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=71 k=31 rate=0.44 lift=1.7 | where answer known: 36, agree=0.86 | cov=0.46 rel=0.86 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.9863945578231292,
+   "recall": 0.5133277800916285,
+   "derived": 2499,
+   "wrong": 34,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 46,
+   "rules_valid": 39,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=177 k=76 rate=0.43 lift=5.2 | where answer known: 88, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=139 k=58 rate=0.42 lift=5.0 | where answer known: 65, agree=0.89 | cov=0.46 rel=0.89 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=14 k=7 rate=0.50 lift=4.0 | where answer known: 7, agree=1.00 | cov=0.46 rel=1.00 tier=law",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=97 k=33 rate=0.34 lift=2.7 | where answer known: 39, agree=0.85 | cov=0.46 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? is member of ?](c,d) => [? is member of ?](a,d) n=10 k=5 rate=0.50 lift=2.0 | where answer known: 5, agree=1.00 | cov=0.46 rel=1.00 tier=law",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=71 k=31 rate=0.44 lift=1.7 | where answer known: 36, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=40 k=16 rate=0.40 lift=1.6 | where answer known: 19, agree=0.84 | cov=0.46 rel=0.84 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.9867894315452362,
+   "recall": 0.5133277800916285,
+   "derived": 2498,
+   "wrong": 33,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 93,
+   "rules_valid": 88,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=177 k=76 rate=0.43 lift=5.2 | where answer known: 88, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=139 k=58 rate=0.42 lift=5.0 | where answer known: 65, agree=0.89 | cov=0.46 rel=0.89 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=97 k=33 rate=0.34 lift=2.7 | where answer known: 39, agree=0.85 | cov=0.46 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=71 k=31 rate=0.44 lift=1.7 | where answer known: 36, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=40 k=16 rate=0.40 lift=1.6 | where answer known: 19, agree=0.84 | cov=0.46 rel=0.84 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9874544718737354,
+   "recall": 0.5081216159933362,
+   "derived": 2471,
+   "wrong": 31,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 21,
+   "rules_valid": 18,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=177 k=76 rate=0.43 lift=5.2 | where answer known: 88, agree=0.86 | cov=0.46 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=97 k=33 rate=0.34 lift=2.7 | where answer known: 39, agree=0.85 | cov=0.46 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=71 k=31 rate=0.44 lift=1.7 | where answer known: 36, agree=0.86 | cov=0.46 rel=0.86 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 2,
+  "coverage": 70,
+  "base": {
+   "precision": 0.970736629667003,
+   "recall": 0.5949288806431664,
+   "derived": 1982,
+   "wrong": 58,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 24,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=548 k=256 rate=0.47 lift=18.5 | where answer known: 407, agree=0.63 | cov=0.64 rel=0.63 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=361 k=221 rate=0.61 lift=7.3 | where answer known: 259, agree=0.85 | cov=0.64 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=109 rate=0.66 lift=5.3 | where answer known: 119, agree=0.92 | cov=0.64 rel=0.92 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=455 k=200 rate=0.44 lift=5.3 | where answer known: 327, agree=0.61 | cov=0.64 rel=0.61 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=128 k=88 rate=0.69 lift=2.7 | where answer known: 93, agree=0.95 | cov=0.64 rel=0.95 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.9688442211055276,
+   "recall": 0.5961657390228818,
+   "derived": 1990,
+   "wrong": 62,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 50,
+   "rules_valid": 40,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=548 k=256 rate=0.47 lift=18.5 | where answer known: 407, agree=0.63 | cov=0.64 rel=0.63 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=361 k=221 rate=0.61 lift=7.3 | where answer known: 259, agree=0.85 | cov=0.64 rel=0.85 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=288 k=160 rate=0.56 lift=6.7 | where answer known: 199, agree=0.80 | cov=0.64 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=325 k=151 rate=0.46 lift=5.6 | where answer known: 226, agree=0.67 | cov=0.64 rel=0.67 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=25 k=17 rate=0.68 lift=5.4 | where answer known: 19, agree=0.89 | cov=0.64 rel=0.89 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=109 rate=0.66 lift=5.3 | where answer known: 119, agree=0.92 | cov=0.64 rel=0.92 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=455 k=200 rate=0.44 lift=5.3 | where answer known: 327, agree=0.61 | cov=0.64 rel=0.61 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=128 k=88 rate=0.69 lift=2.7 | where answer known: 93, agree=0.95 | cov=0.64 rel=0.95 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=112 k=69 rate=0.62 lift=2.4 | where answer known: 79, agree=0.87 | cov=0.64 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? is member of ?](c,d) => [? is member of ?](a,d) n=20 k=8 rate=0.40 lift=1.6 | where answer known: 10, agree=0.80 | cov=0.64 rel=0.80 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.9663485685585133,
+   "recall": 0.5949288806431664,
+   "derived": 1991,
+   "wrong": 67,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 98,
+   "rules_valid": 89,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=548 k=256 rate=0.47 lift=18.5 | where answer known: 407, agree=0.63 | cov=0.64 rel=0.63 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=361 k=221 rate=0.61 lift=7.3 | where answer known: 259, agree=0.85 | cov=0.64 rel=0.85 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=288 k=160 rate=0.56 lift=6.7 | where answer known: 199, agree=0.80 | cov=0.64 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=325 k=151 rate=0.46 lift=5.6 | where answer known: 226, agree=0.67 | cov=0.64 rel=0.67 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=310 k=141 rate=0.45 lift=5.5 | where answer known: 215, agree=0.66 | cov=0.64 rel=0.66 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=109 rate=0.66 lift=5.3 | where answer known: 119, agree=0.92 | cov=0.64 rel=0.92 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=455 k=200 rate=0.44 lift=5.3 | where answer known: 327, agree=0.61 | cov=0.64 rel=0.61 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=128 k=88 rate=0.69 lift=2.7 | where answer known: 93, agree=0.95 | cov=0.64 rel=0.95 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=112 k=69 rate=0.62 lift=2.4 | where answer known: 79, agree=0.87 | cov=0.64 rel=0.87 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.970736629667003,
+   "recall": 0.5949288806431664,
+   "derived": 1982,
+   "wrong": 58,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 24,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=548 k=256 rate=0.47 lift=18.5 | where answer known: 407, agree=0.63 | cov=0.64 rel=0.63 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=361 k=221 rate=0.61 lift=7.3 | where answer known: 259, agree=0.85 | cov=0.64 rel=0.85 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=109 rate=0.66 lift=5.3 | where answer known: 119, agree=0.92 | cov=0.64 rel=0.92 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=455 k=200 rate=0.44 lift=5.3 | where answer known: 327, agree=0.61 | cov=0.64 rel=0.61 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=128 k=88 rate=0.69 lift=2.7 | where answer known: 93, agree=0.95 | cov=0.64 rel=0.95 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 3,
+  "coverage": 30,
+  "base": {
+   "precision": 0.9882648784576697,
+   "recall": 0.3653548187170747,
+   "derived": 2386,
+   "wrong": 28,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 13,
+   "rules_valid": 11,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=68 k=17 rate=0.25 lift=3.0 | where answer known: 17, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=29 k=7 rate=0.24 lift=0.9 | where answer known: 7, agree=1.00 | cov=0.30 rel=1.00 tier=law"
+   ]
+  },
+  "chain3": {
+   "precision": 0.9790844514601421,
+   "recall": 0.38441276727610785,
+   "derived": 2534,
+   "wrong": 53,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 34,
+   "rules_valid": 29,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=38 k=13 rate=0.34 lift=4.1 | where answer known: 13, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=68 k=17 rate=0.25 lift=3.0 | where answer known: 17, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=25 k=5 rate=0.20 lift=2.4 | where answer known: 5, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? is parent of ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=23 k=4 rate=0.17 lift=2.1 | where answer known: 5, agree=0.80 | cov=0.30 rel=0.80 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=29 k=7 rate=0.24 lift=0.9 | where answer known: 7, agree=1.00 | cov=0.30 rel=1.00 tier=law"
+   ]
+  },
+  "chain4": {
+   "precision": 0.01673063616632464,
+   "recall": 0.43833281685776265,
+   "derived": 169091,
+   "wrong": 166262,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 76,
+   "rules_valid": 62,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is ancestor of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is child of ?](d,e) => [? is parent of ?](a,e) n=11 k=3 rate=0.27 lift=32.5 | where answer known: 9, agree=0.33 | cov=0.31 rel=0.88 tier=tendency",
+    "[? is parent of ?](a,b) & [? is child of ?](b,c) & [? is ancestor of ?](c,d) & [? is child of ?](d,e) => [? is ancestor of ?](a,e) n=10 k=3 rate=0.30 lift=28.2 | where answer known: 9, agree=0.33 | cov=0.27 rel=1.00 tier=law",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is child of ?](c,d) & [? is ancestor of ?](d,e) => [? is sibling of ?](a,e) n=62 k=12 rate=0.19 lift=25.9 | where answer known: 54, agree=0.22 | cov=0.22 rel=0.90 tier=tendency",
+    "[? is ancestor of ?](a,b) & [? is child of ?](b,c) & [? is sibling of ?](c,d) & [? is parent of ?](d,e) => [? is ancestor of ?](a,e) n=48 k=11 rate=0.23 lift=21.5 | where answer known: 48, agree=0.23 | cov=0.27 rel=0.85 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is child of ?](c,d) & [? lives in ?](d,e) => [? lives in ?](a,e) n=11 k=4 rate=0.36 lift=14.1 | where answer known: 4, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? is sibling of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? lives in ?](d,e) => [? lives in ?](a,e) n=22 k=6 rate=0.27 lift=10.6 | where answer known: 10, agree=0.60 | cov=0.30 rel=0.60 tier=tendency",
+    "[? is parent of ?](a,b) & [? is child of ?](b,c) & [? is ancestor of ?](c,d) & [? lives in ?](d,e) => [? lives in ?](a,e) n=21 k=4 rate=0.19 lift=7.4 | where answer known: 5, agree=0.80 | cov=0.30 rel=0.80 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is child of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=5 k=3 rate=0.60 lift=7.2 | where answer known: 3, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=38 k=13 rate=0.34 lift=4.1 | where answer known: 13, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=68 k=17 rate=0.25 lift=3.0 | where answer known: 17, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=16 k=4 rate=0.25 lift=3.0 | where answer known: 5, agree=0.80 | cov=0.30 rel=0.80 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=25 k=5 rate=0.20 lift=2.4 | where answer known: 5, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? is parent of ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=23 k=4 rate=0.17 lift=2.1 | where answer known: 5, agree=0.80 | cov=0.30 rel=0.80 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=29 k=7 rate=0.24 lift=0.9 | where answer known: 7, agree=1.00 | cov=0.30 rel=1.00 tier=law"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9882648784576697,
+   "recall": 0.3653548187170747,
+   "derived": 2386,
+   "wrong": 28,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 13,
+   "rules_valid": 11,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=68 k=17 rate=0.25 lift=3.0 | where answer known: 17, agree=1.00 | cov=0.30 rel=1.00 tier=law",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=29 k=7 rate=0.24 lift=0.9 | where answer known: 7, agree=1.00 | cov=0.30 rel=1.00 tier=law"
+   ]
+  }
+ },
+ {
+  "seed": 3,
+  "coverage": 50,
+  "base": {
+   "precision": 0.9857918930213122,
+   "recall": 0.487296013220409,
+   "derived": 2393,
+   "wrong": 34,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 19,
+   "rules_valid": 17,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=174 k=69 rate=0.40 lift=4.8 | where answer known: 82, agree=0.84 | cov=0.47 rel=0.84 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=67 k=23 rate=0.34 lift=1.3 | where answer known: 27, agree=0.85 | cov=0.47 rel=0.85 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.8882763689819919,
+   "recall": 0.4992770088824623,
+   "derived": 2721,
+   "wrong": 304,
+   "harvest_correct": 22,
+   "harvest_wrong": 273,
+   "rules": 44,
+   "rules_valid": 38,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=71 k=29 rate=0.41 lift=4.9 | where answer known: 35, agree=0.83 | cov=0.47 rel=0.83 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=174 k=69 rate=0.40 lift=4.8 | where answer known: 82, agree=0.84 | cov=0.47 rel=0.84 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=15 k=6 rate=0.40 lift=3.2 | where answer known: 7, agree=0.86 | cov=0.47 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=49 k=18 rate=0.37 lift=1.4 | where answer known: 21, agree=0.86 | cov=0.47 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=67 k=23 rate=0.34 lift=1.3 | where answer known: 27, agree=0.85 | cov=0.47 rel=0.85 tier=tendency",
+    "[? is child of ?](a,b) & [? trades with ?](b,c) & [? harvests ?](c,d) => [? harvests ?](a,d) n=41 k=7 rate=0.17 lift=0.8 | where answer known: 8, agree=0.88 | cov=0.47 rel=0.36 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.8882763689819919,
+   "recall": 0.4992770088824623,
+   "derived": 2721,
+   "wrong": 304,
+   "harvest_correct": 22,
+   "harvest_wrong": 273,
+   "rules": 92,
+   "rules_valid": 86,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=71 k=29 rate=0.41 lift=4.9 | where answer known: 35, agree=0.83 | cov=0.47 rel=0.83 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=174 k=69 rate=0.40 lift=4.8 | where answer known: 82, agree=0.84 | cov=0.47 rel=0.84 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=15 k=6 rate=0.40 lift=3.2 | where answer known: 7, agree=0.86 | cov=0.47 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=49 k=18 rate=0.37 lift=1.4 | where answer known: 21, agree=0.86 | cov=0.47 rel=0.86 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=67 k=23 rate=0.34 lift=1.3 | where answer known: 27, agree=0.85 | cov=0.47 rel=0.85 tier=tendency",
+    "[? is child of ?](a,b) & [? trades with ?](b,c) & [? harvests ?](c,d) => [? harvests ?](a,d) n=41 k=7 rate=0.17 lift=0.8 | where answer known: 8, agree=0.88 | cov=0.47 rel=0.36 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9857918930213122,
+   "recall": 0.487296013220409,
+   "derived": 2393,
+   "wrong": 34,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 19,
+   "rules_valid": 17,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=174 k=69 rate=0.40 lift=4.8 | where answer known: 82, agree=0.84 | cov=0.47 rel=0.84 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=67 k=23 rate=0.34 lift=1.3 | where answer known: 27, agree=0.85 | cov=0.47 rel=0.85 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 3,
+  "coverage": 70,
+  "base": {
+   "precision": 0.8379758588672238,
+   "recall": 0.5564118372379778,
+   "derived": 2154,
+   "wrong": 349,
+   "harvest_correct": 48,
+   "harvest_wrong": 303,
+   "rules": 24,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=356 k=207 rate=0.58 lift=7.0 | where answer known: 246, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=412 k=178 rate=0.43 lift=5.2 | where answer known: 289, agree=0.62 | cov=0.62 rel=0.62 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=94 rate=0.57 lift=4.6 | where answer known: 114, agree=0.82 | cov=0.62 rel=0.82 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=132 k=76 rate=0.58 lift=2.2 | where answer known: 83, agree=0.92 | cov=0.62 rel=0.92 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=403 k=52 rate=0.13 lift=0.6 | where answer known: 65, agree=0.80 | cov=0.62 rel=0.21 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.8382624768946395,
+   "recall": 0.5591861898890259,
+   "derived": 2164,
+   "wrong": 350,
+   "harvest_correct": 48,
+   "harvest_wrong": 303,
+   "rules": 49,
+   "rules_valid": 40,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=356 k=207 rate=0.58 lift=7.0 | where answer known: 246, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=250 k=136 rate=0.54 lift=6.5 | where answer known: 174, agree=0.78 | cov=0.62 rel=0.78 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=315 k=150 rate=0.48 lift=5.7 | where answer known: 216, agree=0.69 | cov=0.62 rel=0.69 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=412 k=178 rate=0.43 lift=5.2 | where answer known: 289, agree=0.62 | cov=0.62 rel=0.62 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=94 rate=0.57 lift=4.6 | where answer known: 114, agree=0.82 | cov=0.62 rel=0.82 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? is member of ?](c,d) => [? is member of ?](a,d) n=27 k=16 rate=0.59 lift=2.3 | where answer known: 19, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=85 k=49 rate=0.58 lift=2.2 | where answer known: 60, agree=0.82 | cov=0.62 rel=0.82 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=132 k=76 rate=0.58 lift=2.2 | where answer known: 83, agree=0.92 | cov=0.62 rel=0.92 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=403 k=52 rate=0.13 lift=0.6 | where answer known: 65, agree=0.80 | cov=0.62 rel=0.21 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.8386500231160425,
+   "recall": 0.5591861898890259,
+   "derived": 2163,
+   "wrong": 349,
+   "harvest_correct": 48,
+   "harvest_wrong": 303,
+   "rules": 98,
+   "rules_valid": 89,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=356 k=207 rate=0.58 lift=7.0 | where answer known: 246, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=250 k=136 rate=0.54 lift=6.5 | where answer known: 174, agree=0.78 | cov=0.62 rel=0.78 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=315 k=150 rate=0.48 lift=5.7 | where answer known: 216, agree=0.69 | cov=0.62 rel=0.69 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=263 k=124 rate=0.47 lift=5.7 | where answer known: 188, agree=0.66 | cov=0.62 rel=0.66 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=412 k=178 rate=0.43 lift=5.2 | where answer known: 289, agree=0.62 | cov=0.62 rel=0.62 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=94 rate=0.57 lift=4.6 | where answer known: 114, agree=0.82 | cov=0.62 rel=0.82 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=85 k=49 rate=0.58 lift=2.2 | where answer known: 60, agree=0.82 | cov=0.62 rel=0.82 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=132 k=76 rate=0.58 lift=2.2 | where answer known: 83, agree=0.92 | cov=0.62 rel=0.92 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=403 k=52 rate=0.13 lift=0.6 | where answer known: 65, agree=0.80 | cov=0.62 rel=0.21 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.8379758588672238,
+   "recall": 0.5564118372379778,
+   "derived": 2154,
+   "wrong": 349,
+   "harvest_correct": 48,
+   "harvest_wrong": 303,
+   "rules": 24,
+   "rules_valid": 19,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=356 k=207 rate=0.58 lift=7.0 | where answer known: 246, agree=0.84 | cov=0.62 rel=0.84 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=412 k=178 rate=0.43 lift=5.2 | where answer known: 289, agree=0.62 | cov=0.62 rel=0.62 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=164 k=94 rate=0.57 lift=4.6 | where answer known: 114, agree=0.82 | cov=0.62 rel=0.82 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=132 k=76 rate=0.58 lift=2.2 | where answer known: 83, agree=0.92 | cov=0.62 rel=0.92 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=403 k=52 rate=0.13 lift=0.6 | where answer known: 65, agree=0.80 | cov=0.62 rel=0.21 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 4,
+  "coverage": 30,
+  "base": {
+   "precision": 0.9888803680981595,
+   "recall": 0.3957949662369552,
+   "derived": 2608,
+   "wrong": 29,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 18,
+   "rules_valid": 16,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=66 k=16 rate=0.24 lift=2.9 | where answer known: 17, agree=0.94 | cov=0.29 rel=0.94 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=32 k=7 rate=0.22 lift=0.9 | where answer known: 7, agree=1.00 | cov=0.29 rel=1.00 tier=law"
+   ]
+  },
+  "chain3": {
+   "precision": 0.9740634005763689,
+   "recall": 0.41497851442602823,
+   "derived": 2776,
+   "wrong": 72,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 43,
+   "rules_valid": 37,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=0.29 rel=1.00 tier=law",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=23 k=8 rate=0.35 lift=4.2 | where answer known: 9, agree=0.89 | cov=0.29 rel=0.89 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=66 k=16 rate=0.24 lift=2.9 | where answer known: 17, agree=0.94 | cov=0.29 rel=0.94 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=25 k=6 rate=0.24 lift=2.9 | where answer known: 7, agree=0.86 | cov=0.29 rel=0.86 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=36 k=8 rate=0.22 lift=2.7 | where answer known: 9, agree=0.89 | cov=0.29 rel=0.89 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=32 k=7 rate=0.22 lift=0.9 | where answer known: 7, agree=1.00 | cov=0.29 rel=1.00 tier=law"
+   ]
+  },
+  "chain4": {
+   "precision": 0.8291273943447857,
+   "recall": 0.4185082872928177,
+   "derived": 3289,
+   "wrong": 562,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 92,
+   "rules_valid": 79,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? mentors ?](a,b) & [? is child of ?](b,c) & [? mentors ?](c,d) & [? is parent of ?](d,e) => [? is ancestor of ?](a,e) n=9 k=3 rate=0.33 lift=28.9 | where answer known: 8, agree=0.38 | cov=0.28 rel=1.00 tier=law",
+    "[? mentors ?](a,b) & [? is child of ?](b,c) & [? is ancestor of ?](c,d) & [? is parent of ?](d,e) => [? is ancestor of ?](a,e) n=13 k=3 rate=0.23 lift=20.0 | where answer known: 11, agree=0.27 | cov=0.28 rel=0.81 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=5 k=5 rate=1.00 lift=8.0 | where answer known: 5, agree=1.00 | cov=0.29 rel=1.00 tier=law",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is child of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=14 k=7 rate=0.50 lift=6.0 | where answer known: 8, agree=0.88 | cov=0.29 rel=0.88 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=23 k=8 rate=0.35 lift=4.2 | where answer known: 9, agree=0.89 | cov=0.29 rel=0.89 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? trades with ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=17 k=5 rate=0.29 lift=3.5 | where answer known: 6, agree=0.83 | cov=0.29 rel=0.83 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=32 k=8 rate=0.25 lift=3.0 | where answer known: 8, agree=1.00 | cov=0.29 rel=1.00 tier=law",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=66 k=16 rate=0.24 lift=2.9 | where answer known: 17, agree=0.94 | cov=0.29 rel=0.94 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=25 k=6 rate=0.24 lift=2.9 | where answer known: 7, agree=0.86 | cov=0.29 rel=0.86 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=36 k=8 rate=0.22 lift=2.7 | where answer known: 9, agree=0.89 | cov=0.29 rel=0.89 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=24 k=5 rate=0.21 lift=2.5 | where answer known: 6, agree=0.83 | cov=0.29 rel=0.83 tier=tendency",
+    "[? is parent of ?](a,b) & [? is child of ?](b,c) & [? is ancestor of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=27 k=4 rate=0.15 lift=1.8 | where answer known: 5, agree=0.80 | cov=0.29 rel=0.80 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=32 k=7 rate=0.22 lift=0.9 | where answer known: 7, agree=1.00 | cov=0.29 rel=1.00 tier=law"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9888803680981595,
+   "recall": 0.3957949662369552,
+   "derived": 2608,
+   "wrong": 29,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 18,
+   "rules_valid": 16,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=66 k=16 rate=0.24 lift=2.9 | where answer known: 17, agree=0.94 | cov=0.29 rel=0.94 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=32 k=7 rate=0.22 lift=0.9 | where answer known: 7, agree=1.00 | cov=0.29 rel=1.00 tier=law"
+   ]
+  }
+ },
+ {
+  "seed": 4,
+  "coverage": 50,
+  "base": {
+   "precision": 0.9858434919386552,
+   "recall": 0.5054435483870968,
+   "derived": 2543,
+   "wrong": 36,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 21,
+   "rules_valid": 18,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=161 k=72 rate=0.45 lift=5.4 | where answer known: 89, agree=0.81 | cov=0.45 rel=0.81 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=101 k=47 rate=0.47 lift=3.7 | where answer known: 54, agree=0.87 | cov=0.45 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=71 k=34 rate=0.48 lift=1.9 | where answer known: 38, agree=0.89 | cov=0.45 rel=0.89 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.985133020344288,
+   "recall": 0.5076612903225807,
+   "derived": 2556,
+   "wrong": 38,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 44,
+   "rules_valid": 39,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=161 k=72 rate=0.45 lift=5.4 | where answer known: 89, agree=0.81 | cov=0.45 rel=0.81 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=101 k=47 rate=0.47 lift=3.7 | where answer known: 54, agree=0.87 | cov=0.45 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? mentors ?](b,c) & [? works as ?](c,d) => [? works as ?](a,d) n=13 k=4 rate=0.31 lift=2.5 | where answer known: 5, agree=0.80 | cov=0.45 rel=0.80 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=71 k=34 rate=0.48 lift=1.9 | where answer known: 38, agree=0.89 | cov=0.45 rel=0.89 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=39 k=16 rate=0.41 lift=1.6 | where answer known: 20, agree=0.80 | cov=0.45 rel=0.80 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.9266593325999266,
+   "recall": 0.509475806451613,
+   "derived": 2727,
+   "wrong": 200,
+   "harvest_correct": 7,
+   "harvest_wrong": 164,
+   "rules": 93,
+   "rules_valid": 88,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=161 k=72 rate=0.45 lift=5.4 | where answer known: 89, agree=0.81 | cov=0.45 rel=0.81 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=101 k=47 rate=0.47 lift=3.7 | where answer known: 54, agree=0.87 | cov=0.45 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=71 k=34 rate=0.48 lift=1.9 | where answer known: 38, agree=0.89 | cov=0.45 rel=0.89 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=39 k=16 rate=0.41 lift=1.6 | where answer known: 20, agree=0.80 | cov=0.45 rel=0.80 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is ancestor of ?](b,c) & [? is sibling of ?](c,d) & [? harvests ?](d,e) => [? harvests ?](a,e) n=46 k=4 rate=0.09 lift=0.4 | where answer known: 5, agree=0.80 | cov=0.45 rel=0.19 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9858434919386552,
+   "recall": 0.5054435483870968,
+   "derived": 2543,
+   "wrong": 36,
+   "harvest_correct": 0,
+   "harvest_wrong": 0,
+   "rules": 21,
+   "rules_valid": 18,
+   "rules_unscored": 0,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=161 k=72 rate=0.45 lift=5.4 | where answer known: 89, agree=0.81 | cov=0.45 rel=0.81 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=101 k=47 rate=0.47 lift=3.7 | where answer known: 54, agree=0.87 | cov=0.45 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=71 k=34 rate=0.48 lift=1.9 | where answer known: 38, agree=0.89 | cov=0.45 rel=0.89 tier=tendency"
+   ]
+  }
+ },
+ {
+  "seed": 4,
+  "coverage": 70,
+  "base": {
+   "precision": 0.8902671755725191,
+   "recall": 0.5694232529752823,
+   "derived": 2096,
+   "wrong": 230,
+   "harvest_correct": 16,
+   "harvest_wrong": 155,
+   "rules": 31,
+   "rules_valid": 18,
+   "rules_unscored": 7,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=472 k=214 rate=0.45 lift=18.0 | where answer known: 334, agree=0.64 | cov=0.65 rel=0.64 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=378 k=230 rate=0.61 lift=7.3 | where answer known: 273, agree=0.84 | cov=0.65 rel=0.84 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=441 k=219 rate=0.50 lift=6.0 | where answer known: 346, agree=0.63 | cov=0.65 rel=0.63 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=159 k=98 rate=0.62 lift=4.9 | where answer known: 113, agree=0.87 | cov=0.65 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=115 k=56 rate=0.49 lift=1.9 | where answer known: 62, agree=0.90 | cov=0.65 rel=0.90 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=160 k=21 rate=0.13 lift=0.5 | where answer known: 23, agree=0.91 | cov=0.65 rel=0.20 tier=tendency"
+   ]
+  },
+  "chain3": {
+   "precision": 0.8890995260663507,
+   "recall": 0.5724748245346354,
+   "derived": 2110,
+   "wrong": 234,
+   "harvest_correct": 16,
+   "harvest_wrong": 155,
+   "rules": 58,
+   "rules_valid": 39,
+   "rules_unscored": 7,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=472 k=214 rate=0.45 lift=18.0 | where answer known: 334, agree=0.64 | cov=0.65 rel=0.64 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=378 k=230 rate=0.61 lift=7.3 | where answer known: 273, agree=0.84 | cov=0.65 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=229 k=128 rate=0.56 lift=6.7 | where answer known: 158, agree=0.81 | cov=0.65 rel=0.81 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=441 k=219 rate=0.50 lift=6.0 | where answer known: 346, agree=0.63 | cov=0.65 rel=0.63 tier=tendency",
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=184 k=90 rate=0.49 lift=5.9 | where answer known: 147, agree=0.61 | cov=0.65 rel=0.61 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=346 k=159 rate=0.46 lift=5.5 | where answer known: 256, agree=0.62 | cov=0.65 rel=0.62 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=288 k=125 rate=0.43 lift=5.2 | where answer known: 215, agree=0.58 | cov=0.65 rel=0.58 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=258 k=109 rate=0.42 lift=5.1 | where answer known: 204, agree=0.53 | cov=0.65 rel=0.53 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=159 k=98 rate=0.62 lift=4.9 | where answer known: 113, agree=0.87 | cov=0.65 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) & [? is overseen by ?](c,d) => [? is member of ?](a,d) n=39 k=22 rate=0.56 lift=2.2 | where answer known: 24, agree=0.92 | cov=0.65 rel=0.92 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=115 k=56 rate=0.49 lift=1.9 | where answer known: 62, agree=0.90 | cov=0.65 rel=0.90 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=160 k=21 rate=0.13 lift=0.5 | where answer known: 23, agree=0.91 | cov=0.65 rel=0.20 tier=tendency"
+   ]
+  },
+  "chain4": {
+   "precision": 0.8859441552295315,
+   "recall": 0.5712541959108941,
+   "derived": 2113,
+   "wrong": 241,
+   "harvest_correct": 16,
+   "harvest_wrong": 155,
+   "rules": 111,
+   "rules_valid": 88,
+   "rules_unscored": 7,
+   "conditional_rules": [],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=472 k=214 rate=0.45 lift=18.0 | where answer known: 334, agree=0.64 | cov=0.65 rel=0.64 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=378 k=230 rate=0.61 lift=7.3 | where answer known: 273, agree=0.84 | cov=0.65 rel=0.84 tier=tendency",
+    "[? trades with ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=229 k=128 rate=0.56 lift=6.7 | where answer known: 158, agree=0.81 | cov=0.65 rel=0.81 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=441 k=219 rate=0.50 lift=6.0 | where answer known: 346, agree=0.63 | cov=0.65 rel=0.63 tier=tendency",
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) & [? is located in ?](c,d) => [? is from ?](a,d) n=184 k=90 rate=0.49 lift=5.9 | where answer known: 147, agree=0.61 | cov=0.65 rel=0.61 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=248 k=115 rate=0.46 lift=5.6 | where answer known: 175, agree=0.66 | cov=0.65 rel=0.66 tier=tendency",
+    "[? trades with ?](a,b) & [? trades with ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=346 k=159 rate=0.46 lift=5.5 | where answer known: 256, agree=0.62 | cov=0.65 rel=0.62 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=176 k=77 rate=0.44 lift=5.2 | where answer known: 135, agree=0.57 | cov=0.65 rel=0.57 tier=tendency",
+    "[? is child of ?](a,b) & [? is parent of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=288 k=125 rate=0.43 lift=5.2 | where answer known: 215, agree=0.58 | cov=0.65 rel=0.58 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is child of ?](b,c) & [? is parent of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=247 k=107 rate=0.43 lift=5.2 | where answer known: 193, agree=0.55 | cov=0.65 rel=0.55 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is sibling of ?](c,d) & [? is from ?](d,e) => [? is from ?](a,e) n=193 k=82 rate=0.42 lift=5.1 | where answer known: 157, agree=0.52 | cov=0.65 rel=0.52 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? is from ?](c,d) => [? is from ?](a,d) n=258 k=109 rate=0.42 lift=5.1 | where answer known: 204, agree=0.53 | cov=0.65 rel=0.53 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is sibling of ?](b,c) & [? lives in ?](c,d) & [? is located in ?](d,e) => [? is from ?](a,e) n=164 k=69 rate=0.42 lift=5.0 | where answer known: 129, agree=0.53 | cov=0.65 rel=0.53 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=159 k=98 rate=0.62 lift=4.9 | where answer known: 113, agree=0.87 | cov=0.65 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=115 k=56 rate=0.49 lift=1.9 | where answer known: 62, agree=0.90 | cov=0.65 rel=0.90 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) n=160 k=21 rate=0.13 lift=0.5 | where answer known: 23, agree=0.91 | cov=0.65 rel=0.20 tier=tendency"
+   ]
+  },
+  "conditions": {
+   "precision": 0.9459183673469388,
+   "recall": 0.5657613671040586,
+   "derived": 1960,
+   "wrong": 106,
+   "harvest_correct": 4,
+   "harvest_wrong": 31,
+   "rules": 31,
+   "rules_valid": 18,
+   "rules_unscored": 7,
+   "conditional_rules": [
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) if [? is member of ?](a,dologuild|kibeguild) n=46 k=19 rate=0.41 lift=1.7 | where answer known: 20, agree=0.95 | cov=0.65 rel=0.64 tier=tendency"
+   ],
+   "invalid_rules": [
+    "[? is sibling of ?](a,b) & [? lives in ?](b,c) => [? lives in ?](a,c) n=472 k=214 rate=0.45 lift=18.0 | where answer known: 334, agree=0.64 | cov=0.65 rel=0.64 tier=tendency",
+    "[? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=378 k=230 rate=0.61 lift=7.3 | where answer known: 273, agree=0.84 | cov=0.65 rel=0.84 tier=tendency",
+    "[? is sibling of ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=441 k=219 rate=0.50 lift=6.0 | where answer known: 346, agree=0.63 | cov=0.65 rel=0.63 tier=tendency",
+    "[? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=159 k=98 rate=0.62 lift=4.9 | where answer known: 113, agree=0.87 | cov=0.65 rel=0.87 tier=tendency",
+    "[? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=115 k=56 rate=0.49 lift=1.9 | where answer known: 62, agree=0.90 | cov=0.65 rel=0.90 tier=tendency",
+    "[? lives in ?](a,b) & [? produces ?](b,c) => [? harvests ?](a,c) if [? is member of ?](a,dologuild|kibeguild) n=46 k=19 rate=0.41 lift=1.7 | where answer known: 20, agree=0.95 | cov=0.65 rel=0.64 tier=tendency"
+   ]
+  }
+ }
+]

@@ -1,0 +1,2000 @@
+begi has value one
+bedu has value one
+betu has value one
+dapa has value one
+foto has first input fotu
+dibe has value zero
+dimi has value zero
+falo has second input fama
+gago has first input gagu
+dita has value zero
+dote has first input doti
+difa has kind xor
+gepo is output of gepa
+bome has value one
+boto has second input bova
+fade has value zero
+duvi has kind xor
+balo has kind xor
+dine has value one
+dofo has value one
+dira is output of dipi
+buse is output of buro
+boru is output of bore
+fivu has second input fize
+defi has first input defo
+dini is output of dimu
+bipi has value one
+fino has value one
+dimu has kind xor
+dopu has first input dora
+dedo has first input dedu
+fase is output of faro
+filu has value one
+biro has second input bisa
+fono has first input fonu
+gabe is output of fuzo
+favu has second input faze
+dipu has value one
+dasa has second input dasi
+fapa has kind xor
+fifi has second input fifu
+fano has value zero
+bime is output of bilo
+dago has kind xor
+baba has second input babi
+biri has value zero
+gesi has first input geso
+fiti has value one
+fone has value one
+gase has value one
+bubo is output of buba
+diki has kind xor
+feka has value one
+filo has second input fima
+daso has value one
+fuzi is output of fuvu
+figa is output of fifi
+befu has kind xor
+boso has value zero
+gide has second input gido
+disu has first input dita
+fesu has second input fete
+boto has first input botu
+diki has second input diku
+bumi has kind xor
+bini has value one
+debo is output of deba
+faru has value zero
+dobu has second input dode
+dofi has first input dofo
+gate has value zero
+bimi has first input bimo
+babo is output of baba
+duza has value one
+bete has value one
+fadi has value zero
+boge has value zero
+bisi has kind xor
+fose has value zero
+duti has value zero
+duto has second input duva
+disi has value one
+bede has first input bedi
+fego has second input feka
+dile has kind xor
+bofo is output of bofa
+doga is output of dofi
+bama has value one
+gade has kind xor
+bidu has value zero
+bomu has second input bone
+bepi has second input bepu
+deni has value zero
+bira has value one
+dugi has value zero
+dama has kind xor
+gaki has first input gako
+domi has second input domu
+dodi has value one
+diza has value zero
+busi has kind xor
+boma has first input bome
+balo has second input bama
+bafu has value one
+bulo has second input buma
+fevi has second input fevu
+fefa has first input fefe
+duka has value zero
+badi is output of babu
+bera is output of bepi
+futa is output of fusi
+bapa has kind xor
+doli is output of doku
+fume is output of fulo
+fupe has value one
+bono has first input bonu
+bogi has value one
+deno has value one
+damo is output of dama
+dofi has kind xor
+dare has second input daro
+babi has value zero
+gabi has second input gabu
+bovi has kind xor
+dilo has value zero
+bibu has kind xor
+feso is output of fesa
+diti has value zero
+fogu has value one
+dinu has value one
+feri has value zero
+bive has value zero
+bamo has value one
+gama has kind xor
+duze has second input duzo
+fego has first input fegu
+bobo has value zero
+busi has first input buso
+fede has first input fedi
+foma has first input fome
+gada is output of gabi
+fufe is output of fudo
+beno has first input benu
+fogo has first input fogu
+digi has value zero
+famo has value one
+fupa has kind xor
+doge has first input dogi
+five has value zero
+bibu has second input bide
+fali is output of faku
+fimi has kind xor
+dibi has first input dibo
+bego has kind xor
+bobu has value zero
+bafe has value zero
+febe has value one
+fuka has first input fuke
+duza is output of duvi
+duki has second input duku
+bina has value one
+devo is output of deva
+bigu has value zero
+boze has first input bozi
+besu has kind xor
+didi has value zero
+fopi has second input fopu
+fado has kind xor
+gaku has value one
+bove has value one
+dave is output of dato
+feli has value zero
+duga has value zero
+beli has value one
+feme has value zero
+deve has value one
+dati has value zero
+gebu has second input gede
+dope has value one
+dolu has value zero
+feza is output of fevi
+fire has value one
+geze has value one
+dero has first input deru
+foka has value zero
+dike has value one
+foge has value one
+dovu has first input doza
+bade has value zero
+bopu has value one
+gefi has second input gefu
+dasi has value zero
+fudo has first input fudu
+bugo has value zero
+fepi has first input fepo
+geri is output of gepu
+bisi has second input bisu
+biza has value zero
+dule has first input duli
+fuzo has second input gaba
+bami has first input bamo
+gege has second input gego
+divu has value one
+boki has first input boko
+dumi has value zero
+beko has value one
+faso has value one
+fosi has value one
+buro has first input buru
+fipi has value zero
+fale has value one
+deku has kind xor
+gibo has value zero
+faka has kind xor
+fosa has second input fosi
+boza is output of bovi
+foki has kind xor
+gasu has second input gate
+fiva has second input fivi
+bezu has value zero
+befi has value one
+bizo has kind xor
+fapa has first input fape
+bara has value zero
+bebo has value one
+dabo has value one
+dire has second input diro
+bagu has value zero
+fune has second input funo
+ganu has value zero
+fona has value zero
+dila is output of diki
+bogi is output of bofu
+fofu has first input foga
+bise has value one
+fetu has value one
+deke has value one
+bodu has value one
+foke is output of fogo
+bapu has kind xor
+bisa has value zero
+daza has value zero
+dizo has value one
+feke has value zero
+foto has second input fova
+felo has value one
+buve has value zero
+gesi has kind xor
+dobu has first input doda
+fase has value one
+gaso is output of gasa
+dano has kind xor
+fava has second input favi
+dadi has value one
+divi has first input divo
+done has second input dono
+fafa has value zero
+fuvi has value one
+bazo has second input beba
+fudo has second input fufa
+disa has kind xor
+dato has kind xor
+fope is output of fono
+fule has value one
+dale has second input dalo
+bize has value one
+feto has second input feva
+bava has first input bave
+bano has value one
+dipe is output of dino
+debo has value zero
+doto has value one
+dipo has value one
+fifi has first input fifo
+buki has value zero
+dobe has value one
+dose has value zero
+fufi has kind xor
+bovi has second input bovu
+fefo is output of fefa
+gapi has second input gapu
+beve is output of beto
+beta has value one
+bigi has value one
+fedu has value one
+fofu has second input foge
+deta has value zero
+beka has value zero
+data has value one
+fogo has kind xor
+fobi has second input fobu
+gedo has first input gedu
+boze has kind xor
+biri is output of bipu
+fobe is output of fizo
+dori has value one
+getu is output of gete
+doru has value one
+dika has value one
+gesa has value zero
+bila has value one
+dafi has value one
+fiku has kind xor
+bafo has value one
+firo has second input fisa
+gibe is output of gezo
+geta is output of gesi
+febe is output of fazo
+digu has value zero
+gapu has value zero
+beda is output of bebi
+gete has second input geto
+gesi has second input gesu
+bedo has value zero
+diki has first input diko
+dano has first input danu
+fazi has value one
+dasu has first input data
+bosa has kind xor
+dike is output of digo
+fana has value one
+fema has kind xor
+dida has value one
+bupu has first input bura
+bofu has kind xor
+batu is output of bate
+dupi has kind xor
+bubu has first input buda
+debe has value zero
+fodo has value zero
+baso has value one
+fure has value one
+gero has kind xor
+bapu has second input bare
+fivu has first input fiza
+fadi is output of fabu
+bobi has second input bobu
+bozu is output of boze
+dido has value zero
+furo has first input furu
+bake has value one
+doku has second input dole
+gapa has value zero
+diri has value one
+gebu has first input geda
+fote has value one
+fomo is output of foma
+fege has value one
+game has value zero
+fipu has second input fire
+fake has value one
+dani is output of damu
+dovi has value zero
+buga is output of bufi
+bari is output of bapu
+fupu has second input fure
+biro has first input biru
+bevi has kind xor
+fane has kind xor
+dafo has value one
+fene has value one
+dedo has kind xor
+deda has value zero
+bole has first input boli
+dame has value one
+beke is output of bego
+bane has second input bano
+defe has value zero
+diga has value zero
+depa has second input depi
+giba has value zero
+dori is output of dopu
+gene has second input geno
+feda is output of febi
+fami has second input famu
+bevi has second input bevu
+beru has value one
+bepe is output of beno
+fizi is output of fivu
+dali has value zero
+fepi has kind xor
+fafi has second input fafu
+geku has first input gela
+dopu has second input dore
+botu has value zero
+doki has value zero
+busi has second input busu
+duko has value one
+galo has value one
+gado has value one
+bibi has value zero
+dapu has value one
+besu has first input beta
+daso is output of dasa
+gani is output of gamu
+debu has second input dede
+gesu has value one
+fosu has first input fota
+bisi has first input biso
+buzo has kind xor
+favu has kind xor
+dode has value one
+beme has value zero
+fude has value one
+dote has kind xor
+gepa has first input gepe
+fili is output of fiku
+bobe has value zero
+fime is output of filo
+gago has second input gaka
+bebi has first input bebo
+gasu has first input gata
+duru is output of dure
+fola is output of foki
+fepi has second input fepu
+fevu has value one
+bazi is output of bavu
+dala has value zero
+doka has second input doki
+doma has value zero
+detu has value zero
+fegi has value one
+dagi has value one
+dipi has first input dipo
+depi has value zero
+fepe is output of feno
+geku has second input gele
+bosu has kind xor
+bosa has second input bosi
+fesi has value zero
+fupi has value one
+fali has value zero
+fabe has value one
+gezo has first input gezu
+fimi has first input fimo
+fatu has value one
+fuvu has second input fuze
+bema has first input beme
+befo has value one
+gibi has kind xor
+dize has kind xor
+bazi has value one
+fanu is output of fane
+beto has second input beva
+bomo has value one
+bagi has value zero
+fitu is output of fite
+fefu has first input fega
+fapi has value one
+dedi has value one
+dizi has value one
+gere has value zero
+fesa has kind xor
+firi is output of fipu
+dulu has value zero
+dume has value zero
+duda is output of dubi
+dome has value zero
+gagu has value zero
+fata has value zero
+faku has first input fala
+faga has value zero
+fuge has first input fugi
+biku has first input bila
+dudu has value one
+fuse is output of furo
+gare has second input garo
+fupo is output of fupa
+dabi has first input dabo
+badu has value one
+beza is output of bevi
+dopa has first input dope
+fizu has value zero
+fofi has value one
+feze has first input fezi
+fibo is output of fiba
+bepo has value one
+dafu has second input dage
+basi has second input basu
+fefa has kind xor
+boso is output of bosa
+bebi has second input bebu
+bifi has first input bifo
+bika has first input bike
+dize has second input dizo
+duse has value zero
+feku has value zero
+fazu has value zero
+daze has kind xor
+gali has value zero
+fite has second input fito
+gabi has kind xor
+fama has value one
+fazi is output of favu
+dako has value one
+bele has second input belo
+fava has first input fave
+fudu has value one
+dize has first input dizi
+babe has value zero
+bagu is output of bage
+dipi has second input dipu
+feno has first input fenu
+fode has first input fodi
+fagi has value one
+bupo has value one
+fafe has value one
+bupa has first input bupe
+deme has value one
+fiku has second input file
+bavo has value one
+banu has value one
+bame is output of balo
+gebi has value zero
+dupa has value zero
+beku has value one
+fido has second input fifa
+fugu is output of fuge
+gafu has second input gage
+divi has second input divu
+fune has first input funi
+defe is output of dedo
+dano has second input dapa
+dade has first input dadi
+dare has kind xor
+dobo has value one
+baru has value one
+fumo has value one
+fofa has first input fofe
+fego has kind xor
+bika has second input biki
+bima has value one
+dumu has second input dune
+duba has value zero
+buda has value zero
+febi has second input febu
+bivo is output of biva
+gabu has value one
+gida is output of gibi
+geka has first input geke
+delu has value zero
+fipu has first input fira
+fara has value zero
+fega has value zero
+binu has value one
+dusu has second input dute
+defi has kind xor
+fuku has second input fule
+duzu is output of duze
+daze has second input dazo
+fogi is output of fofu
+boka has value one
+duni has value one
+fane has first input fani
+duke is output of dugo
+dofi has second input dofu
+dase has value one
+boli has value zero
+dute has value zero
+dafa has second input dafi
+boto has kind xor
+bume is output of bulo
+fefu has second input fege
+buso has value zero
+bime has value one
+gami has value one
+dufa has kind xor
+gare has first input gari
+fika has kind xor
+fadu has value one
+foze has second input fozo
+bito has value zero
+bolu has value zero
+bina is output of bimi
+fika has second input fiki
+depa has kind xor
+bazo has kind xor
+bita is output of bisi
+fami has first input famo
+dizu has value zero
+dero has kind xor
+bipa has first input bipe
+bite has kind xor
+dipa has value one
+buze has value one
+dose is output of doro
+gazo has value one
+buto has value zero
+dusa has first input duse
+dibi has second input dibu
+futu is output of fute
+dege has second input dego
+gibi has first input gibo
+bame has value one
+fife is output of fido
+dufa has second input dufi
+foli has value one
+geda has value one
+dune has value zero
+dalo has value one
+diza is output of divi
+fofe has value zero
+fazo has first input fazu
+bobe is output of bizo
+geza has value one
+femu has second input fene
+bala has value one
+bado has first input badu
+bipa has second input bipi
+dive has value one
+fika has first input fike
+fuzu has value zero
+fole has second input folo
+dimu has second input dine
+dira has value zero
+bule has value one
+fafu has value one
+doku has kind xor
+felu is output of fele
+fivu has kind xor
+febi has first input febo
+dene has first input deni
+fari has value zero
+dude has kind xor
+deti has value one
+fofu has kind xor
+buro has kind xor
+fuze has value zero
+budo has second input bufa
+feze has second input fezo
+dimo is output of dima
+defo has value one
+gemi has first input gemo
+datu has value one
+biva has first input bive
+deli has value one
+fabu has first input fada
+dafe has value zero
+fere has kind xor
+bava has second input bavi
+baga is output of bafi
+bubu has second input bude
+bafi has second input bafu
+date has value one
+boze has second input bozo
+dime has value zero
+fedi has value zero
+gafu has kind xor
+fipa has first input fipe
+dota is output of dosi
+fapo is output of fapa
+firo has kind xor
+buzi has value one
+fupa has second input fupi
+dele has value zero
+fula has value one
+geba has kind xor
+bode has second input bodo
+dara has value one
+gama has second input gami
+gegu is output of gege
+dumu has kind xor
+boro has value zero
+gemi has kind xor
+bere has second input bero
+bulo has first input bulu
+dona has value one
+gemu has value one
+fage has first input fagi
+dusu has first input duta
+bevo has value one
+dasa has kind xor
+fagu has value zero
+dero has second input desa
+gaka has value one
+belu is output of bele
+bago has value zero
+difu has first input diga
+geko is output of geka
+fulo has first input fulu
+dake has value one
+fako has value one
+gamu has first input gana
+fido has kind xor
+geli is output of geku
+dugo has first input dugu
+dusa has second input dusi
+gebo is output of geba
+dezo has second input diba
+devo has value one
+fesa has first input fese
+bebe has value one
+fige has first input figi
+deze has value one
+bedu is output of bede
+duno has first input dunu
+baze has value zero
+duna has value one
+gezi is output of gevu
+faro has first input faru
+bope is output of bono
+buli has value one
+disu has second input dite
+dape is output of dano
+dugo has second input duka
+gega is output of gefi
+foko has value one
+bela has value zero
+doko is output of doka
+dava has value zero
+gedo has second input gefa
+fisu has value zero
+bobi has first input bobo
+dide has first input didi
+baka has first input bake
+foso is output of fosa
+gagi is output of gafu
+fema has second input femi
+biti has value zero
+dive is output of dito
+dolo has second input doma
+fiza has value zero
+fode has second input fodo
+bero has value one
+desi has first input deso
+fomu has kind xor
+bali has value zero
+faza has value one
+bika has kind xor
+fivo is output of fiva
+besi has value zero
+gebe has value zero
+bifi has kind xor
+daku has value one
+foti is output of fosu
+biku has second input bile
+bebi has kind xor
+faga is output of fafi
+boma has kind xor
+fotu has value one
+belu has value zero
+davo has value zero
+fivi has value one
+foki has second input foku
+duki has first input duko
+digo has kind xor
+fizo has second input foba
+bupa has kind xor
+duvi has first input duvo
+duvu has value zero
+bidi is output of bibu
+gege has kind xor
+bane has first input bani
+dazu is output of daze
+dima has first input dime
+dema has value one
+dadu is output of dade
+domi has first input domo
+dito has second input diva
+dibe is output of dezo
+bomu has kind xor
+gefo has value one
+depu has second input dere
+bolu is output of bole
+fota has value one
+depo has value zero
+gasa has kind xor
+butu has value one
+foru is output of fore
+digi is output of difu
+denu has value one
+biro has kind xor
+beki has kind xor
+fugi has value zero
+buni has value zero
+fago has value one
+fesa has second input fesi
+bosa has first input bose
+duze has kind xor
+baro has first input baru
+garo has value one
+bubo has value zero
+fome has value zero
+fura has value one
+bode has first input bodi
+fuma has value zero
+bako is output of baka
+bupe has value zero
+dego has value zero
+boda has value zero
+gama has first input game
+biso has value one
+bato has value one
+bafe is output of bado
+bulo has kind xor
+buta has value one
+fine has second input fino
+gege has first input gegi
+buvo is output of buva
+bute has first input buti
+dosi has second input dosu
+finu is output of fine
+bogo has first input bogu
+bomi has value zero
+fepo has value zero
+demi has kind xor
+falo has first input falu
+gedu has value one
+gago has kind xor
+fape has value zero
+gari has value one
+buvu has first input buza
+funa is output of fumi
+fato has value zero
+dura has value zero
+dege has kind xor
+feto has kind xor
+geki has value one
+gene has kind xor
+gete has first input geti
+bozo has value one
+dutu has value zero
+gafu has first input gaga
+fomu has first input fona
+fiba has second input fibi
+gasa has second input gasi
+difo has value one
+binu is output of bine
+dale has kind xor
+busu has value one
+femo is output of fema
+gale has kind xor
+fupu has first input fura
+gene has first input geni
+boke has value one
+busa has value one
+dugi is output of dufu
+fata is output of fasi
+buva has second input buvi
+fefi has value one
+bovo has value zero
+dofe has value one
+bega has value zero
+bemo has value one
+fibu has first input fida
+dugu has value zero
+fuke has value one
+dito has kind xor
+bitu has value zero
+bane has kind xor
+gaze has second input gazo
+deki has value zero
+gefi has first input gefo
+damu has second input dane
+bizu has value zero
+dile has first input dili
+bepu has value one
+boba has value zero
+gabo has value one
+bofu has second input boge
+fela has value zero
+bepa has value zero
+geva has second input gevi
+dabe is output of buzo
+bema has second input bemi
+fore has kind xor
+foza is output of fovi
+digo has second input dika
+bone has value one
+dube has value zero
+baku has first input bala
+doka has kind xor
+dare has first input dari
+bapu has first input bara
+fibu has second input fide
+fedo has value one
+bite has first input biti
+difi has value zero
+duke has value zero
+fabi has value zero
+foda is output of fobi
+bogu has value zero
+fosa has kind xor
+bubu has kind xor
+baku has kind xor
+deka has first input deke
+bosu has second input bote
+duze has first input duzi
+fite has kind xor
+beno has second input bepa
+fomu has second input fone
+gasa has first input gase
+fufu has value one
+dape has value one
+bate has second input bato
+budo has first input budu
+bigo has value one
+faze has value zero
+bona has value one
+fite has first input fiti
+delo has kind xor
+biko is output of bika
+fuve has value zero
+gebu has kind xor
+dupu has value zero
+bufi has kind xor
+buri is output of bupu
+dara is output of dapi
+duku has value one
+fide has value zero
+daki has second input daku
+dudu is output of dude
+bige has first input bigi
+bevu has value zero
+dado has value zero
+geto has value zero
+buba has kind xor
+dani has value zero
+bofa has second input bofi
+gana has value zero
+feke is output of fego
+femu has kind xor
+desi has second input desu
+gasu has kind xor
+fobo has value zero
+baba has kind xor
+dedi is output of debu
+fimo has value one
+buti has value one
+dazo has value zero
+detu is output of dete
+bedi has value one
+done has kind xor
+fuva has kind xor
+geka has kind xor
+gavo has value zero
+gido has value zero
+davi has kind xor
+dino has kind xor
+fipa has kind xor
+gare has kind xor
+fono has second input fopa
+dura is output of dupi
+fogo has second input foka
+gape is output of gano
+dega has value zero
+bibo has value zero
+buvi has value zero
+dagu has value zero
+gavu has value zero
+didu has value zero
+feno has second input fepa
+fegi is output of fefu
+fuzo has kind xor
+dake is output of dago
+diso is output of disa
+bede has second input bedo
+duto has first input dutu
+beki has second input beku
+bipu has first input bira
+dubi has second input dubu
+devu has first input deza
+fusi has first input fuso
+fovo has value zero
+dafa has kind xor
+febo has value one
+geso has value one
+dufa has first input dufe
+bode has kind xor
+funu is output of fune
+bavo is output of bava
+buza has value zero
+dagi is output of dafu
+fami has kind xor
+gele has value one
+duzi has value zero
+bafi has first input bafo
+gero has second input gesa
+fulu has value one
+besa has kind xor
+dufu has kind xor
+feki has kind xor
+buka has first input buke
+base has value one
+bilu has value zero
+gato has kind xor
+budi has value one
+bivo has value zero
+begi is output of befu
+fipo is output of fipa
+gepe has value one
+foto has kind xor
+fifa has value zero
+dezu has value zero
+degi has value one
+bizo has first input bizu
+dova has second input dovi
+deba has first input debe
+dane has value zero
+duvi has second input duvu
+fopi has first input fopo
+befa has second input befi
+bofi has value zero
+fike has value one
+biba has second input bibi
+dise has value zero
+bapi has value zero
+bunu has value zero
+gazi has value one
+dono has value zero
+fune has kind xor
+buzo has second input daba
+buvu has kind xor
+fugo has value zero
+duma has second input dumi
+boni is output of bomu
+bofo has value one
+bole has second input bolo
+fafi has kind xor
+bage has second input bago
+bami has second input bamu
+danu has value zero
+gevu has kind xor
+bino has value zero
+dusi has value one
+bele has first input beli
+geme is output of gelo
+dene has kind xor
+diro has value zero
+futi has value zero
+fabu has kind xor
+dife has value one
+bola is output of boki
+befe has value zero
+bogo has kind xor
+boti is output of bosu
+fiva has first input five
+fezo has value one
+gena is output of gemi
+baga has value zero
+dite has value zero
+gaze has first input gazi
+gade has first input gadi
+dato has first input datu
+bufu has value one
+bugi has value one
+buke has value one
+bile has value zero
+dapi has second input dapu
+deba has kind xor
+bele has kind xor
+faki has value zero
+fuge has kind xor
+buko has value one
+bine has second input bino
+deba has second input debi
+fezi has value one
+dogu has value zero
+boku has value zero
+demu has value one
+gage has value one
+fovu has value zero
+fumi has first input fumo
+dole has value one
+fuzo has first input fuzu
+dala is output of daki
+faku has kind xor
+bisu has value one
+deza has value one
+bupu has second input bure
+disu has kind xor
+dafu has first input daga
+bali is output of baku
+fobi has kind xor
+dubi has kind xor
+fate has first input fati
+gibi has second input gibu
+dobo is output of doba
+benu has value one
+bemu has first input bena
+demi has first input demo
+fudo has kind xor
+bezo has value one
+diti is output of disu
+depu has kind xor
+budo has kind xor
+faro has second input fasa
+fefa has second input fefi
+gelo has first input gelu
+dopo has value one
+foga has value one
+gero has first input geru
+gane has value one
+bopi has kind xor
+dumo has value zero
+falu has value zero
+degu has value one
+bivu has second input bize
+bise is output of biro
+gapi has first input gapo
+bego has first input begu
+bozu has value one
+geva has first input geve
+gapi has kind xor
+bipu has kind xor
+dibu has value zero
+bufe has value zero
+gemo has value one
+futo has value one
+dozo has second input duba
+bote has value one
+deri is output of depu
+fira has value one
+baka has kind xor
+buge has kind xor
+fufi has first input fufo
+gafi has value one
+bipo is output of bipa
+faba has second input fabi
+bute has second input buto
+doli has value one
+deka has second input deki
+dire has first input diri
+bobi has kind xor
+fada has value zero
+fige has kind xor
+beti has value zero
+fuko is output of fuka
+duno has kind xor
+bafi has kind xor
+feva has value zero
+bida has value zero
+bume has value zero
+dofa has value zero
+biba has first input bibe
+foba has value one
+dera has value one
+dila has value zero
+duve has value zero
+boga has value one
+fere has second input fero
+dega is output of defi
+duta has value zero
+diru has value one
+gepu has second input gere
+gafa has first input gafe
+fate has second input fato
+budu has value zero
+gibu has value zero
+gidi has value one
+gide has kind xor
+bizi is output of bivu
+gema has value zero
+bomu has first input bona
+fedu is output of fede
+gaba has value zero
+biba has kind xor
+fori has value one
+dodu has value one
+fodu is output of fode
+fepa has value one
+galu is output of gale
+fopi has kind xor
+daru has value one
+fofa has second input fofi
+bilo has first input bilu
+dore has value zero
+bozi has value zero
+dilu is output of dile
+fati has value one
+buvo has value zero
+dazu has value zero
+deko is output of deka
+devu has second input deze
+faka has second input faki
+fufa has value zero
+buge has first input bugi
+dasu has second input date
+dibo has value one
+gefa has value zero
+bari has value zero
+fupu has kind xor
+bipu has second input bire
+dazi has value zero
+dule has kind xor
+fesu has first input feta
+buba has first input bube
+gese is output of gero
+divo has value one
+dusa has kind xor
+dumu has first input duna
+fese has value one
+dufu has first input duga
+daze has first input dazi
+fovi has first input fovo
+dova has first input dove
+fasi has second input fasu
+geno has value zero
+baro has second input basa
+baba has first input babe
+bapo has value zero
+diva has value one
+fosu has second input fote
+bave has value one
+disa has first input dise
+desu has value zero
+fizo has kind xor
+fuba has first input fube
+bupi has value one
+favu has first input faza
+fora is output of fopi
+famu has value zero
+dire has kind xor
+beri has value zero
+dule has second input dulo
+gefu has value one
+bifu has value one
+fito has value zero
+dozo has first input dozu
+gatu has value one
+buvu has second input buze
+gegi has value zero
+gego has value one
+gete has kind xor
+deso has value zero
+diko has value zero
+dela has value one
+figu is output of fige
+gela has value zero
+buva has kind xor
+dede has value one
+file has value one
+doda has value zero
+bopi has first input bopo
+biku has kind xor
+dure has kind xor
+bege has value one
+bipe has value one
+bifo has value one
+dima has second input dimi
+dafa has first input dafe
+geka has second input geki
+duru has value zero
+fozu is output of foze
+dugo has kind xor
+feru is output of fere
+debu has first input deda
+dude has first input dudi
+befa has first input befe
+dege has first input degi
+besa has second input besi
+dese has value one
+funo has value zero
+divi has kind xor
+bula has value zero
+dovo is output of dova
+bune has first input buni
+fisi has first input fiso
+fovi has second input fovu
+baki has value zero
+dudo has value one
+gazu is output of gaze
+digo has first input digu
+bope has value zero
+buba has second input bubi
+gedo has kind xor
+beto has first input betu
+domu has value zero
+faba has kind xor
+bavi has value zero
+biga has value zero
+dufe has value zero
+fodi has value one
+bore has first input bori
+dada is output of dabi
+depa has first input depe
+doze has value zero
+dezo has kind xor
+dumo is output of duma
+dizu is output of dize
+dote has second input doto
+fala has value one
+dupo has value zero
+gevi has value one
+desi has kind xor
+bune has second input buno
+fubu has second input fude
+bide has value zero
+daza is output of davi
+beva has value zero
+dale has first input dali
+dopi has value zero
+gade has second input gado
+filo has first input filu
+damu has first input dana
+fuza has value one
+bubi has value zero
+defu has value one
+fifi has kind xor
+bike has value one
+fore has first input fori
+banu is output of bane
+fube has value one
+bate has kind xor
+dotu has value one
+fate has kind xor
+bufa has value zero
+fuki has value zero
+fena has value one
+fiki has value zero
+beni has value one
+begu has value one
+fevi has kind xor
+base is output of baro
+fubu has first input fuda
+bili has value one
+bufi has second input bufu
+bevi has first input bevo
+biki has value zero
+fenu has value one
+gavi has second input gavu
+fuku has first input fula
+gezu has value one
+deko has value one
+dora has value one
+fabo has value one
+bumu has value one
+daro has value zero
+fana is output of fami
+feki has first input feko
+bose has value one
+belo has value one
+bore has kind xor
+fako is output of faka
+dade has second input dado
+bako has value one
+babu has first input bada
+damo has value zero
+fida has value zero
+fize has value zero
+duni is output of dumu
+dolo has first input dolu
+gapo has value zero
+fazo has kind xor
+bosu has first input bota
+feta has value zero
+fine has first input fini
+dulo has value one
+fosu has kind xor
+dozu has value zero
+geni has value one
+bemi has value one
+bosi has value one
+fuka has second input fuki
+biko has value one
+bido has second input bifa
+gano has kind xor
+gava has value one
+fevo has value zero
+doge has kind xor
+fame is output of falo
+dago has first input dagu
+bono has second input bopa
+fobu has value zero
+bige has kind xor
+gevu has second input geze
+dama has second input dami
+dolo has kind xor
+fele has first input feli
+figo has value zero
+dovu has kind xor
+dini has value one
+gelo has kind xor
+boda is output of bobi
+fado has first input fadu
+bivu has kind xor
+fubi has value one
+bube has value zero
+ditu has value zero
+faba has first input fabe
+fimu has value one
+doko has value one
+fepu has value one
+fiku has first input fila
+buna is output of bumi
+dade has kind xor
+gemi has second input gemu
+buri has value zero
+femi has value zero
+dezi is output of devu
+fuli is output of fuku
+fuva has first input fuve
+fafi has first input fafo
+dovo has value one
+gadu is output of gade
+foze has kind xor
+gaga has value one
+dulu is output of dule
+dete has second input deto
+boke is output of bogo
+bugu has value one
+gabi has first input gabo
+fine has kind xor
+deva has kind xor
+bufe is output of budo
+bunu is output of bune
+geti has value zero
+feto has first input fetu
+boti has value zero
+bere has kind xor
+daba has value zero
+diku has value zero
+fame has value one
+fofo is output of fofa
+bavu has kind xor
+gano has second input gapa
+fibu has kind xor
+fazo has second input feba
+fusa has value one
+beso is output of besa
+dodo has first input dodu
+dapo has value zero
+falo has kind xor
+bopa has value one
+foma has second input fomi
+fapa has second input fapi
+gide has first input gidi
+bute has kind xor
+gefe is output of gedo
+dezi has value zero
+buka has second input buki
+doro has second input dosa
+bita has value zero
+fuda has value one
+fage has kind xor
+dena is output of demi
+bimo has value zero
+beso has value zero
+doba has first input dobe
+fado has second input fafa
+beza has value one
+depo is output of depa
+doke has value one
+domo has value one
+fele has kind xor
+buzi is output of buvu
+gavi has first input gavo
+fefe has value one
+bibu has first input bida
+gaza is output of gavi
+bema has kind xor
+fasi has kind xor
+fela is output of feki
+bonu has value one
+bata has value one
+feve is output of feto
+fifu has value zero
+bizo has second input boba
+bupu has kind xor
+fema has first input feme
+bulu has value one
+bezi has value one
+fefu has kind xor
+diba has value zero
+feko has value zero
+duge has value zero
+folo has value zero
+fave has value zero
+basu has value zero
+dasu has kind xor
+dibi has kind xor
+dovu has second input doze
+bora has value zero
+dufi has value one
+batu has value one
+fagu is output of fage
+difo is output of difa
+beni is output of bemu
+babo has value zero
+bodo has value zero
+favo is output of fava
+dere has value zero
+bera has value zero
+fuge has second input fugo
+bipa has kind xor
+bugu is output of buge
+besa has first input bese
+balu has value zero
+bove is output of boto
+bimu has value one
+boma has second input bomi
+fute has first input futi
+bebu has value zero
+bene has value one
+fuvu has kind xor
+fidi is output of fibu
+fisi has kind xor
+dofu has value zero
+fibi has value zero
+bora is output of bopi
+dofe is output of dodo
+dapi has first input dapo
+dige has value zero
+gedi is output of gebu
+fofa has kind xor
+fiso has value one
+fimi has second input fimu
+dopa has second input dopi
+gepa has kind xor
+garu is output of gare
+gelo has second input gema
+duto has kind xor
+bido has first input bidu
+geke has value one
+gato has second input gava
+biva has second input bivi
+firu has value zero
+fovi has kind xor
+devu has kind xor
+bilo has second input bima
+davu has value zero
+dobu has kind xor
+bezu is output of beze
+dipi has kind xor
+demo has value zero
+dapi has kind xor
+fute has kind xor
+fari is output of fapu
+degu is output of dege
+bune has kind xor
+fusu has value one
+bumo has value zero
+delo has first input delu
+babu has second input bade
+bemu has second input bene
+gafa has kind xor
+baka has second input baki
+fefo has value zero
+fita is output of fisi
+feba has value one
+buro has second input busa
+deru has value one
+dida is output of dibi
+defa has value one
+bape has value zero
+duma has kind xor
+febi has kind xor
+fima has value zero
+gara is output of gapi
+bafa has value one
+fapu has first input fara
+buga has value one
+biru has value one
+dufo has value one
+bili is output of biku
+dusu has kind xor
+dilu has value one
+dona is output of domi
+bifi has second input bifu
+gadi has value one
+fomi has value one
+dafo is output of dafa
+furu has value zero
+fane has second input fano
+fabu has second input fade
+dete has kind xor
+dopu has kind xor
+dubo has value zero
+deva has second input devi
+dosu has value one
+buru has value one
+dufu has second input duge
+duno has second input dupa
+fasu has value one
+duda has value zero
+dago has second input daka
+foku has value one
+donu has value one
+dabi has kind xor
+bibo is output of biba
+dubi has first input dubo
+bada has value one
+gato has first input gatu
+feno has kind xor
+fere has first input feri
+buzu has value zero
+bofa has kind xor
+badi has value one
+diru is output of dire
+dave has value one
+gala is output of gaki
+foni is output of fomu
+duti is output of dusu
+dure has first input duri
+done has first input doni
+faka has first input fake
+deta is output of desi
+bego has second input beka
+dodo has kind xor
+dopa has kind xor
+fufo has value one
+fode has kind xor
+gale has first input gali
+fudi is output of fubu
+bado has second input bafa
+bola has value one
+dete has first input deti
+buko is output of buka
+gamu has kind xor
+fige has second input figo
+dodi is output of dobu
+bofa has first input bofe
+dude has second input dudo
+dedo has second input defa
+fegu has value one
+dino has second input dipa
+dide has kind xor
+bovu has value one
+doge has second input dogo
+duzu has value one
+boko has value one
+bore has second input boro
+buta is output of busi
+fezu is output of feze
+dodo has second input dofa
+dedu has value one
+gati is output of gasu
+baku has second input bale
+difu has second input dige
+doni has value one
+bivi has value zero
+fuba has second input fubi
+bopo has value one
+fonu has value zero
+befu has second input bege
+fufi has second input fufu
+faro has kind xor
+dotu is output of dote
+dupe is output of duno
+fanu has value one
+bede has kind xor
+buku has kind xor
+bolo has value zero
+besu has second input bete
+fiba has kind xor
+buma has value one
+fele has second input felo
+dudi has value zero
+gaki has second input gaku
+bati has value zero
+faku has second input fale
+fiko is output of fika
+deva has first input deve
+fobi has first input fobo
+bodu is output of bode
+beve has value one
+bigu is output of bige
+duli has value one
+bori has value zero
+femu has first input fena
+gafa has second input gafi
+bimi has second input bimu
+bami has kind xor
+bitu is output of bite
+domi has kind xor
+dove has value one
+dari has value one
+fabo is output of faba
+diso has value one
+dadu has value one
+desa has value zero
+gelu has value zero
+fasi has first input faso
+fopo has value zero
+debi has value zero
+fuva has second input fuvi
+fipu has kind xor
+dupe has value zero
+fesu has kind xor
+fuvu has first input fuza
+fole has first input foli
+gamu has second input gane
+dupi has second input dupu
+doga has value one
+fusi has kind xor
+bate has first input bati
+bige has second input bigo
+bavu has second input baze
+fosa has first input fose
+dure has second input duro
+beke has value one
+fubo is output of fuba
+deku has second input dele
+fini has value zero
+debu has kind xor
+dipe has value zero
+doba has second input dobi
+bure has value zero
+gepi has value zero
+befo is output of befa
+dunu has value zero
+dami has value one
+fole has kind xor
+fulo has second input fuma
+figi has value zero
+daka has value one
+bimi has kind xor
+bibe has value zero
+dota has value one
+bado has kind xor
+gako has value zero
+furo has second input fusa
+fise is output of firo
+firo has first input firu
+gafo is output of gafa
+buno has value zero
+davi has first input davo
+daki has first input dako
+buzo has first input buzu
+dezo has first input dezu
+dage has value one
+dozi is output of dovu
+fava has kind xor
+fore has second input foro
+fozo has value one
+dabe has value zero
+basa has value zero
+beda has value one
+dupi has first input dupo
+bidi has value zero
+dati is output of dasu
+deto has value one
+bepi has kind xor
+dalu has value one
+doro has kind xor
+gepu has first input gera
+gaki has kind xor
+boki has kind xor
+bipo has value zero
+gano has first input ganu
+buva has first input buve
+fuka has kind xor
+bamu has value zero
+doza has value one
+doro has first input doru
+feti is output of fesu
+duso is output of dusa
+fuku has kind xor
+funi has value one
+fido has first input fidu
+duki has kind xor
+dosi has first input doso
+dimu has first input dina
+gevu has first input geza
+favo has value zero
+bife has value zero
+bese has value zero
+dobi has value zero
+duso has value one
+dene has second input deno
+folu is output of fole
+donu is output of done
+daru is output of dare
+gepa has second input gepi
+bomo is output of boma
+dula is output of duki
+dome is output of dolo
+gata has value zero
+fumu has value zero
+dide has second input dido
+beno has kind xor
+dada has value one
+feki has second input feku
+fuso has value zero
+beze has first input bezi
+fove is output of foto
+deku has first input dela
+fopa has value zero
+buku has first input bula
+gaze has kind xor
+filo has kind xor
+daga has value zero
+buku has second input bule
+fila has value one
+bebe is output of bazo
+delo has second input dema
+fuvo is output of fuva
+bapo is output of bapa
+dabi has second input dabu
+bemo is output of bema
+dama has first input dame
+foro has value zero
+bufi has first input bufo
+bemu has kind xor
+buna has value one
+dosi has kind xor
+fina is output of fimi
+balo has first input balu
+dima has kind xor
+fevi has first input fevo
+fizo has first input fizu
+depe has value zero
+bido has kind xor
+fede has second input fedo
+dili has value one
+bani has value zero
+dova has kind xor
+bife is output of bido
+bare has value zero
+dafu has kind xor
+beru is output of bere
+defi has second input defu
+dola has value zero
+dito has first input ditu
+dopo is output of dopa
+foze has first input fozi
+geba has second input gebi
+fapu has second input fare
+bava has kind xor
+bata is output of basi
+furo has kind xor
+difa has first input dife
+fusi has second input fusu
+bole has kind xor
+bazo has first input bazu
+bine has first input bini
+bepi has first input bepo
+bizi has value one
+bufo has value zero
+befu has first input bega
+gezo has second input giba
+fidu has value one
+fafo has value one
+fipa has second input fipi
+bumi has first input bumo
+fiba has first input fibe
+befa has kind xor
+febu has value zero
+didu is output of dide
+dozi has value one
+geku has kind xor
+feze has kind xor
+boki has second input boku
+dozo has kind xor
+devi has value zero
+gepu has kind xor
+davi has second input davu
+gede has value one
+dosa has value one
+fare has value zero
+dula has value zero
+fero has value zero
+fafe is output of fado
+difa has second input difi
+dato has second input dava
+bivu has first input biza
+duva has value zero
+foma has kind xor
+duve is output of duto
+bazu has value zero
+bude has value one
+budi is output of bubu
+fapo has value one
+fasa has value one
+buli is output of buku
+bumi has second input bumu
+fani has value one
+damu has kind xor
+denu is output of dene
+dimo has value zero
+gevo is output of geva
+bofu has first input boga
+fupa has first input fupe
+fuba has kind xor
+feni is output of femu
+bura has value zero
+fipe has value zero
+gidu is output of gide
+fapu has kind xor
+doku has first input dola
+bana is output of bami
+bofe has value one
+bena has value zero
+difu has kind xor
+beze has second input bezo
+foki has first input foko
+bupo is output of bupa
+baro has kind xor
+bifa has value zero
+fumi has kind xor
+doso has value zero
+beba has value one
+dube is output of dozo
+bapa has second input bapi
+bage has first input bagi
+gasi has value zero
+dabu has value zero
+fumi has second input fumu
+favi has value zero
+gera has value zero
+beki has first input beko
+biga is output of bifi
+buge has second input bugo
+deli is output of deku
+duma has first input dume
+baza has value one
+dubu has value zero
+fede has kind xor
+gafe has value zero
+bilo has kind xor
+demi has second input demu
+genu is output of gene
+bana has value one
+gavi has kind xor
+fono has kind xor
+bine has kind xor
+fatu is output of fate
+fiva has kind xor
+fuga is output of fufi
+gake is output of gago
+bire has value one
+dese is output of dero
+bogo has second input boka
+geba has first input gebe
+butu is output of bute
+duro has value one
+furi is output of fupu
+deme is output of delo
+gezo has kind xor
+daki has kind xor
+doba has kind xor
+fute has second input futo
+babu has kind xor
+fopu has value zero
+bage has kind xor
+basi has kind xor
+bela is output of beki
+bono has kind xor
+gave is output of gato
+beto has kind xor
+duvo has value one
+doka has first input doke
+dana has value zero
+buka has kind xor
+fibe has value one
+dino has first input dinu
+boni has value zero
+dena has value one
+duri has value one
+dufo is output of dufa
+disa has second input disi
+buse has value zero
+fubu has kind xor
+boza has value one
+bova has value one
+bite has second input bito
+fisa has value one
+deka has kind xor
+dina has value zero
+dogo has value one
+bovi has first input bovo
+deri has value one
+boru has value zero
+bepe has value one
+biva has kind xor
+fera is output of fepi
+geva has kind xor
+beze has kind xor
+bupa has second input bupi
+fulo has kind xor
+feda has value one
+dasa has first input dase
+dile has second input dilo
+fage has second input fago
+gale has second input galo
+geve has value zero
+fifo has value one
+fozi has value one
+doti has value zero
+fete has value one
+dogi has value one
+bapa has first input bape
+felu has value one
+bopi has second input bopu
+fisi has second input fisu
+gamo is output of gama
+bale has value one
+duzo has value one
+fova has value one
+bavu has first input baza
+basi has first input baso
+bodi has value one
+geru has value one
+bere has first input beri
+gefi has kind xor
+dogu is output of doge
+dalu is output of dale
+depu has first input dera
+bota has value one
+beti is output of besu
