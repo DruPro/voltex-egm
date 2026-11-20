@@ -1,0 +1,83 @@
+[
+ {
+  "world": "company",
+  "params": {
+   "scale": 1.0,
+   "noise": 0.0,
+   "reports": 1
+  },
+  "facts": 3815,
+  "build_s": 0.07,
+  "load_and_first_query_s": 0.09,
+  "load_and_infer_all_s": 0.11,
+  "kb_bytes": 29726
+ },
+ {
+  "world": "company",
+  "params": {
+   "scale": 2.0,
+   "noise": 0.0,
+   "reports": 1
+  },
+  "facts": 7589,
+  "build_s": 0.18,
+  "load_and_first_query_s": 0.23,
+  "load_and_infer_all_s": 0.21,
+  "kb_bytes": 59217
+ },
+ {
+  "world": "company",
+  "params": {
+   "scale": 4.0,
+   "noise": 0.0,
+   "reports": 1
+  },
+  "facts": 15363,
+  "build_s": 0.37,
+  "load_and_first_query_s": 0.58,
+  "load_and_infer_all_s": 0.5,
+  "kb_bytes": 119968
+ },
+ {
+  "world": "hidden",
+  "params": {
+   "scale": 1,
+   "coverage": 0.5,
+   "noise": 0.03,
+   "reports": 1
+  },
+  "facts": 4078,
+  "build_s": 0.1,
+  "load_and_first_query_s": 0.17,
+  "load_and_infer_all_s": 0.18,
+  "kb_bytes": 31895
+ },
+ {
+  "world": "hidden",
+  "params": {
+   "scale": 2,
+   "coverage": 0.5,
+   "noise": 0.03,
+   "reports": 1
+  },
+  "facts": 9038,
+  "build_s": 0.32,
+  "load_and_first_query_s": 0.48,
+  "load_and_infer_all_s": 0.48,
+  "kb_bytes": 70445
+ },
+ {
+  "world": "hidden",
+  "params": {
+   "scale": 4,
+   "coverage": 0.5,
+   "noise": 0.03,
+   "reports": 1
+  },
+  "facts": 19062,
+  "build_s": 0.97,
+  "load_and_first_query_s": 1.39,
+  "load_and_infer_all_s": 1.4,
+  "kb_bytes": 148022
+ }
+]

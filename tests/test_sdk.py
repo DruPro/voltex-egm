@@ -404,6 +404,40 @@ class TestNoiseSettings(unittest.TestCase):
             self.assertEqual(e.experimental(), {"CHAIN": 3})
 
 
+class TestTendencyAndLimits(unittest.TestCase):
+    """TENDENCYSTEPS, CHAINS and the capacity limits (studies/tendency)."""
+    kb = staticmethod(TestExperimentalSettings.kb)
+
+    def test_chains_report_round_and_tendency_steps(self):
+        lines, _ = worlds.remainders()
+        with self.kb(lines, DEPTH=0) as e:
+            ch = e.chains(); n = len(e.infer_all())
+        self.assertEqual(len(ch), n)
+        self.assertGreater(max(c["round"] for c in ch), 1)          # remainders need several rounds
+        self.assertTrue(all(c["tendency_steps"] >= 0 for c in ch))
+
+    def test_tendencysteps_zero_keeps_law_chains_only(self):
+        lines, _, _ = worlds.staff(noise=0.0)
+        with self.kb(lines) as e:
+            every = {f.fact for f in e.infer_all()}
+            law = {f.fact for f in e.infer_all() if f.tier == "law"}
+            steps = {c["fact"]: c["tendency_steps"] for c in e.chains()}
+        with self.kb(lines, TENDENCYSTEPS=0) as e:
+            zero = {f.fact for f in e.infer_all()}
+            self.assertEqual(e.experimental(), {"TENDENCYSTEPS": 0})
+        self.assertTrue(zero <= every)
+        self.assertEqual(zero, {f for f, t in steps.items() if t == 0})
+        self.assertTrue(law <= zero)
+
+    def test_capacity_limit_is_reported_and_adjustable(self):
+        lines, _ = worlds.gates(per_kind=60)
+        with self.kb(lines, MAXWORDS=200) as e:
+            lim = e.limits()
+        with self.kb(lines) as e:
+            self.assertEqual(e.limits(), [])
+        self.assertTrue(lim and "MAXWORDS" in lim[0])
+
+
 class TestBinaryLookup(unittest.TestCase):
     def test_missing_binary(self):
         with self.assertRaises(egm.EngineNotFound):

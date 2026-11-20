@@ -8,6 +8,8 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 
 | Setting | Default | Layer | Status | What it does |
 |---|---|---|---|---|
+| `MAXWORDS` | 12000 | statistics | stable | categories for this many most frequent words; rarer words are not slots |
+| `MAXRELATIONS` | 40 | statistics | stable | relations kept, largest first |
 | `CLASS` | 0.5 | statistics | stable | similarity needed to merge words into a category |
 | `RATE` | 0.4 | induction | stable | minimum share of chains whose conclusion is stated |
 | `LIFT` | 5 | induction | stable | minimum rate over the conclusion's base rate |
@@ -20,6 +22,7 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 | `CONDITIONS` | 0 | induction | **experimental** | learn group conditions on accepted rules (1/0) (studies/multipremise) |
 | `TREES` | 0 | induction | **experimental** | tree-shaped rules joining several branches at one entity (1/0) (studies/trees) |
 | `REPLICATE` | 0 | induction | **experimental** | a rule must also hold in each half of its subjects (1/0) (studies/noise) |
+| `TENDENCYSTEPS` | -1 | inference | **experimental** | most tendency-tier steps one proof may contain, -1 = no limit (studies/tendency) |
 | `DEPTH` | 4 | inference | stable | inference rounds, 0 = until nothing new (studies/depth) |
 | `CORROBORATE` | 1 | inference | stable | a contradiction needs two distinct rules (1/0) |
 | `OBS` | 1 | evidence | stable | project the observation log (1/0) |
@@ -62,6 +65,17 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 - `REPLICATE` (0/1): keeps a rule only if it also passes in each half of its subjects. It removed
   70% of the wrong inferences with `TREES 1` at 30% noise, but cost 36% of the correct gate outputs with
   `TREES 1` on clean data, and real correlations replicate anyway. Not recommended. Same study.
+- `TENDENCYSTEPS` (-1, or 0 and up): the most tendency-tier rule steps one proof may contain.
+  `0` keeps only answers that follow from law-tier rules: precision 0.97-1.00 in every world
+  tested, and it stops the high-coverage cascade (precision 0.023 to 0.975). The cost depends on
+  how complete your data is: true rules whose conclusions are only partly stated count as
+  tendencies, so lineage (25 of 40 families stated) and harvest lost every answer, and company
+  recall fell from 0.96 to 0.50. `1` barely changes the cascade, because the cascade is one
+  tendency step amplified by law rules (see `CHAINS`). Choose it for your data;
+  `studies/tendency/RESULTS.md` has the full table.
+- `MAXWORDS`, `MAXRELATIONS`: capacity caps. When one is hit, `RELATIONS` prints a `[LIMIT]`
+  line naming the setting. At 16,000 words, raising `MAXWORDS` to 30000 took tree gates from
+  0 to 3,198 of 3,198 correct outputs. Raising it makes builds slower (5 s to 9 s there).
 - `DX`, `DECL`, `DECLMINE`, `DECLFN`, `REFRESH`: options from earlier studies of change
   handling and rebuild speed; see `docs/papers/`.
 

@@ -184,3 +184,12 @@ def config(lines):
             out[m.group(1)] = {"value": float(m.group(2)), "default": float(m.group(3)), "layer": m.group(4),
                                "experimental": bool(m.group(5)), "help": m.group(6).strip()}
     return out
+
+
+def chains(lines):
+    out = []
+    for l in lines:
+        if l.startswith("CHAIN\t"):
+            p = l.split("\t")
+            out.append({"fact": p[1], "round": int(p[2].split("=")[1]), "tendency_steps": int(p[3].split("=")[1])})
+    return out

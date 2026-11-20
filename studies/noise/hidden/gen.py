@@ -90,10 +90,11 @@ def company(seed=0, scale=1.0, noise=0.0, reports=1):
     return lines, {"truth": sorted([rel, a, b] for rel, fs in T.items() for a, b in fs), "corrupted": corrupted, "relations": sorted(T)}
 
 
-def hidden(seed=0, scale=1, coverage=0.5, noise=0.03, reports=1):
+def hidden(seed=0, scale=1, coverage=0.5, noise=0.03, reports=1, contradict=None):
+    """contradict: share of 'lives in' facts given a second, wrong value (default: the Blind World's 1%)."""
     T, ents = hidden_world.generate(seed, scale)
     if reports == 1:
-        lines, info = hidden_world.observe(T, ents, seed, coverage, noise=noise)
+        lines, info = hidden_world.observe(T, ents, seed, coverage, noise=noise, **({} if contradict is None else {"contradict": contradict}))
         corrupted = [[w[0], w[1], w[2], w[4]] for w in info["wrong"]]
         return lines, {"truth": sorted([p, a, b] for p, fs in T.items() for a, b in fs), "corrupted": corrupted,
                        "relations": sorted(T), "unseen": info["unseen"]}

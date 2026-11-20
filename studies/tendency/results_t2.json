@@ -1,0 +1,72 @@
+{
+ "tree_gates": {
+  "off": {
+   "correct": 1319,
+   "wrong": 0
+  },
+  "ts1": {
+   "correct": 1319,
+   "wrong": 0
+  },
+  "ts0": {
+   "correct": 1332,
+   "wrong": 0
+  }
+ },
+ "adders": {
+  "off": {
+   "correct": 1700,
+   "wrong": 0
+  },
+  "ts1": {
+   "correct": 1700,
+   "wrong": 0
+  },
+  "ts0": {
+   "correct": 1700,
+   "wrong": 0
+  }
+ },
+ "lineage": {
+  "off": {
+   "correct": 360,
+   "wrong": 0
+  },
+  "ts1": {
+   "correct": 360,
+   "wrong": 0
+  },
+  "ts0": {
+   "correct": 0,
+   "wrong": 0
+  }
+ },
+ "remainders": {
+  "off": {
+   "correct": 125,
+   "wrong": 0
+  },
+  "ts1": {
+   "correct": 125,
+   "wrong": 0
+  },
+  "ts0": {
+   "correct": 125,
+   "wrong": 0
+  }
+ },
+ "harvest": {
+  "off": {
+   "correct": 54,
+   "wrong": 0
+  },
+  "ts1": {
+   "correct": 54,
+   "wrong": 0
+  },
+  "ts0": {
+   "correct": 0,
+   "wrong": 0
+  }
+ }
+}

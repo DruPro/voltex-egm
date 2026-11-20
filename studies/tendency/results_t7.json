@@ -1,0 +1,802 @@
+[
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 0,
+  "engine_vote": {
+   "derived_new": 1142,
+   "correct": 1139,
+   "wrong": 3,
+   "precision": 0.9973730297723292,
+   "recall": 0.9644369178662151
+  },
+  "pipeline": {
+   "derived_new": 1663,
+   "correct": 1140,
+   "wrong": 523,
+   "precision": 0.6855081178592904,
+   "recall": 0.9652836579170194
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 1,
+  "engine_vote": {
+   "derived_new": 1110,
+   "correct": 1107,
+   "wrong": 3,
+   "precision": 0.9972972972972973,
+   "recall": 0.9502145922746781
+  },
+  "pipeline": {
+   "derived_new": 1207,
+   "correct": 1118,
+   "wrong": 89,
+   "precision": 0.9262634631317316,
+   "recall": 0.959656652360515
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 2,
+  "engine_vote": {
+   "derived_new": 1094,
+   "correct": 1091,
+   "wrong": 3,
+   "precision": 0.9972577696526508,
+   "recall": 0.9561787905346187
+  },
+  "pipeline": {
+   "derived_new": 1094,
+   "correct": 1091,
+   "wrong": 3,
+   "precision": 0.9972577696526508,
+   "recall": 0.9561787905346187
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 3,
+  "engine_vote": {
+   "derived_new": 1105,
+   "correct": 1103,
+   "wrong": 2,
+   "precision": 0.9981900452488688,
+   "recall": 0.9459691252144082
+  },
+  "pipeline": {
+   "derived_new": 1105,
+   "correct": 1103,
+   "wrong": 2,
+   "precision": 0.9981900452488688,
+   "recall": 0.9459691252144082
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 4,
+  "engine_vote": {
+   "derived_new": 1110,
+   "correct": 1110,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.955249569707401
+  },
+  "pipeline": {
+   "derived_new": 1110,
+   "correct": 1110,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.955249569707401
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 0,
+  "engine_vote": {
+   "derived_new": 1142,
+   "correct": 1140,
+   "wrong": 2,
+   "precision": 0.9982486865148862,
+   "recall": 0.9661016949152542
+  },
+  "pipeline": {
+   "derived_new": 1142,
+   "correct": 1141,
+   "wrong": 1,
+   "precision": 0.999124343257443,
+   "recall": 0.9669491525423729
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 1,
+  "engine_vote": {
+   "derived_new": 1116,
+   "correct": 1114,
+   "wrong": 2,
+   "precision": 0.9982078853046595,
+   "recall": 0.9570446735395189
+  },
+  "pipeline": {
+   "derived_new": 1117,
+   "correct": 1117,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.9596219931271478
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 2,
+  "engine_vote": {
+   "derived_new": 1095,
+   "correct": 1095,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.9605263157894737
+  },
+  "pipeline": {
+   "derived_new": 1095,
+   "correct": 1095,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.9605263157894737
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 3,
+  "engine_vote": {
+   "derived_new": 1105,
+   "correct": 1104,
+   "wrong": 1,
+   "precision": 0.9990950226244344,
+   "recall": 0.9484536082474226
+  },
+  "pipeline": {
+   "derived_new": 1105,
+   "correct": 1105,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.9493127147766323
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 4,
+  "engine_vote": {
+   "derived_new": 1110,
+   "correct": 1107,
+   "wrong": 3,
+   "precision": 0.9972972972972973,
+   "recall": 0.9559585492227979
+  },
+  "pipeline": {
+   "derived_new": 1110,
+   "correct": 1110,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.9585492227979274
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 0,
+  "engine_vote": {
+   "derived_new": 833,
+   "correct": 833,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.6924355777223608
+  },
+  "pipeline": {
+   "derived_new": 2815,
+   "correct": 850,
+   "wrong": 1965,
+   "precision": 0.3019538188277087,
+   "recall": 0.7065669160432253
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 1,
+  "engine_vote": {
+   "derived_new": 800,
+   "correct": 800,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.676818950930626
+  },
+  "pipeline": {
+   "derived_new": 2412,
+   "correct": 815,
+   "wrong": 1597,
+   "precision": 0.337893864013267,
+   "recall": 0.6895093062605753
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 2,
+  "engine_vote": {
+   "derived_new": 803,
+   "correct": 803,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.695840554592721
+  },
+  "pipeline": {
+   "derived_new": 2211,
+   "correct": 814,
+   "wrong": 1397,
+   "precision": 0.3681592039800995,
+   "recall": 0.7053726169844021
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 3,
+  "engine_vote": {
+   "derived_new": 906,
+   "correct": 906,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.7684478371501272
+  },
+  "pipeline": {
+   "derived_new": 2532,
+   "correct": 918,
+   "wrong": 1614,
+   "precision": 0.36255924170616116,
+   "recall": 0.7786259541984732
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 4,
+  "engine_vote": {
+   "derived_new": 793,
+   "correct": 793,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.6766211604095563
+  },
+  "pipeline": {
+   "derived_new": 2343,
+   "correct": 802,
+   "wrong": 1541,
+   "precision": 0.34229620145113104,
+   "recall": 0.6843003412969283
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 0,
+  "engine_vote": {
+   "derived_new": 833,
+   "correct": 833,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.7041420118343196
+  },
+  "pipeline": {
+   "derived_new": 1627,
+   "correct": 1143,
+   "wrong": 484,
+   "precision": 0.702519975414874,
+   "recall": 0.9661876584953508
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 1,
+  "engine_vote": {
+   "derived_new": 1245,
+   "correct": 1117,
+   "wrong": 128,
+   "precision": 0.8971887550200803,
+   "recall": 0.9596219931271478
+  },
+  "pipeline": {
+   "derived_new": 1117,
+   "correct": 1107,
+   "wrong": 10,
+   "precision": 0.991047448522829,
+   "recall": 0.9510309278350515
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 2,
+  "engine_vote": {
+   "derived_new": 1212,
+   "correct": 1094,
+   "wrong": 118,
+   "precision": 0.9026402640264026,
+   "recall": 0.957968476357268
+  },
+  "pipeline": {
+   "derived_new": 1095,
+   "correct": 1090,
+   "wrong": 5,
+   "precision": 0.9954337899543378,
+   "recall": 0.9544658493870403
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 3,
+  "engine_vote": {
+   "derived_new": 1256,
+   "correct": 1105,
+   "wrong": 151,
+   "precision": 0.8797770700636943,
+   "recall": 0.9493127147766323
+  },
+  "pipeline": {
+   "derived_new": 1548,
+   "correct": 1105,
+   "wrong": 443,
+   "precision": 0.7138242894056848,
+   "recall": 0.9493127147766323
+  }
+ },
+ {
+  "world": "company",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 4,
+  "engine_vote": {
+   "derived_new": 793,
+   "correct": 793,
+   "wrong": 0,
+   "precision": 1.0,
+   "recall": 0.6836206896551724
+  },
+  "pipeline": {
+   "derived_new": 2546,
+   "correct": 1112,
+   "wrong": 1434,
+   "precision": 0.43676355066771405,
+   "recall": 0.9586206896551724
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 0,
+  "engine_vote": {
+   "derived_new": 2594,
+   "correct": 2523,
+   "wrong": 71,
+   "precision": 0.9726291441788744,
+   "recall": 0.5093882495457298
+  },
+  "pipeline": {
+   "derived_new": 2754,
+   "correct": 2535,
+   "wrong": 219,
+   "precision": 0.920479302832244,
+   "recall": 0.5118110236220472
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 1,
+  "engine_vote": {
+   "derived_new": 2620,
+   "correct": 2448,
+   "wrong": 172,
+   "precision": 0.934351145038168,
+   "recall": 0.5056806444949391
+  },
+  "pipeline": {
+   "derived_new": 2647,
+   "correct": 2452,
+   "wrong": 195,
+   "precision": 0.9263316962599168,
+   "recall": 0.5065069200578393
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 2,
+  "engine_vote": {
+   "derived_new": 2467,
+   "correct": 2436,
+   "wrong": 31,
+   "precision": 0.9874341305229023,
+   "recall": 0.5089845382365232
+  },
+  "pipeline": {
+   "derived_new": 2467,
+   "correct": 2436,
+   "wrong": 31,
+   "precision": 0.9874341305229023,
+   "recall": 0.5089845382365232
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 3,
+  "engine_vote": {
+   "derived_new": 2390,
+   "correct": 2359,
+   "wrong": 31,
+   "precision": 0.9870292887029288,
+   "recall": 0.4886081193040597
+  },
+  "pipeline": {
+   "derived_new": 2390,
+   "correct": 2359,
+   "wrong": 31,
+   "precision": 0.9870292887029288,
+   "recall": 0.4886081193040597
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 3,
+  "seed": 4,
+  "engine_vote": {
+   "derived_new": 2541,
+   "correct": 2505,
+   "wrong": 36,
+   "precision": 0.9858323494687131,
+   "recall": 0.5062651576394502
+  },
+  "pipeline": {
+   "derived_new": 2569,
+   "correct": 2509,
+   "wrong": 60,
+   "precision": 0.9766446087971974,
+   "recall": 0.5070735650767987
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 0,
+  "engine_vote": {
+   "derived_new": 2497,
+   "correct": 2436,
+   "wrong": 61,
+   "precision": 0.9755706848217861,
+   "recall": 0.49222065063649223
+  },
+  "pipeline": {
+   "derived_new": 2599,
+   "correct": 2533,
+   "wrong": 66,
+   "precision": 0.9746056175452097,
+   "recall": 0.5118205698120832
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 1,
+  "engine_vote": {
+   "derived_new": 2850,
+   "correct": 2475,
+   "wrong": 375,
+   "precision": 0.868421052631579,
+   "recall": 0.5113636363636364
+  },
+  "pipeline": {
+   "derived_new": 2908,
+   "correct": 2564,
+   "wrong": 344,
+   "precision": 0.8817056396148556,
+   "recall": 0.5297520661157025
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 2,
+  "engine_vote": {
+   "derived_new": 2450,
+   "correct": 2418,
+   "wrong": 32,
+   "precision": 0.986938775510204,
+   "recall": 0.5052235687421647
+  },
+  "pipeline": {
+   "derived_new": 2470,
+   "correct": 2441,
+   "wrong": 29,
+   "precision": 0.9882591093117409,
+   "recall": 0.5100292519849561
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 3,
+  "engine_vote": {
+   "derived_new": 2438,
+   "correct": 2406,
+   "wrong": 32,
+   "precision": 0.9868744872846595,
+   "recall": 0.49844623990055936
+  },
+  "pipeline": {
+   "derived_new": 2437,
+   "correct": 2407,
+   "wrong": 30,
+   "precision": 0.9876897825194911,
+   "recall": 0.4986534079138181
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.15,
+  "reports": 5,
+  "seed": 4,
+  "engine_vote": {
+   "derived_new": 2450,
+   "correct": 2409,
+   "wrong": 41,
+   "precision": 0.983265306122449,
+   "recall": 0.4871587462082912
+  },
+  "pipeline": {
+   "derived_new": 2541,
+   "correct": 2510,
+   "wrong": 31,
+   "precision": 0.9878000787091696,
+   "recall": 0.5075834175935288
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 0,
+  "engine_vote": {
+   "derived_new": 2338,
+   "correct": 2320,
+   "wrong": 18,
+   "precision": 0.9923011120615911,
+   "recall": 0.4675534058847239
+  },
+  "pipeline": {
+   "derived_new": 2338,
+   "correct": 2320,
+   "wrong": 18,
+   "precision": 0.9923011120615911,
+   "recall": 0.4675534058847239
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 1,
+  "engine_vote": {
+   "derived_new": 2504,
+   "correct": 2345,
+   "wrong": 159,
+   "precision": 0.9365015974440895,
+   "recall": 0.4832062641664949
+  },
+  "pipeline": {
+   "derived_new": 2504,
+   "correct": 2345,
+   "wrong": 159,
+   "precision": 0.9365015974440895,
+   "recall": 0.4832062641664949
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 2,
+  "engine_vote": {
+   "derived_new": 2246,
+   "correct": 2224,
+   "wrong": 22,
+   "precision": 0.9902048085485308,
+   "recall": 0.462947543713572
+  },
+  "pipeline": {
+   "derived_new": 2246,
+   "correct": 2224,
+   "wrong": 22,
+   "precision": 0.9902048085485308,
+   "recall": 0.462947543713572
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 3,
+  "engine_vote": {
+   "derived_new": 2216,
+   "correct": 2189,
+   "wrong": 27,
+   "precision": 0.9878158844765343,
+   "recall": 0.4524596940884663
+  },
+  "pipeline": {
+   "derived_new": 2216,
+   "correct": 2189,
+   "wrong": 27,
+   "precision": 0.9878158844765343,
+   "recall": 0.4524596940884663
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 3,
+  "seed": 4,
+  "engine_vote": {
+   "derived_new": 2333,
+   "correct": 2307,
+   "wrong": 26,
+   "precision": 0.9888555507929704,
+   "recall": 0.465778316172017
+  },
+  "pipeline": {
+   "derived_new": 2333,
+   "correct": 2307,
+   "wrong": 26,
+   "precision": 0.9888555507929704,
+   "recall": 0.465778316172017
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 0,
+  "engine_vote": {
+   "derived_new": 2346,
+   "correct": 2328,
+   "wrong": 18,
+   "precision": 0.9923273657289002,
+   "recall": 0.4703030303030303
+  },
+  "pipeline": {
+   "derived_new": 2505,
+   "correct": 2434,
+   "wrong": 71,
+   "precision": 0.9716566866267465,
+   "recall": 0.4917171717171717
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 1,
+  "engine_vote": {
+   "derived_new": 2499,
+   "correct": 2345,
+   "wrong": 154,
+   "precision": 0.938375350140056,
+   "recall": 0.484504132231405
+  },
+  "pipeline": {
+   "derived_new": 2668,
+   "correct": 2501,
+   "wrong": 167,
+   "precision": 0.9374062968515742,
+   "recall": 0.5167355371900827
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 2,
+  "engine_vote": {
+   "derived_new": 2246,
+   "correct": 2224,
+   "wrong": 22,
+   "precision": 0.9902048085485308,
+   "recall": 0.4644945697577276
+  },
+  "pipeline": {
+   "derived_new": 2471,
+   "correct": 2422,
+   "wrong": 49,
+   "precision": 0.9801699716713881,
+   "recall": 0.5058479532163743
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 3,
+  "engine_vote": {
+   "derived_new": 2216,
+   "correct": 2189,
+   "wrong": 27,
+   "precision": 0.9878158844765343,
+   "recall": 0.45339685169842586
+  },
+  "pipeline": {
+   "derived_new": 2314,
+   "correct": 2281,
+   "wrong": 33,
+   "precision": 0.9857389801210026,
+   "recall": 0.4724523612261806
+  }
+ },
+ {
+  "world": "hidden",
+  "noise": 0.3,
+  "reports": 5,
+  "seed": 4,
+  "engine_vote": {
+   "derived_new": 2322,
+   "correct": 2299,
+   "wrong": 23,
+   "precision": 0.9900947459086994,
+   "recall": 0.46482005661140313
+  },
+  "pipeline": {
+   "derived_new": 2505,
+   "correct": 2470,
+   "wrong": 35,
+   "precision": 0.9860279441117764,
+   "recall": 0.49939344925192075
+  }
+ }
+]
