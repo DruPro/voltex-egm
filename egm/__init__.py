@@ -8,8 +8,8 @@
         kb.predict("mypkg__Client"), kb.generate(), kb.sample(3)
 
 Building blocks: egm.Engine, egm.extract_python, egm.bench (questions, solver, scoring),
-egm.tune (settings for one dataset, chosen from the dataset itself), egm.shard (several engines, one
-answer set, for data too large for one engine).
+egm.tune (settings for one dataset, chosen from the dataset itself), egm.shard (one engine per independent
+source, one answer set tagged by source; experimental).
 """
 __version__ = "2.2.1"
 

@@ -1,45 +1,33 @@
-"""egm.shard (EXPERIMENTAL): split facts over several unchanged engines and union their answers (studies/shard).
+"""egm.shard (EXPERIMENTAL): several unchanged engines, one answer set. See docs/SDK.md.
 
-Not yet shown to be general: it was measured on one synthetic world shape that has a relation noise never touches,
-and you must name that relation. Compare with one engine on a sample before relying on it.
+Use it for independent sources: fact sets that don't describe the same entities and shouldn't share rules
+(separate codebases, customers, domains).
 
     import egm
-    r = egm.shard("facts.txt", 8, graph=["collaborates with"], attach=["works under"])
-    r.facts        # [Fact(...)], derived facts with their tier, as from Engine.infer_all()
-    r.warnings     # anything the split could not do silently: unrouted facts, capacity limits, empty shards
-    r.report       # per-engine sizes and times, answers dropped by consensus, rules a minority of shards accepted
+    r = egm.shard({"billing": "billing.txt", "search": search_lines}, jobs=2)
+    r.facts        # [Fact(...)], derived facts with tier and source (the source(s) that derived each)
+    r.warnings     # sources sharing entities (then they aren't independent), empty sources, capacity limits
+    r.report       # per source: facts, derived, seconds
 
-Use it when one engine needs too much memory or time. It answers like one engine only if the split is right:
+One engine per source; nothing is routed between sources; consensus is off unless asked for.
 
-1. **Split on relations noise can't corrupt** (``graph``). Each connected component of that relation's graph goes
-   to one shard, and ``attach`` places entities whose links all point into one shard. Which relations are clean is a
-   property of your sources; the engine can't judge it. Splitting on a corruptible relation (``key``) is supported
-   for comparison, but it lost precision under noise (0.876 against 1.000).
-2. **Facts about unassigned entities** (reference data: teams, departments, cities) go to every shard that mentions
-   them, followed from subject to object.
-3. **Consensus** (default on) keeps a shard's answer only if the rule behind it was accepted by more than half the
-   shards that hold facts, and its derived premises are kept too. In the studies it made sharded answers identical
-   to one engine in every noisy run, and changed nothing on clean data. Its cost is a second engine session per
-   shard (for the proofs), which roughly doubles the CPU.
-4. **central=True** adds one engine that learns from the reference facts and passes its law-tier conclusions to the
-   shards. It had no measured effect with 160 teams per shard; it may help when shards are too small to learn
-   rules about the reference data.
+It is not the way to handle large data: one engine with SET CLUSTERSTREAM 1 handled 244,444 facts in 256 MB with exact
+answers (studies/scaling).
 
-Every engine gets ``MAXWORDS`` sized to its own input (the default 12000, or its vocabulary plus 1000 if larger)
-unless ``settings`` sets ``MAXWORDS``.
-
-Measured (company world, 244,444 clean facts, 16 shards): one engine 47.3 s of CPU and 8,350 MB; sharded with
-consensus 22.7 s and about 144 MB per engine, with identical answers. Shown on synthetic data with a known clean relation; see
-``studies/shard/RESULTS.md``.
+Splitting one fact set (``shards`` with ``graph`` or ``key``) is kept as an experimental option. It reproduces one
+engine only if the split keeps each fact's evidence together and leaves every shard a fair sample of every rule. A
+user-named clean split did that on the company world (studies/shard). A split derived from the data did it on 2 of
+6 world shapes (studies/shard_general). Every engine gets MAXWORDS sized to its own input unless settings sets it.
 """
 import collections
+import collections.abc
 import os
 import subprocess
 import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
-from typing import Dict, Iterable, List, Optional, Sequence, Union
+from typing import Dict, Iterable, List, Mapping, Optional, Sequence, Union
 
 from . import parse
 from .engine import find_binary
@@ -193,14 +181,24 @@ def _route(lines, n, shard_of, extra_reference=()):
     return shards, ref_lines
 
 
-def shard(facts: Union[str, Iterable[str]], shards: int, graph: Optional[Sequence[str]] = None, attach: Sequence[str] = (),
-          key: Optional[str] = None, central: bool = False, consensus: bool = True, settings: Optional[Dict] = None,
+def shard(facts: Union[str, Iterable[str], Mapping[str, Union[str, Iterable[str]]]], shards: Optional[int] = None,
+          graph: Optional[Sequence[str]] = None, attach: Sequence[str] = (), key: Optional[str] = None,
+          central: bool = False, consensus: Optional[bool] = None, settings: Optional[Dict] = None,
           binary: Optional[str] = None, jobs: int = 1, workdir: Optional[str] = None) -> ShardResult:
-    """Split facts over ``shards`` engines and return the union of their answers.
+    """Run several engines and return the union of their answers.
+
+    Independent sources (recommended): ``facts={"name": file_or_lines, ...}``. One engine per source, nothing is
+    routed between them, each answer's ``source`` names the source(s) that derived it, and ``consensus`` defaults to
+    False (sources may follow different rules). ``shards``, ``graph``, ``attach``, ``key`` and ``central`` must be
+    left out.
+
+    Splitting one fact set (experimental; see docs/SDK.md): ``facts`` is a file or lines, ``shards`` is required, and
+    exactly one of ``graph`` or ``key`` says how to split. ``consensus`` defaults to True.
 
     Args:
-        facts: a facts file (one ``subject relation words object`` per line, one-word names) or an iterable of lines.
-        shards: number of engines (the split may leave some empty; they are skipped and reported).
+        facts: a mapping {source name: facts file or lines}, or one facts file (one ``subject relation words object``
+            per line, one-word names), or an iterable of lines.
+        shards: number of engines when splitting (the split may leave some empty; they are skipped and reported).
         graph: relation phrases (e.g. ``["collaborates with"]``) whose connected components define the shards. Choose
             relations your noise can't corrupt.
         attach: relation phrases that place an unassigned entity in the one shard all its assigned neighbours share
@@ -208,17 +206,29 @@ def shard(facts: Union[str, Iterable[str]], shards: int, graph: Optional[Sequenc
         key: instead of ``graph``, split each subject of this relation by its object (the scale study's split; it
             loses precision when the key relation is noisy).
         central: learn rules about reference facts once, centrally, and pass the law-tier conclusions to the shards.
-        consensus: keep only answers whose rule more than half the non-empty shards accepted (default True).
+        consensus: keep only answers whose rule more than half the engines accepted. Default: False for sources,
+            True when splitting.
         settings: engine settings for every engine, e.g. ``{"TENDENCYSTEPS": 0}``. ``MAXWORDS`` is sized per engine
             unless given here.
         binary: path to voltex2 (otherwise found as for ``egm.Engine``).
         jobs: engines run at the same time (default 1). The answers don't depend on it.
         workdir: keep the shard files and engine outputs here (default: a temporary directory, removed afterwards).
     """
+    if isinstance(facts, collections.abc.Mapping):
+        if graph is not None or key is not None or attach or central:
+            raise ValueError("with sources, leave out graph, attach, key and central: nothing is routed between sources")
+        if shards is not None and shards != len(facts):
+            raise ValueError("with sources there is one engine per source; leave out shards")
+        if not facts:
+            raise ValueError("no sources given")
+        sources = {str(k): _lines_of(v) for k, v in facts.items()}
+        return _in_workdir(workdir, lambda wd: _sources(sources, bool(consensus), dict(settings or {}), find_binary(binary),
+                                                         max(1, jobs), wd))
     if (graph is None) == (key is None):
-        raise ValueError("give exactly one of graph=[relations] or key=relation")
-    if shards < 1:
-        raise ValueError("shards must be at least 1")
+        raise ValueError("give exactly one of graph=[relations] or key=relation (or pass facts as {source: facts})")
+    if shards is None or shards < 1:
+        raise ValueError("shards must be at least 1 when splitting one fact set")
+    consensus = True if consensus is None else consensus
     binary = find_binary(binary)
     settings = dict(settings or {})
     if isinstance(facts, str):
@@ -237,6 +247,71 @@ def shard(facts: Union[str, Iterable[str]], shards: int, graph: Optional[Sequenc
     finally:
         if tmp is not None:
             tmp.cleanup()
+
+
+def _lines_of(facts):
+    if isinstance(facts, str):
+        if not os.path.isfile(facts):
+            raise FileNotFoundError(facts)
+        with open(facts) as fh:
+            return [l for l in fh.read().splitlines() if l.strip()]
+    return [l.strip() for l in facts if l.strip()]
+
+
+def _in_workdir(workdir, fn):
+    tmp = None
+    if workdir is None:
+        tmp = tempfile.TemporaryDirectory(prefix="egm_shard_"); workdir = tmp.name
+    os.makedirs(workdir, exist_ok=True)
+    try:
+        return fn(workdir)
+    finally:
+        if tmp is not None:
+            tmp.cleanup()
+
+
+def _sources(sources, consensus, settings, binary, jobs, workdir):
+    """One engine per independent source; union of answers, each tagged with the source(s) that derived it."""
+    warnings = []
+    names = sorted(sources)
+    files = {}
+
+    def write(name, ls):
+        safe = "".join(c if c.isalnum() or c in "-_." else "_" for c in name)
+        p = os.path.join(workdir, f"src{len(files):03d}_{safe}.txt"); files[name] = p
+        with open(p, "w") as fh:
+            fh.write("\n".join(ls) + "\n")
+        return p
+    empty = [n for n in names if not sources[n]]
+    if empty:
+        warnings.append(f"{len(empty)} source(s) have no facts and were skipped: {', '.join(empty[:5])}")
+    live = [n for n in names if sources[n]]
+    owners = collections.defaultdict(set)
+    for n in live:
+        for l in sources[n]:
+            f = _split(l)
+            if f:
+                owners[f[0]].add(n); owners[f[2]].add(n)
+    shared = sorted(e for e, o in owners.items() if len(o) > 1)
+    if shared:
+        warnings.append(f"{len(shared)} entities appear in more than one source (first: {shared[0]!r}); each source "
+                        f"answers about them from its own facts only. If the sources describe the same entities, "
+                        f"they are not independent: one engine over all of them is the exact answer.")
+    results = _run_parts([(n, sources[n]) for n in live], consensus, settings, binary, jobs, write)
+    report = {"mode": "sources", "consensus": consensus, "sources": {}, "shared_entities": len(shared)}
+    for _i, name, size, out, fo, _acc, _pr, sec in results:
+        lim = [l for l in out.splitlines() if l.startswith("[LIMIT]")]
+        warnings += [f"{name}: {l}" for l in lim]
+        report["sources"][name] = {"facts": size, "derived": len(fo), "seconds": sec}
+    answers = {}
+    kept_by, dropped, minority = _union(results, consensus, answers, len(live))
+    if consensus:
+        report.update(consensus_dropped=dropped, minority_rules=minority)
+    report["seconds"] = round(sum(v["seconds"] for v in report["sources"].values()), 3)
+    facts = parse.infer_all([f"FACT\t{f}\t{t}" for f, t in sorted(answers.items())])
+    for x in facts:
+        x.source = ",".join(sorted(kept_by.get(x.fact, ())))
+    return ShardResult(facts=facts, warnings=warnings, report=report)
 
 
 def _settings_for(lines, settings):
@@ -285,8 +360,22 @@ def _shard(lines, n, graph, attach, key, central, consensus, settings, binary, j
     if len(live) < n:
         warnings.append(f"{n - len(live)} of {n} shards received no facts (fewer components than shards); they were skipped")
 
-    def work(s):
-        sl = parts[s]; name = f"shard{s:02d}"
+    results = _run_parts([(f"shard{s:02d}", parts[s]) for s in live], consensus, settings, binary, jobs, write)
+    for _i, name, size, out, fo, acc, pr, sec in results:
+        note_limits(name, out)
+        report["engines"].append({"name": name, "facts": size, "derived": len(fo), "seconds": sec})
+    _kept, dropped, minority = _union(results, consensus, answers, len(live))
+    if consensus:
+        report.update(consensus_dropped=dropped, minority_rules=minority)
+    report["seconds"] = round(sum(e["seconds"] for e in report["engines"]), 3)
+    lines_out = [f"FACT\t{f}\t{t}" for f, t in sorted(answers.items())]
+    return ShardResult(facts=parse.infer_all(lines_out), warnings=warnings, report=report)
+
+
+def _run_parts(parts, consensus, settings, binary, jobs, write):
+    """parts: [(name, lines)], all non-empty. One engine each (two sessions with consensus, for the proofs)."""
+    def work(i):
+        name, sl = parts[i]
         p = write(name, sl); st = _settings_for(sl, settings)
         out, sec = _run(binary, p, st)
         fo = _facts_out(out)
@@ -294,44 +383,45 @@ def _shard(lines, n, graph, attach, key, central, consensus, settings, binary, j
         if consensus:
             out2, sec2 = _run(binary, p, st, extra=_asks_for(f for f, _ in fo)); sec = round(sec + sec2, 3)
             acc, pr = _accepted_rules(out), _proofs(out2)
-        return s, name, len(sl), out, fo, acc, pr, sec
-
+        return i, name, len(sl), out, fo, acc, pr, sec
     if jobs > 1:
         with ThreadPoolExecutor(max_workers=jobs) as ex:
-            results = sorted(ex.map(work, live))
-    else:
-        results = [work(s) for s in live]
-    for s, name, size, out, fo, acc, pr, sec in results:
-        note_limits(name, out)
-        report["engines"].append({"name": name, "facts": size, "derived": len(fo), "seconds": sec})
-    if consensus:
-        votes = collections.Counter(r for *_, acc, _pr, _sec in results for r in acc)
-        majority = {r for r, c in votes.items() if c > len(live) / 2}
-        dropped = 0
-        for *_, fo, acc, pr, _sec in results:
-            derived = {f for f, _ in fo}; memo = {}
+            return sorted(ex.map(work, range(len(parts))))
+    return [work(i) for i in range(len(parts))]
 
-            def keep(f, depth=0):
-                if f in memo:
-                    return memo[f]
-                memo[f] = False                  # cycle guard
-                if f not in pr or depth > 50:
-                    return False
-                rule, prem = pr[f]
-                memo[f] = rule in majority and all(keep(x, depth + 1) for x in prem if x in derived)
-                return memo[f]
+
+def _union(results, consensus, answers, live):
+    """Merge engine answers into `answers` {fact: tier} (law wins over tendency). With consensus, keep an answer only if
+    the rule in its proof was accepted by more than half of the `live` engines and its derived premises are kept.
+    Returns ({fact: set of engine names that kept it}, answers dropped, rules accepted by a minority)."""
+    kept_by = collections.defaultdict(set)
+    if not consensus:
+        for _i, name, _n, _out, fo, _acc, _pr, _sec in results:
             for f, t in fo:
-                if keep(f):
-                    if answers.get(f) != "law":
-                        answers[f] = t
-                else:
-                    dropped += 1
-        report.update(consensus_dropped=dropped, minority_rules=sorted(r for r in votes if r not in majority))
-    else:
-        for *_, fo, _acc, _pr, _sec in results:
-            for f, t in fo:
+                kept_by[f].add(name)
                 if answers.get(f) != "law":
                     answers[f] = t
-    report["seconds"] = round(sum(e["seconds"] for e in report["engines"]), 3)
-    lines_out = [f"FACT\t{f}\t{t}" for f, t in sorted(answers.items())]
-    return ShardResult(facts=parse.infer_all(lines_out), warnings=warnings, report=report)
+        return kept_by, 0, []
+    votes = collections.Counter(r for *_, acc, _pr, _sec in results for r in acc)
+    majority = {r for r, c in votes.items() if c > live / 2}
+    dropped = 0
+    for _i, name, _n, _out, fo, acc, pr, _sec in results:
+        derived = {f for f, _ in fo}; memo = {}
+
+        def keep(f, depth=0):
+            if f in memo:
+                return memo[f]
+            memo[f] = False                      # cycle guard
+            if f not in pr or depth > 50:
+                return False
+            rule, prem = pr[f]
+            memo[f] = rule in majority and all(keep(x, depth + 1) for x in prem if x in derived)
+            return memo[f]
+        for f, t in fo:
+            if keep(f):
+                kept_by[f].add(name)
+                if answers.get(f) != "law":
+                    answers[f] = t
+            else:
+                dropped += 1
+    return kept_by, dropped, sorted(r for r in votes if r not in majority)

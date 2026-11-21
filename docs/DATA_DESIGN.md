@@ -209,36 +209,34 @@ Measured:
 | **Separate vocabularies.** Each engine stays under its capacity caps, and unrelated domains can't form coincidence rules with each other. | Caps: measured (`studies/tendency` T5). Coincidences across domains: a design argument, not measured here. |
 | **Rebuild one part alone.** | Rebuilds take about a second per 19,000 facts (`studies/tendency` T6). |
 
-### 5.3 Sharding: when one engine gets too big (measured on one world shape; experimental)
+### 5.3 Large data: one engine first; several only for independent sources
 
-One engine's memory grows faster than its facts. In the company world it took 2.1 GB at 122,042 facts and 8.4 GB at
-244,444. The cause is word-category building, which is quadratic in vocabulary (`studies/scaling`). `SET CLUSTERSTREAM 1` removes most of that memory with identical answers (`docs/SETTINGS.md`); sharding goes further. You can split the facts over several unchanged engines and take the union of their answers. This gave
-answers **identical** to one engine (`studies/shard`), but only with the right split.
+**Large data needs one engine, not a split.**
+- One engine's memory used to grow faster than its facts: 2.1 GB at 122,042 company facts, 8.4 GB at 244,444. The
+  cause was word-category building, which listed every similar pair of words (`studies/scaling`).
+- With `SET CLUSTERSTREAM 1`, one engine took 130 MB at 122,042 facts and 256 MB / 19 s at 244,444, with
+  identical answers (`docs/SETTINGS.md`).
+- Start there, and size `MAXWORDS` to your vocabulary.
 
-1. **Split on a relation you know is clean.** Put each connected component of that relation's graph in one shard,
-   and attach any entity whose links all point into one shard.
-   - Don't split on a relation the noise can corrupt. Splitting people by their stated team put people with a wrong
-     team in the wrong shard: precision 1.000 fell to 0.876 at 15% noise.
-   - Splitting by `collaborates with`, which the noise never touched, kept 1.000.
-2. **Send shared reference facts** (teams, departments, cities) to every shard that mentions them, following them
-   from subject to object.
-3. **Keep only answers whose rule most shards accepted.** Each shard decides about borderline rules on less
-   evidence, and a union keeps any shard's yes. This needs each answer's proof (one `ASK` per derived subject and
-   relation), so it costs a second pass per shard, but stays at or below one engine's CPU. In a pre-registered test
-   (15% noise, fresh seeds), it made the answers identical to one engine in 9 of 9 runs, and changed nothing on clean
-   data. Whether it is needed is a matter of chance: without it, 16 shards had 40-241 wrong answers and 8 small
-   shards 38-83, but 8 shards of 160 teams had none on those seeds (and some on others). Use it whenever the data
-   may be noisy.
-4. **Optional:** learn the reference rules once, centrally, and pass the law-tier conclusions to the shards
-   (the two-stage gate of 5.1). It changed nothing at 160 teams per shard, because each shard could learn the rules
-   itself. It may matter when shards are small.
+**Splitting one connected fact set changes what is learned.**
+- Each engine accepts rules from its own part of the evidence, so the parts have to be fair samples of every rule
+  while also keeping each fact's evidence together.
+- On the company world, a split on a relation known to be clean, with rule consensus, gave identical answers
+  (`studies/shard`).
+- Across six world shapes, a split derived from the data matched one engine on only two (`studies/shard_general`).
+- So splitting for scale is not recommended. `egm.shard` keeps it as an experimental option (`docs/SDK.md`).
 
-Measured with 16 shards at 244,444 facts: 22.7 s CPU and about 144 MB per engine, against one engine's 47.3 s and 8,350 MB.
-The answers were the same. In the SDK this is `egm.shard(facts, shards, graph=[...], attach=[...])` (`docs/SDK.md`); it uses the engine only
-through its CLI.
+**Several engines are the right design when the sources are independent.** That covers sources that don't describe
+the same entities and shouldn't share rules, such as separate codebases or customers:
 
-This was shown on one world shape. It depends on knowing which relation noise can't touch; that is a property of your
-sources, which the engine can't judge for you.
+```python
+r = egm.shard({"billing": "billing.txt", "search": "search.txt"})
+[(f.fact, f.source) for f in r.facts]
+```
+
+- Each source learns its own rules, and the answers come back tagged with their source.
+- If the sources share entity names, `egm.shard` warns you: then they aren't independent, and one engine is the
+  exact answer.
 
 ### 5.4 Other patterns (design ideas, not yet measured)
 

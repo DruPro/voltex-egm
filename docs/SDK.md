@@ -25,7 +25,7 @@ thread-safe: use one per thread, or guard it with a lock.
 | `egm.open(path, **kw)` | `.vtx`: load it. `.txt`: ingest it. Same as `Engine.open`. |
 | `egm.Engine(kb=None, facts=(), binary=None, settings=None)` | Start an engine, optionally loading `kb`, ingesting `facts` files, applying `settings` (e.g. `{"RATE": 0.4}`). |
 | `egm.find_binary(path=None)` | Where the engine is: `path` > `$VOLTEX` > bundled > `build/` > `PATH`. |
-| `egm.shard(facts, shards, graph=..., ...)` | Several engines on parts of the data, one answer set (see [Sharding](#sharding-data-too-large-for-one-engine-egmshard)). |
+| `egm.shard({source: facts, ...})` | One engine per independent source, one answer set tagged by source (see [Several engines](#several-engines-one-answer-set-egmshard-experimental)). |
 
 Use `with` (or call `close()`). `kb.closed` tells you whether the process has exited.
 
@@ -177,72 +177,98 @@ The tests in `tests/test_sdk.py` (`TestExperimentalSettings`) run each one on a 
 `tests/worlds.py`. The MCP tool `egm_relations` reports each rule's `shape`, `premises` and
 `condition`, and `experimental_settings` when any is on.
 
-## Sharding: data too large for one engine (`egm.shard`, experimental)
+## Several engines, one answer set (`egm.shard`, experimental)
 
-> **Experimental, and not general.** It reproduces one engine only where the split keeps each fact's evidence
-> together *and* leaves every shard a fair sample of every rule's evidence. In `studies/shard_general` (6 worlds, 36
-> runs), a split derived automatically from the data matched one engine on company data without noise and on family
-> trees. It failed on noisy company data, the blind world, gate circuits (`TREES`) and real code. A random split
-> failed everywhere. The user-named split below works on the company world because it has both properties; nothing
-> checks that your split does. Compare with one engine on a sample before relying on it.
+`egm.shard` runs several unchanged engines and returns the union of their answers. **Its use is independent
+sources:** fact sets that don't describe the same entities and shouldn't share rules, such as separate codebases,
+customers or domains.
 
-One engine's memory grows faster than its facts. `egm.shard` splits the facts over several unchanged engines and
-returns the union of their answers. It is the recipe measured in `studies/shard`.
+**It is not the way to handle large data.** One engine with `CLUSTERSTREAM` (see `docs/SETTINGS.md`) handled 244,444
+facts in 256 MB and 19 s, with exact answers. Splitting one fact set changes what is learned, because each engine
+decides which rules to accept from its own part of the evidence (see "Splitting one fact set" below).
+
+### Independent sources (recommended use)
 
 ```python
 import egm
-r = egm.shard("facts.txt", 16, graph=["collaborates with"], attach=["works under"], jobs=8)
-for f in r.facts:            # Fact(status="inferred", tier="law" | "tendency"), as from infer_all()
-    ...
-print(r.warnings)            # [] when nothing was lost; otherwise what and why
-print(r.report["engines"])   # per engine: facts, derived, seconds
-print(r.report["consensus_dropped"], r.report["minority_rules"])
+r = egm.shard({"billing": "billing_facts.txt",       # a facts file ...
+               "search": search_lines},               # ... or a list of fact lines
+              jobs=2)
+for f in r.facts:
+    print(f.fact, f.tier, f.source)                   # e.g. "x calls y  law  billing"
+print(r.warnings)                                     # [] when the sources are independent and nothing hit a limit
+print(r.report["sources"])                            # per source: facts, derived, seconds
+```
+
+**What happens:**
+- **One engine per source.** Nothing is routed between sources, so each learns its own rules from its own facts.
+  Rules can't form from coincidences across unrelated sources, and one source's noise can't reach another.
+- **The answers are the union.** Each `Fact.source` names the source that derived it (comma-separated if several
+  derived the same fact). A fact derived as law by any source is reported as law.
+- **Every source gets the same `settings`.** `MAXWORDS` is sized to each source's vocabulary unless you set it.
+  Sources that need different settings are a reason to run separate engines yourself (`egm.open` per source).
+- **`jobs`** runs sources at the same time; the answers don't depend on it.
+- **`consensus` is off by default here.** Turn it on (`consensus=True`) only if the sources are samples of the same
+  rules and you want an answer kept only when most sources accepted its rule.
+
+**Warnings to act on:**
+
+| Warning | What it means | What to do |
+|---|---|---|
+| `N entities appear in more than one source` | The sources describe some of the same entities, so they aren't independent. Each source answers about those entities from its own facts only. | If the overlap is real (the same entity), use one engine over all the facts: that is the exact answer. If it's a naming clash, make names unique per source (e.g. a prefix). |
+| `source(s) have no facts` | An empty source was skipped. | Check the input. |
+| `<source>: [LIMIT] ...` | A capacity cap was hit in that source's engine. | Raise the named setting (`MAXWORDS`, `MAXRELATIONS`). |
+
+**When not to use it:**
+- **The data is one connected domain that is just large.** Use one engine with `CLUSTERSTREAM 1`.
+- **You need answers that combine facts from several sources** (a call in one codebase to a function defined in
+  another). The sources aren't independent, so use one engine.
+- **The sources need different settings, or you want to keep each knowledge base.** Run `egm.open` per source and
+  save each one.
+
+**Checked by:**
+- `tests/test_sdk.py` `TestShardSources`: each source's answers equal a separate engine's on that source, tagged
+  with the source; shared entities are reported; consensus is opt-in.
+- The answers of each source can't depend on the other sources, because no fact is routed between them.
+
+### Splitting one fact set (experimental, not general)
+
+```python
+r = egm.shard("facts.txt", 8, graph=["collaborates with"], attach=["works under"])   # consensus on by default
 ```
 
 | Argument | Meaning |
 |---|---|
-| `facts` | a facts file, or a list of fact lines (one-word names, as everywhere) |
 | `shards` | how many engines |
-| `graph` | relations that define the split: each connected component of their graph goes to one shard. **Choose relations your noise can't corrupt.** |
-| `attach` | relations that place an unassigned entity in the one shard all its assigned neighbours share (a team lead through `works under`) |
-| `key` | instead of `graph`: split each subject of this relation by its object. Kept for comparison: if that relation can be wrong, precision falls. |
-| `consensus` | default `True`: keep an answer only if the rule behind it was accepted by more than half the non-empty shards (and its derived premises survive too) |
-| `central` | default `False`: one more engine learns from the reference facts and passes its law-tier conclusions to every shard |
-| `settings` | engine settings for every engine. `MAXWORDS` is sized per engine (12000, or its vocabulary + 1000) unless you set it. |
-| `jobs` | engines run at once; the answers don't depend on it |
-| `workdir` | keep the shard files and engine outputs there (default: a temporary directory) |
+| `graph` | relations whose connected components define the split (each component goes to one shard) |
+| `attach` | relations that place an unassigned entity in the one shard all its assigned neighbours share |
+| `key` | instead of `graph`: split each subject of this relation by its object |
+| `consensus` | default `True`: keep an answer only if more than half the non-empty shards accepted its rule |
+| `central` | default `False`: one more engine learns from the reference facts and passes its law-tier conclusions to the shards |
 
-**How facts are routed.**
-- A fact goes to the shard of its subject, else of its object.
-- A fact whose subject and object are both unassigned is reference data (teams, departments, cities). It goes to
-  every shard that mentions its subject, followed from subject to object.
-- A fact no shard mentions reaches no engine. That is reported in `warnings` and `report["unseen_facts"]`;
-  `central=True` makes the central engine learn from such facts.
+**Routing:**
+- A fact goes to its subject's shard, else its object's.
+- Facts about entities in no shard are reference data. They go to every shard that mentions them, followed from
+  subject to object.
+- Facts that reach no shard are reported in `warnings` and `report["unseen_facts"]`.
 
-**What was measured** (company world, `studies/shard`):
-- **Answers:** with a clean `graph` relation and consensus, identical to one engine at every size tested:
-  - 61,108, 122,042 and 244,444 facts;
-  - clean and 15% noise;
-  - 4 to 16 shards;
-  - 21 of 21 confirmatory runs.
-- **Cost:** at 244,444 clean facts with 16 shards, one engine took 47.3 s of CPU and 8,350 MB; sharded with
-  consensus, 22.7 s of CPU and about 144 MB per engine (re-measured with `/usr/bin/time`).
-  - With 15% noise: 41-43 s against 21.6-21.8 s.
-  - `jobs=8` brought the wall time from 22.9 to 9.5 s.
-- **Gate:** the helper reproduces the study harness's recorded answers in 27 of 27 runs (every arm, 2-16 shards,
-  `studies/shard/tools/gate_sdk.py`).
-- **Without consensus,** 16 shards (or small shards) under noise let borderline tendency rules through: up to 241
-  wrong answers. Consensus removed every one, and changed nothing on clean data. It costs a second engine session per
-  shard: about 2× the CPU, still below one engine.
-- **A noisy split relation** (`key="is on"` with 15% of teams wrong) gave precision 0.876 against one engine's 1.000,
-  with or without consensus. The split itself has to be right.
+**Why it is not general.** Sharded answers equal one engine's only if the split does two things:
+- it keeps each fact's evidence together (locality);
+- it leaves every shard a fair sample of every rule's evidence (representativeness), because each shard decides
+  alone which rules to accept.
 
-**Limits.**
-- It was shown on synthetic data with a known clean relation. Which relations are clean is a property of your
-  sources, and the helper can't check it.
-- Each shard learns its own rules. A rule that needs evidence from many shards, and appears in none on its own,
-  is lost (`central=True` covers rules about reference data).
-- Before relying on a split, compare `egm.shard(...)` with one engine on a sample that still fits in one.
+In `studies/shard_general` (6 worlds, 36 runs):
+- **Automatic split** (derived from the data, no relation names): matched one engine on company data without noise
+  and on family trees, and nowhere else. It failed on noisy company data, the blind world, gate circuits and real
+  code, because it clusters around shared values (cities, gate kinds), so its shards are skewed samples.
+- **Random split:** failed everywhere, because it breaks locality.
+- **User-named split on the company world:** identical to one engine in every run (`studies/shard`: 61,108 to
+  244,444 facts, clean and 15% noise, 4-16 shards). It has both properties.
+
+Nothing checks that your split has them. Compare with one engine on a sample before relying on it.
+
+**Known flaw:** consensus compares rule texts, so the same rule written with its premises in another order counts as a
+different rule (seen with `TREES`).
 
 ## Tuning settings to a dataset (`egm.tune`, experimental)
 

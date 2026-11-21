@@ -1,4 +1,5 @@
 """SDK tests (stdlib unittest; pytest also collects them).   python3 -m unittest tests/test_sdk.py -v"""
+import collections
 import json
 import contextlib
 import io
@@ -535,6 +536,49 @@ class TestShard(unittest.TestCase):
         self.assertTrue(any("reached no shard" in w for w in r.warnings))
         r = egm.shard(lone, 3, central=True, **self.SPLIT)             # the central engine still sees it
         self.assertEqual(r.report["unseen_facts"], 0)
+
+
+class TestShardSources(unittest.TestCase):
+    """egm.shard with independent sources: one engine per source, answers tagged with their source."""
+
+    def sources(self):
+        staff = worlds.staff()[0]
+        farm = [" ".join(("h_" + w if i in (0, len(l.split()) - 1) else w) for i, w in enumerate(l.split()))
+                for l in worlds.harvest()[0]]                           # distinct names: the sources share no entity
+        return {"staff": staff, "farm": farm}
+
+    def test_each_source_answers_as_its_own_engine(self):
+        src = self.sources()
+        alone = {}
+        for name, lines in src.items():
+            with TestExperimentalSettings.kb(lines) as e:
+                alone[name] = {(f.fact, f.tier) for f in e.infer_all()}
+        r = egm.shard(src, jobs=2)
+        self.assertEqual(r.warnings, [])
+        self.assertEqual(r.report["mode"], "sources")
+        got = collections.defaultdict(set)
+        for f in r.facts:
+            got[f.source].add((f.fact, f.tier))
+        self.assertEqual(dict(got), alone)
+        self.assertGreater(len(alone["staff"]), 50); self.assertGreater(len(alone["farm"]), 50)
+
+    def test_shared_entities_are_reported(self):
+        src = self.sources()
+        src["farm"] = src["farm"] + [src["staff"][0]]               # one staff fact repeated in the other source
+        r = egm.shard(src)
+        self.assertTrue(any("appear in more than one source" in w for w in r.warnings))
+        self.assertGreaterEqual(r.report["shared_entities"], 2)
+
+    def test_consensus_is_opt_in_and_arguments_are_checked(self):
+        src = self.sources()
+        self.assertNotIn("consensus_dropped", egm.shard(src).report)
+        self.assertIn("consensus_dropped", egm.shard(src, consensus=True).report)
+        with self.assertRaises(ValueError):
+            egm.shard(src, graph=["works with"])
+        with self.assertRaises(ValueError):
+            egm.shard(src, 5)
+        with self.assertRaises(ValueError):
+            egm.shard(worlds.staff()[0])                                # one fact set needs shards and a split
 
 
 if __name__ == "__main__":
