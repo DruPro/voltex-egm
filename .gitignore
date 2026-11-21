@@ -1,0 +1,8 @@
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+*.vtx
+*.vtx.obs
+selftest.vtx2
+dist/
