@@ -1,0 +1,276 @@
+{
+ "identical": 27,
+ "runs": 27,
+ "rows": [
+  {
+   "cell": "results_smoke.jsonl:9:8:0.0",
+   "arm": "S0",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 8956,
+   "wall_s": 0.96,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.0",
+   "arm": "S1",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 8956,
+   "wall_s": 0.96,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.0",
+   "arm": "S2",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 8956,
+   "wall_s": 0.99,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.0",
+   "arm": "S3",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 8956,
+   "wall_s": 1.0,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.0",
+   "arm": "S4",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 8956,
+   "wall_s": 2.23,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.0",
+   "arm": "S5",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 8956,
+   "wall_s": 2.2,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.0",
+   "arm": "S6",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 8956,
+   "wall_s": 2.19,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.15",
+   "arm": "S0",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 9583,
+   "wall_s": 0.93,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.15",
+   "arm": "S1",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 6771,
+   "wall_s": 0.89,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.15",
+   "arm": "S2",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 9583,
+   "wall_s": 0.96,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.15",
+   "arm": "S3",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 6771,
+   "wall_s": 0.91,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.15",
+   "arm": "S4",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 6434,
+   "wall_s": 1.97,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.15",
+   "arm": "S5",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 6434,
+   "wall_s": 1.93,
+   "warnings": []
+  },
+  {
+   "cell": "results_smoke.jsonl:9:8:0.15",
+   "arm": "S6",
+   "n": 2,
+   "jobs": 1,
+   "identical": true,
+   "facts": 9583,
+   "wall_s": 2.18,
+   "warnings": []
+  },
+  {
+   "cell": "results_confirm.jsonl:0:16:0.15",
+   "arm": "S0",
+   "n": 4,
+   "jobs": 1,
+   "identical": true,
+   "facts": 21825,
+   "wall_s": 2.23,
+   "warnings": []
+  },
+  {
+   "cell": "results_confirm.jsonl:0:16:0.15",
+   "arm": "S1",
+   "n": 4,
+   "jobs": 1,
+   "identical": true,
+   "facts": 12821,
+   "wall_s": 2.09,
+   "warnings": []
+  },
+  {
+   "cell": "results_confirm.jsonl:0:16:0.15",
+   "arm": "S2",
+   "n": 4,
+   "jobs": 1,
+   "identical": true,
+   "facts": 21825,
+   "wall_s": 2.31,
+   "warnings": []
+  },
+  {
+   "cell": "results_confirm.jsonl:0:16:0.15",
+   "arm": "S3",
+   "n": 4,
+   "jobs": 1,
+   "identical": true,
+   "facts": 12821,
+   "wall_s": 2.17,
+   "warnings": []
+  },
+  {
+   "cell": "results_confirm.jsonl:0:16:0.15",
+   "arm": "S4",
+   "n": 4,
+   "jobs": 1,
+   "identical": true,
+   "facts": 12821,
+   "wall_s": 4.55,
+   "warnings": []
+  },
+  {
+   "cell": "results_confirm.jsonl:0:16:0.15",
+   "arm": "S5",
+   "n": 4,
+   "jobs": 1,
+   "identical": true,
+   "facts": 12821,
+   "wall_s": 4.47,
+   "warnings": []
+  },
+  {
+   "cell": "results_confirm.jsonl:0:16:0.15",
+   "arm": "S6",
+   "n": 4,
+   "jobs": 1,
+   "identical": true,
+   "facts": 21825,
+   "wall_s": 5.28,
+   "warnings": []
+  },
+  {
+   "cell": "results_explore2.jsonl:0:32:0.15",
+   "arm": "S1",
+   "n": 8,
+   "jobs": 1,
+   "identical": true,
+   "facts": 26978,
+   "wall_s": 4.96,
+   "warnings": []
+  },
+  {
+   "cell": "results_explore2.jsonl:0:32:0.15",
+   "arm": "S5",
+   "n": 8,
+   "jobs": 1,
+   "identical": true,
+   "facts": 25923,
+   "wall_s": 10.49,
+   "warnings": []
+  },
+  {
+   "cell": "results_consensus.jsonl:4:64:0.15",
+   "arm": "S1",
+   "n": 16,
+   "jobs": 1,
+   "identical": true,
+   "facts": 53230,
+   "wall_s": 10.85,
+   "warnings": []
+  },
+  {
+   "cell": "results_consensus.jsonl:4:64:0.15",
+   "arm": "S1",
+   "n": 16,
+   "jobs": 8,
+   "identical": true,
+   "facts": 53230,
+   "wall_s": 4.63,
+   "warnings": []
+  },
+  {
+   "cell": "results_consensus.jsonl:4:64:0.15",
+   "arm": "S5",
+   "n": 16,
+   "jobs": 1,
+   "identical": true,
+   "facts": 51650,
+   "wall_s": 22.93,
+   "warnings": []
+  },
+  {
+   "cell": "results_consensus.jsonl:4:64:0.15",
+   "arm": "S5",
+   "n": 16,
+   "jobs": 8,
+   "identical": true,
+   "facts": 51650,
+   "wall_s": 9.47,
+   "warnings": []
+  }
+ ]
+}

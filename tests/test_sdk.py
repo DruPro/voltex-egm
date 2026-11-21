@@ -493,5 +493,49 @@ class TestClusterStream(unittest.TestCase):
             self.assertEqual({f.fact for f in e.infer_all()}, facts)
 
 
+class TestShard(unittest.TestCase):
+    """egm.shard (studies/shard): several engines, one answer set. The study gate (studies/shard/tools/gate_sdk.py)
+    checks it reproduces the study's recorded answers; these tests check the SDK contract on small data."""
+    SPLIT = dict(graph=["works with"], attach=["reports to"])
+
+    def test_one_shard_equals_one_engine(self):
+        lines, _, _ = worlds.staff(noise=0.15, reports=3)
+        with TestExperimentalSettings.kb(lines) as e:
+            one = {(f.fact, f.tier) for f in e.infer_all()}
+        self.assertGreater(len(one), 50)
+        for consensus in (False, True):
+            r = egm.shard(lines, 1, consensus=consensus, **self.SPLIT)
+            self.assertEqual({(f.fact, f.tier) for f in r.facts}, one)
+            self.assertEqual(r.warnings, [])
+            self.assertTrue(all(f.status == "inferred" for f in r.facts))
+
+    def test_parallel_gives_the_same_answers(self):
+        lines, _, _ = worlds.staff()
+        a = egm.shard(lines, 4, **self.SPLIT); b = egm.shard(lines, 4, jobs=4, **self.SPLIT)
+        self.assertEqual([(f.fact, f.tier) for f in a.facts], [(f.fact, f.tier) for f in b.facts])
+        self.assertEqual(a.report["shards"], 4); self.assertEqual(len([x for x in a.report["engines"]]), 4)
+        self.assertIn("consensus_dropped", a.report)
+
+    def test_arguments_are_checked(self):
+        lines, _, _ = worlds.staff()
+        with self.assertRaises(ValueError):
+            egm.shard(lines, 2)                                         # neither graph nor key
+        with self.assertRaises(ValueError):
+            egm.shard(lines, 2, graph=["works with"], key="is on")      # both
+        with self.assertRaises(ValueError):
+            egm.shard(lines, 0, **self.SPLIT)
+
+    def test_nothing_is_lost_silently(self):
+        lines, _, _ = worlds.staff()
+        r = egm.shard(lines, 40, **self.SPLIT)                          # 30 components for 40 shards
+        self.assertTrue(any("received no facts" in w for w in r.warnings))
+        lone = lines + ["zork likes tea"]                               # mentioned by no shard
+        r = egm.shard(lone, 3, **self.SPLIT)
+        self.assertEqual(r.report["unseen_facts"], 1)
+        self.assertTrue(any("reached no shard" in w for w in r.warnings))
+        r = egm.shard(lone, 3, central=True, **self.SPLIT)             # the central engine still sees it
+        self.assertEqual(r.report["unseen_facts"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()

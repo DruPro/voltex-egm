@@ -234,7 +234,8 @@ answers **identical** to one engine (`studies/shard`), but only with the right s
    itself. It may matter when shards are small.
 
 Measured with 16 shards at 244,444 facts: 22.7 s CPU and 254 MB per engine, against one engine's 47.3 s and 8,350 MB.
-The answers were the same. The layer is `studies/shard/tools/shard.py`; it uses the engine only through its CLI.
+The answers were the same. In the SDK this is `egm.shard(facts, shards, graph=[...], attach=[...])` (`docs/SDK.md`); it uses the engine only
+through its CLI.
 
 This was shown on one world shape. It depends on knowing which relation noise can't touch; that is a property of your
 sources, which the engine can't judge for you.
