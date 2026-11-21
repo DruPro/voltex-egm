@@ -57,6 +57,15 @@ def main():
                 a = clean(subprocess.run([A], input=body(path, st, kb), capture_output=True, text=True).stdout)
                 b = clean(subprocess.run([B], input=body(path, {**extraB, **st}, kb), capture_output=True, text=True).stdout)
                 b = "\n".join(l for l in b.splitlines() if not any(l.startswith(f"[SET] {k} = ") for k in extraB))   # B's extra SET echo
+                # B's extra settings named in [CONFIG] notices (experimental settings on, restored from .cfg): drop only that token,
+                # and drop a notice that names nothing else
+                bl = []
+                for l in b.splitlines():
+                    if l.startswith("[CONFIG]"):
+                        for k, v in extraB.items(): l = l.replace(f" {k}={v}", "")
+                        if l.endswith(":"): continue
+                    bl.append(l)
+                b = "\n".join(bl)
                 cells += 1; ok = a == b; same += ok
                 rows.append({"dataset": name, "settings": sname, "identical": ok, "sha_a": hashlib.sha256(a.encode()).hexdigest()[:16],
                              "sha_b": hashlib.sha256(b.encode()).hexdigest()[:16], "lines": a.count("\n") + 1})

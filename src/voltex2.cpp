@@ -333,6 +333,7 @@ struct Vault {
     std::vector<std::tuple<int, u32, u32, u32, std::string>> quarList;   // QUARANTINE: the facts kept out, reported as conflicts
     std::vector<std::tuple<int, u32, u32, u32, std::string>> voteList;   // VOTE: outvoted facts, reported as conflicts
     u64 replRejected = 0;
+    int F_CSTREAM = 0;               // CLUSTERSTREAM (studies/scaling): join similar categories as they are found; same categories, no pair list
     int F_TREES = 0;                 // tree-shaped rules (studies/trees): several branches joined at one entity
     // ---- declarative amendments (experimental condition C) ----
     int F_DECL = 0;        // amendment-record interpretation from the earlier study: off in this build
@@ -481,6 +482,27 @@ struct Vault {
                 ids.push_back(m.first); sl.push_back(std::move(a)); sr.push_back(std::move(b)); nl.push_back(std::sqrt(na)); nr.push_back(std::sqrt(nb));
             }
             size_t K = ids.size();
+            if (F_CSTREAM) {   // CLUSTERSTREAM (studies/scaling). The listed-pairs path below computes connected components of the
+                               // graph of pairs at or above the threshold (single linkage). Components do not depend on the order of
+                               // joins, and a pair already in one component joins nothing, so join each pair as it is found and skip
+                               // pairs already joined. Roots stay the smallest index of their component (uf[max] = min), so class ids
+                               // are identical; a round stops when nothing joined, exactly when the pair list would have been empty.
+                               // Memory drops from one entry per similar pair to one per class; the comparisons stay K^2/2.
+                std::vector<u32> uf(K); std::iota(uf.begin(), uf.end(), 0);
+                std::function<u32(u32)> find = [&](u32 x) { return uf[x] == x ? x : uf[x] = find(uf[x]); };
+                bool any = false;
+                for (u32 i = 0; i < K; ++i) for (u32 j = i + 1; j < K; ++j) {
+                    u32 a = find(i), b = find(j); if (a == b) continue;
+                    double s1 = cosv(sl[i], nl[i], sl[j], nl[j]); if (s1 < classThresh) continue;
+                    double s2 = cosv(sr[i], nr[i], sr[j], nr[j]);
+                    if (std::min(s1, s2) >= classThresh) { uf[std::max(a, b)] = std::min(a, b); any = true; }
+                }
+                if (!any) break;
+                std::map<u32, u32> newId;
+                for (u32 i = 0; i < K; ++i) { u32 root = find(i); u32 rep = ids[root]; newId[ids[i]] = rep; }
+                for (u32 w : wordsv) cls[w] = newId[cls[w]];
+                continue;
+            }
             std::vector<std::tuple<double, u32, u32>> pairs;
             for (u32 i = 0; i < K; ++i) for (u32 j = i + 1; j < K; ++j) {
                 double s1 = cosv(sl[i], nl[i], sl[j], nl[j]); if (s1 < classThresh) continue;
@@ -1551,6 +1573,7 @@ static std::vector<Setting>& settings() {
             VTX_SETTING("MAXWORDS", "statistics", false, true, "categories for this many most frequent words; rarer words are not slots", MAX_WORDS, u64),
             VTX_SETTING("MAXRELATIONS", "statistics", false, true, "relations kept, largest first", MAX_RELS, u64),
             VTX_SETTING("CLASS", "statistics", false, true, "similarity needed to merge words into a category", classThresh, double),
+            VTX_SETTING("CLUSTERSTREAM", "statistics", true, true, "build categories without listing every similar pair: same categories and answers, far less memory (1/0) (studies/scaling)", F_CSTREAM, int),
             VTX_SETTING("RATE", "induction", false, true, "minimum share of chains whose conclusion is stated", RATE_MIN, double),
             VTX_SETTING("LIFT", "induction", false, true, "minimum rate over the conclusion's base rate", LIFT_MIN, double),
             VTX_SETTING("SUPPORT", "induction", false, true, "minimum confirming chains for a rule", K_MIN, u64),

@@ -152,6 +152,9 @@ def egm_tool(pattern: str, strict: bool = True) -> str:
 
 All are off by default and saved with the knowledge base (`docs/SETTINGS.md`).
 
+For large vocabularies (more than a few thousand distinct words), add `"CLUSTERSTREAM": 1`. It gives the same answers
+with far less memory; see `docs/SETTINGS.md`.
+
 ```python
 import egm
 with egm.open("gates.txt", settings={"TREES": 1, "DEPTH": 0}) as e:

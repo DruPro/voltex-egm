@@ -465,5 +465,33 @@ class TestBench(unittest.TestCase):
             self.assertEqual(bench.score(key, bench.solve(e, key, strict=True))["mean_f1"], 1.0)
 
 
+class TestClusterStream(unittest.TestCase):
+    """CLUSTERSTREAM (studies/scaling): the same categories, rules and answers as the default build, with less memory."""
+    kb = staticmethod(TestExperimentalSettings.kb)
+
+    def snapshot(self, e):
+        return ({(f.fact, f.tier) for f in e.infer_all()}, sorted(str(r) for r in e.rules(include_rejected=True)),
+                sorted(tuple(sorted(c.members)) for c in e.categories()))
+
+    def test_same_output_on_every_world_shape(self):
+        for lines in (worlds.staff()[0], worlds.staff(noise=0.15, reports=3)[0], worlds.gates()[0],
+                      worlds.lineage()[0], worlds.harvest()[0]):
+            with self.kb(lines) as e:
+                base = self.snapshot(e)
+            with self.kb(lines, CLUSTERSTREAM=1) as e:
+                self.assertEqual(self.snapshot(e), base)
+                self.assertEqual(e.experimental(), {"CLUSTERSTREAM": 1})
+
+    def test_saved_with_the_knowledge_base(self):
+        lines, _, _ = worlds.staff()
+        kbp = os.path.join(tempfile.mkdtemp(), "kb.vtx")
+        with self.kb(lines, CLUSTERSTREAM=1) as e:
+            facts = {f.fact for f in e.infer_all()}
+            e.save(kbp)
+        with egm.open(kbp) as e:
+            self.assertEqual(e.experimental(), {"CLUSTERSTREAM": 1})
+            self.assertEqual({f.fact for f in e.infer_all()}, facts)
+
+
 if __name__ == "__main__":
     unittest.main()

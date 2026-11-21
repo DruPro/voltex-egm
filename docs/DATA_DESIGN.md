@@ -212,7 +212,7 @@ Measured:
 ### 5.3 Sharding: when one engine gets too big (measured)
 
 One engine's memory grows faster than its facts. In the company world it took 2.1 GB at 122,042 facts and 8.4 GB at
-244,444. The cause is word-category building, which is quadratic in vocabulary (`studies/scaling`). You can split the facts over several unchanged engines and take the union of their answers. This gave
+244,444. The cause is word-category building, which is quadratic in vocabulary (`studies/scaling`). `SET CLUSTERSTREAM 1` removes most of that memory with identical answers (`docs/SETTINGS.md`); sharding goes further. You can split the facts over several unchanged engines and take the union of their answers. This gave
 answers **identical** to one engine (`studies/shard`), but only with the right split.
 
 1. **Split on a relation you know is clean.** Put each connected component of that relation's graph in one shard,

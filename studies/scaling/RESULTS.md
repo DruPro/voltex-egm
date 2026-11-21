@@ -73,8 +73,14 @@ Memory drops from quadratic to linear; time drops 5-6× but keeps its quadratic 
 - **gates:** categories still 67%;
 - **hidden:** mining 53%.
 
-**For the owner:** this is an additive, off-by-default setting that gives the same answers. It is offered with these
-measurements; adopting it or making it the default is your decision.
+**Adopted by the owner (2026-11-21)** into `src/voltex2.cpp` as an additive, off-by-default, experimental setting,
+saved with the knowledge base. Checks on the core build:
+- gate 221/221 identical with it off and with it on (`results_gate_core_off.json`, `results_gate_core_on.json`);
+- the sanitizer build with it on (`results_gate_core_on_asan.json`);
+- `make test`;
+- a knowledge base saved with it opened by the previous engine: the key is ignored, with the same answers.
+
+Usage guidance is in `docs/SETTINGS.md`. Making it the default is a separate decision.
 
 ## 3. Incremental ingestion and reopening (I1-I3)
 
