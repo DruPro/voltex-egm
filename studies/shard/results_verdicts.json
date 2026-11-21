@@ -1,0 +1,867 @@
+{
+ "verdicts": {
+  "H1": true,
+  "H2": true,
+  "H3": true,
+  "H4": false,
+  "H5": false,
+  "H6": true,
+  "H6b": true,
+  "C1": true,
+  "C2": true
+ },
+ "rows": [
+  {
+   "scale": 32,
+   "noise": 0.0,
+   "arm": "single",
+   "runs": 3,
+   "completed": 3,
+   "facts": 122042,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9566,
+    0.0012
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    35682.3333,
+    218.8719
+   ],
+   "cpu": [
+    12.8373,
+    0.0924
+   ],
+   "rss_mb": [
+    2129.0667,
+    0.0471
+   ],
+   "limit_lines": 0,
+   "match": null,
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 32,
+   "noise": 0.0,
+   "arm": "S0",
+   "runs": 3,
+   "completed": 3,
+   "facts": 122042,
+   "precision": [
+    0.9999,
+    0.0001
+   ],
+   "recall": [
+    0.9565,
+    0.0013
+   ],
+   "wrong": [
+    2.3333,
+    3.2998
+   ],
+   "derived_new": [
+    35680.3333,
+    217.895
+   ],
+   "cpu": [
+    4.8577,
+    0.0648
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 32,
+   "noise": 0.0,
+   "arm": "S1",
+   "runs": 3,
+   "completed": 3,
+   "facts": 122042,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9566,
+    0.0012
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    35682.3333,
+    218.8719
+   ],
+   "cpu": [
+    4.8093,
+    0.0443
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 32,
+   "noise": 0.0,
+   "arm": "S2",
+   "runs": 3,
+   "completed": 3,
+   "facts": 122042,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9566,
+    0.0012
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    35680.6667,
+    218.0555
+   ],
+   "cpu": [
+    4.8337,
+    0.0938
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 32,
+   "noise": 0.0,
+   "arm": "S3",
+   "runs": 3,
+   "completed": 3,
+   "facts": 122042,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9566,
+    0.0012
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    35682.3333,
+    218.8719
+   ],
+   "cpu": [
+    4.8743,
+    0.0732
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 32,
+   "noise": 0.0,
+   "arm": "S4",
+   "runs": 3,
+   "completed": 3,
+   "facts": 122042,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9566,
+    0.0012
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    35682.3333,
+    218.8719
+   ],
+   "cpu": [
+    10.791,
+    0.156
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    0,
+    0,
+    0
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 32,
+   "noise": 0.0,
+   "arm": "S5",
+   "runs": 3,
+   "completed": 3,
+   "facts": 122042,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9566,
+    0.0012
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    35682.3333,
+    218.8719
+   ],
+   "cpu": [
+    10.6753,
+    0.0792
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    0,
+    0,
+    0
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 32,
+   "noise": 0.0,
+   "arm": "S6",
+   "runs": 3,
+   "completed": 3,
+   "facts": 122042,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9563,
+    0.0013
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    35671,
+    213.7725
+   ],
+   "cpu": [
+    10.7603,
+    0.0229
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    28,
+    0,
+    0
+   ],
+   "minority": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 16,
+   "noise": 0.15,
+   "arm": "single",
+   "runs": 3,
+   "completed": 3,
+   "facts": 61108,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.6426,
+    0.0007
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    12861.3333,
+    43.6679
+   ],
+   "cpu": [
+    3.2827,
+    0.0107
+   ],
+   "rss_mb": [
+    554.5333,
+    0.0471
+   ],
+   "limit_lines": 0,
+   "match": null,
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 16,
+   "noise": 0.15,
+   "arm": "S0",
+   "runs": 3,
+   "completed": 3,
+   "facts": 61108,
+   "precision": [
+    0.876,
+    0.0034
+   ],
+   "recall": [
+    0.675,
+    0.0067
+   ],
+   "wrong": [
+    1911.3333,
+    46.0821
+   ],
+   "derived_new": [
+    15421,
+    82.0244
+   ],
+   "cpu": [
+    2.1233,
+    0.0101
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    false,
+    false,
+    false
+   ],
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 16,
+   "noise": 0.15,
+   "arm": "S1",
+   "runs": 3,
+   "completed": 3,
+   "facts": 61108,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.6426,
+    0.0007
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    12861.3333,
+    43.6679
+   ],
+   "cpu": [
+    1.959,
+    0.0071
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 16,
+   "noise": 0.15,
+   "arm": "S2",
+   "runs": 3,
+   "completed": 3,
+   "facts": 61108,
+   "precision": [
+    0.876,
+    0.0034
+   ],
+   "recall": [
+    0.675,
+    0.0067
+   ],
+   "wrong": [
+    1911.3333,
+    46.0821
+   ],
+   "derived_new": [
+    15421,
+    82.0244
+   ],
+   "cpu": [
+    2.142,
+    0.0088
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    false,
+    false,
+    false
+   ],
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 16,
+   "noise": 0.15,
+   "arm": "S3",
+   "runs": 3,
+   "completed": 3,
+   "facts": 61108,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.6426,
+    0.0007
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    12861.3333,
+    43.6679
+   ],
+   "cpu": [
+    1.9947,
+    0.0159
+   ],
+   "rss_mb": [
+    146.4667,
+    1.33
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 16,
+   "noise": 0.15,
+   "arm": "S4",
+   "runs": 3,
+   "completed": 3,
+   "facts": 61108,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.6426,
+    0.0007
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    12861.3333,
+    43.6679
+   ],
+   "cpu": [
+    4.361,
+    0.0401
+   ],
+   "rss_mb": [
+    123.8,
+    31.2721
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    0,
+    0,
+    0
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 16,
+   "noise": 0.15,
+   "arm": "S5",
+   "runs": 3,
+   "completed": 3,
+   "facts": 61108,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.6426,
+    0.0007
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    12861.3333,
+    43.6679
+   ],
+   "cpu": [
+    4.331,
+    0.0373
+   ],
+   "rss_mb": [
+    123.7667,
+    31.3193
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    0,
+    0,
+    0
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 16,
+   "noise": 0.15,
+   "arm": "S6",
+   "runs": 3,
+   "completed": 3,
+   "facts": 61108,
+   "precision": [
+    0.8756,
+    0.003
+   ],
+   "recall": [
+    0.6702,
+    0.0003
+   ],
+   "wrong": [
+    1905.3333,
+    51.6484
+   ],
+   "derived_new": [
+    15319.6667,
+    61.2826
+   ],
+   "cpu": [
+    5.1057,
+    0.0523
+   ],
+   "rss_mb": [
+    123.8333,
+    31.225
+   ],
+   "limit_lines": 0,
+   "match": [
+    false,
+    false,
+    false
+   ],
+   "dropped": [
+    0,
+    0,
+    309
+   ],
+   "minority": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "scale": 64,
+   "noise": 0.0,
+   "arm": "single",
+   "runs": 3,
+   "completed": 3,
+   "facts": 244444,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9579,
+    0.001
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    71306.6667,
+    203.3738
+   ],
+   "cpu": [
+    47.34,
+    0.3082
+   ],
+   "rss_mb": [
+    8350.2,
+    0.2449
+   ],
+   "limit_lines": 0,
+   "match": null,
+   "dropped": [
+    null,
+    null,
+    null
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "scale": 64,
+   "noise": 0.0,
+   "arm": "S4",
+   "runs": 3,
+   "completed": 3,
+   "facts": 244444,
+   "precision": [
+    1.0,
+    0.0
+   ],
+   "recall": [
+    0.9579,
+    0.001
+   ],
+   "wrong": [
+    0,
+    0.0
+   ],
+   "derived_new": [
+    71306.6667,
+    203.3738
+   ],
+   "cpu": [
+    22.695,
+    0.3945
+   ],
+   "rss_mb": [
+    253.8333,
+    16.8567
+   ],
+   "limit_lines": 0,
+   "match": [
+    true,
+    true,
+    true
+   ],
+   "dropped": [
+    0,
+    0,
+    0
+   ],
+   "minority": [
+    0,
+    0,
+    0
+   ]
+  }
+ ]
+}

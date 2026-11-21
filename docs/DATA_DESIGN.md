@@ -209,7 +209,34 @@ Measured:
 | **Separate vocabularies.** Each engine stays under its capacity caps, and unrelated domains can't form coincidence rules with each other. | Caps: measured (`studies/tendency` T5). Coincidences across domains: a design argument, not measured here. |
 | **Rebuild one part alone.** | Rebuilds take about a second per 19,000 facts (`studies/tendency` T6). |
 
-### 5.3 Other patterns (design ideas, not yet measured)
+### 5.3 Sharding: when one engine gets too big (measured)
+
+One engine's memory grows faster than its facts. In the company world it took 2.1 GB at 122,042 facts and 8.4 GB at
+244,444. You can split the facts over several unchanged engines and take the union of their answers. This gave
+answers **identical** to one engine (`studies/shard`), but only with the right split.
+
+1. **Split on a relation you know is clean.** Put each connected component of that relation's graph in one shard,
+   and attach any entity whose links all point into one shard.
+   - Don't split on a relation the noise can corrupt. Splitting people by their stated team put people with a wrong
+     team in the wrong shard: precision 1.000 fell to 0.876 at 15% noise.
+   - Splitting by `collaborates with`, which the noise never touched, kept 1.000.
+2. **Send shared reference facts** (teams, departments, cities) to every shard that mentions them, following them
+   from subject to object.
+3. **Keep only answers whose rule most shards accepted.** Each shard decides about borderline rules on less
+   evidence, and a union keeps any shard's yes. This needs each answer's proof (one `ASK` per derived subject and
+   relation), so it costs a second pass per shard. With 4 shards it removed nothing. With 8 and 16 shards under
+   noise it removed up to 128 wrong answers (exploratory; `studies/shard` RESULTS).
+4. **Optional:** learn the reference rules once, centrally, and pass the law-tier conclusions to the shards
+   (the two-stage gate of 5.1). It changed nothing at 160 teams per shard, because each shard could learn the rules
+   itself. It may matter when shards are small.
+
+Measured with 16 shards at 244,444 facts: 22.7 s CPU and 254 MB per engine, against one engine's 47.3 s and 8,350 MB.
+The answers were the same. The layer is `studies/shard/tools/shard.py`; it uses the engine only through its CLI.
+
+This was shown on one world shape. It depends on knowing which relation noise can't touch; that is a property of your
+sources, which the engine can't judge for you.
+
+### 5.4 Other patterns (design ideas, not yet measured)
 
 - **Specialists and a router.** One engine per domain; your code sends each question to the one that owns that
   relation.
