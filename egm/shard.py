@@ -11,7 +11,7 @@ Use it for independent sources: fact sets that don't describe the same entities 
 
 One engine per source; nothing is routed between sources; consensus is off unless asked for.
 
-It is not the way to handle large data: one engine with SET CLUSTERSTREAM 1 handled 244,444 facts in 256 MB with exact
+It is not the way to handle large data: one engine (CLUSTERSTREAM, on by default) handled 244,444 facts in 256 MB with exact
 answers (studies/scaling).
 
 Splitting one fact set (``shards`` with ``graph`` or ``key``) is kept as an experimental option. It reproduces one

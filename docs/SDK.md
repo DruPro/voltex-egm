@@ -153,8 +153,8 @@ def egm_tool(pattern: str, strict: bool = True) -> str:
 
 All are off by default and saved with the knowledge base (`docs/SETTINGS.md`).
 
-For large vocabularies (more than a few thousand distinct words), add `"CLUSTERSTREAM": 1`. It gives the same answers
-with far less memory; see `docs/SETTINGS.md`.
+Large vocabularies need no setting for memory: `CLUSTERSTREAM` is on by default (`docs/SETTINGS.md`). Size `MAXWORDS`
+to the vocabulary.
 
 ```python
 import egm
@@ -183,7 +183,7 @@ The tests in `tests/test_sdk.py` (`TestExperimentalSettings`) run each one on a 
 sources:** fact sets that don't describe the same entities and shouldn't share rules, such as separate codebases,
 customers or domains.
 
-**It is not the way to handle large data.** One engine with `CLUSTERSTREAM` (see `docs/SETTINGS.md`) handled 244,444
+**It is not the way to handle large data.** One engine (with `CLUSTERSTREAM`, on by default; `docs/SETTINGS.md`) handled 244,444
 facts in 256 MB and 19 s, with exact answers. Splitting one fact set changes what is learned, because each engine
 decides which rules to accept from its own part of the evidence (see "Splitting one fact set" below).
 
@@ -220,7 +220,7 @@ print(r.report["sources"])                            # per source: facts, deriv
 | `<source>: [LIMIT] ...` | A capacity cap was hit in that source's engine. | Raise the named setting (`MAXWORDS`, `MAXRELATIONS`). |
 
 **When not to use it:**
-- **The data is one connected domain that is just large.** Use one engine with `CLUSTERSTREAM 1`.
+- **The data is one connected domain that is just large.** Use one engine (`CLUSTERSTREAM` is on by default); size `MAXWORDS` to the vocabulary.
 - **You need answers that combine facts from several sources** (a call in one codebase to a function defined in
   another). The sources aren't independent, so use one engine.
 - **The sources need different settings, or you want to keep each knowledge base.** Run `egm.open` per source and

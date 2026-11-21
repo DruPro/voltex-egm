@@ -467,7 +467,7 @@ class TestBench(unittest.TestCase):
 
 
 class TestClusterStream(unittest.TestCase):
-    """CLUSTERSTREAM (studies/scaling): the same categories, rules and answers as the default build, with less memory."""
+    """CLUSTERSTREAM (studies/scaling; on by default): the same categories, rules and answers as the listed-pairs path."""
     kb = staticmethod(TestExperimentalSettings.kb)
 
     def snapshot(self, e):
@@ -477,20 +477,21 @@ class TestClusterStream(unittest.TestCase):
     def test_same_output_on_every_world_shape(self):
         for lines in (worlds.staff()[0], worlds.staff(noise=0.15, reports=3)[0], worlds.gates()[0],
                       worlds.lineage()[0], worlds.harvest()[0]):
-            with self.kb(lines) as e:
+            with self.kb(lines, CLUSTERSTREAM=0) as e:
                 base = self.snapshot(e)
-            with self.kb(lines, CLUSTERSTREAM=1) as e:
+            with self.kb(lines) as e:
+                self.assertEqual(e.config()["CLUSTERSTREAM"]["value"], 1)
                 self.assertEqual(self.snapshot(e), base)
-                self.assertEqual(e.experimental(), {"CLUSTERSTREAM": 1})
+                self.assertEqual(e.experimental(), {})
 
     def test_saved_with_the_knowledge_base(self):
         lines, _, _ = worlds.staff()
         kbp = os.path.join(tempfile.mkdtemp(), "kb.vtx")
-        with self.kb(lines, CLUSTERSTREAM=1) as e:
+        with self.kb(lines, CLUSTERSTREAM=0) as e:                     # the non-default value is saved and restored
             facts = {f.fact for f in e.infer_all()}
             e.save(kbp)
         with egm.open(kbp) as e:
-            self.assertEqual(e.experimental(), {"CLUSTERSTREAM": 1})
+            self.assertEqual(e.config()["CLUSTERSTREAM"]["value"], 0)
             self.assertEqual({f.fact for f in e.infer_all()}, facts)
 
 

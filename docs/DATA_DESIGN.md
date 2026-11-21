@@ -214,7 +214,7 @@ Measured:
 **Large data needs one engine, not a split.**
 - One engine's memory used to grow faster than its facts: 2.1 GB at 122,042 company facts, 8.4 GB at 244,444. The
   cause was word-category building, which listed every similar pair of words (`studies/scaling`).
-- With `SET CLUSTERSTREAM 1`, one engine took 130 MB at 122,042 facts and 256 MB / 19 s at 244,444, with
+- With `CLUSTERSTREAM` (now on by default), one engine took 130 MB at 122,042 facts and 256 MB / 19 s at 244,444, with
   identical answers (`docs/SETTINGS.md`).
 - Start there, and size `MAXWORDS` to your vocabulary.
 

@@ -11,7 +11,7 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 | `MAXWORDS` | 12000 | statistics | stable | categories for this many most frequent words; rarer words are not slots |
 | `MAXRELATIONS` | 40 | statistics | stable | relations kept, largest first |
 | `CLASS` | 0.5 | statistics | stable | similarity needed to merge words into a category |
-| `CLUSTERSTREAM` | 0 | statistics | **experimental** | build categories without listing every similar pair: same categories and answers, far less memory (1/0) (studies/scaling) |
+| `CLUSTERSTREAM` | 1 | statistics | stable | build categories without listing every similar pair: same categories and answers, far less memory (1/0; 0 = the listed-pairs path) (studies/scaling) |
 | `RATE` | 0.4 | induction | stable | minimum share of chains whose conclusion is stated |
 | `LIFT` | 5 | induction | stable | minimum rate over the conclusion's base rate |
 | `SUPPORT` | 3 | induction | stable | minimum confirming chains for a rule |
@@ -82,10 +82,14 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 
 `DEPTH` is stable: `SET DEPTH 0` runs inference until nothing new is derived (`studies/depth/`).
 
-## `CLUSTERSTREAM`: large vocabularies without the memory blow-up
+## `CLUSTERSTREAM`: large vocabularies without the memory blow-up (on by default)
 
-**What it does.** Category building compares every pair of word classes. By default it first lists every pair similar
-enough to merge, then merges them. In data where many words share a slot (names, ids, wires), about 70% of all pairs
+**Status.** On by default since the promotion check in `studies/scaling/PROMOTION.md`. The new default gave the
+previous build's output on 221 of 221 regression cells and on 3 large worlds. You don't need to set it; `SET
+CLUSTERSTREAM 0` brings back the old path.
+
+**What it does.** Category building compares every pair of word classes. The old path (`CLUSTERSTREAM 0`) first lists every pair
+similar enough to merge, then merges them. In data where many words share a slot (names, ids, wires), about 70% of all pairs
 qualify, so that list grows with the square of the vocabulary. It was 76-99.5% of the engine's peak memory at large
 sizes. `CLUSTERSTREAM 1` merges each pair as soon as it is found and skips pairs whose words are already in one
 category, so no list is kept.
@@ -99,8 +103,8 @@ are found, and class ids stay the smallest index of each group. Checked:
 - identical output on 10 of 10 large worlds up to 244,444 facts;
 - the sanitizer build. See `studies/scaling/RESULTS.md`.
 
-**When to turn it on.** Whenever the vocabulary is more than a few thousand words. The default build's pair list takes
-about 8-9 bytes × words² (rounded up to a power of two), on top of everything else:
+**What the old path costs.** Its pair list takes about 8-9 bytes × words² (rounded up to a power of two), on top of
+everything else:
 
 | Distinct words | Pair list without it (measured) | Peak memory without → with it | CPU without → with it |
 |---|---|---|---|
@@ -110,39 +114,37 @@ about 8-9 bytes × words² (rounded up to a power of two), on top of everything 
 | 30,766 (244,444 company facts) | 8,192 MB | 8,350 → 256 MB | 47 → 19 s |
 | 32,016 (53,376 gates facts) | 8,192 MB | 8,252 → 72 MB | 26 → 6.5 s |
 
-Below about 2,000 words it makes no practical difference, and it is harmless to leave on.
+Below about 2,000 words the two paths make no practical difference.
 
-**How to turn it on.** Set it before the first question, because categories are built on the first query after
-ingesting:
+**When to turn it off.** Only to reproduce a timing or memory measurement made with an earlier build, because the
+answers are the same either way. Set it before the first question, because categories are built on the first query
+after ingesting:
 
 ```
-SET CLUSTERSTREAM 1
+SET CLUSTERSTREAM 0
 INGESTFILE facts.txt
-RELATIONS
 ```
+
+For large vocabularies, the setting to think about is `MAXWORDS`:
 
 ```python
-with egm.open("facts.txt", settings={"CLUSTERSTREAM": 1, "MAXWORDS": 40000}) as e: ...
+with egm.open("facts.txt", settings={"MAXWORDS": 40000}) as e: ...
 ```
 
 ```
-egm build facts.txt -o kb.vtx --set CLUSTERSTREAM=1 --set MAXWORDS=40000
-egm mcp kb.vtx            # the saved setting is restored with the knowledge base
+egm build facts.txt -o kb.vtx --set MAXWORDS=40000
 ```
 
 **Notes:**
-- **Saved with the knowledge base** (`kb.vtx.cfg`), and restored by `LOAD`. That matters, because reopening a
-  knowledge base rebuilds its categories.
-- **Older engines** (2.2.1 and before) ignore the saved key. They give the same answers, built the old way, with the
-  old memory use.
-- **It is reported:** `RELATIONS` prints `[CONFIG] experimental settings on: CLUSTERSTREAM=1`, and the SDK's
-  `experimental()` includes it.
+- **Saved with the knowledge base only when non-default:** `SET CLUSTERSTREAM 0` is written to `kb.vtx.cfg` and
+  restored by `LOAD`.
+- **Older engines** (2.2.1 and before) don't have the setting. They give the same answers, with the old memory use.
+  A knowledge base built here opens there unchanged.
 - **Pair it with `MAXWORDS`** sized to your vocabulary (distinct words plus some headroom). `MAXWORDS` decides which
   words get categories; `CLUSTERSTREAM` only makes building them cheaper. Above 12,000 words, the default cap prints
-  `[LIMIT]` and costs answers. Raising the cap used to cost memory quadratically; with `CLUSTERSTREAM` it doesn't.
+  `[LIMIT]` and costs answers. Raising the cap used to cost memory quadratically; with `CLUSTERSTREAM` on it doesn't.
 - **`egm tune` doesn't search it,** because it never changes answers. Set it yourself.
-- **`REFRESH`** reuses existing categories on small updates, so the setting matters only for full builds. Leaving
-  it on is fine.
+- **`REFRESH`** reuses existing categories on small updates, so the setting matters only for full builds.
 
 **What it doesn't fix:**
 - **Category building time is still quadratic** in vocabulary. Each pair is still visited; skipped pairs are just

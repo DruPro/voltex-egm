@@ -333,7 +333,7 @@ struct Vault {
     std::vector<std::tuple<int, u32, u32, u32, std::string>> quarList;   // QUARANTINE: the facts kept out, reported as conflicts
     std::vector<std::tuple<int, u32, u32, u32, std::string>> voteList;   // VOTE: outvoted facts, reported as conflicts
     u64 replRejected = 0;
-    int F_CSTREAM = 0;               // CLUSTERSTREAM (studies/scaling): join similar categories as they are found; same categories, no pair list
+    int F_CSTREAM = 1;               // CLUSTERSTREAM (studies/scaling): join similar categories as they are found; same categories, no pair list (default since the promotion check, studies/scaling/PROMOTION.md; 0 = list every similar pair first)
     int F_TREES = 0;                 // tree-shaped rules (studies/trees): several branches joined at one entity
     // ---- declarative amendments (experimental condition C) ----
     int F_DECL = 0;        // amendment-record interpretation from the earlier study: off in this build
@@ -1573,7 +1573,7 @@ static std::vector<Setting>& settings() {
             VTX_SETTING("MAXWORDS", "statistics", false, true, "categories for this many most frequent words; rarer words are not slots", MAX_WORDS, u64),
             VTX_SETTING("MAXRELATIONS", "statistics", false, true, "relations kept, largest first", MAX_RELS, u64),
             VTX_SETTING("CLASS", "statistics", false, true, "similarity needed to merge words into a category", classThresh, double),
-            VTX_SETTING("CLUSTERSTREAM", "statistics", true, true, "build categories without listing every similar pair: same categories and answers, far less memory (1/0) (studies/scaling)", F_CSTREAM, int),
+            VTX_SETTING("CLUSTERSTREAM", "statistics", false, true, "build categories without listing every similar pair: same categories and answers, far less memory (1/0; 0 = the listed-pairs path) (studies/scaling)", F_CSTREAM, int),
             VTX_SETTING("RATE", "induction", false, true, "minimum share of chains whose conclusion is stated", RATE_MIN, double),
             VTX_SETTING("LIFT", "induction", false, true, "minimum rate over the conclusion's base rate", LIFT_MIN, double),
             VTX_SETTING("SUPPORT", "induction", false, true, "minimum confirming chains for a rule", K_MIN, u64),
