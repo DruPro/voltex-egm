@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "voltex-egm"
 version = "2.2.1"
-description = "EGM: a CPU-only, evidence-grounded knowledge engine (Voltex) with a Python SDK and CLI"
+description = "EGM (Evidential Grammar Memory): a CPU-only knowledge engine (Voltex) with a Python SDK and CLI"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = []

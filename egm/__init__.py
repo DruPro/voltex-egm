@@ -1,4 +1,4 @@
-"""EGM: evidence-grounded memory on the Voltex engine.
+"""EGM: Evidential Grammar Memory on the Voltex engine.
 
     import egm
     with egm.open("kb.vtx") as kb:
