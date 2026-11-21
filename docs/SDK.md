@@ -177,7 +177,13 @@ The tests in `tests/test_sdk.py` (`TestExperimentalSettings`) run each one on a 
 `tests/worlds.py`. The MCP tool `egm_relations` reports each rule's `shape`, `premises` and
 `condition`, and `experimental_settings` when any is on.
 
-## Sharding: data too large for one engine (`egm.shard`)
+## Sharding: data too large for one engine (`egm.shard`, experimental)
+
+> **Experimental, and not yet shown to be general.** Every result below comes from one synthetic world shape (the
+> company world), which happens to contain a relation the noise never touches. You must name that relation
+> (`graph`), and nothing tells you whether you chose well. It has not been tested on other world shapes or real
+> data; a study of that is under way (`studies/shard_general`). Compare with one engine on a sample before relying
+> on it.
 
 One engine's memory grows faster than its facts. `egm.shard` splits the facts over several unchanged engines and
 returns the union of their answers. It is the recipe measured in `studies/shard`.

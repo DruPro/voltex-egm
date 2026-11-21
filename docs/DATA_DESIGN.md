@@ -209,7 +209,7 @@ Measured:
 | **Separate vocabularies.** Each engine stays under its capacity caps, and unrelated domains can't form coincidence rules with each other. | Caps: measured (`studies/tendency` T5). Coincidences across domains: a design argument, not measured here. |
 | **Rebuild one part alone.** | Rebuilds take about a second per 19,000 facts (`studies/tendency` T6). |
 
-### 5.3 Sharding: when one engine gets too big (measured)
+### 5.3 Sharding: when one engine gets too big (measured on one world shape; experimental)
 
 One engine's memory grows faster than its facts. In the company world it took 2.1 GB at 122,042 facts and 8.4 GB at
 244,444. The cause is word-category building, which is quadratic in vocabulary (`studies/scaling`). `SET CLUSTERSTREAM 1` removes most of that memory with identical answers (`docs/SETTINGS.md`); sharding goes further. You can split the facts over several unchanged engines and take the union of their answers. This gave

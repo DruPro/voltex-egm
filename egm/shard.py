@@ -1,4 +1,7 @@
-"""egm.shard: split facts over several unchanged engines and union their answers (studies/shard).
+"""egm.shard (EXPERIMENTAL): split facts over several unchanged engines and union their answers (studies/shard).
+
+Not yet shown to be general: it was measured on one synthetic world shape that has a relation noise never touches,
+and you must name that relation. Compare with one engine on a sample before relying on it.
 
     import egm
     r = egm.shard("facts.txt", 8, graph=["collaborates with"], attach=["works under"])
