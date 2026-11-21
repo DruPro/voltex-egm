@@ -212,7 +212,7 @@ Measured:
 ### 5.3 Sharding: when one engine gets too big (measured)
 
 One engine's memory grows faster than its facts. In the company world it took 2.1 GB at 122,042 facts and 8.4 GB at
-244,444. You can split the facts over several unchanged engines and take the union of their answers. This gave
+244,444. The cause is word-category building, which is quadratic in vocabulary (`studies/scaling`). You can split the facts over several unchanged engines and take the union of their answers. This gave
 answers **identical** to one engine (`studies/shard`), but only with the right split.
 
 1. **Split on a relation you know is clean.** Put each connected component of that relation's graph in one shard,
@@ -224,8 +224,11 @@ answers **identical** to one engine (`studies/shard`), but only with the right s
    from subject to object.
 3. **Keep only answers whose rule most shards accepted.** Each shard decides about borderline rules on less
    evidence, and a union keeps any shard's yes. This needs each answer's proof (one `ASK` per derived subject and
-   relation), so it costs a second pass per shard. With 4 shards it removed nothing. With 8 and 16 shards under
-   noise it removed up to 128 wrong answers (exploratory; `studies/shard` RESULTS).
+   relation), so it costs a second pass per shard, but stays at or below one engine's CPU. In a pre-registered test
+   (15% noise, fresh seeds), it made the answers identical to one engine in 9 of 9 runs, and changed nothing on clean
+   data. Whether it is needed is a matter of chance: without it, 16 shards had 40-241 wrong answers and 8 small
+   shards 38-83, but 8 shards of 160 teams had none on those seeds (and some on others). Use it whenever the data
+   may be noisy.
 4. **Optional:** learn the reference rules once, centrally, and pass the law-tier conclusions to the shards
    (the two-stage gate of 5.1). It changed nothing at 160 teams per shard, because each shard could learn the rules
    itself. It may matter when shards are small.

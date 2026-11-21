@@ -171,3 +171,36 @@ after seeing those results; see `DEVIATIONS.md` 2.
 - `tools/analyze.py`: the verdicts.
 - `results_*.jsonl` and `results_verdicts.json`: the results.
 - `logs/`: run output.
+
+---
+
+# Follow-up: rule consensus at 8 or more shards (pre-registered)
+
+Plan: `PREREGISTRATION_CONSENSUS.md` (hash in `prereg_hash_consensus.txt`). Fresh seeds 3, 4, 5; 15% noise unless
+noted. Results: `results_consensus.jsonl`; verdicts: `results_verdicts_consensus.json` (`tools/analyze_consensus.py`).
+
+| ID | Claim | Verdict |
+|---|---|---|
+| K1 | Consensus makes many-shard answers match one engine under noise | **PASS**: 9/9 runs, answers identical to one engine |
+| K2 | Without consensus, 8 and 16 shards lose precision | **FAIL**: 16 shards lost precision on 2/3 seeds, but 8 shards (160 teams each) on 0/3 |
+| K3 | Consensus is harmless on clean data | **PASS**: 3/3 identical, 0 answers dropped |
+
+| Cell | Shards (teams each) | Components alone: wrong (precision) | With consensus: wrong, dropped | Identical to one engine |
+|---|---|---|---|---|
+| A, about 122,000 facts | 8 (160) | 0, 0, 0 (1.000) | 0; 0 dropped | 3/3 |
+| B, about 244,000 facts | 16 (160) | 40, 172, 241 (0.9992, 0.9968, 0.9955) | 0; 321-2,209 dropped | 3/3 |
+| C, about 61,000 facts | 8 (80) | 38, 83, 49 (0.9939-0.9972) | 0; 504-698 dropped | 3/3 |
+| D, about 122,000 facts, clean | 8 (160) | 0 | 0; 0 dropped | 3/3 |
+
+**What this means:**
+- **Whether a borderline rule slips through is a chance event in each shard.** It is more likely with more shards
+  (more chances) and with smaller shards (less evidence each).
+- **The same 8 × 160 setup had errors on seeds 0-2 and none on seeds 3-5,** so a single seed would have given either
+  answer.
+- **Consensus removed every such error, in every run, and never removed a correct answer** here: the answers equal
+  one engine's.
+- **Read as a recommendation: use consensus whenever sharded data may be noisy.** As pre-registered, K2's failure
+  means it is described as insurance, not as required at a given shard count.
+
+**Cost.** Consensus roughly doubles the sharded CPU (A: 4.6 → 10.0 s; B: 10.0 → 21.7 s). It stays at or below one
+engine (11.2 s and 41-43 s), with 265 MB peak per engine against 2,129 and 8,350 MB.
