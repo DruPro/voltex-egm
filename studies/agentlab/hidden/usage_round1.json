@@ -1,0 +1,22 @@
+{
+ "sonnet_search": {
+  "tokens": 77664,
+  "tool_uses": 8,
+  "duration_s": 32.4
+ },
+ "sonnet_voltex": {
+  "tokens": 77336,
+  "tool_uses": 8,
+  "duration_s": 123.8
+ },
+ "haiku_search": {
+  "tokens": 92691,
+  "tool_uses": 12,
+  "duration_s": 50.3
+ },
+ "haiku_voltex": {
+  "tokens": 84331,
+  "tool_uses": 7,
+  "duration_s": 133.3
+ }
+}

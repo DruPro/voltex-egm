@@ -1,0 +1,276 @@
+[SET] TREES = 1
+[INGEST] 6666 records, 165275 bytes in 0.023 s (6.80 MB/s)
+[CONFIG] experimental settings on: TREES=1
+[RELATIONS] 5 two-argument templates
+  #0  ? has value ?                  2666 facts
+  #1  ? has second input ?           1000 facts
+  #2  ? is output of ?               1000 facts
+  #3  ? has kind ?                   1000 facts
+  #4  ? has first input ?            1000 facts
+[COVERAGE] estimated observation completeness: global -1.00 |
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has kind ?](g,xor) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero) n=52 k=38 rate=0.73 lift=1.5 | where answer known: 38, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has kind ?](g,and) => [? has value ?](a,zero) n=97 k=69 rate=0.71 lift=1.5 | where answer known: 69, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has kind ?](g,xor) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero) n=59 k=41 rate=0.69 lift=1.4 | where answer known: 41, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,zero) n=98 k=67 rate=0.68 lift=1.4 | where answer known: 67, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has kind ?](g,or) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero) n=40 k=27 rate=0.68 lift=1.4 | where answer known: 27, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has kind ?](g,or) => [? has value ?](a,one) n=102 k=73 rate=0.72 lift=1.4 | where answer known: 73, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has kind ?](g,xor) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one) n=43 k=30 rate=0.70 lift=1.4 | where answer known: 30, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has first input ?](g,y1) & [? has value ?](y1,one) => [? has value ?](a,one) n=111 k=77 rate=0.69 lift=1.3 | where answer known: 77, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,nand) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one) n=103 k=70 rate=0.68 lift=1.3 | where answer known: 70, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has kind ?](g,xor) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,one) n=46 k=30 rate=0.65 lift=1.3 | where answer known: 30, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has kind ?](g,nand) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero) n=49 k=29 rate=0.59 lift=1.2 | where answer known: 29, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has kind ?](g,and) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one) n=53 k=32 rate=0.60 lift=1.2 | where answer known: 32, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has kind ?](g,nand) => [? has value ?](a,one) n=102 k=58 rate=0.57 lift=1.1 | where answer known: 58, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT TREE [? is output of ?](a,g) & [? has kind ?](g,or) => [? has value ?](a,one) n=200 k=112 rate=0.56 lift=1.1 | where answer known: 139, agree=0.81 | cov=-1.00 rel=0.81 tier=tendency
+[INFER] 250 new facts derived from 14 accepted rules
+FACT	rosabe has value one	law
+FACT	tokofa has value one	law
+FACT	dovefe has value one	law
+FACT	namebu has value zero	law
+FACT	lefuba has value zero	law
+FACT	buvifa has value one	law
+FACT	naniba has value one	law
+FACT	kufabu has value one	law
+FACT	pepade has value zero	law
+FACT	botafe has value zero	law
+FACT	zumadu has value one	law
+FACT	dezidu has value zero	law
+FACT	zofobo has value one	law
+FACT	fivede has value zero	law
+FACT	rotoba has value one	law
+FACT	zibude has value zero	law
+FACT	mugade has value one	law
+FACT	zazode has value zero	law
+FACT	melube has value one	law
+FACT	nubebu has value one	law
+FACT	zidiba has value one	law
+FACT	tofufe has value one	law
+FACT	feludo has value one	law
+FACT	sebido has value zero	law
+FACT	sutadu has value zero	law
+FACT	kudebu has value one	law
+FACT	regaba has value zero	law
+FACT	tigedu has value zero	law
+FACT	sezuba has value one	law
+FACT	finabu has value zero	law
+FACT	lipufa has value one	law
+FACT	gotobe has value zero	law
+FACT	gapabu has value zero	law
+FACT	zeludi has value zero	law
+FACT	kanifa has value one	law
+FACT	kadeda has value one	law
+FACT	melado has value one	law
+FACT	duvebu has value one	law
+FACT	badofe has value zero	law
+FACT	dulido has value zero	law
+FACT	sefibi has value zero	law
+FACT	dafebi has value one	law
+FACT	gobode has value zero	law
+FACT	dalobo has value one	law
+FACT	memodu has value one	law
+FACT	bosubo has value zero	law
+FACT	nizafe has value one	law
+FACT	rukudo has value one	law
+FACT	tufibe has value one	law
+FACT	nurufa has value zero	law
+FACT	mipobe has value one	law
+FACT	ranuda has value zero	law
+FACT	volafe has value zero	law
+FACT	nikodo has value one	law
+FACT	gokadi has value one	law
+FACT	pasubi has value one	law
+FACT	zevedo has value one	law
+FACT	tuzubo has value one	law
+FACT	kinuba has value zero	law
+FACT	makobi has value one	law
+FACT	buboda has value one	law
+FACT	vugefa has value zero	law
+FACT	namibu has value zero	law
+FACT	bekobi has value zero	law
+FACT	nisibi has value zero	law
+FACT	sipido has value zero	law
+FACT	nitabi has value one	law
+FACT	segofa has value one	law
+FACT	sukibo has value one	law
+FACT	sibeba has value one	law
+FACT	mezebe has value zero	law
+FACT	zetuba has value one	law
+FACT	narubu has value zero	law
+FACT	resade has value zero	law
+FACT	nadobi has value zero	law
+FACT	rosado has value one	law
+FACT	zofofa has value one	law
+FACT	latubo has value one	law
+FACT	vabedu has value one	law
+FACT	zabodu has value zero	law
+FACT	vevabi has value one	law
+FACT	domubo has value one	law
+FACT	zevado has value one	law
+FACT	dazafa has value one	law
+FACT	lomodi has value zero	law
+FACT	bafeba has value zero	law
+FACT	vubibu has value one	law
+FACT	sirebi has value one	law
+FACT	murida has value one	law
+FACT	ledobe has value zero	law
+FACT	monefa has value one	law
+FACT	tanudi has value one	law
+FACT	mekobo has value zero	law
+FACT	fesudu has value zero	law
+FACT	gutefe has value one	law
+FACT	fazidu has value one	law
+FACT	puvoda has value zero	law
+FACT	negufa has value zero	law
+FACT	kepube has value zero	law
+FACT	mirobo has value one	law
+FACT	tekudo has value zero	law
+FACT	lazadi has value one	law
+FACT	rutabi has value one	law
+FACT	vuzudo has value zero	law
+FACT	verode has value zero	law
+FACT	setida has value one	law
+FACT	kigufa has value zero	law
+FACT	vetude has value one	law
+FACT	vagado has value one	law
+FACT	tikibi has value one	law
+FACT	fupedo has value one	law
+FACT	fubide has value zero	law
+FACT	mirafa has value one	law
+FACT	tenebo has value one	law
+FACT	nubibu has value one	law
+FACT	pisiba has value one	law
+FACT	laridi has value zero	law
+FACT	dipabo has value one	law
+FACT	mifubo has value one	law
+FACT	mokobo has value zero	law
+FACT	riredu has value one	law
+FACT	fulibe has value one	law
+FACT	tulabo has value zero	law
+FACT	kadade has value zero	law
+FACT	zafibo has value one	law
+FACT	titeba has value one	law
+FACT	nisade has value zero	law
+FACT	nogafa has value one	law
+FACT	vobedu has value one	law
+FACT	nitoda has value one	law
+FACT	konabi has value one	law
+FACT	zegidu has value zero	law
+FACT	ferufe has value one	law
+FACT	sibode has value one	law
+FACT	larodo has value zero	law
+FACT	voredo has value one	law
+FACT	pidafa has value one	law
+FACT	nisadi has value one	law
+FACT	toribo has value one	law
+FACT	rufade has value one	law
+FACT	vefefa has value one	law
+FACT	goluda has value one	law
+FACT	donida has value zero	law
+FACT	vataba has value one	law
+FACT	kubaba has value one	law
+FACT	poribe has value zero	law
+FACT	barudi has value one	law
+FACT	fuzobu has value zero	law
+FACT	defedi has value one	law
+FACT	rufede has value zero	law
+FACT	mosabi has value one	law
+FACT	fuveda has value zero	law
+FACT	perubu has value zero	law
+FACT	gunifa has value zero	law
+FACT	lobeda has value one	law
+FACT	tafibu has value zero	law
+FACT	sanodi has value zero	law
+FACT	seloba has value one	law
+FACT	zolifa has value one	law
+FACT	vekufa has value one	law
+FACT	safadu has value one	law
+FACT	burafa has value zero	law
+FACT	padeda has value zero	law
+FACT	rinuba has value one	law
+FACT	kenefe has value one	law
+FACT	nedeba has value one	law
+FACT	zasida has value one	law
+FACT	kulofe has value zero	law
+FACT	sagidu has value one	law
+FACT	lelibi has value zero	law
+FACT	sirabu has value one	law
+FACT	viluba has value zero	law
+FACT	volode has value zero	law
+FACT	dusadi has value one	law
+FACT	subebi has value one	law
+FACT	diteba has value one	law
+FACT	bamado has value one	law
+FACT	petibu has value one	law
+FACT	davefa has value zero	law
+FACT	fevabu has value one	law
+FACT	zagabe has value one	law
+FACT	vatedo has value one	law
+FACT	gededu has value one	law
+FACT	vipidu has value one	law
+FACT	roliba has value one	law
+FACT	mifofe has value zero	law
+FACT	lukudu has value one	law
+FACT	sigedo has value zero	law
+FACT	ruvufe has value one	law
+FACT	kirubi has value zero	law
+FACT	bozobe has value one	law
+FACT	sirida has value one	law
+FACT	netufa has value zero	law
+FACT	gezufe has value one	law
+FACT	moside has value one	law
+FACT	zenebu has value one	law
+FACT	vudobe has value one	law
+FACT	digude has value one	law
+FACT	kirabo has value one	law
+FACT	gozabo has value zero	law
+FACT	lipide has value zero	law
+FACT	matudu has value one	law
+FACT	fifeda has value one	law
+FACT	nerada has value one	law
+FACT	dikida has value one	law
+FACT	neseda has value one	law
+FACT	dudofa has value one	law
+FACT	figude has value one	law
+FACT	vepabo has value zero	law
+FACT	divofe has value one	law
+FACT	manudo has value one	law
+FACT	vatabi has value zero	law
+FACT	kivefe has value one	law
+FACT	dedadi has value zero	law
+FACT	nikaba has value one	law
+FACT	lugifa has value zero	law
+FACT	kumobe has value zero	law
+FACT	latobu has value one	law
+FACT	ridebo has value one	law
+FACT	pizubo has value one	law
+FACT	gakeba has value zero	law
+FACT	bukodu has value zero	law
+FACT	ravudo has value zero	law
+FACT	pobebu has value one	law
+FACT	latibo has value one	law
+FACT	gapobo has value one	law
+FACT	nurade has value one	law
+FACT	bopefa has value zero	law
+FACT	binibi has value zero	law
+FACT	puzefe has value zero	law
+FACT	fomido has value one	law
+FACT	bomebi has value zero	law
+FACT	nipode has value one	law
+FACT	pamufe has value zero	law
+FACT	berobi has value zero	law
+FACT	vefobe has value zero	law
+FACT	vovude has value one	law
+FACT	gukubu has value one	law
+FACT	fapobo has value one	law
+FACT	pozufa has value zero	law
+FACT	kafabo has value one	law
+FACT	berafe has value one	law
+FACT	somafa has value zero	law
+FACT	dogede has value zero	law
+FACT	gufida has value one	law
+FACT	tasidu has value one	law
+FACT	zubado has value zero	law
+FACT	fukubi has value one	law
+FACT	fetofe has value zero	law
+FACT	lulefe has value one	law

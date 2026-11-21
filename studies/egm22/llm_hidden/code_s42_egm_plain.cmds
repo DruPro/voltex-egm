@@ -1,0 +1,718 @@
+INGEST negujo is defined in nujomod
+INGEST negujo calls kapanu
+INGEST sakara is defined in zesamod
+INGEST sakara calls herahe
+INGEST sakara depends on zesamod
+INGEST nugusa is defined in tirumod
+INGEST nugusa calls gudone
+INGEST nugusa calls zefiti
+INGEST nugusa depends on kisamod
+INGEST nugusa depends on tirumod
+INGEST razesa is defined in kimimod
+INGEST razesa calls nufimo
+INGEST nerane is defined in zesamod
+INGEST nerane calls morara
+INGEST nerane calls savonu
+INGEST ravonu is defined in tirumod
+INGEST ravonu calls sapami
+INGEST ravonu depends on nujomod
+INGEST fivohe is defined in hevomod
+INGEST fivohe calls fipado
+INGEST fivohe calls firasa
+INGEST loraze is defined in dodomod
+INGEST loraze calls lomobe
+INGEST loraze calls paruhe
+INGEST nerudo is defined in kimimod
+INGEST nerudo calls heguhe
+INGEST zejoze is defined in zesamod
+INGEST zejoze calls joloka
+INGEST zejoze calls negunu
+INGEST zejoze calls tifira
+INGEST radoka is defined in ranemod
+INGEST radoka calls hekize
+INGEST nufize is defined in tirumod
+INGEST nufize calls kanefi
+INGEST nufize calls motira
+INGEST jokafi is defined in kisamod
+INGEST jokafi calls nusane
+INGEST tibefi is defined in ranemod
+INGEST tibefi calls mikika
+INGEST tibefi calls runube
+INGEST tibefi calls vokavo
+INGEST tibefi depends on kisamod
+INGEST tibefi depends on zesamod
+INGEST patipa is defined in tipamod
+INGEST patipa calls hemilo
+INGEST patipa calls mirapa
+INGEST patipa calls tikine
+INGEST jotimo is defined in vomomod
+INGEST jotimo calls runera
+INGEST kanefi is defined in dodomod
+INGEST kanefi calls kavora
+INGEST titinu is defined in tipamod
+INGEST titinu calls hevohe
+INGEST titinu calls kapanu
+INGEST titinu calls nufimo
+INGEST rasanu is defined in tirumod
+INGEST rasanu calls tifira
+INGEST motira is defined in vomomod
+INGEST motira calls sakamo
+INGEST motira depends on kisamod
+INGEST vorumo is defined in vomomod
+INGEST vorumo calls kanefi
+INGEST vorumo depends on dodomod
+INGEST padomi is defined in tirumod
+INGEST padomi calls padodo
+INGEST sapami is defined in nujomod
+INGEST sapami calls fipara
+INGEST sapami calls heguhe
+INGEST sapami calls razesa
+INGEST sapami depends on hevomod
+INGEST sapami depends on kimimod
+INGEST fipado is defined in dodomod
+INGEST fipado calls nerudo
+INGEST fipado calls nevojo
+INGEST fipado calls sakara
+INGEST fivoti is defined in ranemod
+INGEST fivoti calls gubene
+INGEST jogufi is defined in hevomod
+INGEST jogufi calls kimira
+INGEST jogufi calls lomobe
+INGEST vonemi is defined in hevomod
+INGEST vonemi calls dokavo
+INGEST vonemi calls kimira
+INGEST vonemi calls sajonu
+INGEST kibepa is defined in nujomod
+INGEST kibepa calls nerane
+INGEST sanene is defined in ranemod
+INGEST sanene calls heguhe
+INGEST misaki is defined in zesamod
+INGEST misaki calls fipara
+INGEST misaki calls hevohe
+INGEST misaki depends on kimimod
+INGEST misaki depends on vomomod
+INGEST pahepa is defined in sasamod
+INGEST pahepa calls bemihe
+INGEST pahepa calls fipara
+INGEST tikine is defined in hevomod
+INGEST tikine calls dozebe
+INGEST tikine depends on vomomod
+INGEST negunu is defined in nujomod
+INGEST negunu calls fipado
+INGEST negunu calls joloka
+INGEST negunu calls nerane
+INGEST negunu depends on dodomod
+INGEST negunu depends on tipamod
+INGEST negunu depends on zesamod
+INGEST nufimo is defined in kijomod
+INGEST nufimo calls dokavo
+INGEST timido is defined in zesamod
+INGEST timido calls mozehe
+INGEST dofilo is defined in tipamod
+INGEST dofilo calls finefi
+INGEST dofilo calls jotimo
+INGEST dofilo calls nerane
+INGEST hekize is defined in kijomod
+INGEST hekize calls finefi
+INGEST hekize calls kapanu
+INGEST hekize calls nufiti
+INGEST nevojo is defined in sasamod
+INGEST nevojo calls mojoru
+INGEST nevojo depends on hevomod
+INGEST padolo is defined in nujomod
+INGEST padolo calls joneka
+INGEST padolo calls saguti
+INGEST movoti is defined in kisamod
+INGEST movoti calls fivohe
+INGEST movoti calls padodo
+INGEST movoti calls savonu
+INGEST movoti depends on hevomod
+INGEST movoti depends on tipamod
+INGEST rubemo is defined in sasamod
+INGEST rubemo calls mijogu
+INGEST rubemo calls vomize
+INGEST rubemo depends on hevomod
+INGEST rubemo depends on kisamod
+INGEST miloki is defined in hevomod
+INGEST miloki calls nerane
+INGEST miloki calls ravonu
+INGEST miloki calls zejoze
+INGEST hemilo is defined in sasamod
+INGEST hemilo calls dogupa
+INGEST hemilo calls rukagu
+INGEST tizelo is defined in sasamod
+INGEST tizelo calls hemilo
+INGEST tizelo calls sapami
+INGEST tizelo calls vomize
+INGEST heguhe is defined in hevomod
+INGEST heguhe calls misaki
+INGEST heguhe calls tikido
+INGEST heguhe calls zelonu
+INGEST loheki is defined in zesamod
+INGEST loheki calls mojoru
+INGEST loheki depends on hevomod
+INGEST vokami is defined in ranemod
+INGEST vokami calls dofilo
+INGEST kihesa is defined in hevomod
+INGEST kihesa calls nevojo
+INGEST kihesa calls patipa
+INGEST kihesa calls tifira
+INGEST zelonu is defined in dodomod
+INGEST zelonu calls milopa
+INGEST zelonu calls savonu
+INGEST numoze is defined in hevomod
+INGEST numoze calls mimize
+INGEST numoze calls rarugu
+INGEST numoze calls zejoze
+INGEST zefiti is defined in tirumod
+INGEST zefiti calls hemilo
+INGEST zefiti calls jogufi
+INGEST zefiti calls misaki
+INGEST kavora is defined in nujomod
+INGEST kavora calls donelo
+INGEST kavora calls lorane
+INGEST kitisa is defined in hevomod
+INGEST kitisa calls kakize
+INGEST kitisa depends on tirumod
+INGEST fidofi is defined in nujomod
+INGEST fidofi calls dokavo
+INGEST fidofi calls jokafi
+INGEST fidofi calls loraze
+INGEST fidofi depends on dodomod
+INGEST fidofi depends on kisamod
+INGEST fidofi depends on sasamod
+INGEST rukagu is defined in zesamod
+INGEST rukagu calls kihesa
+INGEST rukagu calls nufize
+INGEST rukagu calls zedoti
+INGEST rukagu depends on hevomod
+INGEST rukagu depends on tipamod
+INGEST rukagu depends on tirumod
+INGEST mojoru is defined in hevomod
+INGEST mojoru calls nunudo
+INGEST mojoru depends on sasamod
+INGEST rafize is defined in zesamod
+INGEST rafize calls guloka
+INGEST rafize depends on hevomod
+INGEST numolo is defined in kimimod
+INGEST numolo calls nedoki
+INGEST numolo calls sahefi
+INGEST numolo depends on kimimod
+INGEST numolo depends on kisamod
+INGEST milopa is defined in nujomod
+INGEST milopa calls kikasa
+INGEST milopa calls razesa
+INGEST milopa depends on kimimod
+INGEST milopa depends on vomomod
+INGEST morara is defined in tirumod
+INGEST morara calls vomize
+INGEST vokavo is defined in kisamod
+INGEST vokavo calls pahepa
+INGEST beravo is defined in kimimod
+INGEST beravo calls mikalo
+INGEST beravo depends on sasamod
+INGEST logumo is defined in kimimod
+INGEST logumo calls minusa
+INGEST logumo calls ranune
+INGEST logumo calls rubemo
+INGEST joneka is defined in dodomod
+INGEST joneka calls nunudo
+INGEST mijogu is defined in kisamod
+INGEST mijogu calls negura
+INGEST mijogu calls sanene
+INGEST mijogu calls zetize
+INGEST mijogu depends on hevomod
+INGEST mijogu depends on ranemod
+INGEST mijogu depends on vomomod
+INGEST kirasa is defined in kimimod
+INGEST kirasa calls hevohe
+INGEST kirasa calls rukagu
+INGEST kirasa calls vonemi
+INGEST kirasa depends on hevomod
+INGEST kirasa depends on vomomod
+INGEST kirasa depends on zesamod
+INGEST mihevo is defined in dodomod
+INGEST mihevo calls hedodo
+INGEST vomibe is defined in dodomod
+INGEST vomibe calls fitinu
+INGEST vomibe calls miruka
+INGEST vomibe calls sajonu
+INGEST henumo is defined in sasamod
+INGEST henumo calls vokavo
+INGEST motido is defined in kijomod
+INGEST motido calls dosamo
+INGEST motido calls fidofi
+INGEST motido calls nunudo
+INGEST motido depends on nujomod
+INGEST motido depends on sasamod
+INGEST safimo is defined in sasamod
+INGEST safimo calls kibepa
+INGEST safimo calls loraze
+INGEST safimo calls sajonu
+INGEST lorapa is defined in zesamod
+INGEST lorapa calls hemilo
+INGEST lorapa calls rafiru
+INGEST lorapa calls zepasa
+INGEST sakamo is defined in kisamod
+INGEST sakamo calls jotimo
+INGEST sakamo calls nufimo
+INGEST sakamo calls padomi
+INGEST finefi is defined in tipamod
+INGEST finefi calls misaki
+INGEST finefi calls nerane
+INGEST finefi calls zefiti
+INGEST sakiki is defined in kijomod
+INGEST sakiki calls misaki
+INGEST sakiki calls nufimo
+INGEST sakiki calls rubemo
+INGEST miruka is defined in tipamod
+INGEST miruka calls ranune
+INGEST minusa is defined in vomomod
+INGEST minusa calls kitisa
+INGEST minusa calls negujo
+INGEST minusa calls zejoze
+INGEST gudone is defined in kisamod
+INGEST gudone calls dofilo
+INGEST gudone calls fifihe
+INGEST gudone depends on tipamod
+INGEST gudone depends on tirumod
+INGEST pakati is defined in dodomod
+INGEST pakati calls fivohe
+INGEST pakati calls guloka
+INGEST pakati calls padomi
+INGEST pakati depends on hevomod
+INGEST pakati depends on tirumod
+INGEST pamopa is defined in zesamod
+INGEST pamopa calls miloki
+INGEST pamopa calls minusa
+INGEST pamopa depends on hevomod
+INGEST pamopa depends on vomomod
+INGEST fibebe is defined in ranemod
+INGEST fibebe calls dogupa
+INGEST fibebe calls pamopa
+INGEST gutifi is defined in tirumod
+INGEST gutifi calls milopa
+INGEST fipajo is defined in sasamod
+INGEST fipajo calls negunu
+INGEST fipajo calls nerudo
+INGEST tifira is defined in kisamod
+INGEST tifira calls pakati
+INGEST mikika is defined in zesamod
+INGEST mikika calls fibebe
+INGEST mikika calls zejoze
+INGEST negura is defined in vomomod
+INGEST negura calls kibepa
+INGEST negura calls lozebe
+INGEST nedoki is defined in kimimod
+INGEST nedoki calls safimo
+INGEST nedoki calls tikido
+INGEST nedoki depends on sasamod
+INGEST nedoki depends on zesamod
+INGEST zefize is defined in dodomod
+INGEST zefize calls fipara
+INGEST zefize calls fivoti
+INGEST zefize calls vorumo
+INGEST zefize depends on kimimod
+INGEST zefize depends on ranemod
+INGEST zefize depends on vomomod
+INGEST dozebe is defined in vomomod
+INGEST dozebe calls firasa
+INGEST dozebe calls rafize
+INGEST dozebe calls ruzelo
+INGEST joloka is defined in tipamod
+INGEST joloka calls rukagu
+INGEST joloka depends on zesamod
+INGEST hevohe is defined in vomomod
+INGEST hevohe calls radoka
+INGEST hevohe calls runera
+INGEST hevohe depends on ranemod
+INGEST hevohe depends on tipamod
+INGEST finuze is defined in kijomod
+INGEST finuze calls nuloze
+INGEST donelo is defined in hevomod
+INGEST donelo calls kavora
+INGEST donelo calls kikasa
+INGEST donelo calls kirasa
+INGEST donelo depends on kimimod
+INGEST donelo depends on nujomod
+INGEST donelo depends on vomomod
+INGEST mimize is defined in hevomod
+INGEST mimize calls mikika
+INGEST mimize calls nugusa
+INGEST kakize is defined in tirumod
+INGEST kakize calls lolora
+INGEST kakize calls mibeki
+INGEST lomobe is defined in zesamod
+INGEST lomobe calls fipado
+INGEST kikasa is defined in vomomod
+INGEST kikasa calls razesa
+INGEST kikasa depends on kimimod
+INGEST guraki is defined in hevomod
+INGEST guraki calls rarugu
+INGEST guraki depends on kisamod
+INGEST mibeki is defined in hevomod
+INGEST mibeki calls morara
+INGEST mibeki calls pamoki
+INGEST mibeki calls zedoti
+INGEST vomize is defined in hevomod
+INGEST vomize calls jokijo
+INGEST vomize calls razesa
+INGEST vomize depends on kimimod
+INGEST vomize depends on zesamod
+INGEST lojobe is defined in sasamod
+INGEST lojobe calls pamopa
+INGEST lojobe calls savonu
+INGEST lojobe depends on tipamod
+INGEST lojobe depends on zesamod
+INGEST mirapa is defined in vomomod
+INGEST mirapa calls kapanu
+INGEST mirapa calls vokami
+INGEST mirapa depends on dodomod
+INGEST mirapa depends on ranemod
+INGEST kimira is defined in nujomod
+INGEST kimira calls zefize
+INGEST fikara is defined in kijomod
+INGEST fikara calls mibeki
+INGEST fikara calls minusa
+INGEST zedoti is defined in tipamod
+INGEST zedoti calls fikara
+INGEST zedoti calls fipara
+INGEST zedoti calls jogufi
+INGEST zedoti depends on hevomod
+INGEST zedoti depends on kijomod
+INGEST zedoti depends on kimimod
+INGEST hetipa is defined in tirumod
+INGEST hetipa calls henumo
+INGEST hetipa depends on sasamod
+INGEST jokijo is defined in zesamod
+INGEST jokijo calls fikara
+INGEST jokijo calls mihevo
+INGEST jokijo calls zelonu
+INGEST nufiti is defined in nujomod
+INGEST nufiti calls miruka
+INGEST runera is defined in tipamod
+INGEST runera calls mijogu
+INGEST runera calls zefiti
+INGEST runera depends on kisamod
+INGEST runera depends on tirumod
+INGEST dosamo is defined in nujomod
+INGEST dosamo calls jokafi
+INGEST dosamo calls mikapa
+INGEST dosamo depends on kisamod
+INGEST dosamo depends on ranemod
+INGEST savonu is defined in tipamod
+INGEST savonu calls tikido
+INGEST kapanu is defined in dodomod
+INGEST kapanu calls dokivo
+INGEST kapanu calls ranune
+INGEST kapanu depends on kijomod
+INGEST kapanu depends on zesamod
+INGEST gubene is defined in nujomod
+INGEST gubene calls mihevo
+INGEST gubene depends on dodomod
+INGEST mikapa is defined in ranemod
+INGEST mikapa calls bemihe
+INGEST mikapa calls nusane
+INGEST mikapa calls sahefi
+INGEST mikalo is defined in sasamod
+INGEST mikalo calls nufiti
+INGEST mikalo calls zejoze
+INGEST mikalo calls zepasa
+INGEST mikalo depends on nujomod
+INGEST mikalo depends on zesamod
+INGEST firasa is defined in dodomod
+INGEST firasa calls logumo
+INGEST firasa calls lorapa
+INGEST firasa calls nerane
+INGEST nunudo is defined in sasamod
+INGEST nunudo calls pamopa
+INGEST nunudo calls radoka
+INGEST zetize is defined in hevomod
+INGEST zetize calls mozehe
+INGEST zetize calls nevojo
+INGEST zetize calls ruzelo
+INGEST fitinu is defined in kisamod
+INGEST fitinu calls rafiru
+INGEST jodovo is defined in tipamod
+INGEST jodovo calls dokavo
+INGEST jodovo calls numoze
+INGEST jodovo calls vokami
+INGEST jodovo depends on hevomod
+INGEST jodovo depends on ranemod
+INGEST jodovo depends on sasamod
+INGEST paruhe is defined in tirumod
+INGEST paruhe calls guloka
+INGEST paruhe calls herahe
+INGEST paruhe depends on hevomod
+INGEST paruhe depends on zesamod
+INGEST herahe is defined in zesamod
+INGEST herahe calls nunudo
+INGEST herahe depends on sasamod
+INGEST fifihe is defined in tirumod
+INGEST fifihe calls sakiki
+INGEST ruzelo is defined in kimimod
+INGEST ruzelo calls nerane
+INGEST runuki is defined in dodomod
+INGEST runuki calls lorapa
+INGEST lozebe is defined in zesamod
+INGEST lozebe calls lorapa
+INGEST lozebe calls vokami
+INGEST lozebe depends on ranemod
+INGEST lozebe depends on zesamod
+INGEST pamoki is defined in zesamod
+INGEST pamoki calls lomobe
+INGEST pamoki calls nevojo
+INGEST pamoki depends on sasamod
+INGEST pamoki depends on zesamod
+INGEST runube is defined in zesamod
+INGEST runube calls firasa
+INGEST runube calls loheki
+INGEST runube calls rasanu
+INGEST rafiru is defined in kijomod
+INGEST rafiru calls dokivo
+INGEST rafiru calls jokijo
+INGEST dokavo is defined in sasamod
+INGEST dokavo calls hehemi
+INGEST dokavo calls numolo
+INGEST dokavo calls sanene
+INGEST ranune is defined in zesamod
+INGEST ranune calls dokivo
+INGEST ranune calls fipajo
+INGEST ranune calls saguti
+INGEST rutine is defined in vomomod
+INGEST rutine calls logumo
+INGEST rutine calls lomobe
+INGEST sadoti is defined in sasamod
+INGEST sadoti calls hevohe
+INGEST sadoti calls lomobe
+INGEST sadoti calls mijogu
+INGEST tipasa is defined in tipamod
+INGEST tipasa calls kitisa
+INGEST tipasa depends on hevomod
+INGEST doneki is defined in sasamod
+INGEST doneki calls vokami
+INGEST doneki depends on ranemod
+INGEST sahefi is defined in kisamod
+INGEST sahefi calls hedodo
+INGEST sahefi calls milopa
+INGEST nusane is defined in dodomod
+INGEST nusane calls finuze
+INGEST nusane calls nerudo
+INGEST dokivo is defined in kijomod
+INGEST dokivo calls bemihe
+INGEST dokivo calls hedodo
+INGEST sajonu is defined in nujomod
+INGEST sajonu calls rubemo
+INGEST sajonu calls sadoti
+INGEST mozeka is defined in kijomod
+INGEST mozeka calls movoti
+INGEST mozeka calls tibefi
+INGEST mozeka calls zefize
+INGEST mozeka depends on dodomod
+INGEST mozeka depends on kisamod
+INGEST mozeka depends on ranemod
+INGEST tikido is defined in zesamod
+INGEST tikido calls ruzelo
+INGEST tikido depends on kimimod
+INGEST dogupa is defined in kijomod
+INGEST dogupa calls pamoki
+INGEST dogupa calls rarugu
+INGEST dogupa depends on kisamod
+INGEST dogupa depends on zesamod
+INGEST saguti is defined in kijomod
+INGEST saguti calls gubene
+INGEST saguti calls nedoki
+INGEST tinuvo is defined in dodomod
+INGEST tinuvo calls milopa
+INGEST tinuvo calls nufize
+INGEST tinuvo calls patipa
+INGEST tinuvo depends on nujomod
+INGEST tinuvo depends on tipamod
+INGEST tinuvo depends on tirumod
+INGEST hehemi is defined in kijomod
+INGEST hehemi calls kihesa
+INGEST hehemi calls pakati
+INGEST hehemi calls zedoti
+INGEST rarugu is defined in kisamod
+INGEST rarugu calls kitisa
+INGEST lolora is defined in vomomod
+INGEST lolora calls gubene
+INGEST lolora calls tibefi
+INGEST lolora calls tisagu
+INGEST lolora depends on nujomod
+INGEST lolora depends on ranemod
+INGEST fipara is defined in kimimod
+INGEST fipara calls morara
+INGEST fipara calls negujo
+INGEST fipara calls saguti
+INGEST fipara depends on kijomod
+INGEST fipara depends on nujomod
+INGEST fipara depends on tirumod
+INGEST nemipa is defined in nujomod
+INGEST nemipa calls paruhe
+INGEST nemipa calls rasanu
+INGEST nemipa calls vomize
+INGEST nemipa depends on hevomod
+INGEST nemipa depends on tirumod
+INGEST mozehe is defined in kimimod
+INGEST mozehe calls pamopa
+INGEST mozehe calls sakiki
+INGEST mozehe depends on kijomod
+INGEST mozehe depends on zesamod
+INGEST lorane is defined in kijomod
+INGEST lorane calls lolora
+INGEST pamika is defined in tipamod
+INGEST pamika calls nunudo
+INGEST pamika calls pahepa
+INGEST pamika calls timido
+INGEST pamika depends on sasamod
+INGEST pamika depends on zesamod
+INGEST nuloze is defined in nujomod
+INGEST nuloze calls kapanu
+INGEST nuloze calls sakiki
+INGEST nuloze depends on dodomod
+INGEST nuloze depends on kijomod
+INGEST padodo is defined in tipamod
+INGEST padodo calls lozebe
+INGEST tisagu is defined in ranemod
+INGEST tisagu calls hemilo
+INGEST tisagu calls kapanu
+INGEST zepasa is defined in nujomod
+INGEST zepasa calls fidofi
+INGEST zepasa calls morara
+INGEST zepasa depends on nujomod
+INGEST zepasa depends on tirumod
+INGEST kavohe is defined in sasamod
+INGEST kavohe calls fibebe
+INGEST bemihe is defined in tirumod
+INGEST bemihe calls lorane
+INGEST bemihe depends on kijomod
+INGEST hedodo is defined in tipamod
+INGEST hedodo calls logumo
+INGEST hedodo calls sakamo
+INGEST hedodo calls tikido
+INGEST guloka is defined in hevomod
+INGEST guloka calls kimira
+INGEST pamopa is defined in vomomod
+INGEST pamopa calls miloki
+INGEST pamopa calls minusa
+INGEST pamopa depends on hevomod
+INGEST pamopa depends on vomomod
+INGEST rafiru is defined in hevomod
+INGEST rafiru calls dokivo
+INGEST rafiru calls jokijo
+INGEST vonemi is defined in hevomod
+INGEST vonemi calls dokavo
+INGEST vonemi calls sajonu
+INGEST miloki is defined in hevomod
+INGEST miloki calls nerane
+INGEST miloki calls ravonu
+INGEST pakati is defined in dodomod
+INGEST pakati calls fivohe
+INGEST pakati calls padomi
+INGEST pakati depends on hevomod
+INGEST pakati depends on tirumod
+INGEST heguhe is defined in hevomod
+INGEST heguhe calls misaki
+INGEST heguhe calls zelonu
+INGEST sapami is defined in nujomod
+INGEST sapami calls fipara
+INGEST sapami calls heguhe
+INGEST sapami depends on hevomod
+INGEST sapami depends on kimimod
+INGEST rutine is defined in vomomod
+INGEST rutine calls logumo
+INGEST zefiti is defined in tirumod
+INGEST zefiti calls hemilo
+INGEST zefiti calls misaki
+INGEST tisagu is defined in ranemod
+INGEST tisagu calls hemilo
+INGEST sakamo is defined in kisamod
+INGEST sakamo calls jotimo
+INGEST sakamo calls padomi
+INGEST dogupa is defined in kijomod
+INGEST dogupa calls rarugu
+INGEST dogupa depends on kisamod
+INGEST kipaze is defined in nelomod
+INGEST nurapa is defined in nelomod
+INGEST moguka is defined in nelomod
+INGEST zerafi is defined in nelomod
+INGEST hedofi is defined in nelomod
+INGEST hekize is defined in dodomod
+INGEST hekize calls finefi
+INGEST hekize calls kapanu
+INGEST hekize calls nufiti
+INGEST fivoti is defined in sasamod
+INGEST fivoti calls gubene
+INGEST dosamo is defined in kijomod
+INGEST dosamo calls jokafi
+INGEST dosamo calls mikapa
+INGEST dosamo depends on kisamod
+INGEST dosamo depends on ranemod
+INGEST tizelo is defined in hevomod
+INGEST tizelo calls hemilo
+INGEST tizelo calls sapami
+INGEST tizelo calls vomize
+INGEST kimira is defined in hevomod
+INGEST kimira calls zefize
+INGEST loheki is defined in zesamod
+INGEST loheki calls kipaze
+INGEST loheki calls mojoru
+INGEST loheki depends on hevomod
+INGEST loheki depends on nelomod
+INGEST joneka is defined in dodomod
+INGEST joneka calls nunudo
+INGEST joneka calls nurapa
+INGEST henumo is defined in sasamod
+INGEST henumo calls moguka
+INGEST henumo calls vokavo
+INGEST negura is defined in vomomod
+INGEST negura calls kibepa
+INGEST negura calls lozebe
+INGEST negura calls zerafi
+INGEST vomibe is defined in dodomod
+INGEST vomibe calls fitinu
+INGEST vomibe calls hedofi
+INGEST vomibe calls miruka
+INGEST vomibe calls sajonu
+INGEST hekize is defined in dodomod
+INGEST hekize calls finefi
+INGEST hekize calls kapanu
+INGEST hekize calls nufiti
+INGEST fivoti is defined in sasamod
+INGEST fivoti calls gubene
+INGEST dosamo is defined in kijomod
+INGEST dosamo calls jokafi
+INGEST dosamo calls mikapa
+INGEST dosamo depends on kisamod
+INGEST dosamo depends on ranemod
+INGEST tizelo is defined in hevomod
+INGEST tizelo calls hemilo
+INGEST tizelo calls sapami
+INGEST tizelo calls vomize
+INGEST kimira is defined in hevomod
+INGEST kimira calls zefize
+INGEST hekize is defined in kimimod
+INGEST hekize calls finefi
+INGEST hekize calls kapanu
+INGEST hekize calls nufiti
+INGEST fivoti is defined in tipamod
+INGEST fivoti calls gubene
+INGEST dosamo is defined in zesamod
+INGEST dosamo calls jokafi
+INGEST dosamo calls mikapa
+INGEST dosamo depends on kisamod
+INGEST dosamo depends on ranemod
+INGEST tizelo is defined in kisamod
+INGEST tizelo calls hemilo
+INGEST tizelo calls sapami
+INGEST tizelo calls vomize
+INGEST kimira is defined in kimimod
+INGEST kimira calls zefize
+RELATIONS
+INFER ALL
+CONFLICTS
+ASK ? depends on ?
+ASK ? calls ?
+ASK ? is defined in ?
+EXIT

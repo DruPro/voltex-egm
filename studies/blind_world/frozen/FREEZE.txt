@@ -1,0 +1,19 @@
+Voltex freeze record
+Thu Nov 19 17:35:11 UTC 2026
+
+source sha256: 50aadd9ecda7b059e50c1e1e4d43e219b1db91bf74593fdfe25f1fb9354da634
+binary sha256: e1264ce1628facc45efca418436d39812acf2fc149287f5c36de33eab43eb7aa
+compiler: g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+flags: -std=c++17 -O2
+
+Configuration used for every Voltex run (source defaults, untouched):
+  bool dirty = true; double classThresh = 0.5;
+  double LIFT_MIN = 5.0, RATE_MIN = 0.4, PCA_MIN = 0.8; u64 K_MIN = 3;
+  void buildClasses(size_t maxWords = 12000) {
+  if (best < 3) continue;
+  if (rels.size() > 40) rels.resize(40);
+  bool pcaOk = h.pn >= 5 && h.pca >= PCA_MIN && (double(h.k) - ex) / sd >= 3.0;   // agreement 3 s.d. above chance
+  void infer(int maxDepth = 4) {
+  functional[i] = !objs[i].empty() && double(single) / double(objs[i].size()) >= 0.95;
+
+Only configuration change permitted: 'SET SUPPORT 1000000000' for the rules-disabled baseline.

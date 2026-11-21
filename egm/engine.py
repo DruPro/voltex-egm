@@ -52,7 +52,8 @@ class Engine:
         kb: a saved knowledge base (.vtx) to load.
         facts: facts files to ingest (one ``A relation B`` per line).
         binary: path to voltex2 (otherwise found automatically).
-        settings: engine settings applied first, e.g. ``{"RATE": 0.4, "REFRESH": 0.02}``.
+        settings: engine settings, applied after ``kb`` is loaded so they override the profile saved with it,
+            e.g. ``{"RATE": 0.4, "DEPTH": 0}``. ``config()`` lists every setting.
     """
 
     def __init__(self, kb: Optional[str] = None, facts: Iterable[str] = (), binary: Optional[str] = None,
@@ -65,10 +66,10 @@ class Engine:
         self._p = subprocess.Popen([self.binary], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                    stderr=subprocess.STDOUT, text=True, bufsize=1)
         try:
-            for k, v in (settings or {}).items():
-                self.set(k, v)
             if kb:
-                self.load(kb)
+                self.load(kb)            # restores the profile saved with the knowledge base (kb.vtx.cfg), if any
+            for k, v in (settings or {}).items():
+                self.set(k, v)           # explicit settings override the saved profile
             for f in facts:
                 self.ingest_file(f)
         except Exception:
@@ -213,9 +214,26 @@ class Engine:
     def relations(self) -> List[Relation]:
         return parse.relations(self._checked("RELATIONS"))
 
-    def rules(self, include_rejected: bool = False) -> List[Rule]:
+    def rules(self, include_rejected: bool = False, shape: Optional[str] = None) -> List[Rule]:
+        """Learned rules. ``shape`` filters: "inverse", "chain", "path" (SET CHAIN >= 3) or "tree" (SET TREES 1);
+        a rule restricted to a group (SET CONDITIONS 1) has ``condition`` set."""
         r = parse.rules(self._checked("RELATIONS"))
-        return r if include_rejected else [x for x in r if x.accepted]
+        if not include_rejected:
+            r = [x for x in r if x.accepted]
+        return [x for x in r if x.shape == shape] if shape else r
+
+    def chains(self) -> List[dict]:
+        """How each derived fact was reached: {"fact", "round", "tendency_steps"} (rounds count from 1; tendency steps
+        are tendency-tier rule steps anywhere in its proof). See SET TENDENCYSTEPS."""
+        return parse.chains(self._checked("CHAINS ALL"))
+
+    def limits(self) -> List[str]:
+        """Capacity limits the last build hit (e.g. more words than MAXWORDS), as the engine reports them."""
+        return [l[len("[LIMIT] "):] for l in self._checked("RELATIONS") if l.startswith("[LIMIT] ")]
+
+    def experimental(self) -> dict:
+        """Experimental settings that are currently not at their default: {name: value}."""
+        return {k: v["value"] for k, v in self.config().items() if v["experimental"] and v["value"] != v["default"]}
 
     def categories(self, threshold: Optional[float] = None) -> List[Category]:
         """Word categories induced from shared contexts (``threshold`` changes the merge level)."""
@@ -259,6 +277,10 @@ class Engine:
         return self.find(text) is not None
 
     # --- settings and persistence -------------------------------------------------------
+    def config(self) -> dict:
+        """Every engine setting: {name: {"value", "default", "layer", "experimental", "help"}}."""
+        return parse.config(self._checked("CONFIG"))
+
     def set(self, key: str, value) -> None:
         """Engine setting, e.g. ``set("RATE", 0.4)``. See ``SET`` in the engine's HELP for the list."""
         out = self._checked(f"SET {key} {value}")

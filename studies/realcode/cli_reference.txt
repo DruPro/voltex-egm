@@ -1,0 +1,21 @@
+[RELATIONS] 5 two-argument templates
+  #0  ? is defined in ?              277 facts
+  #1  ? calls ?                      170 facts
+  #2  ? imports ?                    55 facts
+  #3  ? raises ?                     48 facts
+  #4  ? inherits from ?              47 facts
+[COVERAGE] estimated observation completeness: global -1.00 |
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT [? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c) n=32 k=32 rate=1.00 lift=15.0 | where answer known: 32, agree=1.00 | cov=-1.00 rel=1.00 tier=law
+  ACCEPT [? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c) n=170 k=111 rate=0.65 lift=9.8 | where answer known: 170, agree=0.65 | cov=-1.00 rel=0.65 tier=tendency
+  HTTPAdapter___init__ calls HTTPAdapter_init_poolmanager stated
+  HTTPAdapter___setstate__ calls HTTPAdapter_init_poolmanager stated
+  Session_send calls extract_cookies_to_jar stated
+  Session_send calls dispatch_hook stated
+  Session_send calls SessionRedirectMixin_resolve_redirects stated
+  Session_send calls Session_get_adapter stated
+  Session_send calls resolve_proxies stated
+  SessionRedirectMixin_resolve_redirects raises TooManyRedirects stated
+  ConnectTimeout inherits from ConnectionError stated
+  ConnectTimeout inherits from Timeout stated
+  ConnectionError inherits from RequestException stated

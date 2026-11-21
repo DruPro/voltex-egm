@@ -82,7 +82,8 @@ Properties: `is_current`, `is_history`, `is_strict`. `to_dict()` is JSON-ready.
 | Method | Returns |
 |---|---|
 | `relations()` | `list[Relation]`: `template`, `relation`, `facts` (count). |
-| `rules(include_rejected=False)` | `list[Rule]`: `text`, `accepted`, `n` (chains seen), `k` (conclusion also stated), `rate`, `lift`, `known`, `agree`, `tier`. |
+| `rules(include_rejected=False, shape=None)` | `list[Rule]`: `text`, `accepted`, `n` (chains seen), `k` (conclusion also stated), `rate`, `lift`, `known`, `agree`, `tier`, `shape` (`inverse`, `chain`, `path`, `tree`), `premises`, `condition` (set for a rule restricted to a group). `shape=` filters. |
+| `experimental()` | `dict` of experimental settings currently on, e.g. `{"TREES": 1}`. |
 | `categories(threshold=None)` | `list[Category]`: word classes induced from shared contexts. |
 | `metrics()` | `dict`: records, vocabulary, grammar size, memory. |
 
@@ -146,3 +147,73 @@ def egm_tool(pattern: str, strict: bool = True) -> str:
         return json.dumps({"error": str(e), "learned": e.learned})
     return json.dumps([{k: f.to_dict()[k] for k in ("fact", "status", "tier", "because")} for f in facts])
 ```
+
+## Experimental settings
+
+All are off by default and saved with the knowledge base (`docs/SETTINGS.md`).
+
+```python
+import egm
+with egm.open("gates.txt", settings={"TREES": 1, "DEPTH": 0}) as e:
+    for r in e.rules(shape="tree"):
+        print(r.premises, r.text)        # TREE [? is output of ?](a,g) & [? has kind ?](g,or) & ...
+    f = [x for x in e.ask("w17 has value ?") if x.status == "inferred"][0]
+    print(f.rule, f.because)             # the tree rule and every premise fact
+    print(e.experimental())              # {'TREES': 1}
+```
+
+| Setting | What the SDK shows |
+|---|---|
+| `DEPTH` | more facts from `infer_all()`; `0` runs to a fixpoint |
+| `CHAIN` 3-8 | rules with `shape == "path"` and `premises == CHAIN`; facts with that many `because` entries |
+| `CONDITIONS` | rules with `condition` set, e.g. `[? works as ?](a,farmer|miner)` |
+| `TREES` | rules with `shape == "tree"`, text starting `TREE `; facts whose `because` lists every branch |
+
+The tests in `tests/test_sdk.py` (`TestExperimentalSettings`) run each one on a small world from
+`tests/worlds.py`. The MCP tool `egm_relations` reports each rule's `shape`, `premises` and
+`condition`, and `experimental_settings` when any is on.
+
+## Tuning settings to a dataset (`egm.tune`, experimental)
+
+```python
+import egm
+r = egm.tune("facts.txt")               # hides 15% of the stated facts 3 times, keeps a change only if it helps every time
+print(r.report())                       # e.g. "SET TREES 1", or "keep the defaults"
+with egm.open("facts.txt", settings=r.settings) as e: ...
+r = egm.tune("facts.txt", labels=open("verified.txt").read().splitlines())   # score on facts you verified elsewhere
+```
+
+```
+egm tune facts.txt -o tuned.json          # prints every value tried
+egm build facts.txt -o kb.vtx --settings tuned.json
+```
+
+Tuning changes only setting values, never the engine, and the chosen values are saved with the
+knowledge base. What `studies/noise` measured:
+
+- **Structural switches are found.** Holdout tuning turned on `TREES` for gate data and `CHAIN 3`
+  for family trees in every seed (12 of 12), with large gains. In 36 runs it never scored below the
+  defaults on the hidden answers.
+- **Fixes for wrong facts are not visible to holdout tuning.** It hides stated facts, and some of
+  those are themselves wrong, so it cannot reward a setting that corrects them. With 30% wrong
+  facts, `QUARANTINE` scored +0.000 to +0.001 on the holdout and +0.023 to +0.029 on the truth.
+  Verified `labels` do show it (company world: F0.5 0.941 to 0.987), but small label sets can
+  also overfit (two hidden-world runs ended 0.0003 and 0.002 below the defaults).
+- **Settings are dataset-specific.** `CHAIN 3`, tuned on family trees, lowered another world from
+  0.775 to 0.636. Tune each dataset; don't copy settings between them.
+
+New fields: `Rule.replication` (why `REPLICATE` rejected a rule), `Conflict.kind` (`value`,
+`quarantined`, `outvoted`, `other`), and the ASK flags `outvoted` and `quarantined`.
+
+## Proof chains and limits
+
+```python
+with egm.open("facts.txt") as e:
+    e.chains()      # [{"fact": "...", "round": 2, "tendency_steps": 1}, ...]: how each derived fact was reached
+    e.limits()      # capacity limits the build hit, e.g. ["categories cover the 12000 most frequent of 16016 words; ..."]
+with egm.open("facts.txt", settings={"TENDENCYSTEPS": 0}) as e:
+    e.infer_all()   # only answers whose whole proof uses law-tier rules
+```
+
+Count `chains()` by round and tendency steps before choosing `TENDENCYSTEPS`. It shows whether
+your answers rest on tendencies, and whether a single tendency is being amplified over later rounds.

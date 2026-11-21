@@ -1,0 +1,6 @@
+522b6176cff01d2455385e46fd82a780c6a9fa4b37346a64d7aa5e29aed0869e  ../v21/voltex2.cpp
+eb1a1c57f7f9b5b965de9007c85e38e14900fe9aa6cc24fa4a46b4aa11289d43  ../v21/voltex2
+186f9173f75a2e447c23e4df07ecd5df9ff4988d3c6ae587ead9cf75eaed0564  ../amend/voltex2_amend.cpp
+d04d7425172f23e0da64bb3ada95805ba846338b4fa156e51a873cf5129f31f7  ../amend/voltex2_amend
+040635d242a888cbdcf51d9b59db64bbd1caff03dad72bcdd43b4dd9bc9b8139  ../declarative/voltex2_decl.cpp
+c31c31a3b7f7d059d8575067dd772832e2749f76fbb86bd13bbb4c60e27cc2a6  ../declarative/voltex2_decl

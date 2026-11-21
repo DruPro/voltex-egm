@@ -1,0 +1,64 @@
+[SET] PROFILE = 1
+[LOAD] ok
+--- VOLTEX v2 METRICS ---
+ Records:          16836 unique / 16836 ingested
+ Tokens (unique records): 127168
+ Vocabulary:       2152 tokens
+ Grammar:          3968 rules, 43962 symbols  (0.346 symbols per input token)
+ Pair map:         23158 entries
+ Count tables:     16985 bigrams, 32629 trigrams
+ Invariants:       0 duplicate pairs, 0 under-used rules
+ Process RSS:      14.1 MB
+[PROFILE] classes 427.5 ms | relations 25.2 ms | rule mining 776.0 ms
+[RELATIONS] 20 two-argument templates
+  #0  ? is ancestor of ?             2881 facts
+  #1  ? knows ?                      2472 facts
+  #2  ? is sibling of ?              2089 facts
+  #3  ? trades with ?                1574 facts
+  #4  ? is parent of ?               1330 facts
+  #5  ? is child of ?                1310 facts
+  #6  ? lives in ?                   1073 facts
+  #7  ? works as ?                   1009 facts
+  #8  ? is from ?                    864 facts
+  #9  ? is member of ?               792 facts
+  #10  ? mentors ?                    652 facts
+  #11  ? harvests ?                   336 facts
+  #12  ? produces ?                   120 facts
+  #13  ? borders ?                    87 facts
+  #14  ? is located in ?              79 facts
+[COVERAGE] estimated observation completeness: global 0.45 | [? is ancestor of ?] 0.43 [? is sibling of ?] 0.43 [? is parent of ?] 0.45 [? is child of ?] 0.45 [? is located in ?] 0.51 [? contains ?] 0.48
+[RULES] scored by evidence: chains seen (n), conclusion stated (k), lift over base rate
+  ACCEPT [? is child of ?](a,b) & [? is parent of ?](b,c) => [? is sibling of ?](a,c) n=1969 k=966 rate=0.49 lift=276.4 | where answer known: 1773, agree=0.54 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is sibling of ?](a,b) & [? is child of ?](b,c) => [? is child of ?](a,c) n=1798 k=926 rate=0.52 lift=274.1 | where answer known: 1343, agree=0.69 | cov=0.45 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is parent of ?](a,c) n=1811 k=939 rate=0.52 lift=273.5 | where answer known: 1811, agree=0.52 | cov=0.45 rel=1.00 tier=law
+  ACCEPT [? is sibling of ?](a,b) & [? is sibling of ?](b,c) => [? is sibling of ?](a,c) n=2899 k=1393 rate=0.48 lift=270.7 | where answer known: 2899, agree=0.48 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is sibling of ?](a,b) => [? is sibling of ?](b,a)         n=2089 k=896 rate=0.43 lift=241.7 | where answer known: 1678, agree=0.53 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is child of ?](a,b) => [? is parent of ?](b,a)            n=1310 k=596 rate=0.45 lift=240.0 | where answer known: 1091, agree=0.55 | cov=0.45 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) => [? is child of ?](b,a)            n=1330 k=596 rate=0.45 lift=238.5 | where answer known: 858, agree=0.69 | cov=0.45 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) & [? is ancestor of ?](b,c) => [? is ancestor of ?](a,c) n=698 k=348 rate=0.50 lift=160.8 | where answer known: 696, agree=0.50 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) & [? is parent of ?](b,c) => [? is ancestor of ?](a,c) n=730 k=360 rate=0.49 lift=159.1 | where answer known: 727, agree=0.50 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is ancestor of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c) n=3806 k=1857 rate=0.49 lift=157.4 | where answer known: 3806, agree=0.49 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is ancestor of ?](a,b) & [? is parent of ?](b,c) => [? is ancestor of ?](a,c) n=628 k=298 rate=0.47 lift=153.1 | where answer known: 628, agree=0.47 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c) n=1811 k=849 rate=0.47 lift=151.2 | where answer known: 1739, agree=0.49 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is ancestor of ?](a,b) & [? is ancestor of ?](b,c) => [? is ancestor of ?](a,c) n=613 k=286 rate=0.47 lift=150.5 | where answer known: 613, agree=0.47 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? is child of ?](a,b) => [? is ancestor of ?](b,a)          n=1310 k=561 rate=0.43 lift=138.2 | where answer known: 1121, agree=0.50 | cov=0.43 rel=1.00 tier=law
+  ACCEPT [? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=706 k=333 rate=0.47 lift=22.6 | where answer known: 388, agree=0.86 | cov=0.45 rel=0.86 tier=tendency
+  ACCEPT [? contains ?](a,b) => [? is located in ?](b,a)              n=75 k=38 rate=0.51 lift=22.3 | where answer known: 40, agree=0.95 | cov=0.51 rel=0.95 tier=law
+  ACCEPT [? is located in ?](a,b) => [? contains ?](b,a)              n=79 k=38 rate=0.48 lift=20.2 | where answer known: 73, agree=0.52 | cov=0.48 rel=1.00 tier=law
+  ACCEPT [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=591 k=227 rate=0.38 lift=18.4 | where answer known: 243, agree=0.93 | cov=0.45 rel=0.93 tier=tendency
+  ACCEPT [? borders ?](a,b) => [? borders ?](b,a)                     n=87 k=42 rate=0.48 lift=10.5 | where answer known: 79, agree=0.53 | cov=0.45 rel=1.00 tier=law
+  ACCEPT [? mentors ?](a,b) & [? works as ?](b,c) => [? works as ?](a,c) n=352 k=136 rate=0.39 lift=3.1 | where answer known: 170, agree=0.80 | cov=0.45 rel=0.80 tier=tendency
+  ACCEPT [? mentors ?](a,b) & [? is member of ?](b,c) => [? is member of ?](a,c) n=276 k=121 rate=0.44 lift=1.7 | where answer known: 136, agree=0.89 | cov=0.45 rel=0.89 tier=tendency
+  ACCEPT [? works as ?](a,b) & [? is overseen by ?](b,c) => [? is member of ?](a,c) n=748 k=271 rate=0.36 lift=1.4 | where answer known: 282, agree=0.96 | cov=0.45 rel=0.96 tier=law
+[PROFILE] infer 685.8 ms
+[INFER] 10110 new facts derived from 22 accepted rules
+  tizelo is ancestor of fivomo     [law] score=0.49  because tizelo is parent of vodogu + vodogu is sibling of fivomo  [rule: [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c)]
+  mihelo is ancestor of nuguhe     [law] score=0.49  because mihelo is parent of kanuze + kanuze is sibling of nuguhe  [rule: [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c)]
+  mihelo is ancestor of rumira     [law] score=0.49  because mihelo is parent of kanuze + kanuze is sibling of rumira  [rule: [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c)]
+  mihelo is ancestor of katiti     [law] score=0.23  because mihelo is parent of kanuze + kanuze is parent of katiti  [rule: [? is parent of ?](a,b) & [? is parent of ?](b,c) => [? is ancestor of ?](a,c)]
+  dogune is ancestor of mizemo     [law] score=0.49  because dogune is parent of bekane + bekane is sibling of mizemo  [rule: [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c)]
+  dogune is ancestor of kisafi     [law] score=0.49  because dogune is parent of mizemo + mizemo is sibling of kisafi  [rule: [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c)]
+  dogune is ancestor of vonedo     [law] score=0.23  because dogune is parent of bekane + bekane is parent of vonedo  [rule: [? is parent of ?](a,b) & [? is parent of ?](b,c) => [? is ancestor of ?](a,c)]
+  dogune is ancestor of lonuru     [law] score=0.50  because dogune is parent of nuhehe + nuhehe is ancestor of lonuru  [rule: [? is parent of ?](a,b) & [? is ancestor of ?](b,c) => [? is ancestor of ?](a,c)]
+  dogune is ancestor of nuhehe     [law] score=0.49  because dogune is parent of mizemo + mizemo is sibling of nuhehe  [rule: [? is parent of ?](a,b) & [? is sibling of ?](b,c) => [? is ancestor of ?](a,c)]
+  dogune is ancestor of nerasa     [law] score=0.50  because dogune is parent of mizemo + mizemo is ancestor of nerasa  [rule: [? is parent of ?](a,b) & [? is ancestor of ?](b,c) => [? is ancestor of ?](a,c)]

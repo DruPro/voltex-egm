@@ -1,5 +1,7 @@
 """SDK tests (stdlib unittest; pytest also collects them).   python3 -m unittest tests/test_sdk.py -v"""
 import json
+import contextlib
+import io
 import os
 import random
 import sys
@@ -11,6 +13,8 @@ if os.environ.get("EGM_TEST_INSTALLED") != "1":     # test the checkout unless t
     sys.path.insert(0, ROOT)
 import egm  # noqa: E402
 from egm import bench, parse  # noqa: E402
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import worlds  # noqa: E402
 
 EX = os.path.join(ROOT, "examples")
 M = os.path.join(EX, "tokenomics", "M.txt")
@@ -210,6 +214,40 @@ class TestPersistence(unittest.TestCase):
             with egm.open(kb, settings={"DX": 1}) as e:
                 self.assertEqual([x.to_dict() for x in e.ask("p0 lives in ?")], before)
 
+    def test_settings_travel_with_the_knowledge_base(self):
+        """C2/C4 (studies/config): a saved knowledge base keeps its settings; explicit settings override them."""
+        with tempfile.TemporaryDirectory() as td:
+            kb = os.path.join(td, "m.vtx")
+            with egm.Engine(facts=[M]) as e:
+                default_n = len(e.infer_all())
+            with egm.Engine(facts=[M], settings={"RATE": 0.1, "PCA": 0.5}) as e:
+                loose_n = len(e.infer_all()); e.save(kb)
+            self.assertNotEqual(loose_n, default_n)
+            self.assertTrue(os.path.exists(kb + ".cfg"))
+            with egm.open(kb) as e:                                   # profile restored
+                self.assertEqual(len(e.infer_all()), loose_n)
+                self.assertEqual(e.config()["RATE"]["value"], 0.1)
+            with egm.open(kb, settings={"RATE": 0.4, "PCA": 0.8}) as e:   # explicit settings win
+                self.assertEqual(len(e.infer_all()), default_n)
+
+    def test_knowledge_base_without_profile_keeps_old_behaviour(self):
+        """C3: a .vtx without .cfg (saved by 2.2.1) loads with the current settings, as before."""
+        with tempfile.TemporaryDirectory() as td:
+            kb = os.path.join(td, "m.vtx")
+            with egm.Engine(facts=[M]) as e:
+                n = len(e.infer_all()); e.save(kb)
+            os.remove(kb + ".cfg")
+            with egm.open(kb) as e:
+                self.assertEqual(len(e.infer_all()), n)
+
+    def test_config_lists_every_setting(self):
+        with egm.Engine() as e:
+            c = e.config()
+        self.assertGreaterEqual(len(c), 23)
+        self.assertTrue(c["CHAIN"]["experimental"] and c["CONDITIONS"]["experimental"] and c["TREES"]["experimental"])
+        self.assertFalse(c["DEPTH"]["experimental"])
+        self.assertEqual((c["DEPTH"]["value"], c["CHAIN"]["value"]), (4, 2))
+
     def test_load_errors(self):
         with self.assertRaises(FileNotFoundError):
             egm.open("/nonexistent/kb.vtx")
@@ -223,6 +261,181 @@ class TestPersistence(unittest.TestCase):
             e.set("REFRESH", 0.02)
             with self.assertRaises(ValueError):
                 e.set("NO_SUCH_SETTING", 1)
+
+
+class TestExperimentalSettings(unittest.TestCase):
+    """DEPTH, CHAIN, CONDITIONS and TREES through the SDK, on small worlds from tests/worlds.py (studies/ hold the full studies)."""
+
+    @staticmethod
+    def kb(lines, **settings):
+        td = tempfile.mkdtemp(); path = os.path.join(td, "facts.txt")
+        with open(path, "w") as fh:
+            fh.write("\n".join(lines) + "\n")
+        return egm.open(path, settings=settings)
+
+    def test_depth_unlimited_reaches_further_without_errors(self):
+        lines, hidden = worlds.remainders()
+        got = {}
+        for d in (4, 0):
+            with self.kb(lines, DEPTH=d) as e:
+                got[d] = {f.subject: f.object for f in e.infer_all() if f.relation == "has remainder"}
+        right = {d: sum(got[d].get(a) == v for a, v in hidden.items()) for d in got}
+        self.assertGreater(right[0], right[4])
+        for d in got:
+            self.assertEqual(sum(a in got[d] and got[d][a] != v for a, v in hidden.items()), 0)
+
+    def test_chain_learns_three_step_rule(self):
+        lines, unseen = worlds.lineage()
+        with self.kb(lines) as e:   # CHAIN 2: a three-step relation cannot be expressed
+            self.assertFalse(any(f.relation == "is great grandparent of" for f in e.infer_all()))
+        with self.kb(lines, CHAIN=3) as e:
+            got = {(f.subject, f.object) for f in e.infer_all() if f.relation == "is great grandparent of"}
+            self.assertEqual(got, unseen)
+            paths = e.rules(shape="path")
+            self.assertTrue(paths and paths[0].premises == 3)
+            self.assertEqual(e.experimental(), {"CHAIN": 3})
+            f = [x for x in e.ask(f"{next(iter(unseen))[0]} is great grandparent of ?") if x.status == "inferred"][0]
+            self.assertEqual(len(f.because), 3)
+
+    def test_conditions_restrict_an_over_general_rule(self):
+        lines, wrong = worlds.harvest()
+        with self.kb(lines) as e:
+            base = {(f.subject, f.object) for f in e.infer_all() if f.relation == "harvests"}
+        with self.kb(lines, CONDITIONS=1) as e:
+            cond = {(f.subject, f.object) for f in e.infer_all() if f.relation == "harvests"}
+            rules = [r for r in e.rules() if r.condition]
+        self.assertGreater(len(base & wrong), 100)          # the general rule fires for everyone
+        self.assertEqual(len(cond & wrong), 0)              # the conditional rule only for farmers and miners
+        self.assertTrue(rules and "works as" in rules[0].condition and "farmer" in rules[0].condition and "miner" in rules[0].condition)
+
+    def test_trees_learn_gates(self):
+        lines, hidden = worlds.gates()
+        with self.kb(lines) as e:
+            self.assertEqual(e.rules(shape="tree"), [])
+        with self.kb(lines, TREES=1) as e:
+            got = {f.subject: f.object for f in e.infer_all() if f.relation == "has value"}
+            trees = e.rules(shape="tree")
+            w = next(iter(hidden)); ans = [f for f in e.ask(f"{w} has value ?") if f.status == "inferred"]
+        self.assertEqual(sum(got.get(w) == v for w, v in hidden.items()), len(hidden))
+        self.assertTrue(trees and all(r.text.startswith("TREE ") and r.premises >= 3 for r in trees))
+        self.assertTrue(ans and ans[0].rule.startswith("TREE ") and len(ans[0].because) >= 4)
+
+    def test_experimental_settings_are_saved_and_announced(self):
+        lines, hidden = worlds.gates(per_kind=120)
+        td = tempfile.mkdtemp(); kb = os.path.join(td, "g.vtx")
+        with self.kb(lines, TREES=1, DEPTH=0) as e:
+            n = len(e.infer_all()); e.save(kb)
+            self.assertTrue(any("experimental settings on: TREES=1" in l for l in e.cmd("RELATIONS")))
+        with egm.open(kb) as e:
+            self.assertEqual(e.experimental(), {"TREES": 1})
+            self.assertEqual(e.config()["DEPTH"]["value"], 0)
+            self.assertEqual(len(e.infer_all()), n)
+
+
+class TestNoiseSettings(unittest.TestCase):
+    """VOTE, QUARANTINE, REPLICATE and egm.tune (studies/noise) on the small staff and lineage worlds."""
+    kb = staticmethod(TestExperimentalSettings.kb)
+
+    @staticmethod
+    def conflict_facts(e, kind):
+        return {c.detail.split("stated: ", 1)[1].split(" | ")[0] for c in e.conflicts() if c.kind == kind}
+
+    def test_vote_outvotes_only_wrong_reports(self):
+        lines, _, wrong = worlds.staff(noise=0.25, reports=3)
+        with self.kb(lines, VOTE=1) as e:
+            out = self.conflict_facts(e, "outvoted")
+            p = next(iter(out)).split(" is based in ")[0]
+            flags = {f.flag for f in e.ask(f"{p} is based in ?")}
+        self.assertGreater(len(out), 20)
+        self.assertTrue(out <= wrong)                       # nothing true is outvoted here
+        self.assertIn("outvoted", flags)
+
+    def test_vote_does_nothing_without_repeated_reports(self):
+        lines, _, _ = worlds.staff(noise=0.2, reports=1)
+        with self.kb(lines) as a, self.kb(lines, VOTE=1) as b:
+            self.assertEqual([f.fact for f in a.infer_all()], [f.fact for f in b.infer_all()])
+            self.assertEqual([c.raw for c in a.conflicts()], [c.raw for c in b.conflicts()])
+
+    def test_quarantine_keeps_contradicted_facts_out_but_reports_them(self):
+        lines, truth, wrong = worlds.staff(noise=0.2, reports=1)
+        with self.kb(lines) as e:
+            flagged = {c.detail.split("stated: ", 1)[1].split(" | ")[0] for c in e.conflicts() if c.kind == "value"}
+        with self.kb(lines, QUARANTINE=1) as e:
+            q = self.conflict_facts(e, "quarantined")
+            p = next(iter(q)).split(" is based in ")[0]
+            ans = e.ask(f"{p} is based in ?")
+        self.assertTrue(q and q == flagged and q <= wrong)
+        self.assertIn("quarantined", {f.flag for f in ans})
+        self.assertIn(truth[p], {f.object for f in ans if f.status == "inferred"})   # the rules' value is now inferred
+
+    def test_replicate_reports_why_a_rule_was_rejected(self):
+        lines, _ = worlds.gates(seed=2)
+        with self.kb(lines, TREES=1, REPLICATE=1) as e:
+            rejected = [r for r in e.rules(include_rejected=True) if r.replication]
+            kept = e.rules(shape="tree")
+        for r in rejected:
+            self.assertFalse(r.accepted); self.assertTrue(r.replication.startswith("did not replicate (half A"))
+        self.assertTrue(kept)
+
+    def test_tune_finds_chain_for_lineage_and_keeps_defaults_otherwise(self):
+        lines, _ = worlds.lineage()
+        td = tempfile.mkdtemp(); path = os.path.join(td, "lineage.txt")
+        with open(path, "w") as fh:
+            fh.write("\n".join(lines) + "\n")
+        r = egm.tune(path, space=[("CHAIN", [2, 3]), ("TREES", [0, 1])])
+        self.assertEqual(r.settings, {"CHAIN": 3})
+        self.assertGreater(r.tuned, r.baseline)
+        self.assertTrue(all(t > b for t, b in zip(r.tuned_folds, r.baseline_folds)))
+        r2 = egm.tune(path, space=[("TREES", [0, 1])])
+        self.assertEqual(r2.settings, {})
+        self.assertIn("keep the defaults", r2.report())
+
+    def test_tune_cli_writes_settings_that_build_uses(self):
+        from egm import cli
+        lines, _ = worlds.lineage()
+        td = tempfile.mkdtemp(); path = os.path.join(td, "lineage.txt"); out = os.path.join(td, "tuned.json"); kb = os.path.join(td, "kb.vtx")
+        with open(path, "w") as fh:
+            fh.write("\n".join(lines) + "\n")
+        with contextlib.redirect_stdout(io.StringIO()):
+            cli.main(["tune", path, "--only", "CHAIN", "-q", "-o", out])
+            cli.main(["build", path, "-o", kb, "--settings", out])
+        self.assertEqual(json.load(open(out))["settings"], {"CHAIN": 3})
+        with egm.open(kb) as e:
+            self.assertEqual(e.experimental(), {"CHAIN": 3})
+
+
+class TestTendencyAndLimits(unittest.TestCase):
+    """TENDENCYSTEPS, CHAINS and the capacity limits (studies/tendency)."""
+    kb = staticmethod(TestExperimentalSettings.kb)
+
+    def test_chains_report_round_and_tendency_steps(self):
+        lines, _ = worlds.remainders()
+        with self.kb(lines, DEPTH=0) as e:
+            ch = e.chains(); n = len(e.infer_all())
+        self.assertEqual(len(ch), n)
+        self.assertGreater(max(c["round"] for c in ch), 1)          # remainders need several rounds
+        self.assertTrue(all(c["tendency_steps"] >= 0 for c in ch))
+
+    def test_tendencysteps_zero_keeps_law_chains_only(self):
+        lines, _, _ = worlds.staff(noise=0.0)
+        with self.kb(lines) as e:
+            every = {f.fact for f in e.infer_all()}
+            law = {f.fact for f in e.infer_all() if f.tier == "law"}
+            steps = {c["fact"]: c["tendency_steps"] for c in e.chains()}
+        with self.kb(lines, TENDENCYSTEPS=0) as e:
+            zero = {f.fact for f in e.infer_all()}
+            self.assertEqual(e.experimental(), {"TENDENCYSTEPS": 0})
+        self.assertTrue(zero <= every)
+        self.assertEqual(zero, {f for f, t in steps.items() if t == 0})
+        self.assertTrue(law <= zero)
+
+    def test_capacity_limit_is_reported_and_adjustable(self):
+        lines, _ = worlds.gates(per_kind=60)
+        with self.kb(lines, MAXWORDS=200) as e:
+            lim = e.limits()
+        with self.kb(lines) as e:
+            self.assertEqual(e.limits(), [])
+        self.assertTrue(lim and "MAXWORDS" in lim[0])
 
 
 class TestBinaryLookup(unittest.TestCase):

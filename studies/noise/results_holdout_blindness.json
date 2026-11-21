@@ -1,0 +1,95 @@
+{
+ "3": {
+  "holdout_default": 0.5109094105880161,
+  "holdout": {
+   "QUARANTINE=1": 0.5109094105880161,
+   "TREES=1": 0.5122903075489282
+  },
+  "truth": {
+   "default": {
+    "f05": 0.8833453844299831,
+    "precision": 1.0,
+    "recall": 0.6023007395234182,
+    "derived_new": 733,
+    "wrong": 0
+   },
+   "QUARANTINE=1": {
+    "f05": 0.9061880643030169,
+    "precision": 0.9903730445246691,
+    "recall": 0.676253081347576,
+    "derived_new": 831,
+    "wrong": 8
+   },
+   "TREES=1": {
+    "f05": 0.9004878048780487,
+    "precision": 0.9447287615148413,
+    "recall": 0.7584223500410846,
+    "derived_new": 977,
+    "wrong": 54
+   }
+  },
+  "corrupted_share_of_noisy_relation_facts": 0.30398671096345514
+ },
+ "4": {
+  "holdout_default": 0.5370530283260256,
+  "holdout": {
+   "QUARANTINE=1": 0.5372379509559176,
+   "TREES=1": 0.5381108395807168
+  },
+  "truth": {
+   "default": {
+    "f05": 0.8786299329858526,
+    "precision": 1.0,
+    "recall": 0.5914786967418546,
+    "derived_new": 708,
+    "wrong": 0
+   },
+   "QUARANTINE=1": {
+    "f05": 0.9047292666209732,
+    "precision": 0.9962264150943396,
+    "recall": 0.6616541353383458,
+    "derived_new": 795,
+    "wrong": 3
+   },
+   "TREES=1": {
+    "f05": 0.896197327852004,
+    "precision": 0.95092693565976,
+    "recall": 0.7284878863826232,
+    "derived_new": 917,
+    "wrong": 45
+   }
+  },
+  "corrupted_share_of_noisy_relation_facts": 0.2966101694915254
+ },
+ "5": {
+  "holdout_default": 0.5270229876882441,
+  "holdout": {
+   "QUARANTINE=1": 0.527581187169483,
+   "TREES=1": 0.5285780964413583
+  },
+  "truth": {
+   "default": {
+    "f05": 0.8782483156881618,
+    "precision": 1.0,
+    "recall": 0.5906148867313916,
+    "derived_new": 730,
+    "wrong": 0
+   },
+   "QUARANTINE=1": {
+    "f05": 0.9075797872340425,
+    "precision": 1.0,
+    "recall": 0.662621359223301,
+    "derived_new": 819,
+    "wrong": 0
+   },
+   "TREES=1": {
+    "f05": 0.9382518043303929,
+    "precision": 0.997867803837953,
+    "recall": 0.7572815533980582,
+    "derived_new": 938,
+    "wrong": 2
+   }
+  },
+  "corrupted_share_of_noisy_relation_facts": 0.2923076923076923
+ }
+}

@@ -6,7 +6,8 @@ from .model import Category, Conflict, Fact, Prediction, Relation, Rule
 _STATUS = "stated|current|inferred|historical|corrected|superseded|withdrawn"
 _ASK = re.compile(rf"^  (?P<fact>\S.*?)\s+(?P<status>{_STATUS})\b(?P<rest>.*)$")
 _FLAGS = [("STALE", "stale"), ("SOURCES DISAGREE", "sources_disagree"), ("UNCERTAIN", "uncertain"),
-          ("CONTRADICTED", "contradicted"), ("CURRENT UNKNOWN", "current_unknown")]
+          ("CONTRADICTED", "contradicted"), ("CURRENT UNKNOWN", "current_unknown"),
+          ("OUTVOTED", "outvoted"), ("QUARANTINED", "quarantined")]
 _TIER = re.compile(r"\[(law|tendency)\]")
 _SCORE = re.compile(r"\(score ([0-9.]+)\)|score=([0-9.]+)")
 _BECAUSE = re.compile(r"because (.+?)\s+\[rule: (.+?\))\](?:\s+\((.*)\))?\s*$")
@@ -81,6 +82,25 @@ _RULE = re.compile(r"^\s+(ACCEPT|reject) (.+?)\s+n=(\d+) k=(\d+) rate=([0-9.]+) 
                    r"(?: \| where answer known: (\d+), agree=([0-9.]+))?(.*)$")
 
 
+_PREMISE = re.compile(r"\[\? .+? \?\]\(")
+
+
+def rule_shape(text):
+    """(shape, premise count, condition) of a rule's text, e.g. 'TREE [? a ?](a,g) & ... => ...'."""
+    body, _, head = text.partition(" => ")
+    condition = head.split(" if ", 1)[1].strip() if " if " in head else ""
+    premises = len(_PREMISE.findall(body))
+    if body.startswith("TREE "):
+        shape = "tree"
+    elif premises <= 1:
+        shape = "inverse"
+    elif premises == 2:
+        shape = "chain"
+    else:
+        shape = "path"
+    return shape, premises, condition
+
+
 def relations(lines):
     out = []
     for l in lines:
@@ -98,10 +118,14 @@ def rules(lines):
         m = _RULE.match(l)
         if m:
             tier = re.search(r"tier=(\w+)", m.group(9) or "")
-            out.append(Rule(accepted=m.group(1) == "ACCEPT", text=m.group(2).strip(), n=int(m.group(3)), k=int(m.group(4)),
+            text = m.group(2).strip()
+            shape, premises, condition = rule_shape(text)
+            note = l.split(" | did not replicate ", 1)[1].strip() if " | did not replicate " in l else ""
+            out.append(Rule(accepted=m.group(1) == "ACCEPT", text=text, n=int(m.group(3)), k=int(m.group(4)),
                             rate=float(m.group(5)), lift=float(m.group(6)),
                             known=int(m.group(7)) if m.group(7) else None, agree=float(m.group(8)) if m.group(8) else None,
-                            tier=tier.group(1) if tier else "", raw=l.strip()))
+                            tier=tier.group(1) if tier else "", raw=l.strip(), shape=shape, premises=premises, condition=condition,
+                            replication=("did not replicate " + note) if note else ""))
     return out
 
 
@@ -134,7 +158,9 @@ def conflicts(lines):
     for l in lines:
         if l.startswith("CONFLICT\t"):
             p = l.split("\t", 3)
-            out.append(Conflict(subject=p[1], stated=p[2], detail=p[3] if len(p) > 3 else "", raw=l))
+            d = p[3] if len(p) > 3 else ""
+            kind = "quarantined" if "QUARANTINED" in d else "outvoted" if "OUTVOTED" in d else "value" if d.startswith("stated: ") else "other"
+            out.append(Conflict(subject=p[1], stated=p[2], detail=d, raw=l, kind=kind))
     return out
 
 
@@ -144,4 +170,26 @@ def metrics(lines):
         if ":" in l and not l.startswith("---"):
             k, v = l.split(":", 1)
             out[k.strip().lower().replace(" ", "_").replace("(", "").replace(")", "")] = v.strip()
+    return out
+
+
+_CFG = re.compile(r"^\[CONFIG\] (\S+)\s+(\S+)\s+\(default (\S+)\)\s+(\S+)\s+(EXPERIMENTAL )?(.*)$")
+
+
+def config(lines):
+    out = {}
+    for l in lines:
+        m = _CFG.match(l)
+        if m:
+            out[m.group(1)] = {"value": float(m.group(2)), "default": float(m.group(3)), "layer": m.group(4),
+                               "experimental": bool(m.group(5)), "help": m.group(6).strip()}
+    return out
+
+
+def chains(lines):
+    out = []
+    for l in lines:
+        if l.startswith("CHAIN\t"):
+            p = l.split("\t")
+            out.append({"fact": p[1], "round": int(p[2].split("=")[1]), "tendency_steps": int(p[3].split("=")[1])})
     return out

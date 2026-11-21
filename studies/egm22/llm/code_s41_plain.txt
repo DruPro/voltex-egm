@@ -1,0 +1,726 @@
+# Evidence: facts, one per line, in the order they were received.
+timodo is defined in satimod
+timodo calls mokavo
+timodo calls vobelo
+hemoti is defined in fibemod
+hemoti calls beheka
+hemoti calls nekaze
+hemoti depends on jogumod
+hemoti depends on sakimod
+josavo is defined in fibemod
+josavo calls hesamo
+josavo calls raloki
+tineti is defined in nunumod
+tineti calls henegu
+tineti depends on gufimod
+jokika is defined in sakimod
+jokika calls rafiki
+jokika depends on rakimod
+nekaze is defined in jogumod
+nekaze calls kivomi
+fipagu is defined in gufimod
+fipagu calls betiru
+fipagu calls kakize
+rasanu is defined in sakimod
+rasanu calls kahevo
+rasanu calls nupalo
+rasanu calls vokamo
+nejoze is defined in jonumod
+nejoze calls fisanu
+nejoze calls josajo
+nejoze calls vojone
+lonefi is defined in kibemod
+lonefi calls betiru
+kadofi is defined in votimod
+kadofi calls pagunu
+hemifi is defined in gufimod
+hemifi calls jotimo
+hemifi calls misavo
+hemifi calls rukafi
+mihera is defined in nunumod
+mihera calls nevosa
+mihera calls tibesa
+mihera calls vojoze
+kakize is defined in gumimod
+kakize calls timimi
+raloki is defined in gufimod
+raloki calls kalomo
+raloki calls mibegu
+tihera is defined in fibemod
+tihera calls titize
+tihera depends on nunumod
+titigu is defined in votimod
+titigu calls nukijo
+titigu calls raminu
+titigu depends on gufimod
+titigu depends on kibemod
+heguki is defined in gumimod
+heguki calls hemifi
+heguki calls kahevo
+heguki depends on gufimod
+heguki depends on rakimod
+bezepa is defined in satimod
+bezepa calls midodo
+nedopa is defined in nunumod
+nedopa calls dobera
+nedopa calls firafi
+nedopa depends on jonumod
+nedopa depends on votimod
+kamine is defined in satimod
+kamine calls rafiki
+kamine calls rufibe
+kamine calls sazejo
+kahevo is defined in rakimod
+kahevo calls nekagu
+kahevo calls voraki
+nudosa is defined in rakimod
+nudosa calls midodo
+nudosa calls vobelo
+nudosa depends on jonumod
+nudosa depends on satimod
+joloki is defined in gufimod
+joloki calls josajo
+raminu is defined in kibemod
+raminu calls hesamo
+raminu calls kamine
+raminu calls ravoka
+raminu depends on jonumod
+raminu depends on mipamod
+raminu depends on satimod
+dovoki is defined in sakimod
+dovoki calls doruti
+dovoki calls josavo
+nujoki is defined in jogumod
+nujoki calls nekagu
+nujoki depends on kibemod
+pakido is defined in nunumod
+pakido calls tigulo
+pakido depends on kibemod
+hesabe is defined in gufimod
+hesabe calls misavo
+hesabe calls vozebe
+hesabe depends on satimod
+hesabe depends on votimod
+nutiti is defined in fibemod
+nutiti calls lomimo
+nutiti calls motigu
+nutiti calls ralosa
+kalomo is defined in gumimod
+kalomo calls kihenu
+kalomo calls mihera
+kalomo calls vorajo
+samofi is defined in fibemod
+samofi calls tipati
+dofipa is defined in fibemod
+dofipa calls kipami
+dofipa depends on nunumod
+timimi is defined in nunumod
+timimi calls kahepa
+timimi calls moloti
+timimi calls razesa
+timimi depends on gufimod
+timimi depends on jogumod
+timimi depends on kibemod
+pamilo is defined in gufimod
+pamilo calls kihenu
+pamilo calls nupalo
+pamilo calls ratido
+votiki is defined in kibemod
+votiki calls nukize
+votiki calls pakido
+votiki depends on nunumod
+votiki depends on satimod
+rudohe is defined in gumimod
+rudohe calls jofijo
+gujovo is defined in fibemod
+gujovo calls pakido
+gujovo depends on nunumod
+herara is defined in fibemod
+herara calls dotibe
+herara calls jofijo
+zemohe is defined in jogumod
+zemohe calls dodomo
+zemohe calls dovoki
+voraki is defined in fibemod
+voraki calls firafi
+voraki calls losajo
+momijo is defined in jogumod
+momijo calls doragu
+momijo calls ruraru
+samoti is defined in mipamod
+samoti calls rufibe
+tisalo is defined in gumimod
+tisalo calls beheka
+tisalo depends on sakimod
+losajo is defined in kibemod
+losajo calls jotihe
+losajo calls timodo
+losajo depends on gufimod
+losajo depends on satimod
+nulovo is defined in fibemod
+nulovo calls rudohe
+nulovo calls sazesa
+nulovo calls tihera
+nulovo depends on fibemod
+nulovo depends on gumimod
+parati is defined in satimod
+parati calls hemifi
+parati calls raloki
+vozebe is defined in votimod
+vozebe calls jodora
+vozebe calls jojodo
+vosajo is defined in fibemod
+vosajo calls kivomo
+vosajo calls motigu
+vosajo calls timimi
+zekasa is defined in gumimod
+zekasa calls vojojo
+mozejo is defined in gumimod
+mozejo calls jotimo
+mozejo calls milofi
+mozejo calls vomoka
+mozejo depends on fibemod
+mozejo depends on nunumod
+mozejo depends on sakimod
+milora is defined in jonumod
+milora calls vokamo
+milora calls vomoka
+fikaka is defined in nunumod
+fikaka calls kamine
+fikaka calls mofijo
+fikaka calls nupalo
+fikaka depends on jogumod
+fikaka depends on jonumod
+fikaka depends on satimod
+voheka is defined in jogumod
+voheka calls gujovo
+voheka calls nudosa
+voheka calls pasara
+kalosa is defined in nunumod
+kalosa calls rukafi
+kalosa depends on jogumod
+kativo is defined in nunumod
+kativo calls heguki
+kativo calls nekaze
+kativo calls tisalo
+kativo depends on gumimod
+kativo depends on jogumod
+kivomo is defined in sakimod
+kivomo calls henegu
+kivomo calls josajo
+kivomo calls sazesa
+pagunu is defined in mipamod
+pagunu calls joloki
+nupalo is defined in jogumod
+nupalo calls benuka
+nupalo calls johera
+nupalo calls kiruti
+nupalo depends on rakimod
+nupalo depends on sakimod
+dobera is defined in jonumod
+dobera calls gumiti
+dobera calls momijo
+motigu is defined in gumimod
+motigu calls jojodo
+motigu calls josajo
+kipami is defined in nunumod
+kipami calls morube
+gutiti is defined in gufimod
+gutiti calls ravoka
+gutiti calls rudohe
+ruvojo is defined in sakimod
+ruvojo calls herara
+ruvojo calls heruvo
+ruvojo calls vobelo
+ruvojo depends on fibemod
+ruvojo depends on jonumod
+ruvojo depends on votimod
+sazesa is defined in gumimod
+sazesa calls joloki
+sazesa calls sazejo
+tipati is defined in kibemod
+tipati calls gujovo
+tipati calls razevo
+tipati calls rusaru
+tipati depends on fibemod
+tipati depends on jogumod
+tipati depends on votimod
+rafiki is defined in rakimod
+rafiki calls kativo
+rafiki depends on nunumod
+jodora is defined in jonumod
+jodora calls kihenu
+jodora calls kivomi
+jodora calls voraki
+razevo is defined in jogumod
+razevo calls gujovo
+razevo calls hemoti
+razevo depends on fibemod
+rukafi is defined in jogumod
+rukafi calls kakine
+rukafi calls ratido
+rukafi calls satifi
+vojone is defined in sakimod
+vojone calls jodora
+vojone calls vorajo
+dodomo is defined in satimod
+dodomo calls benuka
+dodomo calls bezepa
+dodomo calls momijo
+gumiti is defined in kibemod
+gumiti calls momogu
+momogu is defined in nunumod
+momogu calls fisami
+momogu calls hesamo
+momogu calls rusaru
+momogu depends on fibemod
+momogu depends on mipamod
+momogu depends on votimod
+joloru is defined in kibemod
+joloru calls tipati
+firafi is defined in votimod
+firafi calls rasanu
+firafi calls vojone
+firafi depends on sakimod
+vomoka is defined in sakimod
+vomoka calls hezeze
+vomoka calls milora
+beheka is defined in sakimod
+beheka calls kakine
+beheka calls pakido
+beheka calls tihera
+domopa is defined in mipamod
+domopa calls jonepa
+domopa calls vozebe
+misavo is defined in satimod
+misavo calls nedopa
+misavo depends on nunumod
+titize is defined in nunumod
+titize calls nejoze
+razesa is defined in kibemod
+razesa calls kibefi
+vobelo is defined in jonumod
+vobelo calls pamilo
+vobelo calls vojojo
+vobelo depends on gufimod
+vobelo depends on votimod
+heruvo is defined in votimod
+heruvo calls hezeze
+rusaru is defined in votimod
+rusaru calls henegu
+kakine is defined in mipamod
+kakine calls kalosa
+kakine calls sazejo
+kakine calls tisalo
+ruraru is defined in fibemod
+ruraru calls momijo
+ruraru calls rafiki
+tigulo is defined in kibemod
+tigulo calls zemohe
+kahepa is defined in jogumod
+kahepa calls fikaka
+kahepa calls nukize
+kahepa calls rusaru
+pasara is defined in jonumod
+pasara calls jojodo
+pasara calls kahepa
+pasara calls losado
+pasara depends on fibemod
+pasara depends on jogumod
+pasara depends on sakimod
+vojoze is defined in sakimod
+vojoze calls jonepa
+vojoze calls kivomi
+fineze is defined in satimod
+fineze calls nedopa
+fineze depends on nunumod
+nukijo is defined in gufimod
+nukijo calls kadofi
+nukijo calls moloti
+nukijo calls vokamo
+jotimo is defined in fibemod
+jotimo calls jotihe
+jotimo calls tihera
+jotimo depends on fibemod
+jotimo depends on gufimod
+vopami is defined in kibemod
+vopami calls midodo
+vopami calls pamilo
+vopami calls vozebe
+ravoka is defined in jonumod
+ravoka calls dovoki
+ravoka calls kadofi
+ravoka calls zekine
+jotihe is defined in gufimod
+jotihe calls josajo
+jotihe calls satifi
+jotihe calls vojoze
+jotihe depends on jogumod
+jotihe depends on rakimod
+jotihe depends on sakimod
+mokavo is defined in gufimod
+mokavo calls votiki
+mokavo depends on kibemod
+lomimo is defined in jogumod
+lomimo calls samofi
+dozebe is defined in fibemod
+dozebe calls beheka
+dozebe calls hemoti
+johera is defined in sakimod
+johera calls bezepa
+johera calls kakine
+johera calls nedopa
+tibesa is defined in nunumod
+tibesa calls kivomi
+vojojo is defined in votimod
+vojojo calls hemoti
+vojojo calls losajo
+vojojo calls voheka
+vojojo depends on fibemod
+vojojo depends on jogumod
+vojojo depends on kibemod
+henegu is defined in gufimod
+henegu calls kivomi
+henegu depends on kibemod
+negusa is defined in mipamod
+negusa calls jokavo
+negusa calls jotimo
+zekine is defined in jonumod
+zekine calls dozebe
+zekine calls jofijo
+zekine calls rafiki
+doruti is defined in gumimod
+doruti calls zemohe
+fisami is defined in fibemod
+fisami calls heruvo
+fisami calls pasara
+fisami calls vokamo
+fisami depends on jonumod
+fisami depends on votimod
+pasaki is defined in nunumod
+pasaki calls firafi
+pasaki calls sajoru
+zegugu is defined in nunumod
+zegugu calls dofipa
+zegugu calls nutiti
+zegugu calls rusaru
+vorajo is defined in jonumod
+vorajo calls dovoki
+vorajo calls vosajo
+vorajo depends on fibemod
+vorajo depends on sakimod
+parara is defined in sakimod
+parara calls josajo
+parara calls losajo
+kimogu is defined in gumimod
+kimogu calls jotimo
+kimogu calls tisalo
+josajo is defined in rakimod
+josajo calls beheka
+josajo calls kakine
+josajo calls nevosa
+josajo depends on fibemod
+josajo depends on mipamod
+josajo depends on sakimod
+zerumo is defined in kibemod
+zerumo calls raloki
+zerumo calls zegugu
+zerumo depends on gufimod
+zerumo depends on nunumod
+hemogu is defined in jogumod
+hemogu calls jodora
+hemogu depends on jonumod
+kivomi is defined in kibemod
+kivomi calls satifi
+vokamo is defined in votimod
+vokamo calls fineze
+vokamo calls nudosa
+vokamo calls sazesa
+vokamo depends on gumimod
+vokamo depends on rakimod
+vokamo depends on satimod
+kibefi is defined in jogumod
+kibefi calls midodo
+kibefi calls sazejo
+kibefi calls votiki
+hezeze is defined in jonumod
+hezeze calls losado
+hezeze calls mihera
+hezeze calls satifi
+kirune is defined in nunumod
+kirune calls vopami
+kirune depends on kibemod
+nukize is defined in satimod
+nukize calls tigulo
+nukize depends on kibemod
+nevosa is defined in fibemod
+nevosa calls parati
+nevosa depends on satimod
+pavogu is defined in sakimod
+pavogu calls kimogu
+kiruti is defined in rakimod
+kiruti calls firafi
+kiruti calls rafiki
+kiruti calls samoti
+gumora is defined in jonumod
+gumora calls ravoka
+gumora calls vopami
+gumora calls voraki
+pajoki is defined in kibemod
+pajoki calls nevosa
+pajoki calls pavogu
+vopado is defined in nunumod
+vopado calls gumora
+vopado calls parati
+vopado depends on jonumod
+vopado depends on satimod
+ratido is defined in votimod
+ratido calls raloki
+ratido depends on gufimod
+satifi is defined in jogumod
+satifi calls gumora
+satifi calls samoti
+kihepa is defined in rakimod
+kihepa calls moloti
+hesamo is defined in mipamod
+hesamo calls fisanu
+hesamo depends on gumimod
+kaloka is defined in jonumod
+kaloka calls nedopa
+kaloka calls raminu
+kaloka calls zerumo
+kaloka depends on kibemod
+kaloka depends on nunumod
+nemoti is defined in rakimod
+nemoti calls bezepa
+nemoti calls jokavo
+jofijo is defined in satimod
+jofijo calls sazejo
+volodo is defined in kibemod
+volodo calls jokika
+volodo calls kipami
+volodo calls motigu
+volodo depends on gumimod
+volodo depends on nunumod
+volodo depends on sakimod
+dozenu is defined in sakimod
+dozenu calls kahevo
+benuka is defined in rakimod
+benuka calls lomimo
+benuka calls tisalo
+benuka calls vopado
+benuka depends on gumimod
+benuka depends on jogumod
+benuka depends on nunumod
+sazejo is defined in jonumod
+sazejo calls zegugu
+sazejo depends on nunumod
+kihenu is defined in jogumod
+kihenu calls fisanu
+ralosa is defined in mipamod
+ralosa calls lomimo
+ralosa calls negusa
+ralosa calls ruraru
+jonepa is defined in satimod
+jonepa calls kadofi
+jonepa calls rudohe
+jonepa calls sazejo
+nekagu is defined in kibemod
+nekagu calls dodomo
+mofijo is defined in jonumod
+mofijo calls jofijo
+dotibe is defined in jogumod
+dotibe calls bezepa
+dotibe calls gumiti
+dotibe calls moloti
+fisanu is defined in gumimod
+fisanu calls hemoti
+fisanu calls kalomo
+rufibe is defined in jonumod
+rufibe calls dodomo
+rufibe calls johera
+losado is defined in sakimod
+losado calls joloru
+losado calls samofi
+losado calls voheka
+milofi is defined in nunumod
+milofi calls ruvojo
+jokavo is defined in jogumod
+jokavo calls fipagu
+jokavo calls vojone
+jokavo depends on gufimod
+jokavo depends on sakimod
+sajoru is defined in jonumod
+sajoru calls jojodo
+mibegu is defined in satimod
+mibegu calls parara
+midodo is defined in satimod
+midodo calls heruvo
+midodo calls kimogu
+midodo calls raminu
+midodo depends on gumimod
+midodo depends on kibemod
+midodo depends on votimod
+moloti is defined in gufimod
+moloti calls ravoka
+moloti calls sajoru
+moloti calls titize
+morube is defined in gufimod
+morube calls betiru
+morube calls johera
+morube calls mofijo
+jojodo is defined in fibemod
+jojodo calls kalomo
+jojodo calls motigu
+jojodo calls satifi
+jojodo depends on gumimod
+jojodo depends on jogumod
+joruze is defined in gumimod
+joruze calls benuka
+joruze calls bezepa
+joruze calls voheka
+betiru is defined in mipamod
+betiru calls hesabe
+betiru calls mibegu
+betiru depends on gufimod
+betiru depends on satimod
+sakisa is defined in sakimod
+sakisa calls nejoze
+doragu is defined in nunumod
+doragu calls kirune
+doragu calls mozejo
+doragu calls nulovo
+sazesa is defined in fibemod
+sazesa calls joloki
+sazesa calls sazejo
+losajo is defined in jonumod
+losajo calls jotihe
+losajo calls timodo
+losajo depends on gufimod
+losajo depends on satimod
+fisami is defined in fibemod
+fisami calls heruvo
+fisami calls pasara
+fisami depends on jonumod
+fisami depends on votimod
+pamilo is defined in gufimod
+pamilo calls nupalo
+pamilo calls ratido
+kaloka is defined in jonumod
+kaloka calls nedopa
+kaloka calls zerumo
+kaloka depends on kibemod
+kaloka depends on nunumod
+vojone is defined in sakimod
+vojone calls vorajo
+kamine is defined in satimod
+kamine calls rafiki
+kamine calls sazejo
+jokavo is defined in jogumod
+jokavo calls vojone
+jokavo depends on sakimod
+pasaki is defined in nunumod
+pasaki calls firafi
+voheka is defined in jogumod
+voheka calls gujovo
+voheka calls nudosa
+timimi is defined in nunumod
+timimi calls kahepa
+timimi calls moloti
+timimi depends on gufimod
+timimi depends on jogumod
+jotimo is defined in fibemod
+jotimo calls tihera
+jotimo depends on fibemod
+ruhefi is defined in jovomod
+midora is defined in jovomod
+gunulo is defined in jovomod
+kafine is defined in jovomod
+numohe is defined in jovomod
+kirune is defined in rakimod
+kirune calls vopami
+kirune depends on kibemod
+hemoti is defined in jonumod
+hemoti calls beheka
+hemoti calls nekaze
+hemoti depends on jogumod
+hemoti depends on sakimod
+fikaka is defined in gumimod
+fikaka calls kamine
+fikaka calls mofijo
+fikaka calls nupalo
+fikaka depends on jogumod
+fikaka depends on jonumod
+fikaka depends on satimod
+rukafi is defined in gufimod
+rukafi calls kakine
+rukafi calls ratido
+rukafi calls satifi
+heruvo is defined in gufimod
+heruvo calls hezeze
+kalosa is defined in nunumod
+kalosa calls ruhefi
+kalosa calls rukafi
+kalosa depends on jogumod
+kalosa depends on jovomod
+nujoki is defined in jogumod
+nujoki calls midora
+nujoki calls nekagu
+nujoki depends on jovomod
+nujoki depends on kibemod
+hemifi is defined in gufimod
+hemifi calls gunulo
+hemifi calls jotimo
+hemifi calls misavo
+hemifi calls rukafi
+negusa is defined in mipamod
+negusa calls jokavo
+negusa calls jotimo
+negusa calls kafine
+losado is defined in sakimod
+losado calls joloru
+losado calls numohe
+losado calls samofi
+losado calls voheka
+kirune is defined in rakimod
+kirune calls vopami
+kirune depends on kibemod
+hemoti is defined in jonumod
+hemoti calls beheka
+hemoti calls nekaze
+hemoti depends on jogumod
+hemoti depends on sakimod
+fikaka is defined in gumimod
+fikaka calls kamine
+fikaka calls mofijo
+fikaka calls nupalo
+fikaka depends on jogumod
+fikaka depends on jonumod
+fikaka depends on satimod
+rukafi is defined in gufimod
+rukafi calls kakine
+rukafi calls ratido
+rukafi calls satifi
+heruvo is defined in gufimod
+heruvo calls hezeze
+kirune is defined in mipamod
+kirune calls vopami
+kirune depends on kibemod
+hemoti is defined in jogumod
+hemoti calls beheka
+hemoti calls nekaze
+hemoti depends on jogumod
+hemoti depends on sakimod
+fikaka is defined in gufimod
+fikaka calls kamine
+fikaka calls mofijo
+fikaka calls nupalo
+fikaka depends on jogumod
+fikaka depends on jonumod
+fikaka depends on satimod
+rukafi is defined in satimod
+rukafi calls kakine
+rukafi calls ratido
+rukafi calls satifi
+heruvo is defined in jogumod
+heruvo calls hezeze

@@ -1,0 +1,306 @@
+# Evidence: observations in the order they were received. Each line is one observation:
+#   [source=S record=K time=T revision=R scope] fact; fact; ...
+# source: who reported it. record: the record (entity) the observation describes. time: the time the observation describes.
+# revision: a higher revision for the same source, record and time replaces the earlier revision for that time (a correction).
+# scope: 'snapshot' = the complete set of facts the source holds for that record at that time; 'partial' = additional facts only.
+[source=hr record=bedora time=1 revision=1 snapshot] bedora works in kavodept; bedora assigned to nesaproj; bedora assigned to nuraproj; bedora belongs to tijodiv
+[source=hr record=befika time=1 revision=1 snapshot] befika works in timodept; befika assigned to gumoproj; befika assigned to gupaproj; befika assigned to nuraproj
+[source=hr record=beheproj time=1 revision=1 snapshot] beheproj serves zekico
+[source=hr record=bekido time=1 revision=1 snapshot] bekido works in tipadept; bekido assigned to lotiproj; bekido belongs to rubediv
+[source=hr record=bemopa time=1 revision=1 snapshot] bemopa works in kihedept; bemopa assigned to bemoproj; bemopa belongs to rubediv
+[source=hr record=bemoproj time=1 revision=1 snapshot] bemoproj serves pamico
+[source=hr record=bemovo time=1 revision=1 snapshot] bemovo works in kavodept; bemovo assigned to nunuproj; bemovo reports to nekihe
+[source=hr record=benemi time=1 revision=1 snapshot] benemi works in vorudept; benemi assigned to fisaproj; benemi assigned to jonuproj; benemi assigned to kizeproj; benemi reports to kapafi
+[source=hr record=beneze time=1 revision=1 snapshot] beneze works in domodept; beneze assigned to jonuproj; beneze assigned to nunuproj; beneze assigned to rabeproj; beneze belongs to tijodiv
+[source=hr record=benugu time=1 revision=1 snapshot] benugu works in sagudept; benugu assigned to ruzeproj
+[source=hr record=benupa time=1 revision=1 snapshot] benupa works in domodept; benupa assigned to lozeproj; benupa assigned to nesaproj
+[source=hr record=bepafi time=1 revision=1 snapshot] bepafi works in hezedept; bepafi assigned to heheproj; bepafi assigned to raneproj; bepafi assigned to rusaproj; bepafi reports to bemojo
+[source=hr record=bepahe time=1 revision=1 snapshot] bepahe works in samidept; bepahe assigned to heneproj; bepahe assigned to loloproj; bepahe belongs to ralodiv
+[source=hr record=berami time=1 revision=1 snapshot] berami works in hedodept; berami assigned to loloproj; berami assigned to moloproj; berami assigned to tijoproj
+[source=hr record=berane time=1 revision=1 snapshot] berane works in vorudept; berane assigned to rusaproj; berane reports to kapafi; berane belongs to tijodiv
+[source=hr record=dobenu time=1 revision=1 snapshot] dobenu works in hezedept; dobenu assigned to rabeproj; dobenu assigned to tifiproj
+[source=hr record=dofigu time=1 revision=1 snapshot] dofigu works in hedodept; dofigu assigned to kizeproj; dofigu assigned to raneproj; dofigu assigned to tifiproj
+[source=hr record=dofize time=1 revision=1 snapshot] dofize works in tipadept; dofize assigned to bemoproj; dofize assigned to kizeproj; dofize reports to kafilo
+[source=hr record=doguki time=1 revision=1 snapshot] doguki works in hedodept; doguki assigned to rusaproj; doguki reports to sakafi; doguki belongs to ralodiv
+[source=hr record=dojohe time=1 revision=1 snapshot] dojohe works in vorudept; dojohe assigned to heneproj; dojohe assigned to nesaproj; dojohe reports to kapafi
+[source=hr record=dokiti time=1 revision=1 snapshot] dokiti works in samidept; dokiti assigned to lomiproj; dokiti assigned to lozeproj; dokiti assigned to rabeproj; dokiti belongs to ralodiv
+[source=hr record=domodept time=1 revision=1 snapshot] domodept is managed by kitira; domodept is part of tijodiv
+[source=hr record=dosafi time=1 revision=1 snapshot] dosafi works in monudept; dosafi assigned to kizeproj
+[source=hr record=dotidept time=1 revision=1 snapshot] dotidept is managed by rahebe; dotidept is part of ralodiv
+[source=hr record=fidoze time=1 revision=1 snapshot] fidoze works in monudept; fidoze assigned to kiguproj; fidoze assigned to loloproj; fidoze assigned to rusaproj; fidoze reports to zetiru; fidoze belongs to tijodiv
+[source=hr record=fijobe time=1 revision=1 snapshot] fijobe works in kavodept; fijobe assigned to heheproj; fijobe assigned to kiguproj; fijobe assigned to loloproj
+[source=hr record=finefi time=1 revision=1 snapshot] finefi works in vorudept; finefi assigned to moloproj; finefi reports to kapafi; finefi belongs to tijodiv
+[source=hr record=finelo time=1 revision=1 snapshot] finelo works in rurudept; finelo assigned to kizeproj; finelo assigned to nuraproj
+[source=hr record=finemo time=1 revision=1 snapshot] finemo works in sagudept; finemo assigned to rabeproj; finemo belongs to rubediv
+[source=hr record=fipara time=1 revision=1 snapshot] fipara works in pasadept; fipara assigned to hekaproj; fipara reports to samomo
+[source=hr record=firasa time=1 revision=1 snapshot] firasa works in hezedept; firasa assigned to lotiproj; firasa assigned to moloproj; firasa reports to bemojo; firasa belongs to tijodiv
+[source=hr record=fisaproj time=1 revision=1 snapshot] fisaproj serves pamico
+[source=hr record=fivolo time=1 revision=1 snapshot] fivolo works in sagudept; fivolo assigned to hekaproj
+[source=hr record=fivoru time=1 revision=1 snapshot] fivoru works in samidept; fivoru assigned to beheproj; fivoru assigned to heneproj; fivoru reports to nutilo; fivoru belongs to ralodiv
+[source=hr record=fivoze time=1 revision=1 snapshot] fivoze works in rurudept; fivoze assigned to fisaproj; fivoze assigned to jonuproj; fivoze assigned to lotiproj
+[source=hr record=fizepa time=1 revision=1 snapshot] fizepa works in hezedept; fizepa assigned to gumoproj; fizepa assigned to kiguproj; fizepa assigned to nunuproj
+[source=hr record=gudoti time=1 revision=1 snapshot] gudoti works in tipadept; gudoti assigned to beheproj; gudoti belongs to rubediv
+[source=hr record=gugudo time=1 revision=1 snapshot] gugudo works in dotidept; gugudo assigned to moloproj; gugudo assigned to tijoproj; gugudo belongs to ralodiv
+[source=hr record=guhehe time=1 revision=1 snapshot] guhehe works in tipadept; guhehe assigned to rakiproj; guhehe reports to kafilo; guhehe belongs to rubediv
+[source=hr record=gukilo time=1 revision=1 snapshot] gukilo works in kavodept; gukilo assigned to gumoproj; gukilo assigned to gupaproj
+[source=hr record=gukimo time=1 revision=1 snapshot] gukimo works in samidept; gukimo assigned to kizeproj; gukimo belongs to ralodiv
+[source=hr record=gulohe time=1 revision=1 snapshot] gulohe works in sagudept; gulohe assigned to kiguproj; gulohe assigned to nunuproj; gulohe assigned to ruzeproj
+[source=hr record=gulolo time=1 revision=1 snapshot] gulolo works in kihedept; gulolo assigned to tijoproj; gulolo reports to nenefi
+[source=hr record=gumigu time=1 revision=1 snapshot] gumigu works in sagudept; gumigu assigned to paguproj; gumigu reports to jomodo; gumigu belongs to rubediv
+[source=hr record=gumoproj time=1 revision=1 snapshot] gumoproj serves pamico
+[source=hr record=gunuti time=1 revision=1 snapshot] gunuti works in ralodept; gunuti assigned to bemoproj; gunuti assigned to heneproj; gunuti assigned to lomiproj; gunuti reports to nepaze
+[source=hr record=gupahe time=1 revision=1 snapshot] gupahe works in tipadept; gupahe assigned to kinuproj
+[source=hr record=gupamo time=1 revision=1 snapshot] gupamo works in dotidept; gupamo assigned to beheproj; gupamo assigned to jonuproj; gupamo assigned to rabeproj; gupamo reports to rahebe
+[source=hr record=gupaproj time=1 revision=1 snapshot] gupaproj serves ruloco
+[source=hr record=gurumi time=1 revision=1 snapshot] gurumi works in sagudept; gurumi assigned to fisaproj
+[source=hr record=gusabe time=1 revision=1 snapshot] gusabe works in sagudept; gusabe assigned to kiguproj; gusabe assigned to lomiproj; gusabe assigned to rusaproj
+[source=hr record=hedodept time=1 revision=1 snapshot] hedodept is managed by sakafi; hedodept is part of ralodiv
+[source=hr record=hedofi time=1 revision=1 snapshot] hedofi works in vorudept; hedofi assigned to heheproj; hedofi assigned to kizeproj; hedofi assigned to rabeproj; hedofi reports to kapafi
+[source=hr record=hefine time=1 revision=1 snapshot] hefine works in dotidept; hefine assigned to hekaproj; hefine assigned to paguproj; hefine assigned to ruzeproj; hefine reports to rahebe
+[source=hr record=heheproj time=1 revision=1 snapshot] heheproj serves kiruco
+[source=hr record=hekami time=1 revision=1 snapshot] hekami works in domodept; hekami assigned to moloproj; hekami assigned to nedoproj; hekami reports to kitira
+[source=hr record=hekaproj time=1 revision=1 snapshot] hekaproj serves zekico
+[source=hr record=hekibe time=1 revision=1 snapshot] hekibe works in vorudept; hekibe assigned to kiguproj; hekibe assigned to moloproj; hekibe assigned to rakiproj
+[source=hr record=hekira time=1 revision=1 snapshot] hekira works in hezedept; hekira assigned to beheproj; hekira assigned to kiguproj; hekira assigned to lozeproj
+[source=hr record=helobe time=1 revision=1 snapshot] helobe works in hedodept; helobe assigned to beheproj; helobe assigned to jonuproj; helobe assigned to lozeproj
+[source=hr record=hemilo time=1 revision=1 snapshot] hemilo works in timodept; hemilo assigned to loloproj; hemilo assigned to lozeproj; hemilo reports to firufi
+[source=hr record=hemoti time=1 revision=1 snapshot] hemoti works in rurudept; hemoti assigned to rabeproj; hemoti belongs to ralodiv
+[source=hr record=heneproj time=1 revision=1 snapshot] heneproj serves ruloco
+[source=hr record=henumo time=1 revision=1 snapshot] henumo works in rurudept; henumo assigned to fisaproj; henumo assigned to rusaproj; henumo reports to bebeze; henumo belongs to ralodiv
+[source=hr record=henura time=1 revision=1 snapshot] henura works in hedodept; henura assigned to beheproj; henura assigned to lomiproj; henura reports to sakafi; henura belongs to ralodiv
+[source=hr record=henuru time=1 revision=1 snapshot] henuru works in kihedept; henuru assigned to gupaproj; henuru assigned to lozeproj; henuru belongs to rubediv
+[source=hr record=hepagu time=1 revision=1 snapshot] hepagu works in vorudept; hepagu assigned to heneproj; hepagu assigned to nesaproj; hepagu assigned to rusaproj
+[source=hr record=hesagu time=1 revision=1 snapshot] hesagu works in pasadept; hesagu assigned to fisaproj; hesagu assigned to loloproj; hesagu assigned to rakiproj
+[source=hr record=hesaki time=1 revision=1 snapshot] hesaki works in dotidept; hesaki assigned to heneproj; hesaki assigned to nuraproj; hesaki assigned to raneproj; hesaki reports to rahebe; hesaki belongs to ralodiv
+[source=hr record=hezedept time=1 revision=1 snapshot] hezedept is managed by bemojo; hezedept is part of tijodiv
+[source=hr record=hezene time=1 revision=1 snapshot] hezene works in hezedept; hezene assigned to hekaproj; hezene assigned to ruzeproj; hezene assigned to tifiproj
+[source=hr record=johebe time=1 revision=1 snapshot] johebe works in ralodept; johebe assigned to fisaproj; johebe assigned to rakiproj; johebe assigned to rufiproj
+[source=hr record=jojolo time=1 revision=1 snapshot] jojolo works in vorudept; jojolo assigned to bemoproj; jojolo assigned to kiguproj; jojolo assigned to tijoproj; jojolo reports to kapafi
+[source=hr record=jomibe time=1 revision=1 snapshot] jomibe works in samidept; jomibe assigned to kiguproj; jomibe belongs to ralodiv
+[source=hr record=jomomi time=1 revision=1 snapshot] jomomi works in monudept; jomomi assigned to rabeproj; jomomi belongs to tijodiv
+[source=hr record=jonumo time=1 revision=1 snapshot] jonumo works in kihedept; jonumo assigned to beheproj
+[source=hr record=jonuproj time=1 revision=1 snapshot] jonuproj serves nukaco
+[source=hr record=jonuvo time=1 revision=1 snapshot] jonuvo works in vorudept; jonuvo assigned to lomiproj; jonuvo assigned to nedoproj; jonuvo assigned to nuraproj
+[source=hr record=jorara time=1 revision=1 snapshot] jorara works in domodept; jorara assigned to bemoproj; jorara assigned to heneproj; jorara assigned to jonuproj; jorara reports to kitira
+[source=hr record=jovodo time=1 revision=1 snapshot] jovodo works in rurudept; jovodo assigned to kiguproj; jovodo reports to bebeze; jovodo belongs to ralodiv
+[source=hr record=kabelo time=1 revision=1 snapshot] kabelo works in tipadept; kabelo assigned to bemoproj
+[source=hr record=kadoti time=1 revision=1 snapshot] kadoti works in hezedept; kadoti assigned to lomiproj; kadoti assigned to moloproj
+[source=hr record=kafifi time=1 revision=1 snapshot] kafifi works in samidept; kafifi assigned to kiguproj; kafifi reports to nutilo
+[source=hr record=kagugu time=1 revision=1 snapshot] kagugu works in sagudept; kagugu assigned to jonuproj; kagugu assigned to lotiproj
+[source=hr record=kahemi time=1 revision=1 snapshot] kahemi works in vorudept; kahemi assigned to lomiproj; kahemi assigned to rabeproj; kahemi reports to kapafi
+[source=hr record=kaloze time=1 revision=1 snapshot] kaloze works in tipadept; kaloze assigned to bemoproj; kaloze assigned to lozeproj; kaloze belongs to rubediv
+[source=hr record=kamolo time=1 revision=1 snapshot] kamolo works in pasadept; kamolo assigned to heheproj; kamolo assigned to paguproj; kamolo reports to samomo
+[source=hr record=kanevo time=1 revision=1 snapshot] kanevo works in hedodept; kanevo assigned to nuraproj; kanevo assigned to rabeproj; kanevo reports to sakafi
+[source=hr record=kanuki time=1 revision=1 snapshot] kanuki works in hedodept; kanuki assigned to jonuproj; kanuki assigned to nunuproj; kanuki assigned to rufiproj; kanuki reports to sakafi
+[source=hr record=karajo time=1 revision=1 snapshot] karajo works in vorudept; karajo assigned to heheproj; karajo assigned to nuraproj; karajo assigned to rabeproj
+[source=hr record=karupa time=1 revision=1 snapshot] karupa works in sagudept; karupa assigned to beheproj; karupa assigned to loloproj
+[source=hr record=katinu time=1 revision=1 snapshot] katinu works in kihedept; katinu assigned to heneproj; katinu assigned to kinuproj; katinu assigned to raneproj; katinu reports to nenefi
+[source=hr record=kavodept time=1 revision=1 snapshot] kavodept is managed by nekihe; kavodept is part of tijodiv
+[source=hr record=kazemo time=1 revision=1 snapshot] kazemo works in rurudept; kazemo assigned to gupaproj; kazemo assigned to paguproj; kazemo reports to bebeze
+[source=hr record=kibefi time=1 revision=1 snapshot] kibefi works in domodept; kibefi assigned to gumoproj; kibefi assigned to heheproj; kibefi assigned to tifiproj; kibefi belongs to tijodiv
+[source=hr record=kibepa time=1 revision=1 snapshot] kibepa works in rurudept; kibepa assigned to bemoproj
+[source=hr record=kifijo time=1 revision=1 snapshot] kifijo works in domodept; kifijo assigned to gumoproj
+[source=hr record=kifize time=1 revision=1 snapshot] kifize works in hedodept; kifize assigned to paguproj
+[source=hr record=kiguproj time=1 revision=1 snapshot] kiguproj serves kiraco
+[source=hr record=kihedept time=1 revision=1 snapshot] kihedept is managed by nenefi; kihedept is part of rubediv
+[source=hr record=kihelo time=1 revision=1 snapshot] kihelo works in kavodept; kihelo assigned to ruzeproj; kihelo reports to nekihe
+[source=hr record=kikika time=1 revision=1 snapshot] kikika works in hedodept; kikika assigned to nesaproj
+[source=hr record=kikipa time=1 revision=1 snapshot] kikipa works in vorudept; kikipa assigned to paguproj; kikipa assigned to rakiproj; kikipa reports to kapafi
+[source=hr record=kiloki time=1 revision=1 snapshot] kiloki works in monudept; kiloki assigned to fisaproj; kiloki assigned to tijoproj; kiloki reports to zetiru
+[source=hr record=kinene time=1 revision=1 snapshot] kinene works in timodept; kinene assigned to gumoproj; kinene reports to firufi
+[source=hr record=kinuproj time=1 revision=1 snapshot] kinuproj serves kiruco
+[source=hr record=kiragu time=1 revision=1 snapshot] kiragu works in hedodept; kiragu assigned to hekaproj; kiragu assigned to kinuproj; kiragu reports to sakafi; kiragu belongs to ralodiv
+[source=hr record=kirulo time=1 revision=1 snapshot] kirulo works in samidept; kirulo assigned to bemoproj; kirulo reports to nutilo; kirulo belongs to ralodiv
+[source=hr record=kivoze time=1 revision=1 snapshot] kivoze works in tipadept; kivoze assigned to nesaproj; kivoze assigned to nuraproj; kivoze assigned to tifiproj; kivoze reports to kafilo
+[source=hr record=kizeproj time=1 revision=1 snapshot] kizeproj serves kiruco
+[source=hr record=lobeki time=1 revision=1 snapshot] lobeki works in ralodept; lobeki assigned to hekaproj; lobeki assigned to lotiproj; lobeki assigned to rabeproj; lobeki reports to nepaze
+[source=hr record=loheka time=1 revision=1 snapshot] loheka works in kavodept; loheka assigned to rusaproj; loheka belongs to tijodiv
+[source=hr record=loloproj time=1 revision=1 snapshot] loloproj serves gukaco
+[source=hr record=lomihe time=1 revision=1 snapshot] lomihe works in kihedept; lomihe assigned to bemoproj; lomihe assigned to lomiproj
+[source=hr record=lomiproj time=1 revision=1 snapshot] lomiproj serves zekico
+[source=hr record=lomohe time=1 revision=1 snapshot] lomohe works in ralodept; lomohe assigned to lozeproj
+[source=hr record=lomolo time=1 revision=1 snapshot] lomolo works in kihedept; lomolo assigned to nunuproj; lomolo reports to nenefi
+[source=hr record=loneru time=1 revision=1 snapshot] loneru works in domodept; loneru assigned to heheproj; loneru assigned to lotiproj; loneru assigned to nunuproj; loneru reports to kitira
+[source=hr record=lotiproj time=1 revision=1 snapshot] lotiproj serves gukaco
+[source=hr record=lozepa time=1 revision=1 snapshot] lozepa works in kavodept; lozepa assigned to kiguproj; lozepa assigned to lomiproj; lozepa assigned to nedoproj
+[source=hr record=lozeproj time=1 revision=1 snapshot] lozeproj serves ruloco
+[source=hr record=lozevo time=1 revision=1 snapshot] lozevo works in tipadept; lozevo assigned to raneproj; lozevo reports to kafilo
+[source=hr record=mibegu time=1 revision=1 snapshot] mibegu works in dotidept; mibegu assigned to kinuproj; mibegu assigned to rakiproj; mibegu assigned to ruzeproj; mibegu belongs to ralodiv
+[source=hr record=mibemi time=1 revision=1 snapshot] mibemi works in pasadept; mibemi assigned to kinuproj; mibemi assigned to loloproj; mibemi belongs to ralodiv
+[source=hr record=midolo time=1 revision=1 snapshot] midolo works in dotidept; midolo assigned to rufiproj; midolo assigned to tijoproj
+[source=hr record=midoti time=1 revision=1 snapshot] midoti works in vorudept; midoti assigned to raneproj
+[source=hr record=mifibe time=1 revision=1 snapshot] mifibe works in domodept; mifibe assigned to jonuproj; mifibe assigned to tijoproj; mifibe reports to kitira
+[source=hr record=migulo time=1 revision=1 snapshot] migulo works in domodept; migulo assigned to gumoproj; migulo assigned to heneproj; migulo reports to kitira
+[source=hr record=mihenu time=1 revision=1 snapshot] mihenu works in hezedept; mihenu assigned to heheproj; mihenu assigned to lozeproj; mihenu assigned to tijoproj; mihenu reports to bemojo
+[source=hr record=mihevo time=1 revision=1 snapshot] mihevo works in pasadept; mihevo assigned to heheproj; mihevo reports to samomo; mihevo belongs to ralodiv
+[source=hr record=mijofi time=1 revision=1 snapshot] mijofi works in hedodept; mijofi assigned to loloproj
+[source=hr record=miruka time=1 revision=1 snapshot] miruka works in tipadept; miruka assigned to lozeproj; miruka assigned to tijoproj; miruka belongs to rubediv
+[source=hr record=misara time=1 revision=1 snapshot] misara works in domodept; misara assigned to moloproj; misara reports to kitira; misara belongs to tijodiv
+[source=hr record=mizedo time=1 revision=1 snapshot] mizedo works in sagudept; mizedo assigned to hekaproj; mizedo assigned to nesaproj; mizedo assigned to rakiproj; mizedo belongs to rubediv
+[source=hr record=mizeru time=1 revision=1 snapshot] mizeru works in rurudept; mizeru assigned to rabeproj; mizeru assigned to ruzeproj
+[source=hr record=mizesa time=1 revision=1 snapshot] mizesa works in domodept; mizesa assigned to jonuproj; mizesa assigned to nesaproj
+[source=hr record=mokamo time=1 revision=1 snapshot] mokamo works in domodept; mokamo assigned to heheproj; mokamo reports to kitira
+[source=hr record=moloproj time=1 revision=1 snapshot] moloproj serves gukaco
+[source=hr record=monudept time=1 revision=1 snapshot] monudept is managed by zetiru; monudept is part of tijodiv
+[source=hr record=monugu time=1 revision=1 snapshot] monugu works in hedodept; monugu assigned to lomiproj
+[source=hr record=moranu time=1 revision=1 snapshot] moranu works in monudept; moranu assigned to ruzeproj; moranu reports to zetiru; moranu belongs to tijodiv
+[source=hr record=nebedo time=1 revision=1 snapshot] nebedo works in rurudept; nebedo assigned to kinuproj; nebedo assigned to nesaproj; nebedo reports to bebeze
+[source=hr record=nebeka time=1 revision=1 snapshot] nebeka works in hedodept; nebeka assigned to raneproj; nebeka reports to sakafi; nebeka belongs to ralodiv
+[source=hr record=nebene time=1 revision=1 snapshot] nebene works in ralodept; nebene assigned to bemoproj; nebene assigned to fisaproj; nebene assigned to gumoproj; nebene belongs to rubediv
+[source=hr record=nedoproj time=1 revision=1 snapshot] nedoproj serves kiruco
+[source=hr record=nemijo time=1 revision=1 snapshot] nemijo works in kihedept; nemijo assigned to nunuproj; nemijo reports to nenefi
+[source=hr record=nepafi time=1 revision=1 snapshot] nepafi works in kihedept; nepafi assigned to nunuproj; nepafi reports to nenefi
+[source=hr record=neragu time=1 revision=1 snapshot] neragu works in ralodept; neragu assigned to beheproj
+[source=hr record=neruki time=1 revision=1 snapshot] neruki works in tipadept; neruki assigned to fisaproj; neruki assigned to lozeproj; neruki assigned to paguproj; neruki reports to kafilo; neruki belongs to rubediv
+[source=hr record=nesaproj time=1 revision=1 snapshot] nesaproj serves nukaco
+[source=hr record=netilo time=1 revision=1 snapshot] netilo works in hezedept; netilo assigned to heneproj; netilo assigned to kiguproj; netilo reports to bemojo; netilo belongs to tijodiv
+[source=hr record=nezeru time=1 revision=1 snapshot] nezeru works in samidept; nezeru assigned to heheproj; nezeru assigned to nunuproj; nezeru reports to nutilo
+[source=hr record=nudovo time=1 revision=1 snapshot] nudovo works in hedodept; nudovo assigned to kinuproj; nudovo reports to sakafi
+[source=hr record=nuheki time=1 revision=1 snapshot] nuheki works in domodept; nuheki assigned to kizeproj
+[source=hr record=numinu time=1 revision=1 snapshot] numinu works in timodept; numinu assigned to tijoproj; numinu reports to firufi
+[source=hr record=numolo time=1 revision=1 snapshot] numolo works in tipadept; numolo assigned to beheproj; numolo assigned to raneproj; numolo assigned to rufiproj; numolo reports to kafilo; numolo belongs to rubediv
+[source=hr record=nunefi time=1 revision=1 snapshot] nunefi works in samidept; nunefi assigned to nesaproj; nunefi assigned to rabeproj
+[source=hr record=nunudo time=1 revision=1 snapshot] nunudo works in hedodept; nunudo assigned to rabeproj; nunudo assigned to tifiproj; nunudo belongs to ralodiv
+[source=hr record=nununu time=1 revision=1 snapshot] nununu works in timodept; nununu assigned to kiguproj; nununu reports to firufi; nununu belongs to rubediv
+[source=hr record=nunuproj time=1 revision=1 snapshot] nunuproj serves zekico
+[source=hr record=nupagu time=1 revision=1 snapshot] nupagu works in dotidept; nupagu assigned to fisaproj; nupagu assigned to lozeproj; nupagu assigned to rusaproj; nupagu reports to rahebe; nupagu belongs to ralodiv
+[source=hr record=nupahe time=1 revision=1 snapshot] nupahe works in domodept; nupahe assigned to gupaproj; nupahe assigned to kinuproj; nupahe reports to kitira; nupahe belongs to tijodiv
+[source=hr record=nuraproj time=1 revision=1 snapshot] nuraproj serves kiraco
+[source=hr record=nuraru time=1 revision=1 snapshot] nuraru works in pasadept; nuraru assigned to kizeproj; nuraru assigned to moloproj; nuraru assigned to paguproj
+[source=hr record=nusagu time=1 revision=1 snapshot] nusagu works in pasadept; nusagu assigned to loloproj; nusagu assigned to lotiproj; nusagu assigned to rabeproj
+[source=hr record=nuzejo time=1 revision=1 snapshot] nuzejo works in dotidept; nuzejo assigned to rabeproj; nuzejo assigned to rusaproj; nuzejo reports to rahebe; nuzejo belongs to ralodiv
+[source=hr record=padohe time=1 revision=1 snapshot] padohe works in domodept; padohe assigned to lomiproj; padohe assigned to tifiproj; padohe reports to kitira; padohe belongs to tijodiv
+[source=hr record=padora time=1 revision=1 snapshot] padora works in vorudept; padora assigned to fisaproj; padora assigned to hekaproj; padora assigned to ruzeproj
+[source=hr record=pafifi time=1 revision=1 snapshot] pafifi works in hedodept; pafifi assigned to heneproj; pafifi assigned to nedoproj; pafifi assigned to tifiproj
+[source=hr record=paguproj time=1 revision=1 snapshot] paguproj serves pamico
+[source=hr record=paguru time=1 revision=1 snapshot] paguru works in rurudept; paguru assigned to rakiproj; paguru reports to bebeze
+[source=hr record=paheki time=1 revision=1 snapshot] paheki works in tipadept; paheki assigned to kinuproj; paheki assigned to tijoproj
+[source=hr record=pajodo time=1 revision=1 snapshot] pajodo works in ralodept; pajodo assigned to rabeproj
+[source=hr record=pakize time=1 revision=1 snapshot] pakize works in kihedept; pakize assigned to lomiproj; pakize assigned to nunuproj; pakize assigned to rusaproj; pakize reports to nenefi
+[source=hr record=paloka time=1 revision=1 snapshot] paloka works in timodept; paloka assigned to lomiproj; paloka assigned to moloproj; paloka assigned to raneproj; paloka belongs to rubediv
+[source=hr record=pamibe time=1 revision=1 snapshot] pamibe works in vorudept; pamibe assigned to jonuproj; pamibe assigned to rabeproj; pamibe assigned to tifiproj; pamibe belongs to tijodiv
+[source=hr record=pamido time=1 revision=1 snapshot] pamido works in pasadept; pamido assigned to nuraproj
+[source=hr record=paminu time=1 revision=1 snapshot] paminu works in samidept; paminu assigned to gupaproj; paminu assigned to heheproj; paminu assigned to kinuproj; paminu reports to nutilo
+[source=hr record=panegu time=1 revision=1 snapshot] panegu works in hedodept; panegu assigned to gumoproj; panegu assigned to gupaproj; panegu assigned to rusaproj; panegu reports to sakafi; panegu belongs to ralodiv
+[source=hr record=panuhe time=1 revision=1 snapshot] panuhe works in vorudept; panuhe assigned to kizeproj; panuhe reports to kapafi
+[source=hr record=papami time=1 revision=1 snapshot] papami works in vorudept; papami assigned to kizeproj
+[source=hr record=papara time=1 revision=1 snapshot] papara works in kihedept; papara assigned to gupaproj; papara assigned to heneproj
+[source=hr record=pasadept time=1 revision=1 snapshot] pasadept is managed by samomo; pasadept is part of ralodiv
+[source=hr record=pasajo time=1 revision=1 snapshot] pasajo works in pasadept; pasajo assigned to hekaproj; pasajo assigned to rabeproj
+[source=hr record=pavofi time=1 revision=1 snapshot] pavofi works in timodept; pavofi assigned to nedoproj; pavofi assigned to paguproj; pavofi reports to firufi
+[source=hr record=pazemo time=1 revision=1 snapshot] pazemo works in samidept; pazemo assigned to tifiproj
+[source=hr record=rabeproj time=1 revision=1 snapshot] rabeproj serves kiruco
+[source=hr record=radolo time=1 revision=1 snapshot] radolo works in samidept; radolo assigned to loloproj; radolo assigned to nuraproj; radolo belongs to ralodiv
+[source=hr record=rajobe time=1 revision=1 snapshot] rajobe works in rurudept; rajobe assigned to fisaproj; rajobe belongs to ralodiv
+[source=hr record=rakaki time=1 revision=1 snapshot] rakaki works in kihedept; rakaki assigned to kiguproj; rakaki assigned to moloproj
+[source=hr record=rakiproj time=1 revision=1 snapshot] rakiproj serves zekico
+[source=hr record=ralodept time=1 revision=1 snapshot] ralodept is managed by nepaze; ralodept is part of rubediv
+[source=hr record=ranegu time=1 revision=1 snapshot] ranegu works in domodept; ranegu assigned to jonuproj; ranegu assigned to kizeproj; ranegu assigned to lomiproj; ranegu reports to kitira
+[source=hr record=raneproj time=1 revision=1 snapshot] raneproj serves gukaco
+[source=hr record=raneze time=1 revision=1 snapshot] raneze works in monudept; raneze assigned to heheproj; raneze assigned to kiguproj; raneze assigned to paguproj
+[source=hr record=ravosa time=1 revision=1 snapshot] ravosa works in vorudept; ravosa assigned to nedoproj; ravosa belongs to tijodiv
+[source=hr record=razehe time=1 revision=1 snapshot] razehe works in samidept; razehe assigned to nedoproj; razehe assigned to nuraproj; razehe assigned to tijoproj; razehe reports to nutilo; razehe belongs to ralodiv
+[source=hr record=razelo time=1 revision=1 snapshot] razelo works in kihedept; razelo assigned to lozeproj
+[source=hr record=rudogu time=1 revision=1 snapshot] rudogu works in dotidept; rudogu assigned to gumoproj; rudogu belongs to ralodiv
+[source=hr record=rufimi time=1 revision=1 snapshot] rufimi works in domodept; rufimi assigned to fisaproj; rufimi assigned to tifiproj; rufimi assigned to tijoproj
+[source=hr record=rufiproj time=1 revision=1 snapshot] rufiproj serves gukaco
+[source=hr record=ruheki time=1 revision=1 snapshot] ruheki works in timodept; ruheki assigned to kiguproj; ruheki assigned to rusaproj
+[source=hr record=rujovo time=1 revision=1 snapshot] rujovo works in hezedept; rujovo assigned to bemoproj; rujovo assigned to rakiproj; rujovo reports to bemojo
+[source=hr record=rukigu time=1 revision=1 snapshot] rukigu works in vorudept; rukigu assigned to kiguproj; rukigu assigned to loloproj; rukigu assigned to nedoproj
+[source=hr record=rumomi time=1 revision=1 snapshot] rumomi works in domodept; rumomi assigned to nedoproj; rumomi assigned to nuraproj; rumomi assigned to ruzeproj; rumomi reports to kitira
+[source=hr record=runedo time=1 revision=1 snapshot] runedo works in ralodept; runedo assigned to paguproj
+[source=hr record=runevo time=1 revision=1 snapshot] runevo works in vorudept; runevo assigned to heneproj; runevo assigned to loloproj; runevo assigned to raneproj; runevo reports to kapafi; runevo belongs to tijodiv
+[source=hr record=runusa time=1 revision=1 snapshot] runusa works in hedodept; runusa assigned to beheproj; runusa assigned to lotiproj; runusa assigned to rufiproj; runusa reports to sakafi; runusa belongs to ralodiv
+[source=hr record=rurudept time=1 revision=1 snapshot] rurudept is managed by bebeze; rurudept is part of ralodiv
+[source=hr record=rusaproj time=1 revision=1 snapshot] rusaproj serves zekico
+[source=hr record=ruzeproj time=1 revision=1 snapshot] ruzeproj serves loneco
+[source=hr record=sabebe time=1 revision=1 snapshot] sabebe works in ralodept; sabebe assigned to hekaproj; sabebe assigned to lotiproj; sabebe assigned to nedoproj; sabebe reports to nepaze; sabebe belongs to rubediv
+[source=hr record=sadojo time=1 revision=1 snapshot] sadojo works in samidept; sadojo assigned to heneproj
+[source=hr record=sagudept time=1 revision=1 snapshot] sagudept is managed by jomodo; sagudept is part of rubediv
+[source=hr record=sahenu time=1 revision=1 snapshot] sahenu works in rurudept; sahenu assigned to gumoproj
+[source=hr record=saheze time=1 revision=1 snapshot] saheze works in hedodept; saheze assigned to heheproj; saheze assigned to hekaproj; saheze assigned to nuraproj; saheze reports to sakafi
+[source=hr record=salomi time=1 revision=1 snapshot] salomi works in pasadept; salomi assigned to beheproj; salomi assigned to gupaproj; salomi assigned to raneproj
+[source=hr record=salonu time=1 revision=1 snapshot] salonu works in hezedept; salonu assigned to jonuproj; salonu assigned to kizeproj; salonu assigned to loloproj
+[source=hr record=samidept time=1 revision=1 snapshot] samidept is managed by nutilo; samidept is part of ralodiv
+[source=hr record=tidomi time=1 revision=1 snapshot] tidomi works in kavodept; tidomi assigned to nunuproj; tidomi assigned to nuraproj; tidomi reports to nekihe
+[source=hr record=tidoti time=1 revision=1 snapshot] tidoti works in hedodept; tidoti assigned to heheproj; tidoti assigned to nedoproj; tidoti reports to sakafi
+[source=hr record=tifiproj time=1 revision=1 snapshot] tifiproj serves gukaco
+[source=hr record=tifiru time=1 revision=1 snapshot] tifiru works in samidept; tifiru assigned to kinuproj; tifiru belongs to ralodiv
+[source=hr record=tijoproj time=1 revision=1 snapshot] tijoproj serves zekico
+[source=hr record=tikimi time=1 revision=1 snapshot] tikimi works in ralodept; tikimi assigned to jonuproj; tikimi assigned to nunuproj
+[source=hr record=timido time=1 revision=1 snapshot] timido works in domodept; timido assigned to hekaproj; timido assigned to lozeproj; timido assigned to nesaproj; timido belongs to tijodiv
+[source=hr record=timodept time=1 revision=1 snapshot] timodept is managed by firufi; timodept is part of rubediv
+[source=hr record=tinejo time=1 revision=1 snapshot] tinejo works in pasadept; tinejo assigned to kiguproj; tinejo assigned to kizeproj; tinejo assigned to tijoproj
+[source=hr record=tinemi time=1 revision=1 snapshot] tinemi works in monudept; tinemi assigned to moloproj; tinemi assigned to rusaproj
+[source=hr record=tineze time=1 revision=1 snapshot] tineze works in vorudept; tineze assigned to fisaproj; tineze assigned to gumoproj
+[source=hr record=tipadept time=1 revision=1 snapshot] tipadept is managed by kafilo; tipadept is part of rubediv
+[source=hr record=tipapa time=1 revision=1 snapshot] tipapa works in domodept; tipapa assigned to raneproj; tipapa reports to kitira; tipapa belongs to tijodiv
+[source=hr record=tiruhe time=1 revision=1 snapshot] tiruhe works in pasadept; tiruhe assigned to tijoproj
+[source=hr record=tirunu time=1 revision=1 snapshot] tirunu works in kavodept; tirunu assigned to heheproj; tirunu assigned to rufiproj
+[source=hr record=tisagu time=1 revision=1 snapshot] tisagu works in ralodept; tisagu assigned to tijoproj
+[source=hr record=tisara time=1 revision=1 snapshot] tisara works in kavodept; tisara assigned to hekaproj; tisara assigned to tijoproj; tisara reports to nekihe
+[source=hr record=tizemi time=1 revision=1 snapshot] tizemi works in samidept; tizemi assigned to beheproj; tizemi assigned to hekaproj; tizemi assigned to rakiproj; tizemi belongs to ralodiv
+[source=hr record=tizera time=1 revision=1 snapshot] tizera works in pasadept; tizera assigned to lozeproj; tizera belongs to ralodiv
+[source=hr record=tizeru time=1 revision=1 snapshot] tizeru works in samidept; tizeru assigned to kinuproj
+[source=hr record=vobevo time=1 revision=1 snapshot] vobevo works in dotidept; vobevo assigned to gumoproj; vobevo assigned to kiguproj; vobevo assigned to lotiproj
+[source=hr record=vodojo time=1 revision=1 snapshot] vodojo works in pasadept; vodojo assigned to lomiproj; vodojo assigned to lozeproj; vodojo assigned to rufiproj; vodojo belongs to ralodiv
+[source=hr record=vodone time=1 revision=1 snapshot] vodone works in rurudept; vodone assigned to rakiproj; vodone assigned to raneproj
+[source=hr record=voheti time=1 revision=1 snapshot] voheti works in hedodept; voheti assigned to hekaproj; voheti assigned to jonuproj; voheti assigned to nuraproj; voheti reports to sakafi
+[source=hr record=vonepa time=1 revision=1 snapshot] vonepa works in ralodept; vonepa assigned to moloproj; vonepa assigned to paguproj; vonepa reports to nepaze
+[source=hr record=vonera time=1 revision=1 snapshot] vonera works in vorudept; vonera assigned to lozeproj; vonera assigned to nunuproj; vonera assigned to rakiproj; vonera reports to kapafi
+[source=hr record=vonumo time=1 revision=1 snapshot] vonumo works in domodept; vonumo assigned to gupaproj; vonumo assigned to lomiproj; vonumo assigned to paguproj
+[source=hr record=vorafi time=1 revision=1 snapshot] vorafi works in kihedept; vorafi assigned to heheproj; vorafi reports to nenefi; vorafi belongs to rubediv
+[source=hr record=vorasa time=1 revision=1 snapshot] vorasa works in tipadept; vorasa assigned to heneproj; vorasa assigned to rabeproj; vorasa belongs to rubediv
+[source=hr record=vorudept time=1 revision=1 snapshot] vorudept is managed by kapafi; vorudept is part of tijodiv
+[source=hr record=vorugu time=1 revision=1 snapshot] vorugu works in dotidept; vorugu assigned to raneproj; vorugu reports to rahebe
+[source=hr record=votido time=1 revision=1 snapshot] votido works in dotidept; votido assigned to bemoproj; votido assigned to heneproj; votido assigned to nunuproj; votido reports to rahebe
+[source=hr record=votifi time=1 revision=1 snapshot] votifi works in hedodept; votifi assigned to kinuproj; votifi reports to sakafi
+[source=hr record=votine time=1 revision=1 snapshot] votine works in monudept; votine assigned to bemoproj; votine assigned to lotiproj; votine reports to zetiru
+[source=hr record=vovofi time=1 revision=1 snapshot] vovofi works in hedodept; vovofi assigned to lomiproj
+[source=hr record=vozevo time=1 revision=1 snapshot] vozevo works in dotidept; vozevo assigned to rakiproj; vozevo reports to rahebe; vozevo belongs to ralodiv
+[source=hr record=zedoti time=1 revision=1 snapshot] zedoti works in vorudept; zedoti assigned to nuraproj; zedoti reports to kapafi
+[source=hr record=zegumi time=1 revision=1 snapshot] zegumi works in kavodept; zegumi assigned to nuraproj; zegumi reports to nekihe; zegumi belongs to tijodiv
+[source=hr record=zeguru time=1 revision=1 snapshot] zeguru works in tipadept; zeguru assigned to lozeproj; zeguru assigned to rufiproj; zeguru assigned to ruzeproj; zeguru reports to kafilo
+[source=hr record=zekabe time=1 revision=1 snapshot] zekabe works in timodept; zekabe assigned to kinuproj
+[source=hr record=zemimo time=1 revision=1 snapshot] zemimo works in timodept; zemimo assigned to heneproj; zemimo assigned to kizeproj; zemimo assigned to nesaproj; zemimo reports to firufi
+[source=hr record=zeneze time=1 revision=1 snapshot] zeneze works in samidept; zeneze assigned to jonuproj; zeneze assigned to rakiproj; zeneze reports to nutilo
+[source=hr record=zenulo time=1 revision=1 snapshot] zenulo works in kihedept; zenulo assigned to nesaproj; zenulo assigned to nunuproj; zenulo reports to nenefi
+[source=hr record=zeravo time=1 revision=1 snapshot] zeravo works in kavodept; zeravo assigned to heneproj; zeravo assigned to jonuproj; zeravo assigned to tifiproj
+[source=hr record=zesamo time=1 revision=1 snapshot] zesamo works in timodept; zesamo assigned to gupaproj; zesamo assigned to tifiproj
+[source=hr record=zezedo time=1 revision=1 snapshot] zezedo works in vorudept; zezedo assigned to nedoproj; zezedo assigned to rabeproj; zezedo assigned to rufiproj; zezedo reports to kapafi
+[source=hr record=tipadept time=2 revision=1 snapshot] tipadept is managed by zedomi; tipadept is part of rubediv
+[source=hr record=kamolo time=2 revision=1 snapshot] kamolo works in ralodept; kamolo assigned to heheproj; kamolo assigned to paguproj; kamolo reports to nepaze
+[source=hr record=kibefi time=2 revision=1 snapshot] kibefi works in samidept; kibefi assigned to gumoproj; kibefi assigned to heheproj; kibefi assigned to tifiproj; kibefi belongs to ralodiv
+[source=hr record=ranegu time=2 revision=1 snapshot] ranegu works in ralodept; ranegu assigned to jonuproj; ranegu assigned to kizeproj; ranegu assigned to lomiproj; ranegu reports to nepaze
+[source=hr record=bedora time=2 revision=1 snapshot] bedora works in ralodept; bedora assigned to nesaproj; bedora assigned to nuraproj; bedora belongs to rubediv
+[source=hr record=nemijo time=2 revision=1 snapshot] nemijo works in pasadept; nemijo assigned to nunuproj; nemijo reports to samomo
+[source=hr record=tirunu time=2 revision=1 snapshot] tirunu works in kavodept; tirunu assigned to lozeproj; tirunu assigned to rufiproj
+[source=hr record=fidoze time=2 revision=1 snapshot] fidoze works in monudept; fidoze assigned to kinuproj; fidoze assigned to loloproj; fidoze assigned to rusaproj; fidoze reports to zetiru; fidoze belongs to tijodiv
+[source=hr record=raneze time=2 revision=1 snapshot] raneze works in monudept; raneze assigned to beheproj; raneze assigned to kiguproj; raneze assigned to paguproj
+[source=hr record=gumigu time=2 revision=1 snapshot] gumigu works in sagudept; gumigu assigned to kizeproj; gumigu reports to jomodo; gumigu belongs to rubediv
+[source=hr record=pazemo time=2 revision=1 snapshot] pazemo works in samidept; pazemo assigned to lomiproj
+[source=hr record=tikimi time=1 revision=2 snapshot] tikimi works in samidept; tikimi assigned to jonuproj; tikimi assigned to nunuproj
+[source=hr record=zesamo time=1 revision=2 snapshot] zesamo works in vorudept; zesamo assigned to gupaproj; zesamo assigned to tifiproj
+[source=hr record=hepagu time=1 revision=2 snapshot] hepagu works in kavodept; hepagu assigned to heneproj; hepagu assigned to nesaproj; hepagu assigned to rusaproj
+[source=hr record=berami time=1 revision=2 snapshot] berami works in dotidept; berami assigned to loloproj; berami assigned to moloproj; berami assigned to tijoproj
+[source=hr record=pasajo time=1 revision=2 snapshot] pasajo works in sagudept; pasajo assigned to hekaproj; pasajo assigned to rabeproj
+[source=payroll record=nepafi time=2 revision=1 partial] nepafi works in hezedept
+[source=payroll record=doguki time=2 revision=1 partial] doguki works in samidept
+[source=payroll record=nuzejo time=2 revision=1 partial] nuzejo works in monudept
+[source=payroll record=zeneze time=2 revision=1 partial] zeneze works in pasadept
+[source=payroll record=panegu time=2 revision=1 partial] panegu works in monudept
+[source=hr record=mifibe time=3 revision=1 snapshot] mifibe works in kavodept; mifibe assigned to jonuproj; mifibe assigned to tijoproj; mifibe reports to nekihe
+[source=hr record=paloka time=3 revision=1 snapshot] paloka works in dotidept; paloka assigned to lomiproj; paloka assigned to moloproj; paloka assigned to raneproj; paloka belongs to ralodiv
+[source=hr record=kiloki time=3 revision=1 snapshot] kiloki works in timodept; kiloki assigned to fisaproj; kiloki assigned to tijoproj; kiloki reports to firufi
+[source=hr record=gurumi time=3 revision=1 snapshot] gurumi works in samidept; gurumi assigned to fisaproj
+[source=hr record=razehe time=3 revision=1 snapshot] razehe works in kavodept; razehe assigned to nedoproj; razehe assigned to nuraproj; razehe assigned to tijoproj; razehe reports to nekihe; razehe belongs to tijodiv
+[source=hr record=mifibe time=3 revision=1 snapshot] mifibe works in kavodept; mifibe assigned to jonuproj; mifibe assigned to tijoproj; mifibe reports to nekihe
+[source=hr record=paloka time=3 revision=1 snapshot] paloka works in dotidept; paloka assigned to lomiproj; paloka assigned to moloproj; paloka assigned to raneproj; paloka belongs to ralodiv
+[source=hr record=kiloki time=3 revision=1 snapshot] kiloki works in timodept; kiloki assigned to fisaproj; kiloki assigned to tijoproj; kiloki reports to firufi
+[source=hr record=gurumi time=3 revision=1 snapshot] gurumi works in samidept; gurumi assigned to fisaproj
+[source=hr record=razehe time=3 revision=1 snapshot] razehe works in kavodept; razehe assigned to nedoproj; razehe assigned to nuraproj; razehe assigned to tijoproj; razehe reports to nekihe; razehe belongs to tijodiv
+[source=hr record=mifibe time=2 revision=1 snapshot] mifibe works in samidept; mifibe assigned to jonuproj; mifibe assigned to tijoproj; mifibe reports to nutilo
+[source=hr record=paloka time=2 revision=1 snapshot] paloka works in sagudept; paloka assigned to lomiproj; paloka assigned to moloproj; paloka assigned to raneproj; paloka belongs to rubediv
+[source=hr record=kiloki time=2 revision=1 snapshot] kiloki works in hezedept; kiloki assigned to fisaproj; kiloki assigned to tijoproj; kiloki reports to bemojo
+[source=hr record=gurumi time=2 revision=1 snapshot] gurumi works in timodept; gurumi assigned to fisaproj
+[source=hr record=razehe time=2 revision=1 snapshot] razehe works in timodept; razehe assigned to nedoproj; razehe assigned to nuraproj; razehe assigned to tijoproj; razehe reports to firufi; razehe belongs to rubediv

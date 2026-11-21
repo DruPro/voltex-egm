@@ -1,0 +1,642 @@
+[
+ {
+  "seed": 1,
+  "density": 0.05,
+  "cond": "A",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 13
+ },
+ {
+  "seed": 1,
+  "density": 0.05,
+  "cond": "B",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 13
+ },
+ {
+  "seed": 1,
+  "density": 0.05,
+  "cond": "C2",
+  "change_right": 20,
+  "contradictions_flagged": 13,
+  "n_contra": 13
+ },
+ {
+  "seed": 1,
+  "density": 0.05,
+  "cond": "C2fn",
+  "change_right": 20,
+  "contradictions_flagged": 13,
+  "n_contra": 13
+ },
+ {
+  "seed": 1,
+  "density": 0.1,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 1,
+  "density": 0.1,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 1,
+  "density": 0.1,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 1,
+  "density": 0.1,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 1,
+  "density": 0.15,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 40
+ },
+ {
+  "seed": 1,
+  "density": 0.15,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 40
+ },
+ {
+  "seed": 1,
+  "density": 0.15,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 40
+ },
+ {
+  "seed": 1,
+  "density": 0.15,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 40
+ },
+ {
+  "seed": 1,
+  "density": 0.2,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 53
+ },
+ {
+  "seed": 1,
+  "density": 0.2,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 53
+ },
+ {
+  "seed": 1,
+  "density": 0.2,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 53
+ },
+ {
+  "seed": 1,
+  "density": 0.2,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 53
+ },
+ {
+  "seed": 2,
+  "density": 0.05,
+  "cond": "A",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 14
+ },
+ {
+  "seed": 2,
+  "density": 0.05,
+  "cond": "B",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 14
+ },
+ {
+  "seed": 2,
+  "density": 0.05,
+  "cond": "C2",
+  "change_right": 20,
+  "contradictions_flagged": 14,
+  "n_contra": 14
+ },
+ {
+  "seed": 2,
+  "density": 0.05,
+  "cond": "C2fn",
+  "change_right": 20,
+  "contradictions_flagged": 14,
+  "n_contra": 14
+ },
+ {
+  "seed": 2,
+  "density": 0.1,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 2,
+  "density": 0.1,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 2,
+  "density": 0.1,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 2,
+  "density": 0.1,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 2,
+  "density": 0.15,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 41
+ },
+ {
+  "seed": 2,
+  "density": 0.15,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 41
+ },
+ {
+  "seed": 2,
+  "density": 0.15,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 41
+ },
+ {
+  "seed": 2,
+  "density": 0.15,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 41
+ },
+ {
+  "seed": 2,
+  "density": 0.2,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 55
+ },
+ {
+  "seed": 2,
+  "density": 0.2,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 55
+ },
+ {
+  "seed": 2,
+  "density": 0.2,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 55
+ },
+ {
+  "seed": 2,
+  "density": 0.2,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 55
+ },
+ {
+  "seed": 3,
+  "density": 0.05,
+  "cond": "A",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 12
+ },
+ {
+  "seed": 3,
+  "density": 0.05,
+  "cond": "B",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 12
+ },
+ {
+  "seed": 3,
+  "density": 0.05,
+  "cond": "C2",
+  "change_right": 20,
+  "contradictions_flagged": 12,
+  "n_contra": 12
+ },
+ {
+  "seed": 3,
+  "density": 0.05,
+  "cond": "C2fn",
+  "change_right": 20,
+  "contradictions_flagged": 12,
+  "n_contra": 12
+ },
+ {
+  "seed": 3,
+  "density": 0.1,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 25
+ },
+ {
+  "seed": 3,
+  "density": 0.1,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 25
+ },
+ {
+  "seed": 3,
+  "density": 0.1,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 25
+ },
+ {
+  "seed": 3,
+  "density": 0.1,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 25
+ },
+ {
+  "seed": 3,
+  "density": 0.15,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 37
+ },
+ {
+  "seed": 3,
+  "density": 0.15,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 37
+ },
+ {
+  "seed": 3,
+  "density": 0.15,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 37
+ },
+ {
+  "seed": 3,
+  "density": 0.15,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 37
+ },
+ {
+  "seed": 3,
+  "density": 0.2,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 49
+ },
+ {
+  "seed": 3,
+  "density": 0.2,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 49
+ },
+ {
+  "seed": 3,
+  "density": 0.2,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 49
+ },
+ {
+  "seed": 3,
+  "density": 0.2,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 49
+ },
+ {
+  "seed": 4,
+  "density": 0.05,
+  "cond": "A",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 13
+ },
+ {
+  "seed": 4,
+  "density": 0.05,
+  "cond": "B",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 13
+ },
+ {
+  "seed": 4,
+  "density": 0.05,
+  "cond": "C2",
+  "change_right": 20,
+  "contradictions_flagged": 13,
+  "n_contra": 13
+ },
+ {
+  "seed": 4,
+  "density": 0.05,
+  "cond": "C2fn",
+  "change_right": 20,
+  "contradictions_flagged": 13,
+  "n_contra": 13
+ },
+ {
+  "seed": 4,
+  "density": 0.1,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 4,
+  "density": 0.1,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 4,
+  "density": 0.1,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 4,
+  "density": 0.1,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 4,
+  "density": 0.15,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 40
+ },
+ {
+  "seed": 4,
+  "density": 0.15,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 40
+ },
+ {
+  "seed": 4,
+  "density": 0.15,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 40
+ },
+ {
+  "seed": 4,
+  "density": 0.15,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 40
+ },
+ {
+  "seed": 4,
+  "density": 0.2,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 54
+ },
+ {
+  "seed": 4,
+  "density": 0.2,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 54
+ },
+ {
+  "seed": 4,
+  "density": 0.2,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 54
+ },
+ {
+  "seed": 4,
+  "density": 0.2,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 54
+ },
+ {
+  "seed": 5,
+  "density": 0.05,
+  "cond": "A",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 14
+ },
+ {
+  "seed": 5,
+  "density": 0.05,
+  "cond": "B",
+  "change_right": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 14
+ },
+ {
+  "seed": 5,
+  "density": 0.05,
+  "cond": "C2",
+  "change_right": 20,
+  "contradictions_flagged": 14,
+  "n_contra": 14
+ },
+ {
+  "seed": 5,
+  "density": 0.05,
+  "cond": "C2fn",
+  "change_right": 20,
+  "contradictions_flagged": 14,
+  "n_contra": 14
+ },
+ {
+  "seed": 5,
+  "density": 0.1,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 5,
+  "density": 0.1,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 5,
+  "density": 0.1,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 5,
+  "density": 0.1,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 27
+ },
+ {
+  "seed": 5,
+  "density": 0.15,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 41
+ },
+ {
+  "seed": 5,
+  "density": 0.15,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 41
+ },
+ {
+  "seed": 5,
+  "density": 0.15,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 41
+ },
+ {
+  "seed": 5,
+  "density": 0.15,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 41
+ },
+ {
+  "seed": 5,
+  "density": 0.2,
+  "cond": "A",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 54
+ },
+ {
+  "seed": 5,
+  "density": 0.2,
+  "cond": "B",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 54
+ },
+ {
+  "seed": 5,
+  "density": 0.2,
+  "cond": "C2",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 54
+ },
+ {
+  "seed": 5,
+  "density": 0.2,
+  "cond": "C2fn",
+  "change_ambiguous": 20,
+  "contradictions_flagged": 0,
+  "n_contra": 54
+ }
+]

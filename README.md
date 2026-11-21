@@ -189,6 +189,7 @@ including an LLM-tool example, is in **[docs/SDK.md](docs/SDK.md)**.
 | `egm shell kb.vtx` | Interactive engine session (`ASK`, `RELATIONS`, `INFER ALL`, `HELP` …) |
 | `egm run kb.vtx cmds.txt` | Raw engine commands from a file; `--save` keeps the result |
 | `egm bench facts.txt` | Timings for ingest, inference build and queries |
+| `egm tune facts.txt -o tuned.json` | Pick settings for one dataset from the dataset itself (experimental; `studies/noise`) |
 
 ---
 
@@ -255,6 +256,10 @@ voltex-egm/
 |---|---|
 | [docs/SDK.md](docs/SDK.md) | Python SDK reference, including an LLM-tool example |
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
+| [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
+| [docs/DATA_DESIGN.md](docs/DATA_DESIGN.md) | Designing data for deliberate inference: rule shapes, law vs tendency, several engines together |
+| [docs/THEORY.md](docs/THEORY.md) | Principles and theory: the layers, emergent behavior, information limits, design rules |
+| [studies/](studies/) | Pre-registered studies: inference depth, multi-premise rules, configuration |
 
 ---
 

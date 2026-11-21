@@ -1,0 +1,50 @@
+[
+ {
+  "noise": 0.03,
+  "seed": 0,
+  "derived_new": 41753,
+  "precision": 0.024908389816300624,
+  "tendency_rule_accepted": true,
+  "rule_line": "ACCEPT [? is ancestor of ?](a,b) & [? is sibling of ?](b,c) => [? is parent of ?](a,c) n=2692 k=1086 rate=0.40 lift=54.4 | where answer known: 2673, agree=0.41 | cov=0.76 rel=0.53 tier=tendency"
+ },
+ {
+  "noise": 0.03,
+  "seed": 1,
+  "derived_new": 50691,
+  "precision": 0.020477007752855537,
+  "tendency_rule_accepted": true,
+  "rule_line": "ACCEPT [? is ancestor of ?](a,b) & [? is sibling of ?](b,c) => [? is parent of ?](a,c) n=2819 k=1288 rate=0.46 lift=57.5 | where answer known: 2778, agree=0.46 | cov=0.82 rel=0.56 tier=tendency"
+ },
+ {
+  "noise": 0.03,
+  "seed": 2,
+  "derived_new": 1400,
+  "precision": 0.7378571428571429,
+  "tendency_rule_accepted": false,
+  "rule_line": ""
+ },
+ {
+  "noise": 0.15,
+  "seed": 0,
+  "derived_new": 41826,
+  "precision": 0.024243293645101135,
+  "tendency_rule_accepted": true,
+  "rule_line": "ACCEPT [? is ancestor of ?](a,b) & [? is sibling of ?](b,c) => [? is parent of ?](a,c) n=2692 k=1086 rate=0.40 lift=54.4 | where answer known: 2673, agree=0.41 | cov=0.76 rel=0.53 tier=tendency"
+ },
+ {
+  "noise": 0.15,
+  "seed": 1,
+  "derived_new": 50784,
+  "precision": 0.019533711405166982,
+  "tendency_rule_accepted": true,
+  "rule_line": "ACCEPT [? is ancestor of ?](a,b) & [? is sibling of ?](b,c) => [? is parent of ?](a,c) n=2819 k=1288 rate=0.46 lift=57.5 | where answer known: 2778, agree=0.46 | cov=0.82 rel=0.56 tier=tendency"
+ },
+ {
+  "noise": 0.15,
+  "seed": 2,
+  "derived_new": 1351,
+  "precision": 0.7394522575869726,
+  "tendency_rule_accepted": false,
+  "rule_line": ""
+ }
+]

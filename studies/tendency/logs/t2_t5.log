@@ -1,0 +1,9 @@
+off {'tree_gates': {'correct': 1319, 'wrong': 0}, 'adders': {'correct': 1700, 'wrong': 0}, 'lineage': {'correct': 360, 'wrong': 0}, 'remainders': {'correct': 125, 'wrong': 0}, 'harvest': {'correct': 54, 'wrong': 0}}
+ts1 {'tree_gates': {'correct': 1319, 'wrong': 0}, 'adders': {'correct': 1700, 'wrong': 0}, 'lineage': {'correct': 360, 'wrong': 0}, 'remainders': {'correct': 125, 'wrong': 0}, 'harvest': {'correct': 54, 'wrong': 0}}
+ts0 {'tree_gates': {'correct': 1332, 'wrong': 0}, 'adders': {'correct': 1700, 'wrong': 0}, 'lineage': {'correct': 0, 'wrong': 0}, 'remainders': {'correct': 125, 'wrong': 0}, 'harvest': {'correct': 0, 'wrong': 0}}
+{'seed': 0, 'config': 'default_cap', 'limit_line': ['[LIMIT] categories cover the 12000 most frequent of 16016 words; facts naming rarer words are in no relation (SET MAXWORDS)'], 'targets': 1034, 'recovered': 0, 'wrong': 0, 'seconds': 5.0}
+{'seed': 0, 'config': 'maxwords30000', 'limit_line': [], 'targets': 1034, 'recovered': 1034, 'wrong': 0, 'seconds': 8.5}
+{'seed': 1, 'config': 'default_cap', 'limit_line': ['[LIMIT] categories cover the 12000 most frequent of 16016 words; facts naming rarer words are in no relation (SET MAXWORDS)'], 'targets': 1070, 'recovered': 0, 'wrong': 0, 'seconds': 5.2}
+{'seed': 1, 'config': 'maxwords30000', 'limit_line': [], 'targets': 1070, 'recovered': 1070, 'wrong': 0, 'seconds': 9.1}
+{'seed': 2, 'config': 'default_cap', 'limit_line': ['[LIMIT] categories cover the 12000 most frequent of 16016 words; facts naming rarer words are in no relation (SET MAXWORDS)'], 'targets': 1094, 'recovered': 0, 'wrong': 0, 'seconds': 5.3}
+{'seed': 2, 'config': 'maxwords30000', 'limit_line': [], 'targets': 1094, 'recovered': 1094, 'wrong': 0, 'seconds': 8.2}

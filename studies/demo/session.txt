@@ -1,0 +1,11 @@
+INGESTFILE demo/facts.txt
+METRICS
+RELATIONS
+ASK maria manages ?
+ASK denver is part of ?
+ASK denver renews in ?
+ASK tulsa renews in ?
+INGEST denver renews in march
+ASK denver renews in ?
+FIND maria manages denver
+UNROLL 0

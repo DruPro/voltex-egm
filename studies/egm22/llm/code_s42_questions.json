@@ -1,0 +1,247 @@
+[
+{
+"id": "code_s42_q1",
+"question": "Which module is function pamopa defined in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "code_s42_q2",
+"question": "Does function fibebe depend on module vomomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q3",
+"question": "Does function fibebe depend on module zesamod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q4",
+"question": "Does function lojobe depend on module vomomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q5",
+"question": "Does function lojobe depend on module zesamod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q6",
+"question": "Does function nunudo depend on module vomomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q7",
+"question": "Does function nunudo depend on module zesamod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q8",
+"question": "Does function mozehe depend on module vomomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q9",
+"question": "Does function mozehe depend on module zesamod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q10",
+"question": "Which module is function rafiru defined in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "code_s42_q11",
+"question": "Does function lorapa depend on module hevomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q12",
+"question": "Does function lorapa depend on module kijomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q13",
+"question": "Does function fitinu depend on module hevomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q14",
+"question": "Does function fitinu depend on module kijomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q15",
+"question": "Does function vonemi depend on module nujomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q16",
+"question": "Does function vonemi call function kimira now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q17",
+"question": "Does function miloki depend on module zesamod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q18",
+"question": "Does function miloki call function zejoze now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q19",
+"question": "Does function pakati depend on module hevomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q20",
+"question": "Does function pakati call function guloka now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q21",
+"question": "Does function heguhe depend on module zesamod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q22",
+"question": "Does function heguhe call function tikido now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q23",
+"question": "Does function sapami depend on module kimimod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q24",
+"question": "Does function sapami call function razesa now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q25",
+"question": "Does function rutine depend on module zesamod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q26",
+"question": "Does function rutine call function lomobe now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q27",
+"question": "Does function zefiti depend on module hevomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q28",
+"question": "Does function zefiti call function jogufi now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q29",
+"question": "Does function tisagu depend on module dodomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q30",
+"question": "Does function tisagu call function kapanu now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q31",
+"question": "Does function sakamo depend on module kijomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q32",
+"question": "Does function sakamo call function nufimo now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q33",
+"question": "Does function dogupa depend on module zesamod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q34",
+"question": "Does function dogupa call function pamoki now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q35",
+"question": "Does function loheki depend on module nelomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q36",
+"question": "Does function loheki call function kipaze now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q37",
+"question": "Does function joneka depend on module nelomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q38",
+"question": "Does function joneka call function nurapa now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q39",
+"question": "Does function henumo depend on module nelomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q40",
+"question": "Does function henumo call function moguka now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q41",
+"question": "Does function negura depend on module nelomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q42",
+"question": "Does function negura call function zerafi now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q43",
+"question": "Does function vomibe depend on module nelomod now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q44",
+"question": "Does function vomibe call function hedofi now?",
+"answer_format": "YES, NO or UNKNOWN"
+},
+{
+"id": "code_s42_q45",
+"question": "Which module is function hekize defined in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "code_s42_q46",
+"question": "Which module is function fivoti defined in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "code_s42_q47",
+"question": "Which module is function dosamo defined in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "code_s42_q48",
+"question": "Which module is function tizelo defined in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+},
+{
+"id": "code_s42_q49",
+"question": "Which module is function kimira defined in now?",
+"answer_format": "one value; or UNKNOWN if the evidence does not establish it; or CONFLICT if the evidence contains incompatible claims it cannot settle"
+}
+]

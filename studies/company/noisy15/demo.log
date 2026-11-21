@@ -1,0 +1,25 @@
+[INGEST] 3807 records, 95218 bytes in 0.010 s (8.86 MB/s)
+  bebegu is based in austin        inferred (score 1.00) because bebegu is on team02 + team02 is based in austin  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (3 of 3 paths agree)
+  bebegu works under sahehe        stated
+  bebegu works under rusalo        stated
+  bebegu works under hemiru        inferred (score 0.75) because bebegu collaborates with hejovo + hejovo works under hemiru  [rule: [? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)]
+  bebegu knows kadolo              stated
+  bebegu knows vosami              stated
+[CONFLICTS] 17 stated facts contradict what the rules infer
+CONFLICT	lojojo	boston	stated: lojojo is based in boston | inferred: lojojo is based in miami | because lojojo is on team36 + team36 is based in miami  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	kagusa	denver	stated: kagusa is based in denver | inferred: kagusa is based in boston | because kagusa is on team07 + team07 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	filoti	chicago	stated: filoti is based in chicago | inferred: filoti is based in denver | because filoti is on team32 + team32 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	nepati	chicago	stated: nepati is based in chicago | inferred: nepati is based in miami | because nepati is on team04 + team04 is based in miami  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	zebedo	chicago	stated: zebedo is based in chicago | inferred: zebedo is based in boston | because zebedo is on team39 + team39 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	lobegu	miami	stated: lobegu is based in miami | inferred: lobegu is based in boston | because lobegu is on team25 + team25 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 3 paths)
+CONFLICT	patilo	chicago	stated: patilo is based in chicago | inferred: patilo is based in seattle | because patilo is on team11 + team11 is based in seattle  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	lohelo	denver	stated: lohelo is based in denver | inferred: lohelo is based in boston | because lohelo is on team01 + team01 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (3 of 4 paths)
+CONFLICT	gubeti	chicago	stated: gubeti is based in chicago | inferred: gubeti is based in denver | because gubeti is on team24 + team24 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	netipa	denver	stated: netipa is based in denver | inferred: netipa is based in austin | because netipa is on team34 + team34 is based in austin  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 3 paths)
+CONFLICT	tidomi	miami	stated: tidomi is based in miami | inferred: tidomi is based in boston | because tidomi is on team39 + team39 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	kadolo	austin	stated: kadolo is based in austin | inferred: kadolo is based in denver | because kadolo is on team16 + team16 is based in denver  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (5 of 5 paths)
+CONFLICT	dopasa	seattle	stated: dopasa is based in seattle | inferred: dopasa is based in boston | because dopasa is on team25 + team25 is based in boston  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (4 of 5 paths)
+CONFLICT	mifibe	chicago	stated: mifibe is based in chicago | inferred: mifibe is based in seattle | because mifibe is on team11 + team11 is based in seattle  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (2 of 2 paths)
+CONFLICT	pavolo	miami	stated: pavolo is based in miami | inferred: pavolo is based in chicago | because pavolo is on team29 + team29 is based in chicago  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (3 of 3 paths)
+CONFLICT	tifibe	miami	stated: tifibe is based in miami | inferred: tifibe is based in seattle | because tifibe is on team27 + team27 is based in seattle  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (3 of 4 paths)
+CONFLICT	papagu	miami	stated: papagu is based in miami | inferred: papagu is based in chicago | because papagu is on team13 + team13 is based in chicago  [rule: [? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)]  (4 of 4 paths)

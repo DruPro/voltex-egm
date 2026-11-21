@@ -1,0 +1,67 @@
+timing scale 1 refresh 0: 8.16 s  [BUILDS] full 51, refresh 0
+timing scale 1 refresh 0.02: 4.73 s  [BUILDS] full 5, refresh 46
+timing scale 2 refresh 0: 23.32 s  [BUILDS] full 51, refresh 0
+timing scale 2 refresh 0.02: 10.31 s  [BUILDS] full 3, refresh 48
+timing scale 4 refresh 0: 54.89 s  [BUILDS] full 51, refresh 0
+timing scale 4 refresh 0.02: 22.75 s  [BUILDS] full 2, refresh 49
+identity s31 ch       30/31  [BUILDS] full 4, refresh 27
+identity s31 stale    16/16  [BUILDS] full 3, refresh 13
+identity s31 samereg  16/16  [BUILDS] full 3, refresh 13
+identity s31 multi    16/16  [BUILDS] full 3, refresh 13
+identity s31 corr     16/16  [BUILDS] full 3, refresh 13
+identity s31 src      16/16  [BUILDS] full 2, refresh 14
+identity s31 compat   16/16  [BUILDS] full 3, refresh 13
+identity s31 miss     16/16  [BUILDS] full 3, refresh 13
+identity s31 part1    16/16  [BUILDS] full 2, refresh 14
+identity s31 part2    16/16  [BUILDS] full 2, refresh 14
+identity s31 ooo      46/46  [BUILDS] full 8, refresh 38
+identity s31 vol      31/31  [BUILDS] full 3, refresh 28
+identity s32 ch       31/31  [BUILDS] full 4, refresh 27
+identity s32 stale    16/16  [BUILDS] full 3, refresh 13
+identity s32 samereg  16/16  [BUILDS] full 3, refresh 13
+identity s32 multi    16/16  [BUILDS] full 3, refresh 13
+identity s32 corr     14/15  [BUILDS] full 3, refresh 12
+identity s32 src      13/16  [BUILDS] full 2, refresh 14
+identity s32 compat   16/16  [BUILDS] full 3, refresh 13
+identity s32 miss     16/16  [BUILDS] full 3, refresh 13
+identity s32 part1    15/16  [BUILDS] full 2, refresh 14
+identity s32 part2    16/16  [BUILDS] full 2, refresh 14
+identity s32 ooo      46/46  [BUILDS] full 7, refresh 39
+identity s32 vol      31/31  [BUILDS] full 3, refresh 28
+identity s33 ch       31/31  [BUILDS] full 5, refresh 26
+identity s33 stale    15/16  [BUILDS] full 3, refresh 13
+identity s33 samereg  16/16  [BUILDS] full 3, refresh 13
+identity s33 multi    16/16  [BUILDS] full 3, refresh 13
+identity s33 corr     15/16  [BUILDS] full 2, refresh 14
+identity s33 src      16/16  [BUILDS] full 3, refresh 13
+identity s33 compat   16/16  [BUILDS] full 3, refresh 13
+identity s33 miss     16/16  [BUILDS] full 3, refresh 13
+identity s33 part1    15/16  [BUILDS] full 2, refresh 14
+identity s33 part2    16/16  [BUILDS] full 2, refresh 14
+identity s33 ooo      46/46  [BUILDS] full 8, refresh 38
+identity s33 vol      31/31  [BUILDS] full 3, refresh 28
+identity s34 ch       30/31  [BUILDS] full 5, refresh 26
+identity s34 stale    16/16  [BUILDS] full 3, refresh 13
+identity s34 samereg  15/16  [BUILDS] full 3, refresh 13
+identity s34 multi    16/16  [BUILDS] full 3, refresh 13
+identity s34 corr     14/15  [BUILDS] full 3, refresh 12
+identity s34 src      16/16  [BUILDS] full 2, refresh 14
+identity s34 compat   16/16  [BUILDS] full 3, refresh 13
+identity s34 miss     16/16  [BUILDS] full 3, refresh 13
+identity s34 part1    15/16  [BUILDS] full 2, refresh 14
+identity s34 part2    16/16  [BUILDS] full 2, refresh 14
+identity s34 ooo      46/46  [BUILDS] full 6, refresh 40
+identity s34 vol      31/31  [BUILDS] full 3, refresh 28
+identity s35 ch       31/31  [BUILDS] full 5, refresh 26
+identity s35 stale    16/16  [BUILDS] full 3, refresh 13
+identity s35 samereg  16/16  [BUILDS] full 3, refresh 13
+identity s35 multi    16/16  [BUILDS] full 3, refresh 13
+identity s35 corr     15/15  [BUILDS] full 2, refresh 13
+identity s35 src      16/16  [BUILDS] full 2, refresh 14
+identity s35 compat   16/16  [BUILDS] full 3, refresh 13
+identity s35 miss     16/16  [BUILDS] full 3, refresh 13
+identity s35 part1    15/16  [BUILDS] full 2, refresh 14
+identity s35 part2    16/16  [BUILDS] full 2, refresh 14
+identity s35 ooo      46/46  [BUILDS] full 6, refresh 40
+identity s35 vol      31/31  [BUILDS] full 3, refresh 28
+V5 identity: 1243/1257 = 0.9889

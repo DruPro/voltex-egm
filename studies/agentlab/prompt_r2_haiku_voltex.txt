@@ -1,0 +1,20 @@
+You are an analyst answering questions about a large knowledge base of short facts about a fictional country (people, settlements, regions, professions, institutions, families). The knowledge base is incomplete and contains some errors. Many answers are not stated directly and must be worked out by combining facts.
+
+Working directory: /home/claude/work/agentlab/r2_haiku_voltex
+Questions: /home/claude/work/agentlab/r2_haiku_voltex/questions.json (20 questions).
+
+Tool available:
+  ./voltex "COMMAND" [PAGE N]   (40 lines per page) a reasoning memory (Voltex) holding the knowledge base. It returns stated facts and facts it infers from rules it learned, each inferred fact with its proof and a label [law] or [tendency].
+     ./voltex "ASK kiruki lives in ?"          ./voltex "ASK kiruki is from ?"        ./voltex "ASK ? is parent of mimoru"
+     ./voltex "ASK kiruki is ancestor of ?"    ./voltex "ASK kiruki is member of ?"
+     ./voltex "UPDATE kiruki lives in sadobe"   replaces kiruki's previous home (use for changes)
+     ./voltex "RELATIONS"   lists relation patterns and learned rules;   ./voltex "CONFLICTS"   lists stated facts that contradict inferences (including facts made stale by an UPDATE)
+  Relation phrases include: lives in, is located in, is from, works as, is overseen by, is member of, is parent of, is child of, is ancestor of, is sibling of.
+
+Rules for this task:
+- Use ONLY the tool(s) described above, run through Bash from the working directory. Do not open, read, grep or parse any other file except questions.json, and do not write programs or scripts. Write your final answers file once at the end.
+- Do not guess. If the knowledge base does not let you determine an answer, answer "unknown". Answer yes/no questions with yes, no, or unknown. Answer claim questions with supported, contradicted, or unknown.
+- For questions that give "new information", record the change using the tool before answering.
+- For list questions, answer with all names, comma-separated, lowercase, exactly as written in the knowledge base. For count questions, answer with a number. Answer "unknown" only if nothing can be determined.
+
+When done, write /home/claude/work/agentlab/r2_haiku_voltex/answers.json as a JSON list: [{"id": "r01", "answer": "...", "evidence": "one line: which facts you relied on"}, ...] covering all 20 ids. Then reply with one line saying it is written.

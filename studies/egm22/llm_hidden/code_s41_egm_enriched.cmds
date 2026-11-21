@@ -1,0 +1,204 @@
+OBSERVE repo timodo 1 1 snapshot | timodo is defined in satimod ; timodo calls mokavo ; timodo calls vobelo
+OBSERVE repo hemoti 1 1 snapshot | hemoti is defined in fibemod ; hemoti calls beheka ; hemoti calls nekaze ; hemoti depends on jogumod ; hemoti depends on sakimod
+OBSERVE repo josavo 1 1 snapshot | josavo is defined in fibemod ; josavo calls hesamo ; josavo calls raloki
+OBSERVE repo tineti 1 1 snapshot | tineti is defined in nunumod ; tineti calls henegu ; tineti depends on gufimod
+OBSERVE repo jokika 1 1 snapshot | jokika is defined in sakimod ; jokika calls rafiki ; jokika depends on rakimod
+OBSERVE repo nekaze 1 1 snapshot | nekaze is defined in jogumod ; nekaze calls kivomi
+OBSERVE repo fipagu 1 1 snapshot | fipagu is defined in gufimod ; fipagu calls betiru ; fipagu calls kakize
+OBSERVE repo rasanu 1 1 snapshot | rasanu is defined in sakimod ; rasanu calls kahevo ; rasanu calls nupalo ; rasanu calls vokamo
+OBSERVE repo nejoze 1 1 snapshot | nejoze is defined in jonumod ; nejoze calls fisanu ; nejoze calls josajo ; nejoze calls vojone
+OBSERVE repo lonefi 1 1 snapshot | lonefi is defined in kibemod ; lonefi calls betiru
+OBSERVE repo kadofi 1 1 snapshot | kadofi is defined in votimod ; kadofi calls pagunu
+OBSERVE repo hemifi 1 1 snapshot | hemifi is defined in gufimod ; hemifi calls jotimo ; hemifi calls misavo ; hemifi calls rukafi
+OBSERVE repo mihera 1 1 snapshot | mihera is defined in nunumod ; mihera calls nevosa ; mihera calls tibesa ; mihera calls vojoze
+OBSERVE repo kakize 1 1 snapshot | kakize is defined in gumimod ; kakize calls timimi
+OBSERVE repo raloki 1 1 snapshot | raloki is defined in gufimod ; raloki calls kalomo ; raloki calls mibegu
+OBSERVE repo tihera 1 1 snapshot | tihera is defined in fibemod ; tihera calls titize ; tihera depends on nunumod
+OBSERVE repo titigu 1 1 snapshot | titigu is defined in votimod ; titigu calls nukijo ; titigu calls raminu ; titigu depends on gufimod ; titigu depends on kibemod
+OBSERVE repo heguki 1 1 snapshot | heguki is defined in gumimod ; heguki calls hemifi ; heguki calls kahevo ; heguki depends on gufimod ; heguki depends on rakimod
+OBSERVE repo bezepa 1 1 snapshot | bezepa is defined in satimod ; bezepa calls midodo
+OBSERVE repo nedopa 1 1 snapshot | nedopa is defined in nunumod ; nedopa calls dobera ; nedopa calls firafi ; nedopa depends on jonumod ; nedopa depends on votimod
+OBSERVE repo kamine 1 1 snapshot | kamine is defined in satimod ; kamine calls rafiki ; kamine calls rufibe ; kamine calls sazejo
+OBSERVE repo kahevo 1 1 snapshot | kahevo is defined in rakimod ; kahevo calls nekagu ; kahevo calls voraki
+OBSERVE repo nudosa 1 1 snapshot | nudosa is defined in rakimod ; nudosa calls midodo ; nudosa calls vobelo ; nudosa depends on jonumod ; nudosa depends on satimod
+OBSERVE repo joloki 1 1 snapshot | joloki is defined in gufimod ; joloki calls josajo
+OBSERVE repo raminu 1 1 snapshot | raminu is defined in kibemod ; raminu calls hesamo ; raminu calls kamine ; raminu calls ravoka ; raminu depends on jonumod ; raminu depends on mipamod ; raminu depends on satimod
+OBSERVE repo dovoki 1 1 snapshot | dovoki is defined in sakimod ; dovoki calls doruti ; dovoki calls josavo
+OBSERVE repo nujoki 1 1 snapshot | nujoki is defined in jogumod ; nujoki calls nekagu ; nujoki depends on kibemod
+OBSERVE repo pakido 1 1 snapshot | pakido is defined in nunumod ; pakido calls tigulo ; pakido depends on kibemod
+OBSERVE repo hesabe 1 1 snapshot | hesabe is defined in gufimod ; hesabe calls misavo ; hesabe calls vozebe ; hesabe depends on satimod ; hesabe depends on votimod
+OBSERVE repo nutiti 1 1 snapshot | nutiti is defined in fibemod ; nutiti calls lomimo ; nutiti calls motigu ; nutiti calls ralosa
+OBSERVE repo kalomo 1 1 snapshot | kalomo is defined in gumimod ; kalomo calls kihenu ; kalomo calls mihera ; kalomo calls vorajo
+OBSERVE repo samofi 1 1 snapshot | samofi is defined in fibemod ; samofi calls tipati
+OBSERVE repo dofipa 1 1 snapshot | dofipa is defined in fibemod ; dofipa calls kipami ; dofipa depends on nunumod
+OBSERVE repo timimi 1 1 snapshot | timimi is defined in nunumod ; timimi calls kahepa ; timimi calls moloti ; timimi calls razesa ; timimi depends on gufimod ; timimi depends on jogumod ; timimi depends on kibemod
+OBSERVE repo pamilo 1 1 snapshot | pamilo is defined in gufimod ; pamilo calls kihenu ; pamilo calls nupalo ; pamilo calls ratido
+OBSERVE repo votiki 1 1 snapshot | votiki is defined in kibemod ; votiki calls nukize ; votiki calls pakido ; votiki depends on nunumod ; votiki depends on satimod
+OBSERVE repo rudohe 1 1 snapshot | rudohe is defined in gumimod ; rudohe calls jofijo
+OBSERVE repo gujovo 1 1 snapshot | gujovo is defined in fibemod ; gujovo calls pakido ; gujovo depends on nunumod
+OBSERVE repo herara 1 1 snapshot | herara is defined in fibemod ; herara calls dotibe ; herara calls jofijo
+OBSERVE repo zemohe 1 1 snapshot | zemohe is defined in jogumod ; zemohe calls dodomo ; zemohe calls dovoki
+OBSERVE repo voraki 1 1 snapshot | voraki is defined in fibemod ; voraki calls firafi ; voraki calls losajo
+OBSERVE repo momijo 1 1 snapshot | momijo is defined in jogumod ; momijo calls doragu ; momijo calls ruraru
+OBSERVE repo samoti 1 1 snapshot | samoti is defined in mipamod ; samoti calls rufibe
+OBSERVE repo tisalo 1 1 snapshot | tisalo is defined in gumimod ; tisalo calls beheka ; tisalo depends on sakimod
+OBSERVE repo losajo 1 1 snapshot | losajo is defined in kibemod ; losajo calls jotihe ; losajo calls timodo ; losajo depends on gufimod ; losajo depends on satimod
+OBSERVE repo nulovo 1 1 snapshot | nulovo is defined in fibemod ; nulovo calls rudohe ; nulovo calls sazesa ; nulovo calls tihera ; nulovo depends on fibemod ; nulovo depends on gumimod
+OBSERVE repo parati 1 1 snapshot | parati is defined in satimod ; parati calls hemifi ; parati calls raloki
+OBSERVE repo vozebe 1 1 snapshot | vozebe is defined in votimod ; vozebe calls jodora ; vozebe calls jojodo
+OBSERVE repo vosajo 1 1 snapshot | vosajo is defined in fibemod ; vosajo calls kivomo ; vosajo calls motigu ; vosajo calls timimi
+OBSERVE repo zekasa 1 1 snapshot | zekasa is defined in gumimod ; zekasa calls vojojo
+OBSERVE repo mozejo 1 1 snapshot | mozejo is defined in gumimod ; mozejo calls jotimo ; mozejo calls milofi ; mozejo calls vomoka ; mozejo depends on fibemod ; mozejo depends on nunumod ; mozejo depends on sakimod
+OBSERVE repo milora 1 1 snapshot | milora is defined in jonumod ; milora calls vokamo ; milora calls vomoka
+OBSERVE repo fikaka 1 1 snapshot | fikaka is defined in nunumod ; fikaka calls kamine ; fikaka calls mofijo ; fikaka calls nupalo ; fikaka depends on jogumod ; fikaka depends on jonumod ; fikaka depends on satimod
+OBSERVE repo voheka 1 1 snapshot | voheka is defined in jogumod ; voheka calls gujovo ; voheka calls nudosa ; voheka calls pasara
+OBSERVE repo kalosa 1 1 snapshot | kalosa is defined in nunumod ; kalosa calls rukafi ; kalosa depends on jogumod
+OBSERVE repo kativo 1 1 snapshot | kativo is defined in nunumod ; kativo calls heguki ; kativo calls nekaze ; kativo calls tisalo ; kativo depends on gumimod ; kativo depends on jogumod
+OBSERVE repo kivomo 1 1 snapshot | kivomo is defined in sakimod ; kivomo calls henegu ; kivomo calls josajo ; kivomo calls sazesa
+OBSERVE repo pagunu 1 1 snapshot | pagunu is defined in mipamod ; pagunu calls joloki
+OBSERVE repo nupalo 1 1 snapshot | nupalo is defined in jogumod ; nupalo calls benuka ; nupalo calls johera ; nupalo calls kiruti ; nupalo depends on rakimod ; nupalo depends on sakimod
+OBSERVE repo dobera 1 1 snapshot | dobera is defined in jonumod ; dobera calls gumiti ; dobera calls momijo
+OBSERVE repo motigu 1 1 snapshot | motigu is defined in gumimod ; motigu calls jojodo ; motigu calls josajo
+OBSERVE repo kipami 1 1 snapshot | kipami is defined in nunumod ; kipami calls morube
+OBSERVE repo gutiti 1 1 snapshot | gutiti is defined in gufimod ; gutiti calls ravoka ; gutiti calls rudohe
+OBSERVE repo ruvojo 1 1 snapshot | ruvojo is defined in sakimod ; ruvojo calls herara ; ruvojo calls heruvo ; ruvojo calls vobelo ; ruvojo depends on fibemod ; ruvojo depends on jonumod ; ruvojo depends on votimod
+OBSERVE repo sazesa 1 1 snapshot | sazesa is defined in gumimod ; sazesa calls joloki ; sazesa calls sazejo
+OBSERVE repo tipati 1 1 snapshot | tipati is defined in kibemod ; tipati calls gujovo ; tipati calls razevo ; tipati calls rusaru ; tipati depends on fibemod ; tipati depends on jogumod ; tipati depends on votimod
+OBSERVE repo rafiki 1 1 snapshot | rafiki is defined in rakimod ; rafiki calls kativo ; rafiki depends on nunumod
+OBSERVE repo jodora 1 1 snapshot | jodora is defined in jonumod ; jodora calls kihenu ; jodora calls kivomi ; jodora calls voraki
+OBSERVE repo razevo 1 1 snapshot | razevo is defined in jogumod ; razevo calls gujovo ; razevo calls hemoti ; razevo depends on fibemod
+OBSERVE repo rukafi 1 1 snapshot | rukafi is defined in jogumod ; rukafi calls kakine ; rukafi calls ratido ; rukafi calls satifi
+OBSERVE repo vojone 1 1 snapshot | vojone is defined in sakimod ; vojone calls jodora ; vojone calls vorajo
+OBSERVE repo dodomo 1 1 snapshot | dodomo is defined in satimod ; dodomo calls benuka ; dodomo calls bezepa ; dodomo calls momijo
+OBSERVE repo gumiti 1 1 snapshot | gumiti is defined in kibemod ; gumiti calls momogu
+OBSERVE repo momogu 1 1 snapshot | momogu is defined in nunumod ; momogu calls fisami ; momogu calls hesamo ; momogu calls rusaru ; momogu depends on fibemod ; momogu depends on mipamod ; momogu depends on votimod
+OBSERVE repo joloru 1 1 snapshot | joloru is defined in kibemod ; joloru calls tipati
+OBSERVE repo firafi 1 1 snapshot | firafi is defined in votimod ; firafi calls rasanu ; firafi calls vojone ; firafi depends on sakimod
+OBSERVE repo vomoka 1 1 snapshot | vomoka is defined in sakimod ; vomoka calls hezeze ; vomoka calls milora
+OBSERVE repo beheka 1 1 snapshot | beheka is defined in sakimod ; beheka calls kakine ; beheka calls pakido ; beheka calls tihera
+OBSERVE repo domopa 1 1 snapshot | domopa is defined in mipamod ; domopa calls jonepa ; domopa calls vozebe
+OBSERVE repo misavo 1 1 snapshot | misavo is defined in satimod ; misavo calls nedopa ; misavo depends on nunumod
+OBSERVE repo titize 1 1 snapshot | titize is defined in nunumod ; titize calls nejoze
+OBSERVE repo razesa 1 1 snapshot | razesa is defined in kibemod ; razesa calls kibefi
+OBSERVE repo vobelo 1 1 snapshot | vobelo is defined in jonumod ; vobelo calls pamilo ; vobelo calls vojojo ; vobelo depends on gufimod ; vobelo depends on votimod
+OBSERVE repo heruvo 1 1 snapshot | heruvo is defined in votimod ; heruvo calls hezeze
+OBSERVE repo rusaru 1 1 snapshot | rusaru is defined in votimod ; rusaru calls henegu
+OBSERVE repo kakine 1 1 snapshot | kakine is defined in mipamod ; kakine calls kalosa ; kakine calls sazejo ; kakine calls tisalo
+OBSERVE repo ruraru 1 1 snapshot | ruraru is defined in fibemod ; ruraru calls momijo ; ruraru calls rafiki
+OBSERVE repo tigulo 1 1 snapshot | tigulo is defined in kibemod ; tigulo calls zemohe
+OBSERVE repo kahepa 1 1 snapshot | kahepa is defined in jogumod ; kahepa calls fikaka ; kahepa calls nukize ; kahepa calls rusaru
+OBSERVE repo pasara 1 1 snapshot | pasara is defined in jonumod ; pasara calls jojodo ; pasara calls kahepa ; pasara calls losado ; pasara depends on fibemod ; pasara depends on jogumod ; pasara depends on sakimod
+OBSERVE repo vojoze 1 1 snapshot | vojoze is defined in sakimod ; vojoze calls jonepa ; vojoze calls kivomi
+OBSERVE repo fineze 1 1 snapshot | fineze is defined in satimod ; fineze calls nedopa ; fineze depends on nunumod
+OBSERVE repo nukijo 1 1 snapshot | nukijo is defined in gufimod ; nukijo calls kadofi ; nukijo calls moloti ; nukijo calls vokamo
+OBSERVE repo jotimo 1 1 snapshot | jotimo is defined in fibemod ; jotimo calls jotihe ; jotimo calls tihera ; jotimo depends on fibemod ; jotimo depends on gufimod
+OBSERVE repo vopami 1 1 snapshot | vopami is defined in kibemod ; vopami calls midodo ; vopami calls pamilo ; vopami calls vozebe
+OBSERVE repo ravoka 1 1 snapshot | ravoka is defined in jonumod ; ravoka calls dovoki ; ravoka calls kadofi ; ravoka calls zekine
+OBSERVE repo jotihe 1 1 snapshot | jotihe is defined in gufimod ; jotihe calls josajo ; jotihe calls satifi ; jotihe calls vojoze ; jotihe depends on jogumod ; jotihe depends on rakimod ; jotihe depends on sakimod
+OBSERVE repo mokavo 1 1 snapshot | mokavo is defined in gufimod ; mokavo calls votiki ; mokavo depends on kibemod
+OBSERVE repo lomimo 1 1 snapshot | lomimo is defined in jogumod ; lomimo calls samofi
+OBSERVE repo dozebe 1 1 snapshot | dozebe is defined in fibemod ; dozebe calls beheka ; dozebe calls hemoti
+OBSERVE repo johera 1 1 snapshot | johera is defined in sakimod ; johera calls bezepa ; johera calls kakine ; johera calls nedopa
+OBSERVE repo tibesa 1 1 snapshot | tibesa is defined in nunumod ; tibesa calls kivomi
+OBSERVE repo vojojo 1 1 snapshot | vojojo is defined in votimod ; vojojo calls hemoti ; vojojo calls losajo ; vojojo calls voheka ; vojojo depends on fibemod ; vojojo depends on jogumod ; vojojo depends on kibemod
+OBSERVE repo henegu 1 1 snapshot | henegu is defined in gufimod ; henegu calls kivomi ; henegu depends on kibemod
+OBSERVE repo negusa 1 1 snapshot | negusa is defined in mipamod ; negusa calls jokavo ; negusa calls jotimo
+OBSERVE repo zekine 1 1 snapshot | zekine is defined in jonumod ; zekine calls dozebe ; zekine calls jofijo ; zekine calls rafiki
+OBSERVE repo doruti 1 1 snapshot | doruti is defined in gumimod ; doruti calls zemohe
+OBSERVE repo fisami 1 1 snapshot | fisami is defined in fibemod ; fisami calls heruvo ; fisami calls pasara ; fisami calls vokamo ; fisami depends on jonumod ; fisami depends on votimod
+OBSERVE repo pasaki 1 1 snapshot | pasaki is defined in nunumod ; pasaki calls firafi ; pasaki calls sajoru
+OBSERVE repo zegugu 1 1 snapshot | zegugu is defined in nunumod ; zegugu calls dofipa ; zegugu calls nutiti ; zegugu calls rusaru
+OBSERVE repo vorajo 1 1 snapshot | vorajo is defined in jonumod ; vorajo calls dovoki ; vorajo calls vosajo ; vorajo depends on fibemod ; vorajo depends on sakimod
+OBSERVE repo parara 1 1 snapshot | parara is defined in sakimod ; parara calls josajo ; parara calls losajo
+OBSERVE repo kimogu 1 1 snapshot | kimogu is defined in gumimod ; kimogu calls jotimo ; kimogu calls tisalo
+OBSERVE repo josajo 1 1 snapshot | josajo is defined in rakimod ; josajo calls beheka ; josajo calls kakine ; josajo calls nevosa ; josajo depends on fibemod ; josajo depends on mipamod ; josajo depends on sakimod
+OBSERVE repo zerumo 1 1 snapshot | zerumo is defined in kibemod ; zerumo calls raloki ; zerumo calls zegugu ; zerumo depends on gufimod ; zerumo depends on nunumod
+OBSERVE repo hemogu 1 1 snapshot | hemogu is defined in jogumod ; hemogu calls jodora ; hemogu depends on jonumod
+OBSERVE repo kivomi 1 1 snapshot | kivomi is defined in kibemod ; kivomi calls satifi
+OBSERVE repo vokamo 1 1 snapshot | vokamo is defined in votimod ; vokamo calls fineze ; vokamo calls nudosa ; vokamo calls sazesa ; vokamo depends on gumimod ; vokamo depends on rakimod ; vokamo depends on satimod
+OBSERVE repo kibefi 1 1 snapshot | kibefi is defined in jogumod ; kibefi calls midodo ; kibefi calls sazejo ; kibefi calls votiki
+OBSERVE repo hezeze 1 1 snapshot | hezeze is defined in jonumod ; hezeze calls losado ; hezeze calls mihera ; hezeze calls satifi
+OBSERVE repo kirune 1 1 snapshot | kirune is defined in nunumod ; kirune calls vopami ; kirune depends on kibemod
+OBSERVE repo nukize 1 1 snapshot | nukize is defined in satimod ; nukize calls tigulo ; nukize depends on kibemod
+OBSERVE repo nevosa 1 1 snapshot | nevosa is defined in fibemod ; nevosa calls parati ; nevosa depends on satimod
+OBSERVE repo pavogu 1 1 snapshot | pavogu is defined in sakimod ; pavogu calls kimogu
+OBSERVE repo kiruti 1 1 snapshot | kiruti is defined in rakimod ; kiruti calls firafi ; kiruti calls rafiki ; kiruti calls samoti
+OBSERVE repo gumora 1 1 snapshot | gumora is defined in jonumod ; gumora calls ravoka ; gumora calls vopami ; gumora calls voraki
+OBSERVE repo pajoki 1 1 snapshot | pajoki is defined in kibemod ; pajoki calls nevosa ; pajoki calls pavogu
+OBSERVE repo vopado 1 1 snapshot | vopado is defined in nunumod ; vopado calls gumora ; vopado calls parati ; vopado depends on jonumod ; vopado depends on satimod
+OBSERVE repo ratido 1 1 snapshot | ratido is defined in votimod ; ratido calls raloki ; ratido depends on gufimod
+OBSERVE repo satifi 1 1 snapshot | satifi is defined in jogumod ; satifi calls gumora ; satifi calls samoti
+OBSERVE repo kihepa 1 1 snapshot | kihepa is defined in rakimod ; kihepa calls moloti
+OBSERVE repo hesamo 1 1 snapshot | hesamo is defined in mipamod ; hesamo calls fisanu ; hesamo depends on gumimod
+OBSERVE repo kaloka 1 1 snapshot | kaloka is defined in jonumod ; kaloka calls nedopa ; kaloka calls raminu ; kaloka calls zerumo ; kaloka depends on kibemod ; kaloka depends on nunumod
+OBSERVE repo nemoti 1 1 snapshot | nemoti is defined in rakimod ; nemoti calls bezepa ; nemoti calls jokavo
+OBSERVE repo jofijo 1 1 snapshot | jofijo is defined in satimod ; jofijo calls sazejo
+OBSERVE repo volodo 1 1 snapshot | volodo is defined in kibemod ; volodo calls jokika ; volodo calls kipami ; volodo calls motigu ; volodo depends on gumimod ; volodo depends on nunumod ; volodo depends on sakimod
+OBSERVE repo dozenu 1 1 snapshot | dozenu is defined in sakimod ; dozenu calls kahevo
+OBSERVE repo benuka 1 1 snapshot | benuka is defined in rakimod ; benuka calls lomimo ; benuka calls tisalo ; benuka calls vopado ; benuka depends on gumimod ; benuka depends on jogumod ; benuka depends on nunumod
+OBSERVE repo sazejo 1 1 snapshot | sazejo is defined in jonumod ; sazejo calls zegugu ; sazejo depends on nunumod
+OBSERVE repo kihenu 1 1 snapshot | kihenu is defined in jogumod ; kihenu calls fisanu
+OBSERVE repo ralosa 1 1 snapshot | ralosa is defined in mipamod ; ralosa calls lomimo ; ralosa calls negusa ; ralosa calls ruraru
+OBSERVE repo jonepa 1 1 snapshot | jonepa is defined in satimod ; jonepa calls kadofi ; jonepa calls rudohe ; jonepa calls sazejo
+OBSERVE repo nekagu 1 1 snapshot | nekagu is defined in kibemod ; nekagu calls dodomo
+OBSERVE repo mofijo 1 1 snapshot | mofijo is defined in jonumod ; mofijo calls jofijo
+OBSERVE repo dotibe 1 1 snapshot | dotibe is defined in jogumod ; dotibe calls bezepa ; dotibe calls gumiti ; dotibe calls moloti
+OBSERVE repo fisanu 1 1 snapshot | fisanu is defined in gumimod ; fisanu calls hemoti ; fisanu calls kalomo
+OBSERVE repo rufibe 1 1 snapshot | rufibe is defined in jonumod ; rufibe calls dodomo ; rufibe calls johera
+OBSERVE repo losado 1 1 snapshot | losado is defined in sakimod ; losado calls joloru ; losado calls samofi ; losado calls voheka
+OBSERVE repo milofi 1 1 snapshot | milofi is defined in nunumod ; milofi calls ruvojo
+OBSERVE repo jokavo 1 1 snapshot | jokavo is defined in jogumod ; jokavo calls fipagu ; jokavo calls vojone ; jokavo depends on gufimod ; jokavo depends on sakimod
+OBSERVE repo sajoru 1 1 snapshot | sajoru is defined in jonumod ; sajoru calls jojodo
+OBSERVE repo mibegu 1 1 snapshot | mibegu is defined in satimod ; mibegu calls parara
+OBSERVE repo midodo 1 1 snapshot | midodo is defined in satimod ; midodo calls heruvo ; midodo calls kimogu ; midodo calls raminu ; midodo depends on gumimod ; midodo depends on kibemod ; midodo depends on votimod
+OBSERVE repo moloti 1 1 snapshot | moloti is defined in gufimod ; moloti calls ravoka ; moloti calls sajoru ; moloti calls titize
+OBSERVE repo morube 1 1 snapshot | morube is defined in gufimod ; morube calls betiru ; morube calls johera ; morube calls mofijo
+OBSERVE repo jojodo 1 1 snapshot | jojodo is defined in fibemod ; jojodo calls kalomo ; jojodo calls motigu ; jojodo calls satifi ; jojodo depends on gumimod ; jojodo depends on jogumod
+OBSERVE repo joruze 1 1 snapshot | joruze is defined in gumimod ; joruze calls benuka ; joruze calls bezepa ; joruze calls voheka
+OBSERVE repo betiru 1 1 snapshot | betiru is defined in mipamod ; betiru calls hesabe ; betiru calls mibegu ; betiru depends on gufimod ; betiru depends on satimod
+OBSERVE repo sakisa 1 1 snapshot | sakisa is defined in sakimod ; sakisa calls nejoze
+OBSERVE repo doragu 1 1 snapshot | doragu is defined in nunumod ; doragu calls kirune ; doragu calls mozejo ; doragu calls nulovo
+OBSERVE repo sazesa 2 1 snapshot | sazesa is defined in fibemod ; sazesa calls joloki ; sazesa calls sazejo
+OBSERVE repo losajo 2 1 snapshot | losajo is defined in jonumod ; losajo calls jotihe ; losajo calls timodo ; losajo depends on gufimod ; losajo depends on satimod
+OBSERVE repo fisami 2 1 snapshot | fisami is defined in fibemod ; fisami calls heruvo ; fisami calls pasara ; fisami depends on jonumod ; fisami depends on votimod
+OBSERVE repo pamilo 2 1 snapshot | pamilo is defined in gufimod ; pamilo calls nupalo ; pamilo calls ratido
+OBSERVE repo kaloka 2 1 snapshot | kaloka is defined in jonumod ; kaloka calls nedopa ; kaloka calls zerumo ; kaloka depends on kibemod ; kaloka depends on nunumod
+OBSERVE repo vojone 2 1 snapshot | vojone is defined in sakimod ; vojone calls vorajo
+OBSERVE repo kamine 2 1 snapshot | kamine is defined in satimod ; kamine calls rafiki ; kamine calls sazejo
+OBSERVE repo jokavo 2 1 snapshot | jokavo is defined in jogumod ; jokavo calls vojone ; jokavo depends on sakimod
+OBSERVE repo pasaki 2 1 snapshot | pasaki is defined in nunumod ; pasaki calls firafi
+OBSERVE repo voheka 2 1 snapshot | voheka is defined in jogumod ; voheka calls gujovo ; voheka calls nudosa
+OBSERVE repo timimi 2 1 snapshot | timimi is defined in nunumod ; timimi calls kahepa ; timimi calls moloti ; timimi depends on gufimod ; timimi depends on jogumod
+OBSERVE repo jotimo 2 1 snapshot | jotimo is defined in fibemod ; jotimo calls tihera ; jotimo depends on fibemod
+OBSERVE repo ruhefi 2 1 snapshot | ruhefi is defined in jovomod
+OBSERVE repo midora 2 1 snapshot | midora is defined in jovomod
+OBSERVE repo gunulo 2 1 snapshot | gunulo is defined in jovomod
+OBSERVE repo kafine 2 1 snapshot | kafine is defined in jovomod
+OBSERVE repo numohe 2 1 snapshot | numohe is defined in jovomod
+OBSERVE repo kirune 3 1 snapshot | kirune is defined in rakimod ; kirune calls vopami ; kirune depends on kibemod
+OBSERVE repo hemoti 3 1 snapshot | hemoti is defined in jonumod ; hemoti calls beheka ; hemoti calls nekaze ; hemoti depends on jogumod ; hemoti depends on sakimod
+OBSERVE repo fikaka 3 1 snapshot | fikaka is defined in gumimod ; fikaka calls kamine ; fikaka calls mofijo ; fikaka calls nupalo ; fikaka depends on jogumod ; fikaka depends on jonumod ; fikaka depends on satimod
+OBSERVE repo rukafi 3 1 snapshot | rukafi is defined in gufimod ; rukafi calls kakine ; rukafi calls ratido ; rukafi calls satifi
+OBSERVE repo heruvo 3 1 snapshot | heruvo is defined in gufimod ; heruvo calls hezeze
+OBSERVE repo kalosa 2 1 snapshot | kalosa is defined in nunumod ; kalosa calls ruhefi ; kalosa calls rukafi ; kalosa depends on jogumod ; kalosa depends on jovomod
+OBSERVE repo nujoki 2 1 snapshot | nujoki is defined in jogumod ; nujoki calls midora ; nujoki calls nekagu ; nujoki depends on jovomod ; nujoki depends on kibemod
+OBSERVE repo hemifi 2 1 snapshot | hemifi is defined in gufimod ; hemifi calls gunulo ; hemifi calls jotimo ; hemifi calls misavo ; hemifi calls rukafi
+OBSERVE repo negusa 2 1 snapshot | negusa is defined in mipamod ; negusa calls jokavo ; negusa calls jotimo ; negusa calls kafine
+OBSERVE repo losado 2 1 snapshot | losado is defined in sakimod ; losado calls joloru ; losado calls numohe ; losado calls samofi ; losado calls voheka
+OBSERVE repo kirune 3 1 snapshot | kirune is defined in rakimod ; kirune calls vopami ; kirune depends on kibemod
+OBSERVE repo hemoti 3 1 snapshot | hemoti is defined in jonumod ; hemoti calls beheka ; hemoti calls nekaze ; hemoti depends on jogumod ; hemoti depends on sakimod
+OBSERVE repo fikaka 3 1 snapshot | fikaka is defined in gumimod ; fikaka calls kamine ; fikaka calls mofijo ; fikaka calls nupalo ; fikaka depends on jogumod ; fikaka depends on jonumod ; fikaka depends on satimod
+OBSERVE repo rukafi 3 1 snapshot | rukafi is defined in gufimod ; rukafi calls kakine ; rukafi calls ratido ; rukafi calls satifi
+OBSERVE repo heruvo 3 1 snapshot | heruvo is defined in gufimod ; heruvo calls hezeze
+OBSERVE repo kirune 2 1 snapshot | kirune is defined in mipamod ; kirune calls vopami ; kirune depends on kibemod
+OBSERVE repo hemoti 2 1 snapshot | hemoti is defined in jogumod ; hemoti calls beheka ; hemoti calls nekaze ; hemoti depends on jogumod ; hemoti depends on sakimod
+OBSERVE repo fikaka 2 1 snapshot | fikaka is defined in gufimod ; fikaka calls kamine ; fikaka calls mofijo ; fikaka calls nupalo ; fikaka depends on jogumod ; fikaka depends on jonumod ; fikaka depends on satimod
+OBSERVE repo rukafi 2 1 snapshot | rukafi is defined in satimod ; rukafi calls kakine ; rukafi calls ratido ; rukafi calls satifi
+OBSERVE repo heruvo 2 1 snapshot | heruvo is defined in jogumod ; heruvo calls hezeze
+RELATIONS
+INFER ALL
+CONFLICTS
+ASK ? depends on ?
+ASK ? calls ?
+ASK ? is defined in ?
+EXIT

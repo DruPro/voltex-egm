@@ -1,0 +1,8 @@
+clean base | ALL derived 1119, correct 1119 -> precision 100.0% | tree rules: 0
+clean trees | ALL derived 1119, correct 1119 -> precision 100.0% | tree rules: 188
+noisy base | ALL derived 1119, correct 1118 -> precision 99.9% | tree rules: 0
+noisy trees | ALL derived 1119, correct 1119 -> precision 100.0% | tree rules: 199
+noisy15 base | ALL derived 1119, correct 1116 -> precision 99.7% | tree rules: 0
+noisy15 trees | ALL derived 1119, correct 1119 -> precision 100.0% | tree rules: 207
+noisy30 base | ALL derived 817, correct 817 -> precision 100.0% | tree rules: 0
+noisy30 trees | ALL derived 1070, correct 1048 -> precision 97.9% | tree rules: 100

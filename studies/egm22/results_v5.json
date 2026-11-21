@@ -1,0 +1,462 @@
+{
+ "timing": [
+  {
+   "scale": 1,
+   "refresh": 0,
+   "seconds": 8.16,
+   "builds": "[BUILDS] full 51, refresh 0"
+  },
+  {
+   "scale": 1,
+   "refresh": 0.02,
+   "seconds": 4.73,
+   "builds": "[BUILDS] full 5, refresh 46"
+  },
+  {
+   "scale": 2,
+   "refresh": 0,
+   "seconds": 23.32,
+   "builds": "[BUILDS] full 51, refresh 0"
+  },
+  {
+   "scale": 2,
+   "refresh": 0.02,
+   "seconds": 10.31,
+   "builds": "[BUILDS] full 3, refresh 48"
+  },
+  {
+   "scale": 4,
+   "refresh": 0,
+   "seconds": 54.89,
+   "builds": "[BUILDS] full 51, refresh 0"
+  },
+  {
+   "scale": 4,
+   "refresh": 0.02,
+   "seconds": 22.75,
+   "builds": "[BUILDS] full 2, refresh 49"
+  }
+ ],
+ "identity": [
+  {
+   "seed": 31,
+   "session": "ch",
+   "blocks": 31,
+   "identical": 30,
+   "builds_refresh_run": "[BUILDS] full 4, refresh 27"
+  },
+  {
+   "seed": 31,
+   "session": "stale",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 31,
+   "session": "samereg",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 31,
+   "session": "multi",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 31,
+   "session": "corr",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 31,
+   "session": "src",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 31,
+   "session": "compat",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 31,
+   "session": "miss",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 31,
+   "session": "part1",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 31,
+   "session": "part2",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 31,
+   "session": "ooo",
+   "blocks": 46,
+   "identical": 46,
+   "builds_refresh_run": "[BUILDS] full 8, refresh 38"
+  },
+  {
+   "seed": 31,
+   "session": "vol",
+   "blocks": 31,
+   "identical": 31,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 28"
+  },
+  {
+   "seed": 32,
+   "session": "ch",
+   "blocks": 31,
+   "identical": 31,
+   "builds_refresh_run": "[BUILDS] full 4, refresh 27"
+  },
+  {
+   "seed": 32,
+   "session": "stale",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 32,
+   "session": "samereg",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 32,
+   "session": "multi",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 32,
+   "session": "corr",
+   "blocks": 15,
+   "identical": 14,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 12"
+  },
+  {
+   "seed": 32,
+   "session": "src",
+   "blocks": 16,
+   "identical": 13,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 32,
+   "session": "compat",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 32,
+   "session": "miss",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 32,
+   "session": "part1",
+   "blocks": 16,
+   "identical": 15,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 32,
+   "session": "part2",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 32,
+   "session": "ooo",
+   "blocks": 46,
+   "identical": 46,
+   "builds_refresh_run": "[BUILDS] full 7, refresh 39"
+  },
+  {
+   "seed": 32,
+   "session": "vol",
+   "blocks": 31,
+   "identical": 31,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 28"
+  },
+  {
+   "seed": 33,
+   "session": "ch",
+   "blocks": 31,
+   "identical": 31,
+   "builds_refresh_run": "[BUILDS] full 5, refresh 26"
+  },
+  {
+   "seed": 33,
+   "session": "stale",
+   "blocks": 16,
+   "identical": 15,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 33,
+   "session": "samereg",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 33,
+   "session": "multi",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 33,
+   "session": "corr",
+   "blocks": 16,
+   "identical": 15,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 33,
+   "session": "src",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 33,
+   "session": "compat",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 33,
+   "session": "miss",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 33,
+   "session": "part1",
+   "blocks": 16,
+   "identical": 15,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 33,
+   "session": "part2",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 33,
+   "session": "ooo",
+   "blocks": 46,
+   "identical": 46,
+   "builds_refresh_run": "[BUILDS] full 8, refresh 38"
+  },
+  {
+   "seed": 33,
+   "session": "vol",
+   "blocks": 31,
+   "identical": 31,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 28"
+  },
+  {
+   "seed": 34,
+   "session": "ch",
+   "blocks": 31,
+   "identical": 30,
+   "builds_refresh_run": "[BUILDS] full 5, refresh 26"
+  },
+  {
+   "seed": 34,
+   "session": "stale",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 34,
+   "session": "samereg",
+   "blocks": 16,
+   "identical": 15,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 34,
+   "session": "multi",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 34,
+   "session": "corr",
+   "blocks": 15,
+   "identical": 14,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 12"
+  },
+  {
+   "seed": 34,
+   "session": "src",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 34,
+   "session": "compat",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 34,
+   "session": "miss",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 34,
+   "session": "part1",
+   "blocks": 16,
+   "identical": 15,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 34,
+   "session": "part2",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 34,
+   "session": "ooo",
+   "blocks": 46,
+   "identical": 46,
+   "builds_refresh_run": "[BUILDS] full 6, refresh 40"
+  },
+  {
+   "seed": 34,
+   "session": "vol",
+   "blocks": 31,
+   "identical": 31,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 28"
+  },
+  {
+   "seed": 35,
+   "session": "ch",
+   "blocks": 31,
+   "identical": 31,
+   "builds_refresh_run": "[BUILDS] full 5, refresh 26"
+  },
+  {
+   "seed": 35,
+   "session": "stale",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 35,
+   "session": "samereg",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 35,
+   "session": "multi",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 35,
+   "session": "corr",
+   "blocks": 15,
+   "identical": 15,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 13"
+  },
+  {
+   "seed": 35,
+   "session": "src",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 35,
+   "session": "compat",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 35,
+   "session": "miss",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 13"
+  },
+  {
+   "seed": 35,
+   "session": "part1",
+   "blocks": 16,
+   "identical": 15,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 35,
+   "session": "part2",
+   "blocks": 16,
+   "identical": 16,
+   "builds_refresh_run": "[BUILDS] full 2, refresh 14"
+  },
+  {
+   "seed": 35,
+   "session": "ooo",
+   "blocks": 46,
+   "identical": 46,
+   "builds_refresh_run": "[BUILDS] full 6, refresh 40"
+  },
+  {
+   "seed": 35,
+   "session": "vol",
+   "blocks": 31,
+   "identical": 31,
+   "builds_refresh_run": "[BUILDS] full 3, refresh 28"
+  }
+ ]
+}

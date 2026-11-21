@@ -1,0 +1,52 @@
+{
+ "E1_split_lookups_longer_than_4": 23250,
+ "E1_successful_lookups": 0,
+ "E1_trees_differing_fresh_vs_warm": 154,
+ "E2_shared_suffix_nospace": [
+  0,
+  13
+ ],
+ "E2_shared_suffix_offset_by_1": [
+  0,
+  13
+ ],
+ "E2_shared_prefix_nospace": [
+  0,
+  13
+ ],
+ "E2_shared_middle_words": [
+  6,
+  13
+ ],
+ "E3_evo_json_1000": {
+  "raw_bytes": 199854,
+  "voltex_vtxe_bytes": 5860002,
+  "voltex_nodes": 86222,
+  "voltex_atoms": 523,
+  "voltex_chunks": 85699,
+  "nodes_per_line": 86.2,
+  "zlib9": 36072,
+  "bz2": 26292,
+  "xz": 29508,
+  "chunks_with_multiple_parents": 219,
+  "repair_bytes": 37050,
+  "repair_rules": 2969
+ },
+ "E3_license_text_lines": {
+  "raw_bytes": 69164,
+  "voltex_vtxe_bytes": 1320293,
+  "voltex_nodes": 19605,
+  "voltex_atoms": 2637,
+  "voltex_chunks": 16968,
+  "nodes_per_line": 18.0,
+  "zlib9": 22400,
+  "bz2": 19082,
+  "xz": 20172,
+  "chunks_with_multiple_parents": 1139,
+  "repair_bytes": 27081,
+  "repair_rules": 3880
+ },
+ "E4_pinned_before": "critical configuration v2.1",
+ "E4_pinned_after_40_dreams": "\u0000\u0000",
+ "E4_nodes_left": 1
+}

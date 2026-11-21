@@ -1,0 +1,324 @@
+[
+ {
+  "seed": 0,
+  "movers": 30,
+  "residents_of_moved_settlement": 4,
+  "before_update": {
+   "moved settlement is located in: stale only": 1,
+   "mover is from: no/other answer": 7,
+   "mover is from: stale only": 23,
+   "mover lives in: stale only": 30,
+   "resident of moved settlement, is from: stale only": 4
+  },
+  "rules_after_update": [
+   "ACCEPT [? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=186 k",
+   "ACCEPT [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=15"
+  ],
+  "after_append_update": {
+   "moved settlement is located in: new + stale": 1,
+   "mover is from: correct only": 7,
+   "mover is from: no/other answer": 8,
+   "mover is from: stale only": 15,
+   "mover lives in: new + stale": 30,
+   "resident of moved settlement, is from: no/other answer": 2,
+   "resident of moved settlement, is from: stale only": 2
+  },
+  "examples": [
+   [
+    "sakinu",
+    [
+     "fisaia"
+    ]
+   ],
+   [
+    "miranu",
+    [
+     "netiia"
+    ]
+   ],
+   [
+    "neguze",
+    [
+     "netiia"
+    ]
+   ],
+   [
+    "nuzepa",
+    []
+   ],
+   [
+    "misafi",
+    [
+     "netiia"
+    ]
+   ]
+  ],
+  "conflicts_after_update": 2,
+  "rebuilt_with_old_facts_removed": {
+   "moved settlement is located in: correct only": 1,
+   "mover is from: correct only": 13,
+   "mover is from: no/other answer": 6,
+   "mover is from: stale only": 11,
+   "mover lives in: correct only": 30,
+   "resident of moved settlement, is from: correct only": 3,
+   "resident of moved settlement, is from: stale only": 1
+  }
+ },
+ {
+  "seed": 1,
+  "movers": 30,
+  "residents_of_moved_settlement": 4,
+  "before_update": {
+   "moved settlement is located in: stale only": 1,
+   "mover is from: no/other answer": 4,
+   "mover is from: stale only": 26,
+   "mover lives in: stale only": 30,
+   "resident of moved settlement, is from: stale only": 4
+  },
+  "rules_after_update": [
+   "ACCEPT [? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=181 k",
+   "ACCEPT [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=16"
+  ],
+  "after_append_update": {
+   "moved settlement is located in: new + stale": 1,
+   "mover is from: correct only": 5,
+   "mover is from: no/other answer": 6,
+   "mover is from: stale only": 19,
+   "mover lives in: new + stale": 30,
+   "resident of moved settlement, is from: no/other answer": 2,
+   "resident of moved settlement, is from: stale only": 2
+  },
+  "examples": [
+   [
+    "nenumo",
+    [
+     "kavoia"
+    ]
+   ],
+   [
+    "rudomi",
+    []
+   ],
+   [
+    "mivobe",
+    [
+     "befiia"
+    ]
+   ],
+   [
+    "pavoti",
+    [
+     "kavoia"
+    ]
+   ],
+   [
+    "kalofi",
+    []
+   ]
+  ],
+  "conflicts_after_update": 6,
+  "rebuilt_with_old_facts_removed": {
+   "moved settlement is located in: correct only": 1,
+   "mover is from: no/other answer": 12,
+   "mover is from: stale only": 18,
+   "mover lives in: correct only": 29,
+   "mover lives in: new + other": 1,
+   "resident of moved settlement, is from: no/other answer": 2,
+   "resident of moved settlement, is from: stale only": 2
+  }
+ },
+ {
+  "seed": 2,
+  "movers": 30,
+  "residents_of_moved_settlement": 3,
+  "before_update": {
+   "moved settlement is located in: stale only": 1,
+   "mover is from: no/other answer": 2,
+   "mover is from: stale only": 28,
+   "mover lives in: stale only": 30,
+   "resident of moved settlement, is from: stale only": 3
+  },
+  "rules_after_update": [
+   "ACCEPT [? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=177 k",
+   "ACCEPT [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=22"
+  ],
+  "after_append_update": {
+   "moved settlement is located in: new + stale": 1,
+   "mover is from: correct only": 5,
+   "mover is from: no/other answer": 3,
+   "mover is from: stale only": 22,
+   "mover lives in: new + stale": 30,
+   "resident of moved settlement, is from: no/other answer": 2,
+   "resident of moved settlement, is from: stale only": 1
+  },
+  "examples": [
+   [
+    "zedopa",
+    [
+     "kaguia"
+    ]
+   ],
+   [
+    "pamivo",
+    [
+     "mikaia"
+    ]
+   ],
+   [
+    "kabepa",
+    [
+     "nepaia"
+    ]
+   ],
+   [
+    "pajosa",
+    [
+     "mikaia"
+    ]
+   ],
+   [
+    "zenegu",
+    [
+     "fizeia"
+    ]
+   ]
+  ],
+  "conflicts_after_update": 1,
+  "rebuilt_with_old_facts_removed": {
+   "moved settlement is located in: correct only": 1,
+   "mover is from: correct only": 9,
+   "mover is from: no/other answer": 3,
+   "mover is from: stale only": 18,
+   "mover lives in: correct only": 30,
+   "resident of moved settlement, is from: correct only": 3
+  }
+ },
+ {
+  "seed": 3,
+  "movers": 30,
+  "residents_of_moved_settlement": 6,
+  "before_update": {
+   "moved settlement is located in: stale only": 1,
+   "mover is from: no/other answer": 5,
+   "mover is from: stale only": 25,
+   "mover lives in: stale only": 30,
+   "resident of moved settlement, is from: stale only": 6
+  },
+  "rules_after_update": [
+   "ACCEPT [? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=174 k",
+   "ACCEPT [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=10"
+  ],
+  "after_append_update": {
+   "moved settlement is located in: new + stale": 1,
+   "mover is from: correct only": 5,
+   "mover is from: no/other answer": 3,
+   "mover is from: stale only": 22,
+   "mover lives in: new + stale": 30,
+   "resident of moved settlement, is from: no/other answer": 3,
+   "resident of moved settlement, is from: stale only": 3
+  },
+  "examples": [
+   [
+    "gujora",
+    [
+     "gujoia"
+    ]
+   ],
+   [
+    "fizenu",
+    [
+     "nukiia"
+    ]
+   ],
+   [
+    "kijogu",
+    [
+     "pakiia"
+    ]
+   ],
+   [
+    "rumodo",
+    [
+     "raguia"
+    ]
+   ],
+   [
+    "gusahe",
+    [
+     "pakiia"
+    ]
+   ]
+  ],
+  "conflicts_after_update": 1,
+  "rebuilt_with_old_facts_removed": {
+   "moved settlement is located in: correct only": 1,
+   "mover is from: correct only": 8,
+   "mover is from: no/other answer": 5,
+   "mover is from: stale only": 17,
+   "mover lives in: correct only": 29,
+   "mover lives in: new + other": 1,
+   "resident of moved settlement, is from: correct only": 4,
+   "resident of moved settlement, is from: stale only": 2
+  }
+ },
+ {
+  "seed": 4,
+  "movers": 30,
+  "residents_of_moved_settlement": 2,
+  "before_update": {
+   "moved settlement is located in: stale only": 1,
+   "mover is from: no/other answer": 3,
+   "mover is from: stale only": 27,
+   "mover lives in: stale only": 30,
+   "resident of moved settlement, is from: stale only": 2
+  },
+  "rules_after_update": [
+   "ACCEPT [? trades with ?](a,b) & [? is from ?](b,c) => [? is from ?](a,c) n=161 k",
+   "ACCEPT [? lives in ?](a,b) & [? is located in ?](b,c) => [? is from ?](a,c) n=17"
+  ],
+  "after_append_update": {
+   "moved settlement is located in: new + stale": 1,
+   "mover is from: correct only": 3,
+   "mover is from: no/other answer": 9,
+   "mover is from: stale only": 18,
+   "mover lives in: new + stale": 30,
+   "resident of moved settlement, is from: stale only": 2
+  },
+  "examples": [
+   [
+    "vokami",
+    [
+     "loloia"
+    ]
+   ],
+   [
+    "rumiki",
+    [
+     "mokaia"
+    ]
+   ],
+   [
+    "benumi",
+    []
+   ],
+   [
+    "lomonu",
+    []
+   ],
+   [
+    "fibefi",
+    [
+     "nuruia"
+    ]
+   ]
+  ],
+  "conflicts_after_update": 2,
+  "rebuilt_with_old_facts_removed": {
+   "moved settlement is located in: correct only": 1,
+   "mover is from: no/other answer": 14,
+   "mover is from: stale only": 16,
+   "mover lives in: correct only": 30,
+   "resident of moved settlement, is from: stale only": 2
+  }
+ }
+]

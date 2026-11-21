@@ -1,0 +1,22 @@
+[
+ {"id": "r01", "answer": "guvogu, mopati, pasajo, joparu, dokabe", "evidence": "finugu is child of pasajo and joparu; guvogu and mopati are ancestors of finugu; pasajo is child of guvogu and dokabe; joparu and mopati have no recorded parents"},
+ {"id": "r02", "answer": "hesavo, gunefi, monuru, firati", "evidence": "jokihe is child of hesavo; gunefi and monuru are ancestors of jokihe; hesavo is child of monuru and firati; firati has no recorded parent"},
+ {"id": "r03", "answer": "bebegu, bemilo, nusajo, kakaka, lomosa", "evidence": "nukivo is child of bebegu and kakaka, and has ancestors bemilo and nusajo; nusajo is parent of bebegu; kakaka is child of lomosa and bemilo"},
+ {"id": "r04", "answer": "morudo, mojohe, padobe, jovora", "evidence": "lotigu is child of morudo, with ancestors mojohe and padobe; morudo is child of padobe and jovora; no recorded parents for mojohe, padobe or jovora"},
+ {"id": "r05", "answer": "zetize, vonera, ravovo, bevosa, nuguti", "evidence": "zehemi is child of ravovo, with ancestors zetize, vonera, bevosa and nuguti; ravovo is child of zetize and bevosa; no recorded parents for the others"},
+ {"id": "r06", "answer": "mizejo, heneti, lorati, hekifi, jomoru", "evidence": "explicit 'sibling of rukisa' facts; jomoru, heneti and mizejo are also children of molojo, consistent with shared parent"},
+ {"id": "r07", "answer": "nukiti, nukinu, pazesa, rujofi, nufilo, ruzevo", "evidence": "explicit 'sibling of saneki' facts; ruzevo is also a child of sajomo, as saneki is"},
+ {"id": "r08", "answer": "jomojo, johegu, tibesa", "evidence": "explicit sibling facts for jomojo and johegu; fihesa, johegu, jomojo and tibesa are all children of votiti"},
+ {"id": "r09", "answer": "mipaki, moheka, razeka", "evidence": "explicit sibling fact for mipaki; besane, mipaki, moheka and razeka are all children of vorafi"},
+ {"id": "r10", "answer": "mokibe, sazebe, nuheti", "evidence": "explicit sibling facts for mokibe and sazebe; mojopa, mokibe and sazebe are children of tivobe; mojopa and nuheti are children of mosami"},
+ {"id": "r11", "answer": "sanelo, rujomi, dosaka, gutimi, neberu, kakisa, lohera, domilo, lozeze, rufiki, vokara, titiru, finehe, fijopa, lolojo", "evidence": "all 'X is from padoia' facts in the knowledge base"},
+ {"id": "r12", "answer": "doguka, zemisa, jorara, miguvo, gupasa, sazebe, lonegu, neguvo, rulofi, betifi, ragujo, neminu, hevodo, vohejo, zekika, sajomi, hetihe, lokanu, panura, zesafi, helohe, logufi, hefifi, nebenu, guramo, pazeti, vorugu, mokibe, kabebe", "evidence": "all 'X is from paheia' facts in the knowledge base"},
+ {"id": "r13", "answer": "kabepa, fikibe, rupado, runegu, nubesa, ravosa, vonera, nupajo, guvomo, gusati, lohefi, mimojo, karunu, ranuki, ruzebe, behegu, saruvo, dovodo, hegupa, nusasa, raneti, tifivo, parapa", "evidence": "all 'X is from ramoia' facts in the knowledge base"},
+ {"id": "r14", "answer": "begugu, tizelo, vopado, lorumi, kavoka, jokara, bemolo, bemoka, lonemo, voloka, mijofi, fimipa, rahenu, jodosa, dokamo, jovolo, morabe, nulolo, rugulo, tilodo, panuru, monuvo, tizene, vonulo, sarara, sanumo, loraki, saguvo, heguze, fizefi, netijo, benudo, nukijo, nukavo, gubegu, logumi, nehene", "evidence": "all 'X is from vokaia' facts across both result pages"},
+ {"id": "r15", "answer": "mimipa, zebebe, tikihe, lofira, vosati, mijoru, fisaru, mirado, rakifi, mokize, heramo, pamiti, bevoze, dozelo, tinura, zekiti, nudoti, mopara, gumodo, nezera, kalone, runupa, fibejo, pakanu, raneze, gufimi", "evidence": "all 'X is from neraia' facts in the knowledge base"},
+ {"id": "r16", "answer": "3", "evidence": "rubeia residents who work as scribe: tibemo, bekiki, bekaze (cross-checked against the full scribe list)"},
+ {"id": "r17", "answer": "2", "evidence": "vokaia residents who work as weaver: mijofi, nulolo (cross-checked against the full weaver list)"},
+ {"id": "r18", "answer": "0", "evidence": "no zekaia residents appear in the full healer list"},
+ {"id": "r19", "answer": "1", "evidence": "guguia residents who work as miner: zekavo (cross-checked against the full miner list)"},
+ {"id": "r20", "answer": "1", "evidence": "nunuia residents who work as miner: hekijo (cross-checked against the full miner list)"}
+]

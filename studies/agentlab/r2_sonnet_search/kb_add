@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+"""kb_add "FACT SENTENCE" : append a fact to notes.txt (searched by kb_search)."""
+import sys, os, time
+here = os.path.dirname(os.path.abspath(__file__)); fact = " ".join(sys.argv[1:]).strip()
+open(os.path.join(here, "tool_log.txt"), "a").write(f"{time.time():.3f}\tkb_add\t{fact}\n")
+open(os.path.join(here, "notes.txt"), "a").write(fact + "\n"); print("added:", fact)
