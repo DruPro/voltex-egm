@@ -51,7 +51,8 @@ Facts are `A relation B` with no spaces inside a name. A relation is learned onc
 | `current(pattern, strict=False)` | `list[Fact]`: only what holds now. |
 | `history(pattern)` | `list[Fact]`: only past values. |
 | `values(pattern, strict=False)` | `list[str]`: the filled slot of each current answer, sorted. |
-| `explain(pattern)` | `str` or `None`: why there is no answer. |
+| `explain(pattern)` | `str` or `None`: why there is no answer: an unlearned relation, or `unknown_note()`. |
+| `unknown_note()` | What an empty answer means: unknown, not false; under a `[LIMIT]` cap it names the cap, since the answer may lie beyond it. |
 | `infer_all()` | `list[Fact]`: every fact the accepted rules derive. |
 | `conflicts()` | `list[Conflict]`: stated facts the rules contradict, plus source disagreements. |
 
@@ -278,12 +279,27 @@ r = egm.tune("facts.txt")               # hides 15% of the stated facts 3 times,
 print(r.report())                       # e.g. "SET TREES 1", or "keep the defaults"
 with egm.open("facts.txt", settings=r.settings) as e: ...
 r = egm.tune("facts.txt", labels=open("verified.txt").read().splitlines())   # score on facts you verified elsewhere
+r = egm.tune("facts.txt", settings={"MAXWORDS": 50000})   # start every candidate from a base configuration
+r = egm.tune("facts.txt", expanded=True)  # opt-in wider search, about 2.6x the cost (below)
+with egm.open("facts.txt", settings=r.all_settings) as e: ...   # base + changes (r.settings lists only the changes)
 ```
 
 ```
 egm tune facts.txt -o tuned.json          # prints every value tried
+egm tune facts.txt --expanded --set MAXWORDS=50000 -o tuned.json
 egm build facts.txt -o kb.vtx --settings tuned.json
 ```
+
+**The default search** (`egm.tune.DEFAULT_SPACE`) is unchanged and lightweight. **`expanded=True`** (`--expanded`)
+searches `egm.tune.expanded_space(facts)`. That is the default space plus `TENDENCYSTEPS` (-1, 0), `DEPTH` 1 and 2,
+and `MAXWORDS` sized from the data's own vocabulary when it exceeds the default cap. Every value is an engine
+default or derived from the data.
+- **On the Python standard library facts** (`studies/strengths/tune`, exploratory), the default search adopted only
+  `RATE 0.5`, taking F0.5 from 0.034 to 0.276. The expanded search adopted `TENDENCYSTEPS 0`, `CHAIN 3`, `TREES 1`
+  and a sized `MAXWORDS`, reaching 0.733. That is the configuration chosen by hand for that study.
+- **What it shows:** the search recovers the right parameters on that dataset. It doesn't show that the
+  configuration is best everywhere. On the tokenomics S set, the same search started from `TENDENCYSTEPS 0` put it
+  back to -1, because law-only proofs cut the score there from 0.380 to 0.118.
 
 Tuning changes only setting values, never the engine, and the chosen values are saved with the
 knowledge base. What `studies/noise` measured:

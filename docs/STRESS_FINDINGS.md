@@ -101,3 +101,5 @@ Some "discoveries" were made true by how the facts were extracted:
 - **Its C layer** records fields only for structs, so "has a field ⇒ is a struct" is true by construction too.
 - **`egm extract python` gives a module and a function in it the same name.** `cloudinit__subp` is both the module
   and its function `subp()`. 6 names collide, and 62 facts read "X is defined in X".
+  Fixed since: a definition named like a module is now dropped like any other ambiguous name (test
+  `TestExtractPython`). The facts used in this study were extracted before the fix.

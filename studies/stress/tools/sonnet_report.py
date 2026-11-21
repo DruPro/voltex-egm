@@ -142,7 +142,7 @@ def main():
     md += ["## Defects the sessions found", "",
            "- **A silent cap.** With `MAXWORDS` below the vocabulary, asking about a stated fact on a rarer name returns nothing, and neither `egm_relations` nor the empty result says why. Proposed: report `limits()` in `egm_relations` and add a note to empty results while a limit is active.",
            "- **Unbounded results.** `egm_conflicts` and `egm_ask` returned 75,000 to 595,000 characters, more than the client accepts. Proposed: a `limit` with a total count, as `egm_infer` already has.",
-           "- **An extractor name collision.** `egm extract python` names a module `pkg__path` and a function `pkg__name`, so `cloudinit__subp` is both the module `subp.py` and its function `subp()`. 6 names collide this way and 62 facts read \"X is defined in X\". The learned rule \"defined in a module that raises E ⇒ raises E\" rests on them.", ""]
+           "- **An extractor name collision.** `egm extract python` names a module `pkg__path` and a function `pkg__name`, so `cloudinit__subp` is both the module `subp.py` and its function `subp()`. 6 names collide this way and 62 facts read \"X is defined in X\". The learned rule \"defined in a module that raises E ⇒ raises E\" rests on them. (Fixed in the extractor since; these sessions used facts extracted before the fix.)", ""]
     md += [md_session(r, t) for t, r in rs]
     md += ["## How to run your own", "", "```", "egm mcp facts.txt --set MAXWORDS=50000      # size MAXWORDS to the vocabulary first",
            "claude mcp add egm -- egm mcp /abs/path/facts.txt", "```", "",

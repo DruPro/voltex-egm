@@ -1,0 +1,268 @@
+{
+ "name": "depth1",
+ "settings": {
+  "MAXWORDS": 72600,
+  "TENDENCYSTEPS": 0,
+  "DEPTH": "1"
+ },
+ "stated": 171223,
+ "hidden": 17635,
+ "derived_new": 1546,
+ "correct": 1546,
+ "wrong": 0,
+ "recovered": 1546,
+ "precision": 1.0,
+ "recall": 0.0877,
+ "per_relation": {
+  "is a subclass of": {
+   "derived": 1546,
+   "correct": 1546,
+   "wrong": 0,
+   "hidden": 1556,
+   "recovered": 1546,
+   "precision": 1.0,
+   "recall": 0.9936
+  },
+  "belongs to package": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 6819,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "is bound to": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 9260,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "other": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 0,
+   "recovered": 0,
+   "precision": null,
+   "recall": null
+  }
+ },
+ "tiers": {
+  "law correct": 1546
+ },
+ "build_s": 0.8,
+ "infer_s": 2.0,
+ "wall_s": 3.2,
+ "peak_rss_mb": 171,
+ "rounds": {
+  "1": 1546
+ },
+ "rules": [
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 3177,
+   "k": 1789,
+   "rate": 0.56,
+   "lift": 1045.1,
+   "known": 3177,
+   "agree": 0.56
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 3177,
+   "k": 1789,
+   "rate": 0.56,
+   "lift": 1045.1,
+   "known": 3177,
+   "agree": 0.56
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 3595,
+   "k": 1685,
+   "rate": 0.47,
+   "lift": 869.9,
+   "known": 3595,
+   "agree": 0.47
+  },
+  {
+   "text": "[? inherits from ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 3177,
+   "k": 3177,
+   "rate": 1.0,
+   "lift": 733.8,
+   "known": 3177,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? inherits from ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 3177,
+   "k": 3177,
+   "rate": 1.0,
+   "lift": 733.8,
+   "known": 3177,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "tendency",
+   "n": 3595,
+   "k": 2232,
+   "rate": 0.62,
+   "lift": 455.6,
+   "known": 3595,
+   "agree": 0.62
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? inherits from ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1983,
+   "k": 1129,
+   "rate": 0.57,
+   "lift": 417.8,
+   "known": 1875,
+   "agree": 0.6
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1511,
+   "k": 1511,
+   "rate": 1.0,
+   "lift": 404.4,
+   "known": 1511,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1609,
+   "k": 1609,
+   "rate": 1.0,
+   "lift": 404.4,
+   "known": 1609,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 3177,
+   "k": 2232,
+   "rate": 0.7,
+   "lift": 284.1,
+   "known": 2232,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1632,
+   "k": 1129,
+   "rate": 0.69,
+   "lift": 279.8,
+   "known": 1129,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1782,
+   "k": 1206,
+   "rate": 0.68,
+   "lift": 273.7,
+   "known": 1206,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1983,
+   "k": 1206,
+   "rate": 0.61,
+   "lift": 246.0,
+   "known": 1431,
+   "agree": 0.84
+  }
+ ],
+ "proofs": {
+  "is a subclass of": [
+   {
+    "fact": "DistUpgrade__DistUpgradeViewGtk3__GtkAcquireProgressAdapter is a subclass of DistUpgrade__DistUpgradeView__AcquireProgress",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "DistUpgrade__DistUpgradeView__AcquireProgress is a base of DistUpgrade__DistUpgradeViewGtk3__GtkAcquireProgressAdapter",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "DistUpgrade__DistUpgradeViewKDE__KDEInstallProgressAdapter is a subclass of DistUpgrade__DistUpgradeView__InstallProgress",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "DistUpgrade__DistUpgradeView__InstallProgress is a base of DistUpgrade__DistUpgradeViewKDE__KDEInstallProgressAdapter",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "passlib__handlers__pbkdf2__cta_pbkdf2_sha1 is a subclass of passlib__utils__handlers__MinimalHandler",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "passlib__handlers__pbkdf2__cta_pbkdf2_sha1 inherits from passlib__utils__handlers__GenericHandler",
+      "stated": true
+     },
+     {
+      "fact": "passlib__utils__handlers__GenericHandler inherits from passlib__utils__handlers__MinimalHandler",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "jinja2__nodes__Slice is a subclass of jinja2__nodes__Expr",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "jinja2__nodes__Expr is a base of jinja2__nodes__Slice",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "belongs to package": [],
+  "is bound to": []
+ },
+ "proofs_wrong": []
+}

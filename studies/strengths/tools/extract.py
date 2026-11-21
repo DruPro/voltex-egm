@@ -45,7 +45,7 @@ def modname(root, path):
 
 def main(root, r2=False):
     files = sorted(p for p in glob.glob(os.path.join(root, "**", "*.py"), recursive=True)
-                   if not any(s in p.replace(os.sep, "/") + "/" or s in p for s in SKIP)
+                   if not any(s in "/" + os.path.relpath(p, root).replace(os.sep, "/") for s in SKIP)
                    and "-" not in os.path.relpath(p, root))
     trees, lines = {}, 0
     for p in files:
@@ -55,6 +55,7 @@ def main(root, r2=False):
         lines += src.count("\n")
     classes = {m: {n.name for n in t.body if isinstance(n, ast.ClassDef)} for m, (t, _) in trees.items()}
     base, funcs = set(), {}
+    modtoks = {tok(m) for m in trees}
     inherits = collections.defaultdict(set)
     for m, (t, ispkg) in trees.items():
         pkg = m if ispkg else m.rpartition(".")[0]
@@ -79,7 +80,9 @@ def main(root, r2=False):
             ds = [d.id if isinstance(d, ast.Name) else None for d in f.decorator_list]
             if len(ds) > 1 or (ds and ds[0] not in DECOS): return
             if scope == "module" and ds: return
-            funcs[tok(owner, f.name)] = (scope, ds[0] if ds else "none")
+            t = tok(owner, f.name)
+            if t in modtoks: t += "__fn"   # a function named like a module (pip/_internal/main.py vs main() in __init__)
+            funcs[t] = (scope, ds[0] if ds else "none")
         for n in t.body:
             if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)): fn(n, "module", m)
             if not isinstance(n, ast.ClassDef): continue
@@ -123,6 +126,7 @@ def main(root, r2=False):
     global OBS
     if r2: OBS = OBS + "_r2"
     if HIDE_SUB != 0.30: OBS = os.path.join(HERE, "..", "obs_depth")
+    if os.environ.get("OBS_DIR"): OBS = os.path.join(HERE, "..", os.environ["OBS_DIR"])
     os.makedirs(OBS, exist_ok=True)
     facts = sorted(base | stated_t)
     open(os.path.join(OBS, "facts.txt"), "w").write("\n".join(facts) + "\n")

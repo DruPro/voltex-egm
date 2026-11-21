@@ -582,5 +582,49 @@ class TestShardSources(unittest.TestCase):
             egm.shard(worlds.staff()[0])                                # one fact set needs shards and a split
 
 
+class TestExtractPython(unittest.TestCase):
+    def test_def_named_like_a_module_is_dropped(self):
+        """p/main.py and a function main() would both be p__main; neither the function nor its facts may appear."""
+        import tempfile
+        from egm.extract_python import extract
+        with tempfile.TemporaryDirectory() as td:
+            pk = os.path.join(td, "p"); os.makedirs(pk)
+            open(os.path.join(pk, "__init__.py"), "w").write("from .util import helper\ndef main():\n    return helper()\n")
+            open(os.path.join(pk, "main.py"), "w").write("def run():\n    return 1\n")
+            open(os.path.join(pk, "util.py"), "w").write("def helper():\n    return 2\n")
+            f = extract([f"p={pk}"])
+        self.assertIn(("p__run", "p__main"), f["is defined in"])        # the module keeps its id
+        self.assertNotIn(("p__main", "p__init"), f["is defined in"])    # the clashing function is dropped
+        self.assertFalse(any(a == "p__main" for a, _ in f["calls"]))
+        self.assertIn(("p__helper", "p__util"), f["is defined in"])
+
+
+class TestTuneOptions(unittest.TestCase):
+    S = os.path.join(ROOT, "examples", "tokenomics", "S.txt")
+
+    def test_expanded_space_is_data_derived(self):
+        from egm.tune import expanded_space, DEFAULT_SPACE
+        sp = dict(expanded_space(self.S))
+        self.assertNotIn("MAXWORDS", sp)                     # small vocabulary: the default cap already covers it
+        self.assertEqual(sp["TENDENCYSTEPS"], [-1, 0]); self.assertEqual(sp["DEPTH"], [4, 0, 1, 2])
+        for k, v in DEFAULT_SPACE:
+            if k != "DEPTH": self.assertEqual(sp[k], v)
+        with tempfile.TemporaryDirectory() as td:            # a vocabulary over the cap gets a sized MAXWORDS
+            p = os.path.join(td, "f.txt")
+            open(p, "w").write("\n".join(f"w{i} links to w{i + 1}" for i in range(12500)) + "\n")
+            self.assertEqual(dict(expanded_space(p))["MAXWORDS"], [12000, 12503 + 1000])   # 12,501 names + "links", "to"
+
+    def test_base_settings_are_the_start(self):
+        r = egm.tune(self.S, space=[("TENDENCYSTEPS", [-1, 0])], settings={"TENDENCYSTEPS": 0}, sweeps=1)
+        self.assertEqual(r.base, {"TENDENCYSTEPS": 0})
+        tried = [h["value"] for h in r.history if h["setting"] == "TENDENCYSTEPS" and "adopted" not in h]
+        self.assertEqual(tried, [-1])                        # the base value is not re-tried; the other one is
+        self.assertIn("base: SET TENDENCYSTEPS 0", r.report())
+
+    def test_space_and_expanded_are_exclusive(self):
+        with self.assertRaises(ValueError):
+            egm.tune(self.S, space=[("DEPTH", [4, 0])], expanded=True)
+
+
 if __name__ == "__main__":
     unittest.main()

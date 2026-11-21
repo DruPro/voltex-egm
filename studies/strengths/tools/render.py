@@ -29,6 +29,12 @@ def tree(p, top=True):
 def box(p): return f"<div class=\"tree\"><ul>{tree(p)}</ul></div>"
 
 
+X = S["results_dist"]; XR = X["runs"]["full"]; XT = XR["tiers"]
+EX = json.load(open(os.path.join(STUDY, "results_dist", "exceptions.json")))["by_kind"]   # tools/exceptions.py
+exc = [EX.get(k, {}) for k in ("class classmethod", "class staticmethod")]
+X_exc = sum(sum(v.values()) for v in exc); X_exc_right = sum(v.get("right", 0) for v in exc)
+X_exc_wrong_law = sum(v.get("wrong law", 0) for v in exc)
+QT = json.load(open(os.path.join(STUDY, "results_dist", "query_time.json")))
 full = R3["full"]; tiers = C["tiers"]; law_ok = tiers.get("law correct", 0); wrong = full["wrong"]
 unans = full["hidden"] - full["recovered"] - wrong
 deep = D["d0"]["proof_deepest"]
@@ -62,7 +68,7 @@ page = f"""<!DOCTYPE html>
 <main>
 <header style="display:grid;gap:10px">
   <p class="meta">Voltex EGM · studies/strengths · pre-registered (3 rounds, hashes in prereg_hash.txt)</p>
-  <h1>What the engine does with exact facts from one large codebase</h1>
+  <h1>What the engine does with exact facts from large codebases</h1>
   <p class="lede">The CPython {ST['python']} standard library: {num(ST['lines'])} lines in {ST['files']} files, read with Python's own <code>ast</code>. No guessing: every fact is exactly true, and the truth for every question is computed in full, so a correct answer can never be scored wrong for being outside a partial key. {num(full['hidden'])} target facts were hidden from the engine. It got no rules; it had to learn them.</p>
 </header>
 
@@ -72,7 +78,7 @@ page = f"""<!DOCTYPE html>
     <div class="card tile"><b>{num(law_ok)} of {num(law_ok)}</b><span>law-tier answers correct (precision 1.000)</span></div>
     <div class="card tile"><b>{full['recall']*100:.1f}%</b><span>of {num(full['hidden'])} hidden facts recovered</span></div>
     <div class="card tile"><b>{wrong}</b><span>wrong answers, every one labelled <i>tendency</i> by the engine</span></div>
-    <div class="card tile"><b>{full['wall_s']:.1f} s · {full['peak_rss_mb']} MB</b><span>build, learn and infer everything</span></div>
+    <div class="card tile"><b>{full['build_s']:.1f} s + {full['infer_s']:.1f} s</b><span>ingest, then learn rules and infer (once); {full['peak_rss_mb']} MB</span></div>
   </div>
   <div class="card"><ul style="margin:0;padding-left:20px;display:grid;gap:6px">
     <li><b>Depth:</b> it learned that inheritance is transitive and rebuilt the full ancestry of hidden classes, up to five generations, with proofs whose leaves are all stated facts.</li>
@@ -122,6 +128,22 @@ page = f"""<!DOCTYPE html>
     <div class="card"><h3>Precision, all settings on</h3><div id="ch-rp"></div></div>
     <div class="card"><h3>Recall, all settings on</h3><div id="ch-rr"></div></div>
   </div>
+</section>
+
+<section>
+  <h2>Replication on an independent codebase</h2>
+  <p>Pre-registered before any run on the data, with the same settings and no tuning: Debian's Python packages, {num(X['corpus']['lines'])} lines of third-party code, with ancestry up to {X['corpus']['max_ancestors']} ancestors.</p>
+  <div class="tiles">
+    <div class="card tile"><b>{XR['recall']*100:.1f}%</b><span>of {num(XR['hidden'])} hidden facts recovered</span></div>
+    <div class="card tile"><b>{num(XT['law correct'])} of {num(XT['law correct'] + XT['law wrong'])}</b><span>law-tier answers true</span></div>
+    <div class="card tile"><b>{QT['query_ms_median']} ms</b><span>median per question, after a one-time {QT['first_question_s']} s learning step</span></div>
+  </div>
+  <div class="card"><ul style="margin:0;padding-left:20px;display:grid;gap:6px">
+    <li><b>The 4 false law-tier answers</b> ("this method has no decorator") came from the extractor. It wrote nothing for decorators it doesn't handle, and the engine filled the gap with the majority value. Law tier means reliable given what was observed, not true about the system.</li>
+    <li><b>Exceptions lose to general rules again:</b> of {X_exc} hidden classmethod and staticmethod facts, {X_exc_right} were answered right; the rest got no answer or a wrong one, and {X_exc_wrong_law} of the wrong ones were labelled law.</li>
+    <li><b>The settings are evidence, not a universal default.</b> <code>TENDENCYSTEPS 0</code> cut the tokenomics score from 0.380 to 0.118. Validate on your own data; <code>egm.tune(..., expanded=True)</code> searches these settings.</li>
+    <li><b>An empty answer means unknown, not false.</b> <code>egm mcp</code> says so, and names any cap.</li>
+  </ul></div>
 </section>
 
 <section>

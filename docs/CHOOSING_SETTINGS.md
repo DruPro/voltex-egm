@@ -20,14 +20,15 @@ pre-registered studies, which are linked. For what each setting does, see `docs/
    most answers come from one rule, or pile up in later rounds, the data is chaining widely; see `DEPTH` and
    `TENDENCYSTEPS` below.
 4. **Hold out a key and compare settings.** Hide a seeded 20% of your facts and score each candidate setting on it
-   (`docs/BUILDING_A_LAYER.md`). Choose by your own numbers, not by this page's.
+   (`docs/BUILDING_A_LAYER.md`). Choose by your own numbers, not by this page's. `egm.tune(facts, expanded=True)`
+   automates the comparison (`docs/SDK.md`).
 
 ## By goal
 
 | You want | Start with | Why (measured) |
 |---|---|---|
 | Answers you can act on without checking | `ask(..., strict=True)`, and `TENDENCYSTEPS 0` | Only law-tier proofs. Python packages: precision 0.010 → 0.963. Expect lower recall |
-| Exact facts from a parser (code structure, schemas, configs) | `TENDENCYSTEPS 0`, plus `TREES 1`, `CHAIN 3`, `DEPTH 0` as the questions need | Python stdlib: 5,829 of 5,901 hidden facts, every law-tier answer correct ([STRENGTHS.md](STRENGTHS.md)) |
+| Code facts extracted by a parser (tested on two Python codebases) | try `TENDENCYSTEPS 0`, plus `TREES 1`, `CHAIN 3`, `DEPTH 0` as the questions need, and validate on your data | stdlib: 5,829 of 5,901 hidden facts; Debian packages (1M lines): 17,265 of 17,269 law-tier answers true ([STRENGTHS.md](STRENGTHS.md)) |
 | As many leads as possible, to check by hand | defaults, `strict=False` | Tendencies included; each answer carries its proof and tier |
 | Analysis of a codebase | `COVERAGE 0`, `MAXWORDS` sized, then compare `TENDENCYSTEPS 0` and `CONDITIONS 1` | Code is sparse; the default ran past 18 GB on 125 packages. Precision with `CONDITIONS 1`: 0.01 → 0.88 |
 | Transitive data (dependencies, containment, routes) | `DEPTH 1` or `2`, and compare with `COVERAGE 0` | dpkg: `DEPTH 1` gives 88% true facts; the default `DEPTH 4` gives 4% |
@@ -46,8 +47,9 @@ pre-registered studies, which are linked. For what each setting does, see `docs/
 - **Use** whenever your data has more distinct words than the cap. Check `e.limits()`.
 - **Don't lower it** to save time: at 300 words, recall fell to 0.00–0.36 on every dataset.
 - **Cost:** build time grows with vocabulary. Memory no longer grows quadratically.
-- **Watch for this:** at the cap, an empty answer can mean "this name is beyond the cap", and nothing says so. A
-  Sonnet session answered "not in the knowledge base" for this reason (`docs/AGENT_SESSIONS.md`, session 0).
+- **Watch for this:** at the cap, an empty answer can mean "this name is beyond the cap". A Sonnet session answered
+  "not in the knowledge base" for this reason (`docs/AGENT_SESSIONS.md`, session 0). Empty answers from `egm mcp`
+  and `explain()` now say "unknown, not false" and name the cap, but the fix is still to size `MAXWORDS`.
 
 ### `DEPTH` (default 4 rounds; 0 = until nothing new)
 
@@ -147,7 +149,7 @@ pre-registered studies, which are linked. For what each setting does, see `docs/
 
 | Data shape | Example | Default outcome | Best measured change |
 |---|---|---|---|
-| Exact parser output, rules that really hold | Python stdlib (`studies/strengths`) | a flood of tendency-tier facts (precision 0.043 with all settings on) | `TENDENCYSTEPS 0`: precision 0.996, recall 0.988 |
+| Exact parser output, rules that really hold | Python stdlib and Debian packages (`studies/strengths`) | a flood of tendency-tier facts (precision 0.043 with all settings on) | `TENDENCYSTEPS 0`: precision 0.996, recall 0.988 |
 | Dense, consistent relations | company, social | P 1.00, R 0.96-1.00 | none needed |
 | Attribute tables with inverse pairs | Unicode | 96% true against the real database | none needed |
 | Sparse code facts | Python packages, C headers | P 0.01-0.05 | `CONDITIONS 1` or `TENDENCYSTEPS 0` (P 0.88 / 0.96) |
@@ -157,6 +159,29 @@ pre-registered studies, which are linked. For what each setting does, see `docs/
 | Random links, independent attributes | zipf, many relations, clusters | nothing derived | correct: there is nothing to learn |
 | Values spread over several words | "the north mill 12 is governed from north capital" | nothing derived | write one-token values (`docs/BUILDING_A_LAYER.md`) |
 | Very small tables | services, time zones | nothing, or wrong (46 facts, all wrong) | too little evidence; add facts or don't infer |
+
+## What an answer means, and what it doesn't
+
+The engine reports how it knows something. It never says more than that.
+
+| Answer | Means | Doesn't mean |
+|---|---|---|
+| `stated` | it is in your facts | that your facts are right |
+| `law` | a proof whose rules held, with high reliability, wherever the answer was known | that it is true of the real system |
+| `tendency` | a proof using at least one weaker rule: a weighted guess | anything you should act on unchecked |
+| empty | no stated or inferred answer: **unknown, not false** (the note names any cap) | that the answer is "no" |
+
+- **Law tier is relative to what was observed.** On Debian's Python packages, 4 law-tier answers were false: "this
+  method has no decorator". The extractor wrote no decorator fact for methods with decorators it doesn't handle,
+  such as `@lru_cache`, so nothing contradicted the guess, and the engine filled the gap with the majority value. An
+  answer can be statistically sound given the facts and still be wrong about the code, when the extractor failed to
+  represent something. State "other" values explicitly rather than leaving them out (`docs/BUILDING_A_LAYER.md`).
+- **Exceptions can go unanswered or wrong.** When a general rule and an exact specific rule disagree, the general
+  one can win the vote. In both codebases, `classmethod` and `staticmethod` methods got a wrong answer labelled
+  tendency, or no answer at all. They were never answered wrongly at law tier.
+- **Settings found on one dataset are evidence, not a default.** The tuned configuration for the standard library
+  held up on a second codebase, but `TENDENCYSTEPS 0` cut the score from 0.380 to 0.118 on the tokenomics data.
+  Validate on your own held-out facts.
 
 ## Reading the rules
 

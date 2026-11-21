@@ -72,7 +72,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 <main>
 <header style="display:grid;gap:10px">
   <p class="meta">Voltex EGM · studies/strengths · pre-registered (3 rounds, hashes in prereg_hash.txt)</p>
-  <h1>What the engine does with exact facts from one large codebase</h1>
+  <h1>What the engine does with exact facts from large codebases</h1>
   <p class="lede">The CPython 3.13.7 standard library: 273,430 lines in 534 files, read with Python's own <code>ast</code>. No guessing: every fact is exactly true, and the truth for every question is computed in full, so a correct answer can never be scored wrong for being outside a partial key. 5,901 target facts were hidden from the engine. It got no rules; it had to learn them.</p>
 </header>
 
@@ -82,7 +82,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     <div class="card tile"><b>5,829 of 5,829</b><span>law-tier answers correct (precision 1.000)</span></div>
     <div class="card tile"><b>98.8%</b><span>of 5,901 hidden facts recovered</span></div>
     <div class="card tile"><b>21</b><span>wrong answers, every one labelled <i>tendency</i> by the engine</span></div>
-    <div class="card tile"><b>10.5 s · 210 MB</b><span>build, learn and infer everything</span></div>
+    <div class="card tile"><b>0.2 s + 10.4 s</b><span>ingest, then learn rules and infer (once); 210 MB</span></div>
   </div>
   <div class="card"><ul style="margin:0;padding-left:20px;display:grid;gap:6px">
     <li><b>Depth:</b> it learned that inheritance is transitive and rebuilt the full ancestry of hidden classes, up to five generations, with proofs whose leaves are all stated facts.</li>
@@ -132,6 +132,22 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     <div class="card"><h3>Precision, all settings on</h3><div id="ch-rp"></div></div>
     <div class="card"><h3>Recall, all settings on</h3><div id="ch-rr"></div></div>
   </div>
+</section>
+
+<section>
+  <h2>Replication on an independent codebase</h2>
+  <p>Pre-registered before any run on the data, with the same settings and no tuning: Debian's Python packages, 1,027,745 lines of third-party code, with ancestry up to 13 ancestors.</p>
+  <div class="tiles">
+    <div class="card tile"><b>97.9%</b><span>of 17,635 hidden facts recovered</span></div>
+    <div class="card tile"><b>17,265 of 17,269</b><span>law-tier answers true</span></div>
+    <div class="card tile"><b>0.71 ms</b><span>median per question, after a one-time 39.1 s learning step</span></div>
+  </div>
+  <div class="card"><ul style="margin:0;padding-left:20px;display:grid;gap:6px">
+    <li><b>The 4 false law-tier answers</b> ("this method has no decorator") came from the extractor. It wrote nothing for decorators it doesn't handle, and the engine filled the gap with the majority value. Law tier means reliable given what was observed, not true about the system.</li>
+    <li><b>Exceptions lose to general rules again:</b> of 370 hidden classmethod and staticmethod facts, 6 were answered right; the rest got no answer or a wrong one, and 0 of the wrong ones were labelled law.</li>
+    <li><b>The settings are evidence, not a universal default.</b> <code>TENDENCYSTEPS 0</code> cut the tokenomics score from 0.380 to 0.118. Validate on your own data; <code>egm.tune(..., expanded=True)</code> searches these settings.</li>
+    <li><b>An empty answer means unknown, not false.</b> <code>egm mcp</code> says so, and names any cap.</li>
+  </ul></div>
 </section>
 
 <section>

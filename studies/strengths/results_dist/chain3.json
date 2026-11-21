@@ -1,0 +1,558 @@
+{
+ "name": "chain3",
+ "settings": {
+  "MAXWORDS": 72600,
+  "TENDENCYSTEPS": 0,
+  "CHAIN": "3"
+ },
+ "stated": 171223,
+ "hidden": 17635,
+ "derived_new": 8375,
+ "correct": 8375,
+ "wrong": 0,
+ "recovered": 8375,
+ "precision": 1.0,
+ "recall": 0.4749,
+ "per_relation": {
+  "is a subclass of": {
+   "derived": 1556,
+   "correct": 1556,
+   "wrong": 0,
+   "hidden": 1556,
+   "recovered": 1556,
+   "precision": 1.0,
+   "recall": 1.0
+  },
+  "belongs to package": {
+   "derived": 6819,
+   "correct": 6819,
+   "wrong": 0,
+   "hidden": 6819,
+   "recovered": 6819,
+   "precision": 1.0,
+   "recall": 1.0
+  },
+  "is bound to": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 9260,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "other": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 0,
+   "recovered": 0,
+   "precision": null,
+   "recall": null
+  }
+ },
+ "tiers": {
+  "law correct": 8375
+ },
+ "build_s": 0.8,
+ "infer_s": 3.5,
+ "wall_s": 4.9,
+ "peak_rss_mb": 200,
+ "rounds": {
+  "1": 8365,
+  "2": 10
+ },
+ "rules": [
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 3177,
+   "k": 1789,
+   "rate": 0.56,
+   "lift": 1045.1,
+   "known": 3177,
+   "agree": 0.56
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 3177,
+   "k": 1789,
+   "rate": 0.56,
+   "lift": 1045.1,
+   "known": 3177,
+   "agree": 0.56
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) & [? is defined in ?](c,d) => [? is defined in ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 389,
+   "k": 209,
+   "rate": 0.54,
+   "lift": 997.2,
+   "known": 389,
+   "agree": 0.54
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 3595,
+   "k": 1685,
+   "rate": 0.47,
+   "lift": 869.9,
+   "known": 3595,
+   "agree": 0.47
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? inherits from ?](b,c) & [? is defined in ?](c,d) => [? is defined in ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 140,
+   "k": 59,
+   "rate": 0.42,
+   "lift": 782.2,
+   "known": 140,
+   "agree": 0.42
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? inherits from ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 3177,
+   "k": 3177,
+   "rate": 1.0,
+   "lift": 733.8,
+   "known": 3177,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 3177,
+   "k": 3177,
+   "rate": 1.0,
+   "lift": 733.8,
+   "known": 3177,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "tendency",
+   "n": 3595,
+   "k": 2232,
+   "rate": 0.62,
+   "lift": 455.6,
+   "known": 3595,
+   "agree": 0.62
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? inherits from ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1983,
+   "k": 1129,
+   "rate": 0.57,
+   "lift": 417.8,
+   "known": 1875,
+   "agree": 0.6
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 274,
+   "k": 274,
+   "rate": 1.0,
+   "lift": 404.4,
+   "known": 274,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 236,
+   "k": 236,
+   "rate": 1.0,
+   "lift": 404.4,
+   "known": 236,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 293,
+   "k": 293,
+   "rate": 1.0,
+   "lift": 404.4,
+   "known": 293,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1511,
+   "k": 1511,
+   "rate": 1.0,
+   "lift": 404.4,
+   "known": 1511,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 346,
+   "k": 346,
+   "rate": 1.0,
+   "lift": 404.4,
+   "known": 346,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1609,
+   "k": 1609,
+   "rate": 1.0,
+   "lift": 404.4,
+   "known": 1609,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 3177,
+   "k": 2232,
+   "rate": 0.7,
+   "lift": 284.1,
+   "known": 2232,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1632,
+   "k": 1129,
+   "rate": 0.69,
+   "lift": 279.8,
+   "known": 1129,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 394,
+   "k": 267,
+   "rate": 0.68,
+   "lift": 274.1,
+   "known": 267,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1782,
+   "k": 1206,
+   "rate": 0.68,
+   "lift": 273.7,
+   "known": 1206,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 397,
+   "k": 268,
+   "rate": 0.68,
+   "lift": 273.0,
+   "known": 268,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 435,
+   "k": 286,
+   "rate": 0.66,
+   "lift": 265.9,
+   "known": 286,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 352,
+   "k": 230,
+   "rate": 0.65,
+   "lift": 264.2,
+   "known": 230,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 259,
+   "k": 159,
+   "rate": 0.61,
+   "lift": 248.3,
+   "known": 173,
+   "agree": 0.92
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 212,
+   "k": 130,
+   "rate": 0.61,
+   "lift": 248.0,
+   "known": 139,
+   "agree": 0.94
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1983,
+   "k": 1206,
+   "rate": 0.61,
+   "lift": 246.0,
+   "known": 1431,
+   "agree": 0.84
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a base of ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 2440,
+   "k": 1389,
+   "rate": 0.57,
+   "lift": 230.2,
+   "known": 2440,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? inherits from ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 127,
+   "k": 61,
+   "rate": 0.48,
+   "lift": 194.2,
+   "known": 72,
+   "agree": 0.85
+  },
+  {
+   "text": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 22220,
+   "k": 15401,
+   "rate": 0.69,
+   "lift": 191.3,
+   "known": 15401,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a base of ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 3073,
+   "k": 1297,
+   "rate": 0.42,
+   "lift": 170.7,
+   "known": 2098,
+   "agree": 0.62
+  }
+ ],
+ "proofs": {
+  "is a subclass of": [
+   {
+    "fact": "dateutil__tz__win__tzwin is a subclass of dateutil__tz___common___tzinfo",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "dateutil__tz__win__tzwin is a subclass of dateutil__tz___common__tzrangebase",
+      "stated": false,
+      "tier": "law",
+      "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+      "because": [
+       {
+        "fact": "dateutil__tz__win__tzwin inherits from dateutil__tz__win__tzwinbase",
+        "stated": true
+       },
+       {
+        "fact": "dateutil__tz__win__tzwinbase inherits from dateutil__tz___common__tzrangebase",
+        "stated": true
+       }
+      ]
+     },
+     {
+      "fact": "dateutil__tz___common__tzrangebase inherits from dateutil__tz___common___tzinfo",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "jinja2__nodes__Not is a subclass of jinja2__nodes__Node",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "jinja2__nodes__Not is a subclass of jinja2__nodes__Expr",
+      "stated": false,
+      "tier": "law",
+      "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+      "because": [
+       {
+        "fact": "jinja2__nodes__Not inherits from jinja2__nodes__UnaryExpr",
+        "stated": true
+       },
+       {
+        "fact": "jinja2__nodes__UnaryExpr inherits from jinja2__nodes__Expr",
+        "stated": true
+       }
+      ]
+     },
+     {
+      "fact": "jinja2__nodes__Expr inherits from jinja2__nodes__Node",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "passlib__handlers__oracle__oracle10 is a subclass of passlib__ifc__PasswordHash",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "passlib__handlers__oracle__oracle10 inherits from passlib__utils__handlers__HasUserContext",
+      "stated": true
+     },
+     {
+      "fact": "passlib__utils__handlers__HasUserContext is a subclass of passlib__ifc__PasswordHash",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "jinja2__nodes__ContextReference is a subclass of jinja2__nodes__Expr",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "jinja2__nodes__Expr is a base of jinja2__nodes__ContextReference",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "belongs to package": [
+   {
+    "fact": "CommandNotFound__CommandNotFound__CommandNotFound__advice_single_deb_package belongs to package CommandNotFound",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+    "because": [
+     {
+      "fact": "CommandNotFound__CommandNotFound__CommandNotFound__advice_single_deb_package is a method of CommandNotFound__CommandNotFound__CommandNotFound",
+      "stated": true
+     },
+     {
+      "fact": "CommandNotFound__CommandNotFound__CommandNotFound is defined in CommandNotFound__CommandNotFound",
+      "stated": true
+     },
+     {
+      "fact": "CommandNotFound__CommandNotFound is part of CommandNotFound",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "CommandNotFound__CommandNotFound__CommandNotFound__getBlacklist belongs to package CommandNotFound",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+    "because": [
+     {
+      "fact": "CommandNotFound__CommandNotFound__CommandNotFound__getBlacklist is a method of CommandNotFound__CommandNotFound__CommandNotFound",
+      "stated": true
+     },
+     {
+      "fact": "CommandNotFound__CommandNotFound__CommandNotFound is defined in CommandNotFound__CommandNotFound",
+      "stated": true
+     },
+     {
+      "fact": "CommandNotFound__CommandNotFound is part of CommandNotFound",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "mako__pyparser__FindTuple____init__ belongs to package mako",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+    "because": [
+     {
+      "fact": "mako__pyparser__FindTuple____init__ is a method of mako__pyparser__FindTuple",
+      "stated": true
+     },
+     {
+      "fact": "mako__pyparser__FindTuple is defined in mako__pyparser",
+      "stated": true
+     },
+     {
+      "fact": "mako__pyparser is part of mako",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "pygments__formatters__img__ImageFormatter___get_text_bg_color belongs to package pygments__formatters",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+    "because": [
+     {
+      "fact": "pygments__formatters__img__ImageFormatter___get_text_bg_color is a method of pygments__formatters__img__ImageFormatter",
+      "stated": true
+     },
+     {
+      "fact": "pygments__formatters__img__ImageFormatter is defined in pygments__formatters__img",
+      "stated": true
+     },
+     {
+      "fact": "pygments__formatters__img is part of pygments__formatters",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "is bound to": []
+ },
+ "proofs_wrong": []
+}

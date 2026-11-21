@@ -53,9 +53,13 @@
    "recall": null
   }
  },
+ "tiers": {
+  "law correct": 5829,
+  "tendency wrong": 21
+ },
  "build_s": 0.2,
- "infer_s": 10.1,
- "wall_s": 10.5,
+ "infer_s": 10.4,
+ "wall_s": 10.7,
  "peak_rss_mb": 210,
  "rounds": {
   "1": 5821,

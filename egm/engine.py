@@ -201,7 +201,16 @@ class Engine:
         learned = [r.relation for r in self.relations()]
         if rel and rel not in learned:
             return str(RelationNotLearned(rel, learned))
-        return "no stated or inferred answer"
+        return self.unknown_note()
+
+    def unknown_note(self) -> str:
+        """What an empty answer means: unknown, not false. Under a cap ([LIMIT] lines, e.g. MAXWORDS) the answer may
+        exist beyond it, and the note says so instead of letting silence read as "no"."""
+        lim = self.limits()
+        note = "no stated or inferred answer: unknown, not false"
+        if lim:
+            note += "; this knowledge base is capped (" + "; ".join(lim) + "), so the name may lie beyond the cap"
+        return note
 
     def infer_all(self) -> List[Fact]:
         """Every fact derived by accepted rules."""

@@ -27,8 +27,9 @@ partial key. This page shows the case it is built for:
 
 ## Result
 
-With `TREES 1`, `CHAIN 3`, `DEPTH 0` and `TENDENCYSTEPS 0` (and `MAXWORDS` sized), in 10.5 s and
-210 MB:
+With `TREES 1`, `CHAIN 3`, `DEPTH 0` and `TENDENCYSTEPS 0` (and `MAXWORDS` sized). Ingesting the facts took
+0.2 s. Learning the rules and inferring took 10.4 s, once, on the first question;
+most of that is the tree search. Peak memory was 210 MB.
 
 | | |
 |---|---|
@@ -129,6 +130,44 @@ asyncio.windows_events.IocpProactor._finish_recvfrom.a0 is bound to self [tenden
 
 The other 51 got no answer. The vote is part of the inference decision stack; preferring the more specific rule is
 noted for the owner in `studies/strengths/RESULTS.md`.
+
+## Replication on a second, independent codebase
+
+This was pre-registered before any run on the data (`PREREGISTRATION_REPLICATION.md`), with the same settings and no
+tuning on this data.
+- **Codebase:** Debian's Python packages (`/usr/lib/python3/dist-packages`), 1,027,745 lines of
+  third-party code, with ancestry up to 13 ancestors.
+- **Size:** 171,223 facts, with 17,635 hidden.
+
+| | |
+|---|---|
+| Hidden facts recovered | **17,271 of 17,635 (97.9%)** |
+| Law-tier answers true | **17,265 of 17,269** |
+| Package of a method, `CHAIN` 2 → 3 | 0.000 → 1.000 |
+| First-argument binding, `TREES` 0 → 1 | 0.000 → 0.961 |
+| Ingest; learning and inference (once, on the first question); each question after | 0.82 s; 39.1 s; 0.71 ms median, 2.63 ms max over 100 (`tools/query_time.py`) |
+
+Verdicts: X1 fail, X2 pass, X3 pass, X4 pass, X5 pass.
+
+**X1 failed on 4 law-tier answers**, all of the form "this method has no decorator", and all false. The extractor
+wrote no decorator fact for methods whose decorators it doesn't handle (`@lru_cache` and the like). Nothing
+contradicted the majority value, so the engine filled the gap with it. Given the facts, the answer was statistically
+sound; about the code, it was wrong. The lesson is for extraction: write `has decorator other` instead of nothing.
+
+The exception problem replicates too. Of the 370 hidden `classmethod` and `staticmethod` facts, 6 are right, 84 wrong
+(all labelled tendency) and 280 unanswered.
+
+## What this does and doesn't show
+
+- **It shows** that on exact code facts, the engine learns the code's own rules and answers with proofs. On two
+  codebases, nearly every law-tier answer was true, and it labels its guesses as such.
+- **It doesn't show** that these settings are best everywhere. On the stdlib facts, an expanded `egm.tune` search
+  found the hand-chosen configuration from the data alone. That recovers the parameters for that dataset; it isn't
+  a universal default. On the tokenomics data, `TENDENCYSTEPS 0` lowered the score from 0.380 to 0.118. Validate on
+  your own held-out facts.
+- **Law tier means reliable given what was observed.** An extractor that leaves something out can make a law-tier
+  answer wrong about the real system.
+- **An empty answer means unknown, not false.** `egm mcp` and `explain()` say so, and name any cap.
 
 ## What made the difference
 

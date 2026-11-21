@@ -1,6 +1,7 @@
 """Static facts for several packages (parse only, never executed). Package-qualified names:
 function f / class C / method m of C in package p -> p__f, p__C, p__C_m ; module p/a/b.py -> p__a__b (p/__init__.py -> p__init).
-Names that occur twice within a package are dropped (with every fact that mentions them), so every name is unambiguous.
+Names that occur twice within a package, or equal a module's id, are dropped (with every fact that mentions them),
+so every name is unambiguous.
 Relations: is defined in, calls, raises, inherits from, imports. Output: facts text (one per line) + JSON."""
 import ast, os, sys, json, builtins, collections
 EXC = {n for n in dir(builtins) if isinstance(getattr(builtins, n), type) and issubclass(getattr(builtins, n), BaseException)}
@@ -35,7 +36,7 @@ def extract(specs):
                     defs[f"{pkg}__{n.name}"].append(m)
                     for s in n.body:
                         if isinstance(s, (ast.FunctionDef, ast.AsyncFunctionDef)): methods[n.name].add(s.name); defs[f"{pkg}__{n.name}_{s.name}"].append(m)
-        unique = {k: v[0] for k, v in defs.items() if len(v) == 1}
+        unique = {k: v[0] for k, v in defs.items() if len(v) == 1 and k not in mods}   # a def named like a module (p/main.py and main()) is ambiguous too
         cls1 = {c: v[0] for c, v in classes.items() if len(v) == 1}
         def q(name): return f"{pkg}__{name}"
         def mro(c):

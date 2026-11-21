@@ -20,6 +20,7 @@
     "precision": 1.0,
     "recall": 0.0361,
     "wall_s": 0.6,
+    "build_s": 0.2,
     "infer_s": 0.3,
     "peak_rss_mb": 48,
     "rounds": {
@@ -78,6 +79,7 @@
     "precision": 1.0,
     "recall": 0.0347,
     "wall_s": 0.6,
+    "build_s": 0.2,
     "infer_s": 0.3,
     "peak_rss_mb": 48,
     "rounds": {
@@ -135,6 +137,7 @@
     "precision": 1.0,
     "recall": 0.0361,
     "wall_s": 0.6,
+    "build_s": 0.2,
     "infer_s": 0.3,
     "peak_rss_mb": 48,
     "rounds": {
@@ -193,6 +196,7 @@
     "precision": 1.0,
     "recall": 0.0361,
     "wall_s": 0.5,
+    "build_s": 0.2,
     "infer_s": 0.3,
     "peak_rss_mb": 48,
     "rounds": {
@@ -251,6 +255,7 @@
     "precision": 1.0,
     "recall": 0.2757,
     "wall_s": 0.7,
+    "build_s": 0.2,
     "infer_s": 0.4,
     "peak_rss_mb": 55,
     "rounds": {
@@ -308,6 +313,7 @@
     "precision": 1.0,
     "recall": 0.0361,
     "wall_s": 4.2,
+    "build_s": 0.2,
     "infer_s": 3.9,
     "peak_rss_mb": 68,
     "rounds": {
@@ -368,6 +374,7 @@
     "precision": 1.0,
     "recall": 0.2757,
     "wall_s": 4.2,
+    "build_s": 0.2,
     "infer_s": 4.0,
     "peak_rss_mb": 68,
     "rounds": {
@@ -436,6 +443,7 @@
     "precision": 0.0058,
     "recall": 0.1188,
     "wall_s": 20.8,
+    "build_s": 0.2,
     "infer_s": 20.0,
     "peak_rss_mb": 269,
     "rounds": {
@@ -494,6 +502,7 @@
     "precision": 0.3123,
     "recall": 0.1176,
     "wall_s": 0.9,
+    "build_s": 0.2,
     "infer_s": 0.5,
     "peak_rss_mb": 67,
     "rounds": {
@@ -551,6 +560,7 @@
     "precision": 0.0214,
     "recall": 0.1188,
     "wall_s": 1.2,
+    "build_s": 0.2,
     "infer_s": 0.7,
     "peak_rss_mb": 118,
     "rounds": {
@@ -609,6 +619,7 @@
     "precision": 0.0054,
     "recall": 0.1188,
     "wall_s": 96.5,
+    "build_s": 0.3,
     "infer_s": 95.6,
     "peak_rss_mb": 269,
     "rounds": {
@@ -667,6 +678,7 @@
     "precision": 0.0169,
     "recall": 0.3584,
     "wall_s": 43.4,
+    "build_s": 0.2,
     "infer_s": 42.6,
     "peak_rss_mb": 274,
     "rounds": {
@@ -724,6 +736,7 @@
     "precision": 0.0356,
     "recall": 0.7482,
     "wall_s": 32.9,
+    "build_s": 0.3,
     "infer_s": 32.0,
     "peak_rss_mb": 295,
     "rounds": {
@@ -784,6 +797,7 @@
     "precision": 0.043,
     "recall": 0.9878,
     "wall_s": 148.7,
+    "build_s": 0.2,
     "infer_s": 147.9,
     "peak_rss_mb": 300,
     "rounds": {
@@ -855,6 +869,7 @@
     "precision": 1.0,
     "recall": 0.1188,
     "wall_s": 0.9,
+    "build_s": 0.2,
     "infer_s": 0.5,
     "peak_rss_mb": 66,
     "rounds": {
@@ -914,6 +929,7 @@
     "precision": 1.0,
     "recall": 0.1174,
     "wall_s": 0.9,
+    "build_s": 0.2,
     "infer_s": 0.5,
     "peak_rss_mb": 66,
     "rounds": {
@@ -972,6 +988,7 @@
     "precision": 1.0,
     "recall": 0.1188,
     "wall_s": 0.9,
+    "build_s": 0.2,
     "infer_s": 0.5,
     "peak_rss_mb": 66,
     "rounds": {
@@ -1031,6 +1048,7 @@
     "precision": 1.0,
     "recall": 0.1188,
     "wall_s": 0.9,
+    "build_s": 0.3,
     "infer_s": 0.5,
     "peak_rss_mb": 66,
     "rounds": {
@@ -1090,6 +1108,7 @@
     "precision": 1.0,
     "recall": 0.3584,
     "wall_s": 1.2,
+    "build_s": 0.3,
     "infer_s": 0.8,
     "peak_rss_mb": 75,
     "rounds": {
@@ -1149,6 +1168,7 @@
     "precision": 0.9968,
     "recall": 0.7482,
     "wall_s": 10.2,
+    "build_s": 0.3,
     "infer_s": 9.7,
     "peak_rss_mb": 210,
     "rounds": {
@@ -1209,8 +1229,9 @@
     "hidden": 5901,
     "precision": 0.9964,
     "recall": 0.9878,
-    "wall_s": 10.5,
-    "infer_s": 10.1,
+    "wall_s": 10.7,
+    "build_s": 0.2,
+    "infer_s": 10.4,
     "peak_rss_mb": 210,
     "rounds": {
      "1": 5821,
@@ -1561,6 +1582,366 @@
        "stated": true
       }
      ]
+    }
+   }
+  }
+ },
+ "results_dist": {
+  "verdicts": {
+   "X1": "fail",
+   "X2": "pass",
+   "X3": "pass",
+   "X4": "pass",
+   "X5": "pass"
+  },
+  "corpus": {
+   "python": "3.13.7",
+   "files": 2918,
+   "lines": 1027745,
+   "facts": 171223,
+   "words": 71529,
+   "truth_targets": 58234,
+   "hidden": 17635,
+   "by_relation": {
+    "is part of": 2817,
+    "is defined in": 5868,
+    "belongs to package": 15401,
+    "has decorator": 30863,
+    "has scope": 30863,
+    "is a method of": 22996,
+    "is first argument of": 30863,
+    "is bound to": 21603,
+    "is a base of": 3177,
+    "inherits from": 3177,
+    "is a subclass of": 3595
+   },
+   "hidden_by_relation": {
+    "is bound to": 9260,
+    "belongs to package": 6819,
+    "is a subclass of": 1556
+   },
+   "max_ancestors": 13
+  },
+  "runs": {
+   "default": {
+    "settings": {
+     "MAXWORDS": 72600,
+     "TENDENCYSTEPS": 0
+    },
+    "derived_new": 1556,
+    "correct": 1556,
+    "wrong": 0,
+    "recovered": 1556,
+    "hidden": 17635,
+    "precision": 1.0,
+    "recall": 0.0882,
+    "wall_s": 3.2,
+    "build_s": 0.8,
+    "infer_s": 2.0,
+    "peak_rss_mb": 171,
+    "rounds": {
+     "1": 1546,
+     "2": 10
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 1556,
+      "correct": 1556,
+      "wrong": 0,
+      "hidden": 1556,
+      "recovered": 1556,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 6819,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 9260,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    },
+    "tiers": {
+     "law correct": 1556
+    }
+   },
+   "depth1": {
+    "settings": {
+     "MAXWORDS": 72600,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "1"
+    },
+    "derived_new": 1546,
+    "correct": 1546,
+    "wrong": 0,
+    "recovered": 1546,
+    "hidden": 17635,
+    "precision": 1.0,
+    "recall": 0.0877,
+    "wall_s": 3.2,
+    "build_s": 0.8,
+    "infer_s": 2.0,
+    "peak_rss_mb": 171,
+    "rounds": {
+     "1": 1546
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 1546,
+      "correct": 1546,
+      "wrong": 0,
+      "hidden": 1556,
+      "recovered": 1546,
+      "precision": 1.0,
+      "recall": 0.9936
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 6819,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 9260,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    },
+    "tiers": {
+     "law correct": 1546
+    }
+   },
+   "chain3": {
+    "settings": {
+     "MAXWORDS": 72600,
+     "TENDENCYSTEPS": 0,
+     "CHAIN": "3"
+    },
+    "derived_new": 8375,
+    "correct": 8375,
+    "wrong": 0,
+    "recovered": 8375,
+    "hidden": 17635,
+    "precision": 1.0,
+    "recall": 0.4749,
+    "wall_s": 4.9,
+    "build_s": 0.8,
+    "infer_s": 3.5,
+    "peak_rss_mb": 200,
+    "rounds": {
+     "1": 8365,
+     "2": 10
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 1556,
+      "correct": 1556,
+      "wrong": 0,
+      "hidden": 1556,
+      "recovered": 1556,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 6819,
+      "correct": 6819,
+      "wrong": 0,
+      "hidden": 6819,
+      "recovered": 6819,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 9260,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    },
+    "tiers": {
+     "law correct": 8375
+    }
+   },
+   "trees": {
+    "settings": {
+     "MAXWORDS": 72600,
+     "TENDENCYSTEPS": 0,
+     "TREES": "1"
+    },
+    "derived_new": 10511,
+    "correct": 10452,
+    "wrong": 59,
+    "recovered": 10452,
+    "hidden": 17635,
+    "precision": 0.9944,
+    "recall": 0.5927,
+    "wall_s": 36.9,
+    "build_s": 0.8,
+    "infer_s": 35.7,
+    "peak_rss_mb": 536,
+    "rounds": {
+     "1": 10442,
+     "2": 10
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 1556,
+      "correct": 1556,
+      "wrong": 0,
+      "hidden": 1556,
+      "recovered": 1556,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 6819,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 8951,
+      "correct": 8896,
+      "wrong": 55,
+      "hidden": 9260,
+      "recovered": 8896,
+      "precision": 0.9939,
+      "recall": 0.9607
+     },
+     "other": {
+      "derived": 4,
+      "correct": 0,
+      "wrong": 4,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    },
+    "tiers": {
+     "law wrong": 4,
+     "law correct": 10446,
+     "tendency wrong": 55,
+     "tendency correct": 6
+    }
+   },
+   "full": {
+    "settings": {
+     "MAXWORDS": 72600,
+     "TENDENCYSTEPS": 0,
+     "TREES": "1",
+     "CHAIN": "3",
+     "DEPTH": "0"
+    },
+    "derived_new": 17359,
+    "correct": 17271,
+    "wrong": 88,
+    "recovered": 17271,
+    "hidden": 17635,
+    "precision": 0.9949,
+    "recall": 0.9794,
+    "wall_s": 39.5,
+    "build_s": 0.8,
+    "infer_s": 38.1,
+    "peak_rss_mb": 536,
+    "rounds": {
+     "1": 17261,
+     "2": 10
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 1556,
+      "correct": 1556,
+      "wrong": 0,
+      "hidden": 1556,
+      "recovered": 1556,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 6819,
+      "correct": 6819,
+      "wrong": 0,
+      "hidden": 6819,
+      "recovered": 6819,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "is bound to": {
+      "derived": 8980,
+      "correct": 8896,
+      "wrong": 84,
+      "hidden": 9260,
+      "recovered": 8896,
+      "precision": 0.9906,
+      "recall": 0.9607
+     },
+     "other": {
+      "derived": 4,
+      "correct": 0,
+      "wrong": 4,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    },
+    "tiers": {
+     "law wrong": 4,
+     "law correct": 17265,
+     "tendency wrong": 84,
+     "tendency correct": 6
     }
    }
   }

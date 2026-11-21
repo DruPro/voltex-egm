@@ -1,0 +1,14 @@
+{
+ "settings": {
+  "MAXWORDS": 72600,
+  "TENDENCYSTEPS": 0,
+  "TREES": 1,
+  "CHAIN": 3,
+  "DEPTH": 0
+ },
+ "ingest_s": 0.82,
+ "first_question_s": 39.1,
+ "questions": 100,
+ "query_ms_median": 0.71,
+ "query_ms_max": 2.63
+}

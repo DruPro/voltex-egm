@@ -93,6 +93,17 @@ class TestTools(unittest.TestCase):
         self.assertEqual(len(r[8]["results"]), 2)
         self.assertIn("read-only", err)
 
+    def test_empty_answer_says_unknown_and_names_the_cap(self):
+        """An empty answer is reported as unknown, not false; under a MAXWORDS cap the note names the cap."""
+        q = {"pattern": "requests__nosuchthing calls ?"}
+        out, _ = session([INIT, call(1, "egm_ask", q), call(2, "egm_values", q)], M)
+        for m in out[1:]:
+            note = m["result"]["structuredContent"]["note"]
+            self.assertIn("unknown, not false", note); self.assertNotIn("capped", note)
+        out, _ = session([INIT, call(1, "egm_values", q)], M, "--set", "MAXWORDS=300")
+        note = out[1]["result"]["structuredContent"]["note"]
+        self.assertIn("unknown, not false", note); self.assertIn("capped", note); self.assertIn("MAXWORDS", note)
+
     def test_write_tools_and_persistence(self):
         with tempfile.TemporaryDirectory() as td:
             save = os.path.join(td, "kb.vtx")

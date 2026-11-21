@@ -36,7 +36,7 @@ def main():
         R = load(rd); v = verdicts(R, bind)
         out[rd] = {"verdicts": {k: ("pass" if x else "fail") for k, x in list(v.items())[:ps]},
                    "runs": {n: {k: R[n][k] for k in ("settings", "derived_new", "correct", "wrong", "recovered", "hidden",
-                                                      "precision", "recall", "wall_s", "infer_s", "peak_rss_mb", "rounds")}
+                                                      "precision", "recall", "wall_s", "build_s", "infer_s", "peak_rss_mb", "rounds")}
                                 | {"per_relation": R[n]["per_relation"]} for n in RUNS}}
     out["results_depth"] = {"exploratory": "ancestry of 70% of classes hidden (extract.py --r2 --hide-sub 0.7), round 3 settings",
                             "runs": {}}
@@ -44,6 +44,20 @@ def main():
         x = json.load(open(os.path.join(STUDY, "results_depth", n + ".json")))
         out["results_depth"]["runs"][n] = {k: x[k] for k in ("settings", "wall_s", "rounds")} | \
             {"subclass": x["per_relation"][SUB], "proof_deepest": x["proofs"][SUB][0]}
+    X = {n: json.load(open(os.path.join(STUDY, "results_dist", n + ".json"))) for n in ("default", "depth1", "chain3", "trees", "full")}
+    f = X["full"]["per_relation"]; T = (SUB, PKG, "is bound to"); ti = X["full"]["tiers"]
+    law = ti.get("law correct", 0) + ti.get("law wrong", 0)
+    xv = {"X1": all((f[r]["precision"] or 0) >= 0.99 for r in T) and f["other"]["derived"] == 0,
+          "X2": all(f[r]["recall"] >= 0.95 for r in T),
+          "X3": law > 0 and ti.get("law correct", 0) / law >= 0.999,
+          "X4": X["default"]["per_relation"][PKG]["recall"] < 0.10 and X["chain3"]["per_relation"][PKG]["recall"] >= 0.90
+                and X["default"]["per_relation"]["is bound to"]["recall"] < 0.10 and X["trees"]["per_relation"]["is bound to"]["recall"] >= 0.90,
+          "X5": all(X[n]["wall_s"] < 900 and X[n]["peak_rss_mb"] < 4096 for n in X)}
+    out["results_dist"] = {"verdicts": {k: ("pass" if v else "fail") for k, v in xv.items()},
+                           "corpus": json.load(open(os.path.join(STUDY, "obs_dist", "stats.json"))),
+                           "runs": {n: {k: X[n][k] for k in ("settings", "derived_new", "correct", "wrong", "recovered", "hidden",
+                                                              "precision", "recall", "wall_s", "build_s", "infer_s", "peak_rss_mb", "rounds")}
+                                    | {"per_relation": X[n]["per_relation"], "tiers": X[n].get("tiers")} for n in X}}
     out["corpus"] = json.load(open(os.path.join(STUDY, "obs_r2", "stats.json")))
     json.dump(out, open(os.path.join(STUDY, "results_summary.json"), "w"), indent=1)
     for rd in out: print(rd, out[rd].get("verdicts", ""))

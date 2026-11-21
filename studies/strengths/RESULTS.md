@@ -85,3 +85,47 @@ methods got no correct answer, though the exact rules were learned:
 
 Preferring the more specific rule, the one with fewer exceptions, would fix this, but that is a change to what the
 engine decides.
+
+## Replication on an independent codebase (`PREREGISTRATION_REPLICATION.md`)
+
+- **Codebase:** Debian's Python packages (`/usr/lib/python3/dist-packages`): 2,918 files and
+  1,027,745 lines. This is third-party code, with ancestry up to 13 ancestors.
+- **Size:** 171,223 facts, with 17,635 hidden.
+- **Settings:** round 3's, with no tuning on this data.
+
+| Run | New facts | Wrong | Precision | Recall | Subclass R | Package R | Binding R | s | MB |
+|---|---|---|---|---|---|---|---|---|---|
+| `default` | 1,556 | 0 | 1.000 | 0.088 | 1.000 | 0.000 | 0.000 | 3.2 | 171 |
+| `depth1` | 1,546 | 0 | 1.000 | 0.088 | 0.994 | 0.000 | 0.000 | 3.2 | 171 |
+| `chain3` | 8,375 | 0 | 1.000 | 0.475 | 1.000 | 1.000 | 0.000 | 4.9 | 200 |
+| `trees` | 10,511 | 59 | 0.994 | 0.593 | 1.000 | 0.000 | 0.961 | 36.9 | 536 |
+| `full` | 17,359 | 88 | 0.995 | 0.979 | 1.000 | 1.000 | 0.961 | 39.5 | 536 |
+
+Verdicts: X1 fail, X2 pass, X3 pass, X4 pass, X5 pass.
+
+- **Generality:** the result holds. In `full`, 17,271 of 17,635 hidden facts were
+  recovered (recall 0.979). 17,265 of 17,269
+  law-tier answers are true. `CHAIN 3` and `TREES 1` are again the only route to the package and binding facts.
+- **X1 fails, on 4 law-tier facts in a non-target relation** (`has decorator none`). The cause is the extractor. It
+  writes no `has decorator` fact for functions whose decorators it doesn't handle (`@lru_cache` and the like), and
+  the engine filled those gaps with the package's majority value. **Lesson:** if an extractor leaves out a class of
+  values, the engine will predict the majority value for those entities, so state "other" explicitly.
+- **The exception problem replicates.** Of the 370 hidden `classmethod` and `staticmethod` facts, 6 are right, 84
+  wrong (all labelled tendency) and 280 unanswered. All 8,890 other hidden binding facts are right. So general rules
+  outvoting exact specific ones is not specific to the standard library.
+
+## Exploratory: can `egm.tune` find these settings? (`tools/tune_check.py`, `tune/`)
+
+The holdout tuning ran on the stdlib facts (`obs_r2`): 3 folds × 15%, scored by F0.5.
+
+| Search | Adopted | F0.5 | Evaluations | s |
+|---|---|---|---|---|
+| default space | `RATE 0.5` | 0.034 → 0.276 | 54 | 177.2 |
+| expanded, hand-built (MAXWORDS 28500) | `TENDENCYSTEPS 0`, `CHAIN 3`, `MAXWORDS 28500`, `TREES 1` | 0.034 → 0.733 | 129 | 457.7 |
+| `egm.tune(..., expanded=True)` | `TENDENCYSTEPS 0`, `CHAIN 3`, `MAXWORDS 28398`, `TREES 1` | 0.034 → 0.733 | 129 | 467.9 |
+
+- **What it shows:** the expanded search found the hand-chosen configuration from the data alone. That shows the
+  search can recover the right parameters on this dataset. It doesn't show that the configuration is best
+  everywhere. On the tokenomics S set, the same search started from `TENDENCYSTEPS 0` reverted it to -1.
+- **Defaults unchanged:** `expanded` is opt-in, and the default search is unchanged. After the change, default
+  `tune()` gives the identical history on this data (`api_default.json`) and on tokenomics S, M and L.

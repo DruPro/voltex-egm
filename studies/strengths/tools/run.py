@@ -12,11 +12,14 @@ ROOT = os.path.abspath(os.path.join(STUDY, "..", "..")); sys.path.insert(0, ROOT
 import egm  # noqa: E402
 ROUND = os.environ.get("ROUND", "1")   # 2: obs_r2 -> results_r2; 3: obs_r2 + TENDENCYSTEPS 0 -> results_r3
 OBS = os.path.join(STUDY, "obs" + ("_r2" if ROUND != "1" else "")); OUT = os.path.join(STUDY, "results" + ("" if ROUND == "1" else "_r" + ROUND))
+if ROUND == "X":   # replication on dist-packages (PREREGISTRATION_REPLICATION.md), round 3 settings
+    OBS = os.path.join(STUDY, "obs_dist"); OUT = os.path.join(STUDY, "results_dist")
 if ROUND == "D":   # exploratory depth stress: obs_depth (extract.py --r2 --hide-sub 0.7), round 3 settings
-    OBS = os.path.join(STUDY, "obs_depth"); OUT = os.path.join(STUDY, "results_depth"); BIN = os.path.join(ROOT, "build", "voltex2")
+    OBS = os.path.join(STUDY, "obs_depth"); OUT = os.path.join(STUDY, "results_depth")
+BIN = os.path.join(ROOT, "build", "voltex2")
 TARGETS = ("is a subclass of", "belongs to package", "binds" if ROUND == "1" else "is bound to")
-BASE = {"MAXWORDS": 16200 if ROUND == "1" else 28500}   # step 1 of docs/CHOOSING_SETTINGS.md: distinct words + about 1,000
-if ROUND in ("3", "D"): BASE["TENDENCYSTEPS"] = 0
+BASE = {"MAXWORDS": {"1": 16200, "X": 72600}.get(ROUND, 28500)}   # step 1 of docs/CHOOSING_SETTINGS.md: distinct words + about 1,000
+if ROUND in ("3", "D", "X"): BASE["TENDENCYSTEPS"] = 0
 
 
 def norm(s): return " ".join(s.split())
@@ -54,6 +57,7 @@ def main(name, settings):
             pick = pool[:2] + rr.sample(pool[2:], min(2, max(0, len(pool) - 2)))
             samples[r] = [proof(e, f.fact) for f in pick]
         wrong = [f for f in new if norm(f.fact) not in truth]
+        tiers = collections.Counter(f"{f.tier} {'correct' if norm(f.fact) in truth else 'wrong'}" for f in new)
         wrong_proofs = [proof(e, f.fact) for f in rr.sample(wrong, min(4, len(wrong)))]
     wall = time.time() - t0
     rss = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss // 1024
@@ -68,7 +72,7 @@ def main(name, settings):
     out = {"name": name, "settings": st, "stated": len(stated), "hidden": len(key), "derived_new": len(newn),
            "correct": len(okn), "wrong": len(newn) - len(okn), "recovered": len(key & okn),
            "precision": round(len(okn) / len(newn), 4) if newn else None, "recall": round(len(key & okn) / len(key), 4),
-           "per_relation": per, "build_s": round(t1 - t0, 1), "infer_s": round(t2 - t1, 1), "wall_s": round(wall, 1),
+           "per_relation": per, "tiers": dict(tiers), "build_s": round(t1 - t0, 1), "infer_s": round(t2 - t1, 1), "wall_s": round(wall, 1),
            "peak_rss_mb": rss,
            "rounds": dict(sorted(collections.Counter(rnd.get(f) for f in okn).items(), key=lambda x: (x[0] is None, x[0] or 0))),
            "rules": [{"text": x.text, "shape": x.shape, "tier": x.tier, "n": x.n, "k": x.k, "rate": x.rate, "lift": x.lift,

@@ -1,0 +1,28 @@
+{
+ "settings": {
+  "MAXWORDS": 28500,
+  "TENDENCYSTEPS": 0,
+  "TREES": 1,
+  "CHAIN": 3,
+  "DEPTH": 0
+ },
+ "by_kind": {
+  "class classmethod": {
+   "unanswered": 45,
+   "wrong tendency": 8
+  },
+  "class none": {
+   "right": 2713
+  },
+  "class property": {
+   "right": 148
+  },
+  "class staticmethod": {
+   "unanswered": 6,
+   "wrong tendency": 13
+  },
+  "module none": {
+   "right": 853
+  }
+ }
+}

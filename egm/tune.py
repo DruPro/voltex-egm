@@ -11,6 +11,11 @@ changes only when the data clearly supports the change.
 
 Optional ``labels``: facts you have verified (from outside the dataset). Then the score is measured on them instead
 of on hidden stated facts.
+
+Optional ``settings``: a base configuration every candidate starts from (for example a sized MAXWORDS). Optional
+``expanded=True``: also search TENDENCYSTEPS, DEPTH 1 and 2, and MAXWORDS sized to the data's vocabulary
+(``expanded_space``). It found the hand-chosen configuration on the Python standard library (studies/strengths) at
+about 2.6x the cost, so it is opt-in. What tuning finds fits this dataset; validate on yours before relying on it.
 """
 import os
 import random
@@ -29,6 +34,20 @@ DEFAULT_SPACE: List[Tuple[str, list]] = [
 Fact3 = Tuple[str, str, str]
 
 
+def expanded_space(facts: str) -> List[Tuple[str, list]]:
+    """DEFAULT_SPACE plus the settings that decided the code studies (studies/strengths): TENDENCYSTEPS (-1, 0),
+    DEPTH 1 and 2, and MAXWORDS sized from the data (distinct words + 1,000) when the vocabulary exceeds the default
+    cap. Every value is either an engine default or derived from ``facts``; nothing is domain-specific."""
+    with open(facts) as fh:
+        words = len({w for l in fh for w in l.split()})
+    space: List[Tuple[str, list]] = []
+    if words + 1000 > 12000:
+        space.append(("MAXWORDS", [12000, words + 1000]))
+    space.append(("TENDENCYSTEPS", [-1, 0]))
+    space += [(k, [4, 0, 1, 2]) if k == "DEPTH" else (k, list(v)) for k, v in DEFAULT_SPACE]
+    return space
+
+
 @dataclass
 class TuneResult:
     settings: Dict[str, object]          # only the settings that changed from the defaults
@@ -39,9 +58,18 @@ class TuneResult:
     history: List[dict] = field(default_factory=list)   # every value tried: setting, value, score, folds, adopted
     evaluations: int = 0
     mode: str = "holdout"
+    base: Dict[str, object] = field(default_factory=dict)   # the ``settings`` every candidate started from
+
+    @property
+    def all_settings(self) -> Dict[str, object]:
+        """The base settings plus the changes: what to pass to egm.open or egm build."""
+        return dict(self.base, **self.settings)
 
     def report(self) -> str:
-        lines = [f"tuning by {self.mode}: F0.5 {self.baseline:.4f} with defaults -> {self.tuned:.4f} tuned ({self.evaluations} evaluations)"]
+        start = "the base settings" if self.base else "defaults"
+        lines = [f"tuning by {self.mode}: F0.5 {self.baseline:.4f} with {start} -> {self.tuned:.4f} tuned ({self.evaluations} evaluations)"]
+        for k, v in self.base.items():
+            lines.append(f"  base: SET {k} {v}")
         if not self.settings:
             lines.append("no change is clearly supported by this data: keep the defaults")
         for k, v in self.settings.items():
@@ -88,7 +116,8 @@ def tune(facts: str, folds: int = 3, holdout: float = 0.15, space: Optional[List
          min_gain: float = 0.005, sweeps: int = 2, seed: int = 0, labels: Optional[Iterable[str]] = None,
          label_pairs: Optional[Iterable[Tuple[str, str]]] = None, min_relation_facts: int = 20, binary: Optional[str] = None,
 
-         progress: Optional[Callable[[str], None]] = None) -> TuneResult:
+         progress: Optional[Callable[[str], None]] = None, settings: Optional[Dict[str, object]] = None,
+         expanded: bool = False) -> TuneResult:
     """Pick settings for the facts file ``facts``.
 
     Without ``labels`` (self-tuning): ``folds`` disjoint samples of ``holdout`` of the stated facts are hidden in turn,
@@ -96,14 +125,18 @@ def tune(facts: str, folds: int = 3, holdout: float = 0.15, space: Optional[List
     dataset): the engine sees all of ``facts``, and the score is measured on the labels. ``label_pairs`` optionally
     lists the (relation, subject) pairs whose answers the labels give completely, so a wrong answer there counts.
 
-    Coordinate descent over ``space`` (default ``DEFAULT_SPACE``), at most ``sweeps`` passes. A value is adopted only
-    if it raises the mean score by at least ``min_gain`` and raises it in every fold.
+    Coordinate descent over ``space`` (default ``DEFAULT_SPACE``; ``expanded=True`` uses ``expanded_space(facts)``),
+    at most ``sweeps`` passes. A value is adopted only if it raises the mean score by at least ``min_gain`` and raises
+    it in every fold. ``settings`` is the base configuration; the result's ``settings`` lists only changes from it.
     """
-    space = space or DEFAULT_SPACE
+    if space is not None and expanded:
+        raise ValueError("pass either space or expanded=True, not both")
+    space = space or (expanded_space(facts) if expanded else DEFAULT_SPACE)
+    base = dict(settings or {})
     say = progress or (lambda s: None)
     with open(facts) as fh:
         lines = [l.rstrip("\n") for l in fh if l.strip()]
-    with Engine(facts=[facts], binary=binary) as e:
+    with Engine(facts=[facts], settings=base, binary=binary) as e:
         rels = sorted({r.relation for r in e.relations()}, key=len, reverse=True)
     if labels is not None:
         answers = [f for f in (_split(l, rels) for l in labels) if f]
@@ -136,7 +169,7 @@ def tune(facts: str, folds: int = 3, holdout: float = 0.15, space: Optional[List
             cache[key] = []
             for keep, _, _ in tasks:
                 evals += 1
-                cache[key].append(set(_derived(keep, cfg, binary)))
+                cache[key].append(set(_derived(keep, dict(base, **cfg), binary)))
         return cache[key]
 
     def run(cfg):   # score per task
@@ -150,11 +183,12 @@ def tune(facts: str, folds: int = 3, holdout: float = 0.15, space: Optional[List
         changed = False
         for name, values in space:
             best = None
-            now = cur.get(name, values[0])
+            start = base.get(name, values[0])   # the value in force before tuning touches this setting
+            now = cur.get(name, start)
             for v in values:
                 if v == now: continue
                 cfg = dict(cur); cfg[name] = v
-                if v == values[0]: cfg.pop(name)
+                if v == start: cfg.pop(name)
                 fs = run(cfg)
                 gain = mean(fs) - mean(cur_f)
                 ok = gain >= min_gain and all(a > b for a, b in zip(fs, cur_f))
@@ -169,4 +203,4 @@ def tune(facts: str, folds: int = 3, holdout: float = 0.15, space: Optional[List
         if not changed:
             break
     return TuneResult(settings=cur, baseline=mean(base_f), tuned=mean(cur_f), baseline_folds=base_f, tuned_folds=cur_f,
-                      history=history, evaluations=evals, mode=mode)
+                      history=history, evaluations=evals, mode=mode, base=base)

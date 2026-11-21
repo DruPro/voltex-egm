@@ -1,0 +1,6 @@
+tuning by holdout (3 folds x 15%): F0.5 0.0336 with defaults -> 0.7333 tuned (129 evaluations)
+  SET TENDENCYSTEPS 0
+  SET CHAIN 3
+  SET MAXWORDS 28500
+  SET TREES 1 
+457.7 s

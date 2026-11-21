@@ -211,7 +211,7 @@ The data is in [`examples/`](examples). The questions and keys are the ones used
 
 ## Results on real workflows
 
-### Best case: exact facts from one large codebase
+### Best case: exact facts from large codebases
 
 The input was the CPython 3.13 standard library, 273,430 lines, read with Python's `ast`
 ([docs/STRENGTHS.md](docs/STRENGTHS.md), `studies/strengths`, pre-registered). Every fact is exactly true, and every
@@ -222,7 +222,7 @@ answer is checked against the complete truth. 5,901 facts were hidden, and no ru
 | Hidden facts recovered | **5,829 of 5,901 (98.8%)** |
 | Law-tier answers correct | **5,829 of 5,829** |
 | Wrong answers | 21, all labelled *tendency* by the engine (excluded by `strict=True`) |
-| Time, memory | 10.5 s, 210 MB |
+| Time, memory | ingest 0.2 s; learning and inference 10.4 s, once; 210 MB |
 
 | Reasoning, learned from the code alone | Setting | Recall without → with |
 |---|---|---|
@@ -246,8 +246,23 @@ What got there:
 - **Facts the rule shapes can express** ([docs/DATA_DESIGN.md](docs/DATA_DESIGN.md), section 2);
 - **`TENDENCYSTEPS 0`** for answers you act on.
 
-Stated naively, the same code gave recall 0.276. The one gap: exceptions to a general rule (`classmethod` and
-`staticmethod`) lose the vote to it, so those 72 facts got no correct answer.
+Stated naively, the same code gave recall 0.276.
+
+**Replicated on an independent codebase** (pre-registered, same settings, no tuning on this data). The input was
+Debian's Python packages: 1,027,745 lines of third-party code, with ancestry up to
+13 ancestors.
+- **Recovered:** 17,271 of 17,635 hidden facts (97.9%).
+- **Law tier:** 17,265 of 17,269 law-tier answers true.
+- **Settings:** `CHAIN 3` and `TREES 1` were again the only route to package and binding facts.
+
+**Limits of this evidence:**
+- **Law tier means reliable given what was observed, not true about the system.** The 4 false law-tier answers came
+  from the extractor leaving out unusual decorators, so the engine filled the gap with the majority value.
+- **Exceptions lose to general rules.** `classmethod` and `staticmethod` facts got wrong (tendency-labelled) answers
+  or none, in both codebases.
+- **The settings are evidence, not a universal default.** `TENDENCYSTEPS 0` cut the tokenomics score from 0.380 to
+  0.118. Validate on your own data; `egm.tune(..., expanded=True)` searches these settings.
+- **An empty answer means unknown, not false.** `egm mcp` says so, and names any cap.
 
 ### Noisy extractions and partial keys
 
@@ -371,7 +386,12 @@ voltex-egm/
   - `AGENT_SESSIONS.md`;
   - `STRESS_FINDINGS.md`;
   - `STRENGTHS.md`: the best case on exact code facts, with 98.8% of hidden facts recovered and every law-tier
-    answer correct.
+    answer correct; replicated on 1M lines of third-party code.
+- `egm.tune(..., settings=..., expanded=True)` (and `egm tune --expanded --set`): a base configuration, plus an
+  opt-in wider search. The default search is unchanged.
+- An empty answer from `egm mcp` or `explain()` now says "unknown, not false", and names any `[LIMIT]` cap.
+- `egm extract python` drops a definition named like a module (`p/main.py` and `main()`), like other ambiguous
+  names.
 
 ### 2.2.1
 

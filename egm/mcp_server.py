@@ -111,6 +111,9 @@ class Server:
     def _learned(self):
         return [r.relation for r in self.engine.relations()]
 
+    def _unknown(self):
+        return self.engine.unknown_note()   # not cached: added facts can change the vocabulary and so the cap
+
     def t_egm_ask(self, a):
         p = a["pattern"]; strict = a.get("strict", True)
         try:
@@ -129,7 +132,7 @@ class Server:
         if hidden:
             res["note"] = f"{hidden} answer(s) hidden by strict=true (tendency-tier inferences or stale facts); retry with strict=false to see them"
         if not out and not hidden:
-            res["note"] = "no stated or inferred answer"
+            res["note"] = self._unknown()
         return res
 
     def t_egm_values(self, a):
@@ -138,7 +141,10 @@ class Server:
             self.engine.ask(p, require=True)
         except RelationNotLearned as e:
             return {"pattern": p, "values": [], "note": str(e), "learned_relations": e.learned}
-        return {"pattern": p, "strict": a.get("strict", True), "values": self.engine.values(p, strict=a.get("strict", True))}
+        vals = self.engine.values(p, strict=a.get("strict", True))
+        res = {"pattern": p, "strict": a.get("strict", True), "values": vals}
+        if not vals: res["note"] = self._unknown()
+        return res
 
     def t_egm_ask_many(self, a):
         ps = a["patterns"]

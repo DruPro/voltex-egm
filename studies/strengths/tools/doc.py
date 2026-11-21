@@ -15,6 +15,8 @@ def tr(p, pre="", last=True, top=True):
 
 blk = lambda p: "```\n" + "\n".join(tr(p)) + "\n```"
 D = S["results_depth"]["runs"]; R3 = S["results_r3"]["runs"]; b = C["proofs_binding"]
+X = S["results_dist"]; XR = X["runs"]["full"]; XT = XR["tiers"]
+QT = json.load(open(os.path.join(STUDY, "results_dist", "query_time.json")))   # tools/query_time.py
 pr = lambda run, r: run["per_relation"][r]
 rules = "\n".join(f"| `{x['text'].replace('TREE ', '')}` | {x['agree']:.2f} | {x['known']:,} |" for x in C["rules_tree_binding"])
 doc = f"""# The engine at its best: exact facts from one large codebase
@@ -46,8 +48,9 @@ partial key. This page shows the case it is built for:
 
 ## Result
 
-With `TREES 1`, `CHAIN 3`, `DEPTH 0` and `TENDENCYSTEPS 0` (and `MAXWORDS` sized), in {R3['full']['wall_s']} s and
-{R3['full']['peak_rss_mb']} MB:
+With `TREES 1`, `CHAIN 3`, `DEPTH 0` and `TENDENCYSTEPS 0` (and `MAXWORDS` sized). Ingesting the facts took
+{R3['full']['build_s']} s. Learning the rules and inferring took {R3['full']['infer_s']} s, once, on the first question;
+most of that is the tree search. Peak memory was {R3['full']['peak_rss_mb']} MB.
 
 | | |
 |---|---|
@@ -113,6 +116,44 @@ general rules outvote them. 21 came out wrong, and each is labelled tendency:
 
 The other 51 got no answer. The vote is part of the inference decision stack; preferring the more specific rule is
 noted for the owner in `studies/strengths/RESULTS.md`.
+
+## Replication on a second, independent codebase
+
+This was pre-registered before any run on the data (`PREREGISTRATION_REPLICATION.md`), with the same settings and no
+tuning on this data.
+- **Codebase:** Debian's Python packages (`/usr/lib/python3/dist-packages`), {X['corpus']['lines']:,} lines of
+  third-party code, with ancestry up to {X['corpus']['max_ancestors']} ancestors.
+- **Size:** {X['corpus']['facts']:,} facts, with {X['corpus']['hidden']:,} hidden.
+
+| | |
+|---|---|
+| Hidden facts recovered | **{XR['recovered']:,} of {XR['hidden']:,} ({XR['recall']*100:.1f}%)** |
+| Law-tier answers true | **{XT['law correct']:,} of {XT['law correct'] + XT['law wrong']:,}** |
+| Package of a method, `CHAIN` 2 → 3 | {pr(X['runs']['default'], 'belongs to package')['recall']:.3f} → {pr(X['runs']['chain3'], 'belongs to package')['recall']:.3f} |
+| First-argument binding, `TREES` 0 → 1 | {pr(X['runs']['default'], 'is bound to')['recall']:.3f} → {pr(X['runs']['trees'], 'is bound to')['recall']:.3f} |
+| Ingest; learning and inference (once, on the first question); each question after | {QT['ingest_s']} s; {QT['first_question_s']} s; {QT['query_ms_median']} ms median, {QT['query_ms_max']} ms max over {QT['questions']} (`tools/query_time.py`) |
+
+Verdicts: {', '.join(f'{k} {v}' for k, v in X['verdicts'].items())}.
+
+**X1 failed on 4 law-tier answers**, all of the form "this method has no decorator", and all false. The extractor
+wrote no decorator fact for methods whose decorators it doesn't handle (`@lru_cache` and the like). Nothing
+contradicted the majority value, so the engine filled the gap with it. Given the facts, the answer was statistically
+sound; about the code, it was wrong. The lesson is for extraction: write `has decorator other` instead of nothing.
+
+The exception problem replicates too. Of the 370 hidden `classmethod` and `staticmethod` facts, 6 are right, 84 wrong
+(all labelled tendency) and 280 unanswered.
+
+## What this does and doesn't show
+
+- **It shows** that on exact code facts, the engine learns the code's own rules and answers with proofs. On two
+  codebases, nearly every law-tier answer was true, and it labels its guesses as such.
+- **It doesn't show** that these settings are best everywhere. On the stdlib facts, an expanded `egm.tune` search
+  found the hand-chosen configuration from the data alone. That recovers the parameters for that dataset; it isn't
+  a universal default. On the tokenomics data, `TENDENCYSTEPS 0` lowered the score from 0.380 to 0.118. Validate on
+  your own held-out facts.
+- **Law tier means reliable given what was observed.** An extractor that leaves something out can make a law-tier
+  answer wrong about the real system.
+- **An empty answer means unknown, not false.** `egm mcp` and `explain()` say so, and name any cap.
 
 ## What made the difference
 

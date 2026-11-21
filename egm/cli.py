@@ -13,7 +13,7 @@
   egm score key.json answers.json              exact / F1 per question kind
   egm eval KB key.json                         answer + score in one step
   egm bench facts.txt                          ingest, build and query timings
-  egm tune facts.txt [-o tuned.json]           pick settings for this dataset (holdout; --labels for verified facts)
+  egm tune facts.txt [-o tuned.json]           pick settings for this dataset (holdout; --labels for verified facts; --expanded)
   egm mcp KB [--writable]                      serve KB to LLM clients over MCP (stdio)
 
 KB is a saved knowledge base (.vtx) or a facts file (.txt), which is ingested on the fly.
@@ -262,26 +262,28 @@ def cmd_eval(a):
 
 
 def cmd_tune(a):
-    from .tune import DEFAULT_SPACE, tune
-    space = DEFAULT_SPACE
+    from .tune import DEFAULT_SPACE, expanded_space, tune
+    full = expanded_space(a.facts) if a.expanded else DEFAULT_SPACE
+    space = full
     if a.only:
         want = {x.strip().upper() for x in a.only.split(",")}
-        unknown = want - {k for k, _ in DEFAULT_SPACE}
+        unknown = want - {k for k, _ in full}
         if unknown:
             sys.exit(f"egm tune: not in the search space: {', '.join(sorted(unknown))}")
-        space = [(k, v) for k, v in DEFAULT_SPACE if k in want]
+        space = [(k, v) for k, v in full if k in want]
     labels = None
     if a.labels:
         with open(a.labels) as fh:
             labels = [l.strip() for l in fh if l.strip()]
     try:
         r = tune(a.facts, folds=a.folds, holdout=a.holdout, space=space, min_gain=a.min_gain, sweeps=a.sweeps,
-                 seed=a.seed, labels=labels, progress=None if a.quiet else print)
+                 seed=a.seed, labels=labels, progress=None if a.quiet else print,
+                 settings=parse_settings(a.set, a.settings) or None)
     except ValueError as e:
         sys.exit(f"egm tune: {e}")
     print(r.report())
     if a.output:
-        dump({"settings": r.settings, "baseline": r.baseline, "tuned": r.tuned, "baseline_folds": r.baseline_folds,
+        dump({"settings": r.all_settings, "baseline": r.baseline, "tuned": r.tuned, "baseline_folds": r.baseline_folds,
               "tuned_folds": r.tuned_folds, "mode": r.mode, "evaluations": r.evaluations, "history": r.history}, a.output)
         print(f"wrote {a.output}: use it with  egm build {a.facts} -o kb.vtx --settings {a.output}")
 
@@ -372,6 +374,9 @@ def main(argv=None):
     s.add_argument("--min-gain", type=float, default=0.005); s.add_argument("--sweeps", type=int, default=2)
     s.add_argument("--only", help="comma-separated settings to search (default: all in egm.tune.DEFAULT_SPACE)")
     s.add_argument("--seed", type=int, default=0); s.add_argument("-q", "--quiet", action="store_true")
+    s.add_argument("--expanded", action="store_true",
+                   help="also search TENDENCYSTEPS, DEPTH 1/2 and a data-sized MAXWORDS (about 2.6x slower; egm.tune.expanded_space)")
+    with_set(s)   # --set / --settings: the base configuration tuning starts from
     s = add("bench", cmd_bench, "time ingest, inference build and queries")
     s.add_argument("facts", nargs="+"); s.add_argument("--queries", type=int, default=50)
 

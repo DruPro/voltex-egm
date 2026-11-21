@@ -64,6 +64,11 @@ the model can retry with `strict: false`.
 says so and lists the relations it has, instead of returning an empty list. Models can recover in
 one step rather than concluding "no answer".
 
+**Empty means unknown.** An empty `egm_ask` or `egm_values` result carries the note "no stated or inferred answer:
+unknown, not false". If the knowledge base hit a cap (for example `MAXWORDS` smaller than the vocabulary), the note
+names the cap and says the name may lie beyond it. In a recorded session an agent read an empty answer under the cap
+as "not in the knowledge base" (`docs/AGENT_SESSIONS.md`, session 0). Serve with a sized `MAXWORDS` to avoid it.
+
 Every result is JSON, sent both as text and as `structuredContent`. Logs go to stderr.
 
 ## Protocol
