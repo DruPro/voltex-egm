@@ -1,0 +1,195 @@
+{
+ "dataset": "code_realcode",
+ "settings": {
+  "COVERAGE": "0",
+  "TENDENCYSTEPS": "0",
+  "MAXWORDS": 41918
+ },
+ "stated": 64763,
+ "key": 16374,
+ "derived_new": 73,
+ "recovered": 1,
+ "not_in_key": 72,
+ "relations": [
+  {
+   "relation": "is defined in",
+   "facts": 33208
+  },
+  {
+   "relation": "calls",
+   "facts": 16414
+  },
+  {
+   "relation": "imports",
+   "facts": 6498
+  },
+  {
+   "relation": "raises",
+   "facts": 4352
+  },
+  {
+   "relation": "inherits from",
+   "facts": 4283
+  }
+ ],
+ "rules": [
+  {
+   "text": "[? is defined in ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 798,
+   "k": 777,
+   "rate": 0.97,
+   "lift": 2377.7,
+   "known": 798,
+   "agree": 0.97
+  },
+  {
+   "text": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 13062,
+   "k": 8456,
+   "rate": 0.65,
+   "lift": 1580.9,
+   "known": 10372,
+   "agree": 0.82
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 2465,
+   "k": 1114,
+   "rate": 0.45,
+   "lift": 1103.6,
+   "known": 2010,
+   "agree": 0.55
+  },
+  {
+   "text": "[? imports ?](a,b) & [? is defined in ?](b,c) => [? imports ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 111,
+   "k": 50,
+   "rate": 0.45,
+   "lift": 270.4,
+   "known": 111,
+   "agree": 0.45
+  },
+  {
+   "text": "[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 17,
+   "k": 5,
+   "rate": 0.29,
+   "lift": 170.0,
+   "known": 6,
+   "agree": 0.83
+  },
+  {
+   "text": "[? is defined in ?](a,b) & [? imports ?](b,c) => [? imports ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 98782,
+   "k": 78,
+   "rate": 0.0,
+   "lift": 0.5,
+   "known": 80,
+   "agree": 0.97
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "tendency_steps": 0,
+   "facts": 73
+  }
+ ],
+ "proofs_recovered": [
+  {
+   "fact": "cloudinit__raise_on_invalid_command raises cloudinit__ProcessExecutionError",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)",
+   "because": [
+    {
+     "fact": "cloudinit__raise_on_invalid_command is defined in cloudinit__subp",
+     "stated": true
+    },
+    {
+     "fact": "cloudinit__subp raises cloudinit__ProcessExecutionError",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_deep": [],
+ "proofs_not_in_key": [
+  {
+   "fact": "PIL__FliImagePlugin imports PIL__Image",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? imports ?](a,b) & [? is defined in ?](b,c) => [? imports ?](a,c)",
+   "because": [
+    {
+     "fact": "PIL__FliImagePlugin imports PIL__init",
+     "stated": true
+    },
+    {
+     "fact": "PIL__init is defined in PIL__Image",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "PIL__PsdImagePlugin imports PIL__Image",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? imports ?](a,b) & [? is defined in ?](b,c) => [? imports ?](a,c)",
+   "because": [
+    {
+     "fact": "PIL__PsdImagePlugin imports PIL__init",
+     "stated": true
+    },
+    {
+     "fact": "PIL__init is defined in PIL__Image",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "PIL__ImageFile imports PIL__Image",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? imports ?](a,b) & [? is defined in ?](b,c) => [? imports ?](a,c)",
+   "because": [
+    {
+     "fact": "PIL__ImageFile imports PIL__init",
+     "stated": true
+    },
+    {
+     "fact": "PIL__init is defined in PIL__Image",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "PIL__ImageDraw2 imports PIL__Image",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? imports ?](a,b) & [? is defined in ?](b,c) => [? imports ?](a,c)",
+   "because": [
+    {
+     "fact": "PIL__ImageDraw2 imports PIL__init",
+     "stated": true
+    },
+    {
+     "fact": "PIL__init is defined in PIL__Image",
+     "stated": true
+    }
+   ]
+  }
+ ]
+}

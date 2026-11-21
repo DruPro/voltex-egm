@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voltex EGM Stress Findings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* layout: one reading column; charts and proof trees sit in the same column, findings first, method last */
+  --bg: #f7f8f7; --surface: #fcfcfb; --ink: #141615; --ink-2: #4c524f; --ink-3: #7b817e;
+  --rule: #dfe3e1; --accent: #1d6b57; --s1: #2a78d6; --s2: #eb6834; --bad: #b3261e; --good: #1f7a3a;
+  --display: "Fraunces", Georgia, serif; --body: "IBM Plex Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121413; --surface: #1a1c1b; --ink: #eef0ef; --ink-2: #b9c0bc; --ink-3: #8a918d;
+    --rule: #2c302e; --accent: #5fc3a4; --s1: #3987e5; --s2: #d95926; --bad: #ff8a80; --good: #6fd08c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121413; --surface: #1a1c1b; --ink: #eef0ef; --ink-2: #b9c0bc; --ink-3: #8a918d;
+  --rule: #2c302e; --accent: #5fc3a4; --s1: #3987e5; --s2: #d95926; --bad: #ff8a80; --good: #6fd08c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body); }
+main { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; display: grid; gap: 28px; }
+h1 { font: 600 2.1rem/1.15 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 1.35rem/1.25 var(--display); margin: 8px 0 0; text-wrap: balance; }
+h3 { font-size: 1rem; margin: 0; }
+p, li { max-width: 68ch; }
+p { margin: 0; }
+.lede { color: var(--ink-2); font-size: 1.05rem; }
+.meta { color: var(--ink-3); font-size: .85rem; }
+section { display: grid; gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 18px; display: grid; gap: 12px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+code, .mono { font-family: var(--mono); font-size: .86em; }
+.finding { border-left: 3px solid var(--accent); padding-left: 14px; display: grid; gap: 6px; }
+.tag { display: inline-block; font-size: .75rem; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--rule); color: var(--ink-2); margin-right: 6px; }
+.tag.law { border-color: var(--good); color: var(--good); }
+.tag.tend { border-color: var(--s2); color: var(--ink-2); }
+.tag.wrong { border-color: var(--bad); color: var(--bad); }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--rule); }
+th { color: var(--ink-2); font-weight: 600; }
+td.n, th.n { text-align: right; }
+.tablewrap { overflow-x: auto; }
+.tree { font-family: var(--mono); font-size: .8rem; line-height: 1.5; overflow-x: auto; background: var(--bg); border-radius: 6px; padding: 12px; }
+.tree ul { list-style: none; margin: 0; padding-left: 18px; border-left: 1px solid var(--rule); }
+.tree > ul { padding-left: 0; border: 0; }
+.tree li { margin: 2px 0; max-width: none; white-space: nowrap; }
+.tree .rule { color: var(--ink-3); }
+.tree .st { color: var(--ink-3); }
+.legend { display: flex; gap: 16px; font-size: .85rem; color: var(--ink-2); flex-wrap: wrap; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; background: var(--c); vertical-align: -1px; }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { fill: var(--ink-2); font: 12px var(--body); }
+svg .val { fill: var(--ink); font-weight: 600; }
+svg .grid { stroke: var(--rule); stroke-width: 1; }
+.tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); font-size: .8rem; padding: 6px 8px; border-radius: 4px; opacity: 0; transition: opacity .1s; max-width: 280px; }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+<header style="display:grid;gap:10px">
+  <p class="meta">Voltex EGM · studies/stress · 2026-11-21 · branch study/shard (local)</p>
+  <h1>What the engine found in real code and real data</h1>
+  <p class="lede">31 datasets, 295 runs: four code corpora (254k to 400k source lines each), four real system tables, and synthetic shapes. 20% of every real dataset was hidden from the engine as an answer key. Below are the rules it learned on its own, step-by-step proofs of answers it recovered, where it goes wrong and why, and what the settings do.</p>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <div class="card">
+    <ul style="margin:0;padding-left:20px;display:grid;gap:6px">
+      <li><b>Unicode:</b> from character tables alone it learned that upper- and lowercase are inverses, that case partners share a script and text direction, and that accented letters inherit their base letter's properties. Checked against Python's Unicode database, <b>1,281 of 1,331</b> new facts are true (96.2%). 40 of the 50 errors are Unicode's documented exceptions; the other 10 come from how I extracted scripts.</li>
+      <li><b>Real Python code (125 packages):</b> it learned call locality: a function that calls functions of module M is usually defined in M. It answers with 2-step proofs through chains of callers.</li>
+      <li><b>dpkg:</b> one reversed rule labelled law, plus transitivity, grows the derived facts about 4× per round, 1.15 million in all. <code>DEPTH 1</code> gives 13,000 facts at 88% true; the default <code>DEPTH 4</code> gives 4% true.</li>
+      <li><b><code>TENDENCYSTEPS 0</code> is a per-dataset choice, not a fix.</b> On Python packages, precision rises from 0.010 to 0.963 with the same recall. On company data, recall halves.</li>
+      <li><b>Infra:</b> C1 (a cheaper joined check when building categories) gives identical output on 294 of 294 runs. It is up to 9.2× faster on large vocabularies and is now in the core.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="unicode">
+  <h2>1. Unicode: rules the tables imply, and the exceptions they hide</h2>
+  <p>Input: 29,948 facts about 11,172 characters (U+0020 to U+2FFF): category, bidi class, script, case partners, decomposition. No rule was given. Learned rules, all but one at law tier:</p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>Rule learned</th><th class="n">Agreement where known</th><th class="n">Cases</th></tr></thead>
+      <tbody>
+        <tr><td><code>x has uppercase y ⇒ y has lowercase x</code></td><td class="n">0.98</td><td class="n">589</td></tr>
+        <tr><td><code>x has uppercase y, y is in script s ⇒ x is in script s</code></td><td class="n">0.98</td><td class="n">471</td></tr>
+        <tr><td><code>x has uppercase y, y has bidi class b ⇒ x has bidi class b</code></td><td class="n">1.00</td><td class="n">490</td></tr>
+        <tr><td><code>x decomposes to y, y has category c ⇒ x has category c</code></td><td class="n">0.96</td><td class="n">477</td></tr>
+        <tr><td><code>x decomposes to y, y is in script s ⇒ x is in script s</code> (tendency)</td><td class="n">0.94</td><td class="n">449</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>A recovered answer, with its proof</h3>
+    <div class="tree"><ul>
+      <li>ⓝ Circled Latin Small Letter N <b>has bidi class L</b> <span class="tag law">law</span>
+        <ul>
+          <li>ⓝ has uppercase Ⓝ <span class="tag law">law</span> <span class="rule">inverse of the stated fact</span>
+            <ul><li>Ⓝ Circled Latin Capital Letter N has lowercase ⓝ <span class="st">(stated)</span></li></ul></li>
+          <li>Ⓝ has bidi class L <span class="st">(stated)</span></li>
+        </ul></li>
+    </ul></div>
+    <p class="meta">The hidden key held this fact. The engine reached it in two steps: it turned a stated case pair around, then carried the partner's text direction across.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Measured against the key vs the real database</h3>
+      <div id="ch-uni"></div>
+      <p class="meta">The key holds only the hidden 20% of the extracted range, so it marks true facts outside that range as misses. Checking every derived fact with <code>unicodedata</code> puts precision at 96.2%.</p>
+    </div>
+    <div class="card">
+      <h3>Characters it never saw</h3>
+      <p><b>178</b> derived facts are about characters outside the extracted range, reached only through a stated case partner (for example Cherokee small letters, U+AB70 and up). <b>177</b> of them are true.</p>
+      <div class="tree"><ul><li>ꮆ Cherokee Small Letter Lo <b>has bidi class L</b> <span class="tag law">law</span><ul>
+        <li>ꮆ has uppercase Ꮆ <span class="rule">(inverse)</span><ul><li>Ꮆ Cherokee Letter Lo has lowercase ꮆ <span class="st">(stated)</span></li></ul></li>
+        <li>Ꮆ has bidi class L <span class="st">(stated)</span></li></ul></li></ul></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Where it is wrong: Unicode's own exceptions</h3>
+    <p>Of the 50 false facts, 40 land on characters that break the rule by design:</p>
+    <ul style="margin:0;padding-left:20px">
+      <li><b>30 Greek letters with iota subscript</b> (ypogegrammeni/prosgegrammeni). Their capitals are titlecase (Lt), and their full uppercase is two characters. Unicode's simple case mapping agrees with the engine on the 25 uppercase facts; Python's full mapping, which I scored against, doesn't.</li>
+      <li><b>6 one-way case pairs:</b> the Kelvin, Ohm and Ångström signs, ß and ẞ, the theta symbol, and Cyrillic monograph uk. They lowercase to a letter whose uppercase is a different character.</li>
+      <li><b>4 Balinese and combining vowel signs</b> whose text direction differs from their base.</li>
+      <li><b>10 script errors are mine:</b> the extractor takes the script from the first word of a character's name, so "SMALL ROMAN NUMERAL" gets the script "SMALL".</li>
+    </ul>
+    <div class="tree"><ul><li>ῼ Greek Capital Letter Omega With Prosgegrammeni <b>has category Lu</b> <span class="tag wrong">false: it is Lt (titlecase)</span><ul>
+      <li>ῼ decomposes to Ω Greek Capital Letter Omega <span class="st">(stated)</span></li>
+      <li>Ω has category Lu <span class="st">(stated)</span></li></ul></li>
+    <li>ᬻ Balinese Vowel Sign Ra Repa Tedung <b>has bidi class NSM</b> <span class="tag wrong">false: a spacing mark</span><ul>
+      <li>ᬻ decomposes to ᬺ Balinese Vowel Sign Ra Repa <span class="st">(stated)</span></li>
+      <li>ᬺ has bidi class NSM <span class="st">(stated)</span></li></ul></li></ul></div>
+  </div>
+</section>
+
+<section id="code">
+  <h2>2. Real Python code: call locality, and a category error</h2>
+  <p>Input: 64,763 facts extracted by the repo's own extractor (<code>egm extract python</code>) from 125 installed packages: definitions, calls resolved across modules, inheritance, imports, raises. Run with <code>COVERAGE 0</code>, because the default fails on code (see section 4).</p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>Rule learned</th><th>Tier</th><th class="n">Agreement</th><th class="n">Cases known</th></tr></thead>
+      <tbody>
+        <tr><td><code>a is defined in b, b is defined in c ⇒ a is defined in c</code></td><td>law</td><td class="n">0.97</td><td class="n">798</td></tr>
+        <tr><td><code>a calls b, b is defined in m ⇒ a is defined in m</code></td><td>tendency</td><td class="n">0.82</td><td class="n">10,372</td></tr>
+        <tr><td><code>a inherits from b, b is defined in m ⇒ a is defined in m</code></td><td>tendency</td><td class="n">0.55</td><td class="n">2,010</td></tr>
+        <tr><td><code>a is defined in m, m raises e ⇒ a raises e</code></td><td>law</td><td class="n">0.83</td><td class="n">6</td></tr>
+        <tr><td><code>a is defined in m, m imports n ⇒ a imports n</code></td><td>tendency</td><td class="n">0.97</td><td class="n">80 of 98,782</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>A recovered answer: two steps through the call graph</h3>
+    <div class="tree"><ul><li>numpy <code>_block_slicing</code> <b>is defined in numpy._core.shape_base</b> <span class="tag tend">tendency</span><ul>
+      <li><code>_block_slicing</code> calls <code>_block_info_recursion</code> <span class="st">(stated)</span></li>
+      <li><code>_block_info_recursion</code> is defined in shape_base <span class="tag tend">tendency</span><ul>
+        <li><code>_block_info_recursion</code> calls <code>atleast_nd</code> <span class="st">(stated)</span></li>
+        <li><code>atleast_nd</code> is defined in shape_base <span class="st">(stated)</span></li></ul></li></ul></li></ul></div>
+    <p class="meta">Both module facts were in the hidden key. The engine located two functions by following who calls whom, the way a developer reads unfamiliar code.</p>
+  </div>
+  <div class="card">
+    <h3>Where it is wrong: the last rule</h3>
+    <p>"A function inherits its module's imports" agrees on 80 known cases, but applies to 98,782. It produces 100,859 of the 108,323 derived facts. That is a category error: imports belong to modules, not functions. It is accepted because agreement is measured only where an answer is known.</p>
+    <div class="tree"><ul><li>pip <code>Bar.__repr__</code> <b>imports rich.measure</b> <span class="tag wrong">not a fact about functions</span><ul>
+      <li><code>Bar.__repr__</code> is defined in rich.bar <span class="st">(stated)</span></li>
+      <li>rich.bar imports rich.measure <span class="st">(stated)</span></li></ul></li></ul></div>
+    <p class="meta">Recovered from the key: 1,783 of 108,323 derived facts. <code>TENDENCYSTEPS 0</code> removes the bad rule but also call locality (73 facts left), so neither setting fits this data. Choosing between them is the user's call.</p>
+  </div>
+</section>
+
+<section id="dpkg">
+  <h2>3. dpkg: depth decides between useful and a flood</h2>
+  <p>Input: 14,296 facts about the 2,053 installed packages (depends, recommends, section, priority, architecture, source). Truth for <code>depends on</code> is the full transitive closure of Depends and Pre-Depends, so a correct indirect dependency counts as true.</p>
+  <div class="grid2">
+    <div class="card"><h3>New facts per inference round</h3><div id="ch-rounds"></div><p class="meta">Default <code>DEPTH 4</code>. Each round grows about 4×.</p></div>
+    <div class="card"><h3>Share of derived dependencies that are true</h3><div id="ch-depth"></div><p class="meta">Against the real closure: DEPTH 1 13,000 facts, DEPTH 2 60,537, DEPTH 4 1,151,048.</p></div>
+  </div>
+  <div class="card">
+    <h3>The cause: one reversed rule, labelled law</h3>
+    <p><code>a recommends b ⇒ b depends on a</code> agrees on 15% of known cases and still reaches the law tier. Combined with transitivity (27%), its errors chain:</p>
+    <div class="tree"><ul><li>fontconfig <b>depends on fonts-opensymbol</b> <span class="tag wrong">false</span><ul>
+      <li>fonts-opensymbol recommends fontconfig <span class="st">(stated)</span> <span class="rule">reversed by the inverse rule</span></li></ul></li></ul></div>
+    <p>True indirect dependencies come from the same machinery:</p>
+    <div class="tree"><ul><li>libsystemd-shared <b>depends on libcrypt1</b> <span class="tag law">true, in the closure</span><ul>
+      <li>libsystemd-shared depends on debconf <span class="tag law">law</span><ul><li>libsystemd-shared depends on libpam0g <span class="st">(stated)</span></li><li>libpam0g depends on debconf <span class="st">(stated)</span></li></ul></li>
+      <li>debconf depends on libcrypt1 <span class="tag law">law</span><ul><li>debconf depends on liblocale-gettext-perl <span class="rule">(via debconf recommends debconf-i18n, which depends on it)</span></li><li>liblocale-gettext-perl depends on libcrypt1 <span class="tag law">law</span><ul><li>liblocale-gettext-perl depends on perl-base <span class="st">(stated)</span></li><li>perl-base depends on libcrypt1 <span class="st">(stated)</span></li></ul></li></ul></li></ul></li></ul></div>
+    <p class="meta">All of the flood is law tier, so <code>TENDENCYSTEPS 0</code> leaves it at 1,150,230 facts. <code>DEPTH</code> is the setting that matters here. With <code>DEPTH 0</code> (until nothing new) the engine runs out of memory and crashes after 340 s, which is an infra bug to fix.</p>
+  </div>
+</section>
+
+<section id="settings">
+  <h2>4. Settings are per dataset: <code>TENDENCYSTEPS 0</code></h2>
+  <p>Default settings against <code>TENDENCYSTEPS 0</code> (only answers whose whole proof uses law-tier rules), scored on the hidden key:</p>
+  <div class="grid2">
+    <div class="card"><h3>Precision</h3><div class="legend"><span style="--c:var(--s1)">default</span><span style="--c:var(--s2)">TENDENCYSTEPS 0</span></div><div id="ch-p"></div></div>
+    <div class="card"><h3>Recall</h3><div class="legend"><span style="--c:var(--s1)">default</span><span style="--c:var(--s2)">TENDENCYSTEPS 0</span></div><div id="ch-r"></div></div>
+  </div>
+  <p>Python packages gain 0.95 precision for nothing. Company data loses half its recall, because its true team rule is a tendency. No single default serves both, which is why it stays a user setting, documented with this evidence.</p>
+</section>
+
+<section id="other">
+  <h2>5. Other datasets, briefly</h2>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>Dataset</th><th>What it learned</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>C headers (400k lines)</td><td>a struct's field types and a function's return type are declared in the same header (0.65, 0.79); typedef aliases inherit "is a struct"</td><td>"has a field ⇒ is a struct" holds by how the extractor works, not because of C</td></tr>
+        <tr><td>Python stdlib (my extractor)</td><td>call locality, at 100% agreement</td><td>true by construction: this extractor records same-module calls only</td></tr>
+        <tr><td>Social (synthetic)</td><td>marriage is symmetric; employs and works for are inverses</td><td>1,794 of 1,794 hidden facts recovered, 0 wrong</td></tr>
+        <tr><td>Company (synthetic)</td><td>collaboration is symmetric; collaborators share a team and a manager</td><td>8,830 of 8,830 derived facts in the key</td></tr>
+        <tr><td>JS, time zones, gates, lineage, multi-word names, hubs</td><td>nothing derived with default settings</td><td>gates and lineage need <code>TREES</code> or <code>CHAIN 3</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="infra">
+  <h2>6. Infra: C1 in the core</h2>
+  <div class="card">
+    <h3>Full build and query, seconds: before and after C1</h3>
+    <div class="legend"><span style="--c:var(--s1)">before</span><span style="--c:var(--s2)">after C1</span></div>
+    <div id="ch-c1"></div>
+    <p class="meta">Identical output on 294 of 294 comparable runs and 221 of 221 regression cells. One dpkg run with DEPTH 0 crashed at the memory cap on both versions. The clusters dataset (400 vocabularies that share no context) gained only 1.31×, below the pre-registered 1.5×.</p>
+  </div>
+</section>
+
+<section id="method">
+  <h2>Method and caveats</h2>
+  <ul style="margin:0;padding-left:20px;display:grid;gap:6px">
+    <li><b>Pre-registered</b> before the C1 runs (<code>studies/stress/PREREGISTRATION.md</code>). One deviation is logged: a bench bug that put a temp path in the compared output, fixed and rerun.</li>
+    <li><b>Sections 1-5 are exploratory.</b> Their counts come from <code>studies/stress/explore/*.json</code>, written by <code>tools/explore.py</code> and <code>tools/verify.py</code>.</li>
+    <li><b>Keys undercount.</b> The key holds only the hidden 20%, so a true fact outside it (an indirect dependency, a character outside the range) scores as a miss. Sections 1 and 3 re-score against full truth where it can be computed.</li>
+    <li><b>Extractors shape what can be learned.</b> Two "discoveries" were artifacts of how facts were extracted. Check the extractor before trusting a rule.</li>
+  </ul>
+</section>
+</main>
+<div class="tip" id="tip" role="tooltip"></div>
+<script>
+const tip = document.getElementById("tip");
+function showTip(e, t) { tip.textContent = t; tip.style.opacity = 1; tip.style.left = (e.clientX + 12) + "px"; tip.style.top = (e.clientY + 12) + "px"; }
+function hideTip() { tip.style.opacity = 0; }
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent) { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (parent) parent.appendChild(n); return n; }
+// horizontal grouped bars; rows: [label, [v1, v2...]]; fmt formats values; log for log scale
+function hbars(id, rows, opt) {
+  const series = opt.series || ["var(--s1)"], W = 400, lab = opt.labelW || 120, bh = 12, gap = 4, rowGap = 14;
+  const rowH = series.length * bh + (series.length - 1) * gap + rowGap;
+  const H = rows.length * rowH + 22, x0 = lab, x1 = W - 56;
+  const max = opt.max || Math.max(...rows.flatMap(r => r[1].filter(v => v != null)));
+  const sc = v => opt.log ? x0 + (x1 - x0) * Math.log10(Math.max(v, 1)) / Math.log10(max) : x0 + (x1 - x0) * v / max;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": opt.aria });
+  (opt.ticks || []).forEach(t => { el("line", { x1: sc(t), x2: sc(t), y1: 0, y2: H - 18, class: "grid" }, svg); const tx = el("text", { x: sc(t), y: H - 4, "text-anchor": "middle" }, svg); tx.textContent = opt.tickFmt ? opt.tickFmt(t) : t; });
+  rows.forEach((r, i) => {
+    const y = i * rowH;
+    const t = el("text", { x: 0, y: y + (series.length * (bh + gap)) / 2 + 2, "dominant-baseline": "middle" }, svg); t.textContent = r[0];
+    r[1].forEach((v, j) => {
+      const yy = y + j * (bh + gap);
+      if (v == null) { const nt = el("text", { x: x0 + 4, y: yy + bh / 2 + 1, "dominant-baseline": "middle" }, svg); nt.textContent = "none derived"; return; }
+      const w = Math.max(2, sc(v) - x0), rr = Math.min(4, w / 2);
+      const p = el("path", { d: `M${x0},${yy} h${w - rr} a${rr},${rr} 0 0 1 ${rr},${rr} v${bh - 2 * rr} a${rr},${rr} 0 0 1 -${rr},${rr} h-${w - rr} z`, fill: series[j] }, svg);
+      const lbl = el("text", { x: x0 + w + 4, y: yy + bh / 2 + 1, "dominant-baseline": "middle", class: "val" }, svg); lbl.textContent = opt.fmt(v);
+      const hit = el("rect", { x: x0, y: yy - 2, width: x1 - x0 + 50, height: bh + 4, fill: "transparent" }, svg);
+      const desc = `${r[0]}${opt.names ? " · " + opt.names[j] : ""}: ${opt.fmt(v)}`;
+      hit.addEventListener("mousemove", e => showTip(e, desc)); hit.addEventListener("mouseleave", hideTip);
+    });
+  });
+  document.getElementById(id).appendChild(svg);
+  if (opt.table) {   // table view for screen readers and exact values
+    const d = document.createElement("details"); d.innerHTML = `<summary class="meta">Table</summary>`;
+    const tb = document.createElement("table"); tb.innerHTML = `<tr><th></th>${(opt.names || ["value"]).map(n => `<th class="n">${n}</th>`).join("")}</tr>` + rows.map(r => `<tr><td>${r[0]}</td>${r[1].map(v => `<td class="n">${v == null ? "none" : opt.fmt(v)}</td>`).join("")}</tr>`).join("");
+    d.appendChild(tb); document.getElementById(id).appendChild(d);
+  }
+}
+const pct = v => (v * 100).toFixed(1) + "%", num = v => v.toLocaleString("en-US"), sec = v => v.toFixed(1) + " s";
+hbars("ch-uni", [["held-out key", [0.8295]], ["unicodedata", [1281 / 1331]]], { fmt: pct, max: 1, ticks: [0, 0.5, 1], tickFmt: pct, aria: "Unicode precision: 83% against the key, 96.2% against the database", table: true });
+hbars("ch-rounds", [["round 1", [12324]], ["round 2", [47406]], ["round 3", [214632]], ["round 4", [875868]]], { fmt: num, max: 1000000, ticks: [0, 500000, 1000000], tickFmt: v => v ? (v / 1000) + "K" : "0", labelW: 70, aria: "New dpkg facts per round", table: true });
+hbars("ch-depth", [["DEPTH 1", [10800 / 12324]], ["DEPTH 2", [30400 / 59730]], ["DEPTH 4", [47785 / 1150230]]], { fmt: pct, max: 1, ticks: [0, 0.5, 1], tickFmt: pct, labelW: 70, aria: "Share of derived dependencies that are true by depth", table: true });
+const two = ["var(--s1)", "var(--s2)"], tn = ["default", "TENDENCYSTEPS 0"];
+const ts = [["Python packages", [0.0096, 0.9632], [0.0666, 0.0666]], ["Company ×8", [1.0, 1.0], [0.9555, 0.4911]], ["Company, 15% noise", [1.0, 1.0], [0.6482, 0.2169]], ["Hidden world", [0.9741, 0.9991], [0.4366, 0.3997]], ["Unicode (key)", [0.8295, 0.8224], [0.1449, 0.1361]]];
+hbars("ch-p", ts.map(r => [r[0], r[1]]), { series: two, names: tn, fmt: v => v.toFixed(3), max: 1, ticks: [0, 0.5, 1], labelW: 130, aria: "Precision default vs TENDENCYSTEPS 0", table: true });
+hbars("ch-r", ts.map(r => [r[0], r[2]]), { series: two, names: tn, fmt: v => v.toFixed(3), max: 1, ticks: [0, 0.5, 1], labelW: 130, aria: "Recall default vs TENDENCYSTEPS 0", table: true });
+hbars("ch-c1", [["gates 2,400", [22.14, 2.40]], ["clusters big", [45.08, 34.46]], ["code, 3 languages", [10.62, 3.90]], ["zipf big", [9.32, 1.90]], ["company ×32", [12.12, 10.02]], ["Unicode", [1.70, 0.60]]], { series: two, names: ["before", "after C1"], fmt: sec, max: 50, ticks: [0, 25, 50], tickFmt: v => v + " s", labelW: 120, aria: "Build and query time before and after C1", table: true });
+</script>
+</body>
+</html>

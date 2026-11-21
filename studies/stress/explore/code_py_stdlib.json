@@ -1,0 +1,478 @@
+{
+ "dataset": "code_py_stdlib",
+ "settings": {},
+ "stated": 18457,
+ "key": 4706,
+ "derived_new": 393,
+ "recovered": 393,
+ "not_in_key": 0,
+ "relations": [
+  {
+   "relation": "has method",
+   "facts": 7713
+  },
+  {
+   "relation": "is defined in",
+   "facts": 4013
+  },
+  {
+   "relation": "calls",
+   "facts": 2791
+  },
+  {
+   "relation": "imports",
+   "facts": 1899
+  },
+  {
+   "relation": "raises",
+   "facts": 1239
+  },
+  {
+   "relation": "inherits from",
+   "facts": 731
+  },
+  {
+   "relation": "is decorated by",
+   "facts": 71
+  }
+ ],
+ "rules": [
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 531,
+   "k": 435,
+   "rate": 0.82,
+   "lift": 392.4,
+   "known": 435,
+   "agree": 1.0
+  },
+  {
+   "text": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 2271,
+   "k": 1806,
+   "rate": 0.8,
+   "lift": 380.9,
+   "known": 1806,
+   "agree": 1.0
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "tendency_steps": 0,
+   "facts": 362
+  },
+  {
+   "round": 2,
+   "tendency_steps": 0,
+   "facts": 20
+  },
+  {
+   "round": 3,
+   "tendency_steps": 0,
+   "facts": 10
+  },
+  {
+   "round": 4,
+   "tendency_steps": 0,
+   "facts": 1
+  }
+ ],
+ "proofs_recovered": [
+  {
+   "fact": "py__smtplib__SMTPNotSupportedError is defined in py__smtplib",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__smtplib__SMTPNotSupportedError inherits from py__smtplib__SMTPException",
+     "stated": true
+    },
+    {
+     "fact": "py__smtplib__SMTPException is defined in py__smtplib",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "py__asyncio__unix_events__MultiLoopChildWatcher is defined in py__asyncio__unix_events",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__asyncio__unix_events__MultiLoopChildWatcher calls py__asyncio__unix_events__waitstatus_to_exitcode",
+     "stated": true
+    },
+    {
+     "fact": "py__asyncio__unix_events__waitstatus_to_exitcode is defined in py__asyncio__unix_events",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "py__importlib__metadata____init__EntryPoints is defined in py__importlib__metadata____init",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__importlib__metadata____init__EntryPoints calls py__importlib__metadata____init__EntryPoint",
+     "stated": true
+    },
+    {
+     "fact": "py__importlib__metadata____init__EntryPoint is defined in py__importlib__metadata____init",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "py__tempfile__NamedTemporaryFile is defined in py__tempfile",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__tempfile__NamedTemporaryFile calls py__tempfile___mkstemp_inner",
+     "stated": true
+    },
+    {
+     "fact": "py__tempfile___mkstemp_inner is defined in py__tempfile",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "py___strptime__TimeRE is defined in py___strptime",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py___strptime__TimeRE calls py___strptime__LocaleTime",
+     "stated": true
+    },
+    {
+     "fact": "py___strptime__LocaleTime is defined in py___strptime",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "py__pydoc__cli is defined in py__pydoc",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__pydoc__cli calls py__pydoc__browse",
+     "stated": true
+    },
+    {
+     "fact": "py__pydoc__browse is defined in py__pydoc",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "py__email__headerregistry__UniqueAddressHeader is defined in py__email__headerregistry",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__email__headerregistry__UniqueAddressHeader inherits from py__email__headerregistry__AddressHeader",
+     "stated": true
+    },
+    {
+     "fact": "py__email__headerregistry__AddressHeader is defined in py__email__headerregistry",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "py__email__headerregistry__AddressHeader calls py__email__headerregistry__Group",
+       "stated": true
+      },
+      {
+       "fact": "py__email__headerregistry__Group is defined in py__email__headerregistry",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "py___pyrepl__commands__invalid_command is defined in py___pyrepl__commands",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py___pyrepl__commands__invalid_command inherits from py___pyrepl__commands__Command",
+     "stated": true
+    },
+    {
+     "fact": "py___pyrepl__commands__Command is defined in py___pyrepl__commands",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "py__asyncio__proactor_events___ProactorDuplexPipeTransport is defined in py__asyncio__proactor_events",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__asyncio__proactor_events___ProactorDuplexPipeTransport inherits from py__asyncio__proactor_events___ProactorBaseWritePipeTransport",
+     "stated": true
+    },
+    {
+     "fact": "py__asyncio__proactor_events___ProactorBaseWritePipeTransport is defined in py__asyncio__proactor_events",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "py__mailbox__MH is defined in py__mailbox",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__mailbox__MH inherits from py__mailbox__Mailbox",
+     "stated": true
+    },
+    {
+     "fact": "py__mailbox__Mailbox is defined in py__mailbox",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_deep": [
+  {
+   "fact": "py__email___header_value_parser__Token is defined in py__email___header_value_parser",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__email___header_value_parser__Token inherits from py__email___header_value_parser__TokenList",
+     "stated": true
+    },
+    {
+     "fact": "py__email___header_value_parser__TokenList is defined in py__email___header_value_parser",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "py__email___header_value_parser__TokenList calls py__email___header_value_parser___refold_parse_tree",
+       "stated": true
+      },
+      {
+       "fact": "py__email___header_value_parser___refold_parse_tree is defined in py__email___header_value_parser",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+       "because": [
+        {
+         "fact": "py__email___header_value_parser___refold_parse_tree calls py__email___header_value_parser___fold_as_ew",
+         "stated": true
+        },
+        {
+         "fact": "py__email___header_value_parser___fold_as_ew is defined in py__email___header_value_parser",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "py__email___header_value_parser__Domain is defined in py__email___header_value_parser",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__email___header_value_parser__Domain inherits from py__email___header_value_parser__TokenList",
+     "stated": true
+    },
+    {
+     "fact": "py__email___header_value_parser__TokenList is defined in py__email___header_value_parser",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "py__email___header_value_parser__TokenList calls py__email___header_value_parser___refold_parse_tree",
+       "stated": true
+      },
+      {
+       "fact": "py__email___header_value_parser___refold_parse_tree is defined in py__email___header_value_parser",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+       "because": [
+        {
+         "fact": "py__email___header_value_parser___refold_parse_tree calls py__email___header_value_parser___fold_as_ew",
+         "stated": true
+        },
+        {
+         "fact": "py__email___header_value_parser___fold_as_ew is defined in py__email___header_value_parser",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "py__email___header_value_parser__get_token is defined in py__email___header_value_parser",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__email___header_value_parser__get_token calls py__email___header_value_parser__Token",
+     "stated": true
+    },
+    {
+     "fact": "py__email___header_value_parser__Token is defined in py__email___header_value_parser",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "py__email___header_value_parser__Token inherits from py__email___header_value_parser__TokenList",
+       "stated": true
+      },
+      {
+       "fact": "py__email___header_value_parser__TokenList is defined in py__email___header_value_parser",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+       "because": [
+        {
+         "fact": "py__email___header_value_parser__TokenList calls py__email___header_value_parser___refold_parse_tree",
+         "stated": true
+        },
+        {
+         "fact": "py__email___header_value_parser___refold_parse_tree is defined in py__email___header_value_parser",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+         "because": [
+          {
+           "fact": "py__email___header_value_parser___refold_parse_tree calls py__email___header_value_parser___fold_as_ew",
+           "stated": true
+          },
+          {
+           "fact": "py__email___header_value_parser___fold_as_ew is defined in py__email___header_value_parser",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "py__pprint__pp is defined in py__pprint",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__pprint__pp calls py__pprint__pprint",
+     "stated": true
+    },
+    {
+     "fact": "py__pprint__pprint is defined in py__pprint",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "py__pprint__pprint calls py__pprint__PrettyPrinter",
+       "stated": true
+      },
+      {
+       "fact": "py__pprint__PrettyPrinter is defined in py__pprint",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "py__argparse___StoreTrueAction is defined in py__argparse",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__argparse___StoreTrueAction inherits from py__argparse___StoreConstAction",
+     "stated": true
+    },
+    {
+     "fact": "py__argparse___StoreConstAction is defined in py__argparse",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "py__argparse___StoreConstAction inherits from py__argparse__Action",
+       "stated": true
+      },
+      {
+       "fact": "py__argparse__Action is defined in py__argparse",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "py__email___header_value_parser__TokenList is defined in py__email___header_value_parser",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "py__email___header_value_parser__TokenList calls py__email___header_value_parser___refold_parse_tree",
+     "stated": true
+    },
+    {
+     "fact": "py__email___header_value_parser___refold_parse_tree is defined in py__email___header_value_parser",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "py__email___header_value_parser___refold_parse_tree calls py__email___header_value_parser___fold_as_ew",
+       "stated": true
+      },
+      {
+       "fact": "py__email___header_value_parser___fold_as_ew is defined in py__email___header_value_parser",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "proofs_not_in_key": []
+}

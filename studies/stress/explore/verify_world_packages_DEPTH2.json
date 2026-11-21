@@ -1,0 +1,31 @@
+{
+ "dataset": "world_packages",
+ "settings": {
+  "DEPTH": 2
+ },
+ "derived_new": 60537,
+ "tally": {
+  "true": 30400,
+  "false": 29330,
+  "unchecked": 807
+ },
+ "per_relation": {
+  "depends on": {
+   "true": 30400,
+   "false": 29330
+  },
+  "is in section": {
+   "unchecked": 341
+  },
+  "has priority": {
+   "unchecked": 38
+  },
+  "is for architecture": {
+   "unchecked": 367
+  },
+  "is built from": {
+   "unchecked": 61
+  }
+ },
+ "subject_outside_extracted_range": {}
+}

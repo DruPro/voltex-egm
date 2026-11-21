@@ -76,3 +76,36 @@ Findings for the owner. These are about the engine's decisions, not the infra, s
 - **Default settings derive nothing** on gates, lineage, JS, multi-word names, zipf hubs and time zones, and 46 facts
   on services, all wrong against the key. Gates and
   lineage are expected, since they need `TREES` or `CHAIN 3`.
+
+## Exploratory follow-up: what the engine learned (after the verdicts)
+
+Tools: `tools/explore.py` (rules, chains, proof trees) and `tools/verify.py` (scoring against full truth). Outputs are
+in `explore/`. The page with charts is `report/index.html`; the guide distilled from all this is
+`docs/BUILDING_A_LAYER.md`.
+
+- **Unicode: 1,281 of 1,331 derived facts are true** against `unicodedata` (0.962; the key gave 0.83).
+  - 177 of 178 facts about characters outside the extracted range are true.
+  - 40 of the 50 errors are Unicode exceptions: 30 Greek letters with iota subscript, 6 one-way case pairs, and 4
+    Balinese and combining vowel signs.
+  - The other 10 errors come from the extractor's name-based script.
+- **dpkg against the real transitive closure:**
+
+  | `DEPTH` | Derived facts | True |
+  |---|---|---|
+  | 1 | 13,000 | 87.6% |
+  | 2 | 60,537 | 50.9% |
+  | 4 (default) | 1,151,048 | 4.2% |
+
+  New facts per round were 12,324, 47,406, 214,632 and 875,868. The cause is two law-tier rules:
+  `recommends(a,b) ⇒ depends on(b,a)` (agreement 0.15) and the transitivity of `depends on` (0.27). Because all of it
+  is law tier, `TENDENCYSTEPS 0` leaves 1,150,230 facts.
+- **Real Python code** (repo extractor, 125 packages, `COVERAGE 0`):
+  - call locality was learned (0.82 agreement on 10,372 cases), with 2-step proofs;
+  - 100,859 of 108,323 derived facts come from `is defined in & imports ⇒ imports` (0.97 agreement on 80 known of
+    98,782);
+  - recovered: 1,783;
+  - `TENDENCYSTEPS 0` leaves 73 facts, 1 of them recovered.
+- **Extractor artifacts:**
+  - this study's own code layer records only same-module calls, so its call-locality rule (1.00 agreement) is true by
+    construction;
+  - its C layer records fields only for structs, so "has a field ⇒ is a struct" is too.

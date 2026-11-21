@@ -1,0 +1,1459 @@
+{
+ "dataset": "world_packages",
+ "settings": {
+  "TENDENCYSTEPS": "0"
+ },
+ "stated": 14296,
+ "key": 3650,
+ "derived_new": 1150230,
+ "recovered": 1123,
+ "not_in_key": 1149107,
+ "relations": [
+  {
+   "relation": "depends on",
+   "facts": 6389
+  },
+  {
+   "relation": "is in section",
+   "facts": 1638
+  },
+  {
+   "relation": "has priority",
+   "facts": 1631
+  },
+  {
+   "relation": "is for architecture",
+   "facts": 1627
+  },
+  {
+   "relation": "provides",
+   "facts": 1460
+  },
+  {
+   "relation": "is built from",
+   "facts": 1062
+  },
+  {
+   "relation": "recommends",
+   "facts": 489
+  }
+ ],
+ "rules": [
+  {
+   "text": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 16723,
+   "k": 4494,
+   "rate": 0.27,
+   "lift": 115.6,
+   "known": 16723,
+   "agree": 0.27
+  },
+  {
+   "text": "[? recommends ?](a,b) & [? is built from ?](b,c) => [? is built from ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 169,
+   "k": 29,
+   "rate": 0.17,
+   "lift": 107.2,
+   "known": 94,
+   "agree": 0.31
+  },
+  {
+   "text": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 2344,
+   "k": 461,
+   "rate": 0.2,
+   "lift": 84.6,
+   "known": 2113,
+   "agree": 0.22
+  },
+  {
+   "text": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 489,
+   "k": 59,
+   "rate": 0.12,
+   "lift": 51.9,
+   "known": 395,
+   "agree": 0.15
+  },
+  {
+   "text": "[? depends on ?](a,b) & [? is in section ?](b,c) => [? is in section ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 5194,
+   "k": 2498,
+   "rate": 0.48,
+   "lift": 16.4,
+   "known": 4183,
+   "agree": 0.6
+  },
+  {
+   "text": "[? recommends ?](a,b) & [? is in section ?](b,c) => [? is in section ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 363,
+   "k": 109,
+   "rate": 0.3,
+   "lift": 10.2,
+   "known": 301,
+   "agree": 0.36
+  },
+  {
+   "text": "[? recommends ?](a,b) & [? has priority ?](b,c) => [? has priority ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 376,
+   "k": 287,
+   "rate": 0.76,
+   "lift": 3.1,
+   "known": 327,
+   "agree": 0.88
+  },
+  {
+   "text": "[? depends on ?](a,b) & [? is for architecture ?](b,c) => [? is for architecture ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 4740,
+   "k": 3500,
+   "rate": 0.74,
+   "lift": 1.5,
+   "known": 3847,
+   "agree": 0.91
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "tendency_steps": 0,
+   "facts": 12324
+  },
+  {
+   "round": 2,
+   "tendency_steps": 0,
+   "facts": 47406
+  },
+  {
+   "round": 3,
+   "tendency_steps": 0,
+   "facts": 214632
+  },
+  {
+   "round": 4,
+   "tendency_steps": 0,
+   "facts": 875868
+  }
+ ],
+ "proofs_recovered": [
+  {
+   "fact": "pkg_dnsmasq_base depends on pkg_passwd",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_dnsmasq_base depends on pkg_default_dbus_system_bus",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_dnsmasq_base depends on pkg_libidn2_0",
+       "stated": true
+      },
+      {
+       "fact": "pkg_libidn2_0 depends on pkg_default_dbus_system_bus",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libidn2_0 depends on pkg_systemd_resolved",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_systemd_resolved recommends pkg_libidn2_0",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_systemd_resolved depends on pkg_default_dbus_system_bus",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "fact": "pkg_default_dbus_system_bus depends on pkg_passwd",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_default_dbus_system_bus depends on pkg_fwupd",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+       "because": [
+        {
+         "fact": "pkg_fwupd recommends pkg_default_dbus_system_bus",
+         "stated": true
+        }
+       ]
+      },
+      {
+       "fact": "pkg_fwupd depends on pkg_passwd",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_fwupd depends on pkg_tpm_udev",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_fwupd depends on pkg_libtss2_esys_3_0_2_0t64",
+           "stated": true
+          },
+          {
+           "fact": "pkg_libtss2_esys_3_0_2_0t64 depends on pkg_tpm_udev",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_tpm_udev depends on pkg_passwd",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_tpm_udev depends on pkg_adduser",
+           "stated": true
+          },
+          {
+           "fact": "pkg_adduser depends on pkg_passwd",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_libsystemd_shared depends on pkg_libcrypt1",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_libsystemd_shared depends on pkg_debconf",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libsystemd_shared depends on pkg_libpam0g",
+       "stated": true
+      },
+      {
+       "fact": "pkg_libpam0g depends on pkg_debconf",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "pkg_debconf depends on pkg_libcrypt1",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_debconf depends on pkg_liblocale_gettext_perl",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_debconf recommends pkg_debconf_i18n",
+         "stated": true
+        },
+        {
+         "fact": "pkg_debconf_i18n depends on pkg_liblocale_gettext_perl",
+         "stated": true
+        }
+       ]
+      },
+      {
+       "fact": "pkg_liblocale_gettext_perl depends on pkg_libcrypt1",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_liblocale_gettext_perl depends on pkg_perl_base",
+         "stated": true
+        },
+        {
+         "fact": "pkg_perl_base depends on pkg_libcrypt1",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_gdisk depends on pkg_libpopt0",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_gdisk depends on pkg_network_manager_applet",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_gdisk depends on pkg_python3_software_properties",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_gdisk depends on pkg_cloud_init_base",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_cloud_init_base recommends pkg_gdisk",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_cloud_init_base depends on pkg_python3_software_properties",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_cloud_init_base recommends pkg_software_properties_common",
+           "stated": true
+          },
+          {
+           "fact": "pkg_software_properties_common depends on pkg_python3_software_properties",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_python3_software_properties depends on pkg_network_manager_applet",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_python3_software_properties depends on pkg_iso_codes",
+         "stated": true
+        },
+        {
+         "fact": "pkg_iso_codes depends on pkg_network_manager_applet",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_network_manager_applet recommends pkg_iso_codes",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "fact": "pkg_network_manager_applet depends on pkg_libpopt0",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_network_manager_applet depends on pkg_gvfs_backends",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_network_manager_applet recommends pkg_gnome_keyring",
+         "stated": true
+        },
+        {
+         "fact": "pkg_gnome_keyring depends on pkg_gvfs_backends",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_gvfs_backends recommends pkg_gnome_keyring",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_gvfs_backends depends on pkg_libpopt0",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_gvfs_backends depends on pkg_libsmbclient0",
+         "stated": true
+        },
+        {
+         "fact": "pkg_libsmbclient0 depends on pkg_libpopt0",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_libsmbclient0 depends on pkg_samba_libs",
+           "stated": true
+          },
+          {
+           "fact": "pkg_samba_libs depends on pkg_libpopt0",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_xfce4_notifyd depends on pkg_libxfconf_0_3",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_xfce4_notifyd depends on pkg_libxfce4ui_2_0",
+     "stated": true
+    },
+    {
+     "fact": "pkg_libxfce4ui_2_0 depends on pkg_libxfconf_0_3",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pkg_libgspell_1_3 depends on pkg_libpango_1_0_0",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_libgspell_1_3 depends on pkg_libglib2_0_0t64",
+     "stated": true
+    },
+    {
+     "fact": "pkg_libglib2_0_0t64 depends on pkg_libpango_1_0_0",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libglib2_0_0t64 depends on pkg_xfdesktop4",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libglib2_0_0t64 recommends pkg_xdg_user_dirs",
+         "stated": true
+        },
+        {
+         "fact": "pkg_xdg_user_dirs depends on pkg_xfdesktop4",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_xfdesktop4 recommends pkg_xdg_user_dirs",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_xfdesktop4 depends on pkg_libpango_1_0_0",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_bluez_obexd depends on pkg_libdbus_1_3",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_bluez_obexd depends on pkg_dbus_daemon",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_bluez_obexd recommends pkg_dbus_user_session",
+       "stated": true
+      },
+      {
+       "fact": "pkg_dbus_user_session depends on pkg_dbus_daemon",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "pkg_dbus_daemon depends on pkg_libdbus_1_3",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_dbus_daemon depends on pkg_dbus_bin",
+       "stated": true
+      },
+      {
+       "fact": "pkg_dbus_bin depends on pkg_libdbus_1_3",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_dconf_service depends on pkg_libdconf1",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_dconf_service recommends pkg_dconf_gsettings_backend",
+     "stated": true
+    },
+    {
+     "fact": "pkg_dconf_gsettings_backend depends on pkg_libdconf1",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pkg_npm depends on pkg_node_hosted_git_info",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_npm depends on pkg_node_normalize_package_data",
+     "stated": true
+    },
+    {
+     "fact": "pkg_node_normalize_package_data depends on pkg_node_hosted_git_info",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pkg_node_browserslist depends on pkg_nodejs",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_node_browserslist depends on pkg_node_picocolors",
+     "stated": true
+    },
+    {
+     "fact": "pkg_node_picocolors depends on pkg_nodejs",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pkg_keyboard_configuration depends on pkg_xkb_data",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_keyboard_configuration depends on pkg_libudev1",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_keyboard_configuration depends on pkg_debconf",
+       "stated": true
+      },
+      {
+       "fact": "pkg_debconf depends on pkg_libudev1",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_debconf depends on pkg_libapt_pkg7_0",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_debconf recommends pkg_apt",
+           "stated": true
+          },
+          {
+           "fact": "pkg_apt depends on pkg_libapt_pkg7_0",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_libapt_pkg7_0 depends on pkg_libudev1",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "fact": "pkg_libudev1 depends on pkg_xkb_data",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libudev1 depends on pkg_libsdl3_0",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+       "because": [
+        {
+         "fact": "pkg_libsdl3_0 recommends pkg_libudev1",
+         "stated": true
+        }
+       ]
+      },
+      {
+       "fact": "pkg_libsdl3_0 depends on pkg_xkb_data",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libsdl3_0 depends on pkg_libxkbcommon0",
+         "stated": true
+        },
+        {
+         "fact": "pkg_libxkbcommon0 depends on pkg_xkb_data",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "proofs_deep": [
+  {
+   "fact": "pkg_libgpod4t64 depends on pkg_libxml2_16",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_libgpod4t64 depends on pkg_libglib2_0_0t64",
+     "stated": true
+    },
+    {
+     "fact": "pkg_libglib2_0_0t64 depends on pkg_libxml2_16",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libglib2_0_0t64 recommends pkg_shared_mime_info",
+       "stated": true
+      },
+      {
+       "fact": "pkg_shared_mime_info depends on pkg_libxml2_16",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_libnm0 depends on pkg_libgnutls30t64",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_libnm0 depends on pkg_libglib2_0_0t64",
+     "stated": true
+    },
+    {
+     "fact": "pkg_libglib2_0_0t64 depends on pkg_libgnutls30t64",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libglib2_0_0t64 depends on pkg_xfdesktop4",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libglib2_0_0t64 recommends pkg_xdg_user_dirs",
+         "stated": true
+        },
+        {
+         "fact": "pkg_xdg_user_dirs depends on pkg_xfdesktop4",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_xfdesktop4 recommends pkg_xdg_user_dirs",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_xfdesktop4 depends on pkg_libgnutls30t64",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_xfdesktop4 depends on pkg_libgtk_3_0t64",
+         "stated": true
+        },
+        {
+         "fact": "pkg_libgtk_3_0t64 depends on pkg_libgnutls30t64",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_libgtk_3_0t64 depends on pkg_libcups2t64",
+           "stated": true
+          },
+          {
+           "fact": "pkg_libcups2t64 depends on pkg_libgnutls30t64",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_libwmf_0_2_7 depends on pkg_zlib1g",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_libwmf_0_2_7 depends on pkg_xfonts_utils",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libwmf_0_2_7 recommends pkg_fonts_urw_base35",
+       "stated": true
+      },
+      {
+       "fact": "pkg_fonts_urw_base35 depends on pkg_xfonts_utils",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "pkg_xfonts_utils depends on pkg_zlib1g",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pkg_libelf1t64 depends on pkg_libzstd1",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_libelf1t64 depends on pkg_libc6",
+     "stated": true
+    },
+    {
+     "fact": "pkg_libc6 depends on pkg_libzstd1",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libc6 depends on pkg_systemd_resolved",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libc6 recommends pkg_libidn2_0",
+         "stated": true
+        },
+        {
+         "fact": "pkg_libidn2_0 depends on pkg_systemd_resolved",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_systemd_resolved recommends pkg_libidn2_0",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_systemd_resolved depends on pkg_libzstd1",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_systemd_resolved depends on pkg_libssl3t64",
+         "stated": true
+        },
+        {
+         "fact": "pkg_libssl3t64 depends on pkg_libzstd1",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_libcolorhug2 depends on pkg_libcolord2",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_libcolorhug2 depends on pkg_libglib2_0_0t64",
+     "stated": true
+    },
+    {
+     "fact": "pkg_libglib2_0_0t64 depends on pkg_libcolord2",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libglib2_0_0t64 depends on pkg_xfdesktop4",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libglib2_0_0t64 recommends pkg_xdg_user_dirs",
+         "stated": true
+        },
+        {
+         "fact": "pkg_xdg_user_dirs depends on pkg_xfdesktop4",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_xfdesktop4 recommends pkg_xdg_user_dirs",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_xfdesktop4 depends on pkg_libcolord2",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_xfdesktop4 depends on pkg_libgtk_3_0t64",
+         "stated": true
+        },
+        {
+         "fact": "pkg_libgtk_3_0t64 depends on pkg_libcolord2",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_xfdesktop4 depends on pkg_libgarcon_gtk3_1_0",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_xfdesktop4 depends on pkg_fonts_opensymbol",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_xfdesktop4 depends on pkg_fontconfig",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_xfdesktop4 depends on pkg_libpango_1_0_0",
+         "stated": true
+        },
+        {
+         "fact": "pkg_libpango_1_0_0 depends on pkg_fontconfig",
+         "stated": true
+        }
+       ]
+      },
+      {
+       "fact": "pkg_fontconfig depends on pkg_fonts_opensymbol",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+       "because": [
+        {
+         "fact": "pkg_fonts_opensymbol recommends pkg_fontconfig",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "fact": "pkg_fonts_opensymbol depends on pkg_libgarcon_gtk3_1_0",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_fonts_opensymbol depends on pkg_xubuntu_desktop_minimal",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+       "because": [
+        {
+         "fact": "pkg_xubuntu_desktop_minimal recommends pkg_fonts_opensymbol",
+         "stated": true
+        }
+       ]
+      },
+      {
+       "fact": "pkg_xubuntu_desktop_minimal depends on pkg_libgarcon_gtk3_1_0",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_xubuntu_desktop_minimal depends on pkg_xfce4_panel",
+         "stated": true
+        },
+        {
+         "fact": "pkg_xfce4_panel depends on pkg_libgarcon_gtk3_1_0",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "proofs_not_in_key": [
+  {
+   "fact": "pkg_libayatana_appindicator3_dev depends on pkg_fonts_noto_core",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_libayatana_appindicator3_dev depends on pkg_fonts_opensymbol",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libayatana_appindicator3_dev depends on pkg_fontconfig",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libayatana_appindicator3_dev depends on pkg_libgtk_3_0t64",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_libayatana_appindicator3_dev depends on pkg_libgtk_3_dev",
+           "stated": true
+          },
+          {
+           "fact": "pkg_libgtk_3_dev depends on pkg_libgtk_3_0t64",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_libgtk_3_0t64 depends on pkg_fontconfig",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_libgtk_3_0t64 depends on pkg_libpango_1_0_0",
+           "stated": true
+          },
+          {
+           "fact": "pkg_libpango_1_0_0 depends on pkg_fontconfig",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_fontconfig depends on pkg_fonts_opensymbol",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+       "because": [
+        {
+         "fact": "pkg_fonts_opensymbol recommends pkg_fontconfig",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "fact": "pkg_fonts_opensymbol depends on pkg_fonts_noto_core",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_fonts_opensymbol depends on pkg_xubuntu_desktop_minimal",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+       "because": [
+        {
+         "fact": "pkg_xubuntu_desktop_minimal recommends pkg_fonts_opensymbol",
+         "stated": true
+        }
+       ]
+      },
+      {
+       "fact": "pkg_xubuntu_desktop_minimal depends on pkg_fonts_noto_core",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_xubuntu_desktop_minimal recommends pkg_fonts_noto_hinted",
+         "stated": true
+        },
+        {
+         "fact": "pkg_fonts_noto_hinted depends on pkg_fonts_noto_core",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_debconf_i18n depends on pkg_intel_microcode",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_debconf_i18n depends on pkg_libc6_dev",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_debconf_i18n depends on pkg_gpgv",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_debconf_i18n depends on pkg_debconf",
+         "stated": true
+        },
+        {
+         "fact": "pkg_debconf depends on pkg_gpgv",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_debconf recommends pkg_apt",
+           "stated": true
+          },
+          {
+           "fact": "pkg_apt depends on pkg_gpgv",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_gpgv depends on pkg_libc6_dev",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_gpgv depends on pkg_dpkg_dev",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_dpkg_dev recommends pkg_gpgv",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_dpkg_dev depends on pkg_libc6_dev",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_dpkg_dev recommends pkg_build_essential",
+           "stated": true
+          },
+          {
+           "fact": "pkg_build_essential depends on pkg_libc6_dev",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "fact": "pkg_libc6_dev depends on pkg_intel_microcode",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_libc6_dev depends on pkg_ubuntu_kernel_accessories",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libc6_dev depends on pkg_bpftrace",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_bpftrace recommends pkg_libc6_dev",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_bpftrace depends on pkg_ubuntu_kernel_accessories",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_ubuntu_kernel_accessories recommends pkg_bpftrace",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_ubuntu_kernel_accessories depends on pkg_intel_microcode",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_ubuntu_kernel_accessories depends on pkg_linux_generic",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_linux_generic recommends pkg_ubuntu_kernel_accessories",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_linux_generic depends on pkg_intel_microcode",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_linux_generic depends on pkg_linux_image_generic",
+           "stated": true
+          },
+          {
+           "fact": "pkg_linux_image_generic depends on pkg_intel_microcode",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_node_builtins depends on pkg_inputattach",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_node_builtins depends on pkg_systemd_resolved",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_node_builtins depends on pkg_libc6",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_node_builtins depends on pkg_node_semver",
+         "stated": true
+        },
+        {
+         "fact": "pkg_node_semver depends on pkg_libc6",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+         "because": [
+          {
+           "fact": "pkg_node_semver depends on pkg_nodejs",
+           "stated": true
+          },
+          {
+           "fact": "pkg_nodejs depends on pkg_libc6",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_libc6 depends on pkg_systemd_resolved",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? recommends ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_libc6 recommends pkg_libidn2_0",
+         "stated": true
+        },
+        {
+         "fact": "pkg_libidn2_0 depends on pkg_systemd_resolved",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_systemd_resolved recommends pkg_libidn2_0",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "fact": "pkg_systemd_resolved depends on pkg_inputattach",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_systemd_resolved depends on pkg_fwupd",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_systemd_resolved depends on pkg_default_dbus_system_bus",
+         "stated": true
+        },
+        {
+         "fact": "pkg_default_dbus_system_bus depends on pkg_fwupd",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_fwupd recommends pkg_default_dbus_system_bus",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "pkg_fwupd depends on pkg_inputattach",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_fwupd depends on pkg_xubuntu_desktop_minimal",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+         "because": [
+          {
+           "fact": "pkg_xubuntu_desktop_minimal recommends pkg_fwupd",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "pkg_xubuntu_desktop_minimal depends on pkg_inputattach",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "pkg_cloud_init depends on pkg_python3_apport",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+   "because": [
+    {
+     "fact": "pkg_cloud_init depends on pkg_xubuntu_desktop_minimal",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? recommends ?](a,b) => [? depends on ?](b,a)",
+     "because": [
+      {
+       "fact": "pkg_xubuntu_desktop_minimal recommends pkg_cloud_init",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "pkg_xubuntu_desktop_minimal depends on pkg_python3_apport",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+     "because": [
+      {
+       "fact": "pkg_xubuntu_desktop_minimal depends on pkg_xorg",
+       "stated": true
+      },
+      {
+       "fact": "pkg_xorg depends on pkg_python3_apport",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? depends on ?](a,b) & [? depends on ?](b,c) => [? depends on ?](a,c)",
+       "because": [
+        {
+         "fact": "pkg_xorg depends on pkg_xserver_xorg",
+         "stated": true
+        },
+        {
+         "fact": "pkg_xserver_xorg depends on pkg_python3_apport",
+         "stated": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
