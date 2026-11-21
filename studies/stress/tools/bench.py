@@ -133,6 +133,7 @@ def clean(out):
     for l in out.splitlines():
         if VARY.search(l): continue
         if l.startswith("[CONFIG]"): l = re.sub(r" \w+=\S+", "", l)
+        l = re.sub(r"(restored from |saved to )\S+", r"\1KB", l)   # the knowledge base's temp path differs per run (DEVIATIONS 1)
         keep.append(l)
     return "\n".join(keep)
 
@@ -193,6 +194,7 @@ def run(binary, out_path, only=None, extra=None, env=None, tier="full"):
     if os.path.exists(out_path): done = {json.loads(l)["cell"] for l in open(out_path)}
     for cid, name, st, kind in cells(man, tier):
         if only and not any(o in cid for o in only.split(",")): continue
+        if os.environ.get("BENCH_SETTINGS_ONLY") and not st: continue   # DEVIATIONS 1: rerun only cells with settings
         if cid in done: continue
         r = run_cell(binary, cid, name, {**st, **(extra or {})}, kind, env or {})
         with open(out_path, "a") as fh: fh.write(json.dumps(r) + "\n")

@@ -147,19 +147,22 @@ egm build facts.txt -o kb.vtx --set MAXWORDS=40000
 - **`REFRESH`** reuses existing categories on small updates, so the setting matters only for full builds.
 
 **What it doesn't fix:**
-- **Category building time is still quadratic** in vocabulary. Each pair is still visited; skipped pairs are just
-  cheap. It was 5-7× faster in the measured cases, not linear.
+- **Category building time is still quadratic** in vocabulary. Each pair is still visited; pairs already in one
+  category are skipped with a cheap check (made cheaper again in `studies/stress`: gates 2,400 build 22.1 s → 2.4 s,
+  same output on 294 of 294 bench cells). Where the vocabulary splits into many unrelated groups, the remaining pairs
+  need a full similarity test, and the gain is small (1.3× on 400 separate vocabularies).
 - **Relations, rule mining and inference** cost the same. After the fix, inference was the largest stage in the
   company world (46-48% of CPU), and categories still were in the gates world (67%).
-- **Sharding** (`docs/DATA_DESIGN.md` 5.3) is still the way past one machine.
+- **Inference:** on data whose rules chain widely (the dpkg package graph in `studies/stress`), `INFER ALL` takes
+  almost all the time and memory (59 s and 3.1 GB for 14,296 facts), and no category setting changes that.
 
-**Why it is experimental.** It is new. The equivalence follows from the argument above and passed every check run, but
-checks can't cover every input. If you need certainty on your data, compare once:
+**Checking it on your data.** The answers are the same either way; if you want to see that for yourself, compare
+once:
 
 ```python
 import egm
 def answers(**s):
     with egm.open("facts.txt", settings={"MAXWORDS": 40000, **s}) as e:
         return {(f.fact, f.tier) for f in e.infer_all()}, sorted(r.text for r in e.rules())
-assert answers() == answers(CLUSTERSTREAM=1)
+assert answers() == answers(CLUSTERSTREAM=0)
 ```

@@ -73,7 +73,7 @@ def main():
     print(f"gate: {same}/{cells} identical")
     tag = os.environ.get("GATE_TAG")
     if tag:
-        json.dump({"A": A, "B": os.path.basename(B), "extraB": extraB, "identical": same, "cells": cells, "rows": rows},
+        json.dump({"A": os.path.basename(A), "B": os.path.basename(B), "extraB": extraB, "identical": same, "cells": cells, "rows": rows},
                   open(os.path.join(STUDY, f"results_gate_{tag}.json"), "w"), indent=1)
     sys.exit(0 if same == cells else 1)
 

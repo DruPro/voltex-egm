@@ -488,14 +488,22 @@ struct Vault {
                                // pairs already joined. Roots stay the smallest index of their component (uf[max] = min), so class ids
                                // are identical; a round stops when nothing joined, exactly when the pair list would have been empty.
                                // Memory drops from one entry per similar pair to one per class; the comparisons stay K^2/2.
+                // The pair loop visits K^2/2 pairs but almost all are already joined (0.1-16% reach a similarity test,
+                // studies/stress), so its cost is the joined check. Same pairs, same tests, same joins as before; only the
+                // check is cheaper: i's root is kept across the inner loop and updated when i's component joins, find is
+                // iterative with path compression, and uf[j] == a answers most checks without a walk.
                 std::vector<u32> uf(K); std::iota(uf.begin(), uf.end(), 0);
-                std::function<u32(u32)> find = [&](u32 x) { return uf[x] == x ? x : uf[x] = find(uf[x]); };
+                auto find = [&](u32 x) { u32 r = x; while (uf[r] != r) r = uf[r]; while (uf[x] != r) { u32 n = uf[x]; uf[x] = r; x = n; } return r; };
                 bool any = false;
-                for (u32 i = 0; i < K; ++i) for (u32 j = i + 1; j < K; ++j) {
-                    u32 a = find(i), b = find(j); if (a == b) continue;
-                    double s1 = cosv(sl[i], nl[i], sl[j], nl[j]); if (s1 < classThresh) continue;
-                    double s2 = cosv(sr[i], nr[i], sr[j], nr[j]);
-                    if (std::min(s1, s2) >= classThresh) { uf[std::max(a, b)] = std::min(a, b); any = true; }
+                for (u32 i = 0; i < K; ++i) {
+                    u32 a = find(i);
+                    for (u32 j = i + 1; j < K; ++j) {
+                        if (uf[j] == a) continue;
+                        u32 b = find(j); if (a == b) continue;
+                        double s1 = cosv(sl[i], nl[i], sl[j], nl[j]); if (s1 < classThresh) continue;
+                        double s2 = cosv(sr[i], nr[i], sr[j], nr[j]);
+                        if (std::min(s1, s2) >= classThresh) { u32 lo = std::min(a, b); uf[std::max(a, b)] = lo; a = lo; any = true; }
+                    }
                 }
                 if (!any) break;
                 std::map<u32, u32> newId;
