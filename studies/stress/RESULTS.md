@@ -109,3 +109,24 @@ in `explore/`. The page with charts is `report/index.html`; the guide distilled 
   - this study's own code layer records only same-module calls, so its call-locality rule (1.00 agreement) is true by
     construction;
   - its C layer records fields only for structs, so "has a field ⇒ is a struct" is too.
+
+## Exploratory: Sonnet sessions over MCP
+
+`tools/sonnet_sessions.py` recorded 5 sessions of Claude Sonnet 5.5 with only the engine's MCP tools; the results are
+in `sonnet/*.json`, the page is `sonnet/index.html`, and the document is `docs/AGENT_SESSIONS.md`. Every claim was
+checked against the hidden key and the full facts:
+
+- **Code navigation:** 3 of 3 hidden module facts found and labelled inferred. The first attempt ran with the default
+  `MAXWORDS`, and Sonnet reported 2 of 3 as not in the knowledge base, because the cap hides stated facts about rarer
+  names without a warning.
+- **Impact analysis:** 6 of 6 callers over two levels, with their modules.
+- **Exception debugging:** 2 of 2 stated raisers and 4 of 4 callers were right. Of 7 inferred raisers, 1 was right;
+  Sonnet called them weak leads.
+- **Knowledge-base debugging:** Sonnet found the reversed `recommends ⇒ depends on` rule as the root cause (22 engine
+  calls, 100 s). It also called one true hidden fact a bug (libc6 depends on libgcc-s1).
+
+Three defects surfaced (proposed, not changed):
+- the `MAXWORDS` cap is silent in MCP results;
+- `egm_conflicts` and `egm_ask` have no result size limit;
+- `egm extract python` gives a module and a function in it the same name, so 6 names collide and 62 facts read
+  "X is defined in X".
