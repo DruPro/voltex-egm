@@ -1,0 +1,5 @@
+gate: 221/221 identical
+
+real	2m16.787s
+user	2m15.485s
+sys	0m1.455s

@@ -598,6 +598,9 @@ no engineering removes them. Recognizing them prevents wasted work and dishonest
 6. **Expressiveness bounds discovery.** The engine finds only patterns of the shapes it can
    express (two-slot relations; inverse, symmetric and two-step rules). A regularity of
    another shape is invisible to it, however strong.
+   (Since v2.2 the shapes also include paths of 3-8 premises with `CHAIN`, group conditions with
+   `CONDITIONS` and trees with `TREES`. A same-direction copy `r(a,b) ⇒ s(a,b)` is still not a
+   shape. The current boundaries are in the capability matrix in `docs/EVALUATION.md`.)
 7. **Logic is only as good as its evidence.** Wrong facts in produce confident wrong
    inferences out, labelled by how often the rule held, not by whether the premises were
    true.

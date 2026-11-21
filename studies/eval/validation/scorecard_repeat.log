@@ -1,0 +1,18 @@
+company|scale=1|default                                    P 1.000±0.000 R 0.959±0.007 law-P 1.000±0.000 tend-P 1.000±0.000 new 1114 0.1s
+company|scale=4|default                                    P 1.000±0.000 R 0.958±0.009 law-P 1.000±0.000 tend-P 1.000±0.000 new 4479 0.3s
+hidden|scale=1,coverage=0.3|default                        P 0.987±0.016 R 0.394±0.028 law-P 0.996±0.005 tend-P 0.938±0.086 new 2590 0.1s
+hidden|scale=1,coverage=0.5|default                        P 0.962±0.047 R 0.507±0.014 law-P 0.998±0.002 tend-P 0.743±0.236 new 2580 0.2s
+hidden|scale=1,coverage=0.7|default                        P 0.915±0.057 R 0.568±0.016 law-P 0.993±0.004 tend-P 0.554±0.200 new 2025 0.2s
+company|scale=1,noise=0.15|default                         P 0.986±0.015 R 0.782±0.121 law-P 1.000±0.000 tend-P 0.982±0.020 new 989 0.1s
+company|scale=1,noise=0.3|default                          P 1.000±0.000 R 0.601±0.008 law-P 1.000±0.000 tend-P 1.000±0.000 new 806 0.1s
+company|scale=1,noise=0.15,reports=3|VOTE=1                P 0.998±0.001 R 0.954±0.007 law-P 0.999±0.003 tend-P 0.998±0.002 new 1112 0.1s
+gates|per_kind=200|default                                 P - R 0.000±0.000 law-P - tend-P - new 0 0.0s
+gates|per_kind=200|TREES=1                                 P 1.000±0.000 R 0.786±0.030 law-P 1.000±0.000 tend-P - new 268 0.2s
+lineage||default                                           P - R 0.000±0.000 law-P - tend-P - new 0 0.0s
+lineage||CHAIN=3                                           P 1.000±0.000 R 1.000±0.000 law-P - tend-P 1.000±0.000 new 120 0.0s
+harvest||default                                           P 0.029±0.008 R 0.985±0.033 law-P - tend-P 0.029±0.008 new 614 0.0s
+harvest||CONDITIONS=1                                      P 1.000±0.000 R 0.985±0.033 law-P - tend-P 1.000±0.000 new 18 0.0s
+remainders||default                                        P 1.000±0.000 R 0.853±0.012 law-P 1.000±0.000 tend-P - new 38 0.0s
+remainders||DEPTH=0                                        P 1.000±0.000 R 0.924±0.020 law-P 1.000±0.000 tend-P - new 42 0.0s
+random_links||default                                      P - R - law-P - tend-P - new 0 0.0s
+wrote studies/eval/baseline/scorecard_repeat.json

@@ -6,3 +6,7 @@ __pycache__/
 *.vtx.obs
 selftest.vtx2
 dist/
+
+# generated worlds (studies/noise/tools/lib.py cache)
+studies/noise/obs/
+studies/noise/hidden/cache/

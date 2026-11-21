@@ -34,6 +34,9 @@ scorers, raw answers, agent audit logs, and the results files the write-ups cite
 | [`shard/`](shard/) | Sharding as an external layer: a clean boundary, rule consensus, a central stage; identical answers to one engine up to 244,444 facts | `studies/shard/RESULTS.md` |
 | [`scaling/`](scaling/) | Scaling audit: category building is quadratic in vocabulary; an exact fix (`CLUSTERSTREAM`, lab only); incremental ingestion and reopening cost a full rebuild | `studies/scaling/RESULTS.md` |
 | [`shard_general/`](shard_general/) | Is sharding general? 6 worlds incl. real code: an automatic split matched one engine on 2 of 6; locality vs representativeness traced | `studies/shard_general/RESULTS.md` |
+| [`stress/`](stress/) | Stress bench: 31 datasets (real code, system tables, synthetic shapes) gating every infra change; C1 category speedup | `studies/stress/RESULTS.md`, `docs/STRESS_FINDINGS.md` |
+| [`strengths/`](strengths/) | Exact facts from two Python codebases scored against complete truth: depth, multi-premise, trees; replication; `egm.tune` search space | `studies/strengths/RESULTS.md`, `docs/STRENGTHS.md` |
+| [`eval/`](eval/) | Evaluation framework baseline: capability scorecard with seed variance and tier calibration; validation of the gate and bench | `docs/EVALUATION.md`, `studies/eval/BASELINE.md` |
 
 ## How the earlier studies were archived
 
@@ -53,6 +56,8 @@ The six later studies (`config`, `depth`, `multipremise`, `trees`, `noise`, `ten
 against this repository's engine; their tools take the engine path from the `VOLTEX` variable.
 
 ## Ground rules all studies followed
+
+New studies start from [`PROTOCOL_TEMPLATE.md`](PROTOCOL_TEMPLATE.md) and the method in `docs/EVALUATION.md`.
 
 Pre-registration before the first real run (hash and timestamp in `prereg_hash.txt` or
 `prereg_time.txt`), deviations logged, hidden answer keys never shown to the engine or to LLM

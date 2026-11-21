@@ -363,6 +363,7 @@ voltex-egm/
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
 | [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
 | [docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md) | Which settings to use for what you are trying to do, when not to, and what each costs (measured) |
+| [docs/EVALUATION.md](docs/EVALUATION.md) | How engine changes are judged: capabilities and metrics, capability matrix, protocol, improvement vs regression, general vs dataset-specific, baseline (`studies/eval`) |
 | [docs/STRENGTHS.md](docs/STRENGTHS.md) | The engine at its best: exact facts from the Python standard library, complete truth; depth, multi-premise and tree reasoning with proofs |
 | [docs/STRESS_FINDINGS.md](docs/STRESS_FINDINGS.md) | What the engine learned from real code, Unicode and Debian package data, with proofs and errors |
 | [docs/AGENT_SESSIONS.md](docs/AGENT_SESSIONS.md) | Recorded Sonnet sessions over MCP: code navigation, impact analysis, debugging, each checked against hidden facts |
@@ -387,6 +388,8 @@ voltex-egm/
   - `STRESS_FINDINGS.md`;
   - `STRENGTHS.md`: the best case on exact code facts, with 98.8% of hidden facts recovered and every law-tier
     answer correct; replicated on 1M lines of third-party code.
+- `docs/EVALUATION.md`, `studies/PROTOCOL_TEMPLATE.md` and `studies/eval`: the evaluation framework, a capability
+  scorecard with seed variance and tier calibration, and a validation of the gate and bench on this commit.
 - `egm.tune(..., settings=..., expanded=True)` (and `egm tune --expanded --set`): a base configuration, plus an
   opt-in wider search. The default search is unchanged.
 - An empty answer from `egm mcp` or `explain()` now says "unknown, not false", and names any `[LIMIT]` cap.
