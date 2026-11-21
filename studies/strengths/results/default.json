@@ -1,0 +1,223 @@
+{
+ "name": "default",
+ "settings": {
+  "MAXWORDS": 16200
+ },
+ "stated": 51814,
+ "hidden": 5901,
+ "derived_new": 213,
+ "correct": 213,
+ "wrong": 0,
+ "recovered": 213,
+ "precision": 1.0,
+ "recall": 0.0361,
+ "per_relation": {
+  "is a subclass of": {
+   "derived": 213,
+   "correct": 213,
+   "wrong": 0,
+   "hidden": 701,
+   "recovered": 213,
+   "precision": 1.0,
+   "recall": 0.3039
+  },
+  "belongs to package": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 1414,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "binds": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 3786,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "other": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 0,
+   "recovered": 0,
+   "precision": null,
+   "recall": null
+  }
+ },
+ "build_s": 0.2,
+ "infer_s": 0.3,
+ "wall_s": 0.6,
+ "peak_rss_mb": 48,
+ "rounds": {
+  "1": 205,
+  "2": 8
+ },
+ "rules": [
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 720,
+   "k": 720,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 720,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 748,
+   "k": 748,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 748,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1707,
+   "k": 858,
+   "rate": 0.5,
+   "lift": 203.6,
+   "known": 1707,
+   "agree": 0.5
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 810,
+   "k": 585,
+   "rate": 0.72,
+   "lift": 159.5,
+   "known": 585,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 861,
+   "k": 619,
+   "rate": 0.72,
+   "lift": 158.8,
+   "known": 619,
+   "agree": 1.0
+  }
+ ],
+ "proofs": {
+  "is a subclass of": [
+   {
+    "fact": "argparse___StoreTrueAction is a subclass of argparse___AttributeHolder",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "argparse___StoreTrueAction is a subclass of argparse__Action",
+      "stated": false,
+      "tier": "tendency",
+      "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+      "because": [
+       {
+        "fact": "argparse___StoreTrueAction inherits from argparse___StoreConstAction",
+        "stated": true
+       },
+       {
+        "fact": "argparse___StoreConstAction inherits from argparse__Action",
+        "stated": true
+       }
+      ]
+     },
+     {
+      "fact": "argparse__Action is a subclass of argparse___AttributeHolder",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "numbers__Rational is a subclass of numbers__Number",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "numbers__Rational is a subclass of numbers__Complex",
+      "stated": false,
+      "tier": "tendency",
+      "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+      "because": [
+       {
+        "fact": "numbers__Rational inherits from numbers__Real",
+        "stated": true
+       },
+       {
+        "fact": "numbers__Real inherits from numbers__Complex",
+        "stated": true
+       }
+      ]
+     },
+     {
+      "fact": "numbers__Complex inherits from numbers__Number",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__hex_codec__StreamReader is a subclass of codecs__Codec",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "encodings__hex_codec__StreamReader inherits from codecs__StreamReader",
+      "stated": true
+     },
+     {
+      "fact": "codecs__StreamReader is a subclass of codecs__Codec",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "argparse___StoreTrueAction is a subclass of argparse__Action",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "argparse___StoreTrueAction inherits from argparse___StoreConstAction",
+      "stated": true
+     },
+     {
+      "fact": "argparse___StoreConstAction inherits from argparse__Action",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "belongs to package": [],
+  "binds": []
+ },
+ "proofs_wrong": []
+}

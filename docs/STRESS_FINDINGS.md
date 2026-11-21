@@ -10,6 +10,8 @@ Source: the stress study, `studies/stress`:
 These are exploratory findings with no pre-registered verdicts. The infra verdicts are in
 `studies/stress/RESULTS.md`.
 
+For the case the engine is built for (exact facts, complete truth, one large codebase), see `docs/STRENGTHS.md`.
+
 ## Unicode: rules the tables imply, and the exceptions they hide
 
 The input was 29,948 facts about 11,172 characters: category, bidi class, script, case partners and decomposition.

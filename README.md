@@ -211,6 +211,46 @@ The data is in [`examples/`](examples). The questions and keys are the ones used
 
 ## Results on real workflows
 
+### Best case: exact facts from one large codebase
+
+The input was the CPython 3.13 standard library, 273,430 lines, read with Python's `ast`
+([docs/STRENGTHS.md](docs/STRENGTHS.md), `studies/strengths`, pre-registered). Every fact is exactly true, and every
+answer is checked against the complete truth. 5,901 facts were hidden, and no rules were given.
+
+| | |
+|---|---|
+| Hidden facts recovered | **5,829 of 5,901 (98.8%)** |
+| Law-tier answers correct | **5,829 of 5,829** |
+| Wrong answers | 21, all labelled *tendency* by the engine (excluded by `strict=True`) |
+| Time, memory | 10.5 s, 210 MB |
+
+| Reasoning, learned from the code alone | Setting | Recall without → with |
+|---|---|---|
+| Every ancestor of a class, up to 5 generations, with 70% of ancestries hidden | `DEPTH 0` | 0.965 → 1.000 (vs `DEPTH 1`) |
+| Method → class → module → package, a 3-premise rule | `CHAIN 3` | 0.000 → 1.000 |
+| What Python passes as the first argument (classmethod → `cls`, staticmethod → nothing, …) | `TREES 1` | 0.000 → 0.981 |
+
+```
+logging.handlers.RotatingFileHandler is a subclass of logging.Filterer       [law, round 3; names shortened below]
+├── RotatingFileHandler is a subclass of logging.Handler                     [law]
+│   ├── RotatingFileHandler is a subclass of logging.FileHandler             [law]
+│   │   ├── RotatingFileHandler inherits from BaseRotatingHandler            (stated)
+│   │   └── BaseRotatingHandler inherits from logging.FileHandler            (stated)
+│   └── logging.FileHandler is a subclass of logging.Handler                 [law]
+│       ├── FileHandler inherits from StreamHandler                          (stated)
+│       └── StreamHandler inherits from Handler                              (stated)
+└── logging.Handler inherits from logging.Filterer                           (stated)
+```
+
+What got there:
+- **Facts the rule shapes can express** ([docs/DATA_DESIGN.md](docs/DATA_DESIGN.md), section 2);
+- **`TENDENCYSTEPS 0`** for answers you act on.
+
+Stated naively, the same code gave recall 0.276. The one gap: exceptions to a general rule (`classmethod` and
+`staticmethod`) lose the vote to it, so those 72 facts got no correct answer.
+
+### Noisy extractions and partial keys
+
 From the stress study (`studies/stress`): 31 datasets, 295 runs, with 20% of each real dataset hidden as an answer
 key.
 
@@ -289,9 +329,9 @@ voltex-egm/
 │   ├── SDK.md             # SDK reference
 │   ├── MCP.md             # MCP server: client setup, tools, protocol
 │   ├── SETTINGS.md, CHOOSING_SETTINGS.md     # every setting; which to use when
-│   └── BUILDING_A_LAYER.md, AGENT_SESSIONS.md, STRESS_FINDINGS.md
+│   └── BUILDING_A_LAYER.md, AGENT_SESSIONS.md, STRENGTHS.md, STRESS_FINDINGS.md
 ├── examples/              # Requests (Haiku facts) and tokenomics (S, M, L) with keys
-├── studies/               # pre-registered studies; studies/stress holds the bench, layers and reports
+├── studies/               # pre-registered studies; studies/stress (bench, layers), studies/strengths (best case)
 ├── tests/                 # run_tests.py (kit), test_sdk.py (SDK), test_mcp.py (MCP)
 ├── media/images/          # logo and mascot
 ├── pyproject.toml         # pip packaging
@@ -308,6 +348,7 @@ voltex-egm/
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
 | [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
 | [docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md) | Which settings to use for what you are trying to do, when not to, and what each costs (measured) |
+| [docs/STRENGTHS.md](docs/STRENGTHS.md) | The engine at its best: exact facts from the Python standard library, complete truth; depth, multi-premise and tree reasoning with proofs |
 | [docs/STRESS_FINDINGS.md](docs/STRESS_FINDINGS.md) | What the engine learned from real code, Unicode and Debian package data, with proofs and errors |
 | [docs/AGENT_SESSIONS.md](docs/AGENT_SESSIONS.md) | Recorded Sonnet sessions over MCP: code navigation, impact analysis, debugging, each checked against hidden facts |
 | [docs/BUILDING_A_LAYER.md](docs/BUILDING_A_LAYER.md) | Building an analysis layer (code, tables, logs): fact design, hidden keys, choosing settings, reading rules and proofs |
@@ -328,7 +369,9 @@ voltex-egm/
   - `CHOOSING_SETTINGS.md`;
   - `BUILDING_A_LAYER.md`;
   - `AGENT_SESSIONS.md`;
-  - `STRESS_FINDINGS.md`.
+  - `STRESS_FINDINGS.md`;
+  - `STRENGTHS.md`: the best case on exact code facts, with 98.8% of hidden facts recovered and every law-tier
+    answer correct.
 
 ### 2.2.1
 

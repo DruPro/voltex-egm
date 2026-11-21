@@ -62,6 +62,10 @@ modules through imports and drops ambiguous names.
   - one that records fields only for structs makes "has a field ⇒ is a struct" true by construction.
 
   Before you report a learned rule as a finding, ask whether your extractor made it true.
+- **Write facts in the engine's rule language.** Rules are inverses, two-step compositions, longer paths (`CHAIN`)
+  and trees (`TREES`). On the Python standard library, two targets were unreachable until two fact families were
+  added, both read from the same ast nodes (`docs/DATA_DESIGN.md`, section 2). Recall then went from 0.28 to 0.99
+  (`studies/strengths`).
 
 ## 3. Hold out a key, and know what it misses
 

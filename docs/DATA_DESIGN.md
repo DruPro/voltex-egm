@@ -60,6 +60,12 @@ accepted. Run `RELATIONS` first and check that every relation you meant appears,
 | Tree (several facts about one entity decide) | `o was placed by c`, `c has tier gold`, `c lives in region north`, `o ships express` | `SET TREES 1` | 2.4 |
 | Computation in layers | trees whose outputs feed other trees | `SET TREES 1`, `SET DEPTH 0` | `studies/trees` (4-bit adders, 1,700 of 1,700 wires) |
 
+**No shape copies one relation into another in the same direction** (`r(a,b) ⇒ s(a,b)`). To teach "a direct base is
+an ancestor", also state the relation from the other side (`B is a base of C`). The rule then becomes an inverse:
+`B is a base of C ⇒ C is a subclass of B`. A tree needs an anchor one step from the fact's subject: state
+`f__a0 is first argument of f` and ask about `f__a0`, like an order and its customer in 2.4. Both are measured in
+`studies/strengths` (DEVIATIONS.md, entry 1).
+
 ### 2.1 Inverse, and how completeness decides law or tendency
 
 60 items, each `item is in box`. For 40 of them, `box contains item` is stated too:

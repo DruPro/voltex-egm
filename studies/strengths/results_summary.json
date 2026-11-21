@@ -1,0 +1,1596 @@
+{
+ "results": {
+  "verdicts": {
+   "P1": "pass",
+   "P2": "pass",
+   "P3": "fail",
+   "P4": "fail",
+   "P5": "pass"
+  },
+  "runs": {
+   "default": {
+    "settings": {
+     "MAXWORDS": 16200
+    },
+    "derived_new": 213,
+    "correct": 213,
+    "wrong": 0,
+    "recovered": 213,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.0361,
+    "wall_s": 0.6,
+    "infer_s": 0.3,
+    "peak_rss_mb": 48,
+    "rounds": {
+     "1": 205,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 213,
+      "correct": 213,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 213,
+      "precision": 1.0,
+      "recall": 0.3039
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "binds": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "depth1": {
+    "settings": {
+     "MAXWORDS": 16200,
+     "DEPTH": "1"
+    },
+    "derived_new": 205,
+    "correct": 205,
+    "wrong": 0,
+    "recovered": 205,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.0347,
+    "wall_s": 0.6,
+    "infer_s": 0.3,
+    "peak_rss_mb": 48,
+    "rounds": {
+     "1": 205
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 205,
+      "correct": 205,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 205,
+      "precision": 1.0,
+      "recall": 0.2924
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "binds": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "depth2": {
+    "settings": {
+     "MAXWORDS": 16200,
+     "DEPTH": "2"
+    },
+    "derived_new": 213,
+    "correct": 213,
+    "wrong": 0,
+    "recovered": 213,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.0361,
+    "wall_s": 0.6,
+    "infer_s": 0.3,
+    "peak_rss_mb": 48,
+    "rounds": {
+     "1": 205,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 213,
+      "correct": 213,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 213,
+      "precision": 1.0,
+      "recall": 0.3039
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "binds": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "depth0": {
+    "settings": {
+     "MAXWORDS": 16200,
+     "DEPTH": "0"
+    },
+    "derived_new": 213,
+    "correct": 213,
+    "wrong": 0,
+    "recovered": 213,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.0361,
+    "wall_s": 0.5,
+    "infer_s": 0.3,
+    "peak_rss_mb": 48,
+    "rounds": {
+     "1": 205,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 213,
+      "correct": 213,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 213,
+      "precision": 1.0,
+      "recall": 0.3039
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "binds": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "chain3": {
+    "settings": {
+     "MAXWORDS": 16200,
+     "CHAIN": "3"
+    },
+    "derived_new": 1627,
+    "correct": 1627,
+    "wrong": 0,
+    "recovered": 1627,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.2757,
+    "wall_s": 0.7,
+    "infer_s": 0.4,
+    "peak_rss_mb": 55,
+    "rounds": {
+     "1": 1627
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 213,
+      "correct": 213,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 213,
+      "precision": 1.0,
+      "recall": 0.3039
+     },
+     "belongs to package": {
+      "derived": 1414,
+      "correct": 1414,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 1414,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "binds": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "trees": {
+    "settings": {
+     "MAXWORDS": 16200,
+     "TREES": "1"
+    },
+    "derived_new": 213,
+    "correct": 213,
+    "wrong": 0,
+    "recovered": 213,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.0361,
+    "wall_s": 4.2,
+    "infer_s": 3.9,
+    "peak_rss_mb": 68,
+    "rounds": {
+     "1": 205,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 213,
+      "correct": 213,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 213,
+      "precision": 1.0,
+      "recall": 0.3039
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "binds": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "full": {
+    "settings": {
+     "MAXWORDS": 16200,
+     "TREES": "1",
+     "CHAIN": "3",
+     "DEPTH": "0"
+    },
+    "derived_new": 1627,
+    "correct": 1627,
+    "wrong": 0,
+    "recovered": 1627,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.2757,
+    "wall_s": 4.2,
+    "infer_s": 4.0,
+    "peak_rss_mb": 68,
+    "rounds": {
+     "1": 1627
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 213,
+      "correct": 213,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 213,
+      "precision": 1.0,
+      "recall": 0.3039
+     },
+     "belongs to package": {
+      "derived": 1414,
+      "correct": 1414,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 1414,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "binds": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   }
+  }
+ },
+ "results_r2": {
+  "verdicts": {
+   "P1": "fail",
+   "P2": "pass",
+   "P3": "pass",
+   "P4": "fail",
+   "P5": "pass",
+   "P6": "fail"
+  },
+  "runs": {
+   "default": {
+    "settings": {
+     "MAXWORDS": 28500
+    },
+    "derived_new": 120438,
+    "correct": 701,
+    "wrong": 119737,
+    "recovered": 701,
+    "hidden": 5901,
+    "precision": 0.0058,
+    "recall": 0.1188,
+    "wall_s": 20.8,
+    "infer_s": 20.0,
+    "peak_rss_mb": 269,
+    "rounds": {
+     "1": 694,
+     "2": 7
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 43408,
+      "correct": 701,
+      "wrong": 42707,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 0.0161,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 77030,
+      "correct": 0,
+      "wrong": 77030,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    }
+   },
+   "depth1": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "DEPTH": "1"
+    },
+    "derived_new": 2222,
+    "correct": 694,
+    "wrong": 1528,
+    "recovered": 694,
+    "hidden": 5901,
+    "precision": 0.3123,
+    "recall": 0.1176,
+    "wall_s": 0.9,
+    "infer_s": 0.5,
+    "peak_rss_mb": 67,
+    "rounds": {
+     "1": 694
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 1143,
+      "correct": 694,
+      "wrong": 449,
+      "hidden": 701,
+      "recovered": 694,
+      "precision": 0.6072,
+      "recall": 0.99
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 1079,
+      "correct": 0,
+      "wrong": 1079,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    }
+   },
+   "depth2": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "DEPTH": "2"
+    },
+    "derived_new": 32801,
+    "correct": 701,
+    "wrong": 32100,
+    "recovered": 701,
+    "hidden": 5901,
+    "precision": 0.0214,
+    "recall": 0.1188,
+    "wall_s": 1.2,
+    "infer_s": 0.7,
+    "peak_rss_mb": 118,
+    "rounds": {
+     "1": 694,
+     "2": 7
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 30048,
+      "correct": 701,
+      "wrong": 29347,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 0.0233,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 2753,
+      "correct": 0,
+      "wrong": 2753,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    }
+   },
+   "depth0": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "DEPTH": "0"
+    },
+    "derived_new": 130352,
+    "correct": 701,
+    "wrong": 129651,
+    "recovered": 701,
+    "hidden": 5901,
+    "precision": 0.0054,
+    "recall": 0.1188,
+    "wall_s": 96.5,
+    "infer_s": 95.6,
+    "peak_rss_mb": 269,
+    "rounds": {
+     "1": 694,
+     "2": 7
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 43408,
+      "correct": 701,
+      "wrong": 42707,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 0.0161,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 86944,
+      "correct": 0,
+      "wrong": 86944,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    }
+   },
+   "chain3": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "CHAIN": "3"
+    },
+    "derived_new": 125121,
+    "correct": 2115,
+    "wrong": 123006,
+    "recovered": 2115,
+    "hidden": 5901,
+    "precision": 0.0169,
+    "recall": 0.3584,
+    "wall_s": 43.4,
+    "infer_s": 42.6,
+    "peak_rss_mb": 274,
+    "rounds": {
+     "1": 2115
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 43408,
+      "correct": 701,
+      "wrong": 42707,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 0.0161,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 1414,
+      "correct": 1414,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 1414,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 80299,
+      "correct": 0,
+      "wrong": 80299,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    }
+   },
+   "trees": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TREES": "1"
+    },
+    "derived_new": 124166,
+    "correct": 4415,
+    "wrong": 119751,
+    "recovered": 4415,
+    "hidden": 5901,
+    "precision": 0.0356,
+    "recall": 0.7482,
+    "wall_s": 32.9,
+    "infer_s": 32.0,
+    "peak_rss_mb": 295,
+    "rounds": {
+     "1": 4408,
+     "2": 7
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 43408,
+      "correct": 701,
+      "wrong": 42707,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 0.0161,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 3728,
+      "correct": 3714,
+      "wrong": 14,
+      "hidden": 3786,
+      "recovered": 3714,
+      "precision": 0.9962,
+      "recall": 0.981
+     },
+     "other": {
+      "derived": 77030,
+      "correct": 0,
+      "wrong": 77030,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    }
+   },
+   "full": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TREES": "1",
+     "CHAIN": "3",
+     "DEPTH": "0"
+    },
+    "derived_new": 135501,
+    "correct": 5829,
+    "wrong": 129672,
+    "recovered": 5829,
+    "hidden": 5901,
+    "precision": 0.043,
+    "recall": 0.9878,
+    "wall_s": 148.7,
+    "infer_s": 147.9,
+    "peak_rss_mb": 300,
+    "rounds": {
+     "1": 5829
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 43408,
+      "correct": 701,
+      "wrong": 42707,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 0.0161,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 1414,
+      "correct": 1414,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 1414,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "is bound to": {
+      "derived": 3735,
+      "correct": 3714,
+      "wrong": 21,
+      "hidden": 3786,
+      "recovered": 3714,
+      "precision": 0.9944,
+      "recall": 0.981
+     },
+     "other": {
+      "derived": 86944,
+      "correct": 0,
+      "wrong": 86944,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": 0.0,
+      "recall": null
+     }
+    }
+   }
+  }
+ },
+ "results_r3": {
+  "verdicts": {
+   "P1": "pass",
+   "P2": "pass",
+   "P3": "pass",
+   "P4": "pass",
+   "P5": "pass",
+   "P6": "fail",
+   "P7": "pass",
+   "P8": "pass"
+  },
+  "runs": {
+   "default": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0
+    },
+    "derived_new": 701,
+    "correct": 701,
+    "wrong": 0,
+    "recovered": 701,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.1188,
+    "wall_s": 0.9,
+    "infer_s": 0.5,
+    "peak_rss_mb": 66,
+    "rounds": {
+     "1": 693,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 701,
+      "correct": 701,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "depth1": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "1"
+    },
+    "derived_new": 693,
+    "correct": 693,
+    "wrong": 0,
+    "recovered": 693,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.1174,
+    "wall_s": 0.9,
+    "infer_s": 0.5,
+    "peak_rss_mb": 66,
+    "rounds": {
+     "1": 693
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 693,
+      "correct": 693,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 693,
+      "precision": 1.0,
+      "recall": 0.9886
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "depth2": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "2"
+    },
+    "derived_new": 701,
+    "correct": 701,
+    "wrong": 0,
+    "recovered": 701,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.1188,
+    "wall_s": 0.9,
+    "infer_s": 0.5,
+    "peak_rss_mb": 66,
+    "rounds": {
+     "1": 693,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 701,
+      "correct": 701,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "depth0": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "0"
+    },
+    "derived_new": 701,
+    "correct": 701,
+    "wrong": 0,
+    "recovered": 701,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.1188,
+    "wall_s": 0.9,
+    "infer_s": 0.5,
+    "peak_rss_mb": 66,
+    "rounds": {
+     "1": 693,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 701,
+      "correct": 701,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "chain3": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "CHAIN": "3"
+    },
+    "derived_new": 2115,
+    "correct": 2115,
+    "wrong": 0,
+    "recovered": 2115,
+    "hidden": 5901,
+    "precision": 1.0,
+    "recall": 0.3584,
+    "wall_s": 1.2,
+    "infer_s": 0.8,
+    "peak_rss_mb": 75,
+    "rounds": {
+     "1": 2107,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 701,
+      "correct": 701,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 1414,
+      "correct": 1414,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 1414,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "is bound to": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 3786,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "trees": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "TREES": "1"
+    },
+    "derived_new": 4429,
+    "correct": 4415,
+    "wrong": 14,
+    "recovered": 4415,
+    "hidden": 5901,
+    "precision": 0.9968,
+    "recall": 0.7482,
+    "wall_s": 10.2,
+    "infer_s": 9.7,
+    "peak_rss_mb": 210,
+    "rounds": {
+     "1": 4407,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 701,
+      "correct": 701,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "is bound to": {
+      "derived": 3728,
+      "correct": 3714,
+      "wrong": 14,
+      "hidden": 3786,
+      "recovered": 3714,
+      "precision": 0.9962,
+      "recall": 0.981
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   },
+   "full": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "TREES": "1",
+     "CHAIN": "3",
+     "DEPTH": "0"
+    },
+    "derived_new": 5850,
+    "correct": 5829,
+    "wrong": 21,
+    "recovered": 5829,
+    "hidden": 5901,
+    "precision": 0.9964,
+    "recall": 0.9878,
+    "wall_s": 10.5,
+    "infer_s": 10.1,
+    "peak_rss_mb": 210,
+    "rounds": {
+     "1": 5821,
+     "2": 8
+    },
+    "per_relation": {
+     "is a subclass of": {
+      "derived": 701,
+      "correct": 701,
+      "wrong": 0,
+      "hidden": 701,
+      "recovered": 701,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "belongs to package": {
+      "derived": 1414,
+      "correct": 1414,
+      "wrong": 0,
+      "hidden": 1414,
+      "recovered": 1414,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "is bound to": {
+      "derived": 3735,
+      "correct": 3714,
+      "wrong": 21,
+      "hidden": 3786,
+      "recovered": 3714,
+      "precision": 0.9944,
+      "recall": 0.981
+     },
+     "other": {
+      "derived": 0,
+      "correct": 0,
+      "wrong": 0,
+      "hidden": 0,
+      "recovered": 0,
+      "precision": null,
+      "recall": null
+     }
+    }
+   }
+  }
+ },
+ "results_depth": {
+  "exploratory": "ancestry of 70% of classes hidden (extract.py --r2 --hide-sub 0.7), round 3 settings",
+  "runs": {
+   "d1": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "1"
+    },
+    "wall_s": 0.9,
+    "rounds": {
+     "1": 1630
+    },
+    "subclass": {
+     "derived": 1630,
+     "correct": 1630,
+     "wrong": 0,
+     "hidden": 1689,
+     "recovered": 1630,
+     "precision": 1.0,
+     "recall": 0.9651
+    },
+    "proof_deepest": {
+     "fact": "_android_support__BinaryLogStream is a subclass of io__RawIOBase",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+     "because": [
+      {
+       "fact": "io__RawIOBase is a base of _android_support__BinaryLogStream",
+       "stated": true
+      }
+     ]
+    }
+   },
+   "d2": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "2"
+    },
+    "wall_s": 0.9,
+    "rounds": {
+     "1": 1630,
+     "2": 57
+    },
+    "subclass": {
+     "derived": 1687,
+     "correct": 1687,
+     "wrong": 0,
+     "hidden": 1689,
+     "recovered": 1687,
+     "precision": 1.0,
+     "recall": 0.9988
+    },
+    "proof_deepest": {
+     "fact": "_collections_abc__ItemsView is a subclass of _collections_abc__Container",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+     "because": [
+      {
+       "fact": "_collections_abc__ItemsView is a subclass of _collections_abc__Collection",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+       "because": [
+        {
+         "fact": "_collections_abc__ItemsView inherits from _collections_abc__Set",
+         "stated": true
+        },
+        {
+         "fact": "_collections_abc__Set inherits from _collections_abc__Collection",
+         "stated": true
+        }
+       ]
+      },
+      {
+       "fact": "_collections_abc__Collection inherits from _collections_abc__Container",
+       "stated": true
+      }
+     ]
+    }
+   },
+   "d3": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "3"
+    },
+    "wall_s": 0.9,
+    "rounds": {
+     "1": 1630,
+     "2": 57,
+     "3": 2
+    },
+    "subclass": {
+     "derived": 1689,
+     "correct": 1689,
+     "wrong": 0,
+     "hidden": 1689,
+     "recovered": 1689,
+     "precision": 1.0,
+     "recall": 1.0
+    },
+    "proof_deepest": {
+     "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__Filterer",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+     "because": [
+      {
+       "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__Handler",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+       "because": [
+        {
+         "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__FileHandler",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+         "because": [
+          {
+           "fact": "logging__handlers__RotatingFileHandler inherits from logging__handlers__BaseRotatingHandler",
+           "stated": true
+          },
+          {
+           "fact": "logging__handlers__BaseRotatingHandler inherits from logging__FileHandler",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "logging__FileHandler is a subclass of logging__Handler",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+         "because": [
+          {
+           "fact": "logging__FileHandler inherits from logging__StreamHandler",
+           "stated": true
+          },
+          {
+           "fact": "logging__StreamHandler inherits from logging__Handler",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "logging__Handler inherits from logging__Filterer",
+       "stated": true
+      }
+     ]
+    }
+   },
+   "d4": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "4"
+    },
+    "wall_s": 0.9,
+    "rounds": {
+     "1": 1630,
+     "2": 57,
+     "3": 2
+    },
+    "subclass": {
+     "derived": 1689,
+     "correct": 1689,
+     "wrong": 0,
+     "hidden": 1689,
+     "recovered": 1689,
+     "precision": 1.0,
+     "recall": 1.0
+    },
+    "proof_deepest": {
+     "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__Filterer",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+     "because": [
+      {
+       "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__Handler",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+       "because": [
+        {
+         "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__FileHandler",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+         "because": [
+          {
+           "fact": "logging__handlers__RotatingFileHandler inherits from logging__handlers__BaseRotatingHandler",
+           "stated": true
+          },
+          {
+           "fact": "logging__handlers__BaseRotatingHandler inherits from logging__FileHandler",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "logging__FileHandler is a subclass of logging__Handler",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+         "because": [
+          {
+           "fact": "logging__FileHandler inherits from logging__StreamHandler",
+           "stated": true
+          },
+          {
+           "fact": "logging__StreamHandler inherits from logging__Handler",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "logging__Handler inherits from logging__Filterer",
+       "stated": true
+      }
+     ]
+    }
+   },
+   "d0": {
+    "settings": {
+     "MAXWORDS": 28500,
+     "TENDENCYSTEPS": 0,
+     "DEPTH": "0"
+    },
+    "wall_s": 0.9,
+    "rounds": {
+     "1": 1630,
+     "2": 57,
+     "3": 2
+    },
+    "subclass": {
+     "derived": 1689,
+     "correct": 1689,
+     "wrong": 0,
+     "hidden": 1689,
+     "recovered": 1689,
+     "precision": 1.0,
+     "recall": 1.0
+    },
+    "proof_deepest": {
+     "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__Filterer",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+     "because": [
+      {
+       "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__Handler",
+       "stated": false,
+       "tier": "law",
+       "rule": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+       "because": [
+        {
+         "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__FileHandler",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+         "because": [
+          {
+           "fact": "logging__handlers__RotatingFileHandler inherits from logging__handlers__BaseRotatingHandler",
+           "stated": true
+          },
+          {
+           "fact": "logging__handlers__BaseRotatingHandler inherits from logging__FileHandler",
+           "stated": true
+          }
+         ]
+        },
+        {
+         "fact": "logging__FileHandler is a subclass of logging__Handler",
+         "stated": false,
+         "tier": "law",
+         "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+         "because": [
+          {
+           "fact": "logging__FileHandler inherits from logging__StreamHandler",
+           "stated": true
+          },
+          {
+           "fact": "logging__StreamHandler inherits from logging__Handler",
+           "stated": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "fact": "logging__Handler inherits from logging__Filterer",
+       "stated": true
+      }
+     ]
+    }
+   }
+  }
+ },
+ "corpus": {
+  "python": "3.13.7",
+  "files": 534,
+  "lines": 273430,
+  "facts": 65679,
+  "words": 27398,
+  "truth_targets": 19397,
+  "hidden": 5901,
+  "by_relation": {
+   "is defined in": 2210,
+   "has decorator": 12222,
+   "has scope": 12222,
+   "is a method of": 9672,
+   "is first argument of": 12222,
+   "is bound to": 8436,
+   "is part of": 349,
+   "inherits from": 1643,
+   "is a subclass of": 1707,
+   "is a base of": 1643,
+   "belongs to package": 3353
+  },
+  "hidden_by_relation": {
+   "is bound to": 3786,
+   "is a subclass of": 701,
+   "belongs to package": 1414
+  },
+  "max_ancestors": 7
+ }
+}

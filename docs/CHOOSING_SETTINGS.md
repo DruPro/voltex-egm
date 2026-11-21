@@ -27,6 +27,7 @@ pre-registered studies, which are linked. For what each setting does, see `docs/
 | You want | Start with | Why (measured) |
 |---|---|---|
 | Answers you can act on without checking | `ask(..., strict=True)`, and `TENDENCYSTEPS 0` | Only law-tier proofs. Python packages: precision 0.010 → 0.963. Expect lower recall |
+| Exact facts from a parser (code structure, schemas, configs) | `TENDENCYSTEPS 0`, plus `TREES 1`, `CHAIN 3`, `DEPTH 0` as the questions need | Python stdlib: 5,829 of 5,901 hidden facts, every law-tier answer correct ([STRENGTHS.md](STRENGTHS.md)) |
 | As many leads as possible, to check by hand | defaults, `strict=False` | Tendencies included; each answer carries its proof and tier |
 | Analysis of a codebase | `COVERAGE 0`, `MAXWORDS` sized, then compare `TENDENCYSTEPS 0` and `CONDITIONS 1` | Code is sparse; the default ran past 18 GB on 125 packages. Precision with `CONDITIONS 1`: 0.01 → 0.88 |
 | Transitive data (dependencies, containment, routes) | `DEPTH 1` or `2`, and compare with `COVERAGE 0` | dpkg: `DEPTH 1` gives 88% true facts; the default `DEPTH 4` gives 4% |
@@ -146,6 +147,7 @@ pre-registered studies, which are linked. For what each setting does, see `docs/
 
 | Data shape | Example | Default outcome | Best measured change |
 |---|---|---|---|
+| Exact parser output, rules that really hold | Python stdlib (`studies/strengths`) | a flood of tendency-tier facts (precision 0.043 with all settings on) | `TENDENCYSTEPS 0`: precision 0.996, recall 0.988 |
 | Dense, consistent relations | company, social | P 1.00, R 0.96-1.00 | none needed |
 | Attribute tables with inverse pairs | Unicode | 96% true against the real database | none needed |
 | Sparse code facts | Python packages, C headers | P 0.01-0.05 | `CONDITIONS 1` or `TENDENCYSTEPS 0` (P 0.88 / 0.96) |

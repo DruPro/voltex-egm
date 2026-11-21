@@ -1,0 +1,199 @@
+{
+ "name": "depth1",
+ "settings": {
+  "MAXWORDS": 16200,
+  "DEPTH": "1"
+ },
+ "stated": 51814,
+ "hidden": 5901,
+ "derived_new": 205,
+ "correct": 205,
+ "wrong": 0,
+ "recovered": 205,
+ "precision": 1.0,
+ "recall": 0.0347,
+ "per_relation": {
+  "is a subclass of": {
+   "derived": 205,
+   "correct": 205,
+   "wrong": 0,
+   "hidden": 701,
+   "recovered": 205,
+   "precision": 1.0,
+   "recall": 0.2924
+  },
+  "belongs to package": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 1414,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "binds": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 3786,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "other": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 0,
+   "recovered": 0,
+   "precision": null,
+   "recall": null
+  }
+ },
+ "build_s": 0.2,
+ "infer_s": 0.3,
+ "wall_s": 0.6,
+ "peak_rss_mb": 48,
+ "rounds": {
+  "1": 205
+ },
+ "rules": [
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 720,
+   "k": 720,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 720,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 748,
+   "k": 748,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 748,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1707,
+   "k": 858,
+   "rate": 0.5,
+   "lift": 203.6,
+   "known": 1707,
+   "agree": 0.5
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 810,
+   "k": 585,
+   "rate": 0.72,
+   "lift": 159.5,
+   "known": 585,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 861,
+   "k": 619,
+   "rate": 0.72,
+   "lift": 158.8,
+   "known": 619,
+   "agree": 1.0
+  }
+ ],
+ "proofs": {
+  "is a subclass of": [
+   {
+    "fact": "_collections_abc__KeysView is a subclass of _collections_abc__Collection",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "_collections_abc__KeysView inherits from _collections_abc__Set",
+      "stated": true
+     },
+     {
+      "fact": "_collections_abc__Set is a subclass of _collections_abc__Collection",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "_collections_abc__KeysView is a subclass of _collections_abc__Container",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "_collections_abc__KeysView inherits from _collections_abc__Set",
+      "stated": true
+     },
+     {
+      "fact": "_collections_abc__Set is a subclass of _collections_abc__Container",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__iso2022_kr__StreamReader is a subclass of codecs__Codec",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "encodings__iso2022_kr__StreamReader inherits from codecs__StreamReader",
+      "stated": true
+     },
+     {
+      "fact": "codecs__StreamReader is a subclass of codecs__Codec",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "configparser__InterpolationMissingOptionError is a subclass of configparser__Error",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "configparser__InterpolationMissingOptionError inherits from configparser__InterpolationError",
+      "stated": true
+     },
+     {
+      "fact": "configparser__InterpolationError is a subclass of configparser__Error",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "belongs to package": [],
+  "binds": []
+ },
+ "proofs_wrong": []
+}
