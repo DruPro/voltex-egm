@@ -29,7 +29,7 @@ Every engine gets ``MAXWORDS`` sized to its own input (the default 12000, or its
 unless ``settings`` sets ``MAXWORDS``.
 
 Measured (company world, 244,444 clean facts, 16 shards): one engine 47.3 s of CPU and 8,350 MB; sharded with
-consensus 22.7 s and 254 MB per engine, with identical answers. Shown on synthetic data with a known clean relation; see
+consensus 22.7 s and about 144 MB per engine, with identical answers. Shown on synthetic data with a known clean relation; see
 ``studies/shard/RESULTS.md``.
 """
 import collections

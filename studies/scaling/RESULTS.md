@@ -11,12 +11,17 @@ The engine core (`src/voltex2.cpp`) was not changed. Everything here ran on a fr
 |---|---|---|
 | E1 | `CLUSTERSTREAM 1` gives the same output on the regression set | **PASS**: 221/221 cells identical (17 datasets × 13 settings) |
 | E2 | Same output at scale | **PASS**: 10/10 large worlds identical, up to 244,444 facts (after the harness fix in DEVIATIONS 2) |
-| M1 | Peak memory <= 25% of frozen | **PASS**: 6.1% (company, 122,042 facts), 1.2% (gates, 53,376) |
+| M1 | Peak memory <= 25% of frozen | **PASS**: 6.1% (company, 122,042 facts), 0.9% (gates, 53,376; re-measured, see the correction below) |
 | M2 | Category time <= 50% of frozen | **PASS**: 14.9-16.0% (company), 18.0-18.7% (gates) |
 | M3 | Total CPU <= 70% of frozen (company, 122,042) | **PASS**: 5.9 s vs 12.7 s (46-47%) |
 | I1 | One fact with a new name costs a full rebuild | **PASS** (confirms a design limit): 98-105% of a cold build |
 | I2 | With `REFRESH 0.02`, a fact with known words costs <= 20% of a cold build | **FAIL**: 23-36% at 30,000-122,000 facts |
 | I3 | Reopening a saved knowledge base rebuilds everything | **PASS** (confirms a design limit): 102-109% of a cold build |
+
+**Correction (2026-11-21): peak memory.** Per-engine memory was read with `wait4` from inside the Python harness. On Linux a child forked from a large parent can report the parent's high-water mark, so figures near the harness's own size (about 100-265 MB) were inflated. Re-measured with `/usr/bin/time` from a small shell:
+- company 122,042: 2,129 → 130 MB and 244,444: 8,350 → 256 MB (both above the harness's size; confirmed);
+- gates 53,376: 8,252 → 72 MB (reported 100);
+- hidden 38,554: 156 → 52 MB (reported 100).
 
 ## 1. Where the cost is (descriptive audit)
 
@@ -62,8 +67,8 @@ skipped. Nothing is listed or sorted.
 |---|---|---|---|
 | company, 122,042 facts (3 seeds) | 12.7-12.9 → 5.9-6.0 | 2,129 → 130 | 7,751-8,150 → 1,162-1,240 |
 | company, 244,444 facts (2 seeds) | 46.9-47.4 → 18.5-19.0 | 8,350 → 256 | 33,071-33,342 → 4,669-4,756 |
-| gates, 53,376 facts (3 seeds) | 25.8-26.0 → 6.4-6.6 | 8,252 → 100 | 23,629-23,979 → 4,306-4,425 |
-| hidden, 38,554 facts (2 seeds) | 3.4 → 2.5 | 156 → 100 | 971-983 → 103-104 |
+| gates, 53,376 facts (3 seeds) | 25.8-26.0 → 6.4-6.6 | 8,252 → 72 (reported 100) | 23,629-23,979 → 4,306-4,425 |
+| hidden, 38,554 facts (2 seeds) | 3.4 → 2.5 | 156 → 52 (reported 100) | 971-983 → 103-104 |
 
 **What it does not fix.** The comparisons are still quadratic, because a skipped pair still costs two `find` calls.
 Memory drops from quadratic to linear; time drops 5-6× but keeps its quadratic shape.
@@ -115,7 +120,7 @@ Each is listed with whether the engine reports it.
 ## 5. How to scale today, without core changes
 
 - **Shard** (`studies/shard`). Split on a relation you know is clean, route reference facts, and keep answers whose
-  rule most shards accept. This gave answers identical to one engine at up to 244,444 facts, using 254 MB per engine.
+  rule most shards accept. This gave answers identical to one engine at up to 244,444 facts, using about 144 MB per engine.
   It also sidesteps the quadratic stage, because each shard has a small vocabulary.
 - **Size `MAXWORDS` to the vocabulary.** The default cap, not the engine, caused the earlier precision loss at scale.
 - **Batch new facts.** A new fact costs a full rebuild, so ingest in batches and rebuild once. Use `REFRESH` only

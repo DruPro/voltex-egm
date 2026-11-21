@@ -179,11 +179,12 @@ The tests in `tests/test_sdk.py` (`TestExperimentalSettings`) run each one on a 
 
 ## Sharding: data too large for one engine (`egm.shard`, experimental)
 
-> **Experimental, and not yet shown to be general.** Every result below comes from one synthetic world shape (the
-> company world), which happens to contain a relation the noise never touches. You must name that relation
-> (`graph`), and nothing tells you whether you chose well. It has not been tested on other world shapes or real
-> data; a study of that is under way (`studies/shard_general`). Compare with one engine on a sample before relying
-> on it.
+> **Experimental, and not general.** It reproduces one engine only where the split keeps each fact's evidence
+> together *and* leaves every shard a fair sample of every rule's evidence. In `studies/shard_general` (6 worlds, 36
+> runs), a split derived automatically from the data matched one engine on company data without noise and on family
+> trees. It failed on noisy company data, the blind world, gate circuits (`TREES`) and real code. A random split
+> failed everywhere. The user-named split below works on the company world because it has both properties; nothing
+> checks that your split does. Compare with one engine on a sample before relying on it.
 
 One engine's memory grows faster than its facts. `egm.shard` splits the facts over several unchanged engines and
 returns the union of their answers. It is the recipe measured in `studies/shard`.
@@ -225,8 +226,8 @@ print(r.report["consensus_dropped"], r.report["minority_rules"])
   - 4 to 16 shards;
   - 21 of 21 confirmatory runs.
 - **Cost:** at 244,444 clean facts with 16 shards, one engine took 47.3 s of CPU and 8,350 MB; sharded with
-  consensus, 22.7 s and 254 MB per engine (mean of 3 seeds).
-  - With 15% noise: 41-43 s against 21.6-21.8 s and 266 MB.
+  consensus, 22.7 s of CPU and about 144 MB per engine (re-measured with `/usr/bin/time`).
+  - With 15% noise: 41-43 s against 21.6-21.8 s.
   - `jobs=8` brought the wall time from 22.9 to 9.5 s.
 - **Gate:** the helper reproduces the study harness's recorded answers in 27 of 27 runs (every arm, 2-16 shards,
   `studies/shard/tools/gate_sdk.py`).

@@ -233,7 +233,7 @@ answers **identical** to one engine (`studies/shard`), but only with the right s
    (the two-stage gate of 5.1). It changed nothing at 160 teams per shard, because each shard could learn the rules
    itself. It may matter when shards are small.
 
-Measured with 16 shards at 244,444 facts: 22.7 s CPU and 254 MB per engine, against one engine's 47.3 s and 8,350 MB.
+Measured with 16 shards at 244,444 facts: 22.7 s CPU and about 144 MB per engine, against one engine's 47.3 s and 8,350 MB.
 The answers were the same. In the SDK this is `egm.shard(facts, shards, graph=[...], attach=[...])` (`docs/SDK.md`); it uses the engine only
 through its CLI.
 

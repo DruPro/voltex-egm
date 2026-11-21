@@ -16,3 +16,5 @@ After hashing:
    from the first run; the echo line does not affect them.
 3. **Log redaction.** `logs/audit_stages.log` held a traceback (the gates generator running out of names) with the
    absolute repository path. That path was replaced with `<repo>`; nothing else in the log was changed.
+
+4. **Memory measurement correction** (2026-11-21). Per-engine peak memory read with `wait4` from inside the Python harness included the parent's high-water mark when the engine was smaller than the harness. Values were re-measured with `/usr/bin/time` from a small shell and corrected in RESULTS.md with the reported value kept alongside. No verdict changes.

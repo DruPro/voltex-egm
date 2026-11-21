@@ -108,7 +108,7 @@ about 8-9 bytes × words² (rounded up to a power of two), on top of everything 
 | 7,726 | 512 MB | | |
 | 15,406 (122,042 company facts) | 2,048 MB | 2,129 → 130 MB | 12.7 → 5.9 s |
 | 30,766 (244,444 company facts) | 8,192 MB | 8,350 → 256 MB | 47 → 19 s |
-| 32,016 (53,376 gates facts) | 8,192 MB | 8,252 → 100 MB | 26 → 6.5 s |
+| 32,016 (53,376 gates facts) | 8,192 MB | 8,252 → 72 MB | 26 → 6.5 s |
 
 Below about 2,000 words it makes no practical difference, and it is harmless to leave on.
 

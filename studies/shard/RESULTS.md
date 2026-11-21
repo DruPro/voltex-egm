@@ -4,6 +4,15 @@ Several unchanged engines, each holding part of a company world, against one eng
 was not changed. Plan: `PREREGISTRATION.md` (sha256 and time in `prereg_hash.txt`); changes to it:
 `DEVIATIONS.md`. Every number below comes from the `results_*.jsonl` files and is recomputed by `tools/analyze.py`.
 
+**Correction (2026-11-21): peak memory.** Per-engine memory was read with `wait4` from inside the Python harness. On Linux a child forked from a large parent can report the parent's high-water mark, so figures near the harness's own size (about 100-265 MB) were inflated. Re-measured with `/usr/bin/time` from a small shell:
+- one engine: 555 MB (61,108), 2,129 MB (122,042), 8,350 MB (244,444): confirmed;
+- one shard at 122,042 / 8 shards: 143 MB (confirmed);
+- one shard at 244,444 / 16 shards: 144 MB, consensus session included (reported 254-266);
+- one shard at 61,108 / 4 shards: 79 MB (reported 124-146).
+
+The per-engine `Peak MB` columns in the tables below for sharded arms are upper bounds. No verdict changes: the true
+values are lower.
+
 ## Verdicts
 
 | ID | Claim | Verdict |
@@ -13,7 +22,7 @@ was not changed. Plan: `PREREGISTRATION.md` (sha256 and time in `prereg_hash.txt
 | H3 | The boundary matters under noise | **PASS**: components + consensus kept precision 1.000; team key + consensus 0.876; team key alone 0.876 |
 | H4 | Consensus matters under noise at 61,108 facts | **FAIL**: without consensus, components alone already matched (0 wrong) |
 | H5 | The central stage matters for recall on clean data at 122,042 facts | **FAIL**: without it recall was the same (0.9566); answers identical |
-| H6 | The recipe completes at 244,444 facts with at most 500 MB per engine and precision at least 0.999 | **PASS**: peak 254 MB (mean), precision 1.000 |
+| H6 | The recipe completes at 244,444 facts with at most 500 MB per engine and precision at least 0.999 | **PASS**: about 144 MB per engine (re-measured; the harness reported 254), precision 1.000 |
 | H6b | The recipe matches one engine at 244,444 facts (one engine completed on this machine) | **PASS**, 3/3 seeds, identical answers |
 | C1 | Peak memory per engine at most 25% of one engine's (122,042 facts) | **PASS**: 146 MB vs 2,129 MB (6.9%) |
 | C2 | Total CPU at most one engine's (122,042 facts) | **PASS**: 10.8 s vs 12.8 s |
@@ -141,7 +150,7 @@ after seeing those results; see `DEVIATIONS.md` 2.
     owner's decision; it is reported here, not made.
 - **Even so, the recipe used less CPU than one engine:** 10.8 s vs 12.8 s at 122,042 facts, and 22.7 s vs 47.3 s at
   244,444. One engine's cost grows faster than linearly with facts.
-- **Peak memory per engine stayed flat** at about 150-250 MB from 61,108 to 244,444 facts. One engine grew from
+- **Peak memory per engine stayed flat** at about 80-150 MB from 61,108 to 244,444 facts (re-measured; see the correction above). One engine grew from
   555 MB to 8,350 MB.
 
 ## Limitations
@@ -203,4 +212,4 @@ noted. Results: `results_consensus.jsonl`; verdicts: `results_verdicts_consensus
   means it is described as insurance, not as required at a given shard count.
 
 **Cost.** Consensus roughly doubles the sharded CPU (A: 4.6 → 10.0 s; B: 10.0 → 21.7 s). It stays at or below one
-engine (11.2 s and 41-43 s), with 265 MB peak per engine against 2,129 and 8,350 MB.
+engine (11.2 s and 41-43 s), with about 144 MB peak per engine (re-measured) against 2,129 and 8,350 MB.

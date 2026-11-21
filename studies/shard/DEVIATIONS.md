@@ -18,3 +18,5 @@ Each change to the plan after it was hashed, with the reason. Before hashing, th
    `explore2` (S1, S3, S5 at scale 32 with noise; S1, S3 at scale 64 with noise) was added to `run.py`. It is
    exploratory. `tools/run.py` therefore no longer matches its pre-registration hash; the only change is the new
    `explore2` block, and the `confirm` cells are untouched.
+
+3. **Memory measurement correction** (2026-11-21). Per-engine peak memory read with `wait4` from inside the Python harness included the parent's high-water mark when the engine was smaller than the harness. Values were re-measured with `/usr/bin/time` from a small shell and corrected in RESULTS.md with the reported value kept alongside. No verdict changes.
