@@ -1,0 +1,294 @@
+{
+ "code_c_headers": {
+  "facts": 13769,
+  "gen_s": 0.5,
+  "key": 3511,
+  "meta": {
+   "files": 750,
+   "lines": 400142
+  },
+  "sha256": "8d259ec16572f6dcad78a4ef3fb4e5b49fa2f0939a9e5fb3ee45b9242b1575d2",
+  "words": 7998
+ },
+ "code_js": {
+  "facts": 10161,
+  "gen_s": 0.4,
+  "key": 2559,
+  "meta": {
+   "files": 1564,
+   "lines": 254235
+  },
+  "sha256": "440fd7fcf63415ca501e24bc0168105a2922ad9989ec78e7a8663b13f1790891",
+  "words": 7473
+ },
+ "code_mixed": {
+  "facts": 42446,
+  "gen_s": 2.3,
+  "key": 10717,
+  "meta": {
+   "part0": {
+    "files": 537,
+    "lines": 275604
+   },
+   "part1": {
+    "files": 750,
+    "lines": 400142
+   },
+   "part2": {
+    "files": 1564,
+    "lines": 254235
+   }
+  },
+  "sha256": "272c98043f96248a555c249954a727ed338b4049c63f74696f05f1d8dbbceeef",
+  "words": 24654
+ },
+ "code_py_dist": {
+  "facts": 23157,
+  "gen_s": 2.2,
+  "key": 5901,
+  "meta": {
+   "files": 1124,
+   "lines": 400383
+  },
+  "sha256": "900758bb854e76e8884cc46ca1205657f1d20a203a4cd8e6ac0140712b882292",
+  "words": 11735
+ },
+ "code_py_stdlib": {
+  "facts": 18457,
+  "gen_s": 1.4,
+  "key": 4706,
+  "meta": {
+   "files": 537,
+   "lines": 275604
+  },
+  "sha256": "624b2cbfd39b15c2a9d1d5ff8fd7798f1909e2ad94b49c4752ea0205b58cb04c",
+  "words": 9198
+ },
+ "gen_company1": {
+  "facts": 3815,
+  "gen_s": 0.0,
+  "key": 1180,
+  "meta": {},
+  "sha256": "86cd04c24775aa3fc6505211ed625e291568b6df1fcbbbe5f304001bf2fd0955",
+  "words": 526
+ },
+ "gen_company32": {
+  "facts": 122042,
+  "gen_s": 0.5,
+  "key": 37419,
+  "meta": {},
+  "sha256": "a25d4647ab679af22a0da353a0672053c780925d8a82703ee0d82f4642ffd196",
+  "words": 15406
+ },
+ "gen_company4_n15": {
+  "facts": 15363,
+  "gen_s": 0.1,
+  "key": 4997,
+  "meta": {},
+  "sha256": "8d61a8aa814df6ef727173dc032c6706aa3139cdc7b89555f082fe49c1199252",
+  "words": 1966
+ },
+ "gen_company8": {
+  "facts": 30605,
+  "gen_s": 0.1,
+  "key": 9241,
+  "meta": {},
+  "sha256": "0abdc7a9689c4f7b4b1ea91437f5096037e796c675c16063b1f8fb8e3a3050d4",
+  "words": 3886
+ },
+ "gen_gates200": {
+  "facts": 6638,
+  "gen_s": 0.0,
+  "key": 362,
+  "meta": {},
+  "sha256": "cb910acca0dc724323ef23d165e4c7cbe519d377492b5dd04836ef8d5ed71ef4",
+  "words": 4016
+ },
+ "gen_gates2400": {
+  "facts": 80063,
+  "gen_s": 0.2,
+  "key": 3937,
+  "meta": {},
+  "sha256": "528e2685a0aef8615015f2ab224f05b8860d2741bc9036473319886325bf654e",
+  "words": 48016
+ },
+ "gen_hidden1": {
+  "facts": 4078,
+  "gen_s": 0.0,
+  "key": 5767,
+  "meta": {},
+  "sha256": "dbdd33cc9bd05ed67ab211316e0f5f852590c197bade7e80f82fedd0e503a5f2",
+  "words": 569
+ },
+ "gen_hidden8": {
+  "facts": 38554,
+  "gen_s": 0.4,
+  "key": 40214,
+  "meta": {},
+  "sha256": "70311fa088486c3af0ce4f94f1e0ee26769d7e427ec0054af0d562f47104a868",
+  "words": 4431
+ },
+ "gen_lineage": {
+  "facts": 760,
+  "gen_s": 0.0,
+  "key": 120,
+  "meta": {},
+  "sha256": "65cac7cf23e9888364dd48776ff3c09aa7d522ba80a25dfe4d26b6c74597945c",
+  "words": 605
+ },
+ "synth_chain": {
+  "facts": 3344,
+  "gen_s": 0.0,
+  "key": 1176,
+  "meta": {},
+  "sha256": "3cab7a2b8393235ae7dd02c26345a5f1dd4472bc8d4a99ff7a64f77a59785167",
+  "words": 1203
+ },
+ "synth_clusters": {
+  "facts": 11946,
+  "gen_s": 0.0,
+  "key": 0,
+  "meta": {},
+  "sha256": "bd36fa79fbc3d1faf5ca3716366d160740d5e1d1ebcd1626f8bbe3429fc88e44",
+  "words": 6360
+ },
+ "synth_clusters_big": {
+  "facts": 79598,
+  "gen_s": 0.1,
+  "key": 0,
+  "meta": {},
+  "sha256": "8fd7f21d0a2c8e72d2b56912e529fa98cd3b2b8c592ef6ef69246f185d80b3fd",
+  "words": 42400
+ },
+ "synth_many_rel": {
+  "facts": 9000,
+  "gen_s": 0.0,
+  "key": 0,
+  "meta": {},
+  "sha256": "382b062f2105dd64712e193b9557b4be8a72f290d7fc7e0bd78c83167095396f",
+  "words": 3054
+ },
+ "synth_messy": {
+  "facts": 4489,
+  "gen_s": 0.0,
+  "key": 0,
+  "meta": {},
+  "sha256": "6d170715cdefa3f7369d2ab9b48b962220215d30a33634cedeae4f2f6ede7790",
+  "words": 3287
+ },
+ "synth_phrases": {
+  "facts": 5082,
+  "gen_s": 0.0,
+  "key": 918,
+  "meta": {},
+  "sha256": "f863a521ee6926799261a3082848e962a27145f52f54414442ec64012c5983b7",
+  "words": 3028
+ },
+ "synth_social": {
+  "facts": 7206,
+  "gen_s": 0.0,
+  "key": 1794,
+  "meta": {},
+  "sha256": "ff9440d91bb3736e013de6d88aeb927e111ea9b62e5edcef2f0d340b3a2ae3b8",
+  "words": 3106
+ },
+ "synth_zipf": {
+  "facts": 14789,
+  "gen_s": 0.2,
+  "key": 1209,
+  "meta": {},
+  "sha256": "19dce32f0196d6f3b405def1f5c512f03889cb8d918310c02ae5ac2e48c347de",
+  "words": 4009
+ },
+ "synth_zipf_big": {
+  "facts": 110893,
+  "gen_s": 11.4,
+  "key": 9106,
+  "meta": {},
+  "sha256": "eba4b7511036e24160775eb179f910566e6d3eea558d468e80610e15c4be10f8",
+  "words": 30009
+ },
+ "t_harvest": {
+  "facts": 1027,
+  "gen_s": 0.0,
+  "key": 0,
+  "meta": {},
+  "sha256": "ee5060d3f33f47ffdd1bf5603ae40442948f1a5ff4f2336c574a80d3d99fe8ba",
+  "words": 446
+ },
+ "t_remainders": {
+  "facts": 221,
+  "gen_s": 0.0,
+  "key": 0,
+  "meta": {},
+  "sha256": "e5958adfb868f5173c9bc2144c0ea500d0b1e2103a83b767d53022cb6d6c7aad",
+  "words": 100
+ },
+ "t_staff_noisy": {
+  "facts": 1410,
+  "gen_s": 0.0,
+  "key": 0,
+  "meta": {},
+  "sha256": "85d342096a447df54f47cde00897058c7d20dbff43fcfeff67369fe2561452b7",
+  "words": 314
+ },
+ "world_mixed": {
+  "facts": 45738,
+  "gen_s": 0.1,
+  "key": 11605,
+  "meta": {
+   "part0": {
+    "packages": 2053
+   },
+   "part1": {
+    "characters": 11172
+   },
+   "part2": {
+    "countries": 249,
+    "zones": 418
+   },
+   "part3": {}
+  },
+  "sha256": "67f15f73c862ce0af47df09c21c3b02f67683c4095cf64ee386e4a27257a56b7",
+  "words": 17528
+ },
+ "world_packages": {
+  "facts": 14296,
+  "gen_s": 0.1,
+  "key": 3650,
+  "meta": {
+   "packages": 2053
+  },
+  "sha256": "e838a1d96b6d1db0c17a68128c9c332af69fed3cf06bcd8c1bd96a69ce5fc7e8",
+  "words": 4173
+ },
+ "world_services": {
+  "facts": 534,
+  "gen_s": 0.0,
+  "key": 131,
+  "meta": {},
+  "sha256": "ee57ca380cc626d72044ec2d10ddf7d8b716c00e1e3ad500845532c850855e1d",
+  "words": 548
+ },
+ "world_timezones": {
+  "facts": 942,
+  "gen_s": 0.0,
+  "key": 225,
+  "meta": {
+   "countries": 249,
+   "zones": 418
+  },
+  "sha256": "74185244ed6c23cb840041d49e225a75eec7862799ce39e371c73a5dd275a19a",
+  "words": 903
+ },
+ "world_unicode": {
+  "facts": 29948,
+  "gen_s": 0.0,
+  "key": 7617,
+  "meta": {
+   "characters": 11172
+  },
+  "sha256": "92a2c5c20615ad94e7693831d55687afb3c6524c82094333cf932374e57b4618",
+  "words": 11904
+ }
+}
