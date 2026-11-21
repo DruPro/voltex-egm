@@ -1,0 +1,590 @@
+{
+ "dataset": "code_c_headers",
+ "settings": {},
+ "stated": 13769,
+ "key": 3511,
+ "derived_new": 674,
+ "recovered": 31,
+ "not_in_key": 643,
+ "relations": [
+  {
+   "relation": "is declared in",
+   "facts": 4677
+  },
+  {
+   "relation": "returns",
+   "facts": 3459
+  },
+  {
+   "relation": "has field of type",
+   "facts": 2055
+  },
+  {
+   "relation": "includes",
+   "facts": 1669
+  },
+  {
+   "relation": "is a",
+   "facts": 1009
+  },
+  {
+   "relation": "aliases",
+   "facts": 900
+  }
+ ],
+ "rules": [
+  {
+   "text": "[? has field of type ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 92,
+   "k": 56,
+   "rate": 0.61,
+   "lift": 229.5,
+   "known": 86,
+   "agree": 0.65
+  },
+  {
+   "text": "[? returns ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 37,
+   "k": 22,
+   "rate": 0.59,
+   "lift": 224.2,
+   "known": 28,
+   "agree": 0.79
+  },
+  {
+   "text": "[? has field of type ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 189,
+   "k": 85,
+   "rate": 0.45,
+   "lift": 91.8,
+   "known": 189,
+   "agree": 0.45
+  },
+  {
+   "text": "[? aliases ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 136,
+   "k": 15,
+   "rate": 0.11,
+   "lift": 41.6,
+   "known": 16,
+   "agree": 0.94
+  },
+  {
+   "text": "[? aliases ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 270,
+   "k": 20,
+   "rate": 0.07,
+   "lift": 15.1,
+   "known": 20,
+   "agree": 1.0
+  },
+  {
+   "text": "[? has field of type ?](a,b) & [? is a ?](b,c) => [? is a ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 78,
+   "k": 67,
+   "rate": 0.86,
+   "lift": 2.6,
+   "known": 71,
+   "agree": 0.94
+  },
+  {
+   "text": "[? aliases ?](a,b) & [? is a ?](b,c) => [? is a ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 122,
+   "k": 13,
+   "rate": 0.11,
+   "lift": 0.3,
+   "known": 13,
+   "agree": 1.0
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "tendency_steps": 0,
+   "facts": 109
+  },
+  {
+   "round": 1,
+   "tendency_steps": 1,
+   "facts": 478
+  },
+  {
+   "round": 2,
+   "tendency_steps": 0,
+   "facts": 1
+  },
+  {
+   "round": 2,
+   "tendency_steps": 1,
+   "facts": 2
+  },
+  {
+   "round": 2,
+   "tendency_steps": 2,
+   "facts": 65
+  },
+  {
+   "round": 3,
+   "tendency_steps": 1,
+   "facts": 1
+  },
+  {
+   "round": 3,
+   "tendency_steps": 3,
+   "facts": 17
+  },
+  {
+   "round": 4,
+   "tendency_steps": 4,
+   "facts": 1
+  }
+ ],
+ "proofs_recovered": [
+  {
+   "fact": "f_getgrgid is declared in h_grp",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? returns ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "f_getgrgid returns t_group",
+     "stated": true
+    },
+    {
+     "fact": "t_group is declared in h_grp",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "t_jbg_enc_state is declared in h_jbig",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "t_jbg_enc_state has field of type t_jbg_buf",
+     "stated": true
+    },
+    {
+     "fact": "t_jbg_buf is declared in h_jbig",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "t_aiocb64 has field of type t_int",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+   "because": [
+    {
+     "fact": "t_aiocb64 has field of type t_aiocb",
+     "stated": true
+    },
+    {
+     "fact": "t_aiocb has field of type t_int",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "f_atspi_text_get_selection is declared in h_at_spi_2_0_atspi_atspi_text",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? returns ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "f_atspi_text_get_selection returns t_AtspiRange",
+     "stated": true
+    },
+    {
+     "fact": "t_AtspiRange is declared in h_at_spi_2_0_atspi_atspi_text",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? aliases ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+     "because": [
+      {
+       "fact": "t_AtspiRange aliases t__AtspiRange",
+       "stated": true
+      },
+      {
+       "fact": "t__AtspiRange is declared in h_at_spi_2_0_atspi_atspi_text",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "t__SyncCounter has field of type t_CARD64",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+   "because": [
+    {
+     "fact": "t__SyncCounter has field of type t__SysCounterInfo",
+     "stated": true
+    },
+    {
+     "fact": "t__SysCounterInfo has field of type t_CARD64",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "f_getprotobyname is declared in h_netdb",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? returns ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "f_getprotobyname returns t_protoent",
+     "stated": true
+    },
+    {
+     "fact": "t_protoent is declared in h_netdb",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "t_dl_find_object is a struct",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? is a ?](b,c) => [? is a ?](a,c)",
+   "because": [
+    {
+     "fact": "t_dl_find_object has field of type t_link_map",
+     "stated": true
+    },
+    {
+     "fact": "t_link_map is a struct",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "f_getaliasent is declared in h_aliases",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? returns ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "f_getaliasent returns t_aliasent",
+     "stated": true
+    },
+    {
+     "fact": "t_aliasent is declared in h_aliases",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "t_wl_resource has field of type t_wl_list",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+   "because": [
+    {
+     "fact": "t_wl_resource has field of type t_wl_signal",
+     "stated": true
+    },
+    {
+     "fact": "t_wl_signal has field of type t_wl_list",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "t__XValuatorInfo is a struct",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? is a ?](b,c) => [? is a ?](a,c)",
+   "because": [
+    {
+     "fact": "t__XValuatorInfo has field of type t_XAxisInfoPtr",
+     "stated": true
+    },
+    {
+     "fact": "t_XAxisInfoPtr is a struct",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? aliases ?](a,b) & [? is a ?](b,c) => [? is a ?](a,c)",
+     "because": [
+      {
+       "fact": "t_XAxisInfoPtr aliases t__XAxisInfo",
+       "stated": true
+      },
+      {
+       "fact": "t__XAxisInfo is a struct",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "proofs_deep": [
+  {
+   "fact": "t__XValuatorInfo is a struct",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? is a ?](b,c) => [? is a ?](a,c)",
+   "because": [
+    {
+     "fact": "t__XValuatorInfo has field of type t_XAxisInfoPtr",
+     "stated": true
+    },
+    {
+     "fact": "t_XAxisInfoPtr is a struct",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? aliases ?](a,b) & [? is a ?](b,c) => [? is a ?](a,c)",
+     "because": [
+      {
+       "fact": "t_XAxisInfoPtr aliases t__XAxisInfo",
+       "stated": true
+      },
+      {
+       "fact": "t__XAxisInfo is a struct",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "f_atspi_text_get_selection is declared in h_at_spi_2_0_atspi_atspi_text",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? returns ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "f_atspi_text_get_selection returns t_AtspiRange",
+     "stated": true
+    },
+    {
+     "fact": "t_AtspiRange is declared in h_at_spi_2_0_atspi_atspi_text",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? aliases ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+     "because": [
+      {
+       "fact": "t_AtspiRange aliases t__AtspiRange",
+       "stated": true
+      },
+      {
+       "fact": "t__AtspiRange is declared in h_at_spi_2_0_atspi_atspi_text",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "t__AtspiApplication has field of type t_GObject",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+   "because": [
+    {
+     "fact": "t__AtspiApplication has field of type t_AtspiStateSet",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? has field of type ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+     "because": [
+      {
+       "fact": "t__AtspiApplication has field of type t__AtspiAccessible",
+       "stated": true
+      },
+      {
+       "fact": "t__AtspiAccessible has field of type t_AtspiStateSet",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "t_AtspiStateSet has field of type t_GObject",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? aliases ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+     "because": [
+      {
+       "fact": "t_AtspiStateSet aliases t__AtspiStateSet",
+       "stated": true
+      },
+      {
+       "fact": "t__AtspiStateSet has field of type t_GObject",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "f_atspi_component_get_position is declared in h_at_spi_2_0_atspi_atspi_component",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? returns ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "f_atspi_component_get_position returns t_AtspiPoint",
+     "stated": true
+    },
+    {
+     "fact": "t_AtspiPoint is declared in h_at_spi_2_0_atspi_atspi_component",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? aliases ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+     "because": [
+      {
+       "fact": "t_AtspiPoint aliases t__AtspiPoint",
+       "stated": true
+      },
+      {
+       "fact": "t__AtspiPoint is declared in h_at_spi_2_0_atspi_atspi_component",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "t__XDeviceInfo has field of type t_XID",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+   "because": [
+    {
+     "fact": "t__XDeviceInfo has field of type t_XAnyClassPtr",
+     "stated": true
+    },
+    {
+     "fact": "t_XAnyClassPtr has field of type t_XID",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? aliases ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+     "because": [
+      {
+       "fact": "t_XAnyClassPtr aliases t__XAnyClassinfo",
+       "stated": true
+      },
+      {
+       "fact": "t__XAnyClassinfo has field of type t_XID",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "t_uv_dir_s is declared in h_uv",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? has field of type ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "t_uv_dir_s has field of type t_uv_dirent_t",
+     "stated": true
+    },
+    {
+     "fact": "t_uv_dirent_t is declared in h_uv",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? aliases ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+     "because": [
+      {
+       "fact": "t_uv_dirent_t aliases t_uv_dirent_s",
+       "stated": true
+      },
+      {
+       "fact": "t_uv_dirent_s is declared in h_uv",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "proofs_not_in_key": [
+  {
+   "fact": "t_AtkSocketClass is declared in h_atk_1_0_atk_atksocket",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? aliases ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "t_AtkSocketClass aliases t__AtkSocketClass",
+     "stated": true
+    },
+    {
+     "fact": "t__AtkSocketClass is declared in h_atk_1_0_atk_atksocket",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "t_GLXFBConfigSGIX has field of type t_GLboolean",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? aliases ?](a,b) & [? has field of type ?](b,c) => [? has field of type ?](a,c)",
+   "because": [
+    {
+     "fact": "t_GLXFBConfigSGIX aliases t___GLXFBConfigRec",
+     "stated": true
+    },
+    {
+     "fact": "t___GLXFBConfigRec has field of type t_GLboolean",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "t_CharInfoPtr is declared in h_X11_fonts_fontstruct",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? aliases ?](a,b) & [? is declared in ?](b,c) => [? is declared in ?](a,c)",
+   "because": [
+    {
+     "fact": "t_CharInfoPtr aliases t__CharInfo",
+     "stated": true
+    },
+    {
+     "fact": "t__CharInfo is declared in h_X11_fonts_fontstruct",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "t_AtkDocumentIface is a struct",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? aliases ?](a,b) & [? is a ?](b,c) => [? is a ?](a,c)",
+   "because": [
+    {
+     "fact": "t_AtkDocumentIface aliases t__AtkDocumentIface",
+     "stated": true
+    },
+    {
+     "fact": "t__AtkDocumentIface is a struct",
+     "stated": true
+    }
+   ]
+  }
+ ]
+}

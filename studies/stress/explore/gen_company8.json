@@ -1,0 +1,525 @@
+{
+ "dataset": "gen_company8",
+ "settings": {},
+ "stated": 30605,
+ "key": 9241,
+ "derived_new": 8830,
+ "recovered": 8830,
+ "not_in_key": 0,
+ "relations": [
+  {
+   "relation": "collaborates with",
+   "facts": 9437
+  },
+  {
+   "relation": "knows",
+   "facts": 7038
+  },
+  {
+   "relation": "works under",
+   "facts": 5545
+  },
+  {
+   "relation": "is on",
+   "facts": 3520
+  },
+  {
+   "relation": "likes",
+   "facts": 3520
+  },
+  {
+   "relation": "is based in",
+   "facts": 1225
+  },
+  {
+   "relation": "belongs to",
+   "facts": 320
+  }
+ ],
+ "rules": [
+  {
+   "text": "[? collaborates with ?](a,b) => [? collaborates with ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 9437,
+   "k": 7522,
+   "rate": 0.8,
+   "lift": 849.2,
+   "known": 9437,
+   "agree": 0.8
+  },
+  {
+   "text": "[? collaborates with ?](a,b) & [? is on ?](b,c) => [? is on ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 9437,
+   "k": 9437,
+   "rate": 1.0,
+   "lift": 320.0,
+   "known": 9437,
+   "agree": 1.0
+  },
+  {
+   "text": "[? works under ?](a,b) & [? is on ?](b,c) => [? is on ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 3200,
+   "k": 3200,
+   "rate": 1.0,
+   "lift": 320.0,
+   "known": 3200,
+   "agree": 1.0
+  },
+  {
+   "text": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 15112,
+   "k": 11139,
+   "rate": 0.74,
+   "lift": 154.8,
+   "known": 15112,
+   "agree": 0.74
+  },
+  {
+   "text": "[? belongs to ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 320,
+   "k": 168,
+   "rate": 0.53,
+   "lift": 3.2,
+   "known": 168,
+   "agree": 1.0
+  },
+  {
+   "text": "[? collaborates with ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 2842,
+   "k": 842,
+   "rate": 0.3,
+   "lift": 1.8,
+   "known": 842,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1848,
+   "k": 542,
+   "rate": 0.29,
+   "lift": 1.8,
+   "known": 542,
+   "agree": 1.0
+  },
+  {
+   "text": "[? works under ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 1040,
+   "k": 298,
+   "rate": 0.29,
+   "lift": 1.7,
+   "known": 298,
+   "agree": 1.0
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "tendency_steps": 0,
+   "facts": 4175
+  },
+  {
+   "round": 1,
+   "tendency_steps": 1,
+   "facts": 2834
+  },
+  {
+   "round": 2,
+   "tendency_steps": 0,
+   "facts": 363
+  },
+  {
+   "round": 2,
+   "tendency_steps": 1,
+   "facts": 287
+  },
+  {
+   "round": 2,
+   "tendency_steps": 2,
+   "facts": 953
+  },
+  {
+   "round": 3,
+   "tendency_steps": 2,
+   "facts": 105
+  },
+  {
+   "round": 3,
+   "tendency_steps": 3,
+   "facts": 98
+  },
+  {
+   "round": 4,
+   "tendency_steps": 3,
+   "facts": 13
+  },
+  {
+   "round": 4,
+   "tendency_steps": 4,
+   "facts": 2
+  }
+ ],
+ "proofs_recovered": [
+  {
+   "fact": "nedosaru is based in austin",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+   "because": [
+    {
+     "fact": "nedosaru is on team090",
+     "stated": true
+    },
+    {
+     "fact": "team090 is based in austin",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "hetihehe collaborates with bedorabe",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? collaborates with ?](a,b) => [? collaborates with ?](b,a)",
+   "because": [
+    {
+     "fact": "bedorabe collaborates with hetihehe",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "tipagusa works under henegufi",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "because": [
+    {
+     "fact": "tipagusa collaborates with dopanene",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? collaborates with ?](a,b) => [? collaborates with ?](b,a)",
+     "because": [
+      {
+       "fact": "dopanene collaborates with tipagusa",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "dopanene works under henegufi",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+     "because": [
+      {
+       "fact": "dopanene collaborates with loberuka",
+       "stated": true
+      },
+      {
+       "fact": "loberuka works under henegufi",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "herarapa collaborates with fimikati",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? collaborates with ?](a,b) => [? collaborates with ?](b,a)",
+   "because": [
+    {
+     "fact": "fimikati collaborates with herarapa",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "ravosane is based in denver",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is on ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+   "because": [
+    {
+     "fact": "ravosane is on team102",
+     "stated": true
+    },
+    {
+     "fact": "team102 is based in denver",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? belongs to ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+     "because": [
+      {
+       "fact": "team102 belongs to security",
+       "stated": true
+      },
+      {
+       "fact": "security is based in denver",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "gupakavo works under tikisane",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "because": [
+    {
+     "fact": "gupakavo collaborates with vofimize",
+     "stated": true
+    },
+    {
+     "fact": "vofimize works under tikisane",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "jokikika collaborates with berurupa",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? collaborates with ?](a,b) => [? collaborates with ?](b,a)",
+   "because": [
+    {
+     "fact": "berurupa collaborates with jokikika",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "gunemihe collaborates with dokirajo",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? collaborates with ?](a,b) => [? collaborates with ?](b,a)",
+   "because": [
+    {
+     "fact": "dokirajo collaborates with gunemihe",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "mirulofi is based in miami",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? collaborates with ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+   "because": [
+    {
+     "fact": "mirulofi collaborates with rajokara",
+     "stated": true
+    },
+    {
+     "fact": "rajokara is based in miami",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pafigujo is based in denver",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? works under ?](a,b) & [? is based in ?](b,c) => [? is based in ?](a,c)",
+   "because": [
+    {
+     "fact": "pafigujo works under zebefido",
+     "stated": true
+    },
+    {
+     "fact": "zebefido is based in denver",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_deep": [
+  {
+   "fact": "voruheka works under tikisane",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "because": [
+    {
+     "fact": "voruheka collaborates with minepado",
+     "stated": true
+    },
+    {
+     "fact": "minepado works under tikisane",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+     "because": [
+      {
+       "fact": "minepado collaborates with nedodosa",
+       "stated": true
+      },
+      {
+       "fact": "nedodosa works under tikisane",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "jokaravo works under vojosalo",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "because": [
+    {
+     "fact": "jokaravo collaborates with hevotiru",
+     "stated": true
+    },
+    {
+     "fact": "hevotiru works under vojosalo",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+     "because": [
+      {
+       "fact": "hevotiru collaborates with voparuti",
+       "stated": true
+      },
+      {
+       "fact": "voparuti works under vojosalo",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "heloruka works under mijosaki",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "because": [
+    {
+     "fact": "heloruka collaborates with savomiti",
+     "stated": true
+    },
+    {
+     "fact": "savomiti works under mijosaki",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+     "because": [
+      {
+       "fact": "savomiti collaborates with sajobefi",
+       "stated": true
+      },
+      {
+       "fact": "sajobefi works under mijosaki",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "dololohe works under vojosalo",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "because": [
+    {
+     "fact": "dololohe collaborates with dokikigu",
+     "stated": true
+    },
+    {
+     "fact": "dokikigu works under vojosalo",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+     "because": [
+      {
+       "fact": "dokikigu collaborates with besasaze",
+       "stated": true
+      },
+      {
+       "fact": "besasaze works under vojosalo",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "lovofijo works under henegufi",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "because": [
+    {
+     "fact": "lovofijo collaborates with gulosavo",
+     "stated": true
+    },
+    {
+     "fact": "gulosavo works under henegufi",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+     "because": [
+      {
+       "fact": "gulosavo collaborates with zemineki",
+       "stated": true
+      },
+      {
+       "fact": "zemineki works under henegufi",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "rumimiki works under mijosaki",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+   "because": [
+    {
+     "fact": "rumimiki collaborates with rupanebe",
+     "stated": true
+    },
+    {
+     "fact": "rupanebe works under mijosaki",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? collaborates with ?](a,b) & [? works under ?](b,c) => [? works under ?](a,c)",
+     "because": [
+      {
+       "fact": "rupanebe collaborates with kizerujo",
+       "stated": true
+      },
+      {
+       "fact": "kizerujo works under mijosaki",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "proofs_not_in_key": []
+}

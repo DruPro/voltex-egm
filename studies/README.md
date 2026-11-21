@@ -31,6 +31,9 @@ scorers, raw answers, agent audit logs, and the results files the write-ups cite
 | [`trees/`](trees/) | Tree-shaped rules (`TREES`): gates, 4-bit adders, hidden world | `studies/trees/RESULTS.md` |
 | [`noise/`](noise/) | Noise: does it recede with data? `VOTE`, `QUARANTINE`, `REPLICATE`, and `egm tune` | `studies/noise/RESULTS.md` |
 | [`tendency/`](tendency/) | A user control for answers resting on tendencies (`TENDENCYSTEPS`), `CHAINS`, capacity limits, rebuild time, redundancy in the pipeline | `studies/tendency/RESULTS.md` |
+| [`shard/`](shard/) | Sharding as an external layer: a clean boundary, rule consensus, a central stage; identical answers to one engine up to 244,444 facts | `studies/shard/RESULTS.md` |
+| [`scaling/`](scaling/) | Scaling audit: category building is quadratic in vocabulary; an exact fix (`CLUSTERSTREAM`, lab only); incremental ingestion and reopening cost a full rebuild | `studies/scaling/RESULTS.md` |
+| [`shard_general/`](shard_general/) | Is sharding general? 6 worlds incl. real code: an automatic split matched one engine on 2 of 6; locality vs representativeness traced | `studies/shard_general/RESULTS.md` |
 
 ## How the earlier studies were archived
 

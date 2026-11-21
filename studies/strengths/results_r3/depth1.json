@@ -1,0 +1,261 @@
+{
+ "name": "depth1",
+ "settings": {
+  "MAXWORDS": 28500,
+  "TENDENCYSTEPS": 0,
+  "DEPTH": "1"
+ },
+ "stated": 65679,
+ "hidden": 5901,
+ "derived_new": 693,
+ "correct": 693,
+ "wrong": 0,
+ "recovered": 693,
+ "precision": 1.0,
+ "recall": 0.1174,
+ "per_relation": {
+  "is a subclass of": {
+   "derived": 693,
+   "correct": 693,
+   "wrong": 0,
+   "hidden": 701,
+   "recovered": 693,
+   "precision": 1.0,
+   "recall": 0.9886
+  },
+  "belongs to package": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 1414,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "is bound to": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 3786,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "other": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 0,
+   "recovered": 0,
+   "precision": null,
+   "recall": null
+  }
+ },
+ "build_s": 0.2,
+ "infer_s": 0.5,
+ "wall_s": 0.9,
+ "peak_rss_mb": 66,
+ "rounds": {
+  "1": 693
+ },
+ "rules": [
+  {
+   "text": "[? inherits from ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 1643,
+   "rate": 1.0,
+   "lift": 382.1,
+   "known": 1643,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? inherits from ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 1643,
+   "rate": 1.0,
+   "lift": 382.1,
+   "known": 1643,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "tendency",
+   "n": 1707,
+   "k": 1155,
+   "rate": 0.68,
+   "lift": 258.5,
+   "known": 1707,
+   "agree": 0.68
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 720,
+   "k": 720,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 720,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 748,
+   "k": 748,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 748,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1707,
+   "k": 858,
+   "rate": 0.5,
+   "lift": 203.6,
+   "known": 1707,
+   "agree": 0.5
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? inherits from ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1222,
+   "k": 619,
+   "rate": 0.51,
+   "lift": 193.5,
+   "known": 1136,
+   "agree": 0.54
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 810,
+   "k": 585,
+   "rate": 0.72,
+   "lift": 159.5,
+   "known": 585,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 861,
+   "k": 619,
+   "rate": 0.72,
+   "lift": 158.8,
+   "known": 619,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 1155,
+   "rate": 0.7,
+   "lift": 155.2,
+   "known": 1155,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1222,
+   "k": 585,
+   "rate": 0.48,
+   "lift": 105.7,
+   "known": 905,
+   "agree": 0.65
+  }
+ ],
+ "proofs": {
+  "is a subclass of": [
+   {
+    "fact": "_collections_abc__Coroutine is a subclass of _collections_abc__Awaitable",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "_collections_abc__Awaitable is a base of _collections_abc__Coroutine",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "_collections_abc__MappingView is a subclass of _collections_abc__Sized",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "_collections_abc__Sized is a base of _collections_abc__MappingView",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__cp1254__StreamWriter is a subclass of codecs__StreamWriter",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "codecs__StreamWriter is a base of encodings__cp1254__StreamWriter",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__mac_arabic__Codec is a subclass of codecs__Codec",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "codecs__Codec is a base of encodings__mac_arabic__Codec",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "belongs to package": [],
+  "is bound to": []
+ },
+ "proofs_wrong": []
+}

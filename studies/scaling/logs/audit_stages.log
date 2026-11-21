@@ -1,0 +1,49 @@
+company_noise0.0_scale1_seed0 3815 wall 0.081 rss 19.9 ingest 0.014 classes 9.8 rel 1.6 mine 18.3 infer 32.6 rounds [(526, 86232, 2.0), (17, 0, 0.0)]
+company_noise0.0_scale2_seed0 7589 wall 0.165 rss 22.9 ingest 0.018 classes 29.1 rel 3.1 mine 40.1 infer 68.0 rounds [(1006, 339647, 8.0), (17, 0, 0.0)]
+company_noise0.0_scale4_seed0 15363 wall 0.428 rss 45.8 ingest 0.036 classes 117.7 rel 6.7 mine 93.5 infer 157.2 rounds [(1966, 1376268, 32.0), (17, 0, 0.0)]
+company_noise0.0_scale8_seed0 30605 wall 1.211 rss 151.2 ingest 0.091 classes 476.6 rel 13.7 mine 216.5 infer 365.9 rounds [(3886, 5501498, 128.0), (17, 0, 0.0)]
+company_noise0.0_scale16_seed0 61108 wall 3.716 rss 554.8 ingest 0.233 classes 1930.0 rel 30.0 mine 507.5 infer 906.4 rounds [(7726, 22015564, 512.0), (17, 0, 0.0)]
+company_noise0.0_scale32_seed0 122042 wall 12.742 rss 2129.0 ingest 0.588 classes 7788.6 rel 74.7 mine 1232.0 infer 2731.7 rounds [(15406, 87778487, 2048.0), (17, 0, 0.0)]
+company_noise0.0_scale64_seed0 244444 wall 47.922 rss 8350.2 ingest 1.417 classes 33470.3 rel 161.3 mine 3177.1 infer 9042.3 rounds [(30766, 351607146, 8192.0), (17, 0, 0.0)]
+hidden_coverage0.5_noise0.03_scale1_seed0 4078 wall 0.168 rss 167.3 ingest 0.01 classes 14.8 rel 3.1 mine 62.6 infer 71.5 rounds [(569, 108488, 2.0), (23, 9, 0.0), (18, 0, 0.0)]
+hidden_coverage0.5_noise0.03_scale2_seed0 9038 wall 0.455 rss 167.3 ingest 0.021 classes 61.6 rel 8.1 mine 191.5 infer 162.9 rounds [(1121, 466663, 8.0), (23, 9, 0.0), (18, 0, 0.0)]
+hidden_coverage0.5_noise0.03_scale4_seed0 19062 wall 1.242 rss 167.3 ingest 0.057 classes 239.9 rel 18.5 mine 509.9 infer 393.1 rounds [(2223, 1928438, 32.0), (23, 9, 0.0), (18, 0, 0.0)]
+hidden_coverage0.5_noise0.03_scale8_seed0 38554 wall 3.423 rss 167.3 ingest 0.135 classes 1010.0 rel 43.6 mine 1321.0 infer 854.4 rounds [(4431, 7806147, 128.0), (23, 9, 0.0), (18, 0, 0.0)]
+gates_noise0.0_per_kind200_seed0 6638 wall 0.491 rss 167.3 ingest 0.017 classes 316.4 rel 3.8 mine 113.0 infer 32.6 rounds [(4016, 5636012, 128.0), (11, 0, 0.0)]
+gates_noise0.0_per_kind400_seed0 13313 wall 1.783 rss 530.8 ingest 0.039 classes 1362.5 rel 8.3 mine 264.4 infer 90.4 rounds [(8016, 22622012, 512.0), (11, 0, 0.0)]
+gates_noise0.0_per_kind800_seed0 26685 wall 6.673 rss 2081.5 ingest 0.096 classes 5736.9 rel 18.2 mine 572.2 infer 203.2 rounds [(16016, 90732012, 2048.0), (11, 0, 0.0)]
+gates_noise0.0_per_kind1600_seed0 53376 wall 26.043 rss 8252.5 ingest 0.265 classes 23807.8 rel 39.9 mine 1325.6 infer 477.8 rounds [(32016, 362992012, 8192.0), (11, 0, 0.0)]
+Traceback (most recent call last):
+  File "<repo>/studies/scaling/tools/audit.py", line 88, in <module>
+    for refresh in (0, 0.02):
+    
+  File "<repo>/studies/scaling/tools/audit.py", line 83, in main
+    sys.path.insert(0, ROOT)
+                         ^^^
+  File "<repo>/studies/scaling/tools/audit.py", line 65, in run_stages
+    p, tag = world(name, **kw)
+             ~~~~~^^^^^^^^^^^^
+  File "<repo>/studies/scaling/tools/audit.py", line 23, in world
+    lines, _ = lib.gen.WORLDS[name](**kw)       # the truth is discarded: this audit measures cost, not accuracy
+               ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "<repo>/studies/noise/tools/../hidden/gen.py", line 127, in gates
+    g, w1, w2, w3 = next(it), next(it), next(it), next(it); a, b = r.randint(0, 1), r.randint(0, 1)
+                    ~~~~^^^^
+StopIteration
+gates_noise0.0_per_kind2400_seed0 80063 wall 60.6 rss 16473.9 ingest 0.428 classes 56764.1 rel 65.1 mine 2373.0 infer 740.6 rounds [(48016, 816732012, 16384.0), (11, 0, 0.0)]
+company_noise0.0_scale1_seed1 3854 wall 0.075 rss 38.6 ingest 0.009 classes 8.0 rel 1.4 mine 19.6 infer 33.4 rounds [(526, 86289, 2.0), (17, 0, 0.0)]
+company_noise0.0_scale2_seed1 7747 wall 0.18 rss 38.6 ingest 0.021 classes 31.7 rel 3.2 mine 42.9 infer 72.6 rounds [(1006, 345262, 8.0), (17, 0, 0.0)]
+company_noise0.0_scale4_seed1 15345 wall 0.456 rss 45.7 ingest 0.04 classes 127.0 rel 7.0 mine 98.0 infer 167.0 rounds [(1966, 1370730, 32.0), (17, 0, 0.0)]
+company_noise0.0_scale8_seed1 30423 wall 1.24 rss 151.3 ingest 0.097 classes 489.9 rel 14.6 mine 226.2 infer 370.0 rounds [(3886, 5484968, 128.0), (17, 0, 0.0)]
+company_noise0.0_scale16_seed1 60978 wall 3.958 rss 554.5 ingest 0.239 classes 2085.0 rel 35.1 mine 529.3 infer 949.2 rounds [(7726, 21985827, 512.0), (17, 0, 0.0)]
+company_noise0.0_scale32_seed1 121963 wall 13.493 rss 2128.8 ingest 0.627 classes 8436.0 rel 74.2 mine 1261.7 infer 2845.5 rounds [(15406, 87671519, 2048.0), (17, 0, 0.0)]
+company_noise0.0_scale64_seed1 244043 wall 52.042 rss 8349.9 ingest 1.428 classes 34588.3 rel 174.9 mine 3922.3 infer 11357.2 rounds [(30766, 351091175, 8192.0), (17, 0, 0.0)]
+hidden_coverage0.5_noise0.03_scale1_seed1 4248 wall 0.186 rss 167.5 ingest 0.011 classes 15.1 rel 3.4 mine 74.9 infer 76.3 rounds [(569, 107901, 2.0), (24, 9, 0.0), (19, 0, 0.0)]
+hidden_coverage0.5_noise0.03_scale2_seed1 9172 wall 0.533 rss 167.5 ingest 0.026 classes 63.8 rel 8.2 mine 220.2 infer 203.1 rounds [(1118, 467590, 8.0), (23, 9, 0.0), (18, 0, 0.0)]
+hidden_coverage0.5_noise0.03_scale4_seed1 19254 wall 1.513 rss 167.5 ingest 0.083 classes 279.9 rel 22.3 mine 589.1 infer 505.7 rounds [(2225, 1931069, 32.0), (23, 9, 0.0), (18, 0, 0.0)]
+hidden_coverage0.5_noise0.03_scale8_seed1 38726 wall 4.128 rss 167.5 ingest 0.194 classes 1109.1 rel 51.7 mine 1586.9 infer 1107.3 rounds [(4432, 7815700, 128.0), (23, 9, 0.0), (18, 0, 0.0)]
+gates_noise0.0_per_kind200_seed1 6663 wall 0.556 rss 167.5 ingest 0.023 classes 361.6 rel 4.3 mine 123.3 infer 34.7 rounds [(4016, 5661012, 128.0), (11, 0, 0.0)]
+gates_noise0.0_per_kind400_seed1 13329 wall 1.99 rss 530.7 ingest 0.042 classes 1515.6 rel 9.7 mine 302.3 infer 102.1 rounds [(8016, 22654012, 512.0), (11, 0, 0.0)]
+gates_noise0.0_per_kind800_seed1 26668 wall 7.436 rss 2081.0 ingest 0.138 classes 6466.5 rel 18.4 mine 571.4 infer 192.3 rounds [(16016, 90664012, 2048.0), (11, 0, 0.0)]
+gates_noise0.0_per_kind1600_seed1 53397 wall 30.764 rss 8252.4 ingest 0.261 classes 28425.0 rel 41.2 mine 1406.4 infer 491.1 rounds [(32016, 363160012, 8192.0), (11, 0, 0.0)]
+gates_noise0.0_per_kind2400_seed1 80065 wall 62.259 rss 16473.5 ingest 0.414 classes 58154.0 rel 68.5 mine 2517.3 infer 881.2 rounds [(48016, 816756012, 16384.0), (11, 0, 0.0)]

@@ -1,0 +1,1671 @@
+{
+ "name": "trees",
+ "settings": {
+  "MAXWORDS": 28500,
+  "TENDENCYSTEPS": 0,
+  "TREES": "1"
+ },
+ "stated": 65679,
+ "hidden": 5901,
+ "derived_new": 4429,
+ "correct": 4415,
+ "wrong": 14,
+ "recovered": 4415,
+ "precision": 0.9968,
+ "recall": 0.7482,
+ "per_relation": {
+  "is a subclass of": {
+   "derived": 701,
+   "correct": 701,
+   "wrong": 0,
+   "hidden": 701,
+   "recovered": 701,
+   "precision": 1.0,
+   "recall": 1.0
+  },
+  "belongs to package": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 1414,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "is bound to": {
+   "derived": 3728,
+   "correct": 3714,
+   "wrong": 14,
+   "hidden": 3786,
+   "recovered": 3714,
+   "precision": 0.9962,
+   "recall": 0.981
+  },
+  "other": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 0,
+   "recovered": 0,
+   "precision": null,
+   "recall": null
+  }
+ },
+ "build_s": 0.3,
+ "infer_s": 9.7,
+ "wall_s": 10.2,
+ "peak_rss_mb": 210,
+ "rounds": {
+  "1": 4407,
+  "2": 8
+ },
+ "rules": [
+  {
+   "text": "[? inherits from ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 1643,
+   "rate": 1.0,
+   "lift": 382.1,
+   "known": 1643,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? inherits from ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 1643,
+   "rate": 1.0,
+   "lift": 382.1,
+   "known": 1643,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "tendency",
+   "n": 1707,
+   "k": 1155,
+   "rate": 0.68,
+   "lift": 258.5,
+   "known": 1707,
+   "agree": 0.68
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 748,
+   "k": 748,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 748,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 720,
+   "k": 720,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 720,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1707,
+   "k": 858,
+   "rate": 0.5,
+   "lift": 203.6,
+   "known": 1707,
+   "agree": 0.5
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? inherits from ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1222,
+   "k": 619,
+   "rate": 0.51,
+   "lift": 193.5,
+   "known": 1136,
+   "agree": 0.54
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 810,
+   "k": 585,
+   "rate": 0.72,
+   "lift": 159.5,
+   "known": 585,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 861,
+   "k": 619,
+   "rate": 0.72,
+   "lift": 158.8,
+   "known": 619,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 1155,
+   "rate": 0.7,
+   "lift": 155.2,
+   "known": 1155,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1222,
+   "k": 585,
+   "rate": 0.48,
+   "lift": 105.7,
+   "known": 905,
+   "agree": 0.65
+  },
+  {
+   "text": "TREE [? is first argument of ?](g,a) & [? is bound to ?](g,cls) => [? has decorator ?](a,classmethod)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 116,
+   "k": 116,
+   "rate": 1.0,
+   "lift": 72.3,
+   "known": 116,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has decorator ?](g,classmethod) => [? is bound to ?](a,cls)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 169,
+   "k": 116,
+   "rate": 0.69,
+   "lift": 49.9,
+   "known": 116,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__MailboxList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Header) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Phrase) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Mailbox) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,email___header_value_parser__TokenList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__NameAddr) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__AngleAddr) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__AddrSpec) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__AddressList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Address) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__QuotedString) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Group) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__LocalPart) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__HeaderLabel) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__ObsLocalPart) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Parameter) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__NoFoldLiteral) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__WhiteSpaceTokenList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__GroupList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__DomainLiteral) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Attribute) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__ParameterizedHeaderValue) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Domain) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__MimeParameters) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__InvalidMailbox) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__ObsRoute) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Value) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__MIMEVersion) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Atom) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__MsgID) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__DotAtom) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Section) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Word) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Token) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__DotAtomText) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__EncodedWord) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__UnstructuredTokenList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__ContentTransferEncoding) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 51,
+   "k": 49,
+   "rate": 0.96,
+   "lift": 25.7,
+   "known": 51,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__DotAtomText) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__NameAddr) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__DotAtom) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__LocalPart) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__MIMEVersion) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Mailbox) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__MailboxList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__UnstructuredTokenList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,email___header_value_parser__TokenList) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__DomainLiteral) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Phrase) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__ContentTransferEncoding) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__EncodedWord) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__NoFoldLiteral) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Word) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__HeaderLabel) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__MsgID) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Atom) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Header) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__AngleAddr) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Token) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__Section) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is a base of ?](y1,email___header_value_parser__ObsLocalPart) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 34,
+   "k": 31,
+   "rate": 0.91,
+   "lift": 24.4,
+   "known": 34,
+   "agree": 0.91
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? is a subclass of ?](g,y1) & [? is defined in ?](y1,email___header_value_parser) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 36,
+   "k": 32,
+   "rate": 0.89,
+   "lift": 23.8,
+   "known": 36,
+   "agree": 0.89
+  },
+  {
+   "text": "TREE [? is a method of ?](a,g) & [? inherits from ?](g,y1) & [? is defined in ?](y1,email___header_value_parser) => [? has decorator ?](a,property)",
+   "shape": "tree",
+   "tier": "tendency",
+   "n": 65,
+   "k": 57,
+   "rate": 0.88,
+   "lift": 23.5,
+   "known": 65,
+   "agree": 0.88
+  },
+  {
+   "text": "TREE [? is first argument of ?](g,a) & [? is bound to ?](g,nothing) => [? has scope ?](a,module)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 1974,
+   "k": 1919,
+   "rate": 0.97,
+   "lift": 4.3,
+   "known": 1974,
+   "agree": 0.97
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has decorator ?](g,staticmethod) => [? is bound to ?](a,nothing)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 74,
+   "k": 55,
+   "rate": 0.74,
+   "lift": 3.2,
+   "known": 55,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,module) => [? is bound to ?](a,nothing)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 2772,
+   "k": 1919,
+   "rate": 0.69,
+   "lift": 3.0,
+   "known": 1919,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](g,a) & [? is bound to ?](g,self) => [? has scope ?](a,class)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 6346,
+   "k": 6346,
+   "rate": 1.0,
+   "lift": 1.3,
+   "known": 6346,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,bdb__Bdb) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 98,
+   "k": 76,
+   "rate": 0.78,
+   "lift": 1.0,
+   "known": 76,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,cmd__Cmd) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 94,
+   "k": 72,
+   "rate": 0.77,
+   "lift": 1.0,
+   "known": 72,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? inherits from ?](y1,bdb__Bdb) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 94,
+   "k": 72,
+   "rate": 0.77,
+   "lift": 1.0,
+   "known": 72,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,optparse) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 114,
+   "k": 86,
+   "rate": 0.75,
+   "lift": 1.0,
+   "known": 86,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,turtle) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 201,
+   "k": 148,
+   "rate": 0.74,
+   "lift": 1.0,
+   "known": 148,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,xml__dom__minidom) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 201,
+   "k": 148,
+   "rate": 0.74,
+   "lift": 1.0,
+   "known": 148,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,_pyio) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 188,
+   "k": 138,
+   "rate": 0.73,
+   "lift": 1.0,
+   "known": 138,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,pdb) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 108,
+   "k": 79,
+   "rate": 0.73,
+   "lift": 1.0,
+   "known": 79,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? inherits from ?](y1,xml__dom__minidom__Node) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 101,
+   "k": 73,
+   "rate": 0.72,
+   "lift": 1.0,
+   "known": 73,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,_pyio__IOBase) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 114,
+   "k": 82,
+   "rate": 0.72,
+   "lift": 1.0,
+   "known": 82,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,_pyrepl) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 164,
+   "k": 117,
+   "rate": 0.71,
+   "lift": 0.9,
+   "known": 117,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,http) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 137,
+   "k": 96,
+   "rate": 0.7,
+   "lift": 0.9,
+   "known": 98,
+   "agree": 0.98
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,logging__Filterer) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 103,
+   "k": 72,
+   "rate": 0.7,
+   "lift": 0.9,
+   "known": 72,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,xml__dom) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 273,
+   "k": 190,
+   "rate": 0.7,
+   "lift": 0.9,
+   "known": 190,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,asyncio__unix_events) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 115,
+   "k": 80,
+   "rate": 0.7,
+   "lift": 0.9,
+   "known": 80,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,_collections_abc__Collection) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 204,
+   "k": 141,
+   "rate": 0.69,
+   "lift": 0.9,
+   "known": 145,
+   "agree": 0.97
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,y1) & [? is part of ?](y1,xml) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 459,
+   "k": 316,
+   "rate": 0.69,
+   "lift": 0.9,
+   "known": 316,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,_collections_abc__Container) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 205,
+   "k": 141,
+   "rate": 0.69,
+   "lift": 0.9,
+   "known": 146,
+   "agree": 0.97
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,_collections_abc__Sized) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 205,
+   "k": 141,
+   "rate": 0.69,
+   "lift": 0.9,
+   "known": 146,
+   "agree": 0.97
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,argparse) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 128,
+   "k": 88,
+   "rate": 0.69,
+   "lift": 0.9,
+   "known": 88,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? inherits from ?](y1,codecs__IncrementalEncoder) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 118,
+   "k": 81,
+   "rate": 0.69,
+   "lift": 0.9,
+   "known": 81,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,asyncio) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 646,
+   "k": 442,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 444,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,collections) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 186,
+   "k": 127,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 130,
+   "agree": 0.98
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? inherits from ?](y1,codecs__Codec) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 182,
+   "k": 124,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 124,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,_pydecimal) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 213,
+   "k": 145,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 146,
+   "agree": 0.99
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,email) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 231,
+   "k": 157,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 163,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,codecs__Codec) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 140,
+   "k": 95,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 95,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,_collections_abc__Iterable) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 211,
+   "k": 143,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 150,
+   "agree": 0.95
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has decorator ?](g,property) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 457,
+   "k": 309,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 309,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,mailbox) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 185,
+   "k": 125,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 125,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,encodings) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 271,
+   "k": 183,
+   "rate": 0.68,
+   "lift": 0.9,
+   "known": 183,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,unittest__mock) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 116,
+   "k": 78,
+   "rate": 0.67,
+   "lift": 0.9,
+   "known": 78,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,class) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 9450,
+   "k": 6346,
+   "rate": 0.67,
+   "lift": 0.9,
+   "known": 6517,
+   "agree": 0.97
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,unittest) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 221,
+   "k": 148,
+   "rate": 0.67,
+   "lift": 0.9,
+   "known": 152,
+   "agree": 0.97
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? inherits from ?](y1,ast__NodeVisitor) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 108,
+   "k": 72,
+   "rate": 0.67,
+   "lift": 0.9,
+   "known": 72,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,ast) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 111,
+   "k": 74,
+   "rate": 0.67,
+   "lift": 0.9,
+   "known": 74,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,io__IOBase) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 163,
+   "k": 108,
+   "rate": 0.66,
+   "lift": 0.9,
+   "known": 108,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,pickle) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 117,
+   "k": 76,
+   "rate": 0.65,
+   "lift": 0.9,
+   "known": 76,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,logging) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 118,
+   "k": 76,
+   "rate": 0.64,
+   "lift": 0.9,
+   "known": 76,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,multiprocessing) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 318,
+   "k": 203,
+   "rate": 0.64,
+   "lift": 0.8,
+   "known": 211,
+   "agree": 0.96
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,_collections_abc__Reversible) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 113,
+   "k": 72,
+   "rate": 0.64,
+   "lift": 0.8,
+   "known": 72,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,xml__sax) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 124,
+   "k": 78,
+   "rate": 0.63,
+   "lift": 0.8,
+   "known": 78,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,urllib__request) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 120,
+   "k": 75,
+   "rate": 0.62,
+   "lift": 0.8,
+   "known": 75,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,urllib) => [? is bound to ?](a,self)",
+   "shape": "tree",
+   "tier": "law",
+   "n": 125,
+   "k": 75,
+   "rate": 0.6,
+   "lift": 0.8,
+   "known": 75,
+   "agree": 1.0
+  }
+ ],
+ "proofs": {
+  "is a subclass of": [
+   {
+    "fact": "lzma__LZMAFile is a subclass of io__IOBase",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "lzma__LZMAFile is a subclass of io__BufferedIOBase",
+      "stated": false,
+      "tier": "law",
+      "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+      "because": [
+       {
+        "fact": "lzma__LZMAFile inherits from _compression__BaseStream",
+        "stated": true
+       },
+       {
+        "fact": "_compression__BaseStream inherits from io__BufferedIOBase",
+        "stated": true
+       }
+      ]
+     },
+     {
+      "fact": "io__BufferedIOBase inherits from io__IOBase",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "argparse___StoreTrueAction is a subclass of argparse___AttributeHolder",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "argparse___StoreTrueAction is a subclass of argparse__Action",
+      "stated": false,
+      "tier": "law",
+      "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+      "because": [
+       {
+        "fact": "argparse___StoreTrueAction inherits from argparse___StoreConstAction",
+        "stated": true
+       },
+       {
+        "fact": "argparse___StoreConstAction inherits from argparse__Action",
+        "stated": true
+       }
+      ]
+     },
+     {
+      "fact": "argparse__Action inherits from argparse___AttributeHolder",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__charmap__StreamWriter is a subclass of encodings__charmap__Codec",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "encodings__charmap__Codec is a base of encodings__charmap__StreamWriter",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__iso8859_11__Codec is a subclass of codecs__Codec",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "codecs__Codec is a base of encodings__iso8859_11__Codec",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "belongs to package": [],
+  "is bound to": [
+   {
+    "fact": "__future_____Feature____init____a0 is bound to self",
+    "stated": false,
+    "tier": "law",
+    "rule": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,class) => [? is bound to ?](a,self)",
+    "because": [
+     {
+      "fact": "__future_____Feature____init____a0 is first argument of __future_____Feature____init__",
+      "stated": true
+     },
+     {
+      "fact": "__future_____Feature____init__ has scope class",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "__future_____Feature____repr____a0 is bound to self",
+    "stated": false,
+    "tier": "law",
+    "rule": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,class) => [? is bound to ?](a,self)",
+    "because": [
+     {
+      "fact": "__future_____Feature____repr____a0 is first argument of __future_____Feature____repr__",
+      "stated": true
+     },
+     {
+      "fact": "__future_____Feature____repr__ has scope class",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "http__cookiejar__request_host__a0 is bound to nothing",
+    "stated": false,
+    "tier": "law",
+    "rule": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,module) => [? is bound to ?](a,nothing)",
+    "because": [
+     {
+      "fact": "http__cookiejar__request_host__a0 is first argument of http__cookiejar__request_host",
+      "stated": true
+     },
+     {
+      "fact": "http__cookiejar__request_host has scope module",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "socketserver__BaseRequestHandler__finish__a0 is bound to self",
+    "stated": false,
+    "tier": "law",
+    "rule": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,class) => [? is bound to ?](a,self)",
+    "because": [
+     {
+      "fact": "socketserver__BaseRequestHandler__finish__a0 is first argument of socketserver__BaseRequestHandler__finish",
+      "stated": true
+     },
+     {
+      "fact": "socketserver__BaseRequestHandler__finish has scope class",
+      "stated": true
+     }
+    ]
+   }
+  ]
+ },
+ "proofs_wrong": [
+  {
+   "fact": "_collections_abc__Generator____subclasshook____a0 is bound to self",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is a subclass of ?](y1,_collections_abc__Iterable) => [? is bound to ?](a,self)",
+   "because": [
+    {
+     "fact": "_collections_abc__Generator____subclasshook____a0 is first argument of _collections_abc__Generator____subclasshook__",
+     "stated": true
+    },
+    {
+     "fact": "_collections_abc__Generator____subclasshook__ is a method of _collections_abc__Generator",
+     "stated": true
+    },
+    {
+     "fact": "_collections_abc__Generator is a subclass of _collections_abc__Iterable",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "asyncio__windows_events__IocpProactor___finish_recvfrom__a0 is bound to self",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,asyncio) => [? is bound to ?](a,self)",
+   "because": [
+    {
+     "fact": "asyncio__windows_events__IocpProactor___finish_recvfrom__a0 is first argument of asyncio__windows_events__IocpProactor___finish_recvfrom",
+     "stated": true
+    },
+    {
+     "fact": "asyncio__windows_events__IocpProactor___finish_recvfrom belongs to package asyncio",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "multiprocessing__pool__Pool___join_exited_workers__a0 is bound to self",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,class) => [? is bound to ?](a,self)",
+   "because": [
+    {
+     "fact": "multiprocessing__pool__Pool___join_exited_workers__a0 is first argument of multiprocessing__pool__Pool___join_exited_workers",
+     "stated": true
+    },
+    {
+     "fact": "multiprocessing__pool__Pool___join_exited_workers has scope class",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "multiprocessing__resource_sharer___ResourceSharer__get_connection__a0 is bound to self",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,class) => [? is bound to ?](a,self)",
+   "because": [
+    {
+     "fact": "multiprocessing__resource_sharer___ResourceSharer__get_connection__a0 is first argument of multiprocessing__resource_sharer___ResourceSharer__get_connection",
+     "stated": true
+    },
+    {
+     "fact": "multiprocessing__resource_sharer___ResourceSharer__get_connection has scope class",
+     "stated": true
+    }
+   ]
+  }
+ ]
+}

@@ -11,6 +11,7 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 | `MAXWORDS` | 12000 | statistics | stable | categories for this many most frequent words; rarer words are not slots |
 | `MAXRELATIONS` | 40 | statistics | stable | relations kept, largest first |
 | `CLASS` | 0.5 | statistics | stable | similarity needed to merge words into a category |
+| `CLUSTERSTREAM` | 1 | statistics | stable | build categories without listing every similar pair: same categories and answers, far less memory (1/0; 0 = the listed-pairs path) (studies/scaling) |
 | `RATE` | 0.4 | induction | stable | minimum share of chains whose conclusion is stated |
 | `LIFT` | 5 | induction | stable | minimum rate over the conclusion's base rate |
 | `SUPPORT` | 3 | induction | stable | minimum confirming chains for a rule |
@@ -80,3 +81,88 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
   handling and rebuild speed; see `docs/papers/`.
 
 `DEPTH` is stable: `SET DEPTH 0` runs inference until nothing new is derived (`studies/depth/`).
+
+## `CLUSTERSTREAM`: large vocabularies without the memory blow-up (on by default)
+
+**Status.** On by default since the promotion check in `studies/scaling/PROMOTION.md`. The new default gave the
+previous build's output on 221 of 221 regression cells and on 3 large worlds. You don't need to set it; `SET
+CLUSTERSTREAM 0` brings back the old path.
+
+**What it does.** Category building compares every pair of word classes. The old path (`CLUSTERSTREAM 0`) first lists every pair
+similar enough to merge, then merges them. In data where many words share a slot (names, ids, wires), about 70% of all pairs
+qualify, so that list grows with the square of the vocabulary. It was 76-99.5% of the engine's peak memory at large
+sizes. `CLUSTERSTREAM 1` merges each pair as soon as it is found and skips pairs whose words are already in one
+category, so no list is kept.
+
+**What it doesn't change.** The categories are the same, so the relations, rules, tiers, answers, proofs and conflicts
+are the same. The reason: categories are the connected groups of similar pairs, which don't depend on the order pairs
+are found, and class ids stay the smallest index of each group. Checked:
+- byte-identical output on 221 of 221 regression cells (17 datasets × 13 settings, including `CLASS` 0.3 and 0.7,
+  `MAXWORDS` caps, `TREES`, `CHAIN`, `CONDITIONS`, `VOTE`, `QUARANTINE`, `REPLICATE`, `DEPTH 0`, `TENDENCYSTEPS 0` and
+  the v2.0 flags), including `SAVE` and `LOAD`;
+- identical output on 10 of 10 large worlds up to 244,444 facts;
+- the sanitizer build. See `studies/scaling/RESULTS.md`.
+
+**What the old path costs.** Its pair list takes about 8-9 bytes × words² (rounded up to a power of two), on top of
+everything else:
+
+| Distinct words | Pair list without it (measured) | Peak memory without → with it | CPU without → with it |
+|---|---|---|---|
+| 1,966 | 32 MB | (small either way) | |
+| 7,726 | 512 MB | | |
+| 15,406 (122,042 company facts) | 2,048 MB | 2,129 → 130 MB | 12.7 → 5.9 s |
+| 30,766 (244,444 company facts) | 8,192 MB | 8,350 → 256 MB | 47 → 19 s |
+| 32,016 (53,376 gates facts) | 8,192 MB | 8,252 → 72 MB | 26 → 6.5 s |
+
+Below about 2,000 words the two paths make no practical difference.
+
+**When to turn it off.** Only to reproduce a timing or memory measurement made with an earlier build, because the
+answers are the same either way. Set it before the first question, because categories are built on the first query
+after ingesting:
+
+```
+SET CLUSTERSTREAM 0
+INGESTFILE facts.txt
+```
+
+For large vocabularies, the setting to think about is `MAXWORDS`:
+
+```python
+with egm.open("facts.txt", settings={"MAXWORDS": 40000}) as e: ...
+```
+
+```
+egm build facts.txt -o kb.vtx --set MAXWORDS=40000
+```
+
+**Notes:**
+- **Saved with the knowledge base only when non-default:** `SET CLUSTERSTREAM 0` is written to `kb.vtx.cfg` and
+  restored by `LOAD`.
+- **Older engines** (2.2.1 and before) don't have the setting. They give the same answers, with the old memory use.
+  A knowledge base built here opens there unchanged.
+- **Pair it with `MAXWORDS`** sized to your vocabulary (distinct words plus some headroom). `MAXWORDS` decides which
+  words get categories; `CLUSTERSTREAM` only makes building them cheaper. Above 12,000 words, the default cap prints
+  `[LIMIT]` and costs answers. Raising the cap used to cost memory quadratically; with `CLUSTERSTREAM` on it doesn't.
+- **`egm tune` doesn't search it,** because it never changes answers. Set it yourself.
+- **`REFRESH`** reuses existing categories on small updates, so the setting matters only for full builds.
+
+**What it doesn't fix:**
+- **Category building time is still quadratic** in vocabulary. Each pair is still visited; pairs already in one
+  category are skipped with a cheap check (made cheaper again in `studies/stress`: gates 2,400 build 22.1 s → 2.4 s,
+  same output on 294 of 294 bench cells). Where the vocabulary splits into many unrelated groups, the remaining pairs
+  need a full similarity test, and the gain is small (1.3× on 400 separate vocabularies).
+- **Relations, rule mining and inference** cost the same. After the fix, inference was the largest stage in the
+  company world (46-48% of CPU), and categories still were in the gates world (67%).
+- **Inference:** on data whose rules chain widely (the dpkg package graph in `studies/stress`), `INFER ALL` takes
+  almost all the time and memory (59 s and 3.1 GB for 14,296 facts), and no category setting changes that.
+
+**Checking it on your data.** The answers are the same either way; if you want to see that for yourself, compare
+once:
+
+```python
+import egm
+def answers(**s):
+    with egm.open("facts.txt", settings={"MAXWORDS": 40000, **s}) as e:
+        return {(f.fact, f.tier) for f in e.infer_all()}, sorted(r.text for r in e.rules())
+assert answers() == answers(CLUSTERSTREAM=0)
+```

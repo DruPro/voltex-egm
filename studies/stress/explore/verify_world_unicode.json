@@ -1,0 +1,35 @@
+{
+ "dataset": "world_unicode",
+ "settings": {},
+ "derived_new": 1331,
+ "tally": {
+  "true": 1281,
+  "false": 50
+ },
+ "per_relation": {
+  "has category": {
+   "true": 124,
+   "false": 5
+  },
+  "has bidi class": {
+   "true": 397,
+   "false": 4
+  },
+  "is in script": {
+   "true": 408,
+   "false": 10
+  },
+  "has lowercase": {
+   "true": 160,
+   "false": 1
+  },
+  "has uppercase": {
+   "true": 192,
+   "false": 30
+  }
+ },
+ "subject_outside_extracted_range": {
+  "true": 177,
+  "false": 1
+ }
+}

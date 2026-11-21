@@ -60,6 +60,12 @@ accepted. Run `RELATIONS` first and check that every relation you meant appears,
 | Tree (several facts about one entity decide) | `o was placed by c`, `c has tier gold`, `c lives in region north`, `o ships express` | `SET TREES 1` | 2.4 |
 | Computation in layers | trees whose outputs feed other trees | `SET TREES 1`, `SET DEPTH 0` | `studies/trees` (4-bit adders, 1,700 of 1,700 wires) |
 
+**No shape copies one relation into another in the same direction** (`r(a,b) ⇒ s(a,b)`). To teach "a direct base is
+an ancestor", also state the relation from the other side (`B is a base of C`). The rule then becomes an inverse:
+`B is a base of C ⇒ C is a subclass of B`. A tree needs an anchor one step from the fact's subject: state
+`f__a0 is first argument of f` and ask about `f__a0`, like an order and its customer in 2.4. Both are measured in
+`studies/strengths` (DEVIATIONS.md, entry 1).
+
 ### 2.1 Inverse, and how completeness decides law or tendency
 
 60 items, each `item is in box`. For 40 of them, `box contains item` is stated too:
@@ -209,7 +215,36 @@ Measured:
 | **Separate vocabularies.** Each engine stays under its capacity caps, and unrelated domains can't form coincidence rules with each other. | Caps: measured (`studies/tendency` T5). Coincidences across domains: a design argument, not measured here. |
 | **Rebuild one part alone.** | Rebuilds take about a second per 19,000 facts (`studies/tendency` T6). |
 
-### 5.3 Other patterns (design ideas, not yet measured)
+### 5.3 Large data: one engine first; several only for independent sources
+
+**Large data needs one engine, not a split.**
+- One engine's memory used to grow faster than its facts: 2.1 GB at 122,042 company facts, 8.4 GB at 244,444. The
+  cause was word-category building, which listed every similar pair of words (`studies/scaling`).
+- With `CLUSTERSTREAM` (now on by default), one engine took 130 MB at 122,042 facts and 256 MB / 19 s at 244,444, with
+  identical answers (`docs/SETTINGS.md`).
+- Start there, and size `MAXWORDS` to your vocabulary.
+
+**Splitting one connected fact set changes what is learned.**
+- Each engine accepts rules from its own part of the evidence, so the parts have to be fair samples of every rule
+  while also keeping each fact's evidence together.
+- On the company world, a split on a relation known to be clean, with rule consensus, gave identical answers
+  (`studies/shard`).
+- Across six world shapes, a split derived from the data matched one engine on only two (`studies/shard_general`).
+- So splitting for scale is not recommended. `egm.shard` keeps it as an experimental option (`docs/SDK.md`).
+
+**Several engines are the right design when the sources are independent.** That covers sources that don't describe
+the same entities and shouldn't share rules, such as separate codebases or customers:
+
+```python
+r = egm.shard({"billing": "billing.txt", "search": "search.txt"})
+[(f.fact, f.source) for f in r.facts]
+```
+
+- Each source learns its own rules, and the answers come back tagged with their source.
+- If the sources share entity names, `egm.shard` warns you: then they aren't independent, and one engine is the
+  exact answer.
+
+### 5.4 Other patterns (design ideas, not yet measured)
 
 - **Specialists and a router.** One engine per domain; your code sends each question to the one that owns that
   relation.

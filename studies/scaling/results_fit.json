@@ -1,0 +1,198 @@
+{
+ "company": {
+  "n": 10,
+  "facts": [
+   15345,
+   244444
+  ],
+  "vocab": [
+   1969,
+   30769
+  ],
+  "vocab_vs_facts": 0.99,
+  "classes_ms_vs_facts": 2.03,
+  "relations_ms_vs_facts": 1.16,
+  "mining_ms_vs_facts": 1.29,
+  "infer_ms_vs_facts": 1.49,
+  "rss_mb_vs_facts": 1.89,
+  "cpu_vs_facts": 1.71,
+  "classes_ms_vs_vocab": 2.05,
+  "kept_pairs_vs_vocab": 2.02,
+  "kept_share_of_all_pairs": [
+   0.71,
+   0.713,
+   0.727,
+   0.729,
+   0.737,
+   0.738,
+   0.739,
+   0.74,
+   0.742,
+   0.743
+  ],
+  "kept_mb_share_of_peak": [
+   0.7,
+   0.699,
+   0.846,
+   0.847,
+   0.923,
+   0.923,
+   0.962,
+   0.962,
+   0.981,
+   0.981
+  ],
+  "classes_share_of_cpu": [
+   0.279,
+   0.276,
+   0.395,
+   0.394,
+   0.527,
+   0.52,
+   0.625,
+   0.611,
+   0.665,
+   0.699
+  ],
+  "ingest_MBps": [
+   11.0,
+   12.2,
+   8.9,
+   9.6,
+   7.3,
+   7.5,
+   5.6,
+   5.9,
+   4.9,
+   4.9
+  ]
+ },
+ "hidden": {
+  "n": 8,
+  "facts": [
+   4078,
+   38726
+  ],
+  "vocab": [
+   572,
+   4435
+  ],
+  "vocab_vs_facts": 0.92,
+  "classes_ms_vs_facts": 1.91,
+  "relations_ms_vs_facts": 1.21,
+  "mining_ms_vs_facts": 1.37,
+  "infer_ms_vs_facts": 1.16,
+  "rss_mb_vs_facts": 0.0,
+  "cpu_vs_facts": 1.37,
+  "classes_ms_vs_vocab": 2.08,
+  "kept_pairs_vs_vocab": 2.09,
+  "kept_share_of_all_pairs": [
+   0.671,
+   0.668,
+   0.743,
+   0.749,
+   0.781,
+   0.78,
+   0.795,
+   0.796
+  ],
+  "kept_mb_share_of_peak": [
+   0.012,
+   0.012,
+   0.048,
+   0.048,
+   0.191,
+   0.191,
+   0.765,
+   0.764
+  ],
+  "classes_share_of_cpu": [
+   0.089,
+   0.081,
+   0.135,
+   0.12,
+   0.193,
+   0.185,
+   0.295,
+   0.269
+  ],
+  "ingest_MBps": [
+   10.3,
+   9.7,
+   10.9,
+   8.9,
+   8.5,
+   5.9,
+   7.2,
+   5.1
+  ]
+ },
+ "gates": {
+  "n": 10,
+  "facts": [
+   6638,
+   80065
+  ],
+  "vocab": [
+   4019,
+   48019
+  ],
+  "vocab_vs_facts": 1.0,
+  "classes_ms_vs_facts": 2.07,
+  "relations_ms_vs_facts": 1.12,
+  "mining_ms_vs_facts": 1.2,
+  "infer_ms_vs_facts": 1.25,
+  "rss_mb_vs_facts": 1.87,
+  "cpu_vs_facts": 1.92,
+  "classes_ms_vs_vocab": 2.08,
+  "kept_pairs_vs_vocab": 2.01,
+  "kept_share_of_all_pairs": [
+   0.699,
+   0.702,
+   0.704,
+   0.705,
+   0.707,
+   0.707,
+   0.708,
+   0.709,
+   0.709,
+   0.709
+  ],
+  "kept_mb_share_of_peak": [
+   0.765,
+   0.764,
+   0.965,
+   0.965,
+   0.984,
+   0.984,
+   0.993,
+   0.993,
+   0.995,
+   0.995
+  ],
+  "classes_share_of_cpu": [
+   0.646,
+   0.65,
+   0.765,
+   0.762,
+   0.87,
+   0.86,
+   0.914,
+   0.924,
+   0.937,
+   0.934
+  ],
+  "ingest_MBps": [
+   9.7,
+   7.2,
+   8.5,
+   7.9,
+   4.8,
+   6.9,
+   5.0,
+   5.1,
+   4.6,
+   4.8
+  ]
+ }
+}

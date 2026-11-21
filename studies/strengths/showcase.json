@@ -1,0 +1,262 @@
+{
+ "settings": {
+  "MAXWORDS": 28500,
+  "TENDENCYSTEPS": 0,
+  "TREES": 1,
+  "CHAIN": 3,
+  "DEPTH": 0
+ },
+ "tiers": {
+  "law correct": 5829,
+  "tendency wrong": 21
+ },
+ "longest_hidden_subclass_hops": [
+  5,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4
+ ],
+ "hops_histogram": {
+  "5": 1,
+  "4": 9,
+  "3": 24,
+  "2": 179,
+  "1": 488
+ },
+ "proofs_deep_subclass": [
+  {
+   "fact": "logging__handlers__RotatingFileHandler is a subclass of logging__Filterer",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "because": [
+    {
+     "fact": "logging__handlers__RotatingFileHandler inherits from logging__handlers__BaseRotatingHandler",
+     "stated": true
+    },
+    {
+     "fact": "logging__handlers__BaseRotatingHandler is a subclass of logging__Filterer",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "xmlrpc__server__DocXMLRPCRequestHandler is a subclass of socketserver__BaseRequestHandler",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "because": [
+    {
+     "fact": "xmlrpc__server__DocXMLRPCRequestHandler inherits from xmlrpc__server__SimpleXMLRPCRequestHandler",
+     "stated": true
+    },
+    {
+     "fact": "xmlrpc__server__SimpleXMLRPCRequestHandler is a subclass of socketserver__BaseRequestHandler",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "weakref__WeakValueDictionary is a subclass of _collections_abc__Sized",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "because": [
+    {
+     "fact": "weakref__WeakValueDictionary inherits from _collections_abc__MutableMapping",
+     "stated": true
+    },
+    {
+     "fact": "_collections_abc__MutableMapping is a subclass of _collections_abc__Sized",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_package": [
+  {
+   "fact": "asyncio__base_events__BaseEventLoop___add_callback belongs to package asyncio",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+   "because": [
+    {
+     "fact": "asyncio__base_events__BaseEventLoop___add_callback is a method of asyncio__base_events__BaseEventLoop",
+     "stated": true
+    },
+    {
+     "fact": "asyncio__base_events__BaseEventLoop is defined in asyncio__base_events",
+     "stated": true
+    },
+    {
+     "fact": "asyncio__base_events is part of asyncio",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "asyncio__base_events__BaseEventLoop___asyncgen_firstiter_hook belongs to package asyncio",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+   "because": [
+    {
+     "fact": "asyncio__base_events__BaseEventLoop___asyncgen_firstiter_hook is a method of asyncio__base_events__BaseEventLoop",
+     "stated": true
+    },
+    {
+     "fact": "asyncio__base_events__BaseEventLoop is defined in asyncio__base_events",
+     "stated": true
+    },
+    {
+     "fact": "asyncio__base_events is part of asyncio",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_binding": {
+  "class none": {
+   "fact": "ast___Unparser___write_str_avoiding_backslashes__a0 is bound to self",
+   "stated": false,
+   "tier": "law",
+   "rule": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,class) => [? is bound to ?](a,self)",
+   "because": [
+    {
+     "fact": "ast___Unparser___write_str_avoiding_backslashes__a0 is first argument of ast___Unparser___write_str_avoiding_backslashes",
+     "stated": true
+    },
+    {
+     "fact": "ast___Unparser___write_str_avoiding_backslashes has scope class",
+     "stated": true
+    }
+   ]
+  },
+  "class property": {
+   "fact": "bz2__BZ2File__mode__a0 is bound to self",
+   "stated": false,
+   "tier": "law",
+   "rule": "TREE [? is first argument of ?](a,g) & [? has decorator ?](g,property) => [? is bound to ?](a,self)",
+   "because": [
+    {
+     "fact": "bz2__BZ2File__mode__a0 is first argument of bz2__BZ2File__mode",
+     "stated": true
+    },
+    {
+     "fact": "bz2__BZ2File__mode has decorator property",
+     "stated": true
+    }
+   ]
+  },
+  "module none": {
+   "fact": "argparse___get_action_name__a0 is bound to nothing",
+   "stated": false,
+   "tier": "law",
+   "rule": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,module) => [? is bound to ?](a,nothing)",
+   "because": [
+    {
+     "fact": "argparse___get_action_name__a0 is first argument of argparse___get_action_name",
+     "stated": true
+    },
+    {
+     "fact": "argparse___get_action_name has scope module",
+     "stated": true
+    }
+   ]
+  }
+ },
+ "proofs_wrong": [
+  {
+   "fact": "asyncio__windows_events__IocpProactor___finish_recvfrom__a0 is bound to self",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "TREE [? is first argument of ?](a,g) & [? belongs to package ?](g,asyncio) => [? is bound to ?](a,self)",
+   "because": [
+    {
+     "fact": "asyncio__windows_events__IocpProactor___finish_recvfrom__a0 is first argument of asyncio__windows_events__IocpProactor___finish_recvfrom",
+     "stated": true
+    },
+    {
+     "fact": "asyncio__windows_events__IocpProactor___finish_recvfrom belongs to package asyncio",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "collections__OrderedDict__fromkeys__a0 is bound to self",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "TREE [? is first argument of ?](a,g) & [? is a method of ?](g,y1) & [? is defined in ?](y1,collections) => [? is bound to ?](a,self)",
+   "because": [
+    {
+     "fact": "collections__OrderedDict__fromkeys__a0 is first argument of collections__OrderedDict__fromkeys",
+     "stated": true
+    },
+    {
+     "fact": "collections__OrderedDict__fromkeys is a method of collections__OrderedDict",
+     "stated": true
+    },
+    {
+     "fact": "collections__OrderedDict is defined in collections",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "missed_by_kind": {
+  "class classmethod": 53,
+  "class staticmethod": 19
+ },
+ "rules_law": [
+  "[? is a base of ?](a,b) => [? inherits from ?](b,a)",
+  "[? inherits from ?](a,b) => [? is a base of ?](b,a)",
+  "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+  "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+  "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+  "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+  "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+  "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+  "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+  "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+  "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+  "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)"
+ ],
+ "rules_tree_binding": [
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has decorator ?](g,classmethod) => [? is bound to ?](a,cls)",
+   "tier": "law",
+   "known": 116,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has decorator ?](g,staticmethod) => [? is bound to ?](a,nothing)",
+   "tier": "law",
+   "known": 55,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,module) => [? is bound to ?](a,nothing)",
+   "tier": "law",
+   "known": 1919,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has decorator ?](g,property) => [? is bound to ?](a,self)",
+   "tier": "law",
+   "known": 309,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is first argument of ?](a,g) & [? has scope ?](g,class) => [? is bound to ?](a,self)",
+   "tier": "law",
+   "known": 6517,
+   "agree": 0.97
+  }
+ ]
+}

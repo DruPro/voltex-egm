@@ -1,0 +1,5 @@
+3497753f7375b4cedfd5b12084b6f04b7a6cfefa00b10d63172644e4f12901ba  PREREGISTRATION_CONSENSUS.md
+2026-11-21T04:15:14Z
+237f1a811108b9e198aba2b54f3bb8490bbbd1c25ec1c9f7d6abce5dec34945e  tools/shard.py
+8d9d72ef117095f9872d7badcfbf047368c2713e84c41055550e9f5dfe2d040a  tools/run.py
+ddcfeeade1f5222abbcfa2b67cb4bd35006be8ec3716cc304112f6b3e059a2a8  tools/run_consensus.py

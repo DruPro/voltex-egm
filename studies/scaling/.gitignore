@@ -1,0 +1,6 @@
+obs/
+lab/voltex2_lab
+lab/frozen_voltex2
+lab/voltex2_*
+!lab/*.cpp
+logs/e2/

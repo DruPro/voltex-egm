@@ -1,4 +1,5 @@
 """SDK tests (stdlib unittest; pytest also collects them).   python3 -m unittest tests/test_sdk.py -v"""
+import collections
 import json
 import contextlib
 import io
@@ -463,6 +464,122 @@ class TestBench(unittest.TestCase):
         with egm.open(M) as e:
             self.assertEqual(bench.score(key, bench.solve(e, key))["mean_f1"], 0.972)
             self.assertEqual(bench.score(key, bench.solve(e, key, strict=True))["mean_f1"], 1.0)
+
+
+class TestClusterStream(unittest.TestCase):
+    """CLUSTERSTREAM (studies/scaling; on by default): the same categories, rules and answers as the listed-pairs path."""
+    kb = staticmethod(TestExperimentalSettings.kb)
+
+    def snapshot(self, e):
+        return ({(f.fact, f.tier) for f in e.infer_all()}, sorted(str(r) for r in e.rules(include_rejected=True)),
+                sorted(tuple(sorted(c.members)) for c in e.categories()))
+
+    def test_same_output_on_every_world_shape(self):
+        for lines in (worlds.staff()[0], worlds.staff(noise=0.15, reports=3)[0], worlds.gates()[0],
+                      worlds.lineage()[0], worlds.harvest()[0]):
+            with self.kb(lines, CLUSTERSTREAM=0) as e:
+                base = self.snapshot(e)
+            with self.kb(lines) as e:
+                self.assertEqual(e.config()["CLUSTERSTREAM"]["value"], 1)
+                self.assertEqual(self.snapshot(e), base)
+                self.assertEqual(e.experimental(), {})
+
+    def test_saved_with_the_knowledge_base(self):
+        lines, _, _ = worlds.staff()
+        kbp = os.path.join(tempfile.mkdtemp(), "kb.vtx")
+        with self.kb(lines, CLUSTERSTREAM=0) as e:                     # the non-default value is saved and restored
+            facts = {f.fact for f in e.infer_all()}
+            e.save(kbp)
+        with egm.open(kbp) as e:
+            self.assertEqual(e.config()["CLUSTERSTREAM"]["value"], 0)
+            self.assertEqual({f.fact for f in e.infer_all()}, facts)
+
+
+class TestShard(unittest.TestCase):
+    """egm.shard (studies/shard): several engines, one answer set. The study gate (studies/shard/tools/gate_sdk.py)
+    checks it reproduces the study's recorded answers; these tests check the SDK contract on small data."""
+    SPLIT = dict(graph=["works with"], attach=["reports to"])
+
+    def test_one_shard_equals_one_engine(self):
+        lines, _, _ = worlds.staff(noise=0.15, reports=3)
+        with TestExperimentalSettings.kb(lines) as e:
+            one = {(f.fact, f.tier) for f in e.infer_all()}
+        self.assertGreater(len(one), 50)
+        for consensus in (False, True):
+            r = egm.shard(lines, 1, consensus=consensus, **self.SPLIT)
+            self.assertEqual({(f.fact, f.tier) for f in r.facts}, one)
+            self.assertEqual(r.warnings, [])
+            self.assertTrue(all(f.status == "inferred" for f in r.facts))
+
+    def test_parallel_gives_the_same_answers(self):
+        lines, _, _ = worlds.staff()
+        a = egm.shard(lines, 4, **self.SPLIT); b = egm.shard(lines, 4, jobs=4, **self.SPLIT)
+        self.assertEqual([(f.fact, f.tier) for f in a.facts], [(f.fact, f.tier) for f in b.facts])
+        self.assertEqual(a.report["shards"], 4); self.assertEqual(len([x for x in a.report["engines"]]), 4)
+        self.assertIn("consensus_dropped", a.report)
+
+    def test_arguments_are_checked(self):
+        lines, _, _ = worlds.staff()
+        with self.assertRaises(ValueError):
+            egm.shard(lines, 2)                                         # neither graph nor key
+        with self.assertRaises(ValueError):
+            egm.shard(lines, 2, graph=["works with"], key="is on")      # both
+        with self.assertRaises(ValueError):
+            egm.shard(lines, 0, **self.SPLIT)
+
+    def test_nothing_is_lost_silently(self):
+        lines, _, _ = worlds.staff()
+        r = egm.shard(lines, 40, **self.SPLIT)                          # 30 components for 40 shards
+        self.assertTrue(any("received no facts" in w for w in r.warnings))
+        lone = lines + ["zork likes tea"]                               # mentioned by no shard
+        r = egm.shard(lone, 3, **self.SPLIT)
+        self.assertEqual(r.report["unseen_facts"], 1)
+        self.assertTrue(any("reached no shard" in w for w in r.warnings))
+        r = egm.shard(lone, 3, central=True, **self.SPLIT)             # the central engine still sees it
+        self.assertEqual(r.report["unseen_facts"], 0)
+
+
+class TestShardSources(unittest.TestCase):
+    """egm.shard with independent sources: one engine per source, answers tagged with their source."""
+
+    def sources(self):
+        staff = worlds.staff()[0]
+        farm = [" ".join(("h_" + w if i in (0, len(l.split()) - 1) else w) for i, w in enumerate(l.split()))
+                for l in worlds.harvest()[0]]                           # distinct names: the sources share no entity
+        return {"staff": staff, "farm": farm}
+
+    def test_each_source_answers_as_its_own_engine(self):
+        src = self.sources()
+        alone = {}
+        for name, lines in src.items():
+            with TestExperimentalSettings.kb(lines) as e:
+                alone[name] = {(f.fact, f.tier) for f in e.infer_all()}
+        r = egm.shard(src, jobs=2)
+        self.assertEqual(r.warnings, [])
+        self.assertEqual(r.report["mode"], "sources")
+        got = collections.defaultdict(set)
+        for f in r.facts:
+            got[f.source].add((f.fact, f.tier))
+        self.assertEqual(dict(got), alone)
+        self.assertGreater(len(alone["staff"]), 50); self.assertGreater(len(alone["farm"]), 50)
+
+    def test_shared_entities_are_reported(self):
+        src = self.sources()
+        src["farm"] = src["farm"] + [src["staff"][0]]               # one staff fact repeated in the other source
+        r = egm.shard(src)
+        self.assertTrue(any("appear in more than one source" in w for w in r.warnings))
+        self.assertGreaterEqual(r.report["shared_entities"], 2)
+
+    def test_consensus_is_opt_in_and_arguments_are_checked(self):
+        src = self.sources()
+        self.assertNotIn("consensus_dropped", egm.shard(src).report)
+        self.assertIn("consensus_dropped", egm.shard(src, consensus=True).report)
+        with self.assertRaises(ValueError):
+            egm.shard(src, graph=["works with"])
+        with self.assertRaises(ValueError):
+            egm.shard(src, 5)
+        with self.assertRaises(ValueError):
+            egm.shard(worlds.staff()[0])                                # one fact set needs shards and a split
 
 
 if __name__ == "__main__":

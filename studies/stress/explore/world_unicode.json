@@ -1,0 +1,567 @@
+{
+ "dataset": "world_unicode",
+ "settings": {
+  "MAXWORDS": 12904
+ },
+ "stated": 29948,
+ "key": 7617,
+ "derived_new": 1331,
+ "recovered": 1104,
+ "not_in_key": 227,
+ "relations": [
+  {
+   "relation": "has category",
+   "facts": 8968
+  },
+  {
+   "relation": "has bidi class",
+   "facts": 8921
+  },
+  {
+   "relation": "is in script",
+   "facts": 8848
+  },
+  {
+   "relation": "has lowercase",
+   "facts": 800
+  },
+  {
+   "relation": "has uppercase",
+   "facts": 762
+  },
+  {
+   "relation": "decomposes to",
+   "facts": 761
+  },
+  {
+   "relation": "has combining class",
+   "facts": 484
+  }
+ ],
+ "rules": [
+  {
+   "text": "[? has uppercase ?](a,b) => [? has lowercase ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 762,
+   "k": 575,
+   "rate": 0.75,
+   "lift": 601.4,
+   "known": 589,
+   "agree": 0.98
+  },
+  {
+   "text": "[? has lowercase ?](a,b) => [? has uppercase ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 800,
+   "k": 575,
+   "rate": 0.72,
+   "lift": 536.9,
+   "known": 582,
+   "agree": 0.99
+  },
+  {
+   "text": "[? has uppercase ?](a,b) & [? is in script ?](b,c) => [? is in script ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 586,
+   "k": 463,
+   "rate": 0.79,
+   "lift": 488.3,
+   "known": 471,
+   "agree": 0.98
+  },
+  {
+   "text": "[? has lowercase ?](a,b) & [? is in script ?](b,c) => [? is in script ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 582,
+   "k": 449,
+   "rate": 0.77,
+   "lift": 476.8,
+   "known": 460,
+   "agree": 0.98
+  },
+  {
+   "text": "[? decomposes to ?](a,b) & [? is in script ?](b,c) => [? is in script ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 581,
+   "k": 423,
+   "rate": 0.73,
+   "lift": 449.9,
+   "known": 449,
+   "agree": 0.94
+  },
+  {
+   "text": "[? has lowercase ?](a,b) & [? has uppercase ?](b,c) => [? has uppercase ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 7,
+   "k": 3,
+   "rate": 0.43,
+   "lift": 320.1,
+   "known": 3,
+   "agree": 1.0
+  },
+  {
+   "text": "[? decomposes to ?](a,b) & [? has category ?](b,c) => [? has category ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 602,
+   "k": 459,
+   "rate": 0.76,
+   "lift": 19.8,
+   "known": 477,
+   "agree": 0.96
+  },
+  {
+   "text": "[? has uppercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 602,
+   "k": 490,
+   "rate": 0.81,
+   "lift": 16.3,
+   "known": 490,
+   "agree": 1.0
+  },
+  {
+   "text": "[? has lowercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 608,
+   "k": 487,
+   "rate": 0.8,
+   "lift": 16.0,
+   "known": 487,
+   "agree": 1.0
+  },
+  {
+   "text": "[? decomposes to ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 596,
+   "k": 464,
+   "rate": 0.78,
+   "lift": 15.6,
+   "known": 464,
+   "agree": 1.0
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "tendency_steps": 0,
+   "facts": 1046
+  },
+  {
+   "round": 1,
+   "tendency_steps": 1,
+   "facts": 68
+  },
+  {
+   "round": 2,
+   "tendency_steps": 0,
+   "facts": 202
+  },
+  {
+   "round": 2,
+   "tendency_steps": 1,
+   "facts": 13
+  },
+  {
+   "round": 3,
+   "tendency_steps": 0,
+   "facts": 1
+  },
+  {
+   "round": 3,
+   "tendency_steps": 1,
+   "facts": 1
+  }
+ ],
+ "proofs_recovered": [
+  {
+   "fact": "u2C9B has uppercase u2C9A",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has lowercase ?](a,b) => [? has uppercase ?](b,a)",
+   "because": [
+    {
+     "fact": "u2C9A has lowercase u2C9B",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u0211 has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? decomposes to ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "u0211 decomposes to u0072",
+     "stated": true
+    },
+    {
+     "fact": "u0072 has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u1F10 is in script script_GREEK",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has uppercase ?](a,b) & [? is in script ?](b,c) => [? is in script ?](a,c)",
+   "because": [
+    {
+     "fact": "u1F10 has uppercase u1F18",
+     "stated": true
+    },
+    {
+     "fact": "u1F18 is in script script_GREEK",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u1FB7 has category cat_Ll",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? decomposes to ?](a,b) & [? has category ?](b,c) => [? has category ?](a,c)",
+   "because": [
+    {
+     "fact": "u1FB7 decomposes to u1FB6",
+     "stated": true
+    },
+    {
+     "fact": "u1FB6 has category cat_Ll",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u2D15 has uppercase u10B5",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has lowercase ?](a,b) => [? has uppercase ?](b,a)",
+   "because": [
+    {
+     "fact": "u10B5 has lowercase u2D15",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u2C01 has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has lowercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "u2C01 has lowercase u2C31",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has uppercase ?](a,b) => [? has lowercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u2C31 has uppercase u2C01",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u2C31 has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u1EA9 has category cat_Ll",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? decomposes to ?](a,b) & [? has category ?](b,c) => [? has category ?](a,c)",
+   "because": [
+    {
+     "fact": "u1EA9 decomposes to u00E2",
+     "stated": true
+    },
+    {
+     "fact": "u00E2 has category cat_Ll",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u01B2 has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has lowercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "u01B2 has lowercase u028B",
+     "stated": true
+    },
+    {
+     "fact": "u028B has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u0548 has lowercase u0578",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has uppercase ?](a,b) => [? has lowercase ?](b,a)",
+   "because": [
+    {
+     "fact": "u0578 has uppercase u0548",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u0389 has lowercase u03AE",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has uppercase ?](a,b) => [? has lowercase ?](b,a)",
+   "because": [
+    {
+     "fact": "u03AE has uppercase u0389",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_deep": [
+  {
+   "fact": "u24DD has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has uppercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "u24DD has uppercase u24C3",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has lowercase ?](a,b) => [? has uppercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u24C3 has lowercase u24DD",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u24C3 has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u0480 has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has lowercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "u0480 has lowercase u0481",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has uppercase ?](a,b) => [? has lowercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u0481 has uppercase u0480",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u0481 has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u0140 is in script script_LATIN",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has uppercase ?](a,b) & [? is in script ?](b,c) => [? is in script ?](a,c)",
+   "because": [
+    {
+     "fact": "u0140 has uppercase u013F",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has lowercase ?](a,b) => [? has uppercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u013F has lowercase u0140",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u013F is in script script_LATIN",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u1CA7 is in script script_GEORGIAN",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has lowercase ?](a,b) & [? is in script ?](b,c) => [? is in script ?](a,c)",
+   "because": [
+    {
+     "fact": "u1CA7 has lowercase u10E7",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has uppercase ?](a,b) => [? has lowercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u10E7 has uppercase u1CA7",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u10E7 is in script script_GEORGIAN",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u00F8 has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has uppercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "u00F8 has uppercase u00D8",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has lowercase ?](a,b) => [? has uppercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u00D8 has lowercase u00F8",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u00D8 has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u01A4 has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has lowercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "u01A4 has lowercase u01A5",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has uppercase ?](a,b) => [? has lowercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u01A5 has uppercase u01A4",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u01A5 has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_not_in_key": [
+  {
+   "fact": "uAB78 has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has uppercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "uAB78 has uppercase u13A8",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has lowercase ?](a,b) => [? has uppercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u13A8 has lowercase uAB78",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u13A8 has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u1B43 has bidi class bidi_NSM",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? decomposes to ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "u1B43 decomposes to u1B42",
+     "stated": true
+    },
+    {
+     "fact": "u1B42 has bidi class bidi_NSM",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "uAB86 has bidi class bidi_L",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has uppercase ?](a,b) & [? has bidi class ?](b,c) => [? has bidi class ?](a,c)",
+   "because": [
+    {
+     "fact": "uAB86 has uppercase u13B6",
+     "stated": false,
+     "tier": "law",
+     "rule": "[? has lowercase ?](a,b) => [? has uppercase ?](b,a)",
+     "because": [
+      {
+       "fact": "u13B6 has lowercase uAB86",
+       "stated": true
+      }
+     ]
+    },
+    {
+     "fact": "u13B6 has bidi class bidi_L",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "u03F4 has uppercase u0398",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? has lowercase ?](a,b) & [? has uppercase ?](b,c) => [? has uppercase ?](a,c)",
+   "because": [
+    {
+     "fact": "u03F4 has lowercase u03B8",
+     "stated": true
+    },
+    {
+     "fact": "u03B8 has uppercase u0398",
+     "stated": true
+    }
+   ]
+  }
+ ]
+}

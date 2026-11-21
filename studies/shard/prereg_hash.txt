@@ -1,0 +1,4 @@
+657ab1bdfc3bb7c53bd2225fde4ed3b0bd1a015f882db392f13de5f66d02ab42  PREREGISTRATION.md
+2026-11-21T02:52:34Z
+237f1a811108b9e198aba2b54f3bb8490bbbd1c25ec1c9f7d6abce5dec34945e  tools/shard.py
+95b009b867f504ea16c162f7b2afde1de58010beb0774ae20ffaa8e617cb9329  tools/run.py

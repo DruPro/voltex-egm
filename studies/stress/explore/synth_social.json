@@ -1,0 +1,189 @@
+{
+ "dataset": "synth_social",
+ "settings": {},
+ "stated": 7206,
+ "key": 1794,
+ "derived_new": 1794,
+ "recovered": 1794,
+ "not_in_key": 0,
+ "relations": [
+  {
+   "relation": "employs",
+   "facts": 3000
+  },
+  {
+   "relation": "is married to",
+   "facts": 2423
+  },
+  {
+   "relation": "works for",
+   "facts": 1783
+  }
+ ],
+ "rules": [
+  {
+   "text": "[? is married to ?](a,b) => [? is married to ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 2423,
+   "k": 1846,
+   "rate": 0.76,
+   "lift": 1846.0,
+   "known": 1846,
+   "agree": 1.0
+  },
+  {
+   "text": "[? works for ?](a,b) => [? employs ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1783,
+   "k": 1783,
+   "rate": 1.0,
+   "lift": 100.0,
+   "known": 1783,
+   "agree": 1.0
+  },
+  {
+   "text": "[? employs ?](a,b) => [? works for ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 3000,
+   "k": 1783,
+   "rate": 0.59,
+   "lift": 59.4,
+   "known": 1783,
+   "agree": 1.0
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "tendency_steps": 0,
+   "facts": 1794
+  }
+ ],
+ "proofs_recovered": [
+  {
+   "fact": "prazuki0 works for covudipa5",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? employs ?](a,b) => [? works for ?](b,a)",
+   "because": [
+    {
+     "fact": "covudipa5 employs prazuki0",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "ptakufa4 is married to pdibulo7",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is married to ?](a,b) => [? is married to ?](b,a)",
+   "because": [
+    {
+     "fact": "pdibulo7 is married to ptakufa4",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "psifari9 works for copusoki8",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? employs ?](a,b) => [? works for ?](b,a)",
+   "because": [
+    {
+     "fact": "copusoki8 employs psifari9",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "ppudule3 works for cototubo1",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? employs ?](a,b) => [? works for ?](b,a)",
+   "because": [
+    {
+     "fact": "cototubo1 employs ppudule3",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pkumegi0 is married to pbobefa4",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is married to ?](a,b) => [? is married to ?](b,a)",
+   "because": [
+    {
+     "fact": "pbobefa4 is married to pkumegi0",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pmukabu1 is married to pkibazo7",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is married to ?](a,b) => [? is married to ?](b,a)",
+   "because": [
+    {
+     "fact": "pkibazo7 is married to pmukabu1",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "ppivogo8 works for comiroku8",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? employs ?](a,b) => [? works for ?](b,a)",
+   "because": [
+    {
+     "fact": "comiroku8 employs ppivogo8",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "psubizu7 works for colefara9",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? employs ?](a,b) => [? works for ?](b,a)",
+   "because": [
+    {
+     "fact": "colefara9 employs psubizu7",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pfudoni5 is married to pmukupo1",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? is married to ?](a,b) => [? is married to ?](b,a)",
+   "because": [
+    {
+     "fact": "pmukupo1 is married to pfudoni5",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "psagevi4 works for cosomogo4",
+   "stated": false,
+   "tier": "law",
+   "rule": "[? employs ?](a,b) => [? works for ?](b,a)",
+   "because": [
+    {
+     "fact": "cosomogo4 employs psagevi4",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_deep": [],
+ "proofs_not_in_key": []
+}

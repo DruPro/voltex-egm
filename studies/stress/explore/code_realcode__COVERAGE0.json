@@ -1,0 +1,559 @@
+{
+ "dataset": "code_realcode",
+ "settings": {
+  "COVERAGE": "0",
+  "MAXWORDS": 41918
+ },
+ "stated": 64763,
+ "key": 16374,
+ "derived_new": 108323,
+ "recovered": 1783,
+ "not_in_key": 106540,
+ "relations": [
+  {
+   "relation": "is defined in",
+   "facts": 33208
+  },
+  {
+   "relation": "calls",
+   "facts": 16414
+  },
+  {
+   "relation": "imports",
+   "facts": 6498
+  },
+  {
+   "relation": "raises",
+   "facts": 4352
+  },
+  {
+   "relation": "inherits from",
+   "facts": 4283
+  }
+ ],
+ "rules": [
+  {
+   "text": "[? is defined in ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 798,
+   "k": 777,
+   "rate": 0.97,
+   "lift": 2377.7,
+   "known": 798,
+   "agree": 0.97
+  },
+  {
+   "text": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 13062,
+   "k": 8456,
+   "rate": 0.65,
+   "lift": 1580.9,
+   "known": 10372,
+   "agree": 0.82
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 2465,
+   "k": 1114,
+   "rate": 0.45,
+   "lift": 1103.6,
+   "known": 2010,
+   "agree": 0.55
+  },
+  {
+   "text": "[? imports ?](a,b) & [? is defined in ?](b,c) => [? imports ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 111,
+   "k": 50,
+   "rate": 0.45,
+   "lift": 270.4,
+   "known": 111,
+   "agree": 0.45
+  },
+  {
+   "text": "[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 17,
+   "k": 5,
+   "rate": 0.29,
+   "lift": 170.0,
+   "known": 6,
+   "agree": 0.83
+  },
+  {
+   "text": "[? is defined in ?](a,b) & [? imports ?](b,c) => [? imports ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 98782,
+   "k": 78,
+   "rate": 0.0,
+   "lift": 0.5,
+   "known": 80,
+   "agree": 0.97
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "tendency_steps": 0,
+   "facts": 73
+  },
+  {
+   "round": 1,
+   "tendency_steps": 1,
+   "facts": 100859
+  },
+  {
+   "round": 2,
+   "tendency_steps": 1,
+   "facts": 745
+  },
+  {
+   "round": 2,
+   "tendency_steps": 2,
+   "facts": 6124
+  },
+  {
+   "round": 3,
+   "tendency_steps": 1,
+   "facts": 1
+  },
+  {
+   "round": 3,
+   "tendency_steps": 2,
+   "facts": 34
+  },
+  {
+   "round": 3,
+   "tendency_steps": 3,
+   "facts": 479
+  },
+  {
+   "round": 4,
+   "tendency_steps": 3,
+   "facts": 1
+  },
+  {
+   "round": 4,
+   "tendency_steps": 4,
+   "facts": 7
+  }
+ ],
+ "proofs_recovered": [
+  {
+   "fact": "wheel__WheelFile_writestr is defined in wheel__wheelfile",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "wheel__WheelFile_writestr calls wheel__get_zipinfo_datetime",
+     "stated": true
+    },
+    {
+     "fact": "wheel__get_zipinfo_datetime is defined in wheel__wheelfile",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "passlib___CryptConfig__get_record_options_with_flag is defined in passlib__context",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "passlib___CryptConfig__get_record_options_with_flag calls passlib___CryptConfig_is_deprecated_with_flag",
+     "stated": true
+    },
+    {
+     "fact": "passlib___CryptConfig_is_deprecated_with_flag is defined in passlib__context",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "attr___attrs_to_init_script is defined in attr___make",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "attr___attrs_to_init_script calls attr___determine_setters",
+     "stated": true
+    },
+    {
+     "fact": "attr___determine_setters is defined in attr___make",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "attr___determine_setters calls attr___setattr",
+       "stated": true
+      },
+      {
+       "fact": "attr___setattr is defined in attr___make",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "jinja2__Environment_lex is defined in jinja2__environment",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "jinja2__Environment_lex calls jinja2__Environment_handle_exception",
+     "stated": true
+    },
+    {
+     "fact": "jinja2__Environment_handle_exception is defined in jinja2__environment",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "pip__LegacyWindowsTerm___init__ is defined in pip___vendor__rich___win32_console",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "pip__LegacyWindowsTerm___init__ calls pip__GetConsoleScreenBufferInfo",
+     "stated": true
+    },
+    {
+     "fact": "pip__GetConsoleScreenBufferInfo is defined in pip___vendor__rich___win32_console",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "apport__increment_crash_counter is defined in apport__fileutils",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "apport__increment_crash_counter calls apport__seen_report",
+     "stated": true
+    },
+    {
+     "fact": "apport__seen_report is defined in apport__fileutils",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "numpy__suppress_warnings___enter__ is defined in numpy__testing___private__utils",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "numpy__suppress_warnings___enter__ calls numpy__suppress_warnings__clear_registries",
+     "stated": true
+    },
+    {
+     "fact": "numpy__suppress_warnings__clear_registries is defined in numpy__testing___private__utils",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "cloudinit__update_ssh_config is defined in cloudinit__ssh_util",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "cloudinit__update_ssh_config calls cloudinit___ensure_cloud_init_ssh_config_file",
+     "stated": true
+    },
+    {
+     "fact": "cloudinit___ensure_cloud_init_ssh_config_file is defined in cloudinit__ssh_util",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "Quirks__QuirkChecker_enable_quirks is defined in Quirks__quirkapplier",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "Quirks__QuirkChecker_enable_quirks calls Quirks__QuirkChecker__check_quirks",
+     "stated": true
+    },
+    {
+     "fact": "Quirks__QuirkChecker__check_quirks is defined in Quirks__quirkapplier",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "asyncio___SelectorTransport_is_reading is defined in asyncio__selector_events",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "asyncio___SelectorTransport_is_reading calls asyncio___SelectorTransport_is_closing",
+     "stated": true
+    },
+    {
+     "fact": "asyncio___SelectorTransport_is_closing is defined in asyncio__selector_events",
+     "stated": true
+    }
+   ]
+  }
+ ],
+ "proofs_deep": [
+  {
+   "fact": "numpy___block_slicing is defined in numpy___core__shape_base",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "numpy___block_slicing calls numpy___block_info_recursion",
+     "stated": true
+    },
+    {
+     "fact": "numpy___block_info_recursion is defined in numpy___core__shape_base",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "numpy___block_info_recursion calls numpy___atleast_nd",
+       "stated": true
+      },
+      {
+       "fact": "numpy___atleast_nd is defined in numpy___core__shape_base",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "cloudinit__read_seeded is defined in cloudinit__util",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "cloudinit__read_seeded calls cloudinit__load_yaml",
+     "stated": true
+    },
+    {
+     "fact": "cloudinit__load_yaml is defined in cloudinit__util",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "cloudinit__load_yaml calls cloudinit__decode_binary",
+       "stated": true
+      },
+      {
+       "fact": "cloudinit__decode_binary is defined in cloudinit__util",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "passlib__norm_hash_name is defined in passlib__crypto__digest",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "passlib__norm_hash_name calls passlib__lookup_hash",
+     "stated": true
+    },
+    {
+     "fact": "passlib__lookup_hash is defined in passlib__crypto__digest",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "passlib__lookup_hash calls passlib___get_hash_aliases",
+       "stated": true
+      },
+      {
+       "fact": "passlib___get_hash_aliases is defined in passlib__crypto__digest",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "xkit__Parser__check_sanity is defined in xkit__xorgparser",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "xkit__Parser__check_sanity calls xkit__Parser__fill_identifiers",
+     "stated": true
+    },
+    {
+     "fact": "xkit__Parser__fill_identifiers is defined in xkit__xorgparser",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "xkit__Parser__fill_identifiers calls xkit__Parser_get_value",
+       "stated": true
+      },
+      {
+       "fact": "xkit__Parser_get_value is defined in xkit__xorgparser",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "babel__PoFileParser__process_message_line is defined in babel__messages__pofile",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "babel__PoFileParser__process_message_line calls babel__PoFileParser__process_keyword_line",
+     "stated": true
+    },
+    {
+     "fact": "babel__PoFileParser__process_keyword_line is defined in babel__messages__pofile",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "babel__PoFileParser__process_keyword_line calls babel__PoFileParser__finish_current_message",
+       "stated": true
+      },
+      {
+       "fact": "babel__PoFileParser__finish_current_message is defined in babel__messages__pofile",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "fact": "blueman__RecentConns_on_manager_state_changed is defined in blueman__plugins__applet__RecentConns",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "because": [
+    {
+     "fact": "blueman__RecentConns_on_manager_state_changed calls blueman__RecentConns__rebuild",
+     "stated": true
+    },
+    {
+     "fact": "blueman__RecentConns__rebuild is defined in blueman__plugins__applet__RecentConns",
+     "stated": false,
+     "tier": "tendency",
+     "rule": "[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+     "because": [
+      {
+       "fact": "blueman__RecentConns__rebuild calls blueman__RecentConns__build_menu_item",
+       "stated": true
+      },
+      {
+       "fact": "blueman__RecentConns__build_menu_item is defined in blueman__plugins__applet__RecentConns",
+       "stated": true
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "proofs_not_in_key": [
+  {
+   "fact": "pip__Bar___repr__ imports pip___vendor__rich__measure",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? is defined in ?](a,b) & [? imports ?](b,c) => [? imports ?](a,c)",
+   "because": [
+    {
+     "fact": "pip__Bar___repr__ is defined in pip___vendor__rich__bar",
+     "stated": true
+    },
+    {
+     "fact": "pip___vendor__rich__bar imports pip___vendor__rich__measure",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "passlib___NoBackend_genhash imports passlib__utils__handlers",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? is defined in ?](a,b) & [? imports ?](b,c) => [? imports ?](a,c)",
+   "because": [
+    {
+     "fact": "passlib___NoBackend_genhash is defined in passlib__handlers__argon2",
+     "stated": true
+    },
+    {
+     "fact": "passlib__handlers__argon2 imports passlib__utils__handlers",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "attr___ClassBuilder_add_order imports attr__exceptions",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? is defined in ?](a,b) & [? imports ?](b,c) => [? imports ?](a,c)",
+   "because": [
+    {
+     "fact": "attr___ClassBuilder_add_order is defined in attr___make",
+     "stated": true
+    },
+    {
+     "fact": "attr___make imports attr__exceptions",
+     "stated": true
+    }
+   ]
+  },
+  {
+   "fact": "email___Accumulator___len__ imports email__base64mime",
+   "stated": false,
+   "tier": "tendency",
+   "rule": "[? is defined in ?](a,b) & [? imports ?](b,c) => [? imports ?](a,c)",
+   "because": [
+    {
+     "fact": "email___Accumulator___len__ is defined in email__header",
+     "stated": true
+    },
+    {
+     "fact": "email__header imports email__base64mime",
+     "stated": true
+    }
+   ]
+  }
+ ]
+}

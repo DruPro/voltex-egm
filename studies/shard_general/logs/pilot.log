@@ -1,0 +1,20 @@
+company_noise0.0_scale2_seed9 single 1.0 0.9576923076923077 0.145 27.5
+company_noise0.0_scale2_seed9 A 2 {'precision': 1.0, 'recall': 0.9418803418803419, 'wrong': 0, 'jaccard_vs_single': 0.8992, 'identical_to_single': False, 'duplication': 1.049, 'assigned_share': 0.83, 'consensus_dropped': 0, 'seconds': 0.337} []
+company_noise0.0_scale2_seed9 R 2 {'precision': 1.0, 'recall': 0.9106837606837607, 'wrong': 0, 'jaccard_vs_single': 0.4253, 'identical_to_single': False, 'duplication': 1.0, 'assigned_share': 1.0, 'consensus_dropped': 50, 'seconds': 0.376} []
+company_noise0.0_scale2_seed9 U 2 {'precision': 1.0, 'recall': 0.9576923076923077, 'wrong': 0, 'jaccard_vs_single': 1.0, 'identical_to_single': True, 'duplication': 1.002, 'assigned_share': None, 'consensus_dropped': 0, 'seconds': 0.306} []
+company_noise0.15_scale2_seed9 single 0.9713766469786461 0.8548580567772891 0.13 40.3
+company_noise0.15_scale2_seed9 A 2 {'precision': 0.9507874015748031, 'recall': 0.7724910035985606, 'wrong': 100, 'jaccard_vs_single': 0.771, 'identical_to_single': False, 'duplication': 1.058, 'assigned_share': 0.7958, 'consensus_dropped': 286, 'seconds': 0.319} []
+company_noise0.15_scale2_seed9 R 2 {'precision': 0.9715789473684211, 'recall': 0.7381047580967613, 'wrong': 54, 'jaccard_vs_single': 0.3655, 'identical_to_single': False, 'duplication': 1.0, 'assigned_share': 1.0, 'consensus_dropped': 608, 'seconds': 0.349} []
+company_noise0.15_scale2_seed9 U 2 {'precision': 0.9713766469786461, 'recall': 0.8548580567772891, 'wrong': 63, 'jaccard_vs_single': 1.0, 'identical_to_single': True, 'duplication': 1.011, 'assigned_share': None, 'consensus_dropped': 0, 'seconds': 0.291} []
+blind_scale1_seed9 single 0.9704968944099379 0.5125051250512506 0.163 43.1
+blind_scale1_seed9 A 2 {'precision': 0.9644218551461246, 'recall': 0.466789667896679, 'wrong': 84, 'jaccard_vs_single': 0.8499, 'identical_to_single': False, 'duplication': 1.031, 'assigned_share': 0.8202, 'consensus_dropped': 45, 'seconds': 0.32} []
+blind_scale1_seed9 R 2 {'precision': 0.991869918699187, 'recall': 0.17507175071750716, 'wrong': 7, 'jaccard_vs_single': 0.3296, 'identical_to_single': False, 'duplication': 1.0, 'assigned_share': 1.0, 'consensus_dropped': 12171, 'seconds': 0.566} []
+gates_per_kind200_seed9 single 1.0 0.7009063444108762 0.263 50.6
+gates_per_kind200_seed9 A 2 {'precision': 1.0, 'recall': 0.0, 'wrong': 0, 'jaccard_vs_single': 0.0, 'identical_to_single': False, 'duplication': 1.0, 'assigned_share': 0.7806, 'consensus_dropped': 210, 'seconds': 0.392} []
+gates_per_kind200_seed9 R 2 {'precision': 1.0, 'recall': 0.0, 'wrong': 0, 'jaccard_vs_single': 0.0, 'identical_to_single': False, 'duplication': 1.0, 'assigned_share': 1.0, 'consensus_dropped': 0, 'seconds': 0.397} []
+lineage_families120_seed9 single 1.0 1.0 0.036 50.6
+lineage_families120_seed9 A 2 {'precision': 1.0, 'recall': 1.0, 'wrong': 0, 'jaccard_vs_single': 1.0, 'identical_to_single': True, 'duplication': 1.0, 'assigned_share': 1.0, 'consensus_dropped': 0, 'seconds': 0.07} []
+lineage_families120_seed9 R 2 {'precision': 1.0, 'recall': 0.22777777777777777, 'wrong': 0, 'jaccard_vs_single': 0.2278, 'identical_to_single': False, 'duplication': 1.0, 'assigned_share': 1.0, 'consensus_dropped': 0, 'seconds': 0.069} []
+realcode_hide0.2_seed9 single 0.016561196868827274 0.11187299234000495 9.273 147.6
+realcode_hide0.2_seed9 A 2 {'precision': 0.0146096306685367, 'recall': 0.09266123054114159, 'wrong': 101172, 'jaccard_vs_single': 0.9377, 'identical_to_single': False, 'duplication': 1.003, 'assigned_share': 0.9721, 'consensus_dropped': 1721, 'seconds': 43.605} ["8 facts reached no shard (no shard mentions their subject); first: 'gi__Adjustment inherits from gi__Adjustment'. central=True would at least learn from them."]
+realcode_hide0.2_seed9 R 2 {'precision': 0.0195910780669145, 'recall': 0.06510995799357548, 'wrong': 52746, 'jaccard_vs_single': 0.4903, 'identical_to_single': False, 'duplication': 1.0, 'assigned_share': 1.0, 'consensus_dropped': 1, 'seconds': 19.029} []

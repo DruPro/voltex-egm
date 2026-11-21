@@ -209,6 +209,93 @@ The data is in [`examples/`](examples). The questions and keys are the ones used
 
 ---
 
+## Results on real workflows
+
+### Best case: exact facts from one large codebase
+
+The input was the CPython 3.13 standard library, 273,430 lines, read with Python's `ast`
+([docs/STRENGTHS.md](docs/STRENGTHS.md), `studies/strengths`, pre-registered). Every fact is exactly true, and every
+answer is checked against the complete truth. 5,901 facts were hidden, and no rules were given.
+
+| | |
+|---|---|
+| Hidden facts recovered | **5,829 of 5,901 (98.8%)** |
+| Law-tier answers correct | **5,829 of 5,829** |
+| Wrong answers | 21, all labelled *tendency* by the engine (excluded by `strict=True`) |
+| Time, memory | 10.5 s, 210 MB |
+
+| Reasoning, learned from the code alone | Setting | Recall without → with |
+|---|---|---|
+| Every ancestor of a class, up to 5 generations, with 70% of ancestries hidden | `DEPTH 0` | 0.965 → 1.000 (vs `DEPTH 1`) |
+| Method → class → module → package, a 3-premise rule | `CHAIN 3` | 0.000 → 1.000 |
+| What Python passes as the first argument (classmethod → `cls`, staticmethod → nothing, …) | `TREES 1` | 0.000 → 0.981 |
+
+```
+logging.handlers.RotatingFileHandler is a subclass of logging.Filterer       [law, round 3; names shortened below]
+├── RotatingFileHandler is a subclass of logging.Handler                     [law]
+│   ├── RotatingFileHandler is a subclass of logging.FileHandler             [law]
+│   │   ├── RotatingFileHandler inherits from BaseRotatingHandler            (stated)
+│   │   └── BaseRotatingHandler inherits from logging.FileHandler            (stated)
+│   └── logging.FileHandler is a subclass of logging.Handler                 [law]
+│       ├── FileHandler inherits from StreamHandler                          (stated)
+│       └── StreamHandler inherits from Handler                              (stated)
+└── logging.Handler inherits from logging.Filterer                           (stated)
+```
+
+What got there:
+- **Facts the rule shapes can express** ([docs/DATA_DESIGN.md](docs/DATA_DESIGN.md), section 2);
+- **`TENDENCYSTEPS 0`** for answers you act on.
+
+Stated naively, the same code gave recall 0.276. The one gap: exceptions to a general rule (`classmethod` and
+`staticmethod`) lose the vote to it, so those 72 facts got no correct answer.
+
+### Noisy extractions and partial keys
+
+From the stress study (`studies/stress`): 31 datasets, 295 runs, with 20% of each real dataset hidden as an answer
+key.
+
+**An agent using the engine** (Claude Sonnet 5.5 over `egm mcp`, engine tools only; recorded sessions, each claim
+checked against the hidden facts: [docs/AGENT_SESSIONS.md](docs/AGENT_SESSIONS.md)):
+
+| Task, on 125 real Python packages or the dpkg database | Result |
+|---|---|
+| Where is this function defined? (facts hidden from the engine) | 3 of 3 found by inference, each with its proof |
+| Impact analysis: callers two levels up | 6 of 6 callers, with their modules |
+| Where can this exception come from? | stated raisers and all 4 callers right; 1 of 7 inferred raisers right, which the agent flagged as weak leads |
+| Why does inference derive a million facts? | root cause found (a reversed rule) in 22 engine calls, 100 s |
+
+**What the engine learned with no rules given** ([docs/STRESS_FINDINGS.md](docs/STRESS_FINDINGS.md)):
+
+| Data | Learned | Accuracy of new facts |
+|---|---|---|
+| Unicode tables (11,172 characters) | case pairs are inverses; case partners and decompositions share script, direction, category | 96.2% true against `unicodedata`; 40 of 50 errors are Unicode's own exceptions |
+| Python code (64,763 facts) | a function lives where the functions it calls live (0.82 on 10,372 cases) | multi-step proofs; precision depends on settings |
+| Debian packages (14,296 facts) | transitive dependencies | 87.6% true with `DEPTH 1`, 4.2% with the default `DEPTH 4` |
+| Company and social data | team, manager, symmetric and inverse relations | precision 1.00 |
+
+**Settings matter per dataset.** `TENDENCYSTEPS 0` takes Python packages from 0.010 to 0.963 precision but halves
+recall on company data; `TREES 1` and `CHAIN 3` are the only way to answer gates and family trees. See
+[docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md).
+
+**Where it goes wrong:**
+- On sparse or skewed data it can accept rules backed by few known cases. Inference then multiplies them: 1.15
+  million dpkg facts at the defaults.
+- `DEPTH 0` on wide graphs runs out of memory.
+- Below the `MAXWORDS` cap, questions about rarer names come back empty, with no warning.
+
+## Implementation results
+
+| Change | Result |
+|---|---|
+| `CLUSTERSTREAM` (on by default) | Categories are built without listing every similar pair. Identical output on 221/221 regression cells. 244,444 facts: 8,350 MB, 48.5 s → 256 MB, 19.7 s |
+| Cheaper joined check in the category loop | Identical output on 294/294 stress runs and 221/221 regression cells. Gates, 80,063 facts: 22.1 s → 2.4 s; code in three languages 10.6 s → 3.9 s |
+| `egm.shard` (experimental) | Several engines for independent sources. Splitting one dataset is not general: it matched one engine on 2 of 6 world shapes ([studies/shard_general](studies/shard_general/RESULTS.md)) |
+
+Every change was pre-registered, gated on byte-identical output, and run on every dataset
+([studies/scaling](studies/scaling/PROMOTION.md), [studies/stress](studies/stress/RESULTS.md)).
+
+---
+
 ## Known limitations
 
 <details>
@@ -240,8 +327,11 @@ voltex-egm/
 ├── bin/egm                # launcher (works from a checkout or an install)
 ├── docs/
 │   ├── SDK.md             # SDK reference
-│   └── MCP.md             # MCP server: client setup, tools, protocol
+│   ├── MCP.md             # MCP server: client setup, tools, protocol
+│   ├── SETTINGS.md, CHOOSING_SETTINGS.md     # every setting; which to use when
+│   └── BUILDING_A_LAYER.md, AGENT_SESSIONS.md, STRENGTHS.md, STRESS_FINDINGS.md
 ├── examples/              # Requests (Haiku facts) and tokenomics (S, M, L) with keys
+├── studies/               # pre-registered studies; studies/stress (bench, layers), studies/strengths (best case)
 ├── tests/                 # run_tests.py (kit), test_sdk.py (SDK), test_mcp.py (MCP)
 ├── media/images/          # logo and mascot
 ├── pyproject.toml         # pip packaging
@@ -257,13 +347,31 @@ voltex-egm/
 | [docs/SDK.md](docs/SDK.md) | Python SDK reference, including an LLM-tool example |
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
 | [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
+| [docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md) | Which settings to use for what you are trying to do, when not to, and what each costs (measured) |
+| [docs/STRENGTHS.md](docs/STRENGTHS.md) | The engine at its best: exact facts from the Python standard library, complete truth; depth, multi-premise and tree reasoning with proofs |
+| [docs/STRESS_FINDINGS.md](docs/STRESS_FINDINGS.md) | What the engine learned from real code, Unicode and Debian package data, with proofs and errors |
+| [docs/AGENT_SESSIONS.md](docs/AGENT_SESSIONS.md) | Recorded Sonnet sessions over MCP: code navigation, impact analysis, debugging, each checked against hidden facts |
+| [docs/BUILDING_A_LAYER.md](docs/BUILDING_A_LAYER.md) | Building an analysis layer (code, tables, logs): fact design, hidden keys, choosing settings, reading rules and proofs |
 | [docs/DATA_DESIGN.md](docs/DATA_DESIGN.md) | Designing data for deliberate inference: rule shapes, law vs tendency, several engines together |
 | [docs/THEORY.md](docs/THEORY.md) | Principles and theory: the layers, emergent behavior, information limits, design rules |
-| [studies/](studies/) | Pre-registered studies: inference depth, multi-premise rules, configuration |
+| [studies/](studies/) | Pre-registered studies: inference depth, multi-premise rules, configuration, scaling, sharding, the stress bench |
 
 ---
 
 ## Changelog
+
+### Unreleased (branch `study/shard`)
+
+- `CLUSTERSTREAM` is on by default. Same answers, far less memory on large vocabularies.
+- Cheaper joined check in the category loop. Same answers; builds up to 9× faster on large vocabularies.
+- `egm.shard` (experimental), for independent sources.
+- New docs:
+  - `CHOOSING_SETTINGS.md`;
+  - `BUILDING_A_LAYER.md`;
+  - `AGENT_SESSIONS.md`;
+  - `STRESS_FINDINGS.md`;
+  - `STRENGTHS.md`: the best case on exact code facts, with 98.8% of hidden facts recovered and every law-tier
+    answer correct.
 
 ### 2.2.1
 

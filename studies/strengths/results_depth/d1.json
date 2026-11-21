@@ -1,0 +1,258 @@
+{
+ "name": "d1",
+ "settings": {
+  "MAXWORDS": 28500,
+  "TENDENCYSTEPS": 0,
+  "DEPTH": "1"
+ },
+ "stated": 64691,
+ "hidden": 6889,
+ "derived_new": 1630,
+ "correct": 1630,
+ "wrong": 0,
+ "recovered": 1630,
+ "precision": 1.0,
+ "recall": 0.2366,
+ "per_relation": {
+  "is a subclass of": {
+   "derived": 1630,
+   "correct": 1630,
+   "wrong": 0,
+   "hidden": 1689,
+   "recovered": 1630,
+   "precision": 1.0,
+   "recall": 0.9651
+  },
+  "belongs to package": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 1414,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "is bound to": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 3786,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "other": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 0,
+   "recovered": 0,
+   "precision": null,
+   "recall": null
+  }
+ },
+ "build_s": 0.2,
+ "infer_s": 0.5,
+ "wall_s": 0.9,
+ "peak_rss_mb": 65,
+ "rounds": {
+  "1": 1630
+ },
+ "rules": [
+  {
+   "text": "[? is a base of ?](a,b) => [? inherits from ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 1643,
+   "rate": 1.0,
+   "lift": 382.1,
+   "known": 1643,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 1643,
+   "rate": 1.0,
+   "lift": 382.1,
+   "known": 1643,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) => [? is a base of ?](b,a)",
+   "shape": "inverse",
+   "tier": "tendency",
+   "n": 719,
+   "k": 495,
+   "rate": 0.69,
+   "lift": 263.0,
+   "known": 719,
+   "agree": 0.69
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 719,
+   "k": 400,
+   "rate": 0.56,
+   "lift": 225.3,
+   "known": 719,
+   "agree": 0.56
+  },
+  {
+   "text": "[? is a base of ?](a,b) & [? is a subclass of ?](b,c) => [? inherits from ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 516,
+   "k": 257,
+   "rate": 0.5,
+   "lift": 190.3,
+   "known": 480,
+   "agree": 0.54
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 306,
+   "k": 306,
+   "rate": 1.0,
+   "lift": 143.7,
+   "known": 306,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 115,
+   "k": 115,
+   "rate": 1.0,
+   "lift": 143.7,
+   "known": 115,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+   "shape": "inverse",
+   "tier": "law",
+   "n": 1643,
+   "k": 495,
+   "rate": 0.3,
+   "lift": 43.3,
+   "known": 495,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 861,
+   "k": 257,
+   "rate": 0.3,
+   "lift": 42.9,
+   "known": 257,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 355,
+   "k": 104,
+   "rate": 0.29,
+   "lift": 42.1,
+   "known": 104,
+   "agree": 1.0
+  }
+ ],
+ "proofs": {
+  "is a subclass of": [
+   {
+    "fact": "_android_support__BinaryLogStream is a subclass of io__RawIOBase",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "io__RawIOBase is a base of _android_support__BinaryLogStream",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "_android_support__BinaryLogStream is a subclass of io__IOBase",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "_android_support__BinaryLogStream inherits from io__RawIOBase",
+      "stated": true
+     },
+     {
+      "fact": "io__RawIOBase inherits from io__IOBase",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__iso8859_16__StreamReader is a subclass of codecs__Codec",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "encodings__iso8859_16__StreamReader inherits from codecs__StreamReader",
+      "stated": true
+     },
+     {
+      "fact": "codecs__StreamReader inherits from codecs__Codec",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__cp424__Codec is a subclass of codecs__Codec",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a base of ?](a,b) => [? is a subclass of ?](b,a)",
+    "because": [
+     {
+      "fact": "codecs__Codec is a base of encodings__cp424__Codec",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "belongs to package": [],
+  "is bound to": []
+ },
+ "proofs_wrong": []
+}

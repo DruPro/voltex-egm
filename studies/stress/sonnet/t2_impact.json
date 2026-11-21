@@ -1,0 +1,133 @@
+{
+ "task": "t2_impact",
+ "goal": "Impact analysis before a refactor: direct and second-level callers.",
+ "model": "claude-sonnet-5-5",
+ "kb": "code_realcode.txt",
+ "settings": [
+  "COVERAGE=0",
+  "MAXWORDS=42000"
+ ],
+ "prompt": "I'm about to change the signature of cloud-init's load_yaml (cloudinit__load_yaml). Using only the egm tools, list every function that calls it directly, then every function that calls one of those callers. Group them by the module they are defined in where the knowledge base knows it, and flag anything you are unsure of.",
+ "steps": [
+  {
+   "kind": "tool_call",
+   "tool": "ToolSearch",
+   "input": {
+    "query": "select:mcp__egm__egm_relations,mcp__egm__egm_ask,mcp__egm__egm_ask_many,mcp__egm__egm_infer",
+    "max_results": 5
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 3,
+   "result": "   "
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_relations",
+   "input": {}
+  },
+  {
+   "kind": "tool_result",
+   "chars": 1499,
+   "result": "{\"relations\":[{\"template\":\"? is defined in ?\",\"facts\":33208},{\"template\":\"? calls ?\",\"facts\":16414},{\"template\":\"? imports ?\",\"facts\":6498},{\"template\":\"? raises ?\",\"facts\":4352},{\"template\":\"? inherits from ?\",\"facts\":4283}],\"rules\":[{\"rule\":\"[? is defined in ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)\",\"accepted\":true,\"tier\":\"law\",\"rate\":0.97,\"lift\":2377.7,\"chains_seen\":798,\"conclusion_stated\":777,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)\",\"accepted\":true,\"tier\":\"tendency\",\"rate\":0.65,\"lift\":1580.9,\"chains_seen\":13062,\"conclusion_stated\":8456,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)\",\"accepted\":true,\"tier\":\"tendency\",\"rate\":0.45,\"lift\":1103.6,\"chains_seen\":2465,\"conclusion_stated\":1114,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? imports ?](a,b) & [? is defined in ?](b,c) => [? imports ?](a,c)\",\"accepted\":true,\"tier\":\"law\",\"rate\":0.45,\"lift\":270.4,\"chains_seen\":111,\"conclusion_stated\":50,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)\",\"accepted\":true,\"tier\":\"law\",\"rate\":0.29,\"lift\":170,\"chains_seen\":17,\"conclusion_stated\":5,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? is defined in ?](a,b) & [? imports ?](b,c) => [? imports ?](a,c)\",\"accepted\":true,\"tier\":\"tendency\",\"rate\":0,\"lift\":0.5,\"chains_seen\":98782,\"conclusion_stated\":78,\"shape\":\"chain\",\"premises\":2}]}"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_ask",
+   "input": {
+    "pattern": "? calls cloudinit__load_yaml"
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 579,
+   "result": "{\"pattern\":\"? calls cloudinit__load_yaml\",\"strict\":true,\"facts\":[{\"fact\":\"cloudinit__read_conf calls cloudinit__load_yaml\",\"subject\":\"cloudinit__read_conf\",\"relation\":\"calls\",\"object\":\"cloudinit__load_yaml\",\"status\":\"stated\"},{\"fact\":\"cloudinit__read_conf_from_cmdline calls cloudinit__load_yaml\",\"subject\":\"cloudinit__read_conf_from_cmdline\",\"relation\":\"calls\",\"object\":\"cloudinit__load_yaml\",\"status\":\"stated\"},{\"fact\":\"cloudinit__read_seeded calls cloudinit__load_yaml\",\"subject\":\"cloudinit__read_seeded\",\"relation\":\"calls\",\"object\":\"cloudinit__load_yaml\",\"status\":\"stated\"}]}"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_ask_many",
+   "input": {
+    "patterns": [
+     "? calls cloudinit__read_conf",
+     "? calls cloudinit__read_conf_from_cmdline",
+     "? calls cloudinit__read_seeded",
+     "cloudinit__load_yaml is defined in ?",
+     "cloudinit__read_conf is defined in ?",
+     "cloudinit__read_conf_from_cmdline is defined in ?",
+     "cloudinit__read_seeded is defined in ?"
+    ]
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 695,
+   "result": "{\"strict\":true,\"results\":[{\"pattern\":\"? calls cloudinit__read_conf\",\"strict\":true,\"values\":[\"cloudinit__read_conf_d\",\"cloudinit__read_conf_with_confd\"]},{\"pattern\":\"? calls cloudinit__read_conf_from_cmdline\",\"strict\":true,\"values\":[]},{\"pattern\":\"? calls cloudinit__read_seeded\",\"strict\":true,\"values\":[\"cloudinit__read_optional_seed\"]},{\"pattern\":\"cloudinit__load_yaml is defined in ?\",\"strict\":true,\"values\":[]},{\"pattern\":\"cloudinit__read_conf is defined in ?\",\"strict\":true,\"values\":[\"cloudinit__util\"]},{\"pattern\":\"cloudinit__read_conf_from_cmdline is defined in ?\",\"strict\":true,\"values\":[\"cloudinit__util\"]},{\"pattern\":\"cloudinit__read_seeded is defined in ?\",\"strict\":true,\"values\":[]}]}"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_ask_many",
+   "input": {
+    "patterns": [
+     "cloudinit__read_conf_d is defined in ?",
+     "cloudinit__read_conf_with_confd is defined in ?",
+     "cloudinit__read_optional_seed is defined in ?"
+    ]
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 314,
+   "result": "{\"strict\":true,\"results\":[{\"pattern\":\"cloudinit__read_conf_d is defined in ?\",\"strict\":true,\"values\":[\"cloudinit__util\"]},{\"pattern\":\"cloudinit__read_conf_with_confd is defined in ?\",\"strict\":true,\"values\":[]},{\"pattern\":\"cloudinit__read_optional_seed is defined in ?\",\"strict\":true,\"values\":[\"cloudinit__util\"]}]}"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_ask_many",
+   "input": {
+    "patterns": [
+     "cloudinit__load_yaml is defined in ?",
+     "cloudinit__read_seeded is defined in ?",
+     "? calls cloudinit__read_conf_from_cmdline"
+    ],
+    "strict": false
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 303,
+   "result": "{\"strict\":false,\"results\":[{\"pattern\":\"cloudinit__load_yaml is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__util\"]},{\"pattern\":\"cloudinit__read_seeded is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__util\"]},{\"pattern\":\"? calls cloudinit__read_conf_from_cmdline\",\"strict\":false,\"values\":[]}]}"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_ask",
+   "input": {
+    "pattern": "cloudinit__read_conf_with_confd is defined in ?",
+    "strict": false
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 540,
+   "result": "{\"pattern\":\"cloudinit__read_conf_with_confd is defined in ?\",\"strict\":false,\"facts\":[{\"fact\":\"cloudinit__read_conf_with_confd is defined in cloudinit__util\",\"subject\":\"cloudinit__read_conf_with_confd\",\"relation\":\"is defined in\",\"object\":\"cloudinit__util\",\"status\":\"inferred\",\"tier\":\"tendency\",\"score\":1,\"because\":[\"cloudinit__read_conf_with_confd calls cloudinit__read_conf\",\"cloudinit__read_conf is defined in cloudinit__util\"],\"rule\":\"[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)\",\"note\":\"2 of 2 paths agree\"}]}"
+  },
+  {
+   "kind": "text",
+   "text": "Pulling the results together now. I've got everything I need from the knowledge base.\n\n## Callers of `cloudinit__load_yaml`\n\n**Direct callers (all stated facts):**\n\n| Function | Module |\n|---|---|\n| `cloudinit__read_conf` | `cloudinit__util` (stated) |\n| `cloudinit__read_conf_from_cmdline` | `cloudinit__util` (stated) |\n| `cloudinit__read_seeded` | `cloudinit__util` (**inferred**, tendency tier) |\n\n**Callers of those callers (second level):**\n\n| Function | Calls | Module |\n|---|---|---|\n| `cloudinit__read_conf_d` | `read_conf` | `cloudinit__util` (stated) |\n| `cloudinit__read_conf_with_confd` | `read_conf` | `cloudinit__util` (**inferred**, tendency tier; 2 of 2 paths agree) |\n| `cloudinit__read_optional_seed` | `read_seeded` | `cloudinit__util` (stated) |\n| *(none found)* | `read_conf_from_cmdline` | n/a |\n\n## What I'm unsure of\n\n- **Module for `read_seeded` and `read_conf_with_confd`:** the knowledge base has no stated definition for either. The `cloudinit__util` placement comes from a tendency-tier rule: \"calls X, and X is defined in M, so the caller is defined in M\". That rule holds about 65% of the time. Check both by hand.\n- **Module of `load_yaml` itself:** only an inferred `cloudinit__util`, not a stated one.\n- **Callers only:** the knowledge base records `calls` edges. It won't show dynamic dispatch, calls through aliases or re-exports, or callers outside the indexed code. Tests, plugins and anything that imports `load_yaml` under another name could be missing.\n- **`read_conf_from_cmdline` has no callers:** the strict and non-strict queries both return none. That could mean it's unused, or it could be called in a way the index missed. I'd grep for it before concluding it's dead code.\n- **Depth:** I stopped at two levels, as you asked. Callers of `read_conf_d`, `read_conf_with_confd` and `read_optional_seed` would be the next ring if the signature change propagates."
+  }
+ ],
+ "final": "Pulling the results together now. I've got everything I need from the knowledge base.\n\n## Callers of `cloudinit__load_yaml`\n\n**Direct callers (all stated facts):**\n\n| Function | Module |\n|---|---|\n| `cloudinit__read_conf` | `cloudinit__util` (stated) |\n| `cloudinit__read_conf_from_cmdline` | `cloudinit__util` (stated) |\n| `cloudinit__read_seeded` | `cloudinit__util` (**inferred**, tendency tier) |\n\n**Callers of those callers (second level):**\n\n| Function | Calls | Module |\n|---|---|---|\n| `cloudinit__read_conf_d` | `read_conf` | `cloudinit__util` (stated) |\n| `cloudinit__read_conf_with_confd` | `read_conf` | `cloudinit__util` (**inferred**, tendency tier; 2 of 2 paths agree) |\n| `cloudinit__read_optional_seed` | `read_seeded` | `cloudinit__util` (stated) |\n| *(none found)* | `read_conf_from_cmdline` | n/a |\n\n## What I'm unsure of\n\n- **Module for `read_seeded` and `read_conf_with_confd`:** the knowledge base has no stated definition for either. The `cloudinit__util` placement comes from a tendency-tier rule: \"calls X, and X is defined in M, so the caller is defined in M\". That rule holds about 65% of the time. Check both by hand.\n- **Module of `load_yaml` itself:** only an inferred `cloudinit__util`, not a stated one.\n- **Callers only:** the knowledge base records `calls` edges. It won't show dynamic dispatch, calls through aliases or re-exports, or callers outside the indexed code. Tests, plugins and anything that imports `load_yaml` under another name could be missing.\n- **`read_conf_from_cmdline` has no callers:** the strict and non-strict queries both return none. That could mean it's unused, or it could be called in a way the index missed. I'd grep for it before concluding it's dead code.\n- **Depth:** I stopped at two levels, as you asked. Callers of `read_conf_d`, `read_conf_with_confd` and `read_optional_seed` would be the next ring if the signature change propagates.",
+ "meta": {
+  "num_turns": 8,
+  "duration_ms": 14302,
+  "total_cost_usd": 0.0906714,
+  "is_error": false,
+  "usage": {
+   "input_tokens": 14,
+   "cache_creation_input_tokens": 15953,
+   "cache_read_input_tokens": 102214,
+   "output_tokens": 1661
+  },
+  "wall_s": 16.0,
+  "exit": 0
+ }
+}

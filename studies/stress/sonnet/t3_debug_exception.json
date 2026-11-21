@@ -1,0 +1,126 @@
+{
+ "task": "t3_debug_exception",
+ "goal": "Debugging: trace an exception to where it can be raised.",
+ "model": "claude-sonnet-5-5",
+ "kb": "code_realcode.txt",
+ "settings": [
+  "COVERAGE=0",
+  "MAXWORDS=42000"
+ ],
+ "prompt": "A cloud-init run crashed with ProcessExecutionError (cloudinit__ProcessExecutionError). Using only the egm tools, find which functions or modules can raise it, where those are defined, and which other functions call them, so I know where to start debugging. Separate what the knowledge base states from what it infers.",
+ "steps": [
+  {
+   "kind": "tool_call",
+   "tool": "ToolSearch",
+   "input": {
+    "query": "select:mcp__egm__egm_relations,mcp__egm__egm_ask,mcp__egm__egm_ask_many,mcp__egm__egm_infer,mcp__egm__egm_values,mcp__egm__egm_conflicts,mcp__egm__egm_history",
+    "max_results": 10
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 6,
+   "result": "      "
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_relations",
+   "input": {}
+  },
+  {
+   "kind": "tool_result",
+   "chars": 1499,
+   "result": "{\"relations\":[{\"template\":\"? is defined in ?\",\"facts\":33208},{\"template\":\"? calls ?\",\"facts\":16414},{\"template\":\"? imports ?\",\"facts\":6498},{\"template\":\"? raises ?\",\"facts\":4352},{\"template\":\"? inherits from ?\",\"facts\":4283}],\"rules\":[{\"rule\":\"[? is defined in ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)\",\"accepted\":true,\"tier\":\"law\",\"rate\":0.97,\"lift\":2377.7,\"chains_seen\":798,\"conclusion_stated\":777,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? calls ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)\",\"accepted\":true,\"tier\":\"tendency\",\"rate\":0.65,\"lift\":1580.9,\"chains_seen\":13062,\"conclusion_stated\":8456,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)\",\"accepted\":true,\"tier\":\"tendency\",\"rate\":0.45,\"lift\":1103.6,\"chains_seen\":2465,\"conclusion_stated\":1114,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? imports ?](a,b) & [? is defined in ?](b,c) => [? imports ?](a,c)\",\"accepted\":true,\"tier\":\"law\",\"rate\":0.45,\"lift\":270.4,\"chains_seen\":111,\"conclusion_stated\":50,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)\",\"accepted\":true,\"tier\":\"law\",\"rate\":0.29,\"lift\":170,\"chains_seen\":17,\"conclusion_stated\":5,\"shape\":\"chain\",\"premises\":2},{\"rule\":\"[? is defined in ?](a,b) & [? imports ?](b,c) => [? imports ?](a,c)\",\"accepted\":true,\"tier\":\"tendency\",\"rate\":0,\"lift\":0.5,\"chains_seen\":98782,\"conclusion_stated\":78,\"shape\":\"chain\",\"premises\":2}]}"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_ask",
+   "input": {
+    "pattern": "? raises cloudinit__ProcessExecutionError"
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 4631,
+   "result": "{\"pattern\":\"? raises cloudinit__ProcessExecutionError\",\"strict\":true,\"facts\":[{\"fact\":\"cloudinit__find_home raises cloudinit__ProcessExecutionError\",\"subject\":\"cloudinit__find_home\",\"relation\":\"raises\",\"object\":\"cloudinit__ProcessExecutionError\",\"status\":\"stated\"},{\"fact\":\"cloudinit__subp raises cloudinit__ProcessExecutionError\",\"subject\":\"cloudinit__subp\",\"relation\":\"raises\",\"object\":\"cloudinit__ProcessExecutionError\",\"status\":\"stated\"},{\"fact\":\"cloudinit__ProcessExecutionError___init__ raises cloudinit__ProcessExecutionError\",\"subject\":\"cloudinit__ProcessExecutionError___init__\",\"relation\":\"raises\",\"object\":\"cloudinit__ProcessExecutionError\",\"status\":\"inferred\",\"tier\":\"law\",\"score\":0.83,\"because\":[\"cloudinit__ProcessExecutionError___init__ is defined in cloudinit__subp\",\"cloudinit__subp raises cloudinit__ProcessExecutionError\"],\"rule\":\"[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)\",\"note\":\"[law] (score 0.83) because cloudinit__ProcessExecutionError___init__ is defined in cloudinit__subp + cloudinit__subp raises cloudinit__ProcessExecutionError  [rule: [? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)]\"},{\"fact\":\"cloudinit__ProcessExecutionError__ensure_string raises cloudinit__ProcessExecutionError\",\"subject\":\"cloudinit__ProcessExecutionError__ensure_string\",\"relation\":\"raises\",\"object\":\"cloudinit__ProcessExecutionError\",\"status\":\"inferred\",\"tier\":\"law\",\"score\":0.83,\"because\":[\"cloudinit__ProcessExecutionError__ensure_string is defined in cloudinit__subp\",\"cloudinit__subp raises cloudinit__ProcessExecutionError\"],\"rule\":\"[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)\",\"note\":\"[law] (score 0.83) because cloudinit__ProcessExecutionError__ensure_string is defined in cloudinit__subp + cloudinit__subp raises cloudinit__ProcessExecutionError  [rule: [? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)]\"},{\"fact\":\"cloudinit__is_exe raises cloudinit__ProcessExecutionError\",\"subject\":\"cloudinit__is_exe\",\"relation\":\"raises\",\"object\":\"cloudinit__ProcessExecutionError\",\"status\":\"inferred\",\"tier\":\"law\",\"score\":0.83,\"because\":[\"cloudinit__is_exe is defined in cloudinit__subp\",\"cloudinit__subp raises cloudinit__ProcessExecutionError\"],\"rule\":\"[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)\",\"note\":\"[law] (score 0.83) because cloudinit__is_exe is defined in cloudinit__subp + cloudinit__subp raises cloudinit__ProcessExecutionError  [rule: [? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)]\"},{\"fact\":\"cloudinit__prepend_base_command raises cloudinit__ProcessExecutionError\",\"subject\":\"cloudinit__prepend_base_command\",\"relation\":\"raises\",\"object\":\"cloudinit__ProcessExecutionError\",\"status\":\"inferred\",\"tier\":\"law\",\"score\":0.83,\"because\":[\"cloudinit__prepend_base_command is defined in cloudinit__subp\",\"cloudinit__subp raises cloudinit__ProcessExecutionError\"],\"rule\":\"[? is defined in ?](a,b) & [? raises ?](b,c) => [? raises ?](a,c)\",\"note\":\"[law] (score 0.83) because"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_ask_many",
+   "input": {
+    "patterns": [
+     "cloudinit__find_home is defined in ?",
+     "cloudinit__subp is defined in ?",
+     "? calls cloudinit__find_home",
+     "? calls cloudinit__subp",
+     "? calls cloudinit__which",
+     "? calls cloudinit__prepend_base_command",
+     "? calls cloudinit__raise_on_invalid_command",
+     "? calls cloudinit__is_exe",
+     "? raises cloudinit__ProcessExecutionError",
+     "? inherits from cloudinit__ProcessExecutionError"
+    ],
+    "strict": false
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 1305,
+   "result": "{\"strict\":false,\"results\":[{\"pattern\":\"cloudinit__find_home is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__sources__DataSourceWSL\"]},{\"pattern\":\"cloudinit__subp is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__subp\"]},{\"pattern\":\"? calls cloudinit__find_home\",\"strict\":false,\"values\":[\"cloudinit__DataSourceWSL__get_data\"]},{\"pattern\":\"? calls cloudinit__subp\",\"strict\":false,\"values\":[\"cloudinit___write_command_output_to_file\",\"cloudinit__collect_logs\",\"cloudinit__handle_clean_args\",\"cloudinit__runparts\"]},{\"pattern\":\"? calls cloudinit__which\",\"strict\":false,\"values\":[]},{\"pattern\":\"? calls cloudinit__prepend_base_command\",\"strict\":false,\"values\":[\"cloudinit__run_commands\"]},{\"pattern\":\"? calls cloudinit__raise_on_invalid_command\",\"strict\":false,\"values\":[]},{\"pattern\":\"? calls cloudinit__is_exe\",\"strict\":false,\"values\":[\"cloudinit__which\"]},{\"pattern\":\"? raises cloudinit__ProcessExecutionError\",\"strict\":false,\"values\":[\"cloudinit__ProcessExecutionError___init__\",\"cloudinit__ProcessExecutionError__ensure_string\",\"cloudinit__find_home\",\"cloudinit__is_exe\",\"cloudinit__prepend_base_command\",\"cloudinit__raise_on_invalid_command\",\"cloudinit__runparts\",\"cloudinit__subp\",\"cloudinit__which\"]},{\"pattern\":\"? inherits from cloudinit__ProcessExecutionError\",\"strict\":false,\"values\":[]}]}"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_ask_many",
+   "input": {
+    "patterns": [
+     "cloudinit__runparts is defined in ?",
+     "cloudinit__prepend_base_command is defined in ?",
+     "cloudinit__which is defined in ?",
+     "cloudinit__raise_on_invalid_command is defined in ?",
+     "cloudinit__is_exe is defined in ?",
+     "? calls cloudinit__runparts",
+     "? calls cloudinit__run_commands",
+     "cloudinit__ProcessExecutionError is defined in ?",
+     "cloudinit__runparts raises ?"
+    ],
+    "strict": false
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 886,
+   "result": "{\"strict\":false,\"results\":[{\"pattern\":\"cloudinit__runparts is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__subp\"]},{\"pattern\":\"cloudinit__prepend_base_command is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__subp\"]},{\"pattern\":\"cloudinit__which is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__subp\"]},{\"pattern\":\"cloudinit__raise_on_invalid_command is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__subp\"]},{\"pattern\":\"cloudinit__is_exe is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__subp\"]},{\"pattern\":\"? calls cloudinit__runparts\",\"strict\":false,\"values\":[]},{\"pattern\":\"? calls cloudinit__run_commands\",\"strict\":false,\"values\":[]},{\"pattern\":\"cloudinit__ProcessExecutionError is defined in ?\",\"strict\":false,\"values\":[\"cloudinit__subp\"]},{\"pattern\":\"cloudinit__runparts raises ?\",\"strict\":false,\"values\":[\"TypeError\",\"cloudinit__ProcessExecutionError\"]}]}"
+  },
+  {
+   "kind": "tool_call",
+   "tool": "mcp__egm__egm_history",
+   "input": {
+    "pattern": "? raises cloudinit__ProcessExecutionError"
+   }
+  },
+  {
+   "kind": "tool_result",
+   "chars": 68,
+   "result": "{\"pattern\":\"? raises cloudinit__ProcessExecutionError\",\"history\":[]}"
+  },
+  {
+   "kind": "text",
+   "text": "I've finished querying the knowledge base, so here is the write-up.\n\n## Where `cloudinit__ProcessExecutionError` comes from\n\n**Stated by the knowledge base**\n- `cloudinit__subp` raises it. This is the main source. The `subp` module is also where the exception class is defined (`cloudinit__ProcessExecutionError is defined in cloudinit__subp`).\n- `cloudinit__find_home` raises it directly. It is defined in `cloudinit__sources__DataSourceWSL`, so it only matters on WSL.\n\n**Inferred (law tier, score 0.83)**\nThe rule is \"defined in module M, and M raises X, so the item raises X\". It marks these as raising the error only because they sit in the `subp` module:\n- `cloudinit__which`\n- `cloudinit__is_exe`\n- `cloudinit__prepend_base_command`\n- `cloudinit__raise_on_invalid_command`\n- `cloudinit__ProcessExecutionError___init__`\n- `cloudinit__ProcessExecutionError__ensure_string`\n\nThese are weak leads. The rule only says the module raises the error, not that each function does.\n\n**Inferred (tendency tier, only shown with `strict=false`)**\n- `cloudinit__runparts` is defined in `cloudinit__subp`. The knowledge base also says it raises `TypeError` and this error.\n\n## Callers\n\n**Stated or inferred by the knowledge base**\n- `cloudinit__subp` is called by:\n  - `cloudinit___write_command_output_to_file`\n  - `cloudinit__collect_logs`\n  - `cloudinit__handle_clean_args`\n  - `cloudinit__runparts`\n- `cloudinit__find_home` is called by `cloudinit__DataSourceWSL__get_data`.\n- `cloudinit__prepend_base_command` is called by `cloudinit__run_commands`.\n- `cloudinit__which` calls `cloudinit__is_exe`.\n\n**No callers recorded**\n- `which`, `raise_on_invalid_command`, `runparts` and `run_commands` have no recorded callers.\n- I did not find `runparts` or `run_commands` called from anywhere. That means the call graph is incomplete here, not that nothing calls them.\n\n## My reading\n\nThis part is my inference, not the knowledge base's.\n- Most `ProcessExecutionError` crashes in cloud-init come from `subp`, which wraps a subprocess that exited non-zero. Look at the exception's command, exit code, stdout and stderr in the crash log first.\n- The traceback will name the calling frame. It should be one of the four `subp` callers above, or something outside what the knowledge base recorded.\n- If the run was on WSL, check `DataSourceWSL__get_data` and `find_home` first.\n- If the traceback goes through `run_commands`, look at `prepend_base_command`.\n\n## Caveats\n- `egm_history` shows no earlier values, so none of these facts were revised.\n- The knowledge base only has direct `raises` facts for `subp` and `find_home`. Because it only records direct calls, it cannot tell you the full chain from a cloud-init stage down to `subp`.\n- I didn't run `egm_conflicts`, so I haven't checked whether any of these facts are disputed."
+  }
+ ],
+ "final": "I've finished querying the knowledge base, so here is the write-up.\n\n## Where `cloudinit__ProcessExecutionError` comes from\n\n**Stated by the knowledge base**\n- `cloudinit__subp` raises it. This is the main source. The `subp` module is also where the exception class is defined (`cloudinit__ProcessExecutionError is defined in cloudinit__subp`).\n- `cloudinit__find_home` raises it directly. It is defined in `cloudinit__sources__DataSourceWSL`, so it only matters on WSL.\n\n**Inferred (law tier, score 0.83)**\nThe rule is \"defined in module M, and M raises X, so the item raises X\". It marks these as raising the error only because they sit in the `subp` module:\n- `cloudinit__which`\n- `cloudinit__is_exe`\n- `cloudinit__prepend_base_command`\n- `cloudinit__raise_on_invalid_command`\n- `cloudinit__ProcessExecutionError___init__`\n- `cloudinit__ProcessExecutionError__ensure_string`\n\nThese are weak leads. The rule only says the module raises the error, not that each function does.\n\n**Inferred (tendency tier, only shown with `strict=false`)**\n- `cloudinit__runparts` is defined in `cloudinit__subp`. The knowledge base also says it raises `TypeError` and this error.\n\n## Callers\n\n**Stated or inferred by the knowledge base**\n- `cloudinit__subp` is called by:\n  - `cloudinit___write_command_output_to_file`\n  - `cloudinit__collect_logs`\n  - `cloudinit__handle_clean_args`\n  - `cloudinit__runparts`\n- `cloudinit__find_home` is called by `cloudinit__DataSourceWSL__get_data`.\n- `cloudinit__prepend_base_command` is called by `cloudinit__run_commands`.\n- `cloudinit__which` calls `cloudinit__is_exe`.\n\n**No callers recorded**\n- `which`, `raise_on_invalid_command`, `runparts` and `run_commands` have no recorded callers.\n- I did not find `runparts` or `run_commands` called from anywhere. That means the call graph is incomplete here, not that nothing calls them.\n\n## My reading\n\nThis part is my inference, not the knowledge base's.\n- Most `ProcessExecutionError` crashes in cloud-init come from `subp`, which wraps a subprocess that exited non-zero. Look at the exception's command, exit code, stdout and stderr in the crash log first.\n- The traceback will name the calling frame. It should be one of the four `subp` callers above, or something outside what the knowledge base recorded.\n- If the run was on WSL, check `DataSourceWSL__get_data` and `find_home` first.\n- If the traceback goes through `run_commands`, look at `prepend_base_command`.\n\n## Caveats\n- `egm_history` shows no earlier values, so none of these facts were revised.\n- The knowledge base only has direct `raises` facts for `subp` and `find_home`. Because it only records direct calls, it cannot tell you the full chain from a cloud-init stage down to `subp`.\n- I didn't run `egm_conflicts`, so I haven't checked whether any of these facts are disputed.",
+ "meta": {
+  "num_turns": 7,
+  "duration_ms": 17364,
+  "total_cost_usd": 0.1055048,
+  "is_error": false,
+  "usage": {
+   "input_tokens": 14,
+   "cache_creation_input_tokens": 18457,
+   "cache_read_input_tokens": 106488,
+   "output_tokens": 2100
+  },
+  "wall_s": 19.0,
+  "exit": 0
+ }
+}

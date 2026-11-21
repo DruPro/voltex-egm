@@ -1,0 +1,383 @@
+{
+ "name": "chain3",
+ "settings": {
+  "MAXWORDS": 16200,
+  "CHAIN": "3"
+ },
+ "stated": 51814,
+ "hidden": 5901,
+ "derived_new": 1627,
+ "correct": 1627,
+ "wrong": 0,
+ "recovered": 1627,
+ "precision": 1.0,
+ "recall": 0.2757,
+ "per_relation": {
+  "is a subclass of": {
+   "derived": 213,
+   "correct": 213,
+   "wrong": 0,
+   "hidden": 701,
+   "recovered": 213,
+   "precision": 1.0,
+   "recall": 0.3039
+  },
+  "belongs to package": {
+   "derived": 1414,
+   "correct": 1414,
+   "wrong": 0,
+   "hidden": 1414,
+   "recovered": 1414,
+   "precision": 1.0,
+   "recall": 1.0
+  },
+  "binds": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 3786,
+   "recovered": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  "other": {
+   "derived": 0,
+   "correct": 0,
+   "wrong": 0,
+   "hidden": 0,
+   "recovered": 0,
+   "precision": null,
+   "recall": null
+  }
+ },
+ "build_s": 0.2,
+ "infer_s": 0.4,
+ "wall_s": 0.7,
+ "peak_rss_mb": 55,
+ "rounds": {
+  "1": 1627
+ },
+ "rules": [
+  {
+   "text": "[? inherits from ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1643,
+   "k": 929,
+   "rate": 0.57,
+   "lift": 229.0,
+   "known": 1643,
+   "agree": 0.57
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 89,
+   "k": 89,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 89,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 112,
+   "k": 112,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 112,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 95,
+   "k": 95,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 95,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 79,
+   "k": 79,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 79,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 720,
+   "k": 720,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 720,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "law",
+   "n": 748,
+   "k": 748,
+   "rate": 1.0,
+   "lift": 220.8,
+   "known": 748,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a subclass of ?](a,b) & [? is defined in ?](b,c) => [? is defined in ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 1707,
+   "k": 858,
+   "rate": 0.5,
+   "lift": 203.6,
+   "known": 1707,
+   "agree": 0.5
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 111,
+   "k": 85,
+   "rate": 0.77,
+   "lift": 169.1,
+   "known": 85,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 114,
+   "k": 86,
+   "rate": 0.75,
+   "lift": 166.6,
+   "known": 86,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 127,
+   "k": 95,
+   "rate": 0.75,
+   "lift": 165.2,
+   "known": 95,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) & [? is a subclass of ?](c,d) => [? is a subclass of ?](a,d)",
+   "shape": "path",
+   "tier": "tendency",
+   "n": 103,
+   "k": 76,
+   "rate": 0.74,
+   "lift": 162.9,
+   "known": 76,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 810,
+   "k": 585,
+   "rate": 0.72,
+   "lift": 159.5,
+   "known": 585,
+   "agree": 1.0
+  },
+  {
+   "text": "[? inherits from ?](a,b) & [? inherits from ?](b,c) => [? is a subclass of ?](a,c)",
+   "shape": "chain",
+   "tier": "tendency",
+   "n": 861,
+   "k": 619,
+   "rate": 0.72,
+   "lift": 158.8,
+   "known": 619,
+   "agree": 1.0
+  },
+  {
+   "text": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+   "shape": "path",
+   "tier": "law",
+   "n": 4767,
+   "k": 3353,
+   "rate": 0.7,
+   "lift": 23.2,
+   "known": 3353,
+   "agree": 1.0
+  }
+ ],
+ "proofs": {
+  "is a subclass of": [
+   {
+    "fact": "_collections_abc__KeysView is a subclass of _collections_abc__Collection",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "_collections_abc__KeysView inherits from _collections_abc__Set",
+      "stated": true
+     },
+     {
+      "fact": "_collections_abc__Set is a subclass of _collections_abc__Collection",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "_collections_abc__KeysView is a subclass of _collections_abc__Container",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? inherits from ?](b,c) & [? inherits from ?](c,d) => [? is a subclass of ?](a,d)",
+    "because": [
+     {
+      "fact": "_collections_abc__KeysView inherits from _collections_abc__Set",
+      "stated": true
+     },
+     {
+      "fact": "_collections_abc__Set inherits from _collections_abc__Collection",
+      "stated": true
+     },
+     {
+      "fact": "_collections_abc__Collection inherits from _collections_abc__Container",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "encodings__iso2022_jp__StreamWriter is a subclass of codecs__Codec",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "encodings__iso2022_jp__StreamWriter inherits from codecs__StreamWriter",
+      "stated": true
+     },
+     {
+      "fact": "codecs__StreamWriter is a subclass of codecs__Codec",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "asyncio__transports___FlowControlMixin is a subclass of asyncio__transports__WriteTransport",
+    "stated": false,
+    "tier": "tendency",
+    "rule": "[? inherits from ?](a,b) & [? is a subclass of ?](b,c) => [? is a subclass of ?](a,c)",
+    "because": [
+     {
+      "fact": "asyncio__transports___FlowControlMixin inherits from asyncio__transports__Transport",
+      "stated": true
+     },
+     {
+      "fact": "asyncio__transports__Transport is a subclass of asyncio__transports__WriteTransport",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "belongs to package": [
+   {
+    "fact": "_pyrepl__base_eventqueue__BaseEventQueue__get belongs to package _pyrepl",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+    "because": [
+     {
+      "fact": "_pyrepl__base_eventqueue__BaseEventQueue__get is a method of _pyrepl__base_eventqueue__BaseEventQueue",
+      "stated": true
+     },
+     {
+      "fact": "_pyrepl__base_eventqueue__BaseEventQueue is defined in _pyrepl__base_eventqueue",
+      "stated": true
+     },
+     {
+      "fact": "_pyrepl__base_eventqueue is part of _pyrepl",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "_pyrepl__commands__Command____init__ belongs to package _pyrepl",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+    "because": [
+     {
+      "fact": "_pyrepl__commands__Command____init__ is a method of _pyrepl__commands__Command",
+      "stated": true
+     },
+     {
+      "fact": "_pyrepl__commands__Command is defined in _pyrepl__commands",
+      "stated": true
+     },
+     {
+      "fact": "_pyrepl__commands is part of _pyrepl",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "multiprocessing__context__BaseContext__get_logger belongs to package multiprocessing",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+    "because": [
+     {
+      "fact": "multiprocessing__context__BaseContext__get_logger is a method of multiprocessing__context__BaseContext",
+      "stated": true
+     },
+     {
+      "fact": "multiprocessing__context__BaseContext is defined in multiprocessing__context",
+      "stated": true
+     },
+     {
+      "fact": "multiprocessing__context is part of multiprocessing",
+      "stated": true
+     }
+    ]
+   },
+   {
+    "fact": "xml__sax__xmlreader__InputSource__getSystemId belongs to package xml__sax",
+    "stated": false,
+    "tier": "law",
+    "rule": "[? is a method of ?](a,b) & [? is defined in ?](b,c) & [? is part of ?](c,d) => [? belongs to package ?](a,d)",
+    "because": [
+     {
+      "fact": "xml__sax__xmlreader__InputSource__getSystemId is a method of xml__sax__xmlreader__InputSource",
+      "stated": true
+     },
+     {
+      "fact": "xml__sax__xmlreader__InputSource is defined in xml__sax__xmlreader",
+      "stated": true
+     },
+     {
+      "fact": "xml__sax__xmlreader is part of xml__sax",
+      "stated": true
+     }
+    ]
+   }
+  ],
+  "binds": []
+ },
+ "proofs_wrong": []
+}
