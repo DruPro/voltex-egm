@@ -63,7 +63,34 @@ class TestMimic(unittest.TestCase):
 
     def test_modes_agree(self):
         text = INC % "" + "run inc on 1111\n"
-        self.assertEqual(run(text, "fresh")["actions"][0]["tape"], run(text, "rebuild")["actions"][0]["tape"])
+        tapes = {m: run(text, m)["actions"][0]["tape"] for m in ("fresh", "rebuild", "refresh")}
+        self.assertEqual(len(set(tapes.values())), 1, tapes)
+
+    def test_refresh_mode_circuit_and_unknown(self):
+        """refresh mode reuses names and swaps state; it must compute and abstain exactly as fresh does."""
+        text = AND_NOT + "".join(f"eval nand {a} {b}\n" for a in "01" for b in "01")
+        self.assertEqual([x["result"]["out"] for x in run(text, "refresh")["actions"]], ["1", "1", "1", "0"])
+        a = run(INC % "?" + "run inc on 111\n", "refresh")["actions"][0]
+        self.assertEqual((a["status"], a["symbol"]), ("unknown", "_"))
+
+
+class TestMimicIsolation(unittest.TestCase):
+    def test_machine_next_to_a_function_learns_every_row(self):
+        """A machine taught next to a function that shares 0/1 must keep its blank-symbol row (machine values are
+        namespaced; without that the engine's categories dropped the 64 `reads _` facts from the relation)."""
+        log = run("function not\n  0 -> 1\n  1 -> 0\nend\n" + INC % "" + "run inc on 111\n")
+        self.assertEqual(log["learned"]["inc"]["learned"], 3)
+        self.assertEqual(log["actions"][0]["tape"], "1000")
+
+
+class TestPlayground(unittest.TestCase):
+    def test_tour_runs_and_shows_learning(self):
+        import subprocess
+        r = subprocess.run([sys.executable, os.path.join(ROOT, "lang", "mimic", "play.py"), "--tour", "--fast", "--no-color"],
+                           capture_output=True, text=True, timeout=300)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        for want in ("4 of 4 rows learned", "halted after 14 steps", "UNKNOWN", "sum = 1, carry = 1"):
+            self.assertIn(want, r.stdout)
 
 
 if __name__ == "__main__":

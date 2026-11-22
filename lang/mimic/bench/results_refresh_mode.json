@@ -1,0 +1,395 @@
+{
+ "exploratory": "mode refresh, added after the pre-registered bench (lang/mimic/bench/PREREGISTRATION.md lists observe, fresh, rebuild)",
+ "programs": [
+  {
+   "program": "hello",
+   "mode": "fresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "seconds": 0.28,
+   "ms_per_step": [],
+   "learned": {
+    "not": [
+     2,
+     2
+    ],
+    "and": [
+     4,
+     4
+    ]
+   }
+  },
+  {
+   "program": "hello",
+   "mode": "refresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "seconds": 0.17,
+   "ms_per_step": [],
+   "learned": {
+    "not": [
+     2,
+     2
+    ],
+    "and": [
+     4,
+     4
+    ]
+   }
+  },
+  {
+   "program": "adder",
+   "mode": "fresh",
+   "right": 8,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 8,
+   "seconds": 1.88,
+   "ms_per_step": [],
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   }
+  },
+  {
+   "program": "adder",
+   "mode": "refresh",
+   "right": 8,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 8,
+   "seconds": 0.81,
+   "ms_per_step": [],
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   }
+  },
+  {
+   "program": "add8",
+   "mode": "fresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "seconds": 1.78,
+   "ms_per_step": [],
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   }
+  },
+  {
+   "program": "add8",
+   "mode": "refresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "seconds": 0.85,
+   "ms_per_step": [],
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   }
+  },
+  {
+   "program": "increment",
+   "mode": "fresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "seconds": 0.34,
+   "ms_per_step": [
+    11.2,
+    10.6,
+    10.9,
+    11.9
+   ],
+   "learned": {
+    "inc": [
+     3,
+     3
+    ]
+   }
+  },
+  {
+   "program": "increment",
+   "mode": "refresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "seconds": 0.07,
+   "ms_per_step": [
+    3.7,
+    0.3,
+    2.2,
+    0.5
+   ],
+   "learned": {
+    "inc": [
+     3,
+     3
+    ]
+   }
+  },
+  {
+   "program": "busy_beaver",
+   "mode": "fresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "seconds": 0.81,
+   "ms_per_step": [
+    38.4
+   ],
+   "learned": {
+    "bb": [
+     6,
+     6
+    ]
+   }
+  },
+  {
+   "program": "busy_beaver",
+   "mode": "refresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "seconds": 0.32,
+   "ms_per_step": [
+    11.3
+   ],
+   "learned": {
+    "bb": [
+     6,
+     6
+    ]
+   }
+  },
+  {
+   "program": "parity",
+   "mode": "fresh",
+   "right": 3,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 3,
+   "seconds": 0.73,
+   "ms_per_step": [
+    27.3,
+    27.8,
+    28.4
+   ],
+   "learned": {
+    "parity": [
+     6,
+     6
+    ]
+   }
+  },
+  {
+   "program": "parity",
+   "mode": "refresh",
+   "right": 3,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 3,
+   "seconds": 0.24,
+   "ms_per_step": [
+    8.7,
+    8.6,
+    4.8
+   ],
+   "learned": {
+    "parity": [
+     6,
+     6
+    ]
+   }
+  },
+  {
+   "program": "rule110",
+   "mode": "fresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "seconds": 1.44,
+   "ms_per_step": [],
+   "learned": {
+    "rule110": [
+     8,
+     8
+    ]
+   }
+  },
+  {
+   "program": "rule110",
+   "mode": "refresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "seconds": 0.49,
+   "ms_per_step": [],
+   "learned": {
+    "rule110": [
+     8,
+     8
+    ]
+   }
+  },
+  {
+   "program": "guess",
+   "mode": "fresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 2,
+   "total": 3,
+   "seconds": 0.97,
+   "ms_per_step": [
+    48.3,
+    71.8
+   ],
+   "learned": {
+    "majority": [
+     5,
+     5
+    ],
+    "inc": [
+     2,
+     2
+    ]
+   }
+  },
+  {
+   "program": "guess",
+   "mode": "refresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 2,
+   "total": 3,
+   "seconds": 0.33,
+   "ms_per_step": [
+    8.0,
+    8.0
+   ],
+   "learned": {
+    "majority": [
+     5,
+     5
+    ],
+    "inc": [
+     2,
+     2
+    ]
+   }
+  }
+ ],
+ "cost": [
+  {
+   "ones": 4,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 5,
+   "ms_per_step": 10.6
+  },
+  {
+   "ones": 4,
+   "mode": "refresh",
+   "status": "halted",
+   "steps": 5,
+   "ms_per_step": 2.0
+  },
+  {
+   "ones": 16,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 17,
+   "ms_per_step": 11.3
+  },
+  {
+   "ones": 16,
+   "mode": "refresh",
+   "status": "halted",
+   "steps": 17,
+   "ms_per_step": 0.5
+  },
+  {
+   "ones": 64,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 65,
+   "ms_per_step": 12.9
+  },
+  {
+   "ones": 64,
+   "mode": "refresh",
+   "status": "halted",
+   "steps": 65,
+   "ms_per_step": 0.1
+  },
+  {
+   "ones": 256,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 257,
+   "ms_per_step": 19.3
+  },
+  {
+   "ones": 256,
+   "mode": "refresh",
+   "status": "halted",
+   "steps": 257,
+   "ms_per_step": 0.1
+  }
+ ]
+}

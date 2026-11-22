@@ -5,8 +5,38 @@ examples, and every step a program takes is decided by a learned rule, with a pr
 learned decides a step, the program stops and says **unknown**. It never guesses.
 
 ```
-python3 lang/mimic/mimic.py lang/mimic/examples/hello.mim
+python3 lang/mimic/play.py                                   # the playground: a guided tour, then a prompt
+python3 lang/mimic/mimic.py lang/mimic/examples/hello.mim    # run a program file
 ```
+
+## The playground
+
+`play.py` teaches the engine on screen and animates what it computes:
+- learned rules, shown in minimised form;
+- a proof walked back to your inputs;
+- a Turing-machine tape moving step by step;
+- Rule 110 drawn row by row;
+- a run that stops with UNKNOWN on a case it was never shown.
+
+After the tour you get a prompt:
+
+```
+mimic> function not
+...   0 -> 1
+...   1 -> 0
+... end
+  not: 2 of 2 rows learned
+mimic> eval not 0
+  out = 1
+mimic> load lang/mimic/examples/increment.mim
+mimic> run inc on 0111
+```
+
+Commands: `help`, `rules NAME`, `why NAME 1 0`, `run`, `eval`, `automaton`, `show`, `save FILE`, `load FILE`,
+`reset`, `tour`, `quit`. Flags: `--tour` or `--repl` only; `--fast` (no animation); `--no-color`. It runs in
+`refresh` mode, so the learned rules stay fixed while programs run.
+
+The research report is in [REPORT.md](REPORT.md).
 
 ## Ten-second tour
 
@@ -96,6 +126,7 @@ every known case, and draws this:
 | Mode | A machine step, or an `eval` | Correct | Cost per step |
 |---|---|---|---|
 | `fresh` (default) | new entities for every step, added to the running engine | 26/28, 0 wrong (the 2 unknowns are untaught rows) | 11-13 ms, flat to 64 steps |
+| `refresh` | one entity per machine, one compiled instance per circuit; state swapped by retract and ingest of the same names, with `REFRESH` on, so learned rules are kept | exploratory: the same results as `fresh` on all 8 programs, 0 wrong; busy beaver 39 → 12 ms/step; flat cost as runs grow (`bench/results_refresh_mode.json`) |
 | `rebuild` | a new engine from the taught examples plus only the current state | 26/28, 0 wrong | about 22 ms: relearns every step |
 | `observe` | one entity, its state restated as an OBSERVE snapshot | 25/28, 0 wrong | 11-13 ms, but it stops after about 22 steps: the engine loses a record's current snapshot after 13-26 restatements (`repro_observe_loss.py`) |
 

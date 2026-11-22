@@ -4,7 +4,7 @@ You never define what an operation does. You show examples, and the Voltex EGM e
 every step a program takes is decided by a learned rule with a proof. When no learned rule decides a step, the
 program stops and says so; it never guesses.
 
-  python3 lang/mimic/mimic.py program.mim [--mode fresh|rebuild|observe] [--quiet]
+  python3 lang/mimic/mimic.py program.mim [--mode fresh|refresh|rebuild|observe] [--quiet]
 
 Statements (one per line, `#` starts a comment):
 
@@ -38,6 +38,10 @@ Execution modes (--mode; all give the engine the same taught examples; measured 
            (studies/harness). Correct on every bench program; about 11-13 ms per machine step.
   rebuild  a new engine for every step and evaluation, from the taught examples plus only the current state: no
            history and no leftover entities. Correct on every bench program; about 2x the cost of fresh.
+  refresh  one step entity per machine and one compiled instance per circuit, as in observe, but the state is
+           replaced by RETRACT and INGEST of existing names with REFRESH on, so the learned rules are kept
+           (studies/refresh_trees). Exploratory bench (bench/results_refresh_mode.json): the same results as
+           fresh on all 8 programs, 2-5x faster, with a per-step cost that stays flat as runs grow.
   observe  a machine has one step entity, and each step restates its state and symbol as a snapshot
            (OBSERVE); circuits are compiled once and each eval snapshots new inputs. No new entities per step; the
            evidence layer keeps old states as history. The engine loses a record's current snapshot after 13-26
@@ -158,7 +162,7 @@ class Circuit:
 # -------------------------------------------------------------------------------- runtime
 class Runtime:
     def __init__(self, prog, mode="fresh", out=print, binary=None, depth=0, prefix="e", start_engine=True):
-        if mode not in ("observe", "fresh", "rebuild"): raise MimicError(f"unknown mode {mode}")
+        if mode not in ("observe", "fresh", "rebuild", "refresh"): raise MimicError(f"unknown mode {mode}")
         self.p, self.mode, self.fresh, self.out = prog, mode, mode == "fresh", out; self.n = 0; self.t = 0; self.timing = {}
         self.binary = binary or os.path.join(ROOT, "build", "voltex2"); self.struct = []; self.current = {}; self.dirty = False
         self.rebuilds = 0; self.depth = depth; self.queries = 0; self.prefix = prefix
@@ -184,7 +188,9 @@ class Runtime:
         lines = self.taught + (self.struct + [f for fs in self.current.values() for f in fs] if self.mode == "rebuild" else [])
         path = os.path.join(self.tmp.name, "kb.txt"); open(path, "w").write("\n".join(lines) + "\n")
         words = len({x for l in lines for x in l.split()})
-        self.e = egm.open(path, settings=dict(SETTINGS, DEPTH=self.depth, MAXWORDS=max(12000, words + 1000)), binary=self.binary)
+        st = dict(SETTINGS, DEPTH=self.depth, MAXWORDS=max(12000, words + 1000))
+        if self.mode == "refresh": st["REFRESH"] = 0.05   # keep learned rules across small state changes (studies/refresh_trees)
+        self.e = egm.open(path, settings=st, binary=self.binary)
         self.e.relations(); self.dirty = False
 
     def add(self, lines):
@@ -201,6 +207,11 @@ class Runtime:
     def v(x): return "v" + x
     @staticmethod
     def unv(x): return x[1:]
+    # A machine's states and symbols get the machine's own prefix, so they never share words with functions or other
+    # machines. Shared words change the engine's categories, and a fact whose value falls outside its slot's category
+    # silently leaves the relation: taught next to a `not` function, inc lost its 64 "reads _" facts (REPORT.md).
+    @staticmethod
+    def mv(m, x): return f"{m.name}v{x}"
 
     def check_values(self):
         vals = {o for f in self.p.functions.values() for o in list(f.rows.values()) + [x for r in f.rows for x in r]}
@@ -235,14 +246,20 @@ class Runtime:
         L = [f"{w} is write of {st}", f"{mv} is move of {st}", f"{nx} is next of {st}"] + self.step_state(m, st, q, s)
         if outs:
             for i, (k, slot) in enumerate((("write", w), ("move", mv), ("next", nx))):
-                L.append(f"{slot} {self.rel(m, k)} {self.v(outs[i])}")
+                L.append(f"{slot} {self.rel(m, k)} {self.mv(m, outs[i])}")
         return L, {"step": st, "write": w, "move": mv, "next": nx}
 
-    def step_state(self, m, st, q, s): return [f"{st} {m.name}_state {self.v(q)}", f"{st} {m.name}_reads {self.v(s)}"]
+    def step_state(self, m, st, q, s): return [f"{st} {m.name}_state {self.mv(m, q)}", f"{st} {m.name}_reads {self.mv(m, s)}"]
 
     def snapshot(self, record, facts):
         """The current state of a record: an OBSERVE snapshot, or (rebuild) the only state the next engine sees."""
         if self.mode == "rebuild": self.current[record] = list(facts); self.dirty = True
+        elif self.mode == "refresh":   # replace the record's state: retract its old facts, ingest the new ones (same names)
+            old = self.current.get(record, [])
+            if old == list(facts): return
+            for f in old:
+                if f not in facts: self.e.retract(f)
+            self.e.ingest_many([f for f in facts if f not in old]); self.current[record] = list(facts)
         else: self.t += 1; self.e.observe("mimic", record, self.t, facts=facts)
 
     def ask(self, pattern):
@@ -268,7 +285,8 @@ class Runtime:
         for i, k in enumerate(("write", "move", "next")):
             c = m.constant(i)
             if c is not None: got[k], how[k] = c, "declared"; continue
-            a = self.ask(f"{slots[k]} {self.rel(m, k)} ?")
+            self.sync(); self.queries += 1
+            a = [x[len(m.name) + 1:] for x in self.e.values(f"{slots[k]} {self.rel(m, k)} ?", strict=True)]
             got[k], how[k] = (a[0] if len(a) == 1 else None), "learned"
             if trace and got[k] is not None: how[k] = "learned: " + (self.proof(f"{slots[k]} {self.rel(m, k)} ?") or "")
         return got, how
@@ -426,7 +444,7 @@ class Runtime:
             if name in self.p.functions and ("has kind ?](g," + name + ")") in t or (name in self.p.functions and "has kind" not in t and "is output of" in t):
                 out.append((r.tier, r.known, r.agree, pretty(t)))
             if name in self.p.machines and f"{name}_" in t and any(f"is {k} of ?](a," in t for k in ("write", "move", "next")):
-                out.append((r.tier, r.known, r.agree, pretty(t)))
+                out.append((r.tier, r.known, r.agree, pretty(t).replace(f",{name}v", ",")))
         return out
 
 
