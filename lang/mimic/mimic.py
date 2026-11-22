@@ -4,7 +4,7 @@ You never define what an operation does. You show examples, and the Voltex EGM e
 every step a program takes is decided by a learned rule with a proof. When no learned rule decides a step, the
 program stops and says so; it never guesses.
 
-  python3 lang/mimic/mimic.py program.mim [--mode fresh|rebuild|observe] [--quiet]
+  python3 lang/mimic/mimic.py program.mim [--mode fresh|refresh|rebuild|observe] [--quiet]
 
 Statements (one per line, `#` starts a comment):
 
@@ -38,6 +38,10 @@ Execution modes (--mode; all give the engine the same taught examples; measured 
            (studies/harness). Correct on every bench program; about 11-13 ms per machine step.
   rebuild  a new engine for every step and evaluation, from the taught examples plus only the current state: no
            history and no leftover entities. Correct on every bench program; about 2x the cost of fresh.
+  refresh  one step entity per machine and one compiled instance per circuit, as in observe, but the state is
+           replaced by RETRACT and INGEST of existing names with REFRESH on, so the learned rules are kept
+           (studies/refresh_trees). Exploratory bench (bench/results_refresh_mode.json): the same results as
+           fresh on all 8 programs, 2-5x faster, with a per-step cost that stays flat as runs grow.
   observe  a machine has one step entity, and each step restates its state and symbol as a snapshot
            (OBSERVE); circuits are compiled once and each eval snapshots new inputs. No new entities per step; the
            evidence layer keeps old states as history. The engine loses a record's current snapshot after 13-26
@@ -158,7 +162,7 @@ class Circuit:
 # -------------------------------------------------------------------------------- runtime
 class Runtime:
     def __init__(self, prog, mode="fresh", out=print, binary=None, depth=0, prefix="e", start_engine=True):
-        if mode not in ("observe", "fresh", "rebuild"): raise MimicError(f"unknown mode {mode}")
+        if mode not in ("observe", "fresh", "rebuild", "refresh"): raise MimicError(f"unknown mode {mode}")
         self.p, self.mode, self.fresh, self.out = prog, mode, mode == "fresh", out; self.n = 0; self.t = 0; self.timing = {}
         self.binary = binary or os.path.join(ROOT, "build", "voltex2"); self.struct = []; self.current = {}; self.dirty = False
         self.rebuilds = 0; self.depth = depth; self.queries = 0; self.prefix = prefix
@@ -184,7 +188,9 @@ class Runtime:
         lines = self.taught + (self.struct + [f for fs in self.current.values() for f in fs] if self.mode == "rebuild" else [])
         path = os.path.join(self.tmp.name, "kb.txt"); open(path, "w").write("\n".join(lines) + "\n")
         words = len({x for l in lines for x in l.split()})
-        self.e = egm.open(path, settings=dict(SETTINGS, DEPTH=self.depth, MAXWORDS=max(12000, words + 1000)), binary=self.binary)
+        st = dict(SETTINGS, DEPTH=self.depth, MAXWORDS=max(12000, words + 1000))
+        if self.mode == "refresh": st["REFRESH"] = 0.05   # keep learned rules across small state changes (studies/refresh_trees)
+        self.e = egm.open(path, settings=st, binary=self.binary)
         self.e.relations(); self.dirty = False
 
     def add(self, lines):
@@ -243,6 +249,12 @@ class Runtime:
     def snapshot(self, record, facts):
         """The current state of a record: an OBSERVE snapshot, or (rebuild) the only state the next engine sees."""
         if self.mode == "rebuild": self.current[record] = list(facts); self.dirty = True
+        elif self.mode == "refresh":   # replace the record's state: retract its old facts, ingest the new ones (same names)
+            old = self.current.get(record, [])
+            if old == list(facts): return
+            for f in old:
+                if f not in facts: self.e.retract(f)
+            self.e.ingest_many([f for f in facts if f not in old]); self.current[record] = list(facts)
         else: self.t += 1; self.e.observe("mimic", record, self.t, facts=facts)
 
     def ask(self, pattern):

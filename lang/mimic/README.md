@@ -96,6 +96,7 @@ every known case, and draws this:
 | Mode | A machine step, or an `eval` | Correct | Cost per step |
 |---|---|---|---|
 | `fresh` (default) | new entities for every step, added to the running engine | 26/28, 0 wrong (the 2 unknowns are untaught rows) | 11-13 ms, flat to 64 steps |
+| `refresh` | one entity per machine, one compiled instance per circuit; state swapped by retract and ingest of the same names, with `REFRESH` on, so learned rules are kept | exploratory: the same results as `fresh` on all 8 programs, 0 wrong; busy beaver 39 → 12 ms/step; flat cost as runs grow (`bench/results_refresh_mode.json`) |
 | `rebuild` | a new engine from the taught examples plus only the current state | 26/28, 0 wrong | about 22 ms: relearns every step |
 | `observe` | one entity, its state restated as an OBSERVE snapshot | 25/28, 0 wrong | 11-13 ms, but it stops after about 22 steps: the engine loses a record's current snapshot after 13-26 restatements (`repro_observe_loss.py`) |
 
