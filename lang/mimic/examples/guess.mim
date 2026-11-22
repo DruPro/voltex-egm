@@ -1,0 +1,23 @@
+# What does the engine do with cases you never showed it? Rows marked ? are kept from the engine.
+function majority
+  0 0 0 -> 0
+  0 0 1 -> 0
+  0 1 1 -> 1
+  1 1 1 -> 1
+  1 0 1 -> 1
+  ? 0 1 0 -> 0
+  ? 1 0 0 -> 0
+  ? 1 1 0 -> 1
+end
+
+machine inc
+  start carry
+  blank _
+  carry 1 -> 0 left carry
+  carry 0 -> 1 left halt
+  ? carry _ -> 1 left halt
+end
+
+eval majority 1 1 0
+run inc on 1011
+run inc on 111

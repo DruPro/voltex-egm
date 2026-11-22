@@ -1,0 +1,16 @@
+# A finite-state machine: scan the bits left to right, then write the parity at the end.
+# It always moves right, so "move" never varies: Mimic applies it as declared, not inferred.
+machine parity
+  start even
+  blank _
+  even 0 -> 0 right even
+  even 1 -> 1 right odd
+  odd 0 -> 0 right odd
+  odd 1 -> 1 right even
+  even _ -> 0 right halt
+  odd _ -> 1 right halt
+end
+
+run parity on 1101 at start
+run parity on 1111 at start
+run parity on 10000001 at start

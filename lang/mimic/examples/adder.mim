@@ -1,0 +1,37 @@
+# A full adder from three learned gates. Each eval only snapshots new inputs into the compiled circuit.
+function xor
+  0 0 -> 0
+  0 1 -> 1
+  1 0 -> 1
+  1 1 -> 0
+end
+function and
+  0 0 -> 0
+  0 1 -> 0
+  1 0 -> 0
+  1 1 -> 1
+end
+function or
+  0 0 -> 0
+  0 1 -> 1
+  1 0 -> 1
+  1 1 -> 1
+end
+
+circuit fulladd a b cin -> sum cout
+  t = xor a b
+  sum = xor t cin
+  u = and a b
+  v = and t cin
+  cout = or u v
+end
+
+eval fulladd 0 0 0
+eval fulladd 0 0 1
+eval fulladd 0 1 0
+eval fulladd 0 1 1
+eval fulladd 1 0 0
+eval fulladd 1 0 1
+eval fulladd 1 1 0
+eval fulladd 1 1 1
+why fulladd 1 1 1

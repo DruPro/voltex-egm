@@ -1,0 +1,14 @@
+# Rule 110, a cellular automaton that is Turing complete in the limit. You show its eight cases once.
+function rule110
+  1 1 1 -> 0
+  1 1 0 -> 1
+  1 0 1 -> 1
+  1 0 0 -> 0
+  0 1 1 -> 1
+  0 1 0 -> 1
+  0 0 1 -> 1
+  0 0 0 -> 0
+end
+
+rules rule110
+automaton rule110 width 32 steps 16 start single

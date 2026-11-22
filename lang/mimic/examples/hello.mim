@@ -1,0 +1,24 @@
+# Hello, Mimic. Nothing here says what "not" or "and" mean: you show it, the engine learns it.
+function not
+  0 -> 1
+  1 -> 0
+end
+
+function and
+  0 0 -> 0
+  0 1 -> 0
+  1 0 -> 0
+  1 1 -> 1
+end
+
+circuit nand a b -> out
+  t = and a b
+  out = not t
+end
+
+print NAND, built from two learned gates:
+eval nand 0 0
+eval nand 0 1
+eval nand 1 0
+eval nand 1 1 trace
+rules and

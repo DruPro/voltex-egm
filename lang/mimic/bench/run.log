@@ -1,0 +1,43 @@
+hello        observe  right 4 wrong 0 unknown 0 of 4; 0.31 s; ms/step []
+hello        fresh    right 4 wrong 0 unknown 0 of 4; 0.28 s; ms/step []
+hello        rebuild  right 4 wrong 0 unknown 0 of 4; 0.42 s; ms/step []
+adder        observe  right 8 wrong 0 unknown 0 of 8; 1.82 s; ms/step []
+adder        fresh    right 8 wrong 0 unknown 0 of 8; 1.89 s; ms/step []
+adder        rebuild  right 8 wrong 0 unknown 0 of 8; 2.27 s; ms/step []
+add8         observe  right 4 wrong 0 unknown 0 of 4; 1.61 s; ms/step []
+add8         fresh    right 4 wrong 0 unknown 0 of 4; 1.82 s; ms/step []
+add8         rebuild  right 4 wrong 0 unknown 0 of 4; 1.93 s; ms/step []
+increment    observe  right 3 wrong 0 unknown 1 of 4; 0.31 s; ms/step [11.0, 11.0, 12.9, 12.0]
+increment    fresh    right 4 wrong 0 unknown 0 of 4; 0.36 s; ms/step [10.6, 12.1, 11.2, 12.4]
+increment    rebuild  right 4 wrong 0 unknown 0 of 4; 0.66 s; ms/step [23.7, 25.2, 25.8, 22.5]
+busy_beaver  observe  right 1 wrong 0 unknown 0 of 1; 0.82 s; ms/step [39.4]
+busy_beaver  fresh    right 1 wrong 0 unknown 0 of 1; 0.87 s; ms/step [42.5]
+busy_beaver  rebuild  right 1 wrong 0 unknown 0 of 1; 1.1 s; ms/step [53.0]
+parity       observe  right 3 wrong 0 unknown 0 of 3; 0.74 s; ms/step [27.6, 28.4, 27.9]
+parity       fresh    right 3 wrong 0 unknown 0 of 3; 0.74 s; ms/step [27.3, 27.9, 28.9]
+parity       rebuild  right 3 wrong 0 unknown 0 of 3; 1.07 s; ms/step [40.7, 42.6, 41.4]
+rule110      observe  right 1 wrong 0 unknown 0 of 1; 1.42 s; ms/step []
+rule110      fresh    right 1 wrong 0 unknown 0 of 1; 1.43 s; ms/step []
+rule110      rebuild  right 1 wrong 0 unknown 0 of 1; 1.85 s; ms/step []
+guess        observe  right 1 wrong 0 unknown 2 of 3; 0.96 s; ms/step [48.3, 64.4]
+guess        fresh    right 1 wrong 0 unknown 2 of 3; 1.0 s; ms/step [49.3, 65.8]
+guess        rebuild  right 1 wrong 0 unknown 2 of 3; 1.27 s; ms/step [62.9, 89.3]
+cost {'ones': 4, 'mode': 'observe', 'status': 'halted', 'steps': 5, 'ms_per_step': 12.8, 'learn_s': 0.02}
+cost {'ones': 4, 'mode': 'fresh', 'status': 'halted', 'steps': 5, 'ms_per_step': 11.8, 'learn_s': 0.02}
+cost {'ones': 4, 'mode': 'rebuild', 'status': 'halted', 'steps': 5, 'ms_per_step': 23.7, 'learn_s': 0.02}
+cost {'ones': 8, 'mode': 'observe', 'status': 'halted', 'steps': 9, 'ms_per_step': 10.8, 'learn_s': 0.02}
+cost {'ones': 8, 'mode': 'fresh', 'status': 'halted', 'steps': 9, 'ms_per_step': 11.3, 'learn_s': 0.02}
+cost {'ones': 8, 'mode': 'rebuild', 'status': 'halted', 'steps': 9, 'ms_per_step': 21.9, 'learn_s': 0.02}
+cost {'ones': 16, 'mode': 'observe', 'status': 'halted', 'steps': 17, 'ms_per_step': 11.2, 'learn_s': 0.02}
+cost {'ones': 16, 'mode': 'fresh', 'status': 'halted', 'steps': 17, 'ms_per_step': 11.5, 'learn_s': 0.02}
+cost {'ones': 16, 'mode': 'rebuild', 'status': 'halted', 'steps': 17, 'ms_per_step': 22.9, 'learn_s': 0.02}
+cost {'ones': 32, 'mode': 'observe', 'status': 'unknown', 'steps': 22, 'ms_per_step': 11.5, 'learn_s': 0.02}
+cost {'ones': 32, 'mode': 'fresh', 'status': 'halted', 'steps': 33, 'ms_per_step': 11.8, 'learn_s': 0.02}
+cost {'ones': 32, 'mode': 'rebuild', 'status': 'halted', 'steps': 33, 'ms_per_step': 21.8, 'learn_s': 0.02}
+cost {'ones': 64, 'mode': 'observe', 'status': 'unknown', 'steps': 22, 'ms_per_step': 11.2, 'learn_s': 0.02}
+cost {'ones': 64, 'mode': 'fresh', 'status': 'halted', 'steps': 65, 'ms_per_step': 13.5, 'learn_s': 0.01}
+cost {'ones': 64, 'mode': 'rebuild', 'status': 'halted', 'steps': 65, 'ms_per_step': 21.8, 'learn_s': 0.02}
+B4 depth0_bottom_up ['right', 'right', 'right', 'right'] questions [9, 9, 9, 9] s [0.126, 0.135, 0.254, 0.281]
+B4 depth1_bottom_up ['unknown', 'unknown', 'unknown', 'unknown'] questions [9, 9, 9, 9] s [0.077, 0.082, 0.082, 0.086]
+B4 depth1_recursive ['right', 'right', 'right', 'right'] questions [120, 120, 120, 120] s [1.309, 1.38, 1.497, 1.547]
+{'P1': 'pass', 'P2': 'pass', 'P3': 'pass', 'P4': 'pass', 'P5': 'pass'}

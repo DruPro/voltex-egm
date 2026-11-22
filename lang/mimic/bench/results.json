@@ -1,0 +1,1368 @@
+{
+ "programs": [
+  {
+   "program": "hello",
+   "mode": "observe",
+   "seconds": 0.31,
+   "learn_s": 0.03,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 20,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 21,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 22,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 23,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "not": {
+     "taught": 2,
+     "learned": 2,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "hello",
+   "mode": "fresh",
+   "seconds": 0.28,
+   "learn_s": 0.03,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 20,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 21,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 22,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 23,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "not": {
+     "taught": 2,
+     "learned": 2,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "hello",
+   "mode": "rebuild",
+   "seconds": 0.42,
+   "learn_s": 0.03,
+   "rebuilds": 10,
+   "judged": [
+    {
+     "line": 20,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 21,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 22,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    },
+    {
+     "line": 23,
+     "kind": "eval",
+     "program": "nand",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "not": {
+     "taught": 2,
+     "learned": 2,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "adder",
+   "mode": "observe",
+   "seconds": 1.82,
+   "learn_s": 0.08,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 29,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 30,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 31,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 32,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 33,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 34,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 35,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 36,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "xor": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "or": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "adder",
+   "mode": "fresh",
+   "seconds": 1.89,
+   "learn_s": 0.08,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 29,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 30,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 31,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 32,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 33,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 34,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 35,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 36,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "xor": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "or": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "adder",
+   "mode": "rebuild",
+   "seconds": 2.27,
+   "learn_s": 0.08,
+   "rebuilds": 21,
+   "judged": [
+    {
+     "line": 29,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 30,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 31,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 32,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 33,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 34,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 35,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    },
+    {
+     "line": 36,
+     "kind": "eval",
+     "program": "fulladd",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "xor": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "or": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "add8",
+   "mode": "observe",
+   "seconds": 1.61,
+   "learn_s": 0.08,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 66,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 67,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 68,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 69,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "xor": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "or": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "add8",
+   "mode": "fresh",
+   "seconds": 1.82,
+   "learn_s": 0.08,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 66,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 67,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 68,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 69,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "xor": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "or": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "add8",
+   "mode": "rebuild",
+   "seconds": 1.93,
+   "learn_s": 0.07,
+   "rebuilds": 16,
+   "judged": [
+    {
+     "line": 66,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 67,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 68,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    },
+    {
+     "line": 69,
+     "kind": "eval",
+     "program": "add8",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "xor": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "and": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    },
+    "or": {
+     "taught": 4,
+     "learned": 4,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "increment",
+   "mode": "observe",
+   "seconds": 0.31,
+   "learn_s": 0.02,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 10,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 11,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 12,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 13,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "unknown"
+    }
+   ],
+   "learned": {
+    "inc": {
+     "taught": 3,
+     "learned": 3,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    11.0,
+    11.0,
+    12.9,
+    12.0
+   ]
+  },
+  {
+   "program": "increment",
+   "mode": "fresh",
+   "seconds": 0.36,
+   "learn_s": 0.02,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 10,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 11,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 12,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 13,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "inc": {
+     "taught": 3,
+     "learned": 3,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    10.6,
+    12.1,
+    11.2,
+    12.4
+   ]
+  },
+  {
+   "program": "increment",
+   "mode": "rebuild",
+   "seconds": 0.66,
+   "learn_s": 0.02,
+   "rebuilds": 28,
+   "judged": [
+    {
+     "line": 10,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 11,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 12,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 13,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "inc": {
+     "taught": 3,
+     "learned": 3,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    23.7,
+    25.2,
+    25.8,
+    22.5
+   ]
+  },
+  {
+   "program": "busy_beaver",
+   "mode": "observe",
+   "seconds": 0.82,
+   "learn_s": 0.04,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 13,
+     "kind": "run",
+     "program": "bb",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "bb": {
+     "taught": 6,
+     "learned": 6,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    39.4
+   ]
+  },
+  {
+   "program": "busy_beaver",
+   "mode": "fresh",
+   "seconds": 0.87,
+   "learn_s": 0.04,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 13,
+     "kind": "run",
+     "program": "bb",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "bb": {
+     "taught": 6,
+     "learned": 6,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    42.5
+   ]
+  },
+  {
+   "program": "busy_beaver",
+   "mode": "rebuild",
+   "seconds": 1.1,
+   "learn_s": 0.04,
+   "rebuilds": 20,
+   "judged": [
+    {
+     "line": 13,
+     "kind": "run",
+     "program": "bb",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "bb": {
+     "taught": 6,
+     "learned": 6,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    53.0
+   ]
+  },
+  {
+   "program": "parity",
+   "mode": "observe",
+   "seconds": 0.74,
+   "learn_s": 0.04,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 14,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    },
+    {
+     "line": 15,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    },
+    {
+     "line": 16,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "parity": {
+     "taught": 6,
+     "learned": 6,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    27.6,
+    28.4,
+    27.9
+   ]
+  },
+  {
+   "program": "parity",
+   "mode": "fresh",
+   "seconds": 0.74,
+   "learn_s": 0.03,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 14,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    },
+    {
+     "line": 15,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    },
+    {
+     "line": 16,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "parity": {
+     "taught": 6,
+     "learned": 6,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    27.3,
+    27.9,
+    28.9
+   ]
+  },
+  {
+   "program": "parity",
+   "mode": "rebuild",
+   "seconds": 1.07,
+   "learn_s": 0.03,
+   "rebuilds": 25,
+   "judged": [
+    {
+     "line": 14,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    },
+    {
+     "line": 15,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    },
+    {
+     "line": 16,
+     "kind": "run",
+     "program": "parity",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "parity": {
+     "taught": 6,
+     "learned": 6,
+     "hidden": {}
+    }
+   },
+   "steps_ms": [
+    40.7,
+    42.6,
+    41.4
+   ]
+  },
+  {
+   "program": "rule110",
+   "mode": "observe",
+   "seconds": 1.42,
+   "learn_s": 0.06,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 14,
+     "kind": "automaton",
+     "program": "rule110",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "rule110": {
+     "taught": 8,
+     "learned": 8,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "rule110",
+   "mode": "fresh",
+   "seconds": 1.43,
+   "learn_s": 0.06,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 14,
+     "kind": "automaton",
+     "program": "rule110",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "rule110": {
+     "taught": 8,
+     "learned": 8,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "rule110",
+   "mode": "rebuild",
+   "seconds": 1.85,
+   "learn_s": 0.06,
+   "rebuilds": 23,
+   "judged": [
+    {
+     "line": 14,
+     "kind": "automaton",
+     "program": "rule110",
+     "verdict": "right"
+    }
+   ],
+   "learned": {
+    "rule110": {
+     "taught": 8,
+     "learned": 8,
+     "declared": false,
+     "hidden": {}
+    }
+   },
+   "steps_ms": []
+  },
+  {
+   "program": "guess",
+   "mode": "observe",
+   "seconds": 0.96,
+   "learn_s": 0.05,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 21,
+     "kind": "eval",
+     "program": "majority",
+     "verdict": "unknown"
+    },
+    {
+     "line": 22,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 23,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "unknown"
+    }
+   ],
+   "learned": {
+    "majority": {
+     "taught": 5,
+     "learned": 5,
+     "declared": false,
+     "hidden": {
+      "0 1 0": {
+       "expected": "0",
+       "inferred": null
+      },
+      "1 0 0": {
+       "expected": "0",
+       "inferred": null
+      },
+      "1 1 0": {
+       "expected": "1",
+       "inferred": null
+      }
+     }
+    },
+    "inc": {
+     "taught": 2,
+     "learned": 1,
+     "hidden": {
+      "carry _": {
+       "expected": "1 left halt",
+       "inferred": "? left ?"
+      }
+     }
+    }
+   },
+   "steps_ms": [
+    48.3,
+    64.4
+   ]
+  },
+  {
+   "program": "guess",
+   "mode": "fresh",
+   "seconds": 1.0,
+   "learn_s": 0.06,
+   "rebuilds": 0,
+   "judged": [
+    {
+     "line": 21,
+     "kind": "eval",
+     "program": "majority",
+     "verdict": "unknown"
+    },
+    {
+     "line": 22,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 23,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "unknown"
+    }
+   ],
+   "learned": {
+    "majority": {
+     "taught": 5,
+     "learned": 5,
+     "declared": false,
+     "hidden": {
+      "0 1 0": {
+       "expected": "0",
+       "inferred": null
+      },
+      "1 0 0": {
+       "expected": "0",
+       "inferred": null
+      },
+      "1 1 0": {
+       "expected": "1",
+       "inferred": null
+      }
+     }
+    },
+    "inc": {
+     "taught": 2,
+     "learned": 2,
+     "hidden": {
+      "carry _": {
+       "expected": "1 left halt",
+       "inferred": "? left ?"
+      }
+     }
+    }
+   },
+   "steps_ms": [
+    49.3,
+    65.8
+   ]
+  },
+  {
+   "program": "guess",
+   "mode": "rebuild",
+   "seconds": 1.27,
+   "learn_s": 0.05,
+   "rebuilds": 19,
+   "judged": [
+    {
+     "line": 21,
+     "kind": "eval",
+     "program": "majority",
+     "verdict": "unknown"
+    },
+    {
+     "line": 22,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "right"
+    },
+    {
+     "line": 23,
+     "kind": "run",
+     "program": "inc",
+     "verdict": "unknown"
+    }
+   ],
+   "learned": {
+    "majority": {
+     "taught": 5,
+     "learned": 5,
+     "declared": false,
+     "hidden": {
+      "0 1 0": {
+       "expected": "0",
+       "inferred": null
+      },
+      "1 0 0": {
+       "expected": "0",
+       "inferred": null
+      },
+      "1 1 0": {
+       "expected": "1",
+       "inferred": null
+      }
+     }
+    },
+    "inc": {
+     "taught": 2,
+     "learned": 2,
+     "hidden": {
+      "carry _": {
+       "expected": "1 left halt",
+       "inferred": "? left ?"
+      }
+     }
+    }
+   },
+   "steps_ms": [
+    62.9,
+    89.3
+   ]
+  }
+ ],
+ "determinism": {
+  "hello": [
+   "[{\"line\": 20, \"kind\": \"eval\", \"program\": \"nand\", \"verdict\": \"right\"}, {\"line\": 21, \"kind\": \"eval\", \"program\": \"nand\", \"verdict\": \"right\"}, {\"line\": 22, \"kind\": \"eval\", \"program\": \"nand\", \"verdict\": \"right\"}, {\"line\": 23, \"kind\": \"eval\", \"program\": \"nand\", \"verdict\": \"right\"}]",
+   "[{\"line\": 20, \"kind\": \"eval\", \"program\": \"nand\", \"verdict\": \"right\"}, {\"line\": 21, \"kind\": \"eval\", \"program\": \"nand\", \"verdict\": \"right\"}, {\"line\": 22, \"kind\": \"eval\", \"program\": \"nand\", \"verdict\": \"right\"}, {\"line\": 23, \"kind\": \"eval\", \"program\": \"nand\", \"verdict\": \"right\"}]"
+  ],
+  "adder": [
+   "[{\"line\": 29, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 30, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 31, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 32, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 33, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 34, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 35, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 36, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}]",
+   "[{\"line\": 29, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 30, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 31, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 32, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 33, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 34, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 35, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}, {\"line\": 36, \"kind\": \"eval\", \"program\": \"fulladd\", \"verdict\": \"right\"}]"
+  ],
+  "add8": [
+   "[{\"line\": 66, \"kind\": \"eval\", \"program\": \"add8\", \"verdict\": \"right\"}, {\"line\": 67, \"kind\": \"eval\", \"program\": \"add8\", \"verdict\": \"right\"}, {\"line\": 68, \"kind\": \"eval\", \"program\": \"add8\", \"verdict\": \"right\"}, {\"line\": 69, \"kind\": \"eval\", \"program\": \"add8\", \"verdict\": \"right\"}]",
+   "[{\"line\": 66, \"kind\": \"eval\", \"program\": \"add8\", \"verdict\": \"right\"}, {\"line\": 67, \"kind\": \"eval\", \"program\": \"add8\", \"verdict\": \"right\"}, {\"line\": 68, \"kind\": \"eval\", \"program\": \"add8\", \"verdict\": \"right\"}, {\"line\": 69, \"kind\": \"eval\", \"program\": \"add8\", \"verdict\": \"right\"}]"
+  ],
+  "increment": [
+   "[{\"line\": 10, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}, {\"line\": 11, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}, {\"line\": 12, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}, {\"line\": 13, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}]",
+   "[{\"line\": 10, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}, {\"line\": 11, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}, {\"line\": 12, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}, {\"line\": 13, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}]"
+  ],
+  "busy_beaver": [
+   "[{\"line\": 13, \"kind\": \"run\", \"program\": \"bb\", \"verdict\": \"right\"}]",
+   "[{\"line\": 13, \"kind\": \"run\", \"program\": \"bb\", \"verdict\": \"right\"}]"
+  ],
+  "parity": [
+   "[{\"line\": 14, \"kind\": \"run\", \"program\": \"parity\", \"verdict\": \"right\"}, {\"line\": 15, \"kind\": \"run\", \"program\": \"parity\", \"verdict\": \"right\"}, {\"line\": 16, \"kind\": \"run\", \"program\": \"parity\", \"verdict\": \"right\"}]",
+   "[{\"line\": 14, \"kind\": \"run\", \"program\": \"parity\", \"verdict\": \"right\"}, {\"line\": 15, \"kind\": \"run\", \"program\": \"parity\", \"verdict\": \"right\"}, {\"line\": 16, \"kind\": \"run\", \"program\": \"parity\", \"verdict\": \"right\"}]"
+  ],
+  "rule110": [
+   "[{\"line\": 14, \"kind\": \"automaton\", \"program\": \"rule110\", \"verdict\": \"right\"}]",
+   "[{\"line\": 14, \"kind\": \"automaton\", \"program\": \"rule110\", \"verdict\": \"right\"}]"
+  ],
+  "guess": [
+   "[{\"line\": 21, \"kind\": \"eval\", \"program\": \"majority\", \"verdict\": \"unknown\"}, {\"line\": 22, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}, {\"line\": 23, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"unknown\"}]",
+   "[{\"line\": 21, \"kind\": \"eval\", \"program\": \"majority\", \"verdict\": \"unknown\"}, {\"line\": 22, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"right\"}, {\"line\": 23, \"kind\": \"run\", \"program\": \"inc\", \"verdict\": \"unknown\"}]"
+  ]
+ },
+ "cost_curve": [
+  {
+   "ones": 4,
+   "mode": "observe",
+   "status": "halted",
+   "steps": 5,
+   "ms_per_step": 12.8,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 4,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 5,
+   "ms_per_step": 11.8,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 4,
+   "mode": "rebuild",
+   "status": "halted",
+   "steps": 5,
+   "ms_per_step": 23.7,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 8,
+   "mode": "observe",
+   "status": "halted",
+   "steps": 9,
+   "ms_per_step": 10.8,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 8,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 9,
+   "ms_per_step": 11.3,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 8,
+   "mode": "rebuild",
+   "status": "halted",
+   "steps": 9,
+   "ms_per_step": 21.9,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 16,
+   "mode": "observe",
+   "status": "halted",
+   "steps": 17,
+   "ms_per_step": 11.2,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 16,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 17,
+   "ms_per_step": 11.5,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 16,
+   "mode": "rebuild",
+   "status": "halted",
+   "steps": 17,
+   "ms_per_step": 22.9,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 32,
+   "mode": "observe",
+   "status": "unknown",
+   "steps": 22,
+   "ms_per_step": 11.5,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 32,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 33,
+   "ms_per_step": 11.8,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 32,
+   "mode": "rebuild",
+   "status": "halted",
+   "steps": 33,
+   "ms_per_step": 21.8,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 64,
+   "mode": "observe",
+   "status": "unknown",
+   "steps": 22,
+   "ms_per_step": 11.2,
+   "learn_s": 0.02
+  },
+  {
+   "ones": 64,
+   "mode": "fresh",
+   "status": "halted",
+   "steps": 65,
+   "ms_per_step": 13.5,
+   "learn_s": 0.01
+  },
+  {
+   "ones": 64,
+   "mode": "rebuild",
+   "status": "halted",
+   "steps": 65,
+   "ms_per_step": 21.8,
+   "learn_s": 0.02
+  }
+ ],
+ "recursive": {
+  "depth0_bottom_up": [
+   {
+    "verdict": "right",
+    "unknown_outputs": 0,
+    "questions": 9,
+    "seconds": 0.126
+   },
+   {
+    "verdict": "right",
+    "unknown_outputs": 0,
+    "questions": 9,
+    "seconds": 0.135
+   },
+   {
+    "verdict": "right",
+    "unknown_outputs": 0,
+    "questions": 9,
+    "seconds": 0.254
+   },
+   {
+    "verdict": "right",
+    "unknown_outputs": 0,
+    "questions": 9,
+    "seconds": 0.281
+   }
+  ],
+  "depth1_bottom_up": [
+   {
+    "verdict": "unknown",
+    "unknown_outputs": 9,
+    "questions": 9,
+    "seconds": 0.077
+   },
+   {
+    "verdict": "unknown",
+    "unknown_outputs": 9,
+    "questions": 9,
+    "seconds": 0.082
+   },
+   {
+    "verdict": "unknown",
+    "unknown_outputs": 9,
+    "questions": 9,
+    "seconds": 0.082
+   },
+   {
+    "verdict": "unknown",
+    "unknown_outputs": 9,
+    "questions": 9,
+    "seconds": 0.086
+   }
+  ],
+  "depth1_recursive": [
+   {
+    "verdict": "right",
+    "unknown_outputs": 0,
+    "questions": 120,
+    "seconds": 1.309
+   },
+   {
+    "verdict": "right",
+    "unknown_outputs": 0,
+    "questions": 120,
+    "seconds": 1.38
+   },
+   {
+    "verdict": "right",
+    "unknown_outputs": 0,
+    "questions": 120,
+    "seconds": 1.497
+   },
+   {
+    "verdict": "right",
+    "unknown_outputs": 0,
+    "questions": 120,
+    "seconds": 1.547
+   }
+  ]
+ }
+}

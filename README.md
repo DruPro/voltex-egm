@@ -346,6 +346,7 @@ voltex-egm/
 │   ├── SETTINGS.md, CHOOSING_SETTINGS.md     # every setting; which to use when
 │   └── BUILDING_A_LAYER.md, AGENT_SESSIONS.md, STRENGTHS.md, STRESS_FINDINGS.md
 ├── examples/              # Requests (Haiku facts) and tokenomics (S, M, L) with keys
+├── lang/mimic/            # Mimic, a language taught by example (interpreter, examples, bench)
 ├── studies/               # pre-registered studies; studies/stress (bench, layers), studies/strengths (best case)
 ├── tests/                 # run_tests.py (kit), test_sdk.py (SDK), test_mcp.py (MCP)
 ├── media/images/          # logo and mascot
@@ -363,6 +364,7 @@ voltex-egm/
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
 | [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
 | [docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md) | Which settings to use for what you are trying to do, when not to, and what each costs (measured) |
+| [lang/mimic/README.md](lang/mimic/README.md) | Mimic: a programming language whose operations are learned from examples; try it, and what its bench measured |
 | [docs/EVALUATION.md](docs/EVALUATION.md) | How engine changes are judged: capabilities and metrics, capability matrix, protocol, improvement vs regression, general vs dataset-specific, baseline (`studies/eval`) |
 | [docs/STRENGTHS.md](docs/STRENGTHS.md) | The engine at its best: exact facts from the Python standard library, complete truth; depth, multi-premise and tree reasoning with proofs |
 | [docs/STRESS_FINDINGS.md](docs/STRESS_FINDINGS.md) | What the engine learned from real code, Unicode and Debian package data, with proofs and errors |
@@ -391,6 +393,10 @@ voltex-egm/
 - `studies/compute`: can tree inference compute? From example gates alone, the engine computed NAND-only and 8-bit
   adders and a 16 × 16 Rule 110 automaton with law-only proofs, at 0 errors. That is bounded computation, not Turing
   completeness.
+- `lang/mimic`: **Mimic**, a small programming language taught by example. Functions, Turing machines, circuits and
+  cellular automata are learned from shown rows and run by the engine; a step nothing learned decides stops with
+  UNKNOWN. Bench: 14/14 definitions learned, 0 wrong results in 3 modes. `python3 lang/mimic/mimic.py
+  lang/mimic/examples/hello.mim`.
 - `studies/harness`: learn once, compute later. Gates taught once, then new 8-bit adders computed from their wiring
   alone (90/90 outputs per seed). A harness that holds the tape and the clock ran a busy beaver and binary
   increment from a Turing-machine transition table the engine learned from example steps; an untaught transition

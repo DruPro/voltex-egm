@@ -1,0 +1,13 @@
+# The 3-state busy beaver (Lin and Rado): it writes six ones and stops after 14 steps.
+machine bb
+  start A
+  blank 0
+  A 0 -> 1 right B
+  A 1 -> 1 right halt
+  B 0 -> 0 right C
+  B 1 -> 1 right B
+  C 0 -> 1 left C
+  C 1 -> 1 left A
+end
+
+run bb on 0 at start
