@@ -37,7 +37,7 @@ pre-registered studies, which are linked. For what each setting does, see `docs/
 | A rule that holds only for one group | `CONDITIONS 1` | Found "only farmers and miners harvest", errors down 98% |
 | The same fact reported by several sources, some wrong | `VOTE 1` | 3 reports, 15% wrong each: precision 0.32 → 0.998 |
 | Noisy single reports | try `QUARANTINE 1` and score it | Recall 0.72 → 0.93 on noisy company data, but lower precision with `TREES` |
-| Frequent small updates | `REFRESH` (experimental) | Reuses categories and rules; inference still reruns in full |
+| Frequent small updates, or running a learned program step by step | `REFRESH` (experimental), reusing names | Reuses categories and rules (tree rules included); inference still reruns in full |
 | Huge vocabularies on one machine | `MAXWORDS` sized; `CLUSTERSTREAM` is already on | 244,444 facts in 256 MB |
 
 ## Setting by setting
@@ -142,8 +142,18 @@ pre-registered studies, which are linked. For what each setting does, see `docs/
 
 ### `REFRESH` (default 0, experimental)
 
-- **Use** for frequent small updates without new names: it reuses categories and rules.
-- **Limits:** a new name forces a full rebuild, and inference always reruns in full (`studies/scaling`).
+- **Use** for frequent small updates without new names: it reuses categories and rules. It also lets a learned
+  program run across passes without relearning. A harness replaces the state (`RETRACT`, then `INGEST` with existing
+  names), and each step keeps the rules. With `TREES 1` that holds too (`studies/refresh_trees`): a state machine,
+  a busy beaver and binary increment ran 109 steps with answers identical to relearning every step, at 2.5-2.7×
+  lower cost per step.
+- **Limits:**
+  - a new name forces a full rebuild;
+  - a change that only removes facts also forces one;
+  - inference always reruns in full (`studies/scaling`);
+  - it isn't used with `CHAIN 3+`, `CONDITIONS`, `REPLICATE` or `QUARANTINE`.
+- **What it is not:** a way to mark facts as "not evidence". It defers learning, and the next full build learns from
+  every stated fact present.
 
 ## By data shape (what the bench saw with defaults)
 

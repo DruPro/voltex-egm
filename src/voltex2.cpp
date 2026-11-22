@@ -343,7 +343,10 @@ struct Vault {
     int F_CHG_REMOVALS = 1;   // v2.2: only records that lost or replaced a fact feed the change signal
     int F_SAMEFIX = 1;        // v2.2: a stale-candidate re-derived to the same value by its own rule is confirmed, not 'unknown'
     double F_REFRESH = 0;     // v2.2: reuse classes and mined rules while changes since the last full build are <= this share of records and add no new words (0 = always full)
-    struct CachedRule { RuleH h; std::vector<u32> t1, t2, t3; };
+    // A cached rule keeps the template of every relation it references, so REFRESH can re-attach all of them
+    // (studies/refresh_trees): premises and conclusion, path steps (CHAIN), the condition relation, tree branches.
+    struct CachedRule { RuleH h; std::vector<u32> t1, t2, t3; std::vector<std::vector<u32>> tp; std::vector<u32> tc;
+                        std::vector<std::pair<std::vector<u32>, std::vector<u32>>> tb; };
     std::vector<CachedRule> ruleCache; bool haveCache = false; size_t vocAtFull = 0; u64 recsAtFull = 0; u64 fullBuilds = 0, refreshBuilds = 0;      // D-x: apply the dependency trace / same-rule re-derivation to facts that left a record's state
     struct Obs { std::string src, key; long t = 0, rev = 0; bool snap = true; std::vector<u32> rids; u64 seq = 0; };
     std::vector<Obs> obsLog;
@@ -1451,15 +1454,37 @@ struct Vault {
     static double nowms() { return std::chrono::duration<double, std::milli>(std::chrono::steady_clock::now().time_since_epoch()).count(); }
     void cacheRules() {
         ruleCache.clear();
-        for (auto& h : ruleList) ruleCache.push_back({h, rels[h.r1].tmpl, h.r2 >= 0 ? rels[h.r2].tmpl : std::vector<u32>(), rels[h.r3].tmpl});
+        for (auto& h : ruleList) {
+            CachedRule c{h, rels[h.r1].tmpl, h.r2 >= 0 ? rels[h.r2].tmpl : std::vector<u32>(), rels[h.r3].tmpl, {}, {}, {}};
+            for (int r : h.path) c.tp.push_back(rels[r].tmpl);
+            if (h.condRel >= 0) c.tc = rels[h.condRel].tmpl;
+            for (auto& b : h.branches) c.tb.push_back({rels[b.r].tmpl, b.s >= 0 ? rels[b.s].tmpl : std::vector<u32>()});
+            ruleCache.push_back(std::move(c));
+        }
     }
     void remapRules() {   // cached rules onto the rebuilt relations; a rule whose relation vanished is dropped
         std::map<std::vector<u32>, int> idx; for (size_t i = 0; i < rels.size(); ++i) idx[rels[i].tmpl] = (int)i;
         ruleList.clear();
+        auto at = [&](const std::vector<u32>& t) { auto it = idx.find(t); return it == idx.end() ? -1 : it->second; };
         for (auto& c : ruleCache) {
             auto a = idx.find(c.t1), b = c.t2.empty() ? idx.end() : idx.find(c.t2), d = idx.find(c.t3);
             if (a == idx.end() || d == idx.end() || (!c.t2.empty() && b == idx.end())) continue;
-            RuleH h = c.h; h.r1 = a->second; h.r2 = c.t2.empty() ? -1 : b->second; h.r3 = d->second; ruleList.push_back(h);
+            RuleH h = c.h; h.r1 = a->second; h.r2 = c.t2.empty() ? -1 : b->second; h.r3 = d->second;
+            bool ok = true;   // every other relation the rule references must still exist, re-attached by template
+            for (size_t i = 0; i < c.tp.size() && ok; ++i) { int r = at(c.tp[i]); if (r < 0) ok = false; else h.path[i] = r; }
+            if (ok && !c.tc.empty()) {
+                int r = at(c.tc);
+                if (r < 0) ok = false;
+                else {   // the condition's subjects were a snapshot of the data at mining: recompute them from the current facts
+                    h.condRel = r; h.condSubj.clear();
+                    for (auto& f : rels[r].stated) if (h.condVals.count(f.second)) h.condSubj.insert(f.first);
+                }
+            }
+            for (size_t i = 0; i < c.tb.size() && ok; ++i) {
+                int r = at(c.tb[i].first); int s2 = c.tb[i].second.empty() ? -1 : at(c.tb[i].second);
+                if (r < 0 || (!c.tb[i].second.empty() && s2 < 0)) ok = false; else { h.branches[i].r = r; h.branches[i].s = s2; }
+            }
+            if (ok) ruleList.push_back(h);
         }
         covRel.assign(rels.size(), -1);
         for (auto& h : ruleList) if (h.type == 'I' && h.lift >= 20 && h.k >= 10) covRel[h.r3] = std::max(covRel[h.r3], h.rate);
@@ -1468,7 +1493,9 @@ struct Vault {
     }
     void ensureModel() {
         if (!dirty) return;
-        bool small = F_REFRESH > 0 && CHAIN_L < 3 && !F_COND && !F_TREES && !F_REPL && !F_QUAR && haveCache && voc.str.size() == vocAtFull && double(recordsIngested - recsAtFull) <= F_REFRESH * double(std::max<u64>(1, recs.size()));
+        // TREES may use the refresh path: tree rules are re-attached in full (remapRules). CHAIN 3+ and CONDITIONS are
+        // re-attached too but stay off it until validated; REPLICATE and QUARANTINE change the evidence itself.
+        bool small = F_REFRESH > 0 && CHAIN_L < 3 && !F_COND && !F_REPL && !F_QUAR && haveCache && voc.str.size() == vocAtFull && double(recordsIngested - recsAtFull) <= F_REFRESH * double(std::max<u64>(1, recs.size()));
         if (small) {   // evidence changed a little: re-project and rebuild relations, keep the learned classes and rules
             double t0 = nowms(); buildRelations(); remapRules(); ++refreshBuilds;
             if (F_PROFILE) std::printf("[PROFILE] refresh: relations %.1f ms (classes and rules reused)\n", nowms() - t0);

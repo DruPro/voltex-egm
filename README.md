@@ -393,6 +393,9 @@ voltex-egm/
 - `studies/compute`: can tree inference compute? From example gates alone, the engine computed NAND-only and 8-bit
   adders and a 16 × 16 Rule 110 automaton with law-only proofs, at 0 errors. That is bounded computation, not Turing
   completeness.
+- Engine: `REFRESH` (experimental, off by default) now re-attaches every relation a rule references and works with
+  `TREES`. Learned tree programs run step by step without relearning, with answers identical to relearning every
+  step (109/109). Byte-identical when off (gate 221/221, stress bench 294/295) (`studies/refresh_trees`).
 - `studies/inferred_program`: learned rules executed as programs. A state machine, recursion, 8-bit adders and Rule
   110 ran as learned rules in one inference pass (2,708 of 2,708 results), with runtime state never learned from
   and every proof traceable to the supporting examples. Across passes, composition programs keep their rules

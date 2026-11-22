@@ -1,0 +1,2 @@
+aa1fc4697ac8d1202a593224739cd55a68fd37df537a98c1aeebfcdec92b1aec  src/voltex2.cpp at f4bd72d (baseline source)
+ceac70a7091ca80ce88cbf155aca937acdabbea972eb22717aa9d616925c877a  baseline binary (built from it, not committed)

@@ -1,0 +1,90 @@
+{
+ "binary": "voltex2",
+ "programs": [
+  {
+   "program": "P1 state machine",
+   "steps": 64,
+   "correct": 64,
+   "new_equals_full": 64,
+   "new_full_builds": 0,
+   "new_refresh_builds": 63,
+   "full_engine_full_builds": 63,
+   "ms_per_step_new": 8.03,
+   "ms_per_step_full": 19.63
+  },
+  {
+   "program": "bb3",
+   "steps": 14,
+   "correct": 14,
+   "new_equals_full": 14,
+   "new_full_builds": 0,
+   "new_refresh_builds": 13,
+   "full_engine_full_builds": 13,
+   "ms_per_step_new": 31.17,
+   "ms_per_step_full": 79.64
+  },
+  {
+   "program": "inc",
+   "steps": 5,
+   "correct": 5,
+   "new_equals_full": 5,
+   "new_full_builds": 0,
+   "new_refresh_builds": 4,
+   "full_engine_full_builds": 4,
+   "ms_per_step_new": 30.8,
+   "ms_per_step_full": 79.42
+  },
+  {
+   "program": "inc",
+   "steps": 9,
+   "correct": 9,
+   "new_equals_full": 9,
+   "new_full_builds": 0,
+   "new_refresh_builds": 8,
+   "full_engine_full_builds": 8,
+   "ms_per_step_new": 31.45,
+   "ms_per_step_full": 79.41
+  },
+  {
+   "program": "inc",
+   "steps": 17,
+   "correct": 17,
+   "new_equals_full": 17,
+   "new_full_builds": 0,
+   "new_refresh_builds": 16,
+   "full_engine_full_builds": 16,
+   "ms_per_step_new": 30.87,
+   "ms_per_step_full": 79.07
+  }
+ ],
+ "safety": {
+  "a_new_word": {
+   "refresh_before_new_word": true,
+   "full_after_new_word": true
+  },
+  "b_vanished_relation": {
+   "refresh": {
+    "rules_with_relation_before": 1,
+    "after": 0,
+    "refresh_taken": true,
+    "answers": [],
+    "relations": [
+     "is from",
+     "lives in"
+    ]
+   },
+   "full": {
+    "rules_with_relation_before": 1,
+    "after": 0,
+    "refresh_taken": false,
+    "answers": [],
+    "relations": [
+     "is from",
+     "lives in"
+    ]
+   },
+   "same_answers": true,
+   "same_rules_after": true
+  }
+ }
+}

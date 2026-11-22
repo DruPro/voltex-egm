@@ -138,3 +138,13 @@ the confirmation, with the same answers as a full relearn.
   each step (an unbounded tape) still need a full build, unless their cells are recycled.
 - The exceptions problem (`studies/strengths`) and the snapshot loss (`lang/mimic/repro_observe_loss.py`) are
   separate and unchanged.
+
+## Follow-up (2026-11-22): the proposed change was made
+
+Approved by the owner, pre-registered and tested in `studies/refresh_trees`:
+- **The change:** `REFRESH` now re-attaches every relation a rule references, and is allowed with `TREES`.
+- **Off:** byte-identical (gate 221/221, stress bench 294/295 with the remaining cell capped on both sides).
+- **Tree programs across passes:** the state machine, busy beaver and increment keep their rules: 109/109 steps
+  correct and identical to relearning, at 2.5-2.7× lower cost per step.
+
+H3 above described the engine before that change.

@@ -77,8 +77,12 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 - `MAXWORDS`, `MAXRELATIONS`: capacity caps. When one is hit, `RELATIONS` prints a `[LIMIT]`
   line naming the setting. At 16,000 words, raising `MAXWORDS` to 30000 took tree gates from
   0 to 3,198 of 3,198 correct outputs. Raising it makes builds slower (5 s to 9 s there).
-- `DX`, `DECL`, `DECLMINE`, `DECLFN`, `REFRESH`: options from earlier studies of change
-  handling and rebuild speed; see `docs/papers/`.
+- `DX`, `DECL`, `DECLMINE`, `DECLFN`: options from earlier studies of change handling; see `docs/papers/`.
+- `REFRESH`: on a small change with no new words (net change at most this share of records), it keeps the learned
+  categories and rules and re-projects the relations. It re-attaches every relation a rule references: premises,
+  conclusion, path steps, the condition relation (whose subjects are recomputed) and tree branches. It applies with
+  `TREES` (`studies/refresh_trees`), but not with `CHAIN 3+`, `CONDITIONS`, `REPLICATE` or `QUARANTINE`. With
+  `REFRESH` off, output is byte-identical to before (gate 221/221).
 
 `DEPTH` is stable: `SET DEPTH 0` runs inference until nothing new is derived (`studies/depth/`).
 
