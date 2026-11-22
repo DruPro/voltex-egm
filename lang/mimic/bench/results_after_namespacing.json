@@ -1,0 +1,437 @@
+{
+ "exploratory": "after namespacing machine values (lang/mimic/REPORT.md); the pre-registered results.json is unchanged",
+ "programs": [
+  {
+   "program": "hello",
+   "mode": "fresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "not": [
+     2,
+     2
+    ],
+    "and": [
+     4,
+     4
+    ]
+   },
+   "seconds": 0.29
+  },
+  {
+   "program": "hello",
+   "mode": "refresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "not": [
+     2,
+     2
+    ],
+    "and": [
+     4,
+     4
+    ]
+   },
+   "seconds": 0.17
+  },
+  {
+   "program": "hello",
+   "mode": "rebuild",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "not": [
+     2,
+     2
+    ],
+    "and": [
+     4,
+     4
+    ]
+   },
+   "seconds": 0.43
+  },
+  {
+   "program": "adder",
+   "mode": "fresh",
+   "right": 8,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 8,
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   },
+   "seconds": 1.95
+  },
+  {
+   "program": "adder",
+   "mode": "refresh",
+   "right": 8,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 8,
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   },
+   "seconds": 0.81
+  },
+  {
+   "program": "adder",
+   "mode": "rebuild",
+   "right": 8,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 8,
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   },
+   "seconds": 2.28
+  },
+  {
+   "program": "add8",
+   "mode": "fresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   },
+   "seconds": 1.86
+  },
+  {
+   "program": "add8",
+   "mode": "refresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   },
+   "seconds": 0.91
+  },
+  {
+   "program": "add8",
+   "mode": "rebuild",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "xor": [
+     4,
+     4
+    ],
+    "and": [
+     4,
+     4
+    ],
+    "or": [
+     4,
+     4
+    ]
+   },
+   "seconds": 1.94
+  },
+  {
+   "program": "increment",
+   "mode": "fresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "inc": [
+     3,
+     3
+    ]
+   },
+   "seconds": 0.35
+  },
+  {
+   "program": "increment",
+   "mode": "refresh",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "inc": [
+     3,
+     3
+    ]
+   },
+   "seconds": 0.06
+  },
+  {
+   "program": "increment",
+   "mode": "rebuild",
+   "right": 4,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 4,
+   "learned": {
+    "inc": [
+     3,
+     3
+    ]
+   },
+   "seconds": 0.62
+  },
+  {
+   "program": "busy_beaver",
+   "mode": "fresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "learned": {
+    "bb": [
+     6,
+     6
+    ]
+   },
+   "seconds": 0.84
+  },
+  {
+   "program": "busy_beaver",
+   "mode": "refresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "learned": {
+    "bb": [
+     6,
+     6
+    ]
+   },
+   "seconds": 0.33
+  },
+  {
+   "program": "busy_beaver",
+   "mode": "rebuild",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "learned": {
+    "bb": [
+     6,
+     6
+    ]
+   },
+   "seconds": 1.13
+  },
+  {
+   "program": "parity",
+   "mode": "fresh",
+   "right": 3,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 3,
+   "learned": {
+    "parity": [
+     6,
+     6
+    ]
+   },
+   "seconds": 0.77
+  },
+  {
+   "program": "parity",
+   "mode": "refresh",
+   "right": 3,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 3,
+   "learned": {
+    "parity": [
+     6,
+     6
+    ]
+   },
+   "seconds": 0.26
+  },
+  {
+   "program": "parity",
+   "mode": "rebuild",
+   "right": 3,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 3,
+   "learned": {
+    "parity": [
+     6,
+     6
+    ]
+   },
+   "seconds": 1.13
+  },
+  {
+   "program": "rule110",
+   "mode": "fresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "learned": {
+    "rule110": [
+     8,
+     8
+    ]
+   },
+   "seconds": 1.46
+  },
+  {
+   "program": "rule110",
+   "mode": "refresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "learned": {
+    "rule110": [
+     8,
+     8
+    ]
+   },
+   "seconds": 0.5
+  },
+  {
+   "program": "rule110",
+   "mode": "rebuild",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 0,
+   "total": 1,
+   "learned": {
+    "rule110": [
+     8,
+     8
+    ]
+   },
+   "seconds": 1.9
+  },
+  {
+   "program": "guess",
+   "mode": "fresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 2,
+   "total": 3,
+   "learned": {
+    "majority": [
+     5,
+     5
+    ],
+    "inc": [
+     2,
+     2
+    ]
+   },
+   "seconds": 1.0
+  },
+  {
+   "program": "guess",
+   "mode": "refresh",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 2,
+   "total": 3,
+   "learned": {
+    "majority": [
+     5,
+     5
+    ],
+    "inc": [
+     2,
+     2
+    ]
+   },
+   "seconds": 0.34
+  },
+  {
+   "program": "guess",
+   "mode": "rebuild",
+   "right": 1,
+   "wrong": 0,
+   "unknown": 2,
+   "total": 3,
+   "learned": {
+    "majority": [
+     5,
+     5
+    ],
+    "inc": [
+     2,
+     2
+    ]
+   },
+   "seconds": 1.3
+  }
+ ]
+}

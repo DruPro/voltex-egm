@@ -207,6 +207,11 @@ class Runtime:
     def v(x): return "v" + x
     @staticmethod
     def unv(x): return x[1:]
+    # A machine's states and symbols get the machine's own prefix, so they never share words with functions or other
+    # machines. Shared words change the engine's categories, and a fact whose value falls outside its slot's category
+    # silently leaves the relation: taught next to a `not` function, inc lost its 64 "reads _" facts (REPORT.md).
+    @staticmethod
+    def mv(m, x): return f"{m.name}v{x}"
 
     def check_values(self):
         vals = {o for f in self.p.functions.values() for o in list(f.rows.values()) + [x for r in f.rows for x in r]}
@@ -241,10 +246,10 @@ class Runtime:
         L = [f"{w} is write of {st}", f"{mv} is move of {st}", f"{nx} is next of {st}"] + self.step_state(m, st, q, s)
         if outs:
             for i, (k, slot) in enumerate((("write", w), ("move", mv), ("next", nx))):
-                L.append(f"{slot} {self.rel(m, k)} {self.v(outs[i])}")
+                L.append(f"{slot} {self.rel(m, k)} {self.mv(m, outs[i])}")
         return L, {"step": st, "write": w, "move": mv, "next": nx}
 
-    def step_state(self, m, st, q, s): return [f"{st} {m.name}_state {self.v(q)}", f"{st} {m.name}_reads {self.v(s)}"]
+    def step_state(self, m, st, q, s): return [f"{st} {m.name}_state {self.mv(m, q)}", f"{st} {m.name}_reads {self.mv(m, s)}"]
 
     def snapshot(self, record, facts):
         """The current state of a record: an OBSERVE snapshot, or (rebuild) the only state the next engine sees."""
@@ -280,7 +285,8 @@ class Runtime:
         for i, k in enumerate(("write", "move", "next")):
             c = m.constant(i)
             if c is not None: got[k], how[k] = c, "declared"; continue
-            a = self.ask(f"{slots[k]} {self.rel(m, k)} ?")
+            self.sync(); self.queries += 1
+            a = [x[len(m.name) + 1:] for x in self.e.values(f"{slots[k]} {self.rel(m, k)} ?", strict=True)]
             got[k], how[k] = (a[0] if len(a) == 1 else None), "learned"
             if trace and got[k] is not None: how[k] = "learned: " + (self.proof(f"{slots[k]} {self.rel(m, k)} ?") or "")
         return got, how
@@ -438,7 +444,7 @@ class Runtime:
             if name in self.p.functions and ("has kind ?](g," + name + ")") in t or (name in self.p.functions and "has kind" not in t and "is output of" in t):
                 out.append((r.tier, r.known, r.agree, pretty(t)))
             if name in self.p.machines and f"{name}_" in t and any(f"is {k} of ?](a," in t for k in ("write", "move", "next")):
-                out.append((r.tier, r.known, r.agree, pretty(t)))
+                out.append((r.tier, r.known, r.agree, pretty(t).replace(f",{name}v", ",")))
         return out
 
 

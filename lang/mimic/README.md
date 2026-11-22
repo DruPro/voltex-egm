@@ -5,8 +5,38 @@ examples, and every step a program takes is decided by a learned rule, with a pr
 learned decides a step, the program stops and says **unknown**. It never guesses.
 
 ```
-python3 lang/mimic/mimic.py lang/mimic/examples/hello.mim
+python3 lang/mimic/play.py                                   # the playground: a guided tour, then a prompt
+python3 lang/mimic/mimic.py lang/mimic/examples/hello.mim    # run a program file
 ```
+
+## The playground
+
+`play.py` teaches the engine on screen and animates what it computes:
+- learned rules, shown in minimised form;
+- a proof walked back to your inputs;
+- a Turing-machine tape moving step by step;
+- Rule 110 drawn row by row;
+- a run that stops with UNKNOWN on a case it was never shown.
+
+After the tour you get a prompt:
+
+```
+mimic> function not
+...   0 -> 1
+...   1 -> 0
+... end
+  not: 2 of 2 rows learned
+mimic> eval not 0
+  out = 1
+mimic> load lang/mimic/examples/increment.mim
+mimic> run inc on 0111
+```
+
+Commands: `help`, `rules NAME`, `why NAME 1 0`, `run`, `eval`, `automaton`, `show`, `save FILE`, `load FILE`,
+`reset`, `tour`, `quit`. Flags: `--tour` or `--repl` only; `--fast` (no animation); `--no-color`. It runs in
+`refresh` mode, so the learned rules stay fixed while programs run.
+
+The research report is in [REPORT.md](REPORT.md).
 
 ## Ten-second tour
 

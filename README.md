@@ -4,7 +4,7 @@
 
 ### A CPU-only, evidential grammar memory knowledge engine
 
-Extract facts · build a knowledge base · query it · score it — with one command.<br>
+Learns rules from plain facts · answers with proofs · says when it doesn't know.<br>
 **No GPU. No training. No API keys.**
 
 <br>
@@ -19,6 +19,7 @@ Extract facts · build a knowledge base · query it · score it — with one com
 <br>
 
 [**Installation**](#installation) &nbsp;•&nbsp;
+[**See it work**](#see-it-work) &nbsp;•&nbsp;
 [**Quick start**](#five-minute-tour) &nbsp;•&nbsp;
 [**Evaluating**](#evaluating) &nbsp;•&nbsp;
 [**MCP server**](#serving-it-to-an-llm-mcp) &nbsp;•&nbsp;
@@ -33,18 +34,100 @@ Extract facts · build a knowledge base · query it · score it — with one com
 
 <img src="media/images/voltex-egm-mascot.png" alt="Voltex EGM mascot" width="260" align="right">
 
-**EGM** is a knowledge engine built on **Voltex**, a single-file C++ core with no dependencies. It
-learns relations and rules from plain `A relation B` facts. It answers queries with proofs and
-evidence tiers, and it keeps a history of how the facts changed over time.
+**Voltex EGM** is a knowledge engine that **learns rules from facts** and answers with **proofs**. Give it plain
+lines like `ana lives in porto` or `g7 has kind xor`. It finds the relations, discovers the rules that hold between
+them (inverse, chains, multi-premise paths, decision trees), and derives what was never stated. Every answer
+carries its evidence. When nothing supports an answer, it says *unknown*, not *no*.
 
-- **Runs on any CPU.** It needs a C++17 compiler and Python's standard library, nothing else.
-- **Every answer comes with its evidence.** Results carry status, tier and proof (`--json`), and `--strict` restricts them to stated facts and law-tier rules.
-- **Learns rules from data.** Relations and inference rules are learned from the facts. You don't write them.
-- **Tracks history.** Snapshot observations turn facts that a record no longer states into history.
-- **Works with LLMs.** It ships a read-only MCP server and a typed Python SDK.
-- **Measurable.** A built-in question generator, a scripted solver and a scorer reproduce the published numbers.
+- **Learns rules; you don't write them.** Rules are counted from the facts and scored against base rates.
+- **Every answer has a proof** back to stated facts, and a tier:
+  - *law*: the rule held, with high reliability, wherever the answer was known;
+  - *tendency*: a weighted guess.
+- **The learned rules can be run as a program.** Taught by examples, it computed adders, cellular automata and a
+  Turing machine's steps (see [Mimic](lang/mimic)).
+- **Runs on any CPU.** A single C++17 file with no dependencies, plus a Python SDK, a CLI and an MCP server for LLM
+  agents.
+- **Measured honestly.** Every number on this page comes from a study in `studies/`, with its failures next to its
+  wins. Most are pre-registered; exploratory results are labelled as such in their reports (`docs/EVALUATION.md`).
 
 <br clear="right">
+
+---
+
+## See it work
+
+```bash
+make                                   # builds the engine (a few seconds)
+python3 lang/mimic/play.py             # a guided tour, then a prompt where you teach it your own
+```
+
+The playground teaches the engine with examples and lets you watch it work:
+- **A full adder from three shown truth tables,** plus a proof of 1 + 1 + 1 back to the inputs.
+- **A Turing machine from three shown transitions:**
+
+```
+   _  1  1  1 [1] _    start in carry
+   _  1  1 [1] 0  _    step 1: carry read 1 -> write 0, left, go carry
+   ...
+   _ [_] 1  0  0  0  0  _    step 5: carry read _ -> write 1, left, go halt
+   halted after 5 steps
+```
+
+- **Rule 110, drawn from its 8 cases:**
+
+```
+   ·······························█
+   ······························██
+   ·····························███
+   ····························██·█
+   ···························█████
+```
+
+- **What it does with a case it was never shown:** it stops with *UNKNOWN* instead of guessing.
+
+Nothing in the playground knows what XOR or a Turing machine is; it only draws what the engine answers. The
+language behind it is **[Mimic](lang/mimic/README.md)**.
+
+---
+
+## What you can build with it
+
+| Use | What it gives you | Evidence |
+|---|---|---|
+| **A code knowledge base for an agent** | extract facts from a codebase (`egm extract python`), serve them over MCP; the agent gets answers with proofs, and "unknown" when the facts don't say | [Sonnet sessions](docs/AGENT_SESSIONS.md): 3/3 hidden definitions found, 6/6 callers, a root cause found in 22 calls |
+| **Rule discovery in structured data** | the rules a table implies, with their exceptions | Unicode tables: 96.2% of new facts true against `unicodedata`; most errors were Unicode's own exceptions ([findings](docs/STRESS_FINDINGS.md)) |
+| **Exact reasoning over parser output** | multi-hop ancestry, 3-premise paths, decision-table rules learned from code alone | Python stdlib: 98.8% of hidden facts recovered, every law-tier answer correct; replicated on 1M lines ([strengths](docs/STRENGTHS.md)) |
+| **Programs taught by example** | functions, state machines, circuits and automata whose meaning is learned; inspectable rules, proofs, honest stops | [Mimic](lang/mimic/REPORT.md): 14/14 definitions learned, 0 wrong results; [learned programs](docs/LEARNED_PROGRAMS.md) |
+| **Knowledge that changes** | snapshots from sources; old values become history; disagreements and stale conclusions are flagged | [SDK](docs/SDK.md), `egm observe` |
+
+---
+
+## A fair assessment
+
+**Where it is strong**
+- **Exact or consistent facts with real rules:** code structure, schemas, relational tables, circuits. There, every
+  law-tier answer has been right in the studies: 5,829 of 5,829, and 17,265 of 17,269 on third-party code.
+- **Explanation:** every derived fact has a proof, and every rule's supporting examples can be listed.
+- **Calibrated caution:** law-tier precision held at 0.988 or better on every controlled world. When it lacks
+  evidence it abstains, and an empty answer is reported as unknown.
+- **Small, fast, local:** no GPU, no API keys. Questions on a built knowledge base take under a millisecond.
+
+**Where it is weak**
+- **Tendency-tier answers are guesses.** Their precision ranged from 0.03 to 1.00 across worlds. Use `strict=True`
+  or `TENDENCYSTEPS 0` for answers you act on.
+- **Noisy or sparse data** can let weak rules flood the answers: 1.15 million derived dpkg facts at the defaults,
+  4% true. Settings matter per dataset ([choosing settings](docs/CHOOSING_SETTINGS.md)).
+- **General rules can outvote exact exceptions** (`classmethod` versus "methods bind `self`").
+- **Rebuild cost:** learning reruns after changes. `REFRESH` keeps learned rules across small changes, but every
+  change still re-runs inference over everything.
+- **It needs examples:** about 64 per row for learned tables. A relation needs at least 3 facts. A name seen once
+  can't fill a learned slot.
+
+**What it is not**
+- Not a language model: it doesn't generate prose or understand text beyond its fact templates.
+- Not a theorem prover or a database: it finds regularities in evidence, and doesn't replace an exact query.
+- Not Turing complete on its own: it computes bounded, laid-out computations. Unbounded runs need a loop around it,
+  such as Mimic.
 
 ---
 
@@ -209,105 +292,39 @@ The data is in [`examples/`](examples). The questions and keys are the ones used
 
 ---
 
-## Results on real workflows
+## Results at a glance
 
-### Best case: exact facts from large codebases
+Most of these are pre-registered (the agent sessions and Mimic's `refresh` mode are exploratory, and labelled so).
+The full reports hold the failures as well as the wins.
 
-The input was the CPython 3.13 standard library, 273,430 lines, read with Python's `ast`
-([docs/STRENGTHS.md](docs/STRENGTHS.md), `studies/strengths`, pre-registered). Every fact is exactly true, and every
-answer is checked against the complete truth. 5,901 facts were hidden, and no rules were given.
-
-| | |
-|---|---|
-| Hidden facts recovered | **5,829 of 5,901 (98.8%)** |
-| Law-tier answers correct | **5,829 of 5,829** |
-| Wrong answers | 21, all labelled *tendency* by the engine (excluded by `strict=True`) |
-| Time, memory | ingest 0.2 s; learning and inference 10.4 s, once; 210 MB |
-
-| Reasoning, learned from the code alone | Setting | Recall without → with |
+| Study | Result | Failures and limits |
 |---|---|---|
-| Every ancestor of a class, up to 5 generations, with 70% of ancestries hidden | `DEPTH 0` | 0.965 → 1.000 (vs `DEPTH 1`) |
-| Method → class → module → package, a 3-premise rule | `CHAIN 3` | 0.000 → 1.000 |
-| What Python passes as the first argument (classmethod → `cls`, staticmethod → nothing, …) | `TREES 1` | 0.000 → 0.981 |
+| [Python stdlib, exact facts](docs/STRENGTHS.md) | 5,829 / 5,901 hidden facts recovered; every law-tier answer correct; replicated on 1M lines of Debian packages (97.9%) | the 4 false law-tier answers came from an extractor gap; exceptions lost to general rules |
+| [Stress bench](docs/STRESS_FINDINGS.md), 31 datasets | Unicode rules 96.2% true; precise multi-step proofs on real code | dpkg floods at the defaults; `DEPTH 0` ran out of memory on wide graphs |
+| [Agent sessions](docs/AGENT_SESSIONS.md) (Sonnet over MCP) | definitions, callers and a root cause found, each with proofs | 1 of 7 inferred exception sources right (the agent flagged them as weak) |
+| [Computation](docs/LEARNED_PROGRAMS.md) | NAND-only adders 3,330 / 3,330 wires; Rule 110 720 / 720 cells | a base-rate shortcut rule cost 47 wrong values in one seed (fixed by law-only proofs) |
+| [Learned programs](docs/LEARNED_PROGRAMS.md) | state machine, recursion, adders, automaton: 2,708 / 2,708 in one pass, runtime state never learned from, proofs traced to examples | chunked execution helped 7×, not the predicted 10× |
+| [Mimic](lang/mimic/REPORT.md) | 14 / 14 definitions learned, 0 wrong results in 4 modes | OBSERVE snapshot loss; programs sharing values interfered until namespaced |
+| [Engine changes](studies/refresh_trees/RESULTS.md) | `REFRESH` for tree rules: 109 / 109 steps identical to relearning; byte-identical when off | 2.5-2.7× faster, not the predicted 3× |
+| [Evaluation baseline](studies/eval/BASELINE.md) | law-tier precision ≥ 0.988 on every controlled world; scorecard deterministic | tendency-tier precision is not calibrated |
 
-```
-logging.handlers.RotatingFileHandler is a subclass of logging.Filterer       [law, round 3; names shortened below]
-├── RotatingFileHandler is a subclass of logging.Handler                     [law]
-│   ├── RotatingFileHandler is a subclass of logging.FileHandler             [law]
-│   │   ├── RotatingFileHandler inherits from BaseRotatingHandler            (stated)
-│   │   └── BaseRotatingHandler inherits from logging.FileHandler            (stated)
-│   └── logging.FileHandler is a subclass of logging.Handler                 [law]
-│       ├── FileHandler inherits from StreamHandler                          (stated)
-│       └── StreamHandler inherits from Handler                              (stated)
-└── logging.Handler inherits from logging.Filterer                           (stated)
-```
+Engine changes in this cycle, each pre-registered and shown byte-identical with the change off (the 221-cell
+regression gate, plus the 294-cell stress bench for the two later changes):
+- `CLUSTERSTREAM` (on by default): 244,444 facts in 256 MB instead of 8,350 MB.
+- A cheaper category loop: up to 9× faster builds.
+- `REFRESH` for tree rules.
 
-What got there:
-- **Facts the rule shapes can express** ([docs/DATA_DESIGN.md](docs/DATA_DESIGN.md), section 2);
-- **`TENDENCYSTEPS 0`** for answers you act on.
+---
 
-Stated naively, the same code gave recall 0.276.
+## How it works, in one paragraph
 
-**Replicated on an independent codebase** (pre-registered, same settings, no tuning on this data). The input was
-Debian's Python packages: 1,027,745 lines of third-party code, with ancestry up to
-13 ancestors.
-- **Recovered:** 17,271 of 17,635 hidden facts (97.9%).
-- **Law tier:** 17,265 of 17,269 law-tier answers true.
-- **Settings:** `CHAIN 3` and `TREES 1` were again the only route to package and binding facts.
+Facts are stored exactly in a compressed grammar. Words that appear in similar places form categories. Repeated
+sentence shapes become relations. Rules are counted between relations and accepted only when they beat the base
+rate. Accepted rules are applied round after round to derive new facts, each with a proof and a tier.
 
-**Limits of this evidence:**
-- **Law tier means reliable given what was observed, not true about the system.** The 4 false law-tier answers came
-  from the extractor leaving out unusual decorators, so the engine filled the gap with the majority value.
-- **Exceptions lose to general rules.** `classmethod` and `staticmethod` facts got wrong (tendency-labelled) answers
-  or none, in both codebases.
-- **The settings are evidence, not a universal default.** `TENDENCYSTEPS 0` cut the tokenomics score from 0.380 to
-  0.118. Validate on your own data; `egm.tune(..., expanded=True)` searches these settings.
-- **An empty answer means unknown, not false.** `egm mcp` says so, and names any cap.
-
-### Noisy extractions and partial keys
-
-From the stress study (`studies/stress`): 31 datasets, 295 runs, with 20% of each real dataset hidden as an answer
-key.
-
-**An agent using the engine** (Claude Sonnet 5.5 over `egm mcp`, engine tools only; recorded sessions, each claim
-checked against the hidden facts: [docs/AGENT_SESSIONS.md](docs/AGENT_SESSIONS.md)):
-
-| Task, on 125 real Python packages or the dpkg database | Result |
-|---|---|
-| Where is this function defined? (facts hidden from the engine) | 3 of 3 found by inference, each with its proof |
-| Impact analysis: callers two levels up | 6 of 6 callers, with their modules |
-| Where can this exception come from? | stated raisers and all 4 callers right; 1 of 7 inferred raisers right, which the agent flagged as weak leads |
-| Why does inference derive a million facts? | root cause found (a reversed rule) in 22 engine calls, 100 s |
-
-**What the engine learned with no rules given** ([docs/STRESS_FINDINGS.md](docs/STRESS_FINDINGS.md)):
-
-| Data | Learned | Accuracy of new facts |
-|---|---|---|
-| Unicode tables (11,172 characters) | case pairs are inverses; case partners and decompositions share script, direction, category | 96.2% true against `unicodedata`; 40 of 50 errors are Unicode's own exceptions |
-| Python code (64,763 facts) | a function lives where the functions it calls live (0.82 on 10,372 cases) | multi-step proofs; precision depends on settings |
-| Debian packages (14,296 facts) | transitive dependencies | 87.6% true with `DEPTH 1`, 4.2% with the default `DEPTH 4` |
-| Company and social data | team, manager, symmetric and inverse relations | precision 1.00 |
-
-**Settings matter per dataset.** `TENDENCYSTEPS 0` takes Python packages from 0.010 to 0.963 precision but halves
-recall on company data; `TREES 1` and `CHAIN 3` are the only way to answer gates and family trees. See
-[docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md).
-
-**Where it goes wrong:**
-- On sparse or skewed data it can accept rules backed by few known cases. Inference then multiplies them: 1.15
-  million dpkg facts at the defaults.
-- `DEPTH 0` on wide graphs runs out of memory.
-- Below the `MAXWORDS` cap, questions about rarer names come back empty, with no warning.
-
-## Implementation results
-
-| Change | Result |
-|---|---|
-| `CLUSTERSTREAM` (on by default) | Categories are built without listing every similar pair. Identical output on 221/221 regression cells. 244,444 facts: 8,350 MB, 48.5 s → 256 MB, 19.7 s |
-| Cheaper joined check in the category loop | Identical output on 294/294 stress runs and 221/221 regression cells. Gates, 80,063 facts: 22.1 s → 2.4 s; code in three languages 10.6 s → 3.9 s |
-| `egm.shard` (experimental) | Several engines for independent sources. Splitting one dataset is not general: it matched one engine on 2 of 6 world shapes ([studies/shard_general](studies/shard_general/RESULTS.md)) |
-
-Every change was pre-registered, gated on byte-identical output, and run on every dataset
-([studies/scaling](studies/scaling/PROMOTION.md), [studies/stress](studies/stress/RESULTS.md)).
+Learning (rule mining) reads stated facts only. Inference applies a fixed rule list. So a derived value never
+becomes evidence, and the learned rules can act as a program ([THEORY.md](docs/THEORY.md),
+[LEARNED_PROGRAMS.md](docs/LEARNED_PROGRAMS.md)).
 
 ---
 
@@ -318,16 +335,23 @@ Every change was pre-registered, gated on byte-identical output, and run on ever
 
 <br>
 
-- **Cold start.** A name seen in only one fact cannot fill a learned slot. Relations need 3+ facts.
-- **Weak rules.** Tendency-tier rules can be wrong. At corpus M they cost 3–9 F1 points on fresh
-  question sets. Use `--strict` when precision matters.
-- **Strict-policy evidence.** On parser-built facts the strict policy is near-perfect by
-  construction, because the stated facts are the truth. Its real test is facts written by an LLM.
-- **Storage.** The v2.2 observation log roughly doubles storage on heavily revised data.
-- **Memory at exit.** The grammar has no destructor. The sanitizer build finds no memory errors or
-  undefined behaviour, but it reports the memory still allocated at exit.
-- **Extraction** is built in for Python only (static, never executes the code). For other
-  languages, emit `A relation B` lines.
+- **Cold start.** A name seen in only one fact can't fill a learned slot. Relations need 3+ facts.
+- **Weak rules.** Tendency-tier rules can be wrong. Use `--strict` (or `TENDENCYSTEPS 0`) when precision matters.
+- **Rule shapes.** Learned rules are inverses, chains, paths of up to 8 premises (`CHAIN`), group conditions
+  (`CONDITIONS`) and trees (`TREES`).
+  - A same-direction copy `r(a,b) ⇒ s(a,b)` isn't a shape: state the inverse instead.
+  - Tree targets can have at most 8 distinct values.
+- **Categories can drop facts silently.** A value that falls outside its slot's category takes its facts out of the
+  relation, with no warning. Keep unrelated domains' values distinct ([Mimic report](lang/mimic/REPORT.md) §5.3).
+- **OBSERVE snapshots** can lose a record's current state after 13-26 restatements when plain facts also name the
+  entity (`lang/mimic/repro_observe_loss.py`).
+- **Rebuild cost.** Changes re-run learning, unless `REFRESH` applies (small changes, no new words, not with
+  `CHAIN 3+` or `CONDITIONS`). Inference always re-runs in full.
+- **Storage.** The observation log roughly doubles storage on heavily revised data.
+- **Memory at exit.** The grammar has no destructor. The sanitizer build finds no memory errors or undefined
+  behaviour, but reports the memory still allocated at exit.
+- **Extraction** is built in for Python only (static, never executes the code). For other languages, emit
+  `A relation B` lines.
 
 </details>
 
@@ -338,17 +362,13 @@ Every change was pre-registered, gated on byte-identical output, and run on ever
 ```text
 voltex-egm/
 ├── src/voltex2.cpp        # the engine (single file, no dependencies)
-├── egm/                   # SDK (engine, model, parse, errors), extractor, bench, CLI
+├── egm/                   # SDK (engine, model, parse, errors), extractor, bench, tune, shard, MCP server, CLI
 ├── bin/egm                # launcher (works from a checkout or an install)
-├── docs/
-│   ├── SDK.md             # SDK reference
-│   ├── MCP.md             # MCP server: client setup, tools, protocol
-│   ├── SETTINGS.md, CHOOSING_SETTINGS.md     # every setting; which to use when
-│   └── BUILDING_A_LAYER.md, AGENT_SESSIONS.md, STRENGTHS.md, STRESS_FINDINGS.md
+├── lang/mimic/            # Mimic: a language taught by example (interpreter, playground, examples, bench, report)
+├── docs/                  # references, guides and research reports (table below)
 ├── examples/              # Requests (Haiku facts) and tokenomics (S, M, L) with keys
-├── lang/mimic/            # Mimic, a language taught by example (interpreter, examples, bench)
-├── studies/               # pre-registered studies; studies/stress (bench, layers), studies/strengths (best case)
-├── tests/                 # run_tests.py (kit), test_sdk.py (SDK), test_mcp.py (MCP)
+├── studies/               # pre-registered studies, each with its plan, deviations, results and tools
+├── tests/                 # run_tests.py (kit), test_sdk.py, test_mcp.py, test_mimic.py
 ├── media/images/          # logo and mascot
 ├── pyproject.toml         # pip packaging
 └── setup.py               # compiles the engine during pip install
@@ -360,61 +380,52 @@ voltex-egm/
 
 | Document | Description |
 |---|---|
+| [lang/mimic/README.md](lang/mimic/README.md) | Mimic: the language and the playground |
+| [lang/mimic/REPORT.md](lang/mimic/REPORT.md) | Mimic research report: encoding, execution modes, bench, what it revealed about the engine |
+| [docs/LEARNED_PROGRAMS.md](docs/LEARNED_PROGRAMS.md) | Research report: learned rules as programs (computation, the harness, inferred programs, `REFRESH` for trees) |
 | [docs/SDK.md](docs/SDK.md) | Python SDK reference, including an LLM-tool example |
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
 | [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
-| [docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md) | Which settings to use for what you are trying to do, when not to, and what each costs (measured) |
-| [lang/mimic/README.md](lang/mimic/README.md) | Mimic: a programming language whose operations are learned from examples; try it, and what its bench measured |
-| [docs/EVALUATION.md](docs/EVALUATION.md) | How engine changes are judged: capabilities and metrics, capability matrix, protocol, improvement vs regression, general vs dataset-specific, baseline (`studies/eval`) |
-| [docs/STRENGTHS.md](docs/STRENGTHS.md) | The engine at its best: exact facts from the Python standard library, complete truth; depth, multi-premise and tree reasoning with proofs |
-| [docs/STRESS_FINDINGS.md](docs/STRESS_FINDINGS.md) | What the engine learned from real code, Unicode and Debian package data, with proofs and errors |
-| [docs/AGENT_SESSIONS.md](docs/AGENT_SESSIONS.md) | Recorded Sonnet sessions over MCP: code navigation, impact analysis, debugging, each checked against hidden facts |
-| [docs/BUILDING_A_LAYER.md](docs/BUILDING_A_LAYER.md) | Building an analysis layer (code, tables, logs): fact design, hidden keys, choosing settings, reading rules and proofs |
-| [docs/DATA_DESIGN.md](docs/DATA_DESIGN.md) | Designing data for deliberate inference: rule shapes, law vs tendency, several engines together |
-| [docs/THEORY.md](docs/THEORY.md) | Principles and theory: the layers, emergent behavior, information limits, design rules |
-| [studies/](studies/) | Pre-registered studies: inference depth, multi-premise rules, configuration, scaling, sharding, the stress bench |
+| [docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md) | Which settings to use for what you're trying to do, when not to, and what each costs |
+| [docs/EVALUATION.md](docs/EVALUATION.md) | How engine changes are judged: capability matrix, protocol, improvement vs regression |
+| [docs/STRENGTHS.md](docs/STRENGTHS.md) | The engine at its best: exact facts from two Python codebases, complete truth |
+| [docs/STRESS_FINDINGS.md](docs/STRESS_FINDINGS.md) | What it learned from real code, Unicode and Debian package data, with proofs and errors |
+| [docs/AGENT_SESSIONS.md](docs/AGENT_SESSIONS.md) | Recorded Sonnet sessions over MCP, each claim checked against hidden facts |
+| [docs/BUILDING_A_LAYER.md](docs/BUILDING_A_LAYER.md) | Building an analysis layer: fact design, hidden keys, settings, reading rules |
+| [docs/DATA_DESIGN.md](docs/DATA_DESIGN.md) | Designing data for deliberate inference: rule shapes, law vs tendency |
+| [docs/THEORY.md](docs/THEORY.md) | Principles and theory: the layers, emergent behavior, information limits |
+| [studies/](studies/) | Every pre-registered study, in order |
 
 ---
 
 ## Changelog
 
-### Unreleased (branch `study/shard`)
+### Unreleased
 
-- `CLUSTERSTREAM` is on by default. Same answers, far less memory on large vocabularies.
-- Cheaper joined check in the category loop. Same answers; builds up to 9× faster on large vocabularies.
-- `egm.shard` (experimental), for independent sources.
-- New docs:
-  - `CHOOSING_SETTINGS.md`;
-  - `BUILDING_A_LAYER.md`;
-  - `AGENT_SESSIONS.md`;
-  - `STRESS_FINDINGS.md`;
-  - `STRENGTHS.md`: the best case on exact code facts, with 98.8% of hidden facts recovered and every law-tier
-    answer correct; replicated on 1M lines of third-party code.
-- `studies/compute`: can tree inference compute? From example gates alone, the engine computed NAND-only and 8-bit
-  adders and a 16 × 16 Rule 110 automaton with law-only proofs, at 0 errors. That is bounded computation, not Turing
-  completeness.
-- Engine: `REFRESH` (experimental, off by default) now re-attaches every relation a rule references and works with
-  `TREES`. Learned tree programs run step by step without relearning, with answers identical to relearning every
-  step (109/109). Byte-identical when off (gate 221/221, stress bench 294/295) (`studies/refresh_trees`).
-- `studies/inferred_program`: learned rules executed as programs. A state machine, recursion, 8-bit adders and Rule
-  110 ran as learned rules in one inference pass (2,708 of 2,708 results), with runtime state never learned from
-  and every proof traceable to the supporting examples. Across passes, composition programs keep their rules
-  (`REFRESH`, 0.9 ms per step). Tree programs still relearn: a located gap in `remapRules`, proposed, not changed.
-- `lang/mimic`: **Mimic**, a small programming language taught by example. Functions, Turing machines, circuits and
-  cellular automata are learned from shown rows and run by the engine; a step nothing learned decides stops with
-  UNKNOWN. Bench: 14/14 definitions learned, 0 wrong results in 3 modes. `python3 lang/mimic/mimic.py
-  lang/mimic/examples/hello.mim`.
-- `studies/harness`: learn once, compute later. Gates taught once, then new 8-bit adders computed from their wiring
-  alone (90/90 outputs per seed). A harness that holds the tape and the clock ran a busy beaver and binary
-  increment from a Turing-machine transition table the engine learned from example steps; an untaught transition
-  stops with "unknown".
-- `docs/EVALUATION.md`, `studies/PROTOCOL_TEMPLATE.md` and `studies/eval`: the evaluation framework, a capability
-  scorecard with seed variance and tier calibration, and a validation of the gate and bench on this commit.
-- `egm.tune(..., settings=..., expanded=True)` (and `egm tune --expanded --set`): a base configuration, plus an
-  opt-in wider search. The default search is unchanged.
-- An empty answer from `egm mcp` or `explain()` now says "unknown, not false", and names any `[LIMIT]` cap.
-- `egm extract python` drops a definition named like a module (`p/main.py` and `main()`), like other ambiguous
-  names.
+- **Mimic and its playground** (`lang/mimic`):
+  - a language taught by example: functions, Turing machines, circuits and automata;
+  - `play.py`, a guided tour and a prompt;
+  - a `refresh` mode that keeps learned rules while programs run;
+  - machine values namespaced per machine.
+- **Engine:** `REFRESH` re-attaches every relation a rule references and works with `TREES`. Learned tree programs
+  run step by step without relearning (`studies/refresh_trees`). It is off by default and byte-identical when off.
+- **Studies:**
+  - `studies/compute`: bounded computation from learned gates;
+  - `studies/harness`: a harness supplies memory and a clock;
+  - `studies/inferred_program`: learned rules executed as programs;
+  - `studies/strengths`: exact code facts, replicated;
+  - `studies/eval`: evaluation framework and baseline;
+  - `studies/architecture`: designed, paused.
+- **SDK and MCP:**
+  - `egm.tune(..., settings=..., expanded=True)`;
+  - empty answers say "unknown, not false" and name any cap;
+  - `egm extract python` drops a definition named like a module.
+- **Earlier on this cycle:**
+  - `CLUSTERSTREAM` on by default;
+  - the cheaper category loop;
+  - `egm.shard`;
+  - docs `CHOOSING_SETTINGS`, `BUILDING_A_LAYER`, `AGENT_SESSIONS`, `STRESS_FINDINGS`, `STRENGTHS`, `EVALUATION`,
+    `LEARNED_PROGRAMS`.
 
 ### 2.2.1
 
