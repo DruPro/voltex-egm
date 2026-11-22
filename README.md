@@ -391,6 +391,10 @@ voltex-egm/
 - `studies/compute`: can tree inference compute? From example gates alone, the engine computed NAND-only and 8-bit
   adders and a 16 × 16 Rule 110 automaton with law-only proofs, at 0 errors. That is bounded computation, not Turing
   completeness.
+- `studies/harness`: learn once, compute later. Gates taught once, then new 8-bit adders computed from their wiring
+  alone (90/90 outputs per seed). A harness that holds the tape and the clock ran a busy beaver and binary
+  increment from a Turing-machine transition table the engine learned from example steps; an untaught transition
+  stops with "unknown".
 - `docs/EVALUATION.md`, `studies/PROTOCOL_TEMPLATE.md` and `studies/eval`: the evaluation framework, a capability
   scorecard with seed variance and tier calibration, and a validation of the gate and bench on this commit.
 - `egm.tune(..., settings=..., expanded=True)` (and `egm tune --expanded --set`): a base configuration, plus an
