@@ -1,0 +1,41 @@
+{
+ "verdicts": {
+  "H1": "pass",
+  "H2": "pass",
+  "H3": "pass",
+  "H4": "fail",
+  "H5": "pass",
+  "H6": "pass"
+ },
+ "detail": {
+  "x5_wrong_law": {
+   "a_untaught_symbol": 0,
+   "b_mixed_transition": 0,
+   "c_untaught_state": 0
+  },
+  "x5_first_without_law": {
+   "a_untaught_symbol": 12,
+   "b_mixed_transition": 1,
+   "c_untaught_state": 0
+  },
+  "x5_law_answers_after_first_unknown": {
+   "a_untaught_symbol": 0,
+   "b_mixed_transition": 0,
+   "c_untaught_state": 0
+  },
+  "x5_b_first_step_needing_mixed_transition": 1,
+  "x3_ms_per_step": {
+   "1": 33.93,
+   "8": 6.89,
+   "32": 4.1,
+   "256": 4.76
+  },
+  "x3_ratio_K1_K256": 7.13,
+  "x2_ms_per_step": {
+   "P2 pointer walk REFRESH 0.05": 0.9,
+   "P2 pointer walk REFRESH 0": 2.26,
+   "P1 state machine (loop) REFRESH 0.05": 19.09,
+   "P1 state machine (loop) REFRESH 0": 19.18
+  }
+ }
+}

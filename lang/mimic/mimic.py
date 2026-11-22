@@ -157,11 +157,11 @@ class Circuit:
 
 # -------------------------------------------------------------------------------- runtime
 class Runtime:
-    def __init__(self, prog, mode="fresh", out=print, binary=None, depth=0):
+    def __init__(self, prog, mode="fresh", out=print, binary=None, depth=0, prefix="e", start_engine=True):
         if mode not in ("observe", "fresh", "rebuild"): raise MimicError(f"unknown mode {mode}")
         self.p, self.mode, self.fresh, self.out = prog, mode, mode == "fresh", out; self.n = 0; self.t = 0; self.timing = {}
         self.binary = binary or os.path.join(ROOT, "build", "voltex2"); self.struct = []; self.current = {}; self.dirty = False
-        self.rebuilds = 0; self.depth = depth; self.queries = 0
+        self.rebuilds = 0; self.depth = depth; self.queries = 0; self.prefix = prefix
         self.check_values()
         lines = []
         for f in prog.functions.values():
@@ -172,8 +172,10 @@ class Runtime:
             for (q, s), val in m.rows.items():
                 for _ in range(prog.teach): lines += self.step_facts(m, q, s, val)[0]
         if not lines: lines = ["mimic has nothing taught"]
-        self.tmp = tempfile.TemporaryDirectory(); self.taught = lines
-        t0 = time.time(); self.e = None; self.open_engine(); self.timing["learn_s"] = round(time.time() - t0, 2)
+        self.tmp = tempfile.TemporaryDirectory(); self.taught = lines; self.e = None
+        if not start_engine:   # only the taught facts, e.g. for a harness that runs engines itself (studies/architecture)
+            self.taught_facts = len(lines); self.compiled = {}; self.machine_ent = {}; return
+        t0 = time.time(); self.open_engine(); self.timing["learn_s"] = round(time.time() - t0, 2)
         self.taught_facts = len(lines); self.compiled = {}; self.machine_ent = {}
 
     def open_engine(self):
@@ -194,7 +196,7 @@ class Runtime:
         if self.mode == "rebuild" and self.dirty: self.open_engine(); self.rebuilds += 1
 
     # names: e1, e2, ... ; values are prefixed so they can never collide with names or relation words
-    def name(self): self.n += 1; return f"e{self.n}"
+    def name(self): self.n += 1; return f"{self.prefix}{self.n}"
     @staticmethod
     def v(x): return "v" + x
     @staticmethod

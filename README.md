@@ -393,6 +393,10 @@ voltex-egm/
 - `studies/compute`: can tree inference compute? From example gates alone, the engine computed NAND-only and 8-bit
   adders and a 16 × 16 Rule 110 automaton with law-only proofs, at 0 errors. That is bounded computation, not Turing
   completeness.
+- `studies/inferred_program`: learned rules executed as programs. A state machine, recursion, 8-bit adders and Rule
+  110 ran as learned rules in one inference pass (2,708 of 2,708 results), with runtime state never learned from
+  and every proof traceable to the supporting examples. Across passes, composition programs keep their rules
+  (`REFRESH`, 0.9 ms per step). Tree programs still relearn: a located gap in `remapRules`, proposed, not changed.
 - `lang/mimic`: **Mimic**, a small programming language taught by example. Functions, Turing machines, circuits and
   cellular automata are learned from shown rows and run by the engine; a step nothing learned decides stops with
   UNKNOWN. Bench: 14/14 definitions learned, 0 wrong results in 3 modes. `python3 lang/mimic/mimic.py

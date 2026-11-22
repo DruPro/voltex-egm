@@ -1,0 +1,692 @@
+{
+ "X1": [
+  {
+   "program": "P1 state machine (unrolled)",
+   "items": 1280,
+   "right": 1280,
+   "wrong": 0,
+   "unknown": 0,
+   "derived_stated": 0,
+   "full_builds_first": 1,
+   "builds_after_first": 0,
+   "output_rules_identical": true,
+   "output_rules": 6,
+   "provenance": {
+    "answers_checked": 40,
+    "proof_reaches_stated": 40,
+    "rules_used": 6,
+    "rules_with_examples": 6,
+    "support_count_matches_engine": 6,
+    "mismatches": [],
+    "example_trace": [
+     "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,s0) & [? has second input ?](g,y2) & [? has value ?](y2,b1) => [? has value ?](a,s1)",
+     {
+      "n": 64,
+      "k": 64,
+      "engine_k": 64,
+      "engine_n": 77,
+      "examples": [
+       "p260 has value s1",
+       "p264 has value s1",
+       "p268 has value s1"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "program": "P3 recursion",
+   "items": 858,
+   "right": 858,
+   "wrong": 0,
+   "unknown": 0,
+   "derived_stated": 0,
+   "full_builds_first": 1,
+   "builds_after_first": 0,
+   "output_rules_identical": true,
+   "output_rules": 7,
+   "provenance": {
+    "answers_checked": 40,
+    "proof_reaches_stated": 40,
+    "rules_used": 4,
+    "rules_with_examples": 4,
+    "support_count_matches_engine": 4,
+    "mismatches": [],
+    "example_trace": [
+     "[? is child of ?](a,b) => [? is ancestor of ?](b,a)",
+     {
+      "n": 297,
+      "k": 297,
+      "engine_k": 297,
+      "engine_n": 440,
+      "examples": [
+       "c2x0 is ancestor of c2x1",
+       "c2x1 is ancestor of c2x2",
+       "c2x2 is ancestor of c2x3"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "program": "P4 8-bit adders",
+   "items": 90,
+   "right": 90,
+   "wrong": 0,
+   "unknown": 0,
+   "derived_stated": 0,
+   "full_builds_first": 1,
+   "builds_after_first": 0,
+   "output_rules_identical": true,
+   "output_rules": 9,
+   "provenance": {
+    "answers_checked": 40,
+    "proof_reaches_stated": 40,
+    "rules_used": 9,
+    "rules_with_examples": 9,
+    "support_count_matches_engine": 9,
+    "mismatches": [],
+    "example_trace": [
+     "TREE [? is output of ?](a,g) & [? has kind ?](g,xor) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero)",
+     {
+      "n": 56,
+      "k": 56,
+      "engine_k": 56,
+      "engine_n": 81,
+      "examples": [
+       "m1608 has value zero",
+       "m1612 has value zero",
+       "m1624 has value zero"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "program": "P5 Rule 110",
+   "items": 480,
+   "right": 480,
+   "wrong": 0,
+   "unknown": 0,
+   "derived_stated": 0,
+   "full_builds_first": 1,
+   "builds_after_first": 0,
+   "output_rules_identical": true,
+   "output_rules": 6,
+   "provenance": {
+    "answers_checked": 40,
+    "proof_reaches_stated": 40,
+    "rules_used": 3,
+    "rules_with_examples": 3,
+    "support_count_matches_engine": 3,
+    "mismatches": [],
+    "example_trace": [
+     "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has third input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+     {
+      "n": 128,
+      "k": 128,
+      "engine_k": 128,
+      "engine_n": 158,
+      "examples": [
+       "r965 has value zero",
+       "r970 has value zero",
+       "r975 has value zero"
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "X2": [
+  {
+   "program": "P2 pointer walk",
+   "refresh": 0.05,
+   "steps": 200,
+   "right": 200,
+   "full_builds": 0,
+   "refresh_builds": 199,
+   "ms_per_step": 0.9
+  },
+  {
+   "program": "P2 pointer walk",
+   "refresh": 0,
+   "steps": 200,
+   "right": 200,
+   "full_builds": 199,
+   "refresh_builds": 0,
+   "ms_per_step": 2.26
+  },
+  {
+   "program": "P1 state machine (loop)",
+   "refresh": 0.05,
+   "steps": 64,
+   "right": 64,
+   "full_builds": 63,
+   "refresh_builds": 0,
+   "ms_per_step": 19.09
+  },
+  {
+   "program": "P1 state machine (loop)",
+   "refresh": 0,
+   "steps": 64,
+   "right": 64,
+   "full_builds": 63,
+   "refresh_builds": 0,
+   "ms_per_step": 19.18
+  }
+ ],
+ "X3": [
+  {
+   "K": 1,
+   "steps": 256,
+   "right": 256,
+   "passes": 256,
+   "ms_per_step": 33.93
+  },
+  {
+   "K": 8,
+   "steps": 256,
+   "right": 256,
+   "passes": 32,
+   "ms_per_step": 6.89
+  },
+  {
+   "K": 32,
+   "steps": 256,
+   "right": 256,
+   "passes": 8,
+   "ms_per_step": 4.1
+  },
+  {
+   "K": 256,
+   "steps": 256,
+   "right": 256,
+   "passes": 1,
+   "ms_per_step": 4.76
+  }
+ ],
+ "X5": {
+  "a_untaught_symbol": [
+   {
+    "truth": "s1",
+    "law": [
+     "s1"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [
+     "s2"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [
+     "s0"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [
+     "s0"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [
+     "s0"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [
+     "s0"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s1",
+    "law": [
+     "s1"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [
+     "s2"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [
+     "s2"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [
+     "s0"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [
+     "s0"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s1",
+    "law": [
+     "s1"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   }
+  ],
+  "b_mixed_transition": [
+   {
+    "truth": "s1",
+    "law": [
+     "s1"
+    ],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s1",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s1",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s1",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s1",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s1",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s2",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s0",
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": "s1",
+    "law": [],
+    "tendency": []
+   }
+  ],
+  "c_untaught_state": [
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   },
+   {
+    "truth": null,
+    "law": [],
+    "tendency": []
+   }
+  ]
+ }
+}
