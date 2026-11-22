@@ -505,9 +505,14 @@ def execute(text, mode="fresh", out=print, binary=None):
 def main():
     a = sys.argv[1:]
     if not a or a[0] in ("-h", "--help"): print(__doc__); return 0
+    path = a[0]
+    if not os.path.isfile(path):
+        guess = path.rstrip(".,;:")   # a path copied with the sentence's punctuation
+        hint = f"; did you mean {guess}?" if guess != path and os.path.isfile(guess) else ""
+        print(f"mimic: no such file: {path}{hint}", file=sys.stderr); return 1
     try:
         mode = a[a.index("--mode") + 1] if "--mode" in a else "fresh"
-        execute(open(a[0]).read(), mode=mode, out=(lambda s: None) if "--quiet" in a else print)
+        execute(open(path).read(), mode=mode, out=(lambda s: None) if "--quiet" in a else print)
     except MimicError as e:
         print(f"mimic: {e}", file=sys.stderr); return 1
     return 0
