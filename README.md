@@ -388,6 +388,9 @@ voltex-egm/
   - `STRESS_FINDINGS.md`;
   - `STRENGTHS.md`: the best case on exact code facts, with 98.8% of hidden facts recovered and every law-tier
     answer correct; replicated on 1M lines of third-party code.
+- `studies/compute`: can tree inference compute? From example gates alone, the engine computed NAND-only and 8-bit
+  adders and a 16 × 16 Rule 110 automaton with law-only proofs, at 0 errors. That is bounded computation, not Turing
+  completeness.
 - `docs/EVALUATION.md`, `studies/PROTOCOL_TEMPLATE.md` and `studies/eval`: the evaluation framework, a capability
   scorecard with seed variance and tier calibration, and a validation of the gate and bench on this commit.
 - `egm.tune(..., settings=..., expanded=True)` (and `egm tune --expanded --set`): a base configuration, plus an

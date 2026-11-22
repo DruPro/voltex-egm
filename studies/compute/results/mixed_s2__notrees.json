@@ -1,0 +1,34 @@
+{
+ "world": "mixed",
+ "seed": 2,
+ "config": "notrees",
+ "settings": {},
+ "hidden": 480,
+ "correct": 0,
+ "wrong": 0,
+ "unanswered": 480,
+ "tiers": {},
+ "wires_by_kind": {
+  "add8": {
+   "unanswered": 400
+  },
+  "mux": {
+   "unanswered": 80
+  }
+ },
+ "circuits_fully_correct": {
+  "add8": [
+   0,
+   10
+  ],
+  "mux": [
+   0,
+   20
+  ]
+ },
+ "max_gate_depth_correct": 0,
+ "max_round_by_gate_depth": {},
+ "build_and_infer_s": 0.05,
+ "tree_rules": [],
+ "proof_sample": null
+}

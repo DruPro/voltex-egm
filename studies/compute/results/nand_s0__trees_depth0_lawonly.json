@@ -1,0 +1,96 @@
+{
+ "world": "nand",
+ "seed": 0,
+ "config": "trees_depth0_lawonly",
+ "settings": {
+  "TREES": 1,
+  "DEPTH": 0,
+  "TENDENCYSTEPS": 0
+ },
+ "exploratory": true,
+ "hidden": 1110,
+ "correct": 1110,
+ "wrong": 0,
+ "unanswered": 0,
+ "tiers": {
+  "law correct": 1110
+ },
+ "wires_by_kind": {
+  "add4": {
+   "correct": 720
+  },
+  "fulladd": {
+   "correct": 270
+  },
+  "xor": {
+   "correct": 120
+  }
+ },
+ "circuits_fully_correct": {
+  "add4": [
+   20,
+   20
+  ],
+  "fulladd": [
+   30,
+   30
+  ],
+  "xor": [
+   30,
+   30
+  ]
+ },
+ "max_gate_depth_correct": 12,
+ "max_round_by_gate_depth": {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 5,
+  "8": 6,
+  "9": 7,
+  "10": 8,
+  "11": 8,
+  "12": 9
+ },
+ "build_and_infer_s": 0.16,
+ "tree_rules": [
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 104,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 199,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 199,
+   "agree": 1.0
+  }
+ ],
+ "proof_sample": {
+  "wire": "voliza",
+  "gate_depth": 3,
+  "circuit": "xor_7",
+  "answers": [
+   {
+    "fact": "voliza has value one",
+    "tier": "law",
+    "rule": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one)",
+    "because": [
+     "voliza is output of banero",
+     "banero has second input moreri",
+     "moreri has value zero"
+    ]
+   }
+  ]
+ }
+}

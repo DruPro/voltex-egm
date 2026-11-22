@@ -1,0 +1,22 @@
+{
+ "world": "rnd",
+ "seed": 1,
+ "config": "notrees",
+ "settings": {},
+ "hidden": 60,
+ "correct": 0,
+ "wrong": 0,
+ "unanswered": 60,
+ "tiers": {},
+ "wires_by_kind": {
+  "single": {
+   "unanswered": 60
+  }
+ },
+ "circuits_fully_correct": {},
+ "max_gate_depth_correct": 0,
+ "max_round_by_gate_depth": {},
+ "build_and_infer_s": 0.03,
+ "tree_rules": [],
+ "proof_sample": null
+}

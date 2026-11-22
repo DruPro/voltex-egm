@@ -1,0 +1,82 @@
+{
+ "world": "rnd",
+ "seed": 1,
+ "config": "trees_depth0_lawonly",
+ "settings": {
+  "TREES": 1,
+  "DEPTH": 0,
+  "TENDENCYSTEPS": 0
+ },
+ "exploratory": true,
+ "hidden": 60,
+ "correct": 0,
+ "wrong": 0,
+ "unanswered": 60,
+ "tiers": {},
+ "wires_by_kind": {
+  "single": {
+   "unanswered": 60
+  }
+ },
+ "circuits_fully_correct": {},
+ "max_gate_depth_correct": 0,
+ "max_round_by_gate_depth": {},
+ "build_and_infer_s": 0.09,
+ "tree_rules": [
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 99,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has second input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 94,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 37,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has first input ?](g,y1) & [? has value ?](y1,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 113,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 51,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has second input ?](g,y1) & [? has value ?](y1,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 115,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+   "tier": "tendency",
+   "known": 126,
+   "agree": 0.84
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,or) => [? has value ?](a,one)",
+   "tier": "tendency",
+   "known": 200,
+   "agree": 0.81
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "tendency",
+   "known": 173,
+   "agree": 0.86
+  }
+ ],
+ "proof_sample": null
+}

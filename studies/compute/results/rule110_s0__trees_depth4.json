@@ -1,0 +1,95 @@
+{
+ "world": "rule110",
+ "seed": 0,
+ "config": "trees_depth4",
+ "settings": {
+  "TREES": 1
+ },
+ "hidden": 300,
+ "correct": 124,
+ "wrong": 0,
+ "unanswered": 176,
+ "tiers": {
+  "law correct": 124
+ },
+ "wires_by_kind": {
+  "automaton": {
+   "correct": 64,
+   "unanswered": 176
+  },
+  "single": {
+   "correct": 60
+  }
+ },
+ "circuits_fully_correct": {
+  "automaton": [
+   0,
+   1
+  ]
+ },
+ "max_gate_depth_correct": 4,
+ "max_round_by_gate_depth": {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4
+ },
+ "build_and_infer_s": 0.06,
+ "tree_rules": [
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) & [? has first input ?](g,y3) & [? has value ?](y3,one) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 35,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 48,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 47,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 51,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 45,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,one) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 41,
+   "agree": 1.0
+  }
+ ],
+ "proof_sample": {
+  "wire": "kafepu",
+  "gate_depth": 1,
+  "circuit": "single_rule110_233",
+  "answers": [
+   {
+    "fact": "kafepu has value zero",
+    "tier": "law",
+    "rule": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+    "because": [
+     "kafepu is output of desatu",
+     "desatu has third input masipa",
+     "masipa has value zero",
+     "desatu has second input zovigi",
+     "zovigi has value zero"
+    ]
+   }
+  ]
+ }
+}

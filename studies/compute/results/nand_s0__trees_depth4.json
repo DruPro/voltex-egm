@@ -1,0 +1,96 @@
+{
+ "world": "nand",
+ "seed": 0,
+ "config": "trees_depth4",
+ "settings": {
+  "TREES": 1
+ },
+ "hidden": 1110,
+ "correct": 876,
+ "wrong": 0,
+ "unanswered": 234,
+ "tiers": {
+  "law correct": 876
+ },
+ "wires_by_kind": {
+  "add4": {
+   "correct": 543,
+   "unanswered": 177
+  },
+  "fulladd": {
+   "correct": 213,
+   "unanswered": 57
+  },
+  "xor": {
+   "correct": 120
+  }
+ },
+ "circuits_fully_correct": {
+  "add4": [
+   0,
+   20
+  ],
+  "fulladd": [
+   1,
+   30
+  ],
+  "xor": [
+   30,
+   30
+  ]
+ },
+ "max_gate_depth_correct": 11,
+ "max_round_by_gate_depth": {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 4,
+  "6": 4,
+  "7": 4,
+  "8": 4,
+  "9": 4,
+  "10": 4,
+  "11": 4
+ },
+ "build_and_infer_s": 0.1,
+ "tree_rules": [
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 104,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 199,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 199,
+   "agree": 1.0
+  }
+ ],
+ "proof_sample": {
+  "wire": "fumeti",
+  "gate_depth": 3,
+  "circuit": "add4_14",
+  "answers": [
+   {
+    "fact": "fumeti has value zero",
+    "tier": "law",
+    "rule": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero)",
+    "because": [
+     "fumeti is output of ruzezo",
+     "ruzezo has first input zorelu",
+     "zorelu has value one",
+     "ruzezo has second input dadoni",
+     "dadoni has value one"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "world": "nand",
+ "seed": 1,
+ "config": "notrees",
+ "settings": {},
+ "hidden": 1110,
+ "correct": 0,
+ "wrong": 0,
+ "unanswered": 1110,
+ "tiers": {},
+ "wires_by_kind": {
+  "add4": {
+   "unanswered": 720
+  },
+  "fulladd": {
+   "unanswered": 270
+  },
+  "xor": {
+   "unanswered": 120
+  }
+ },
+ "circuits_fully_correct": {
+  "add4": [
+   0,
+   20
+  ],
+  "fulladd": [
+   0,
+   30
+  ],
+  "xor": [
+   0,
+   30
+  ]
+ },
+ "max_gate_depth_correct": 0,
+ "max_round_by_gate_depth": {},
+ "build_and_infer_s": 0.05,
+ "tree_rules": [],
+ "proof_sample": null
+}

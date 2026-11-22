@@ -1,0 +1,30 @@
+{
+ "world": "rule110",
+ "seed": 2,
+ "config": "notrees",
+ "settings": {},
+ "hidden": 300,
+ "correct": 0,
+ "wrong": 0,
+ "unanswered": 300,
+ "tiers": {},
+ "wires_by_kind": {
+  "automaton": {
+   "unanswered": 240
+  },
+  "single": {
+   "unanswered": 60
+  }
+ },
+ "circuits_fully_correct": {
+  "automaton": [
+   0,
+   1
+  ]
+ },
+ "max_gate_depth_correct": 0,
+ "max_round_by_gate_depth": {},
+ "build_and_infer_s": 0.02,
+ "tree_rules": [],
+ "proof_sample": null
+}

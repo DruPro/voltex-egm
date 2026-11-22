@@ -36,6 +36,7 @@ scorers, raw answers, agent audit logs, and the results files the write-ups cite
 | [`shard_general/`](shard_general/) | Is sharding general? 6 worlds incl. real code: an automatic split matched one engine on 2 of 6; locality vs representativeness traced | `studies/shard_general/RESULTS.md` |
 | [`stress/`](stress/) | Stress bench: 31 datasets (real code, system tables, synthetic shapes) gating every infra change; C1 category speedup | `studies/stress/RESULTS.md`, `docs/STRESS_FINDINGS.md` |
 | [`strengths/`](strengths/) | Exact facts from two Python codebases scored against complete truth: depth, multi-premise, trees; replication; `egm.tune` search space | `studies/strengths/RESULTS.md`, `docs/STRENGTHS.md` |
+| [`compute/`](compute/) | Can tree inference compute? Gates learned from examples: NAND-only adders, 8-bit adders, Rule 110 as a 3-input gate and an unrolled 16 × 16 automaton; bounded computation, not Turing complete | `studies/compute/RESULTS.md` |
 | [`eval/`](eval/) | Evaluation framework baseline: capability scorecard with seed variance and tier calibration; validation of the gate and bench | `docs/EVALUATION.md`, `studies/eval/BASELINE.md` |
 
 ## How the earlier studies were archived

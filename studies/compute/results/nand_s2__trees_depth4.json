@@ -1,0 +1,96 @@
+{
+ "world": "nand",
+ "seed": 2,
+ "config": "trees_depth4",
+ "settings": {
+  "TREES": 1
+ },
+ "hidden": 1110,
+ "correct": 849,
+ "wrong": 0,
+ "unanswered": 261,
+ "tiers": {
+  "law correct": 849
+ },
+ "wires_by_kind": {
+  "fulladd": {
+   "correct": 206,
+   "unanswered": 64
+  },
+  "xor": {
+   "correct": 120
+  },
+  "add4": {
+   "correct": 523,
+   "unanswered": 197
+  }
+ },
+ "circuits_fully_correct": {
+  "fulladd": [
+   3,
+   30
+  ],
+  "xor": [
+   30,
+   30
+  ],
+  "add4": [
+   0,
+   20
+  ]
+ },
+ "max_gate_depth_correct": 11,
+ "max_round_by_gate_depth": {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 4,
+  "6": 4,
+  "7": 4,
+  "8": 4,
+  "9": 4,
+  "10": 4,
+  "11": 4
+ },
+ "build_and_infer_s": 0.1,
+ "tree_rules": [
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 105,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 199,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 184,
+   "agree": 1.0
+  }
+ ],
+ "proof_sample": {
+  "wire": "gumiba",
+  "gate_depth": 3,
+  "circuit": "xor_8",
+  "answers": [
+   {
+    "fact": "gumiba has value zero",
+    "tier": "law",
+    "rule": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero)",
+    "because": [
+     "gumiba is output of pegusu",
+     "pegusu has second input rosote",
+     "rosote has value one",
+     "pegusu has first input kuzoba",
+     "kuzoba has value one"
+    ]
+   }
+  ]
+ }
+}

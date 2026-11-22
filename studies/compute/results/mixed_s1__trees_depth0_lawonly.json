@@ -1,0 +1,168 @@
+{
+ "world": "mixed",
+ "seed": 1,
+ "config": "trees_depth0_lawonly",
+ "settings": {
+  "TREES": 1,
+  "DEPTH": 0,
+  "TENDENCYSTEPS": 0
+ },
+ "exploratory": true,
+ "hidden": 480,
+ "correct": 480,
+ "wrong": 0,
+ "unanswered": 0,
+ "tiers": {
+  "law correct": 480
+ },
+ "wires_by_kind": {
+  "add8": {
+   "correct": 400
+  },
+  "mux": {
+   "correct": 80
+  }
+ },
+ "circuits_fully_correct": {
+  "add8": [
+   10,
+   10
+  ],
+  "mux": [
+   20,
+   20
+  ]
+ },
+ "max_gate_depth_correct": 17,
+ "max_round_by_gate_depth": {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 3,
+  "5": 4,
+  "6": 5,
+  "7": 6,
+  "8": 7,
+  "9": 8,
+  "10": 9,
+  "11": 10,
+  "12": 11,
+  "13": 12,
+  "14": 13,
+  "15": 5,
+  "16": 6,
+  "17": 7
+ },
+ "build_and_infer_s": 0.4,
+ "tree_rules": [
+  {
+   "text": "TREE [? has first input ?](a,g) & [? is output of ?](g,y1) & [? has kind ?](y1,and) => [? has kind ?](a,or)",
+   "tier": "law",
+   "known": 100,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? has second input ?](a,g) & [? is output of ?](g,y1) & [? has kind ?](y1,and) => [? has kind ?](a,or)",
+   "tier": "law",
+   "known": 100,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? has second input ?](a,g) & [? is output of ?](g,y1) & [? has kind ?](y1,not) => [? has kind ?](a,and)",
+   "tier": "law",
+   "known": 20,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has first input ?](g,y1) & [? has value ?](y1,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 103,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,or) & [? has second input ?](g,y1) & [? has value ?](y1,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 102,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,not) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 62,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,not) & [? has first input ?](g,y1) & [? has value ?](y1,one) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 38,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,xor) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 47,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 149,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,xor) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 53,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,xor) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 48,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 40,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has second input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 111,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,and) & [? has first input ?](g,y1) & [? has value ?](y1,zero) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 101,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has kind ?](g,and) => [? has value ?](a,zero)",
+   "tier": "tendency",
+   "known": 200,
+   "agree": 0.8
+  }
+ ],
+ "proof_sample": {
+  "wire": "movugi",
+  "gate_depth": 3,
+  "circuit": "mux_17",
+  "answers": [
+   {
+    "fact": "movugi has value zero",
+    "tier": "law",
+    "rule": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+    "because": [
+     "movugi is output of bubelo",
+     "bubelo has first input dilami",
+     "dilami has value zero",
+     "bubelo has second input zitavi",
+     "zitavi has value zero"
+    ]
+   }
+  ]
+ }
+}

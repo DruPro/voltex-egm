@@ -1,0 +1,99 @@
+{
+ "world": "rnd",
+ "seed": 2,
+ "config": "trees_depth0",
+ "settings": {
+  "TREES": 1,
+  "DEPTH": 0
+ },
+ "hidden": 60,
+ "correct": 14,
+ "wrong": 13,
+ "unanswered": 33,
+ "tiers": {
+  "tendency wrong": 13,
+  "tendency correct": 14
+ },
+ "wires_by_kind": {
+  "single": {
+   "unanswered": 33,
+   "wrong": 13,
+   "correct": 14
+  }
+ },
+ "circuits_fully_correct": {},
+ "max_gate_depth_correct": 1,
+ "max_round_by_gate_depth": {
+  "1": 1
+ },
+ "build_and_infer_s": 0.1,
+ "tree_rules": [
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has kind ?](g,or) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 98,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has kind ?](g,or) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 96,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has first input ?](g,y2) & [? has value ?](y2,one) & [? has kind ?](g,and) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 53,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has kind ?](g,and) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 95,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has first input ?](g,y2) & [? has value ?](y2,zero) & [? has kind ?](g,or) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 53,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has kind ?](g,and) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 99,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,one) & [? has first input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "tendency",
+   "known": 142,
+   "agree": 0.85
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+   "tier": "tendency",
+   "known": 157,
+   "agree": 0.83
+  }
+ ],
+ "proof_sample": {
+  "wire": "ketavu",
+  "gate_depth": 1,
+  "circuit": "single_rnd_202",
+  "answers": [
+   {
+    "fact": "ketavu has value zero",
+    "tier": "tendency",
+    "rule": "TREE [? is output of ?](a,g) & [? has second input ?](g,y1) & [? has value ?](y1,zero) & [? has first input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+    "because": [
+     "ketavu is output of denovi",
+     "denovi has second input filolu",
+     "filolu has value zero",
+     "denovi has first input dibufu",
+     "dibufu has value zero"
+    ]
+   }
+  ]
+ }
+}

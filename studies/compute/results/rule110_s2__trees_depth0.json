@@ -1,0 +1,106 @@
+{
+ "world": "rule110",
+ "seed": 2,
+ "config": "trees_depth0",
+ "settings": {
+  "TREES": 1,
+  "DEPTH": 0
+ },
+ "hidden": 300,
+ "correct": 300,
+ "wrong": 0,
+ "unanswered": 0,
+ "tiers": {
+  "law correct": 300
+ },
+ "wires_by_kind": {
+  "automaton": {
+   "correct": 240
+  },
+  "single": {
+   "correct": 60
+  }
+ },
+ "circuits_fully_correct": {
+  "automaton": [
+   1,
+   1
+  ]
+ },
+ "max_gate_depth_correct": 15,
+ "max_round_by_gate_depth": {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 7,
+  "8": 8,
+  "9": 9,
+  "10": 10,
+  "11": 11,
+  "12": 12,
+  "13": 13,
+  "14": 14,
+  "15": 15
+ },
+ "build_and_infer_s": 0.12,
+ "tree_rules": [
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,one) & [? has third input ?](g,y2) & [? has value ?](y2,one) & [? has second input ?](g,y3) & [? has value ?](y3,one) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 31,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,zero)",
+   "tier": "law",
+   "known": 45,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 58,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has third input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 53,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,one) & [? has second input ?](g,y2) & [? has value ?](y2,zero) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 51,
+   "agree": 1.0
+  },
+  {
+   "text": "TREE [? is output of ?](a,g) & [? has third input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+   "tier": "law",
+   "known": 41,
+   "agree": 1.0
+  }
+ ],
+ "proof_sample": {
+  "wire": "vovimi",
+  "gate_depth": 6,
+  "circuit": "automaton",
+  "answers": [
+   {
+    "fact": "vovimi has value one",
+    "tier": "law",
+    "rule": "TREE [? is output of ?](a,g) & [? has first input ?](g,y1) & [? has value ?](y1,zero) & [? has second input ?](g,y2) & [? has value ?](y2,one) => [? has value ?](a,one)",
+    "because": [
+     "vovimi is output of genipi",
+     "genipi has first input tafobu",
+     "tafobu has value zero",
+     "genipi has second input riribe",
+     "riribe has value one"
+    ]
+   }
+  ]
+ }
+}
