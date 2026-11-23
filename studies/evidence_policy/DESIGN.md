@@ -116,13 +116,17 @@ would leave a contract nothing uses, which can't be measured.
 2. **Which strict counts. Decided 2026-11-23 (owner): replace.** `POLICY strict` replaces `TENDENCYSTEPS 0` and the
    SDK's `strict=True`: no redundant features. Compatibility (a separate track): the old controls stay as aliases
    that map onto the policy until a major version, and the differences are listed (K3).
-3. **Names.** Keep law and tendency as public labels, or move to the policy names? (Interim: `law`/`tendency` under
-   legacy, `core`/`extension` under a policy, so a label never claims more than its stratum.)
-4. **Representation.** Does `EvidenceVector` wrap `RuleH` or replace its scoring fields?
-5. **Round 2 data independence.** Build categories on the discovery half only?
-6. **Sealed worlds.** Who writes the second generator?
-7. **External reference engines.** A non-EGM rule miner in the profile, or trivial baselines only?
-8. **The interface.** Is the evaluation interface (`studies/capability/tools/interface.py`) frozen for later rounds?
+3. **Names. Decided 2026-11-23 (owner):** `law`/`tendency` under legacy, `core`/`extension` under a policy, so a
+   label never claims more than its stratum.
+4. **Representation. Decided 2026-11-23 (owner):** the evidence vector wraps `RuleH` (as built).
+5. **Round 2 data independence. Decided 2026-11-23 (owner):** yes, build categories on the discovery half only,
+   and measure the cost.
+6. **Sealed worlds. Decided 2026-11-23 (owner):** a separate agent writes the second generator from the structure
+   list alone, without access to the development worlds or the engine source (`studies/sealed/`).
+7. **External reference engines. Decided 2026-11-23 (owner):** add one AMIE-style rule miner as an external
+   baseline (`studies/capability/tools/baselines.py`, B3).
+8. **The interface. Decided 2026-11-23 (owner):** frozen as of this commit; later rounds extend it only by adding
+   optional fields, never by changing existing ones.
 9. **Validation. Decided 2026-11-23 (owner):** an evaluation result with its method recorded (3.3); Round 1 uses
    internal split-half replication, named as such; built-in semantics as in 3.2; blocked splits for correlated data.
 10. **Custom policies. Decided 2026-11-23 (owner):** first-class in the SDK and the CLI (3.2, `docs/POLICIES.md`).

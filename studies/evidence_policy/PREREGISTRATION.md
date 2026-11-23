@@ -1,8 +1,7 @@
 # Evidence policy (Round 1): pre-registration
 
-**DRAFT. Not hashed.** It is hashed into `prereg_hash.txt` only after the owner decisions in `DESIGN.md` section 7
-are recorded here (section 11), and before any confirmation run. The baseline profile (section 4) may be measured
-before hashing: it measures the unchanged engine and tunes nothing.
+Hashed into `prereg_hash.txt` on 2026-11-23, after the owner decisions (section 11) and before any confirmation run.
+Development (G4) is complete: `DEVELOPMENT.md`, iterations 1 to 4. Later changes go in `DEVIATIONS.md`.
 
 ## 1. Capability or limitation
 
@@ -38,16 +37,36 @@ sha256 and the tool commit.
 ## 5. Design
 
 - **Development:** `company`, `hidden`, `gates`, `lineage`, `harvest`, `remainders`, `exceptions` (seeds 0 to 4).
-- **Confirmation:** sealed worlds from a second, separately written generator covering every structure in the
-  catalogue; seeds unseen until then.
+- **Confirmation:** sealed worlds from `studies/sealed/gen_sealed.py`, written by a separate agent from the structure
+  list alone; every structure it provides; seeds 1000 to 1004, never run before confirmation.
 - **Adversarial and metamorphic sets** for every world (C9: renaming, order, duplication, unrelated facts).
 - **Controls:** `random_links`; `exceptions` with random exceptions.
 - **Real data:** stress dpkg and Unicode; `strengths` (both codebases).
 
-## 6. Acceptance criteria
+## 6. Acceptance criteria (frozen)
 
-The decision rules of the framework. Seed-spread thresholds are fixed from the baseline before confirmation. A change
-is judged on its worst structure as well as its mean.
+Computed per world over the confirmation seeds (1000 to 1004), against the same world's baseline profile run under
+the same tool version. "sd" is the seed standard deviation of the reference profile on that world. Worlds where a
+profile derives fewer than 20 facts per seed are reported but do not count towards precision criteria.
+
+| ID | Pass when |
+|---|---|
+| C-H1 | AURC(policy-tendency) <= AURC(egm-default) - 2 sd on at least half of the worlds with derived facts, and AURC(policy-tendency) <= AURC(egm-default) + 2 sd on every world |
+| C-H2 | precision(policy-strict) >= 0.95 on every counted world and on the real data; recall(policy-strict) >= recall(egm-ts0) - 2 sd on every world |
+| C-H3 | answers of policy-strict outside policy-tendency = 0 on every world and seed |
+| C-H4 | invented facts about unseen entities = 0 under every policy; derived facts on the control world = 0 |
+| C-H5 | every derived fact's proof checks: each premise is stated or derived, and the rule is one the policy admits (independent checker in the harness); counterfactual: removing a proof's premises removes the fact unless another proof exists, on a 100-fact sample per world |
+| K-H0 | gate 221/221 and stress bench identical with `legacy` |
+| X-H1 | `tests/test_evidence.py` and `tests/test_policy.py` pass; no label upgrades; snapshot unchanged by every policy |
+| D-H1 | reported only |
+
+The worst-structure rule: a failure on any one world is a failure of that hypothesis, reported as such.
+
+## 6a. Frozen built-in policies
+
+`strict`: minSampleSize 5, minReliability 0.95, minAgreementToCoverage 0.8, validation required (internal_replication,
+hash split, minPerHalf 5, insufficient rejected), maxDepth 4, all shapes. `tendency`: the `strict` core plus an
+extension admitting every accepted rule, maxDepth 4. As in `egm/policy.py` at this commit (iteration 4).
 
 ## 7. Compatibility
 
@@ -77,5 +96,7 @@ replications.
   (hash or blocked), never described as independent-source validation. Built-in semantics: legacy exact; tendency by
   evidence thresholds without replication; strict with minimum evidence, acceptable agreement and replication.
 - 2026-11-23, custom policies: first-class in SDK and CLI; built-ins are reference profiles (`docs/POLICIES.md`).
-- Pending: names, representation, Round 2 data independence, sealed worlds, external reference engines, interface
-  freeze (`DESIGN.md` section 7, items 3 to 8). The pre-registration is hashed once these are recorded.
+- 2026-11-23, the remaining six (`DESIGN.md` section 7, items 3 to 8), as recommended: labels law/tendency under
+  legacy and core/extension under a policy; the evidence vector wraps `RuleH`; Round 2 builds categories on the
+  discovery half; a separate agent writes the sealed generator from the structure list alone; one AMIE-style external
+  baseline; the evaluation interface is frozen (extended only by optional fields).
