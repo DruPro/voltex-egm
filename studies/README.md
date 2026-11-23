@@ -42,6 +42,8 @@ scorers, raw answers, agent audit logs, and the results files the write-ups cite
 | [`refresh_trees/`](refresh_trees/) | Engine change (owner-approved): `REFRESH` re-attaches every relation a rule references and works with `TREES`, so tree programs keep their rules across passes; byte-identical when off | `studies/refresh_trees/RESULTS.md` |
 | [`architecture/`](architecture/) | Where runtime state should live (single engine, external memory, several engines, hybrid): designed and pre-registered, paused in favour of `inferred_program` | `studies/architecture/DESIGN.md` |
 | [`eval/`](eval/) | Evaluation framework baseline: capability scorecard with seed variance and tier calibration; validation of the gate and bench | `docs/EVALUATION.md`, `studies/eval/BASELINE.md` |
+| [`capability/`](capability/) | voltex3: architecture-independent capability suite (C1-C13) scored through a fixed interface against complete truth, with trivial baselines and metamorphic consistency; baseline profile of the current engine | `studies/capability/BASELINE.md` |
+| [`evidence_policy/`](evidence_policy/) | voltex3 Round 1 (architectural change): policy-thresholded inference over evidence vectors. G0 design and draft pre-registration; not yet hashed, awaiting owner decisions | `studies/evidence_policy/DESIGN.md` |
 
 ## How the earlier studies were archived
 
