@@ -347,7 +347,7 @@ struct Vault {
     // voltex3 inference policies (studies/evidence_policy, docs/POLICIES.md). Set only by POLICY APPLY, never by SET, and
     // never saved with the knowledge base: a policy is how inference is run, not part of the evidence. Inactive = legacy.
     struct Stratum { bool on = false; u64 minKnown = 0, minSupport = 0; double minAgree = 0, minRel = 0, minCov = 0, minZ = -1e300,
-                     minLift = 0, maxUnknown = 1, minRatio = 0; int repl = 0, split = 0, depth = 4; unsigned shapes = 0x1F;
+                     minLift = 0, maxUnknown = 1, minRatio = 0, minCovSrc = 0; int repl = 0, split = 0, depth = 4; unsigned shapes = 0x1F;
                      u64 minPerHalf = 5; int onInsufficient = 0; };   // onInsufficient: 0 reject, 1 admit
     struct PolicyCfg { bool active = false; std::string name = "legacy", version = "0"; Stratum core, ext; };
     PolicyCfg pol;
@@ -969,12 +969,16 @@ struct Vault {
         // coverage-corrected estimate (rel) is used. minAgreement still guards a small coverage estimate inflating rel.
         double reliab = h.fnTarget ? agree : h.rel;
         double cov = h.cov > 0 ? h.cov : 0;
+        // Round 2 W1a: coverage from a source whose own agreement is below minCoverageSourceAgreement is not used:
+        // reliability falls back to the rate, as when no estimate exists
+        bool covOk = cov > 0;
+        if (st.minCovSrc > 0 && cov > 0 && covSourceAgree(h.r3) < st.minCovSrc) { covOk = false; cov = 0; if (!h.fnTarget) reliab = h.rate; }
         double unk = h.n ? double(h.eUnknown) / double(h.n) : 0;
         if (h.pn < st.minKnown || h.k < st.minSupport || agree < st.minAgree || reliab < st.minRel || cov < st.minCov ||
             h.z < st.minZ || h.lift < st.minLift || unk > st.maxUnknown) return false;
         // several values per subject: a true rule's agreement is about the conclusion relation's completeness, so compare
         // agreement with the coverage estimate (where one exists) instead of with a fixed floor
-        if (st.minRatio > 0 && !h.fnTarget && h.cov > 0 && agree / h.cov < st.minRatio) return false;
+        if (st.minRatio > 0 && !h.fnTarget && covOk && agree / h.cov < st.minRatio) return false;
         if (st.repl) {
             auto& v = internalReplication(st.split)[i];
             if (std::min(v.pnA, v.pnB) < st.minPerHalf) return st.onInsufficient == 1;   // too few known answers to test: not failed
@@ -1232,7 +1236,7 @@ struct Vault {
     u64 treeCandidates = 0; double treeZ = 0;
     // the shipped acceptance test and reliability label, for a rule whose statistics were recomputed
     bool passes(RuleH& x, const std::vector<bool>& functional) {
-        double cR = (x.r3 < (int)covRel.size() && covRel[x.r3] > 0) ? covRel[x.r3] : covGlobal; x.cov = cR;
+        double cR = covFor(x.r3); x.cov = cR;
         double bar = (F_COV && cR > 0) ? std::min(RATE_MIN, RATE_REL * cR) : RATE_MIN;
         bool classic = x.lift >= LIFT_MIN && x.rate >= bar;
         double ex = double(x.pn) * x.base, sd = std::sqrt(std::max(1e-9, ex * (1 - x.base)));
@@ -1298,13 +1302,62 @@ struct Vault {
             }
         }
     }
+    // Completeness estimate per conclusion relation, from the best inverse/symmetric rule (lift >= 20, >= 10
+    // confirmations), assumed to be a true law; relations without one use the median estimate (covGlobal). Round 2 W1:
+    // the source of every estimate is recorded (covSrc, covSrcAgreeV: the source rule and its agreement, fixed at estimation; covGlobalSrc: the median relation), and with COVSOURCE 1 an estimate is
+    // refuted when any other rule concluding the relation is confirmed beyond c / RATE_REL (z > 3): a relation that is
+    // c complete cannot confirm a rule more often than c, and acceptance already allows a true rule's rate to sit
+    // within RATE_REL of c (the same tolerance, the other way, for missingness that is not at random). A refuted estimate is not used (the relation has none) and does
+    // not enter the median. COVSOURCE 0 is the shipped estimator, byte-identical.
+    std::vector<int> covSrc; std::vector<char> covRefuted; int covGlobalSrc = -1; int F_COVSRC = 0;
+    std::vector<double> covSrcAgreeV; double covGlobalAgree = -1;   // the source's agreement, fixed when estimated
+    bool covExceeded(int r, double c, int src) const {
+        if (c <= 0) return false;
+        c = std::min(1.0, c / RATE_REL); if (c >= 1) return false;
+        for (size_t i = 0; i < ruleList.size(); ++i) {
+            auto& h = ruleList[i];
+            if ((int)i == src || h.r3 != r || h.type == 'G' || h.k < K_MIN || h.n == 0) continue;
+            double ex = double(h.n) * c, sd = std::sqrt(std::max(1e-9, ex * (1 - c)));
+            if ((double(h.k) - ex) / sd > 3.0) return true;
+        }
+        return false;
+    }
+    void estimateCoverage() {
+        size_t m = rels.size();
+        covRel.assign(m, -1); covSrc.assign(m, -1); covRefuted.assign(m, 0); covGlobalSrc = -1; covSrcAgreeV.assign(m, -1); covGlobalAgree = -1;
+        for (size_t i = 0; i < ruleList.size(); ++i) {
+            auto& h = ruleList[i];
+            if (h.type == 'I' && h.lift >= 20 && h.k >= 10 && h.rate > covRel[h.r3]) {
+                covRel[h.r3] = h.rate; covSrc[h.r3] = (int)i; covSrcAgreeV[h.r3] = h.pn ? double(h.k) / double(h.pn) : 0; }
+        }
+        if (F_COVSRC) for (size_t r = 0; r < m; ++r)
+            if (covRel[r] > 0 && covExceeded((int)r, covRel[r], covSrc[r])) { covRel[r] = -1; covRefuted[r] = 1; }
+        std::vector<std::pair<double, int>> v; for (size_t r = 0; r < m; ++r) if (covRel[r] > 0) v.push_back({covRel[r], (int)r});
+        std::sort(v.begin(), v.end(), [](auto& a, auto& b) { return a.first < b.first; });
+        covGlobal = v.empty() ? -1 : v[v.size() / 2].first; covGlobalSrc = v.empty() ? -1 : v[v.size() / 2].second;
+        covGlobalAgree = v.empty() ? -1 : covSrcAgreeV[covGlobalSrc];
+        if (F_COVSRC && covGlobal > 0) for (size_t r = 0; r < m; ++r)
+            if (covRel[r] <= 0 && !covRefuted[r] && covExceeded((int)r, covGlobal, -1)) covRefuted[r] = 2;   // the median is refuted here
+    }
+    double covFor(int r) const {
+        if (r < 0 || r >= (int)covRel.size()) return covGlobal;
+        if (covRel[r] > 0) return covRel[r];
+        return (F_COVSRC && covRefuted[r]) ? -1 : covGlobal;
+    }
+    std::string covSourceDesc(int r) const {   // inverse (own estimate), global (the median's), refuted, none
+        if (r >= 0 && r < (int)covRel.size() && covRel[r] > 0) return "inverse";
+        if (r >= 0 && r < (int)covRefuted.size() && F_COVSRC && covRefuted[r]) return covRefuted[r] == 1 ? "refuted" : "global_refuted";
+        return covGlobal > 0 ? "global" : "none";
+    }
+    double covSourceAgree(int r) const {   // agreement of the rule that supplied relation r's estimate; -1 if none
+        if (r >= 0 && r < (int)covRel.size() && covRel[r] > 0) return covSrcAgreeV[r];
+        if (r >= 0 && r < (int)covRefuted.size() && F_COVSRC && covRefuted[r]) return -1;
+        return covGlobal > 0 ? covGlobalAgree : -1;
+    }
     // completeness estimate from inverse/symmetric redundancy; coverage-aware acceptance; reliability labels
     void rescoreRules(const std::vector<std::set<u32>>& subj) {
         size_t m = rels.size();
-        covRel.assign(m, -1);
-        for (auto& h : ruleList) if (h.type == 'I' && h.lift >= 20 && h.k >= 10) covRel[h.r3] = std::max(covRel[h.r3], h.rate);
-        std::vector<double> v; for (double c : covRel) if (c > 0) v.push_back(c);
-        std::sort(v.begin(), v.end()); covGlobal = v.empty() ? -1 : v[v.size() / 2];
+        estimateCoverage();
         std::vector<bool> functional(m);
         for (size_t i = 0; i < m; ++i) {
             std::map<u32, int> c; for (auto& f : rels[i].stated) c[f.first]++;
@@ -1313,7 +1366,7 @@ struct Vault {
         }
         for (auto& h : ruleList) {
             if (h.type == 'G') continue;   // tree rules keep their own scoring (studies/trees)
-            double cR = covRel[h.r3] > 0 ? covRel[h.r3] : covGlobal; h.cov = cR;
+            double cR = covFor(h.r3); h.cov = cR;
             double bar = (F_COV && cR > 0 && h.type != 'P') ? std::min(RATE_MIN, RATE_REL * cR) : RATE_MIN;   // relax for sparse data, never tighten (R2-F1: not for path rules)
             bool classic = h.lift >= LIFT_MIN && h.rate >= bar;
             double ex = double(h.pn) * h.base, sd = std::sqrt(std::max(1e-9, ex * (1 - h.base)));
@@ -1640,10 +1693,7 @@ struct Vault {
             }
             if (ok) ruleList.push_back(h);
         }
-        covRel.assign(rels.size(), -1);
-        for (auto& h : ruleList) if (h.type == 'I' && h.lift >= 20 && h.k >= 10) covRel[h.r3] = std::max(covRel[h.r3], h.rate);
-        std::vector<double> v; for (double c : covRel) if (c > 0) v.push_back(c);
-        std::sort(v.begin(), v.end()); covGlobal = v.empty() ? -1 : v[v.size() / 2];
+        estimateCoverage();
     }
     void ensureModel() {
         if (!dirty) return;
@@ -1776,6 +1826,7 @@ static std::vector<Setting>& settings() {
             VTX_SETTING("TREES", "induction", true, true, "tree-shaped rules joining several branches at one entity (1/0) (studies/trees)", F_TREES, int),
             VTX_SETTING("REPLICATE", "induction", true, true, "a rule must also hold in each half of its subjects (1/0) (studies/noise)", F_REPL, int),
             VTX_SETTING("TENDENCYSTEPS", "inference", true, true, "most tendency-tier steps one proof may contain, -1 = no limit (studies/tendency)", F_TSTEPS, int),
+            VTX_SETTING("COVSOURCE", "induction", true, true, "1 = a coverage estimate that another rule concluding the relation exceeds (z > 3) is refuted and not used; 0 = shipped (studies/round2)", F_COVSRC, int),
             VTX_SETTING("DEPTH", "inference", false, true, "inference rounds, 0 = until nothing new (studies/depth)", DEPTH, int),
             VTX_SETTING("CORROBORATE", "inference", false, true, "a contradiction needs two distinct rules (1/0)", F_CORROB, int),
             VTX_SETTING("OBS", "evidence", false, true, "project the observation log (1/0)", F_OBS, int),
@@ -2157,9 +2208,9 @@ int main(int argc, char** argv) {
                 if (!V.pol.active) { std::puts("[POLICY] legacy"); continue; }
                 std::printf("[POLICY] %s@%s\n", V.pol.name.c_str(), V.pol.version.c_str());
                 auto show = [](const char* nm, const Vault::Stratum& st) {
-                    std::printf("STRATUM\t%s\tminSampleSize=%llu\tminSupport=%llu\tminAgreement=%g\tminReliability=%g\tminCoverage=%g\tminZ=%g\tminLift=%g\tmaxUnknownShare=%g\tminAgreementToCoverage=%g\treplication=%d\tsplit=%s\tminPerHalf=%llu\tonInsufficient=%s\tmaxDepth=%d\tshapes=%u\n",
+                    std::printf("STRATUM\t%s\tminSampleSize=%llu\tminSupport=%llu\tminAgreement=%g\tminReliability=%g\tminCoverage=%g\tminZ=%g\tminLift=%g\tmaxUnknownShare=%g\tminAgreementToCoverage=%g\tminCoverageSourceAgreement=%g\treplication=%d\tsplit=%s\tminPerHalf=%llu\tonInsufficient=%s\tmaxDepth=%d\tshapes=%u\n",
                                 nm, (unsigned long long)st.minKnown, (unsigned long long)st.minSupport, st.minAgree, st.minRel, st.minCov,
-                                st.minZ < -1e299 ? -1e300 : st.minZ, st.minLift, st.maxUnknown, st.minRatio, st.repl, st.split ? "blocked" : "hash",
+                                st.minZ < -1e299 ? -1e300 : st.minZ, st.minLift, st.maxUnknown, st.minRatio, st.minCovSrc, st.repl, st.split ? "blocked" : "hash",
                                 (unsigned long long)st.minPerHalf, st.onInsufficient ? "admit" : "reject", st.depth, st.shapes); };
                 show("core", V.pol.core); if (V.pol.ext.on) show("extension", V.pol.ext);
                 continue;
@@ -2184,6 +2235,7 @@ int main(int argc, char** argv) {
                 else if (f == "minReliability") share(S->minRel);
                 else if (f == "minCoverage") share(S->minCov);
                 else if (f == "maxUnknownShare") share(S->maxUnknown);
+                else if (f == "minCoverageSourceAgreement") { if (!num || x < 0 || x > 1) err = "minCoverageSourceAgreement must be a number in [0,1], got '" + v + "'"; else S->minCovSrc = x; }
                 else if (f == "minAgreementToCoverage") { if (!num || x < 0) err = "minAgreementToCoverage must be a number >= 0, got '" + v + "'"; else S->minRatio = x; }
                 else if (f == "minPerHalf") count(S->minPerHalf);
                 else if (f == "onInsufficient") { if (v == "reject") S->onInsufficient = 0; else if (v == "admit") S->onInsufficient = 1; else err = "onInsufficient must be reject or admit, got '" + v + "'"; }
@@ -2220,12 +2272,13 @@ int main(int argc, char** argv) {
                 size_t ri = &h - &V.ruleList[0];
                 int sp = V.pol.active ? V.pol.core.split : 0; auto& vd = V.internalReplication(sp)[ri];
                 char agree[16] = "undef"; if (h.pn) std::snprintf(agree, sizeof agree, "%.4f", double(h.k) / double(h.pn));
-                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\tvalidation=%s:%s\tadmit=%s%s\n",
+                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\tvalidation=%s:%s\tadmit=%s\tcov_source=%s\tcov_source_agree=%s%s\n",
                             h.accepted ? "ACCEPT" : "reject", V.ruleText(h).c_str(), (unsigned long long)h.n, (unsigned long long)h.k,
                             (unsigned long long)h.eMinus, (unsigned long long)h.eUnknown, agree, h.lift, h.z, h.base, h.cov, h.rel,
                             h.law ? "law" : "tendency", h.fnTarget ? 1 : 0, vd.method.c_str(),
                             vd.result < 0 ? "not_run" : std::min(vd.pnA, vd.pnB) < (V.pol.active ? V.pol.core.minPerHalf : 5) ? "insufficient" : vd.result ? "pass" : "fail",
                             !V.pol.active ? "-" : V.admitCore[ri] ? "core" : V.admitExt[ri] ? "extension" : "none",
+                            V.covSourceDesc(h.r3).c_str(), [&] { double a2 = V.covSourceAgree(h.r3); char b[16] = "undef"; if (a2 >= 0) std::snprintf(b, sizeof b, "%.4f", a2); return std::string(b); }().c_str(),
                             h.condRel < 0 ? "" : [&] { char b[200]; std::snprintf(b, sizeof b, "\tcond_in=%.0f/%.0f subjects known, %.0f/%.0f chains stated\tcond_out=%.0f/%.0f subjects known, %.0f/%.0f chains stated\tcond_z=%.2f",
                                 h.cInKnown, h.cIn, h.ckIn, h.cnIn, h.cOutKnown, h.cOut, h.ckOut, h.cnOut, h.cZ); return std::string(b); }().c_str());
             }

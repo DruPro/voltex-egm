@@ -70,6 +70,9 @@ THRESHOLDS = {
     "minCoverage": ("share", 0.0, "minCoverage"), "minZ": ("number", None, "minZ"),
     "minLift": ("nonneg", 0.0, "minLift"), "maxUnknownShare": ("share", 1.0, "maxUnknownShare"),
     "minAgreementToCoverage": ("nonneg", 0.0, "minAgreementToCoverage"),
+    # Round 2 W1a: coverage from a source rule whose own agreement is below this is not used (reliability falls back
+    # to the rate, as with no estimate). 0 = off. Experimental.
+    "minCoverageSourceAgreement": ("share", 0.0, "minCoverageSourceAgreement"),
 }
 VALIDATION = {"required": ("bool", False, "replication"), "method": ("method", "internal_replication", None),
               "split": ("split", "hash", "split"), "minPerHalf": ("count", 5, "minPerHalf"),
