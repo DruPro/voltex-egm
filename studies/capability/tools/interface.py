@@ -104,7 +104,8 @@ class EGMAdapter:
                 if self.strict_filter and d.tier not in ("law", "core"):
                     continue
                 proof = [p for p in (parse_fact(b, rels) for b in (f.because or [])) if p]
-                answers.append(Answer(fx, "derived", egm_confidence(d.tier, f.score), proof))
+                # under a policy, rank by the weakest evidence on the proof (DESIGN 3.4); under legacy, by the score
+                answers.append(Answer(fx, "derived", egm_confidence(d.tier, d.weakest if d.weakest is not None else f.score), proof))
             retained = {}
             for rel, a, b in probes:                       # C1: is a stated fact returned as stated?
                 got = e.ask(f"{a} {rel} ?")

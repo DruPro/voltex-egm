@@ -13,7 +13,7 @@ Round 1 confirmation runs.
 | Policy | What it does |
 |---|---|
 | `legacy` | The engine's behaviour before policies, byte for byte. No configuration. The default. |
-| `strict` | Admits a rule with at least 5 known cases, reliability >= 0.95 (agreement for one-value conclusions; the coverage-corrected rate otherwise), agreement >= 0.5, and internal split-half replication. |
+| `strict` | Admits a rule with at least 5 known cases, reliability >= 0.95 (agreement for one-value conclusions; the coverage-corrected rate otherwise), agreement at least 0.8 of the coverage estimate (several values per subject), and internal split-half replication (insufficient = rejected). |
 | `tendency` | The `strict` stratum first, then every accepted rule extends it. Its answers always contain `strict`'s answers. |
 
 Built-ins can't be changed. Clone one to start a custom policy.
@@ -33,9 +33,12 @@ Unknown fields and out-of-range values are errors, never ignored.
 | thresholds | `minZ` | agreement above chance, in standard deviations | any number | none |
 | thresholds | `minLift` | rate over the conclusion's base rate | >= 0 | 0 |
 | thresholds | `maxUnknownShare` | share of the rule's cases whose answer is unknown (E?) | 0 to 1 | 1 |
+| thresholds | `minAgreementToCoverage` | several values per subject, where a coverage estimate exists: agreement divided by the conclusion relation's estimated completeness. A true rule is near 1 whatever the coverage, so this separates incomplete data from an unreliable rule, which a fixed agreement floor can't | >= 0 | 0 |
 | validation | `required` | the rule must pass validation | true / false | false |
 | validation | `method` | `internal_replication` (`split_half` is accepted as the same method) | | internal_replication |
 | validation | `split` | `hash` (subject names) or `blocked` (first appearance in ingestion order) | | hash |
+| validation | `minPerHalf` | fewest known answers in each half for the test to mean anything | whole number >= 0 | 5 |
+| validation | `onInsufficient` | what the policy does with a rule too thin to test: `reject` or `admit`. Reported as `insufficient`, never as failed | | reject |
 | inference | `maxDepth` | inference rounds for this stratum; 0 = until nothing new | whole number >= 0 | 4 |
 | inference | `shapes` | derivation classes allowed: `inverse`, `chain`, `path`, `tree`, `conditional` | list | all |
 | extension | `{thresholds, validation, inference}` | a second stratum that extends the first (see below) | | none |
@@ -49,6 +52,9 @@ Notes:
   and reported with its method (`RULES EVIDENCE`, `Engine.evidence()`: `internal_replication/hash:pass`).
   Internal replication tests a rule on two halves of this knowledge base; it is not confirmation by independent
   sources, which is not available yet.
+- **Weakest evidence.** Under a policy, every derived fact carries `weakest`: the lowest rule reliability on its best
+  proof (`Fact.weakest`, `weakest=` on `ASK` and `INFER ALL` lines). Rank answers by it when you want the most
+  dependable first.
 - **Use `split: blocked` for time-ordered or correlated data** (markets, logs). A hash split puts neighbouring,
   correlated observations in both halves, so one regime seen twice can look replicated. A blocked split divides
   subjects by when they first appear in the data: ingest the data in time order.

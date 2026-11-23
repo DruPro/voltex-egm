@@ -121,6 +121,25 @@ class Policies(unittest.TestCase):
             self.assertEqual(before, after)
             self.assertTrue(all(t in ("law", "tendency") for _, t in before))
 
+    def test_insufficient_is_not_failed(self):
+        """A rule with too few known answers in a half is reported insufficient, and the policy decides what to do."""
+        rej = self.reg.create("rej", validation={"required": True, "minPerHalf": 10**9, "onInsufficient": "reject"})
+        adm = self.reg.create("adm", validation={"required": True, "minPerHalf": 10**9, "onInsufficient": "admit"})
+        with egm.open(self.facts) as e:
+            e.apply_policy(rej)
+            self.assertTrue(all(v["validation"].endswith(":insufficient") for v in e.evidence()))
+            self.assertEqual(e.infer_all(), [])
+            self.assertTrue(e.infer_all(policy=adm))
+            e.apply_policy("legacy")
+        with self.assertRaises(PolicyError):
+            self.reg.create("bad", validation={"onInsufficient": "maybe"})
+
+    def test_weakest_evidence_reported_under_a_policy(self):
+        with egm.open(self.facts) as e:
+            fs = e.infer_all(policy=self.reg.create("w", validation={"required": False}))
+            self.assertTrue(fs and all(f.weakest is not None and 0 <= f.weakest <= 1 for f in fs))
+            self.assertTrue(all(f.weakest is None for f in e.infer_all()))     # legacy output is unchanged
+
     def test_nesting_of_builtins(self):
         with egm.open(self.facts) as e:
             c = e.compare_policies(["strict", "tendency"])

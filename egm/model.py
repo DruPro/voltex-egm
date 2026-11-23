@@ -35,6 +35,7 @@ class Fact(_Dict):
     note: str = ""
     raw: str = ""
     policy: str = ""
+    weakest: Optional[float] = None    # under a policy: the weakest rule reliability on the fact's proof
 
     @property
     def is_current(self) -> bool:

@@ -27,11 +27,16 @@ The contract (every field is enforced by the engine; nothing here is advisory):
                minZ             agreement above chance, in standard deviations (statistical significance); any number
                minLift          rate over the conclusion's base rate; >= 0
                maxUnknownShare  E? / chains: share of chains whose answer is unknown; 0-1
+               minAgreementToCoverage  several values per subject only, where a coverage estimate exists: agreement /
+                                estimated completeness of the conclusion relation (a true rule is near 1); >= 0
   validation   required         true: the rule must pass validation
                method           "internal_replication" (split-half on this knowledge base; "split_half" is accepted
                                 as the same method). Independent-source confirmation is not available yet.
                split            "hash" (subject names) or "blocked" (first appearance in ingestion order: use for
                                 time-ordered or correlated data, e.g. markets)
+               minPerHalf       fewest known answers in each half for the test to be meaningful; whole number >= 0
+               onInsufficient   "reject" or "admit": a rule with too few known answers to test is insufficient, not
+                                failed; this says what the policy does with it
   inference    maxDepth         inference rounds for this stratum; whole number >= 0, 0 = until nothing new
                shapes           derivation classes allowed: inverse, chain, path, tree, conditional
   extension    {thresholds, validation, inference} for a second stratum that extends the first: its rules run after
@@ -64,9 +69,11 @@ THRESHOLDS = {
     "minAgreement": ("share", 0.0, "minAgreement"), "minReliability": ("share", 0.0, "minReliability"),
     "minCoverage": ("share", 0.0, "minCoverage"), "minZ": ("number", None, "minZ"),
     "minLift": ("nonneg", 0.0, "minLift"), "maxUnknownShare": ("share", 1.0, "maxUnknownShare"),
+    "minAgreementToCoverage": ("nonneg", 0.0, "minAgreementToCoverage"),
 }
 VALIDATION = {"required": ("bool", False, "replication"), "method": ("method", "internal_replication", None),
-              "split": ("split", "hash", "split")}
+              "split": ("split", "hash", "split"), "minPerHalf": ("count", 5, "minPerHalf"),
+              "onInsufficient": ("insufficient", "reject", "onInsufficient")}
 INFERENCE = {"maxDepth": ("count", 4, "maxDepth"), "shapes": ("shapes", list(SHAPES), "shapes")}
 SECTIONS = {"thresholds": THRESHOLDS, "validation": VALIDATION, "inference": INFERENCE}
 METHODS = {"internal_replication": "internal_replication", "split_half": "internal_replication"}
@@ -104,6 +111,10 @@ def _check(section, key, kind, v):
         if v not in METHODS:
             raise PolicyError(f"{where} must be one of {sorted(METHODS)}, got {v!r}")
         return METHODS[v]
+    if kind == "insufficient":
+        if v not in ("reject", "admit"):
+            raise PolicyError(f"{where} must be 'reject' or 'admit', got {v!r}")
+        return v
     if kind == "split":
         if v not in ("hash", "blocked"):
             raise PolicyError(f"{where} must be 'hash' or 'blocked', got {v!r}")
@@ -235,8 +246,9 @@ def _builtin(name, cfg, description):
 
 
 # Built-in profiles. Development values (studies/evidence_policy/DEVELOPMENT.md): exploratory until confirmed.
-_STRICT = {"thresholds": {"minSampleSize": 5, "minAgreement": 0.5, "minReliability": 0.95},
-           "validation": {"required": True, "method": "internal_replication", "split": "hash"},
+_STRICT = {"thresholds": {"minSampleSize": 5, "minReliability": 0.95, "minAgreementToCoverage": 0.8},
+           "validation": {"required": True, "method": "internal_replication", "split": "hash", "minPerHalf": 5,
+                          "onInsufficient": "reject"},
            "inference": {"maxDepth": 4}}
 BUILTINS = {
     "legacy": Policy("legacy", "builtin-1", {}, {}, {}, None,

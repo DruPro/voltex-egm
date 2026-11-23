@@ -71,7 +71,7 @@ A policy has a core stratum and an optional extension. The core's rules run to t
 rules (with the core's) then extend it without overriding anything the core decided. So a policy's answers contain its
 core's answers (the owner's nesting decision holds by construction), extension-derived facts are labelled `extension`,
 never `core`, and each stratum has its own `maxDepth`. Results name the policy (`[POLICY] name@version`,
-`Fact.policy`); `SNAPSHOT` identifies the evidence state. Still to add: `weakest` (the weakest component on a proof).
+`Fact.policy`); `SNAPSHOT` identifies the evidence state. Every derived fact under a policy carries `weakest`, the lowest rule reliability on its best proof (iteration 4).
 
 ### 3.5 Evidence classes (evidence view, layer 5)
 

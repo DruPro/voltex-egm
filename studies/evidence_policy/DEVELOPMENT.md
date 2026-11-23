@@ -2,7 +2,7 @@
 
 Everything here was designed after seeing development data and is **exploratory**. Nothing in this file is evidence
 of progress: that comes only from confirmation on sealed worlds and replication on real data, after the
-pre-registration is hashed. The numbers are in the generated reports `dev/ITER1.md` to `dev/ITER3.md` (from
+pre-registration is hashed. The numbers are in the generated reports `dev/ITER1.md` to `dev/ITER4.md` (from
 `dev/iter*.json`, by `studies/capability/tools/profile.py --report`); the summaries below quote them.
 
 Iterations 1 and 2 ran on intermediate engine builds (binary sha256 in each JSON's `meta`) whose policy controls were
@@ -50,19 +50,45 @@ criteria; `tendency` extends it with every accepted rule.
 | AURC (C5) | no improvement over legacy yet; tendency slightly worse at `hidden` 30% (0.031 vs 0.019) | C-H1 not met |
 | Harvest | tendency still admits the over-general rule (needs `CONDITIONS`); strict derives nothing | |
 
+## Iteration 4 (committed): agreement relative to coverage; insufficient vs failed; weakest-evidence ranking
+
+Analysis of iteration 3 at 30% coverage: replication was not the cause (almost every rule passed it). Strict's fixed
+agreement floor (0.5) was: for conclusions with several values per subject, a true rule's agreement is about the
+conclusion relation's completeness (agreement / coverage estimate was 0.9 to 2.2 for the rules there, at every coverage
+level), so a fixed floor reads incomplete data as an unreliable rule.
+
+- Strict: the fixed floor is replaced by `minAgreementToCoverage` 0.8 (several values per subject, where a coverage
+  estimate exists).
+- Replication: a rule with fewer than `minPerHalf` (5) known answers in a half is `insufficient`, not failed; the policy
+  chooses (`onInsufficient`; strict rejects).
+- Ranking: every derived fact carries `weakest`, the lowest rule reliability on its best proof; the harness ranks
+  policy answers by it.
+
+| Finding (5 seeds) | Iteration 4 | Iteration 3 | Reference |
+|---|---|---|---|
+| Strict at `hidden` 30%: precision / recall | 0.997 / 0.351 | 0.971 / 0.044 | `TENDENCYSTEPS 0`: 0.996 / 0.355 |
+| Strict at `hidden` 50%, 70%: recall | 0.463, 0.524 | 0.443, 0.524 | 0.467, 0.525 |
+| AURC, tendency (`hidden` 30 / 50 / 70%, noise 15%) | 0.002 / 0.003 / 0.007 / 0.001 | 0.031 / 0.010 / 0.025 / 0.010 | default: 0.019 / 0.009 / 0.024 / 0.013 |
+| AURC, strict (same worlds) | 0.001 / 0.001 / 0.000 / 0.000 | 0.057 / 0.009 / 0.020 / 0.000 | `TENDENCYSTEPS 0`: 0.017 / 0.009 / 0.020 / 0.000 |
+| Harvest | unchanged: one over-general rule can't be ranked apart from itself; strict derives nothing | | |
+| Nesting | 0 violations | 0 | |
+
+Untested here: the stress study's dpkg rule (law at 0.15 agreement) does not occur in this machine's package data
+(8,861 facts against 14,296 in the stress study), so whether strict excludes it is a confirmation item, not a claim.
+
 ## Where the hypotheses stand (development only)
 
 - **C-H3 (nesting):** holds by construction (stratified inference), and is measured as 0 violations.
-- **C-H2 (strict >= 0.95 precision with recall >= `TENDENCYSTEPS 0`):** met except at low coverage, where replication
-  costs recall. Open: how replication should behave when few answers are known.
-- **C-H1 (better risk-coverage curve):** not met. The policies change the operating point, not the ranking; the
-  ranking inside a stratum still uses the engine's score.
+- **C-H2 (strict >= 0.95 precision with recall >= `TENDENCYSTEPS 0`):** in development, precision 0.992 to 1.000
+  everywhere and recall within 0.004 of `TENDENCYSTEPS 0` (inside the seed spread); whether that counts as "at least"
+  is decided by the acceptance thresholds fixed before confirmation.
+- **C-H1 (better risk-coverage curve):** in development, lower AURC than legacy on every structure with derived facts,
+  and equal on harvest.
 - **K-H0 (legacy byte-identical):** gate 221/221 after every engine change.
 
 ## Next
 
-1. Low-coverage replication (C-H2): require replication only where enough known answers exist to test it, and report
-   the rest as unvalidated rather than failed; or a minimum known count per half.
-2. Ranking (C-H1): order answers by the weakest component of their proof's evidence (the `weakest` field of the
-   derived-fact record, DESIGN 3.4), not by the legacy score.
-3. Then freeze the built-in values, hash the pre-registration, and run confirmation.
+1. Freeze the built-in values (iteration 4) and the acceptance thresholds (from the baseline seed spread).
+2. Record the six remaining owner decisions and hash the pre-registration.
+3. Build the sealed confirmation worlds (a separately written generator) and the real-data replication (`strengths`,
+   Unicode, a dpkg dataset with the stress study's rule), then run confirmation once.
