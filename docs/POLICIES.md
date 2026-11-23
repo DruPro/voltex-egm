@@ -18,6 +18,12 @@ Round 1 confirmation runs.
 
 Built-ins can't be changed. Clone one to start a custom policy.
 
+**What strict does and doesn't guarantee (Round 1 confirmation, `studies/evidence_policy/CONFIRMATION.md`).** Strict's
+answers are closed, nested inside tendency's, and its proofs are faithful. It is precise when the evidence can expose a
+bad rule. It is not precise when a rule over-generalizes into territory where the conclusion is simply never stated
+(a rule true only for a group looks like a law: use `CONDITIONS`), or when a rule floods on thin evidence (on the
+Debian package data, strict was as imprecise as `TENDENCYSTEPS 0`, 0.006). Don't read strict as a precision guarantee.
+
 ## The configuration contract
 
 Every field is enforced by the engine; a field the engine can't enforce isn't offered. Defaults restrict nothing.
