@@ -13,7 +13,9 @@ def measure(world, run):
     new = set(conf)
     correct = new & T; wrong = new - T
     has_unseen = lambda f: f[1] in U or f[2] in U
-    missing = {f for f in T - S if not has_unseen(f)}
+    # recall is measured on the world's hidden key when it has one (real data: the held-out facts), else on all
+    # true facts that aren't stated
+    missing = {f for f in (getattr(world, "recall_truth", None) or T) - S if not has_unseen(f)}
     m = {
         # C3 deduction
         "new": len(new), "correct": len(correct), "wrong": len(wrong), "missing": len(missing),
