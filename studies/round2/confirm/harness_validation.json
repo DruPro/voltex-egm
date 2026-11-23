@@ -1,0 +1,128 @@
+{
+ "format": {
+  "reversed_weak": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": null,
+   "guess_abstention": null,
+   "undet_keys": 0,
+   "three_element_keys": 0,
+   "hidden": 180,
+   "ok": true
+  },
+  "graded": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": null,
+   "guess_abstention": null,
+   "undet_keys": 0,
+   "three_element_keys": 0,
+   "hidden": 440,
+   "ok": true
+  },
+  "skewed": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": null,
+   "guess_abstention": null,
+   "undet_keys": 0,
+   "three_element_keys": 0,
+   "hidden": 225,
+   "ok": true
+  },
+  "multivalue": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": null,
+   "guess_abstention": null,
+   "undet_keys": 0,
+   "three_element_keys": 0,
+   "hidden": 732,
+   "ok": true
+  },
+  "exceptions": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": 1.0,
+   "guess_abstention": 0.0,
+   "undet_keys": 36,
+   "three_element_keys": 0,
+   "hidden": 264,
+   "ok": true
+  },
+  "competing": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": 1.0,
+   "guess_abstention": 0.0,
+   "undet_keys": 34,
+   "three_element_keys": 0,
+   "hidden": 286,
+   "ok": true
+  },
+  "sparse": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": null,
+   "guess_abstention": null,
+   "undet_keys": 0,
+   "three_element_keys": 0,
+   "hidden": 21,
+   "ok": true
+  },
+  "conditional_rare": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": null,
+   "guess_abstention": null,
+   "undet_keys": 0,
+   "three_element_keys": 0,
+   "hidden": 8,
+   "ok": true
+  },
+  "chain_noise": {
+   "oracle_precision": 1.0,
+   "oracle_recall": 1.0,
+   "oracle_abstention": 1.0,
+   "guess_abstention": 0.0,
+   "undet_keys": 208,
+   "three_element_keys": 208,
+   "hidden": 658,
+   "ok": true
+  },
+  "control_degree": {
+   "oracle_precision": null,
+   "oracle_recall": null,
+   "oracle_abstention": null,
+   "guess_abstention": null,
+   "undet_keys": 0,
+   "three_element_keys": 0,
+   "hidden": 0,
+   "ok": true
+  }
+ },
+ "realdata": {
+  "c_headers": {
+   "truth": 18791,
+   "hidden": 3874,
+   "ok": true
+  },
+  "timezones": {
+   "truth": 1167,
+   "hidden": 228,
+   "ok": true
+  },
+  "services": {
+   "truth": 659,
+   "hidden": 141,
+   "ok": true
+  },
+  "py_requires": {
+   "truth": 604,
+   "hidden": 134,
+   "ok": true
+  }
+ },
+ "dry_run": "see dry_run.json",
+ "harness_valid": true
+}

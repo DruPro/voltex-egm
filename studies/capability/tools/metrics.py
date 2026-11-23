@@ -31,7 +31,10 @@ def measure(world, run):
     }
     if world.undeterminable is not None:
         keys = world.undeterminable
-        answered = {(f[0], f[1]) for f in new} & keys
+        # [rel, subj] keys: any answer for that query; [rel, subj, obj] keys (Round 2 generator, many-valued
+        # relations, where the subject does not name one fact): that exact fact asserted. Two-element keys as before.
+        pairs = {(f[0], f[1]) for f in new}; newset = set(new)
+        answered = {k for k in keys if (len(k) == 2 and k in pairs) or (len(k) == 3 and k in newset)}
         m["undet_queries"] = len(keys); m["undet_answered"] = len(answered)
         m["abstention"] = (1 - len(answered) / len(keys)) if keys else None
     else:

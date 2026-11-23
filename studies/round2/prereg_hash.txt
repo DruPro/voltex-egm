@@ -1,0 +1,1 @@
+5697ac0ebe1f4724fa9a024fde434cbfd992dba82048eb41dd2ef617155f63b1  PREREGISTRATION.md  (hashed 2026-11-23, before any confirmation run; engine commit bf7a90a)
