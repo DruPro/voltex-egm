@@ -1,6 +1,7 @@
 # Evidence policy (voltex3, Round 1): design and contracts
 
-Status (2026-11-23): **confirmation run (G5-G7) complete: `RESULTS.md`, analysis and decision in `CONFIRMATION.md`.**
+Status (2026-11-23): **Round 1 closed (G8). Adopted as an experimental feature with `legacy` as the default (owner).**
+Confirmation: `RESULTS.md`; analysis and decision: `CONFIRMATION.md`.
 Development: `DEVELOPMENT.md`. The evidence vector,
 configurable policies (engine `POLICY APPLY`, SDK registry, CLI `egm policy`) and stratified inference are built;
 `legacy` stays byte-identical (gate 221/221 against the pre-voltex3 binary). User documentation: `docs/POLICIES.md`. Category: architectural change. The method is

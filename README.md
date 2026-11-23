@@ -403,6 +403,17 @@ voltex-egm/
 
 ### Unreleased
 
+- **voltex3 (branch `voltex3`), experimental, `legacy` remains the default:**
+  - configurable, versioned inference policies in the engine (`POLICY APPLY`), the SDK (`egm.policies`) and the CLI
+    (`egm policy ...`, `--policy`); built-ins legacy, strict, tendency (`docs/POLICIES.md`);
+  - each rule's evidence vector (`RULES EVIDENCE`), validation recorded with its method, `weakest` evidence per fact,
+    `SNAPSHOT`;
+  - SDK correction: `strict=True` runs the engine's strict policy (closed answers); the old filter is
+    `legacy_strict=True`;
+  - studies: `capability` (architecture-independent suite), `evidence_policy` (Round 1, confirmed in part:
+    `CONFIRMATION.md`), `sealed` (independent generator), `shared_conditions` (conditions through the shared
+    evaluator).
+
 - **Mimic and its playground** (`lang/mimic`):
   - a language taught by example: functions, Turing machines, circuits and automata;
   - `play.py`, a guided tour and a prompt;

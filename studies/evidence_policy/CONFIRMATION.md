@@ -69,6 +69,10 @@ a precision guarantee.** State in `docs/POLICIES.md` that strict is precise when
 and is not when a rule over-generalizes into unstated territory (use conditions) or floods on thin evidence. Changing
 any default stays a separate decision. The owner decides.
 
+**Decided 2026-11-23 (owner): adopted as recommended.** `POLICY` (the policy registry, `POLICY APPLY`, the SDK and CLI
+policy commands) is an experimental feature; `legacy` remains the default policy; strict is documented as not a
+precision guarantee. No default changed. Round 1 is closed; its open questions go to Round 2 (below).
+
 ## What Round 2 should take from this
 
 1. Over-generalization into unstated territory is an induction problem: conditions (with held-out proposal, from the
