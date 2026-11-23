@@ -8,6 +8,7 @@ itself, so they have an advantage in segmentation.
   B1 majority:  in each one-value relation (>= 95% of subjects have one value), answers the majority value for
                 subjects of the same kind that have no value. "Same kind" = subjects of another relation at least half of
                 whose subjects also have a value here. Confidence = the majority value's share.
+  B3 amie:      an AMIE-style closed-rule miner (inverses and two-atom compositions; PCA confidence >= 0.8), one step.
   B2 inverse:   one-hop inverses and symmetries: if S(b,a) is stated for >= 80% of the R(a,b) whose b has a known value
                 in S (>= 5 such cases, >= 3 agreeing), derives S(b,a) for every R(a,b). Confidence = that agreement.
 """
@@ -80,4 +81,48 @@ class Inverse:
         return Run(answers, {p: p in F for p in probes}, set(), time.time() - t, None)
 
 
-BASELINES = [StatedOnly(), Majority(), Inverse()]
+class AMIE:
+    """B3, an external reference: an AMIE-style closed-rule miner (Galarraga et al. 2013), written independently of
+    the engine's code. Rules up to two body atoms: R(a,b) => S(b,a) and R(a,b) & S(b,c) => T(a,c), any relations.
+    Scored by support (confirming predictions) and PCA confidence (support / predictions whose subject has some T
+    value); accepted at support >= 5, head coverage >= 0.01 and PCA confidence >= 0.8 (a high-precision setting).
+    Predicts in one step (no chaining); confidence = the best accepted rule's PCA confidence."""
+    name = "B3-amie"
+
+    def run(self, lines, rels, probes) -> Run:
+        t = time.time(); F = _stated(lines, rels)
+        fwd = defaultdict(lambda: defaultdict(set)); facts = defaultdict(set); subj = defaultdict(set)
+        for r, a, b in F:
+            fwd[r][a].add(b); facts[r].add((a, b)); subj[r].add(a)
+        best = {}
+
+        def score(T, preds):
+            preds = {p for p in preds if p[0] != p[1]}
+            sup = sum(1 for p in preds if p in facts[T])
+            pca_n = sum(1 for p in preds if p[0] in subj[T])
+            if sup < 5 or not pca_n or sup / max(1, len(facts[T])) < 0.01:
+                return
+            conf = sup / pca_n
+            if conf < 0.8:
+                return
+            for a, c in preds:
+                f = (T, a, c)
+                if f not in F:
+                    best[f] = max(best.get(f, 0.0), conf)
+
+        R_ = list(facts)
+        for R in R_:
+            for T in R_:
+                score(T, {(b, a) for a, b in facts[R]})                      # inverse / symmetric
+        for R in R_:
+            for S in R_:
+                joined = {(a, c) for a, b in facts[R] for c in fwd[S].get(b, ())}
+                if not joined:
+                    continue
+                for T in R_:
+                    score(T, joined)                                         # composition / transitivity
+        answers = [Answer(f, "derived", c, []) for f, c in sorted(best.items())]
+        return Run(answers, {p: p in F for p in probes}, set(), time.time() - t, None)
+
+
+BASELINES = [StatedOnly(), Majority(), Inverse(), AMIE()]

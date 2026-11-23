@@ -43,7 +43,9 @@ scorers, raw answers, agent audit logs, and the results files the write-ups cite
 | [`architecture/`](architecture/) | Where runtime state should live (single engine, external memory, several engines, hybrid): designed and pre-registered, paused in favour of `inferred_program` | `studies/architecture/DESIGN.md` |
 | [`eval/`](eval/) | Evaluation framework baseline: capability scorecard with seed variance and tier calibration; validation of the gate and bench | `docs/EVALUATION.md`, `studies/eval/BASELINE.md` |
 | [`capability/`](capability/) | voltex3: architecture-independent capability suite (C1-C13) scored through a fixed interface against complete truth, with trivial baselines and metamorphic consistency; baseline profile of the current engine | `studies/capability/BASELINE.md` |
-| [`evidence_policy/`](evidence_policy/) | voltex3 Round 1 (architectural change): policy-thresholded inference over evidence vectors. G0 design and draft pre-registration; not yet hashed, awaiting owner decisions | `studies/evidence_policy/DESIGN.md` |
+| [`evidence_policy/`](evidence_policy/) | voltex3 Round 1 (architectural change): configurable, versioned inference policies over evidence vectors. Development (4 iterations) complete; pre-registration hashed; confirmation next | `studies/evidence_policy/DESIGN.md` |
+| [`sealed/`](sealed/) | voltex3: independent confirmation-world generator (14 structures, complete three-valued truth), written by a separate agent from the structure list alone, without access to the development worlds or the engine | `studies/sealed/README.md` |
+| [`shared_conditions/`](shared_conditions/) | voltex3, exploratory: can conditions be evaluated by the shared evidence machinery? Farmers problem 0.029 → 1.000 precision, held-out conditional worlds recovered 5/5, no regression; one proxy condition found. Recommendation: shared evaluation in the core, `CONDITIONS` stays optional | `studies/shared_conditions/FINDINGS.md` |
 
 ## How the earlier studies were archived
 

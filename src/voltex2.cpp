@@ -292,6 +292,10 @@ struct RuleH {
     double cov = -1, rel = 0; bool law = false;   // completeness used, reliability, label
     std::vector<int> path;                        // multi-premise study: 'P' rules, premise relations in order (CHAIN >= 3)
     int condRel = -1; std::set<u32> condVals, condSubj;   // CONDITIONS: fires only for head subjects with a value in condVals
+    // voltex3 (studies/shared_conditions): the condition's own evidence, kept instead of discarded. Inside and outside
+    // the group: subjects, subjects whose answer is known, chains, conclusions stated; z = how much more often the
+    // answer is known inside than outside. Read by RULES EVIDENCE only.
+    double cIn = 0, cInKnown = 0, cOut = 0, cOutKnown = 0, cnIn = 0, ckIn = 0, cnOut = 0, ckOut = 0, cZ = 0;
     bool anchorInv = false; u32 headVal = 0; std::vector<TBranch> branches;   // TREES ('G'): A(x,g) or A(g,x) & branches(g) => T(x, headVal)
     std::string repl;                             // REPLICATE (studies/noise): why the rule was rejected on replication
     // voltex3 evidence vector (studies/evidence_policy): computed from the counts above, read by RULES EVIDENCE only.
@@ -1284,6 +1288,7 @@ struct Vault {
                 RuleH hi = h; hi.n = (u64)nI; hi.k = (u64)kI; hi.pn = (u64)pnI; hi.rate = kI / nI; hi.base = base[h.r3];
                 hi.lift = hi.base > 0 ? hi.rate / hi.base : 0; hi.pca = pnI > 0 ? kI / pnI : 0;
                 if (!passes(hi, functional)) continue;                 // (a) inside the group the rule passes the shipped test
+                hi.cIn = sI; hi.cInKnown = knI; hi.cOut = sO; hi.cOutKnown = knO; hi.cnIn = nI; hi.ckIn = kI; hi.cnOut = nO; hi.ckOut = kO; hi.cZ = z;
                 if (z > bestZ) { bestZ = z; hi.condRel = (int)q; hi.condVals = K; best = hi; found = true; }
             }
             if (found) {
@@ -2215,12 +2220,14 @@ int main(int argc, char** argv) {
                 size_t ri = &h - &V.ruleList[0];
                 int sp = V.pol.active ? V.pol.core.split : 0; auto& vd = V.internalReplication(sp)[ri];
                 char agree[16] = "undef"; if (h.pn) std::snprintf(agree, sizeof agree, "%.4f", double(h.k) / double(h.pn));
-                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\tvalidation=%s:%s\tadmit=%s\n",
+                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\tvalidation=%s:%s\tadmit=%s%s\n",
                             h.accepted ? "ACCEPT" : "reject", V.ruleText(h).c_str(), (unsigned long long)h.n, (unsigned long long)h.k,
                             (unsigned long long)h.eMinus, (unsigned long long)h.eUnknown, agree, h.lift, h.z, h.base, h.cov, h.rel,
                             h.law ? "law" : "tendency", h.fnTarget ? 1 : 0, vd.method.c_str(),
                             vd.result < 0 ? "not_run" : std::min(vd.pnA, vd.pnB) < (V.pol.active ? V.pol.core.minPerHalf : 5) ? "insufficient" : vd.result ? "pass" : "fail",
-                            !V.pol.active ? "-" : V.admitCore[ri] ? "core" : V.admitExt[ri] ? "extension" : "none");
+                            !V.pol.active ? "-" : V.admitCore[ri] ? "core" : V.admitExt[ri] ? "extension" : "none",
+                            h.condRel < 0 ? "" : [&] { char b[200]; std::snprintf(b, sizeof b, "\tcond_in=%.0f/%.0f subjects known, %.0f/%.0f chains stated\tcond_out=%.0f/%.0f subjects known, %.0f/%.0f chains stated\tcond_z=%.2f",
+                                h.cInKnown, h.cIn, h.ckIn, h.cnIn, h.cOutKnown, h.cOut, h.ckOut, h.cnOut, h.cZ); return std::string(b); }().c_str());
             }
         }
         else if (cmd == "CHAINS") {   // how each derived fact was reached: inference round, tendency-tier steps in its proof

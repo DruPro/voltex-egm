@@ -26,7 +26,7 @@ import baselines, metamorphic, metrics  # noqa: E402
 import cworlds as worlds  # noqa: E402
 
 KEYS = ["precision", "recall", "new", "wrong", "aurc", "p_at_r50", "invented_unseen", "abstention", "undet_answered",
-        "retention", "flag_precision", "flag_recall", "seconds", "peak_mb"]
+        "retention", "flag_precision", "flag_recall", "seconds", "peak_mb", "proof_validity", "proofs_invalid"]
 
 
 def profiles(world):

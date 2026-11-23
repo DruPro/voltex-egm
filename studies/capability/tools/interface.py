@@ -29,6 +29,7 @@ class Answer:
     status: str                      # "stated" | "derived"
     confidence: Optional[float]      # higher = more confident; None = the engine gives none
     proof: List[Fact] = field(default_factory=list)
+    rule: str = ""                   # optional (added after the freeze): the rule that produced it, as the engine names it
 
 
 @dataclass
@@ -38,6 +39,7 @@ class Run:
     flagged: Set[Fact]               # stated facts the engine flags as conflicting
     seconds: float
     peak_mb: Optional[float]
+    admitted: Optional[Set[str]] = None   # optional (added after the freeze): rules the engine admitted, same naming as Answer.rule
 
 
 def parse_fact(text: str, rels: Sequence[str]) -> Optional[Fact]:
@@ -105,7 +107,8 @@ class EGMAdapter:
                     continue
                 proof = [p for p in (parse_fact(b, rels) for b in (f.because or [])) if p]
                 # under a policy, rank by the weakest evidence on the proof (DESIGN 3.4); under legacy, by the score
-                answers.append(Answer(fx, "derived", egm_confidence(d.tier, d.weakest if d.weakest is not None else f.score), proof))
+                answers.append(Answer(fx, "derived", egm_confidence(d.tier, d.weakest if d.weakest is not None else f.score), proof,
+                                      f.rule if f is not d else ""))
             retained = {}
             for rel, a, b in probes:                       # C1: is a stated fact returned as stated?
                 got = e.ask(f"{a} {rel} ?")
@@ -119,7 +122,9 @@ class EGMAdapter:
                     fx = parse_fact(ft, rels)
                     if fx:
                         flagged.add(fx)
+            ev = e.evidence()
+            admitted = {v["rule"] for v in ev if (v["admit"] in ("core", "extension") if self.policy not in (None, "legacy") else v["accepted"])}
             peak = _peak_mb(e._p.pid)
         finally:
             e.close()
-        return Run(answers, retained, flagged, time.time() - t0, peak)
+        return Run(answers, retained, flagged, time.time() - t0, peak, admitted)

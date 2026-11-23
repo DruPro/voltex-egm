@@ -55,6 +55,16 @@ def measure(world, run):
                 if p_at[lv] is None and r >= lv:
                     p_at[lv] = hit / k
     m["aurc"] = (sum(risks) / len(risks)) if risks else None
+    # C10 proof validity (independent of the engine's own bookkeeping): every premise of a derived fact's proof is a
+    # stated fact or another derived answer of the same run, and its rule is one the engine reports as admitted.
+    if run.admitted is not None:
+        held = S | {a.fact for a in run.answers}
+        checked = [a for a in run.answers if a.status == "derived" and a.fact not in S and a.rule]
+        bad = [a for a in checked if not a.proof or any(p not in held for p in a.proof) or a.rule not in run.admitted]
+        m["proofs_checked"] = len(checked); m["proofs_invalid"] = len(bad)
+        m["proof_validity"] = (1 - len(bad) / len(checked)) if checked else None
+    else:
+        m["proofs_checked"] = None; m["proofs_invalid"] = None; m["proof_validity"] = None
     for lv, v in p_at.items():
         m[f"p_at_r{int(lv * 100)}"] = v
     return m
