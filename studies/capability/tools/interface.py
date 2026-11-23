@@ -81,6 +81,22 @@ class EGMAdapter:
         self.strict_filter = strict_filter
         self.binary = binary or os.environ.get("VOLTEX", os.path.join(ROOT, "build", "voltex2"))
 
+    def ask(self, lines: Sequence[str], rels: Sequence[str], subject: str, relation: str) -> List[Answer]:
+        """Optional adapter method (added after the freeze; used by counterfactual.py): one question, fresh engine."""
+        rels = sorted(rels, key=len, reverse=True)
+        with egm.Engine(binary=self.binary, settings=self.settings) as e:
+            e.ingest_many(lines)
+            if self.policy is not None:
+                e.apply_policy(self.policy)
+            out = []
+            for f in e.ask(f"{subject} {relation} ?"):
+                fx = parse_fact(f.fact, rels)
+                if fx is None:
+                    continue
+                st = "derived" if f.status == "inferred" else "stated" if f.status in ("stated", "current") else f.status
+                out.append(Answer(fx, st, None, [p for p in (parse_fact(b, rels) for b in (f.because or [])) if p], f.rule))
+            return out
+
     def run(self, lines: Sequence[str], rels: Sequence[str], probes: Sequence[Fact]) -> Run:
         rels = sorted(rels, key=len, reverse=True)
         t0 = time.time()
