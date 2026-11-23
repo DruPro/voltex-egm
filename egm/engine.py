@@ -231,6 +231,23 @@ class Engine:
             r = [x for x in r if x.accepted]
         return [x for x in r if x.shape == shape] if shape else r
 
+    def evidence(self, include_rejected: bool = False) -> List[dict]:
+        """voltex3: each rule's evidence vector (RULES EVIDENCE): {"accepted", "rule", "n", "e_plus", "e_minus",
+        "e_unknown", "agree", "lift", "z", "base", "cov", "rel", "tier", "one_value"}. E- is defined only for one-value
+        conclusion relations (else 0: a missing conclusion there is unknown, not opposing); agree is None when no answer
+        is known."""
+        out = []
+        for l in self._checked("RULES EVIDENCE" + (" ALL" if include_rejected else "")):
+            if not l.startswith("EVIDENCE\t"):
+                continue
+            p = l.split("\t"); kv = dict(x.split("=", 1) for x in p[3:])
+            out.append({"accepted": p[1] == "ACCEPT", "rule": p[2], "n": int(kv["n"]), "e_plus": int(kv["e+"]),
+                        "e_minus": int(kv["e-"]), "e_unknown": int(kv["e?"]),
+                        "agree": None if kv["agree"] == "undef" else float(kv["agree"]), "lift": float(kv["lift"]),
+                        "z": float(kv["z"]), "base": float(kv["base"]), "cov": float(kv["cov"]), "rel": float(kv["rel"]),
+                        "tier": kv["tier"], "one_value": kv["one_value"] == "1"})
+        return out
+
     def chains(self) -> List[dict]:
         """How each derived fact was reached: {"fact", "round", "tendency_steps"} (rounds count from 1; tendency steps
         are tendency-tier rule steps anywhere in its proof). See SET TENDENCYSTEPS."""

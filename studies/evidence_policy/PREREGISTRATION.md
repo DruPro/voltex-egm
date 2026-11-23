@@ -69,4 +69,9 @@ replications.
 
 ## 11. Owner decisions
 
-Pending (see `DESIGN.md` section 7).
+- 2026-11-23, nesting: yes. Strict answers must be a subset of tendency answers; strict admits validated or strong
+  tendencies by their evidence.
+- 2026-11-23, replacement: `POLICY strict` replaces `TENDENCYSTEPS 0` and SDK `strict=True`; old controls remain as
+  aliases until a major version (compatibility track).
+- Pending: names, representation, Round 2 data independence, sealed worlds, external reference engines, interface
+  freeze (`DESIGN.md` section 7, items 3 to 8). The pre-registration is hashed once these are recorded.

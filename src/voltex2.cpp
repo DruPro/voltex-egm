@@ -293,6 +293,10 @@ struct RuleH {
     int condRel = -1; std::set<u32> condVals, condSubj;   // CONDITIONS: fires only for head subjects with a value in condVals
     bool anchorInv = false; u32 headVal = 0; std::vector<TBranch> branches;   // TREES ('G'): A(x,g) or A(g,x) & branches(g) => T(x, headVal)
     std::string repl;                             // REPLICATE (studies/noise): why the rule was rejected on replication
+    // voltex3 evidence vector (studies/evidence_policy): computed from the counts above, read by RULES EVIDENCE only.
+    // E+ = k; E- = pn - k when the conclusion relation is one-value (else 0: a missing conclusion is unknown, not
+    // opposing); E? = n - pn; z = agreement above chance where the answer is known. Nothing else reads these yet.
+    u64 eMinus = 0, eUnknown = 0; double z = 0; bool fnTarget = false;
 };
 
 // ─────────────────────────────────────────────
@@ -843,7 +847,24 @@ struct Vault {
         if (F_COND && (F_COV || F_LABELS)) specialize(out, subj, base);
         if (F_TREES) mineTrees();
         if (F_REPL) replicate();
+        computeEvidence();
         std::sort(ruleList.begin(), ruleList.end(), [](auto& a, auto& b) { return a.accepted != b.accepted ? a.accepted : a.lift > b.lift; });
+    }
+    // ── voltex3 evidence vector: E+, E-, E?, z per rule. Observational only (no rule, tier or answer depends on it). ──
+    void computeEvidence() {
+        std::vector<bool> fn(rels.size());
+        for (size_t i = 0; i < rels.size(); ++i) {   // one-value test, as in rescoreRules
+            std::map<u32, int> c; for (auto& f : rels[i].stated) c[f.first]++;
+            size_t single = 0; for (auto& x : c) if (x.second == 1) ++single;
+            fn[i] = !c.empty() && double(single) / double(c.size()) >= 0.95;
+        }
+        for (auto& h : ruleList) {
+            h.fnTarget = h.r3 >= 0 && h.r3 < (int)fn.size() && fn[h.r3];
+            h.eUnknown = h.n >= h.pn ? h.n - h.pn : 0;
+            h.eMinus = (h.fnTarget && h.pn >= h.k) ? h.pn - h.k : 0;
+            double ex = double(h.pn) * h.base, sd = std::sqrt(std::max(1e-9, ex * (1 - h.base)));
+            h.z = h.pn ? (double(h.k) - ex) / sd : 0;
+        }
     }
     // ── REPLICATE (studies/noise): split the subjects into two halves by a hash of their name. An accepted rule stays accepted
     //    only if, in each half separately, its predictions from stated facts agree with the stated answer at least SUPPORT times
@@ -1940,6 +1961,7 @@ static void help() {
         "  ASK <pattern ?>      stated + inferred answers, e.g. ASK ana is in ?\n"
         "  CONFLICTS            stated facts that contradict what the rules infer\n"
         "  CHAINS [ALL]         derived facts by inference round and tendency-tier steps (ALL: one line per fact)\n"
+        "  RULES EVIDENCE [ALL] each rule's evidence vector: n, E+, E-, E?, agreement, lift, z (ALL: rejected too)\n"
         "  RETRACT <text>       remove a stored fact and its evidence exactly\n"
         "  UPDATE <text>        replace the subject's earlier value (one-value relations only)\n"
         "  EVAL <path>          held-out bits per token (word / category / mix)\n"
@@ -1988,6 +2010,22 @@ int main(int argc, char** argv) {
         else if (cmd == "RELATIONS") showRelations();
         else if (cmd == "INFER") inferCmd(arg);
         else if (cmd == "ASK") ask(arg);
+        else if (cmd == "RULES") {   // voltex3: the evidence vector of each rule (studies/evidence_policy)
+            std::string a = arg; for (auto& c : a) c = (char)std::toupper((unsigned char)c);
+            if (a.rfind("EVIDENCE", 0) != 0) { std::puts("[RULES] usage: RULES EVIDENCE [ALL]"); continue; }
+            V.ensureModel();
+            bool all = a.find("ALL") != std::string::npos;
+            std::printf("[RULES] evidence per rule: n chains; E+ conclusion stated; E- known and different (one-value conclusions only); "
+                        "E? answer unknown; agree = E+ / (E+ + E-) where known\n");
+            for (auto& h : V.ruleList) {
+                if (!h.accepted && !all) continue;
+                char agree[16] = "undef"; if (h.pn) std::snprintf(agree, sizeof agree, "%.4f", double(h.k) / double(h.pn));
+                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\n",
+                            h.accepted ? "ACCEPT" : "reject", V.ruleText(h).c_str(), (unsigned long long)h.n, (unsigned long long)h.k,
+                            (unsigned long long)h.eMinus, (unsigned long long)h.eUnknown, agree, h.lift, h.z, h.base, h.cov, h.rel,
+                            h.law ? "law" : "tendency", h.fnTarget ? 1 : 0);
+            }
+        }
         else if (cmd == "CHAINS") {   // how each derived fact was reached: inference round, tendency-tier steps in its proof
             V.ensureInferred();
             std::map<std::pair<int, int>, u64> by; size_t total = 0;

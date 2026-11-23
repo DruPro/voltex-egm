@@ -1,6 +1,8 @@
 # Evidence policy (voltex3, Round 1): design and contracts
 
-Status (2026-11-23): **G0, design only. No engine code yet.** Category: architectural change. The method is
+Status (2026-11-23): **G0 done; G1 groundwork in.** The evidence vector (3.1) is computed for every rule and shown by
+`RULES EVIDENCE`; nothing reads it yet, and existing output is byte-identical (gate 221/221 against the previous
+binary). Policies (3.2 to 3.4) are not built yet. Category: architectural change. The method is
 `docs/EVALUATION.md`, extended by the round framework below; the full research framework, with its rationale, is the
 shared document "EGM Research Round Framework: Policy-Thresholded Inference over Evidential Relationships".
 
@@ -90,8 +92,13 @@ would leave a contract nothing uses, which can't be measured.
 
 ## 7. Open owner decisions (to record before the pre-registration is hashed)
 
-1. **Nesting.** Must strict answers be a subset of tendency answers (tier-aware votes), or may policies disagree?
-2. **Which strict counts.** Does `POLICY strict` replace `TENDENCYSTEPS 0` and SDK `strict=True`, or sit beside them?
+1. **Nesting. Decided 2026-11-23 (owner): yes.** Strict answers must be a subset of tendency answers. Strict admits
+   tendencies that are validated or strong, judged on their evidence vector in the probability field, not only
+   today's law label. Consequence: tier-aware votes (`tier_votes = 1`) in the strict and tendency policies, and C-H3
+   is a requirement, not only a measurement.
+2. **Which strict counts. Decided 2026-11-23 (owner): replace.** `POLICY strict` replaces `TENDENCYSTEPS 0` and the
+   SDK's `strict=True`: no redundant features. Compatibility (a separate track): the old controls stay as aliases
+   that map onto the policy until a major version, and the differences are listed (K3).
 3. **Names.** Keep law and tendency as public labels, or move to the policy names?
 4. **Representation.** Does `EvidenceVector` wrap `RuleH` or replace its scoring fields?
 5. **Round 2 data independence.** Build categories on the discovery half only?
