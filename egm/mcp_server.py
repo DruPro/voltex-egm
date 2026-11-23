@@ -122,11 +122,14 @@ class Server:
             return {"pattern": p, "facts": [], "note": str(e), "learned_relations": e.learned}
         hidden = 0
         out = []
+        if strict:   # the engine-level strict policy (closed proofs), not a filter over the default answers
+            kept = self.engine.ask(p, strict=True)
+            keep = {(f.fact, f.status) for f in kept}
+            hidden = sum(1 for f in facts if not f.is_history and (f.fact, f.status) not in keep)
+            facts = kept + [f for f in facts if f.is_history]
         for f in facts:
             if f.is_history and not a.get("include_history", False):
                 continue
-            if strict and not f.is_history and not f.is_strict:
-                hidden += 1; continue
             out.append(_fact(f))
         res = {"pattern": p, "strict": strict, "facts": out}
         if hidden:

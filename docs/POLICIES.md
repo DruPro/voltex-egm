@@ -110,6 +110,20 @@ egm ask facts.txt "x is based in ?" --policy strict@builtin-1
 `--set` takes `SECTION.FIELD=VALUE` or `extension.SECTION.FIELD=VALUE`; shapes take a comma list. The CLI calls the
 same module as the SDK (`egm/policy.py`), so both validate and execute identically.
 
+## SDK correction: `strict=True` (voltex3)
+
+Before voltex3, `ask(..., strict=True)` (and `values`, `current`, `egm ask --strict`, `egm eval --strict`, MCP's
+`strict`) filtered the legacy answers down to stated facts and law-tier inferences. That filter is not closed: a
+law-tier fact can rest on a premise the filter drops (the capability suite's proof checker found such a case). Now
+`strict=True` runs the query under the engine's built-in `strict` policy, whose answers are closed (every premise of a
+proof is itself an answer); under another policy it keeps that policy's core stratum, closed by construction. The
+frozen `strict` policy is unchanged; only the SDK's meaning of `strict=True` changed.
+
+The old filter remains as an explicit compatibility alias, `legacy_strict=True`, until a major version. Mimic uses it,
+because its programs rely on legacy voting: an untaught transition stays "unknown" there because tendency-tier paths
+outvote the law path and the filter then hides the winner. Under the strict policy the law-quality generalization
+answers instead. No evaluation uses `legacy_strict`. `make repro` (the published tokenomics results) is unchanged.
+
 ## Reproducibility
 
 A result is reproducible from three things, all reported: the policy version (`name@version`; versions are never

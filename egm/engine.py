@@ -168,14 +168,30 @@ class Engine:
         return self._checked(f"UPDATE {fact}")
 
     # --- asking -------------------------------------------------------------------------
-    def ask(self, pattern: str, strict: bool = False, require: bool = False, policy=None) -> List[Fact]:
+    def ask(self, pattern: str, strict: bool = False, require: bool = False, policy=None,
+            legacy_strict: bool = False) -> List[Fact]:
         """Answer a pattern; ``?`` marks the slot(s) to fill, e.g. ``"? calls mypkg__connect"``.
 
         Returns current facts, inferences with proofs and history lines (see ``Fact.status``).
-        strict: keep only stated/current facts and law-tier (or, under a policy, core-stratum) inferences.
+        strict: stated/current facts and strict inferences only. Under legacy this runs the query under the engine's
+            built-in ``strict`` policy (voltex3): its answers are closed, every premise of a proof is itself an answer.
+            (Before voltex3 it filtered legacy answers to law-tier ones, which could keep a fact whose premise it
+            dropped; docs/POLICIES.md, "SDK correction".) Under another policy it keeps that policy's core stratum,
+            which is closed by construction.
         require: raise RelationNotLearned instead of returning [] when the relation is unknown.
         policy: run this query under a policy (name, "name@version" or Policy); the engine's policy is restored after.
+        legacy_strict: the pre-voltex3 strict filter (stated/current facts and law-tier legacy inferences), kept as a
+            compatibility alias until a major version (Mimic relies on it). Not closed: it can keep a fact whose premise
+            it drops. Not used by any evaluation.
         """
+        if legacy_strict:
+            if strict or policy is not None:
+                raise ValueError("legacy_strict can't be combined with strict or policy")
+            facts = self.ask(pattern, require=require)
+            return [f for f in facts if (f.status in ("stated", "current") and f.flag != "stale") or
+                    (f.status == "inferred" and f.tier == "law")]
+        if strict and policy is None and self.policy.is_legacy:
+            policy = _policy.BUILTINS["strict"]
         with self._policy_scope(policy):
             facts = parse.ask(self._checked(f"ASK {pattern}"))
             for f in facts:
@@ -187,19 +203,19 @@ class Engine:
                 raise RelationNotLearned(rel, learned)
         return [f for f in facts if f.is_strict] if strict else facts
 
-    def current(self, pattern: str, strict: bool = False) -> List[Fact]:
+    def current(self, pattern: str, strict: bool = False, legacy_strict: bool = False) -> List[Fact]:
         """Only what holds now."""
-        return [f for f in self.ask(pattern, strict=strict) if f.is_current]
+        return [f for f in self.ask(pattern, strict=strict, legacy_strict=legacy_strict) if f.is_current]
 
     def history(self, pattern: str) -> List[Fact]:
         """Only past values: historical, corrected, superseded and withdrawn facts."""
         return [f for f in self.ask(pattern) if f.is_history]
 
-    def values(self, pattern: str, strict: bool = False) -> List[str]:
+    def values(self, pattern: str, strict: bool = False, legacy_strict: bool = False) -> List[str]:
         """The filled slot of each current answer, sorted: ``values("x calls ?")`` -> callee names."""
         w = pattern.split()
         take = (lambda f: f.object) if w and w[-1] == "?" else (lambda f: f.subject)
-        return sorted({take(f) for f in self.current(pattern, strict=strict)})
+        return sorted({take(f) for f in self.current(pattern, strict=strict, legacy_strict=legacy_strict)})
 
     def explain(self, pattern: str) -> Optional[str]:
         """Why a pattern has no answer, or None if it has one."""

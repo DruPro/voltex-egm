@@ -140,6 +140,24 @@ class Policies(unittest.TestCase):
             self.assertTrue(fs and all(f.weakest is not None and 0 <= f.weakest <= 1 for f in fs))
             self.assertTrue(all(f.weakest is None for f in e.infer_all()))     # legacy output is unchanged
 
+    def test_sdk_strict_is_the_engine_strict_policy(self):
+        """strict=True runs the engine-level strict policy (closed proofs), not a filter over legacy answers; the old
+        filter survives only as the explicit legacy_strict alias."""
+        lines = worlds.staff()[0]
+        with egm.Engine() as e:
+            e.ingest_many(lines)
+            people = sorted({l.split()[0] for l in lines if " is on " in l})[:40]
+            for p in people:
+                got = [f for f in e.ask(f"{p} is based in ?", strict=True) if f.status == "inferred"]
+                ref = [f for f in e.ask(f"{p} is based in ?", policy="strict") if f.status == "inferred"]
+                self.assertEqual(sorted(f.fact for f in got), sorted(f.fact for f in ref))
+                self.assertTrue(all(f.policy == "strict@builtin-1" and f.tier == "core" for f in got))
+            self.assertEqual(e.policy.id, "legacy@builtin-1")
+            old = e.ask(f"{people[0]} is based in ?", legacy_strict=True)
+            self.assertTrue(all(f.tier in ("", "law") for f in old))
+            with self.assertRaises(ValueError):
+                e.ask("x is based in ?", strict=True, legacy_strict=True)
+
     def test_nesting_of_builtins(self):
         with egm.open(self.facts) as e:
             c = e.compare_policies(["strict", "tendency"])
