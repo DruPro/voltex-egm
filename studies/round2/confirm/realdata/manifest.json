@@ -1,0 +1,146 @@
+{
+ "python": "3.13.18",
+ "sources": {
+  "/etc/services": "f6183055fd949f9c53d49ee620f85d0150123ea691d25ed1bba0c641b4ee2f48",
+  "/usr/share/zoneinfo/zone.tab": "e2e8e31c4e10f44576c79345e76060591dbb3eef6ce14e006afc8a373caa9593",
+  "/usr/share/zoneinfo/iso3166.tab": "837c80785080c8433fd9d4ea87e78f161ac7a40389301c5153d4f90198baeb2a"
+ },
+ "sets": {
+  "c_headers": {
+   "facts_total": 18791,
+   "truth_sha256": "5082a96d198431b0",
+   "2000": {
+    "stated": 14917,
+    "hidden": 3874,
+    "words": 8385,
+    "facts_sha256": "d639f36492a16a68"
+   },
+   "2001": {
+    "stated": 14968,
+    "hidden": 3823,
+    "words": 8364,
+    "facts_sha256": "f09d6bef0462bac5"
+   },
+   "2002": {
+    "stated": 15079,
+    "hidden": 3712,
+    "words": 8400,
+    "facts_sha256": "9348198a8ffb7f1d"
+   },
+   "2003": {
+    "stated": 15063,
+    "hidden": 3728,
+    "words": 8393,
+    "facts_sha256": "5119bc69a2613756"
+   },
+   "2004": {
+    "stated": 15025,
+    "hidden": 3766,
+    "words": 8402,
+    "facts_sha256": "c40cfde66b840fd1"
+   }
+  },
+  "timezones": {
+   "facts_total": 1167,
+   "truth_sha256": "a6c7f8e102a88c7c",
+   "2000": {
+    "stated": 939,
+    "hidden": 228,
+    "words": 892,
+    "facts_sha256": "0c34174b908c8d1f"
+   },
+   "2001": {
+    "stated": 903,
+    "hidden": 264,
+    "words": 890,
+    "facts_sha256": "74cc00dd241d05b2"
+   },
+   "2002": {
+    "stated": 951,
+    "hidden": 216,
+    "words": 902,
+    "facts_sha256": "e674fc3103e49c26"
+   },
+   "2003": {
+    "stated": 934,
+    "hidden": 233,
+    "words": 900,
+    "facts_sha256": "5de6715e1e79798c"
+   },
+   "2004": {
+    "stated": 949,
+    "hidden": 218,
+    "words": 900,
+    "facts_sha256": "e064a8b00b634656"
+   }
+  },
+  "services": {
+   "facts_total": 659,
+   "truth_sha256": "b42f052706d43ef6",
+   "2000": {
+    "stated": 518,
+    "hidden": 141,
+    "words": 532,
+    "facts_sha256": "3d031e1c0280511b"
+   },
+   "2001": {
+    "stated": 509,
+    "hidden": 150,
+    "words": 519,
+    "facts_sha256": "0d315f4e7f4ea304"
+   },
+   "2002": {
+    "stated": 534,
+    "hidden": 125,
+    "words": 528,
+    "facts_sha256": "e58a20fb83399ff3"
+   },
+   "2003": {
+    "stated": 522,
+    "hidden": 137,
+    "words": 531,
+    "facts_sha256": "f967678ef48de4cc"
+   },
+   "2004": {
+    "stated": 544,
+    "hidden": 115,
+    "words": 539,
+    "facts_sha256": "edbe882c688d2f8f"
+   }
+  },
+  "py_requires": {
+   "facts_total": 604,
+   "truth_sha256": "92f49790e33c511b",
+   "2000": {
+    "stated": 470,
+    "hidden": 134,
+    "words": 399,
+    "facts_sha256": "936724ad49c24ff9"
+   },
+   "2001": {
+    "stated": 465,
+    "hidden": 139,
+    "words": 386,
+    "facts_sha256": "0c0eb2971d727200"
+   },
+   "2002": {
+    "stated": 487,
+    "hidden": 117,
+    "words": 413,
+    "facts_sha256": "455ca94734047d99"
+   },
+   "2003": {
+    "stated": 479,
+    "hidden": 125,
+    "words": 405,
+    "facts_sha256": "994c9a787a676df9"
+   },
+   "2004": {
+    "stated": 501,
+    "hidden": 103,
+    "words": 424,
+    "facts_sha256": "f40f74bafebac87a"
+   }
+  }
+ }
+}

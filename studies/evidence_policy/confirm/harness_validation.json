@@ -1,0 +1,120 @@
+{
+ "planted": {
+  "faithful": {
+   "expected": "removed",
+   "outcomes": [
+    "removed"
+   ],
+   "ok": true
+  },
+  "alt": {
+   "expected": "alternative",
+   "outcomes": [
+    "alternative"
+   ],
+   "ok": true
+  },
+  "fabricate": {
+   "expected": "FAIL",
+   "outcomes": [
+    "FAIL",
+    "removed"
+   ],
+   "ok": true
+  },
+  "noproof": {
+   "expected": "FAIL",
+   "outcomes": [
+    "FAIL"
+   ],
+   "ok": true
+  }
+ },
+ "development": {
+  "company/strict": {
+   "summary": {
+    "removed": 10,
+    "alternative": 10,
+    "FAIL": 0,
+    "checked": 20,
+    "faithful": 1.0
+   },
+   "fails": []
+  },
+  "company/tendency": {
+   "summary": {
+    "removed": 8,
+    "alternative": 12,
+    "FAIL": 0,
+    "checked": 20,
+    "faithful": 1.0
+   },
+   "fails": []
+  },
+  "hidden-cov50/strict": {
+   "summary": {
+    "removed": 5,
+    "alternative": 15,
+    "FAIL": 0,
+    "checked": 20,
+    "faithful": 1.0
+   },
+   "fails": []
+  },
+  "hidden-cov50/tendency": {
+   "summary": {
+    "removed": 1,
+    "alternative": 19,
+    "FAIL": 0,
+    "checked": 20,
+    "faithful": 1.0
+   },
+   "fails": []
+  },
+  "remainders/strict": {
+   "summary": {
+    "removed": 20,
+    "alternative": 0,
+    "FAIL": 0,
+    "checked": 20,
+    "faithful": 1.0
+   },
+   "fails": []
+  },
+  "remainders/tendency": {
+   "summary": {
+    "removed": 20,
+    "alternative": 0,
+    "FAIL": 0,
+    "checked": 20,
+    "faithful": 1.0
+   },
+   "fails": []
+  },
+  "harvest/strict": {
+   "summary": {
+    "removed": 0,
+    "alternative": 0,
+    "FAIL": 0,
+    "checked": 0,
+    "faithful": null
+   },
+   "fails": []
+  },
+  "harvest/tendency": {
+   "summary": {
+    "removed": 20,
+    "alternative": 0,
+    "FAIL": 0,
+    "checked": 20,
+    "faithful": 1.0
+   },
+   "fails": []
+  }
+ },
+ "proof_validity": {
+  "proofs_checked": 1,
+  "proofs_invalid": 1
+ },
+ "harness_valid": true
+}

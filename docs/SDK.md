@@ -58,8 +58,14 @@ Facts are `A relation B` with no spaces inside a name. A relation is learned onc
 
 `?` marks the slot to fill: `"? calls x"` asks for subjects, `"x calls ?"` for objects.
 
-**`strict=True`** keeps stated and current facts plus `law`-tier inferences, and drops `tendency`
-inferences. Use it when a wrong answer costs more than a missing one.
+**`strict=True`** keeps stated and current facts plus strict inferences: under the default policy it runs the query
+under the engine's built-in `strict` policy (voltex3), whose answers are closed (every premise of a proof is itself an
+answer). Use it when a wrong answer costs more than a missing one, but don't read it as a precision guarantee: a rule
+that over-generalizes into territory where nothing is stated looks like a law to it (`docs/POLICIES.md`). Before
+voltex3 it filtered legacy answers to `law`-tier ones; that filter survives as `legacy_strict=True`.
+
+**`policy=`** runs a query (`ask`, `infer_all`) under an inference policy: a built-in (`legacy`, `strict`,
+`tendency`) or your own (`egm.policies`, `docs/POLICIES.md`). Each answer names its policy (`Fact.policy`).
 
 **`require=True`** raises `RelationNotLearned` instead of returning `[]` when the relation hasn't been
 learned, so a typo or a cold start doesn't look like "no answer".
@@ -103,6 +109,22 @@ Properties: `is_current`, `is_history`, `is_strict`. `to_dict()` is JSON-ready.
 `find(text) -> int | None`, `text in kb`, `unroll(id) -> str`, `set(key, value)` (raises `ValueError`
 for an unknown key), `save(path)`, `load(path)`, `version()`, and `cmd(line) -> list[str]` for any
 raw engine command. `save` writes `path` plus `path.obs` (the observation log); keep them together.
+
+## Evidence and policies (voltex3, experimental)
+
+```python
+with egm.open("facts.txt", settings={"COVSOURCE": 1}) as kb:
+    kb.evidence()                       # each rule's evidence vector: list of dicts (docs/EVIDENCE.md)
+    kb.evidence(include_rejected=True)  # every candidate rule
+    kb.apply_policy("strict")           # or a name@version, or an egm.Policy
+    kb.infer_all(policy="tendency")     # Fact.tier is core | extension, Fact.policy is name@version
+    kb.compare_policies(["tendency", "strict"]).summary
+    kb.snapshot()                       # identifier of the evidence state
+```
+
+Fields of `evidence()`: `accepted, rule, n, e_plus, e_minus, e_unknown, agree, lift, z, base, cov, rel, tier,
+one_value, validation, admit, cov_source, cov_source_agree, stability`. Policies, their schema and the registry are in
+`docs/POLICIES.md`.
 
 ## Errors
 

@@ -1,0 +1,418 @@
+{
+ "conditional": [
+  {
+   "seed": 2000,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,kor0|lien2)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "kor0",
+      "lien2"
+     ],
+     "admit": "core",
+     "cond_z": 28.48,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "211/248 subjects known, 211/248 chains stated",
+     "cond_out": "0/752 subjects known, 0/752 chains stated"
+    }
+   ],
+   "new": 37,
+   "correct": 37,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "kor0",
+     "lien2"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 37,
+   "conditional_correct": 37,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2001,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,gibo2|nieb7)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "gibo2",
+      "nieb7"
+     ],
+     "admit": "core",
+     "cond_z": 28.53,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "200/235 subjects known, 200/235 chains stated",
+     "cond_out": "0/765 subjects known, 0/765 chains stated"
+    }
+   ],
+   "new": 35,
+   "correct": 35,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "gibo2",
+     "nieb7"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 35,
+   "conditional_correct": 35,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2002,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,ful9|viit8)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "ful9",
+      "viit8"
+     ],
+     "admit": "core",
+     "cond_z": 28.44,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "207/244 subjects known, 207/244 chains stated",
+     "cond_out": "0/756 subjects known, 0/756 chains stated"
+    }
+   ],
+   "new": 37,
+   "correct": 37,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "ful9",
+     "viit8"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 37,
+   "conditional_correct": 37,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2003,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,uzen5|foz4)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "foz4",
+      "uzen5"
+     ],
+     "admit": "core",
+     "cond_z": 28.48,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "203/239 subjects known, 203/239 chains stated",
+     "cond_out": "0/761 subjects known, 0/761 chains stated"
+    }
+   ],
+   "new": 36,
+   "correct": 36,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "foz4",
+     "uzen5"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 36,
+   "conditional_correct": 36,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2004,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,puz79|emif5)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "emif5",
+      "puz79"
+     ],
+     "admit": "core",
+     "cond_z": 28.41,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "220/259 subjects known, 220/259 chains stated",
+     "cond_out": "0/741 subjects known, 0/741 chains stated"
+    }
+   ],
+   "new": 39,
+   "correct": 39,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "emif5",
+     "puz79"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 39,
+   "conditional_correct": 39,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  }
+ ],
+ "conditional_control": [
+  {
+   "seed": 2000,
+   "conditional_rules": [],
+   "new": 150,
+   "correct": 150,
+   "spurious_conditions": 0,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2001,
+   "conditional_rules": [],
+   "new": 150,
+   "correct": 150,
+   "spurious_conditions": 0,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2002,
+   "conditional_rules": [],
+   "new": 150,
+   "correct": 150,
+   "spurious_conditions": 0,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2003,
+   "conditional_rules": [],
+   "new": 150,
+   "correct": 150,
+   "spurious_conditions": 0,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2004,
+   "conditional_rules": [],
+   "new": 150,
+   "correct": 150,
+   "spurious_conditions": 0,
+   "precision_all": 1.0
+  }
+ ],
+ "conditional_decoy": [
+  {
+   "seed": 2000,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,kusog0|suag3)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "kusog0",
+      "suag3"
+     ],
+     "admit": "core",
+     "cond_z": 28.39,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "227/267 subjects known, 227/267 chains stated",
+     "cond_out": "0/733 subjects known, 0/733 chains stated"
+    }
+   ],
+   "new": 40,
+   "correct": 40,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "kusog0",
+     "suag3"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 40,
+   "conditional_correct": 40,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2001,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,gidu6|bosa1)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "bosa1",
+      "gidu6"
+     ],
+     "admit": "core",
+     "cond_z": 28.43,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "223/262 subjects known, 223/262 chains stated",
+     "cond_out": "0/738 subjects known, 0/738 chains stated"
+    }
+   ],
+   "new": 39,
+   "correct": 39,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "bosa1",
+     "gidu6"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 39,
+   "conditional_correct": 39,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2002,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,doem5|etob7)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "doem5",
+      "etob7"
+     ],
+     "admit": "core",
+     "cond_z": 28.44,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "215/253 subjects known, 215/253 chains stated",
+     "cond_out": "0/747 subjects known, 0/747 chains stated"
+    }
+   ],
+   "new": 38,
+   "correct": 38,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "doem5",
+     "etob7"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 38,
+   "conditional_correct": 38,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2003,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,rom04|zat55)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "rom04",
+      "zat55"
+     ],
+     "admit": "core",
+     "cond_z": 28.47,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "202/238 subjects known, 202/238 chains stated",
+     "cond_out": "0/762 subjects known, 0/762 chains stated"
+    }
+   ],
+   "new": 36,
+   "correct": 36,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "rom04",
+     "zat55"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 36,
+   "conditional_correct": 36,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  },
+  {
+   "seed": 2004,
+   "conditional_rules": [
+    {
+     "rule": "[? operates ?](a,b) & [? is filed under ?](b,c) => [? is assigned ?](a,c) if [? is classed ?](a,buob4|sauv11)",
+     "conclusion": "is assigned",
+     "cond_relation": "is classed",
+     "cond_values": [
+      "buob4",
+      "sauv11"
+     ],
+     "admit": "core",
+     "cond_z": 28.5,
+     "agree": "1.0000",
+     "rel": "1.0000",
+     "validation": "internal_replication/hash:pass",
+     "cond_in": "197/232 subjects known, 197/232 chains stated",
+     "cond_out": "0/768 subjects known, 0/768 chains stated"
+    }
+   ],
+   "new": 35,
+   "correct": 35,
+   "condition": {
+    "rule": "X 'operates' Y and Y 'is filed under' Z => X 'is assigned' Z",
+    "condition_relation": "is classed",
+    "qualifying_values": [
+     "buob4",
+     "sauv11"
+    ]
+   },
+   "recovered": true,
+   "conditional_new": 35,
+   "conditional_correct": 35,
+   "conditional_precision": 1.0,
+   "decoy_chosen": false,
+   "precision_all": 1.0
+  }
+ ]
+}

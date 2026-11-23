@@ -263,11 +263,11 @@ class Runtime:
         else: self.t += 1; self.e.observe("mimic", record, self.t, facts=facts)
 
     def ask(self, pattern):
-        self.sync(); self.queries += 1; vals = self.e.values(pattern, strict=True); return [self.unv(x) for x in vals]
+        self.sync(); self.queries += 1; vals = self.e.values(pattern, legacy_strict=True); return [self.unv(x) for x in vals]
 
     def proof(self, pattern):
         self.sync()
-        for f in self.e.ask(pattern, strict=True):
+        for f in self.e.ask(pattern, legacy_strict=True):
             if f.status != "stated" and f.rule: return pretty(f.rule)
         return None
 
@@ -286,7 +286,7 @@ class Runtime:
             c = m.constant(i)
             if c is not None: got[k], how[k] = c, "declared"; continue
             self.sync(); self.queries += 1
-            a = [x[len(m.name) + 1:] for x in self.e.values(f"{slots[k]} {self.rel(m, k)} ?", strict=True)]
+            a = [x[len(m.name) + 1:] for x in self.e.values(f"{slots[k]} {self.rel(m, k)} ?", legacy_strict=True)]
             got[k], how[k] = (a[0] if len(a) == 1 else None), "learned"
             if trace and got[k] is not None: how[k] = "learned: " + (self.proof(f"{slots[k]} {self.rel(m, k)} ?") or "")
         return got, how
@@ -379,7 +379,7 @@ class Runtime:
         """Navigate the proof tree by asking for each premise in turn (recursive questions). Returns nested lines."""
         seen = set() if seen is None else seen
         self.sync(); lines = []
-        for f in self.e.ask(pattern, strict=True):
+        for f in self.e.ask(pattern, legacy_strict=True):
             if f.status == "stated":
                 lines.append(("  " * depth) + f"{self.named(f.fact)}  (given)"); continue
             if f.fact in seen or depth >= max_depth: lines.append(("  " * depth) + f"{self.named(f.fact)}  (...)"); continue

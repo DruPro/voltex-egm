@@ -1,0 +1,1358 @@
+{
+ "company": {
+  "default": [
+   {
+    "precision": 1.0,
+    "recall": 0.9677966101694915,
+    "new": 1142,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9596219931271478,
+    "new": 1117,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9605263157894737,
+    "new": 1095,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9493127147766323,
+    "new": 1105,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9585492227979274,
+    "new": 1110,
+    "aurc": 0.0
+   }
+  ],
+  "default+COVSRC": [
+   {
+    "precision": 1.0,
+    "recall": 0.9677966101694915,
+    "new": 1142,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9596219931271478,
+    "new": 1117,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9605263157894737,
+    "new": 1095,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9493127147766323,
+    "new": 1105,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9585492227979274,
+    "new": 1110,
+    "aurc": 0.0
+   }
+  ],
+  "strict": [
+   {
+    "precision": 1.0,
+    "recall": 0.4915254237288136,
+    "new": 580,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.5120274914089347,
+    "new": 596,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.493859649122807,
+    "new": 563,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.4896907216494845,
+    "new": 570,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.5077720207253886,
+    "new": 588,
+    "aurc": 0.0
+   }
+  ],
+  "strict+COVSRC": [
+   {
+    "precision": 1.0,
+    "recall": 0.4915254237288136,
+    "new": 580,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.5120274914089347,
+    "new": 596,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.493859649122807,
+    "new": 563,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.4896907216494845,
+    "new": 570,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.5077720207253886,
+    "new": 588,
+    "aurc": 0.0
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 1.0,
+    "recall": 0.9677966101694915,
+    "new": 1142,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9596219931271478,
+    "new": 1117,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9605263157894737,
+    "new": 1095,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9493127147766323,
+    "new": 1105,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9585492227979274,
+    "new": 1110,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+COVSRC": [
+   {
+    "precision": 1.0,
+    "recall": 0.9677966101694915,
+    "new": 1142,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9596219931271478,
+    "new": 1117,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9605263157894737,
+    "new": 1095,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9493127147766323,
+    "new": 1105,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9585492227979274,
+    "new": 1110,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+W1a.5": [
+   {
+    "precision": 1.0,
+    "recall": 0.9677966101694915,
+    "new": 1142,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9596219931271478,
+    "new": 1117,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9605263157894737,
+    "new": 1095,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9493127147766323,
+    "new": 1105,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9585492227979274,
+    "new": 1110,
+    "aurc": 0.0
+   }
+  ]
+ },
+ "gates": {
+  "default": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "default+COVSRC": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+COVSRC": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+COVSRC": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+W1a.5": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ]
+ },
+ "lineage": {
+  "default": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "default+COVSRC": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+COVSRC": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+COVSRC": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+W1a.5": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ]
+ },
+ "harvest": {
+  "default": [
+   {
+    "precision": 0.02666666666666667,
+    "recall": 1.0,
+    "new": 600,
+    "aurc": 0.9686472195260365
+   },
+   {
+    "precision": 0.04019292604501608,
+    "recall": 0.9259259259259259,
+    "new": 622,
+    "aurc": 0.9565670848701856
+   },
+   {
+    "precision": 0.02086677367576244,
+    "recall": 1.0,
+    "new": 623,
+    "aurc": 0.9887932659911578
+   },
+   {
+    "precision": 0.03425774877650897,
+    "recall": 1.0,
+    "new": 613,
+    "aurc": 0.9709135431827205
+   },
+   {
+    "precision": 0.02280130293159609,
+    "recall": 1.0,
+    "new": 614,
+    "aurc": 0.9805563896562152
+   }
+  ],
+  "default+COVSRC": [
+   {
+    "precision": 0.02666666666666667,
+    "recall": 1.0,
+    "new": 600,
+    "aurc": 0.9686472195260365
+   },
+   {
+    "precision": 0.04019292604501608,
+    "recall": 0.9259259259259259,
+    "new": 622,
+    "aurc": 0.9565670848701856
+   },
+   {
+    "precision": 0.02086677367576244,
+    "recall": 1.0,
+    "new": 623,
+    "aurc": 0.9887932659911578
+   },
+   {
+    "precision": 0.03425774877650897,
+    "recall": 1.0,
+    "new": 613,
+    "aurc": 0.9709135431827205
+   },
+   {
+    "precision": 0.02280130293159609,
+    "recall": 1.0,
+    "new": 614,
+    "aurc": 0.9805563896562152
+   }
+  ],
+  "strict": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+COVSRC": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 0.02666666666666667,
+    "recall": 1.0,
+    "new": 600,
+    "aurc": 0.9686472195260365
+   },
+   {
+    "precision": 0.04019292604501608,
+    "recall": 0.9259259259259259,
+    "new": 622,
+    "aurc": 0.9565670848701856
+   },
+   {
+    "precision": 0.02086677367576244,
+    "recall": 1.0,
+    "new": 623,
+    "aurc": 0.9887932659911578
+   },
+   {
+    "precision": 0.03425774877650897,
+    "recall": 1.0,
+    "new": 613,
+    "aurc": 0.9709135431827205
+   },
+   {
+    "precision": 0.02280130293159609,
+    "recall": 1.0,
+    "new": 614,
+    "aurc": 0.9805563896562152
+   }
+  ],
+  "tendency+COVSRC": [
+   {
+    "precision": 0.02666666666666667,
+    "recall": 1.0,
+    "new": 600,
+    "aurc": 0.9686472195260365
+   },
+   {
+    "precision": 0.04019292604501608,
+    "recall": 0.9259259259259259,
+    "new": 622,
+    "aurc": 0.9565670848701856
+   },
+   {
+    "precision": 0.02086677367576244,
+    "recall": 1.0,
+    "new": 623,
+    "aurc": 0.9887932659911578
+   },
+   {
+    "precision": 0.03425774877650897,
+    "recall": 1.0,
+    "new": 613,
+    "aurc": 0.9709135431827205
+   },
+   {
+    "precision": 0.02280130293159609,
+    "recall": 1.0,
+    "new": 614,
+    "aurc": 0.9805563896562152
+   }
+  ],
+  "tendency+W1a.5": [
+   {
+    "precision": 0.02666666666666667,
+    "recall": 1.0,
+    "new": 600,
+    "aurc": 0.9686472195260365
+   },
+   {
+    "precision": 0.04019292604501608,
+    "recall": 0.9259259259259259,
+    "new": 622,
+    "aurc": 0.9565670848701856
+   },
+   {
+    "precision": 0.02086677367576244,
+    "recall": 1.0,
+    "new": 623,
+    "aurc": 0.9887932659911578
+   },
+   {
+    "precision": 0.03425774877650897,
+    "recall": 1.0,
+    "new": 613,
+    "aurc": 0.9709135431827205
+   },
+   {
+    "precision": 0.02280130293159609,
+    "recall": 1.0,
+    "new": 614,
+    "aurc": 0.9805563896562152
+   }
+  ]
+ },
+ "remainders": {
+  "default": [
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   }
+  ],
+  "default+COVSRC": [
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   }
+  ],
+  "strict": [
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   }
+  ],
+  "strict+COVSRC": [
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 1.0,
+    "recall": 0.9555555555555556,
+    "new": 43,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "new": 42,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+COVSRC": [
+   {
+    "precision": 1.0,
+    "recall": 0.9555555555555556,
+    "new": 43,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "new": 42,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+W1a.5": [
+   {
+    "precision": 1.0,
+    "recall": 0.9555555555555556,
+    "new": 43,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "new": 42,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   }
+  ]
+ },
+ "random_links": {
+  "default": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "default+COVSRC": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+COVSRC": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+COVSRC": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+W1a.5": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ]
+ }
+}

@@ -24,6 +24,8 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 | `TREES` | 0 | induction | **experimental** | tree-shaped rules joining several branches at one entity (1/0) (studies/trees) |
 | `REPLICATE` | 0 | induction | **experimental** | a rule must also hold in each half of its subjects (1/0) (studies/noise) |
 | `TENDENCYSTEPS` | -1 | inference | **experimental** | most tendency-tier steps one proof may contain, -1 = no limit (studies/tendency) |
+| `COVSOURCE` | 0 | induction | **experimental** | 1 = a relation's coverage estimate is refuted, and not used, when another rule concluding the relation is confirmed significantly (z > 3) more often than the estimate divided by `RATE_REL` allows; a refuted estimate doesn't enter the median (studies/round2, `docs/EVIDENCE.md`) |
+| `CONDHOLDOUT` | 0 | induction | **experimental** | with `CONDITIONS 1`: a condition is proposed on one half of the rule's subjects and accepted only if it passes on the other half (both directions tried, corrected for every candidate), then on all subjects (studies/round2) |
 | `DEPTH` | 4 | inference | stable | inference rounds, 0 = until nothing new (studies/depth) |
 | `CORROBORATE` | 1 | inference | stable | a contradiction needs two distinct rules (1/0) |
 | `OBS` | 1 | evidence | stable | project the observation log (1/0) |

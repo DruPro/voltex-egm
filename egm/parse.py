@@ -8,10 +8,11 @@ _ASK = re.compile(rf"^  (?P<fact>\S.*?)\s+(?P<status>{_STATUS})\b(?P<rest>.*)$")
 _FLAGS = [("STALE", "stale"), ("SOURCES DISAGREE", "sources_disagree"), ("UNCERTAIN", "uncertain"),
           ("CONTRADICTED", "contradicted"), ("CURRENT UNKNOWN", "current_unknown"),
           ("OUTVOTED", "outvoted"), ("QUARANTINED", "quarantined")]
-_TIER = re.compile(r"\[(law|tendency)\]")
+_TIER = re.compile(r"\[(law|tendency|core|extension)\]")
 _SCORE = re.compile(r"\(score ([0-9.]+)\)|score=([0-9.]+)")
 _BECAUSE = re.compile(r"because (.+?)\s+\[rule: (.+?\))\](?:\s+\((.*)\))?\s*$")
 _BECAUSE_PLAIN = re.compile(r"because (.+?)\s*$")
+_WEAKEST = re.compile(r"weakest=([0-9.]+)")
 _SOURCE = re.compile(r"\(per ([^)\s]+)\)|held per (\S+)|never held per (\S+)")
 
 
@@ -42,6 +43,9 @@ def fact_line(line):
     s = _SCORE.search(rest)
     if s:
         f.score = float(s.group(1) or s.group(2))
+    w = _WEAKEST.search(rest)
+    if w:
+        f.weakest = float(w.group(1))
     if "because" in rest:
         b = _BECAUSE.search(rest)
         chain = b.group(1) if b else _BECAUSE_PLAIN.search(rest).group(1)
@@ -72,8 +76,9 @@ def infer_all(lines):
         p = l.split("\t")
         parts = _split(p[1])
         if parts:
+            w = next((float(x[8:]) for x in p[3:] if x.startswith("weakest=")), None)
             out.append(Fact(fact=p[1], subject=parts[0], relation=parts[1], object=parts[2], status="inferred",
-                            tier=p[2] if len(p) > 2 else "", raw=l))
+                            tier=p[2] if len(p) > 2 else "", raw=l, weakest=w))
     return out
 
 

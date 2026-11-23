@@ -1,0 +1,1 @@
+pass (stress bench, this machine's catalog: 313 identical, 0 different, 0 not comparable; DEVIATIONS D3)

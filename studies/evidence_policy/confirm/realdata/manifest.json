@@ -1,0 +1,135 @@
+{
+ "python": "3.13.18",
+ "unicodedata": "15.1.0",
+ "dpkg_status_sha256": "8bc273677b0bd8859dff094b915053f06243ec3b5509645426dad8eee9fdc259",
+ "sets": {
+  "py_stdlib": {
+   "1000": {
+    "stated": 66105,
+    "hidden": 5763,
+    "words": 27512,
+    "facts_sha256": "db114756e23ae602"
+   },
+   "1001": {
+    "stated": 65954,
+    "hidden": 5914,
+    "words": 27512,
+    "facts_sha256": "aa2f22a70ef2d50b"
+   },
+   "1002": {
+    "stated": 66082,
+    "hidden": 5786,
+    "words": 27512,
+    "facts_sha256": "af3c132e2255e105"
+   },
+   "1003": {
+    "stated": 66069,
+    "hidden": 5799,
+    "words": 27512,
+    "facts_sha256": "707ff8c6a299161b"
+   },
+   "1004": {
+    "stated": 66014,
+    "hidden": 5854,
+    "words": 27512,
+    "facts_sha256": "a201b1c71b1d5f12"
+   }
+  },
+  "py_dist": {
+   "1000": {
+    "stated": 77329,
+    "hidden": 7756,
+    "words": 32126,
+    "facts_sha256": "036f660677844fd3"
+   },
+   "1001": {
+    "stated": 77156,
+    "hidden": 7929,
+    "words": 32126,
+    "facts_sha256": "e7fba0bf349e7203"
+   },
+   "1002": {
+    "stated": 77194,
+    "hidden": 7891,
+    "words": 32126,
+    "facts_sha256": "f1f358ecf14b84b8"
+   },
+   "1003": {
+    "stated": 77274,
+    "hidden": 7811,
+    "words": 32126,
+    "facts_sha256": "065c6aed742869c8"
+   },
+   "1004": {
+    "stated": 77171,
+    "hidden": 7914,
+    "words": 32126,
+    "facts_sha256": "c897943413aef77d"
+   }
+  },
+  "unicode": {
+   "1000": {
+    "stated": 30074,
+    "hidden": 7491,
+    "words": 11913,
+    "facts_sha256": "0f6c28a027c0d11d"
+   },
+   "1001": {
+    "stated": 30017,
+    "hidden": 7548,
+    "words": 11914,
+    "facts_sha256": "b8191e6815d4d233"
+   },
+   "1002": {
+    "stated": 30073,
+    "hidden": 7492,
+    "words": 11918,
+    "facts_sha256": "1b065e87570f7894"
+   },
+   "1003": {
+    "stated": 30190,
+    "hidden": 7375,
+    "words": 11931,
+    "facts_sha256": "9d15c34be0022832"
+   },
+   "1004": {
+    "stated": 30005,
+    "hidden": 7560,
+    "words": 11906,
+    "facts_sha256": "d0bad2452968deed"
+   }
+  },
+  "dpkg": {
+   "1000": {
+    "stated": 7081,
+    "hidden": 1780,
+    "words": 2006,
+    "facts_sha256": "03211315d26ea192"
+   },
+   "1001": {
+    "stated": 7036,
+    "hidden": 1825,
+    "words": 2028,
+    "facts_sha256": "63e9d6b341bb55c1"
+   },
+   "1002": {
+    "stated": 7164,
+    "hidden": 1697,
+    "words": 2023,
+    "facts_sha256": "071a9fdce3941708"
+   },
+   "1003": {
+    "stated": 7104,
+    "hidden": 1757,
+    "words": 2025,
+    "facts_sha256": "4454c13396ef67d6"
+   },
+   "1004": {
+    "stated": 7040,
+    "hidden": 1821,
+    "words": 1988,
+    "facts_sha256": "a68733c4b7b1d5ef"
+   }
+  }
+ }
+}
