@@ -8,7 +8,7 @@ _ASK = re.compile(rf"^  (?P<fact>\S.*?)\s+(?P<status>{_STATUS})\b(?P<rest>.*)$")
 _FLAGS = [("STALE", "stale"), ("SOURCES DISAGREE", "sources_disagree"), ("UNCERTAIN", "uncertain"),
           ("CONTRADICTED", "contradicted"), ("CURRENT UNKNOWN", "current_unknown"),
           ("OUTVOTED", "outvoted"), ("QUARANTINED", "quarantined")]
-_TIER = re.compile(r"\[(law|tendency)\]")
+_TIER = re.compile(r"\[(law|tendency|core|extension)\]")
 _SCORE = re.compile(r"\(score ([0-9.]+)\)|score=([0-9.]+)")
 _BECAUSE = re.compile(r"because (.+?)\s+\[rule: (.+?\))\](?:\s+\((.*)\))?\s*$")
 _BECAUSE_PLAIN = re.compile(r"because (.+?)\s*$")

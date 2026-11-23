@@ -18,7 +18,8 @@ class Fact(_Dict):
 
     status  stated | current | inferred | historical | corrected | superseded | withdrawn
     flag    "" or stale | sources_disagree | uncertain | contradicted | current_unknown | outvoted | quarantined
-    tier    law | tendency (inferred facts only)
+    tier    law | tendency (legacy) or core | extension (under a policy; inferred facts only)
+    policy  the policy and version the answer was computed under, "name@version"
     """
     fact: str
     subject: str
@@ -33,6 +34,7 @@ class Fact(_Dict):
     source: str = ""
     note: str = ""
     raw: str = ""
+    policy: str = ""
 
     @property
     def is_current(self) -> bool:
@@ -46,7 +48,7 @@ class Fact(_Dict):
     @property
     def is_strict(self) -> bool:
         """The strict policy: stated or current facts, plus law-tier inferences."""
-        return (self.status in ("stated", "current") and self.flag != "stale") or (self.status == "inferred" and self.tier == "law")
+        return (self.status in ("stated", "current") and self.flag != "stale") or (self.status == "inferred" and self.tier in ("law", "core"))
 
 
 @dataclass
@@ -100,3 +102,15 @@ class Conflict(_Dict):
     detail: str
     raw: str = ""
     kind: str = ""              # value (rules infer another value) | quarantined (QUARANTINE) | outvoted (VOTE) | other
+
+
+@dataclass
+class PolicyComparison(_Dict):
+    """Several policies run on the same evidence snapshot. ``facts`` maps each policy id to its derived facts;
+    ``summary`` gives counts per policy; ``contained`` says, for each ordered pair, whether the first's answers are all
+    among the second's."""
+    snapshot: str
+    policies: List[str]
+    summary: List[dict]
+    facts: dict
+    contained: dict

@@ -73,5 +73,9 @@ replications.
   tendencies by their evidence.
 - 2026-11-23, replacement: `POLICY strict` replaces `TENDENCYSTEPS 0` and SDK `strict=True`; old controls remain as
   aliases until a major version (compatibility track).
+- 2026-11-23, validation: an evaluation result with its method recorded; Round 1 uses internal split-half replication
+  (hash or blocked), never described as independent-source validation. Built-in semantics: legacy exact; tendency by
+  evidence thresholds without replication; strict with minimum evidence, acceptable agreement and replication.
+- 2026-11-23, custom policies: first-class in SDK and CLI; built-ins are reference profiles (`docs/POLICIES.md`).
 - Pending: names, representation, Round 2 data independence, sealed worlds, external reference engines, interface
   freeze (`DESIGN.md` section 7, items 3 to 8). The pre-registration is hashed once these are recorded.

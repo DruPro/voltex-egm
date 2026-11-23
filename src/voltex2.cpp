@@ -339,6 +339,12 @@ struct Vault {
     u64 replRejected = 0;
     int F_CSTREAM = 1;               // CLUSTERSTREAM (studies/scaling): join similar categories as they are found; same categories, no pair list (default since the promotion check, studies/scaling/PROMOTION.md; 0 = list every similar pair first)
     int F_TREES = 0;                 // tree-shaped rules (studies/trees): several branches joined at one entity
+    // voltex3 inference policies (studies/evidence_policy, docs/POLICIES.md). Set only by POLICY APPLY, never by SET, and
+    // never saved with the knowledge base: a policy is how inference is run, not part of the evidence. Inactive = legacy.
+    struct Stratum { bool on = false; u64 minKnown = 0, minSupport = 0; double minAgree = 0, minRel = 0, minCov = 0, minZ = -1e300,
+                     minLift = 0, maxUnknown = 1; int repl = 0, split = 0, depth = 4; unsigned shapes = 0x1F; };
+    struct PolicyCfg { bool active = false; std::string name = "legacy", version = "0"; Stratum core, ext; };
+    PolicyCfg pol;
     // ---- declarative amendments (experimental condition C) ----
     int F_DECL = 0;        // amendment-record interpretation from the earlier study: off in this build
     // ---- source-aware evidence (condition D) ----
@@ -882,19 +888,117 @@ struct Vault {
         for (size_t i = 0; i < rels.size(); ++i) for (auto& f : rels[i].stated) subj[i].insert(f.first);
         for (size_t i = 0; i < ruleList.size(); ++i) {
             auto& h = ruleList[i]; if (!h.accepted) continue;
-            auto& R = rels[h.r3]; double base;
-            if (h.type == 'G') { size_t c = 0; for (auto& f : R.stated) if (f.second == h.headVal) ++c; base = double(c) / double(std::max<size_t>(1, subj[h.r3].size())); }
-            else { std::set<u32> o; for (auto& f : R.stated) o.insert(f.second); base = double(R.stated.size()) / double(std::max<size_t>(1, subj[h.r3].size() * o.size())); }
-            u64 n[2] = {0, 0}, k[2] = {0, 0}, pn[2] = {0, 0};
-            for (auto& p : cap[i]) { int s = half(p.first); n[s]++; if (subj[h.r3].count(p.first)) pn[s]++; if (R.stated.count(p)) k[s]++; }
-            double zreq = h.type == 'G' ? treeZ : 3.0; bool ok = true; std::string why;
-            for (int s = 0; s < 2; ++s) {
-                double ex = double(pn[s]) * base, sd = std::sqrt(std::max(1e-9, ex * (1 - base))), z = (double(k[s]) - ex) / sd;
-                char buf[112]; std::snprintf(buf, sizeof buf, "%shalf %c: %llu of %llu known agree, z=%.1f", s ? "; " : "", 'A' + s, (unsigned long long)k[s], (unsigned long long)pn[s], z);
-                why += buf; if (k[s] < K_MIN || z < zreq) ok = false;
-            }
-            if (!ok) { h.accepted = false; h.repl = "did not replicate (" + why + ")"; ++replRejected; }
+            std::string why;
+            if (!halfTest(h, cap[i], subj, half, why)) { h.accepted = false; h.repl = "did not replicate (" + why + ")"; ++replRejected; }
         }
+    }
+    // the split-half test shared by REPLICATE and the policies' internal replication: in each half separately, a rule's
+    // predictions from stated facts agree with the stated answer at least SUPPORT times and clearly above chance
+    template <class Half>
+    bool halfTest(const RuleH& h, const std::set<std::pair<u32, u32>>& preds, const std::vector<std::set<u32>>& subj, Half& half, std::string& why) {
+        auto& R = rels[h.r3]; double base;
+        if (h.type == 'G') { size_t c = 0; for (auto& f : R.stated) if (f.second == h.headVal) ++c; base = double(c) / double(std::max<size_t>(1, subj[h.r3].size())); }
+        else { std::set<u32> o; for (auto& f : R.stated) o.insert(f.second); base = double(R.stated.size()) / double(std::max<size_t>(1, subj[h.r3].size() * o.size())); }
+        u64 n[2] = {0, 0}, k[2] = {0, 0}, pn[2] = {0, 0};
+        for (auto& p : preds) { int s = half(p.first); n[s]++; if (subj[h.r3].count(p.first)) pn[s]++; if (R.stated.count(p)) k[s]++; }
+        double zreq = h.type == 'G' ? treeZ : 3.0; bool ok = true;
+        for (int s = 0; s < 2; ++s) {
+            double ex = double(pn[s]) * base, sd = std::sqrt(std::max(1e-9, ex * (1 - base))), z = (double(k[s]) - ex) / sd;
+            char buf[112]; std::snprintf(buf, sizeof buf, "%shalf %c: %llu of %llu known agree, z=%.1f", s ? "; " : "", 'A' + s, (unsigned long long)k[s], (unsigned long long)pn[s], z);
+            why += buf; if (k[s] < K_MIN || z < zreq) ok = false;
+        }
+        return ok;
+    }
+
+    // ── voltex3 policies (studies/evidence_policy, docs/POLICIES.md). Validation is an evaluation result, never a property
+    //    of a rule: validated = evaluate(rule, method, evidence snapshot), recomputed per build and recorded with its method,
+    //    so internal replication can never be read as independent-source confirmation (Investigation V adds that method). ──
+    struct Validation { std::string method = "none"; int result = -1; std::string detail; };   // result: -1 not run, 0 fail, 1 pass
+    std::map<int, std::vector<Validation>> validation;   // by split method: 0 hash, 1 blocked
+    std::vector<char> admitCore, admitExt;
+    bool policyEvaluated = false, policyRun = false;
+    const std::vector<char>* admitMask = nullptr;
+    static std::string splitName(int s) { return s == 1 ? "internal_replication/blocked" : "internal_replication/hash"; }
+    const std::vector<Validation>& internalReplication(int split) {
+        auto vi = validation.find(split); if (vi != validation.end()) return vi->second;
+        std::vector<Validation> out(ruleList.size());
+        std::vector<std::set<std::pair<u32, u32>>> cap(ruleList.size());
+        const std::vector<char>* keepMask = admitMask; admitMask = nullptr;
+        capture = &cap; inferCore(1); capture = nullptr; admitMask = keepMask;
+        for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); R.chain.clear(); }
+        conflicts.clear(); staleAlt.clear(); inferred = false;
+        std::vector<std::set<u32>> subj(rels.size());
+        for (size_t i = 0; i < rels.size(); ++i) for (auto& f : rels[i].stated) subj[i].insert(f.first);
+        std::map<u32, u32> first;   // blocked split: the first record (ingestion order) naming each subject
+        u32 cut = 0;
+        if (split == 1) {
+            for (u32 r = 0; r < recs.size(); ++r) if (recs[r].count) for (u32 w : content(recIds(r))) first.emplace(w, r);
+            std::vector<u32> fs; for (auto& kv : first) fs.push_back(kv.second); std::sort(fs.begin(), fs.end());
+            cut = fs.empty() ? 0 : fs[fs.size() / 2];
+        }
+        auto hashHalf = [&](u32 a) { u64 h = 1469598103934665603ull; for (unsigned char ch : voc.str[a]) { h ^= ch; h *= 1099511628211ull; }
+            h ^= h >> 33; h *= 0xff51afd7ed558ccdull; h ^= h >> 33; h *= 0xc4ceb9fe1a85ec53ull; h ^= h >> 33; return int(h & 1); };
+        auto blockHalf = [&](u32 a) { auto it = first.find(a); return (it == first.end() || it->second < cut) ? 0 : 1; };
+        for (size_t i = 0; i < ruleList.size(); ++i) {
+            auto& h = ruleList[i]; if (!h.accepted) continue;
+            auto& v = out[i]; v.method = splitName(split);
+            bool ok = split == 1 ? halfTest(h, cap[i], subj, blockHalf, v.detail) : halfTest(h, cap[i], subj, hashHalf, v.detail);
+            v.result = ok ? 1 : 0;
+        }
+        return validation[split] = std::move(out);
+    }
+    static unsigned shapeOf(const RuleH& h) {   // 1 inverse, 2 chain, 4 path, 8 tree, 16 conditional
+        unsigned b = h.type == 'I' ? 1u : (h.type == 'T' || h.type == 'C') ? 2u : h.type == 'P' ? 4u : h.type == 'G' ? 8u : 0u;
+        return h.condRel >= 0 ? (b | 16u) : b;
+    }
+    bool admits(size_t i, const Stratum& st) {
+        auto& h = ruleList[i];
+        if (!h.accepted) return false;
+        unsigned b = shapeOf(h); if ((b & st.shapes) != b) return false;
+        double agree = h.pn ? double(h.k) / double(h.pn) : 0;
+        // reliability by relation type: in a one-value conclusion a known different answer opposes the rule, so agreement
+        // is the reliability; with several values per subject a missing conclusion is unknown, not opposing, so the
+        // coverage-corrected estimate (rel) is used. minAgreement still guards a small coverage estimate inflating rel.
+        double reliab = h.fnTarget ? agree : h.rel;
+        double cov = h.cov > 0 ? h.cov : 0;
+        double unk = h.n ? double(h.eUnknown) / double(h.n) : 0;
+        if (h.pn < st.minKnown || h.k < st.minSupport || agree < st.minAgree || reliab < st.minRel || cov < st.minCov ||
+            h.z < st.minZ || h.lift < st.minLift || unk > st.maxUnknown) return false;
+        if (st.repl && internalReplication(st.split)[i].result != 1) return false;
+        return true;
+    }
+    void evaluatePolicy() {
+        if (policyEvaluated) return;
+        validation.clear(); admitCore.assign(ruleList.size(), 0); admitExt.assign(ruleList.size(), 0);
+        if (pol.active) for (size_t i = 0; i < ruleList.size(); ++i) {
+            admitCore[i] = admits(i, pol.core);
+            admitExt[i] = admitCore[i] || (pol.ext.on && admits(i, pol.ext));
+        }
+        policyEvaluated = true;
+    }
+    // stratified, policy-closed inference: the core stratum's rules run to their own fixpoint first; an extension stratum
+    // then extends it without overriding anything the core decided. A policy's answers therefore contain its core's
+    // answers, an extension-derived fact is never labelled core, and each stratum has its own depth budget.
+    void policyInfer(int maxDepth) {
+        if (!pol.active) { inferCore(maxDepth); return; }
+        evaluatePolicy();
+        auto depthOf = [](const Stratum& st) { return st.depth > 0 ? st.depth : 1000000; };
+        policyRun = true;
+        admitMask = &admitCore; inferCore(depthOf(pol.core), false);
+        for (auto& R : rels) for (auto& d : R.derived) R.lawDerived.insert(d.first);
+        if (pol.ext.on) { admitMask = &admitExt; inferCore(depthOf(pol.ext), true); }
+        admitMask = nullptr; policyRun = false;
+    }
+    std::string tierWord(const Relation& R, const std::pair<u32, u32>& f) const {
+        if (pol.active) return R.lawDerived.count(f) ? "core" : "extension";
+        return R.lawDerived.count(f) ? "law" : "tendency";
+    }
+    std::string snapshot() const {   // exact evidence state: every live record (text, count) and the observation log
+        u64 h = 1469598103934665603ull; auto mix = [&](const std::string& x) { for (unsigned char c : x) { h ^= c; h *= 1099511628211ull; } h ^= 0xff; h *= 1099511628211ull; };
+        for (u32 r = 0; r < recs.size(); ++r) if (recs[r].count) { mix(unroll(r)); mix(std::to_string(recs[r].count)); }
+        for (auto& o : obsLog) { mix(o.src); mix(o.key); mix(std::to_string(o.t)); mix(std::to_string(o.rev)); mix(o.snap ? "s" : "p");
+                                 for (u32 r : o.rids) mix(std::to_string(r)); }
+        char buf[24]; std::snprintf(buf, sizeof buf, "%016llx", (unsigned long long)h); return buf;
     }
     // ── multi-premise study: path rules R1 & ... & Rl => T, 3 <= l <= CHAIN_L, proposed only from paths that connect stated T pairs ──
     template <class Fin>
@@ -1251,8 +1355,8 @@ struct Vault {
     }
     void infer(int maxDepth = 4) {
         depFacts.clear(); depRule.clear(); depSubj.clear();
-        inferCore(maxDepth);
-        if (!supFacts.empty()) { computeDeps(); inferCore(maxDepth); }
+        policyInfer(maxDepth);
+        if (!supFacts.empty()) { computeDeps(); policyInfer(maxDepth); }
         for (size_t i = 0; i < rels.size(); ++i) {   // contradictions and undetermined order are reported, not resolved
             for (auto& c : rels[i].contradicted) conflicts.emplace_back((int)i, c.first, 0u, 0u, "CONTRADICTION: " + c.second);
             for (auto& c : rels[i].unknownSubj) conflicts.emplace_back((int)i, c.first, 0u, 0u, "CURRENT UNKNOWN: " + c.second);
@@ -1283,9 +1387,9 @@ struct Vault {
         for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); }
         conflicts.clear(); staleAlt.clear();
     }
-    void inferCore(int maxDepth) {
-        for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); R.chain.clear(); }
-        conflicts.clear(); staleAlt.clear();
+    void inferCore(int maxDepth, bool keep = false) {   // keep: extend the current derived facts (the policies' second stratum)
+        if (!keep) { for (auto& R : rels) { R.derived.clear(); R.lawDerived.clear(); R.chain.clear(); }
+                     conflicts.clear(); staleAlt.clear(); }
         std::map<std::pair<int, u32>, std::pair<u32, std::string>> pendingUnknown;
         std::vector<bool> functional(rels.size());
         std::vector<std::map<u32, std::set<u32>>> objs(rels.size());
@@ -1296,9 +1400,11 @@ struct Vault {
             functional[i] = counted > 0 && double(single) / double(counted) >= 0.95;
         }
         std::set<std::pair<int, u32>> conflicted;
+        if (keep) for (auto& c : conflicts) conflicted.insert({std::get<0>(c), std::get<1>(c)});
         auto has = [&](int r, u32 a, u32 b) { return rels[r].stated.count({a, b}) || rels[r].derived.count({a, b}); };
         auto conf = [&](int r, u32 a, u32 b) { if (rels[r].stated.count({a, b})) return 1.0; return rels[r].derived.at({a, b}).first; };
-        lastRounds = 0;
+        int roundBase = keep ? lastRounds : 0;
+        lastRounds = roundBase;
         for (int depth = 0; depth < maxDepth; ++depth) {
             ++lastRounds;
             std::vector<std::tuple<int, u32, u32, double, std::string>> add;
@@ -1323,6 +1429,7 @@ struct Vault {
             };
             for (auto& h : ruleList) {
                 if (!h.accepted) continue;
+                if (admitMask && !(*admitMask)[&h - &ruleList[0]]) continue;   // the policy does not admit this rule
                 curRule = int(&h - &ruleList[0]);
                 auto all = [&](int r) { std::vector<std::pair<u32, u32>> v(rels[r].stated.begin(), rels[r].stated.end()); for (auto& d : rels[r].derived) v.push_back(d.first); return v; };
                 auto condOK = [&](u32 s) { return h.condRel < 0 || h.condSubj.count(s) > 0; };
@@ -1461,10 +1568,10 @@ struct Vault {
                     int ri = std::get<0>(t); int ts = 0;
                     if (functional[ri]) { auto& m = voteTs[{ri, key.first}]; auto f = m.find(key.second); if (f != m.end()) ts = f->second; }
                     else { auto f = addTs.find({ri, key.first, key.second}); if (f != addTs.end()) ts = f->second; }
-                    rels[ri].chain[key] = {depth + 1, ts};
+                    rels[ri].chain[key] = {roundBase + depth + 1, ts};
                 }
                 if (it == D.end() || it->second.first < std::get<3>(t)) D[key] = {std::get<3>(t), std::get<4>(t)};
-                if (lawAdd.count({std::get<0>(t), std::get<1>(t), std::get<2>(t)})) rels[std::get<0>(t)].lawDerived.insert(key);
+                if (!policyRun && lawAdd.count({std::get<0>(t), std::get<1>(t), std::get<2>(t)})) rels[std::get<0>(t)].lawDerived.insert(key);
             }
         }
         for (auto& pu : pendingUnknown) if (conflicted.insert(pu.first).second) {
@@ -1525,7 +1632,7 @@ struct Vault {
             if (F_PROFILE) std::printf("[PROFILE] classes %.1f ms | relations %.1f ms | rule mining %.1f ms\n", t1 - t0, t2 - t1, t3 - t2);
             cacheRules(); haveCache = true; vocAtFull = voc.str.size(); recsAtFull = recordsIngested; ++fullBuilds;
         }
-        dirty = false; inferred = false;
+        dirty = false; inferred = false; policyEvaluated = false;
     }
     void ensureInferred() { ensureModel(); if (!inferred) { double t0 = nowms(); infer(DEPTH > 0 ? DEPTH : 1000000); if (F_PROFILE) std::printf("[PROFILE] infer %.1f ms, %d rounds\n", nowms() - t0, lastRounds); } }
 
@@ -1840,6 +1947,7 @@ static void showRelations() {
 
 static void inferCmd(const std::string& arg) {
     V.ensureInferred();
+    if (V.pol.active) std::printf("[POLICY] %s@%s\n", V.pol.name.c_str(), V.pol.version.c_str());
     size_t total = 0; for (auto& R : V.rels) total += R.derived.size();
     std::printf("[INFER] %zu new facts derived from %zu accepted rules\n", total,
                 (size_t)std::count_if(V.ruleList.begin(), V.ruleList.end(), [](auto& h) { return h.accepted; }));
@@ -1847,14 +1955,15 @@ static void inferCmd(const std::string& arg) {
     size_t limit = all ? SIZE_MAX : 10, shown = 0;
     for (auto& R : V.rels) for (auto& d : R.derived) {
         if (shown++ >= limit) return;
-        if (all && V.F_LABELS) std::printf("FACT\t%s\t%s\n", V.renderFact(R, d.first.first, d.first.second).c_str(), R.lawDerived.count(d.first) ? "law" : "tendency");
+        if (all && V.F_LABELS) std::printf("FACT\t%s\t%s\n", V.renderFact(R, d.first.first, d.first.second).c_str(), V.tierWord(R, d.first).c_str());
         else if (all) std::printf("FACT\t%s\n", V.renderFact(R, d.first.first, d.first.second).c_str());
-        else std::printf("  %-32s %sscore=%.2f  because %s\n", V.renderFact(R, d.first.first, d.first.second).c_str(), !V.F_LABELS ? "" : R.lawDerived.count(d.first) ? "[law] " : "[tendency] ", d.second.first, d.second.second.c_str());
+        else std::printf("  %-32s %sscore=%.2f  because %s\n", V.renderFact(R, d.first.first, d.first.second).c_str(), (!V.F_LABELS ? std::string() : "[" + V.tierWord(R, d.first) + "] ").c_str(), d.second.first, d.second.second.c_str());
     }
 }
 
 static void ask(const std::string& q) {
     V.ensureInferred();
+    if (V.pol.active) std::printf("[POLICY] %s@%s\n", V.pol.name.c_str(), V.pol.version.c_str());
     std::vector<size_t> holes; auto ids = queryIds(q, holes);
     int answers = 0;
     for (auto& R : V.rels) {
@@ -1890,7 +1999,7 @@ static void ask(const std::string& q) {
         for (auto& h : R.histLines) if (fits(std::get<0>(h), std::get<1>(h))) { std::printf("  %-32s %s\n", V.renderFact(R, std::get<0>(h), std::get<1>(h)).c_str(), std::get<2>(h).c_str()); ++answers; }
         for (auto& f : R.withdrawn) if (fits(f.first.first, f.first.second)) { std::printf("  %-32s %s\n", V.renderFact(R, f.first.first, f.first.second).c_str(), f.second.c_str()); ++answers; }
         for (auto& d : R.derived) if (fits(d.first.first, d.first.second)) {
-            std::printf("  %-32s inferred%s (score %.2f) because %s\n", V.renderFact(R, d.first.first, d.first.second).c_str(), !V.F_LABELS ? "" : R.lawDerived.count(d.first) ? " [law]" : " [tendency]", d.second.first, d.second.second.c_str()); ++answers; }
+            std::printf("  %-32s inferred%s (score %.2f) because %s\n", V.renderFact(R, d.first.first, d.first.second).c_str(), (!V.F_LABELS ? std::string() : " [" + V.tierWord(R, d.first) + "]").c_str(), d.second.first, d.second.second.c_str()); ++answers; }
     }
     if (!answers) std::puts("  no stated or inferred answer");
 }
@@ -1962,6 +2071,8 @@ static void help() {
         "  CONFLICTS            stated facts that contradict what the rules infer\n"
         "  CHAINS [ALL]         derived facts by inference round and tendency-tier steps (ALL: one line per fact)\n"
         "  RULES EVIDENCE [ALL] each rule's evidence vector: n, E+, E-, E?, agreement, lift, z (ALL: rejected too)\n"
+        "  POLICY APPLY|LEGACY|SHOW  inference policy (docs/POLICIES.md); the SDK and CLI manage named, versioned policies\n"
+        "  SNAPSHOT             identifier of the exact evidence state\n"
         "  RETRACT <text>       remove a stored fact and its evidence exactly\n"
         "  UPDATE <text>        replace the subject's earlier value (one-value relations only)\n"
         "  EVAL <path>          held-out bits per token (word / category / mix)\n"
@@ -2010,20 +2121,78 @@ int main(int argc, char** argv) {
         else if (cmd == "RELATIONS") showRelations();
         else if (cmd == "INFER") inferCmd(arg);
         else if (cmd == "ASK") ask(arg);
+        else if (cmd == "POLICY") {   // voltex3: POLICY APPLY <name> <version> field=value ... | POLICY LEGACY | POLICY SHOW
+            std::istringstream ss(arg); std::string sub; ss >> sub; for (auto& c : sub) c = (char)std::toupper((unsigned char)c);
+            if (sub == "LEGACY") { V.pol = Vault::PolicyCfg(); V.policyEvaluated = false; V.inferred = false; std::puts("[POLICY] legacy"); continue; }
+            if (sub == "SHOW") {
+                if (!V.pol.active) { std::puts("[POLICY] legacy"); continue; }
+                std::printf("[POLICY] %s@%s\n", V.pol.name.c_str(), V.pol.version.c_str());
+                auto show = [](const char* nm, const Vault::Stratum& st) {
+                    std::printf("STRATUM\t%s\tminSampleSize=%llu\tminSupport=%llu\tminAgreement=%g\tminReliability=%g\tminCoverage=%g\tminZ=%g\tminLift=%g\tmaxUnknownShare=%g\treplication=%d\tsplit=%s\tmaxDepth=%d\tshapes=%u\n",
+                                nm, (unsigned long long)st.minKnown, (unsigned long long)st.minSupport, st.minAgree, st.minRel, st.minCov,
+                                st.minZ < -1e299 ? -1e300 : st.minZ, st.minLift, st.maxUnknown, st.repl, st.split ? "blocked" : "hash", st.depth, st.shapes); };
+                show("core", V.pol.core); if (V.pol.ext.on) show("extension", V.pol.ext);
+                continue;
+            }
+            if (sub != "APPLY") { std::puts("[ERROR] usage: POLICY APPLY <name> <version> core.<field>=<v> ... [extension.<field>=<v> ...] | POLICY LEGACY | POLICY SHOW"); continue; }
+            Vault::PolicyCfg np; np.active = true; np.core.on = true;
+            if (!(ss >> np.name >> np.version)) { std::puts("[ERROR] POLICY APPLY needs a name and a version"); continue; }
+            std::string kv, err;
+            while (ss >> kv && err.empty()) {
+                auto eq = kv.find('='); auto dot = kv.find('.');
+                if (eq == std::string::npos || dot == std::string::npos || dot > eq) { err = "expected <stratum>.<field>=<value>, got '" + kv + "'"; break; }
+                std::string st = kv.substr(0, dot), f = kv.substr(dot + 1, eq - dot - 1), v = kv.substr(eq + 1);
+                Vault::Stratum* S = st == "core" ? &np.core : st == "extension" ? &np.ext : nullptr;
+                if (!S) { err = "unknown stratum '" + st + "' (core or extension)"; break; }
+                if (st == "extension") S->on = true;
+                char* endp = nullptr; double x = std::strtod(v.c_str(), &endp); bool num = endp && *endp == 0 && !v.empty();
+                auto share = [&](double& dst) { if (!num || x < 0 || x > 1) err = f + " must be a number from 0 to 1, got '" + v + "'"; else dst = x; };
+                auto count = [&](u64& dst) { if (!num || x < 0 || x != std::floor(x)) err = f + " must be a whole number >= 0, got '" + v + "'"; else dst = (u64)x; };
+                if (f == "minSampleSize") count(S->minKnown);
+                else if (f == "minSupport") count(S->minSupport);
+                else if (f == "minAgreement") share(S->minAgree);
+                else if (f == "minReliability") share(S->minRel);
+                else if (f == "minCoverage") share(S->minCov);
+                else if (f == "maxUnknownShare") share(S->maxUnknown);
+                else if (f == "minZ") { if (!num) err = "minZ must be a number, got '" + v + "'"; else S->minZ = x; }
+                else if (f == "minLift") { if (!num || x < 0) err = "minLift must be a number >= 0, got '" + v + "'"; else S->minLift = x; }
+                else if (f == "replication") { if (v == "1" || v == "true") S->repl = 1; else if (v == "0" || v == "false") S->repl = 0; else err = "replication must be true or false, got '" + v + "'"; }
+                else if (f == "split") { if (v == "hash") S->split = 0; else if (v == "blocked") S->split = 1; else err = "split must be hash or blocked, got '" + v + "'"; }
+                else if (f == "maxDepth") { if (!num || x < 0 || x != std::floor(x)) err = "maxDepth must be a whole number >= 0 (0 = until nothing new), got '" + v + "'"; else S->depth = (int)x; }
+                else if (f == "shapes") {
+                    unsigned m = 0; std::stringstream sh(v); std::string t;
+                    while (std::getline(sh, t, ',')) { if (t == "inverse") m |= 1; else if (t == "chain") m |= 2; else if (t == "path") m |= 4; else if (t == "tree") m |= 8;
+                                                       else if (t == "conditional") m |= 16; else { err = "unknown shape '" + t + "' (inverse, chain, path, tree, conditional)"; break; } }
+                    if (err.empty()) S->shapes = m;
+                }
+                else err = "unknown policy field '" + f + "'";
+            }
+            if (!err.empty()) { std::printf("[ERROR] %s; policy not changed\n", err.c_str()); continue; }
+            V.pol = np; V.policyEvaluated = false; V.inferred = false;
+            std::printf("[POLICY] applied %s@%s\n", V.pol.name.c_str(), V.pol.version.c_str());
+        }
+        else if (cmd == "SNAPSHOT") {   // voltex3: an identifier of the exact evidence state (records, counts, observation log)
+            size_t live = 0; for (auto& r : V.recs) if (r.count) ++live;
+            std::printf("[SNAPSHOT] %s records=%zu observations=%zu\n", V.snapshot().c_str(), live, V.obsLog.size());
+        }
         else if (cmd == "RULES") {   // voltex3: the evidence vector of each rule (studies/evidence_policy)
             std::string a = arg; for (auto& c : a) c = (char)std::toupper((unsigned char)c);
             if (a.rfind("EVIDENCE", 0) != 0) { std::puts("[RULES] usage: RULES EVIDENCE [ALL]"); continue; }
-            V.ensureModel();
+            V.ensureModel(); V.evaluatePolicy();
             bool all = a.find("ALL") != std::string::npos;
             std::printf("[RULES] evidence per rule: n chains; E+ conclusion stated; E- known and different (one-value conclusions only); "
                         "E? answer unknown; agree = E+ / (E+ + E-) where known\n");
             for (auto& h : V.ruleList) {
                 if (!h.accepted && !all) continue;
+                size_t ri = &h - &V.ruleList[0];
+                int sp = V.pol.active ? V.pol.core.split : 0; auto& vd = V.internalReplication(sp)[ri];
                 char agree[16] = "undef"; if (h.pn) std::snprintf(agree, sizeof agree, "%.4f", double(h.k) / double(h.pn));
-                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\n",
+                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\tvalidation=%s:%s\tadmit=%s\n",
                             h.accepted ? "ACCEPT" : "reject", V.ruleText(h).c_str(), (unsigned long long)h.n, (unsigned long long)h.k,
                             (unsigned long long)h.eMinus, (unsigned long long)h.eUnknown, agree, h.lift, h.z, h.base, h.cov, h.rel,
-                            h.law ? "law" : "tendency", h.fnTarget ? 1 : 0);
+                            h.law ? "law" : "tendency", h.fnTarget ? 1 : 0, vd.method.c_str(),
+                            vd.result < 0 ? "not_run" : vd.result ? "pass" : "fail",
+                            !V.pol.active ? "-" : V.admitCore[ri] ? "core" : V.admitExt[ri] ? "extension" : "none");
             }
         }
         else if (cmd == "CHAINS") {   // how each derived fact was reached: inference round, tendency-tier steps in its proof

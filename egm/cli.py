@@ -3,7 +3,9 @@
   egm doctor                                   check the install
   egm extract python NAME=DIR ... -o facts     facts from Python source (no LLM)
   egm build facts.txt ... -o kb.vtx            ingest facts, save a knowledge base
-  egm ask KB "PATTERN" [--strict] [--json]     query (? marks the slot to fill)
+  egm ask KB "PATTERN" [--strict] [--json]     query (? marks the slot to fill); --policy NAME[@V] runs it under a policy
+  egm infer KB [--policy NAME[@V]] [--json]    every derived fact, under a policy (default legacy)
+  egm policy list|show|create|configure|clone|versions|export|import|compare   custom inference policies
   egm rules KB                                 learned relations and rules
   egm observe KB --source S --record R ...     add source-aware evidence, save back
   egm run KB script.txt [--save]               raw engine commands, one per line
@@ -29,6 +31,7 @@ from . import __version__
 from .engine import Engine, find_binary
 from .errors import EgmError
 from . import bench
+from . import policy as _policy
 
 
 # --- helpers ------------------------------------------------------------------------------
@@ -113,13 +116,19 @@ def cmd_build(a):
             print(l)
 
 
+def _registry(a):
+    return _policy.PolicyRegistry(getattr(a, "policy_dir", None))
+
+
 def cmd_ask(a):
     with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
+        if a.policy:
+            e.apply_policy(a.policy, _registry(a))
         res = []
         for p in a.pattern:
             facts = e.ask(p, strict=a.strict)
             if a.json:
-                res.append({"pattern": p, "strict": a.strict, "results": [f.to_dict() for f in facts]})
+                res.append({"pattern": p, "strict": a.strict, "policy": e.policy.id, "results": [f.to_dict() for f in facts]})
                 continue
             if len(a.pattern) > 1:
                 print(f"# {p}")
@@ -129,6 +138,102 @@ def cmd_ask(a):
                 print(explain_empty(e, p), file=sys.stderr)
         if a.json:
             print(json.dumps(res[0] if len(res) == 1 else res, indent=1))
+
+
+def cmd_infer(a):
+    with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
+        pol = e.apply_policy(a.policy or "legacy", _registry(a))
+        facts = e.infer_all(); snap = e.snapshot()
+        if a.json:
+            print(json.dumps({"policy": pol.id, "snapshot": snap, "facts": [f.to_dict() for f in facts]}, indent=1)); return
+        print(f"# policy {pol.id}  snapshot {snap}  {len(facts)} derived facts")
+        for f in facts:
+            print(f"{f.fact}\t{f.tier}")
+
+
+# --- policies (egm/policy.py is the one implementation; this is its command line) ---------
+def _value(v):
+    lv = v.lower()
+    if lv in ("true", "false"):
+        return lv == "true"
+    if lv in ("none", "null"):
+        return None
+    try:
+        return int(v)
+    except ValueError:
+        pass
+    try:
+        return float(v)
+    except ValueError:
+        return v
+
+
+def _policy_sets(items):
+    """--set SECTION.FIELD=VALUE (or extension.SECTION.FIELD=VALUE) -> nested dict. shapes take a comma list."""
+    out = {}
+    for it in items or []:
+        if "=" not in it:
+            raise _policy.PolicyError(f"--set expects SECTION.FIELD=VALUE, got {it!r}")
+        path, v = it.split("=", 1); keys = path.split(".")
+        if len(keys) not in (2, 3) or (len(keys) == 3 and keys[0] != "extension"):
+            raise _policy.PolicyError(f"--set expects SECTION.FIELD or extension.SECTION.FIELD, got {path!r}")
+        d = out
+        for k in keys[:-1]:
+            d = d.setdefault(k, {})
+        d[keys[-1]] = [x for x in v.split(",") if x] if keys[-1] == "shapes" else _value(v)
+    return out
+
+
+def cmd_policy(a):
+    reg = _registry(a); act = a.action
+    if act == "list":
+        for p in reg.list():
+            tag = "built-in" if p["builtin"] else f"v{p['version']}"
+            print(f"{p['name']}\t{tag}\t{p['description']}")
+    elif act == "show":
+        print(json.dumps(reg.get(a.name).to_dict(), indent=1))
+    elif act == "versions":
+        if a.name in _policy.BUILTINS:
+            print(f"{_policy.BUILTINS[a.name].version} (built-in)")
+        else:
+            vs = reg.versions(a.name)
+            if not vs:
+                raise _policy.PolicyError(f"no policy named {a.name!r}")
+            print(" ".join(str(v) for v in vs))
+    elif act in ("create", "configure"):
+        cfg = {}
+        if getattr(a, "from_json", None):
+            with open(a.from_json) as fh:
+                cfg = {k: v for k, v in json.load(fh).items() if k in ("thresholds", "validation", "inference", "extension")}
+        sets = _policy_sets(a.set)
+        for k, v in sets.items():
+            cfg.setdefault(k, {}).update(v) if isinstance(v, dict) else cfg.__setitem__(k, v)
+        if act == "create":
+            p = reg.create(a.name, cfg.get("thresholds"), cfg.get("validation"), cfg.get("inference"), cfg.get("extension"),
+                           a.description or "")
+        else:
+            ext = None if a.no_extension else cfg.get("extension", False)
+            p = reg.update(a.name, cfg.get("thresholds"), cfg.get("validation"), cfg.get("inference"), ext, a.description)
+        print(f"{p.id}"); print(json.dumps(p.to_dict(), indent=1))
+    elif act == "clone":
+        print(reg.clone(a.source, a.name).id)
+    elif act == "export":
+        d = reg.export(a.name, a.output)
+        if not a.output:
+            print(json.dumps(d, indent=1))
+    elif act == "import":
+        print(reg.import_(a.file, a.name).id)
+    elif act == "compare":
+        with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
+            c = e.compare_policies(a.policies, reg)
+        if a.json:
+            print(json.dumps(c.to_dict(), indent=1)); return
+        print(f"# snapshot {c.snapshot}")
+        print("policy\tderived\tcore\textension\trules core\trules extension\trules accepted")
+        for r in c.summary:
+            print(f"{r['policy']}\t{r['derived']}\t{r['core']}\t{r['extension']}\t{r['rules_core']}\t{r['rules_extension']}\t{r['rules_accepted']}")
+        for k, v in c.contained.items():
+            print(f"{k}: {'yes' if v else 'no'}")
 
 
 def _short(f):
@@ -335,6 +440,33 @@ def main(argv=None):
     s.add_argument("kb"); s.add_argument("pattern", nargs="+", help='e.g. "? calls requests__select_proxy" (quote it)')
     s.add_argument("--strict", action="store_true", help="stated facts and law-tier inferences only")
     s.add_argument("--json", action="store_true"); s.add_argument("-v", "--verbose", action="store_true", help="show proofs")
+    s.add_argument("--policy", metavar="NAME[@V]", help="run under this inference policy (egm policy list)")
+    s.add_argument("--policy-dir", help="policy registry (default $EGM_POLICY_DIR or ~/.egm/policies)")
+    s = with_set(add("infer", cmd_infer, "every derived fact, under an inference policy"))
+    s.add_argument("kb"); s.add_argument("--policy", metavar="NAME[@V]", help="default legacy")
+    s.add_argument("--policy-dir"); s.add_argument("--json", action="store_true")
+    s = add("policy", cmd_policy, "create, configure, inspect, version, export, import and compare inference policies")
+    s.add_argument("--policy-dir", help="policy registry (default $EGM_POLICY_DIR or ~/.egm/policies)")
+    ps = s.add_subparsers(dest="action", metavar="ACTION", required=True)
+    ps.add_parser("list", help="built-in and custom policies")
+    x = ps.add_parser("show", help="a policy's full configuration"); x.add_argument("name", metavar="NAME[@V]")
+    x = ps.add_parser("versions", help="a custom policy's versions"); x.add_argument("name")
+    for act, hlp in (("create", "a new policy (version 1)"), ("configure", "a new version of a custom policy")):
+        x = ps.add_parser(act, help=hlp); x.add_argument("name")
+        x.add_argument("--set", action="append", metavar="SECTION.FIELD=VALUE",
+                       help="e.g. thresholds.minAgreement=0.9, validation.required=true, validation.split=blocked, "
+                            "inference.maxDepth=2, inference.shapes=inverse,chain, extension.thresholds.minSampleSize=0")
+        x.add_argument("--from-json", metavar="FILE", help="configuration from a JSON file (as export writes it)")
+        x.add_argument("--description")
+        if act == "configure":
+            x.add_argument("--no-extension", action="store_true", help="remove the extension stratum")
+    x = ps.add_parser("clone", help="copy a policy under a new name"); x.add_argument("source", metavar="NAME[@V]"); x.add_argument("name")
+    x = ps.add_parser("export", help="write a policy's configuration as JSON"); x.add_argument("name", metavar="NAME[@V]")
+    x.add_argument("-o", "--output")
+    x = ps.add_parser("import", help="a policy from JSON (new policy, or the next version)"); x.add_argument("file")
+    x.add_argument("--name")
+    x = with_set(ps.add_parser("compare", help="run policies on the same knowledge base and compare"))
+    x.add_argument("kb"); x.add_argument("policies", nargs="+", metavar="NAME[@V]"); x.add_argument("--json", action="store_true")
     s = with_set(add("rules", cmd_rules, "show learned relations and accepted rules"))
     s.add_argument("kb"); s.add_argument("--all", action="store_true", help="include rejected candidate rules")
     s = add("observe", cmd_observe, "add a source-aware observation and save the knowledge base")

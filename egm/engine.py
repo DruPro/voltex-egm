@@ -15,9 +15,12 @@ import subprocess
 import tempfile
 from typing import Iterable, List, Optional, Sequence
 
+import contextlib
+
 from . import parse
+from . import policy as _policy
 from .errors import EngineError, EngineNotFound, RelationNotLearned
-from .model import Category, Conflict, Fact, Prediction, Relation, Rule
+from .model import Category, Conflict, Fact, PolicyComparison, Prediction, Relation, Rule
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -65,6 +68,7 @@ class Engine:
         self._marker = f"__egm_end_{secrets.token_hex(8)}__"     # ends every reply; random so no output can imitate it
         self._p = subprocess.Popen([self.binary], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                    stderr=subprocess.STDOUT, text=True, bufsize=1)
+        self.policy = _policy.BUILTINS["legacy"]       # the policy inference runs under (POLICY APPLY); legacy = none
         try:
             if kb:
                 self.load(kb)            # restores the profile saved with the knowledge base (kb.vtx.cfg), if any
@@ -164,14 +168,18 @@ class Engine:
         return self._checked(f"UPDATE {fact}")
 
     # --- asking -------------------------------------------------------------------------
-    def ask(self, pattern: str, strict: bool = False, require: bool = False) -> List[Fact]:
+    def ask(self, pattern: str, strict: bool = False, require: bool = False, policy=None) -> List[Fact]:
         """Answer a pattern; ``?`` marks the slot(s) to fill, e.g. ``"? calls mypkg__connect"``.
 
         Returns current facts, inferences with proofs and history lines (see ``Fact.status``).
-        strict: keep only stated/current facts and law-tier inferences.
+        strict: keep only stated/current facts and law-tier (or, under a policy, core-stratum) inferences.
         require: raise RelationNotLearned instead of returning [] when the relation is unknown.
+        policy: run this query under a policy (name, "name@version" or Policy); the engine's policy is restored after.
         """
-        facts = parse.ask(self._checked(f"ASK {pattern}"))
+        with self._policy_scope(policy):
+            facts = parse.ask(self._checked(f"ASK {pattern}"))
+            for f in facts:
+                f.policy = self.policy.id
         if not facts and require:
             rel = _relation_of(pattern)
             learned = [r.relation for r in self.relations()]
@@ -212,9 +220,61 @@ class Engine:
             note += "; this knowledge base is capped (" + "; ".join(lim) + "), so the name may lie beyond the cap"
         return note
 
-    def infer_all(self) -> List[Fact]:
-        """Every fact derived by accepted rules."""
-        return parse.infer_all(self._checked("INFER ALL"))
+    def infer_all(self, policy=None) -> List[Fact]:
+        """Every fact derived by accepted rules (under ``policy`` if given; each Fact names the policy it ran under)."""
+        with self._policy_scope(policy):
+            facts = parse.infer_all(self._checked("INFER ALL"))
+            for f in facts:
+                f.policy = self.policy.id
+        return facts
+
+    # --- policies -----------------------------------------------------------------------
+    def apply_policy(self, policy, registry: Optional["_policy.PolicyRegistry"] = None) -> "_policy.Policy":
+        """Run inference under ``policy`` from now on: a name, "name@version" or a Policy (``legacy`` = no policy).
+        Validated before it reaches the engine; the evidence is not changed."""
+        p = (registry or _policy.policies).get(policy) if not isinstance(policy, _policy.Policy) else policy
+        self._checked(p.engine_command())
+        self.policy = p
+        return p
+
+    @contextlib.contextmanager
+    def _policy_scope(self, policy):
+        if policy is None:
+            yield; return
+        prev = self.policy
+        self.apply_policy(policy)
+        try:
+            yield
+        finally:
+            self.apply_policy(prev)
+
+    def snapshot(self) -> str:
+        """An identifier of the exact evidence state (records, counts, observation log). Policies never change it."""
+        for l in self._checked("SNAPSHOT"):
+            if l.startswith("[SNAPSHOT] "):
+                return l.split()[1]
+        raise EngineError("no SNAPSHOT reply")
+
+    def compare_policies(self, policies, registry: Optional["_policy.PolicyRegistry"] = None) -> PolicyComparison:
+        """Run several policies on the same evidence snapshot and compare what each derives."""
+        reg = registry or _policy.policies
+        ps = [reg.get(p) if not isinstance(p, _policy.Policy) else p for p in policies]
+        snap = self.snapshot(); facts, summary = {}, []
+        for p in ps:
+            fs = self.infer_all(policy=p)
+            with self._policy_scope(p):
+                ev = self.evidence()
+            facts[p.id] = sorted(f.fact for f in fs)
+            summary.append({"policy": p.id, "derived": len(fs),
+                            "core": sum(1 for f in fs if f.tier == "core"),
+                            "extension": sum(1 for f in fs if f.tier == "extension"),
+                            "rules_core": sum(1 for v in ev if v["admit"] == "core"),
+                            "rules_extension": sum(1 for v in ev if v["admit"] == "extension"),
+                            "rules_accepted": sum(1 for v in ev if v["accepted"])})
+        if self.snapshot() != snap:
+            raise EngineError("the evidence changed during the comparison")
+        contained = {f"{a} in {b}": set(facts[a]) <= set(facts[b]) for a in facts for b in facts if a != b}
+        return PolicyComparison(snap, [p.id for p in ps], summary, facts, contained)
 
     def conflicts(self) -> List[Conflict]:
         return parse.conflicts(self._checked("CONFLICTS"))
@@ -233,7 +293,9 @@ class Engine:
 
     def evidence(self, include_rejected: bool = False) -> List[dict]:
         """voltex3: each rule's evidence vector (RULES EVIDENCE): {"accepted", "rule", "n", "e_plus", "e_minus",
-        "e_unknown", "agree", "lift", "z", "base", "cov", "rel", "tier", "one_value"}. E- is defined only for one-value
+        "e_unknown", "agree", "lift", "z", "base", "cov", "rel", "tier", "one_value", "validation", "admit"}: validation is
+        "<method>:pass|fail|not_run" (an evaluation, not a property of the rule); admit is the stratum of the active
+        policy that admits the rule (core, extension, none; "-" under legacy). E- is defined only for one-value
         conclusion relations (else 0: a missing conclusion there is unknown, not opposing); agree is None when no answer
         is known."""
         out = []
@@ -245,7 +307,8 @@ class Engine:
                         "e_minus": int(kv["e-"]), "e_unknown": int(kv["e?"]),
                         "agree": None if kv["agree"] == "undef" else float(kv["agree"]), "lift": float(kv["lift"]),
                         "z": float(kv["z"]), "base": float(kv["base"]), "cov": float(kv["cov"]), "rel": float(kv["rel"]),
-                        "tier": kv["tier"], "one_value": kv["one_value"] == "1"})
+                        "tier": kv["tier"], "one_value": kv["one_value"] == "1",
+                        "validation": kv.get("validation", ""), "admit": kv.get("admit", "-")})
         return out
 
     def chains(self) -> List[dict]:

@@ -67,14 +67,15 @@ def _peak_mb(pid: int) -> Optional[float]:
 # answer), so any engine that reports a label or a score is ranked the same way.
 def egm_confidence(tier: str, score: Optional[float]) -> float:
     s = 0.0 if score is None else max(0.0, min(1.0, score))
-    return (1.0 + s) / 2.0 if tier == "law" else s / 2.0
+    return (1.0 + s) / 2.0 if tier in ("law", "core") else s / 2.0
 
 
 class EGMAdapter:
     """voltex2 through the SDK. settings: engine settings; strict_filter: keep only what the SDK's strict policy keeps."""
 
-    def __init__(self, settings: Optional[dict] = None, strict_filter: bool = False, binary: Optional[str] = None):
-        self.settings = dict(settings or {})
+    def __init__(self, settings: Optional[dict] = None, strict_filter: bool = False, binary: Optional[str] = None,
+                 policy=None):
+        self.settings = dict(settings or {}); self.policy = policy
         self.strict_filter = strict_filter
         self.binary = binary or os.environ.get("VOLTEX", os.path.join(ROOT, "build", "voltex2"))
 
@@ -84,6 +85,8 @@ class EGMAdapter:
         e = egm.Engine(binary=self.binary, settings=self.settings)
         try:
             e.ingest_many(lines)
+            if self.policy is not None:
+                e.apply_policy(self.policy)
             derived = e.infer_all()                       # every derived fact, with its tier
             # one ASK per (subject, relation) that has a derived answer: gives each answer's score and proof
             patterns = sorted({(d.subject, d.relation) for d in derived})
@@ -98,7 +101,7 @@ class EGMAdapter:
                 fx = parse_fact(d.fact, rels)
                 if fx is None:
                     continue
-                if self.strict_filter and d.tier != "law":
+                if self.strict_filter and d.tier not in ("law", "core"):
                     continue
                 proof = [p for p in (parse_fact(b, rels) for b in (f.because or [])) if p]
                 answers.append(Answer(fx, "derived", egm_confidence(d.tier, f.score), proof))

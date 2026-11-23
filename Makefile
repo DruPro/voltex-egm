@@ -16,7 +16,7 @@ $(BIN): src/voltex2.cpp
 
 test: $(BIN)
 	@$(PY) -I tests/run_tests.py --egm bin/egm
-	@$(PY) -m unittest tests/test_sdk.py tests/test_mcp.py tests/test_mimic.py tests/test_evidence.py
+	@$(PY) -m unittest tests/test_sdk.py tests/test_mcp.py tests/test_mimic.py tests/test_evidence.py tests/test_policy.py
 
 repro: $(BIN)
 	@$(PY) -I tests/run_tests.py --egm bin/egm --only repro

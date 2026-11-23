@@ -1,8 +1,8 @@
 # Evidence policy (voltex3, Round 1): design and contracts
 
-Status (2026-11-23): **G0 done; G1 groundwork in.** The evidence vector (3.1) is computed for every rule and shown by
-`RULES EVIDENCE`; nothing reads it yet, and existing output is byte-identical (gate 221/221 against the previous
-binary). Policies (3.2 to 3.4) are not built yet. Category: architectural change. The method is
+Status (2026-11-23): **G0 done; G1 and G2 in; G4 development under way** (`DEVELOPMENT.md`). The evidence vector,
+configurable policies (engine `POLICY APPLY`, SDK registry, CLI `egm policy`) and stratified inference are built;
+`legacy` stays byte-identical (gate 221/221 against the pre-voltex3 binary). User documentation: `docs/POLICIES.md`. Category: architectural change. The method is
 `docs/EVALUATION.md`, extended by the round framework below; the full research framework, with its rationale, is the
 shared document "EGM Research Round Framework: Policy-Thresholded Inference over Evidential Relationships".
 
@@ -41,20 +41,37 @@ Computed for every candidate rule from stated facts only:
 
 `rel` and `law` are **derived views** computed by the `legacy` policy exactly as today.
 
-### 3.2 `Policy` (inference, layer 4)
+### 3.2 Policies: configurable inference contracts (inference, layer 4)
 
-A name and one threshold per component: `min_agree`, `min_known`, `min_z`, `min_lift`, `require_replicate`,
-`max_tendency_steps`, `tier_votes`. Three named policies: `legacy` (today, byte for byte), `strict`, `tendency`.
+Owner requirement (2026-11-23): policies are first-class, configurable and versioned, in the SDK and the CLI; the
+built-ins are reference profiles, not a closed set.
 
-### 3.3 Policy-closed inference
+- **Engine:** executes a fully specified configuration and stores no names (`POLICY APPLY <name> <version>
+  core.<field>=<v> ... [extension.<field>=<v> ...]`, `POLICY SHOW`, `POLICY LEGACY`). Every field is validated; on
+  any error the active policy is unchanged. A policy is not saved with the knowledge base.
+- **SDK (`egm/policy.py`):** the configuration contract (every field with semantics, range and default), validation
+  with explicit errors, a versioned registry (create, update = new version, get, list, clone, export, import), the
+  built-ins, and `Engine.apply_policy`, `infer_all/ask(policy=)`, `compare_policies`, `snapshot`.
+- **CLI (`egm policy ...`, `egm infer --policy`, `egm ask --policy`):** a front end to the same module.
+- **Built-in semantics (owner, 2026-11-23):** legacy preserves existing behaviour exactly; tendency admits rules by
+  their configured evidence thresholds, without replication; strict requires minimum evidence, acceptable agreement
+  and split-half replication.
 
-`inferCore(policy)`: only rules the policy admits propose facts; only facts derived under the policy feed later rounds;
-with `tier_votes = 1`, in one-value relations law-tier paths decide before tendency paths are counted.
+### 3.3 Validation is an evaluation, not a property (owner, 2026-11-23)
 
-### 3.4 Derived-fact record (inference to presentation)
+`validated = evaluate(rule, method, evidence snapshot)`: recomputed per build, never stored on the rule, and reported
+with its method (`internal_replication/hash` or `internal_replication/blocked`), so internal replication can't be read
+as independent-source confirmation. Investigation V adds `independent_sources` as another method without changing the
+representation. `blocked` splits subjects by first appearance (ingestion order), for time-ordered or correlated data,
+where a hash split can make one regime look replicated (owner, 2026-11-23).
 
-Adds `policy`, `weakest` (the weakest component value on the proof) and `round` to today's score, proof and tier. A
-fact derived under `tendency` becomes `strict` only by being derived again under `strict`.
+### 3.4 Stratified, policy-closed inference and the derived-fact record
+
+A policy has a core stratum and an optional extension. The core's rules run to their own fixpoint; the extension's
+rules (with the core's) then extend it without overriding anything the core decided. So a policy's answers contain its
+core's answers (the owner's nesting decision holds by construction), extension-derived facts are labelled `extension`,
+never `core`, and each stratum has its own `maxDepth`. Results name the policy (`[POLICY] name@version`,
+`Fact.policy`); `SNAPSHOT` identifies the evidence state. Still to add: `weakest` (the weakest component on a proof).
 
 ### 3.5 Evidence classes (evidence view, layer 5)
 
@@ -63,8 +80,8 @@ Every fact read by learning is `observed`, `observed-sourced` or `historical`. F
 
 ### 3.6 Commands (presentation, layer 6)
 
-`SET POLICY legacy|strict|tendency` (default `legacy`; experimental; saved in `.cfg`), `SET POLICY.<component> <v>`,
-`RULES EVIDENCE` (the vector per rule), and the policy on every `ASK` line.
+`POLICY APPLY|SHOW|LEGACY`, `SNAPSHOT`, `RULES EVIDENCE [ALL]` (vector, validation result with its method, admitting
+stratum), and a `[POLICY] name@version` line before `ASK` and `INFER` output under a policy.
 
 ## 4. Capability claims (the capability track judges these, not resemblance)
 
@@ -99,9 +116,13 @@ would leave a contract nothing uses, which can't be measured.
 2. **Which strict counts. Decided 2026-11-23 (owner): replace.** `POLICY strict` replaces `TENDENCYSTEPS 0` and the
    SDK's `strict=True`: no redundant features. Compatibility (a separate track): the old controls stay as aliases
    that map onto the policy until a major version, and the differences are listed (K3).
-3. **Names.** Keep law and tendency as public labels, or move to the policy names?
+3. **Names.** Keep law and tendency as public labels, or move to the policy names? (Interim: `law`/`tendency` under
+   legacy, `core`/`extension` under a policy, so a label never claims more than its stratum.)
 4. **Representation.** Does `EvidenceVector` wrap `RuleH` or replace its scoring fields?
 5. **Round 2 data independence.** Build categories on the discovery half only?
 6. **Sealed worlds.** Who writes the second generator?
 7. **External reference engines.** A non-EGM rule miner in the profile, or trivial baselines only?
 8. **The interface.** Is the evaluation interface (`studies/capability/tools/interface.py`) frozen for later rounds?
+9. **Validation. Decided 2026-11-23 (owner):** an evaluation result with its method recorded (3.3); Round 1 uses
+   internal split-half replication, named as such; built-in semantics as in 3.2; blocked splits for correlated data.
+10. **Custom policies. Decided 2026-11-23 (owner):** first-class in the SDK and the CLI (3.2, `docs/POLICIES.md`).

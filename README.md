@@ -385,6 +385,7 @@ voltex-egm/
 | [docs/LEARNED_PROGRAMS.md](docs/LEARNED_PROGRAMS.md) | Research report: learned rules as programs (computation, the harness, inferred programs, `REFRESH` for trees) |
 | [docs/SDK.md](docs/SDK.md) | Python SDK reference, including an LLM-tool example |
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
+| [docs/POLICIES.md](docs/POLICIES.md) | voltex3 (experimental): custom, versioned inference policies in the SDK and CLI; built-ins legacy, strict, tendency |
 | [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
 | [docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md) | Which settings to use for what you're trying to do, when not to, and what each costs |
 | [docs/EVALUATION.md](docs/EVALUATION.md) | How engine changes are judged: capability matrix, protocol, improvement vs regression |
