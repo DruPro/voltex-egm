@@ -85,7 +85,7 @@ all.
 1. **Self-sourced coverage:** an inverse rule must not be the coverage source for its own reliability, for example
    by leaving it out, or by estimating its coverage from a different source. This is the most important defect the
    round found. It is in induction, and it is the most likely cause of strict's confident errors.
-2. **Strict's shape:** too strict on many-valued and noisy structures (abstains where the default is 0.88 to 1.0
+2. **Strict's shape:** too strict on many-valued and noisy structures (abstains where the default is 0.66 to 1.0
    precise), too lenient where an estimate deceives it. Reliability by relation type needs revisiting together with
    item 1.
 3. **Real data with open-world truth:** sets where a derived fact can be checked against a source that states it
