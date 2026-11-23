@@ -153,6 +153,11 @@ timing (Round 1 D1).
 
 See `studies/round2/CONFIRMATION.md` for what the confirmation decided. Known open items:
 
+- **Self-sourced coverage (first priority).** `estimateCoverage` takes a relation's coverage from its best inverse
+  rule, and `rescoreRules` then computes that same rule's reliability as rate / coverage = 1.0. Exclude a rule from
+  being its own coverage source (or estimate it from another), then re-run Round 2's confirmation profiles as
+  development data.
+
 - **Coverage estimation beyond inverse rules.** W1b refuses an estimate the evidence contradicts; it doesn't produce a
   better one. Relations without a trustworthy inverse have no estimate at all.
 - **Thin conditions.** A condition resting on a handful of subjects can't be confirmed out of sample (W3); the shipped
@@ -161,5 +166,5 @@ See `studies/round2/CONFIRMATION.md` for what the confirmation decided. Known op
   coverage per resample would catch estimator instability directly (at R× the cost).
 - **Investigation V** (independent-source validation and decay) is designed (`studies/evidence_policy/DESIGN.md`) and
   not built; `validation.method` is where it plugs in.
-- **Help text:** `COVSOURCE`'s `CONFIG` text says "exceeds (z > 3)"; the test is against c / RATE_REL (fixed after the
-  Round 2 confirmation, `studies/round2/DEVIATIONS.md`).
+- **Real-data truth that is open-world** and **a generator whose seeds vary sizes and rates** (CONFIRMATION, Round 3
+  items 3 and 4).

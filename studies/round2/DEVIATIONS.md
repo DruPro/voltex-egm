@@ -25,3 +25,29 @@ engine (`dmesg`: "Memory cgroup out of memory: Killed process ... (voltex2)") du
 been written by either worker. Both were stopped, and one resumable worker runs every (structure, seed) in order. The
 pre-registration allows a rerun after a crash; nothing else changed. The real-data sets run after the sealed worlds,
 in the same way.
+
+## D4. Timing read from three result files (diagnosis; no metric read)
+
+The owner was concerned that one world took about 1,000 seconds, where Round 1's worlds took at most about 200.
+Diagnosis, in this order:
+
+- **Engine regression ruled out on development data:** on dpkg split 1000, `INFER ALL` takes 2.4 s with Round 1's
+  frozen binary (commit 8b00fae) and with the Round 2 binary, with identical output length.
+- **A replica** of `reversed_weak` built from SPEC.md (`dev/perf_replica.py`, not the generator) did not reproduce it.
+- **The `wall` field only** was then read from the three finished `reversed_weak` result files, by a script that
+  printed nothing else:
+  - every Round 1 profile without `COVSOURCE` took 91 to 106 s;
+  - `policy-tendency` took 577 to 603 s;
+  - every `COVSOURCE 1` profile took under 1 s.
+
+  The cost is the Round 1 profiles flooding on the structure built to resemble dpkg, which is the fault W1b removes.
+  No precision, recall, count or verdict was read.
+
+## D5. After the results (none affects a verdict)
+
+- `post/diagnose.py`: a post-hoc, exploratory look at which admitted rules produced strict's wrong answers
+  (`CONFIRMATION.md`). It decides nothing the pre-registration fixed.
+- The `COVSOURCE` help text in `CONFIG` described development iteration 1 ("exceeds (z > 3)"). It now describes
+  the frozen test (z > 3 above c / RATE_REL). The behaviour is unchanged; gate 221/221 and the unit tests after the
+  change.
+- `docs/POLICIES.md`: the `tendency-stab90` recipe was removed, as the pre-fixed decision for a failed H4 requires.

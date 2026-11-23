@@ -37,12 +37,15 @@ with egm.open("facts.txt", settings={"COVSOURCE": 1}) as kb:
 
 ## Choosing
 
-- **You want answers you can act on without checking:** `strict`, and read its limits in POLICIES.md. Add
-  `COVSOURCE 1` on data with several values per subject (dependency graphs, includes, memberships).
+- **You want answers you can act on without checking:** `strict`, and read its limits in POLICIES.md and
+  EVIDENCE.md: it is not a precision guarantee (Round 2 found an inverse rule judged by its own rate). Add
+  `COVSOURCE 1` on dependency-like data with several values per subject; it removed floods on dpkg and its
+  synthetic twin.
 - **You want everything the data supports, labelled:** `tendency`. Answers from rules that only pass the looser
   stratum are labelled `extension`.
-- **Your data has groups with different behaviour:** `CONDITIONS 1`. Check the conditions it learns with
-  `egm evidence` (a rule with `if ...`).
+- **Your data has groups with different behaviour:** `CONDITIONS 1`, recommended by Round 2's confirmation
+  (perfect on a condition held by 8% of subjects, where everything without it was 1.4% precise; no harm elsewhere).
+  `CONDHOLDOUT 1` is the stricter variant. Check the conditions it learns with `egm evidence` (a rule with `if ...`).
 - **You want a stricter trade than the built-ins:** clone one and set thresholds (POLICIES.md, Recipes).
 
 What each choice achieved on unseen data is in `studies/round2/CONFIRMATION.md` (Round 2) and

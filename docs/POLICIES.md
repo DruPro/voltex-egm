@@ -41,7 +41,7 @@ Unknown fields and out-of-range values are errors, never ignored.
 | thresholds | `maxUnknownShare` | share of the rule's cases whose answer is unknown (E?) | 0 to 1 | 1 |
 | thresholds | `minAgreementToCoverage` | several values per subject, where a coverage estimate exists: agreement divided by the conclusion relation's estimated completeness. A true rule is near 1 whatever the coverage, so this separates incomplete data from an unreliable rule, which a fixed agreement floor can't | >= 0 | 0 |
 | thresholds | `minCoverageSourceAgreement` | Round 2: coverage from a source rule whose own known-answer agreement is below this is not used, and reliability falls back to the rate (as with no estimate). Acts at admission only, so it can't undo induction's use of a bad estimate; for that use `COVSOURCE 1` (`docs/EVIDENCE.md`) | 0 to 1 | 0 |
-| thresholds | `minStability` | Round 2: share of 50 subject-bootstrap resamples on which the rule still passes acceptance (`stability` in the evidence vector) | 0 to 1 | 0 |
+| thresholds | `minStability` | Round 2: share of 50 subject-bootstrap resamples on which the rule still passes acceptance (`stability` in the evidence vector). At 0.9 on tendency it raised precision in development but on no confirmation world, and cost recall there | 0 to 1 | 0 |
 | validation | `required` | the rule must pass validation | true / false | false |
 | validation | `method` | `internal_replication` (`split_half` is accepted as the same method) | | internal_replication |
 | validation | `split` | `hash` (subject names) or `blocked` (first appearance in ingestion order) | | hash |
@@ -123,15 +123,6 @@ same module as the SDK (`egm/policy.py`), so both validate and execute identical
 Each recipe is a policy you create once and then name in `ask`, `infer` or `compare`. Start from a built-in with
 `clone` when you want its validation settings; start from `create` when you want only what you name.
 
-**Only rules that hold up under resampling** (the Round 2 W2 profile): the tendency policy with both strata requiring
-stability 0.9. On noisy or incomplete development data it trades a few points of recall for precision.
-
-```
-egm policy clone tendency tendency-stab90
-egm policy configure tendency-stab90 --set thresholds.minStability=0.9 --set extension.thresholds.minStability=0.9
-egm policy compare facts.txt tendency tendency-stab90
-```
-
 **Market or log data, where neighbouring records are correlated:** replicate on a chronological split, so a rule must
 hold in the later half of the data as well as the earlier one.
 
@@ -146,7 +137,9 @@ egm policy create exact --set thresholds.minAgreement=0.99 --set thresholds.minS
                         --set inference.shapes=inverse,chain --set inference.maxDepth=2
 ```
 
-**Ignore reliability that rests on a weak coverage source** (W1a; for the induction-side fix use `COVSOURCE 1`):
+**Ignore reliability that rests on a weak coverage source** (W1a). This also stops an inverse rule from being
+judged by its own rate: the defect Round 2 found behind strict's confident errors (`studies/round2/CONFIRMATION.md`).
+It hasn't been tested as a candidate; for the induction-side fix of contradicted estimates use `COVSOURCE 1`:
 
 ```
 egm policy clone strict strict-covsrc

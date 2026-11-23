@@ -1928,7 +1928,7 @@ static std::vector<Setting>& settings() {
             VTX_SETTING("TREES", "induction", true, true, "tree-shaped rules joining several branches at one entity (1/0) (studies/trees)", F_TREES, int),
             VTX_SETTING("REPLICATE", "induction", true, true, "a rule must also hold in each half of its subjects (1/0) (studies/noise)", F_REPL, int),
             VTX_SETTING("TENDENCYSTEPS", "inference", true, true, "most tendency-tier steps one proof may contain, -1 = no limit (studies/tendency)", F_TSTEPS, int),
-            VTX_SETTING("COVSOURCE", "induction", true, true, "1 = a coverage estimate that another rule concluding the relation exceeds (z > 3) is refuted and not used; 0 = shipped (studies/round2)", F_COVSRC, int),
+            VTX_SETTING("COVSOURCE", "induction", true, true, "1 = a coverage estimate c is refuted and not used when another rule concluding the relation is confirmed significantly (z > 3) above c / RATE_REL; 0 = shipped (studies/round2)", F_COVSRC, int),
             VTX_SETTING("DEPTH", "inference", false, true, "inference rounds, 0 = until nothing new (studies/depth)", DEPTH, int),
             VTX_SETTING("CORROBORATE", "inference", false, true, "a contradiction needs two distinct rules (1/0)", F_CORROB, int),
             VTX_SETTING("OBS", "evidence", false, true, "project the observation log (1/0)", F_OBS, int),

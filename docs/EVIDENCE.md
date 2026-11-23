@@ -65,10 +65,18 @@ concluding `depends on` look perfect and flooded the answers in two of five data
 concluding the relation is confirmed significantly more often (z > 3) than `cov / 0.8` allows, the estimate is
 `refuted` and not used, and it does not enter the median. A relation that is c complete can't confirm a rule more
 often than c; 0.8 is the tolerance acceptance already uses. On development data this removed the dpkg flood
-(precision 0.52 → 0.86) and changed nothing on any synthetic world.
+(precision 0.52 → 0.86) and changed nothing on any synthetic world. On the Round 2 confirmation it cut the flood on
+the dpkg-like world from about 400,000 new facts to 1,308 while keeping every hidden fact, and changed nothing
+elsewhere; it stays opt-in because its strict profile lost that world's recall (H1).
 
-**Reading it:** a rule with `rel` near 1 but `agree` far below `cov`... check `cov_source`. `rel` of 1.00 from a
-`global` or low-agreement `inverse` source is an assumption, not evidence.
+**Reading it:** when `rel` is near 1 but `agree` is low, check `cov_source` and `cov_source_agree`. `rel` of 1.00
+from a `global` or low-agreement `inverse` source is an assumption, not evidence.
+
+**Known defect (Round 2 confirmation):** an inverse rule can be the coverage source for its own conclusion relation.
+Its reliability is then its rate divided by its own rate, 1.0, whatever its agreement. On the Round 2
+`reversed_weak` world, a decoy with agreement 0.14 was admitted by strict this way. `COVSOURCE` can't catch it (the
+source is excluded from the refutation test). A policy with `minCoverageSourceAgreement` can. A fix in induction is
+the first item for Round 3.
 
 ## Stability
 
@@ -79,8 +87,8 @@ rule accepted on 0.4 of resamples is sitting on the acceptance threshold; one at
 It measures the sampling variation of the rule's own counts, not of the estimator: the dpkg flood rule has stability
 1.0, because given the (bad) coverage estimate it passes on every resample. Use `COVSOURCE` for that fault and
 `stability` for borderline rules. As a policy threshold (`minStability`), 0.9 raised the tendency policy's precision
-on noisy and incomplete development worlds (hidden-cov70: 0.919 → 0.973) at a small recall cost; see
-`studies/round2/RESULTS.md` for the confirmation.
+on noisy and incomplete development worlds (hidden-cov70: 0.919 → 0.973), but on the Round 2 confirmation it raised
+precision nowhere and only lowered recall (`chain_noise` 1.0 → 0.40). Treat it as a diagnostic field.
 
 ## Validation
 
