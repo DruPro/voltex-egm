@@ -40,6 +40,8 @@ Unknown fields and out-of-range values are errors, never ignored.
 | thresholds | `minLift` | rate over the conclusion's base rate | >= 0 | 0 |
 | thresholds | `maxUnknownShare` | share of the rule's cases whose answer is unknown (E?) | 0 to 1 | 1 |
 | thresholds | `minAgreementToCoverage` | several values per subject, where a coverage estimate exists: agreement divided by the conclusion relation's estimated completeness. A true rule is near 1 whatever the coverage, so this separates incomplete data from an unreliable rule, which a fixed agreement floor can't | >= 0 | 0 |
+| thresholds | `minCoverageSourceAgreement` | Round 2: coverage from a source rule whose own known-answer agreement is below this is not used, and reliability falls back to the rate (as with no estimate). Acts at admission only, so it can't undo induction's use of a bad estimate; for that use `COVSOURCE 1` (`docs/EVIDENCE.md`) | 0 to 1 | 0 |
+| thresholds | `minStability` | Round 2: share of 50 subject-bootstrap resamples on which the rule still passes acceptance (`stability` in the evidence vector) | 0 to 1 | 0 |
 | validation | `required` | the rule must pass validation | true / false | false |
 | validation | `method` | `internal_replication` (`split_half` is accepted as the same method) | | internal_replication |
 | validation | `split` | `hash` (subject names) or `blocked` (first appearance in ingestion order) | | hash |
@@ -115,6 +117,48 @@ egm ask facts.txt "x is based in ?" --policy strict@builtin-1
 
 `--set` takes `SECTION.FIELD=VALUE` or `extension.SECTION.FIELD=VALUE`; shapes take a comma list. The CLI calls the
 same module as the SDK (`egm/policy.py`), so both validate and execute identically.
+
+## Recipes
+
+Each recipe is a policy you create once and then name in `ask`, `infer` or `compare`. Start from a built-in with
+`clone` when you want its validation settings; start from `create` when you want only what you name.
+
+**Only rules that hold up under resampling** (the Round 2 W2 profile): the tendency policy with both strata requiring
+stability 0.9. On noisy or incomplete development data it trades a few points of recall for precision.
+
+```
+egm policy clone tendency tendency-stab90
+egm policy configure tendency-stab90 --set thresholds.minStability=0.9 --set extension.thresholds.minStability=0.9
+egm policy compare facts.txt tendency tendency-stab90
+```
+
+**Market or log data, where neighbouring records are correlated:** replicate on a chronological split, so a rule must
+hold in the later half of the data as well as the earlier one.
+
+```
+egm policy create chrono --set thresholds.minSampleSize=20 --set validation.required=true --set validation.split=blocked
+```
+
+**Only exact one-value rules, no long chains:** lookups you can act on without checking.
+
+```
+egm policy create exact --set thresholds.minAgreement=0.99 --set thresholds.minSampleSize=30 \
+                        --set inference.shapes=inverse,chain --set inference.maxDepth=2
+```
+
+**Ignore reliability that rests on a weak coverage source** (W1a; for the induction-side fix use `COVSOURCE 1`):
+
+```
+egm policy clone strict strict-covsrc
+egm policy configure strict-covsrc --set thresholds.minCoverageSourceAgreement=0.5
+```
+
+**Seeing what a policy admits and why:** `egm evidence facts.txt --policy NAME` lists each rule with the stratum
+that admits it (`core`, `extension`, `none`) beside its evidence. A rule a policy rejects is still learned; it just
+doesn't take part in that policy's inference.
+
+Settings and policies combine: settings change what is learned (`--set COVSOURCE=1`, `--set CONDITIONS=1`), policies
+change what is used. `egm infer facts.txt --set COVSOURCE=1 --policy tendency-stab90`.
 
 ## SDK correction: `strict=True` (voltex3)
 

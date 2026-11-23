@@ -110,6 +110,22 @@ Properties: `is_current`, `is_history`, `is_strict`. `to_dict()` is JSON-ready.
 for an unknown key), `save(path)`, `load(path)`, `version()`, and `cmd(line) -> list[str]` for any
 raw engine command. `save` writes `path` plus `path.obs` (the observation log); keep them together.
 
+## Evidence and policies (voltex3, experimental)
+
+```python
+with egm.open("facts.txt", settings={"COVSOURCE": 1}) as kb:
+    kb.evidence()                       # each rule's evidence vector: list of dicts (docs/EVIDENCE.md)
+    kb.evidence(include_rejected=True)  # every candidate rule
+    kb.apply_policy("strict")           # or a name@version, or an egm.Policy
+    kb.infer_all(policy="tendency")     # Fact.tier is core | extension, Fact.policy is name@version
+    kb.compare_policies(["tendency", "strict"]).summary
+    kb.snapshot()                       # identifier of the evidence state
+```
+
+Fields of `evidence()`: `accepted, rule, n, e_plus, e_minus, e_unknown, agree, lift, z, base, cov, rel, tier,
+one_value, validation, admit, cov_source, cov_source_agree, stability`. Policies, their schema and the registry are in
+`docs/POLICIES.md`.
+
 ## Errors
 
 All derive from `egm.EgmError`.

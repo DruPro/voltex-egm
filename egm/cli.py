@@ -7,6 +7,7 @@
   egm infer KB [--policy NAME[@V]] [--json]    every derived fact, under a policy (default legacy)
   egm policy list|show|create|configure|clone|versions|export|import|compare   custom inference policies
   egm rules KB                                 learned relations and rules
+  egm evidence KB [--all] [--policy NAME[@V]]  each rule's evidence vector (docs/EVIDENCE.md)
   egm observe KB --source S --record R ...     add source-aware evidence, save back
   egm run KB script.txt [--save]               raw engine commands, one per line
   egm shell KB                                 interactive session
@@ -248,6 +249,22 @@ def cmd_rules(a):
                 print(l)
 
 
+EV_COLS = ("admit", "tier", "n", "e_plus", "e_minus", "agree", "rel", "cov", "cov_source", "stability", "validation")
+
+
+def cmd_evidence(a):
+    with open_kb(a.kb, parse_settings(a.set, getattr(a, 'settings', None))) as e:
+        pol = e.apply_policy(a.policy or "legacy", _registry(a))
+        ev = e.evidence(include_rejected=a.all)
+        if a.json:
+            print(json.dumps({"policy": pol.id, "snapshot": e.snapshot(), "rules": ev}, indent=1)); return
+        print(f"# policy {pol.id}  {len(ev)} rules" + ("" if a.all else " (accepted; --all for every candidate)"))
+        print("\t".join(("accepted",) + EV_COLS + ("rule",)))
+        f = lambda v: "undef" if v is None else (f"{v:.3f}" if isinstance(v, float) else str(v))
+        for r in ev:
+            print("\t".join([("yes" if r["accepted"] else "no")] + [f(r.get(c)) for c in EV_COLS] + [r["rule"]]))
+
+
 def cmd_observe(a):
     facts = list(a.fact or [])
     if a.file:
@@ -444,6 +461,10 @@ def main(argv=None):
     s.add_argument("--policy-dir", help="policy registry (default $EGM_POLICY_DIR or ~/.egm/policies)")
     s = with_set(add("infer", cmd_infer, "every derived fact, under an inference policy"))
     s.add_argument("kb"); s.add_argument("--policy", metavar="NAME[@V]", help="default legacy")
+    s.add_argument("--policy-dir"); s.add_argument("--json", action="store_true")
+    s = with_set(add("evidence", cmd_evidence, "each learned rule's evidence vector (docs/EVIDENCE.md)"))
+    s.add_argument("kb"); s.add_argument("--all", action="store_true", help="include rejected candidates")
+    s.add_argument("--policy", metavar="NAME[@V]", help="show which stratum admits each rule (default legacy)")
     s.add_argument("--policy-dir"); s.add_argument("--json", action="store_true")
     s = add("policy", cmd_policy, "create, configure, inspect, version, export, import and compare inference policies")
     s.add_argument("--policy-dir", help="policy registry (default $EGM_POLICY_DIR or ~/.egm/policies)")

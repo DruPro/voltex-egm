@@ -113,6 +113,41 @@ def dry():
         print("  nesting", r["nesting"], "cf", r["counterfactual"], "conds", {k: len(v) for k, v in r["conditions_learned"].items()})
 
 
+def worker(kind, items):
+    """Resumable: one file per (world, seed) in results/<kind>/; existing files are skipped (DEVIATIONS D1)."""
+    d = os.path.join(RES, kind); os.makedirs(d, exist_ok=True)
+    for item in items:
+        name, seed = item.rsplit(":", 1); seed = int(seed); f = os.path.join(d, f"{name}_{seed}.json")
+        if os.path.exists(f):
+            continue
+        t = time.time()
+        if kind == "sealed":
+            rec = run_world(sealed_world(name, seed), None, 20, True)
+        else:
+            import realdata2
+            w = realdata2.load(name, seed); rec = run_world(w, {"MAXWORDS": w.maxwords}, 0, False)
+        json.dump(rec, open(f + ".tmp", "w")); os.replace(f + ".tmp", f)
+        print(name, seed, f"{time.time() - t:.1f}s", flush=True)
+
+
+def merge():
+    for kind, names in (("sealed", STRUCTURES), ("real", None)):
+        d = os.path.join(RES, kind)
+        if not os.path.isdir(d):
+            continue
+        if names is None:
+            import realdata2; names = list(realdata2.SETS)
+        seeds = SEEDS if kind == "sealed" else list(__import__("realdata2").SEEDS)
+        out = [json.load(open(os.path.join(d, f"{n}_{s}.json"))) for n in names for s in seeds if os.path.exists(os.path.join(d, f"{n}_{s}.json"))]
+        json.dump(out, open(os.path.join(RES, f"{kind}.json"), "w"))
+        print(kind, len(out), "runs merged")
+
+
 if __name__ == "__main__":
     os.makedirs(RES, exist_ok=True)
-    {"sealed": sealed, "real": real, "dry": dry}[sys.argv[1]]()
+    if sys.argv[1] == "worker":
+        worker(sys.argv[2], sys.argv[3:])
+    elif sys.argv[1] == "merge":
+        merge()
+    else:
+        {"sealed": sealed, "real": real, "dry": dry}[sys.argv[1]]()

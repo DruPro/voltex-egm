@@ -385,7 +385,11 @@ voltex-egm/
 | [docs/LEARNED_PROGRAMS.md](docs/LEARNED_PROGRAMS.md) | Research report: learned rules as programs (computation, the harness, inferred programs, `REFRESH` for trees) |
 | [docs/SDK.md](docs/SDK.md) | Python SDK reference, including an LLM-tool example |
 | [docs/MCP.md](docs/MCP.md) | MCP server: client setup, tools, protocol |
+| [docs/VOLTEX3.md](docs/VOLTEX3.md) | voltex3 (experimental) overview: evidence, policies, the research tooling, a quickstart, and which guide covers what |
 | [docs/POLICIES.md](docs/POLICIES.md) | voltex3 (experimental): custom, versioned inference policies in the SDK and CLI; built-ins legacy, strict, tendency |
+| [docs/EVIDENCE.md](docs/EVIDENCE.md) | voltex3: each rule's evidence vector, field by field; coverage and when not to trust it; stability; validation; conditions |
+| [docs/RESEARCH_ROUNDS.md](docs/RESEARCH_ROUNDS.md) | The research tooling: capability suite, sealed generators, real-data sets, harness validation, pre-registration, confirmation |
+| [docs/DEVELOPING.md](docs/DEVELOPING.md) | For implementers: the pipeline and its layers in the code, the rules every change keeps, recipes, open work |
 | [docs/SETTINGS.md](docs/SETTINGS.md) | Every engine setting: default, owning layer, stable or experimental |
 | [docs/CHOOSING_SETTINGS.md](docs/CHOOSING_SETTINGS.md) | Which settings to use for what you're trying to do, when not to, and what each costs |
 | [docs/EVALUATION.md](docs/EVALUATION.md) | How engine changes are judged: capability matrix, protocol, improvement vs regression |
@@ -413,6 +417,10 @@ voltex-egm/
   - studies: `capability` (architecture-independent suite), `evidence_policy` (Round 1, confirmed in part:
     `CONFIRMATION.md`), `sealed` (independent generator), `shared_conditions` (conditions through the shared
     evaluator).
+  - Round 2 (`studies/round2`): `COVSOURCE` (a coverage estimate the evidence contradicts is refused), `stability`
+    and `minStability` (subject bootstrap), `cov_source` fields and `minCoverageSourceAgreement`, `CONDHOLDOUT`
+    (conditions proposed out of sample), a second independent generator (`studies/sealed2`), `egm evidence`; guides
+    `docs/VOLTEX3.md`, `docs/EVIDENCE.md`, `docs/RESEARCH_ROUNDS.md`, `docs/DEVELOPING.md`.
 
 - **Mimic and its playground** (`lang/mimic`):
   - a language taught by example: functions, Turing machines, circuits and automata;
