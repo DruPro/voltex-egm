@@ -1,4 +1,4 @@
-"""Round 2 dev (W1): COVSOURCE 0 vs 1, and policies with/without minCoverageSourceAgreement, on development worlds."""
+"""Round 2 dev (W1; W2=1: minStability, all with COVSOURCE 1): COVSOURCE 0 vs 1, and policies with/without minCoverageSourceAgreement, on development worlds."""
 import json, os, random, statistics, sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 T = os.path.join(ROOT, "studies/capability/tools")
@@ -12,10 +12,17 @@ def pol(name, **thr):
     if ext: ext["thresholds"] = dict(ext["thresholds"], **thr)
     return dataclasses.replace(p, name=name + "-w1a", version="dev", builtin=False,
                                thresholds=dict(p.thresholds, **thr), extension=ext)
-PROF = {"default": lambda: EGMAdapter({}), "default+COVSRC": lambda: EGMAdapter({"COVSOURCE": 1}),
+PROF_W1 = {"default": lambda: EGMAdapter({}), "default+COVSRC": lambda: EGMAdapter({"COVSOURCE": 1}),
         "strict": lambda: EGMAdapter(policy="strict"), "strict+COVSRC": lambda: EGMAdapter({"COVSOURCE": 1}, policy="strict"),
         "tendency": lambda: EGMAdapter(policy="tendency"), "tendency+COVSRC": lambda: EGMAdapter({"COVSOURCE": 1}, policy="tendency"),
         "tendency+W1a.5": lambda: EGMAdapter(policy=pol("tendency", minCoverageSourceAgreement=0.5))}
+C = {"COVSOURCE": 1}
+PROF_W2 = {"strict": lambda: EGMAdapter(C, policy="strict"),
+           "strict+stab.9": lambda: EGMAdapter(C, policy=pol("strict", minStability=0.9)),
+           "tendency": lambda: EGMAdapter(C, policy="tendency"),
+           "tendency+stab.9": lambda: EGMAdapter(C, policy=pol("tendency", minStability=0.9)),
+           "tendency+stab.6": lambda: EGMAdapter(C, policy=pol("tendency", minStability=0.6))}
+PROF = PROF_W2 if os.environ.get("W2") else PROF_W1
 worlds = [c[0] for c in cworlds.CATALOGUE] + ["dpkg"]
 out = {}
 for wn in (sys.argv[1:] or worlds):

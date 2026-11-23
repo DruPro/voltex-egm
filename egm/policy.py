@@ -73,6 +73,8 @@ THRESHOLDS = {
     # Round 2 W1a: coverage from a source rule whose own agreement is below this is not used (reliability falls back
     # to the rate, as with no estimate). 0 = off. Experimental.
     "minCoverageSourceAgreement": ("share", 0.0, "minCoverageSourceAgreement"),
+    # Round 2 W2: admit only rules accepted on at least this share of subject-bootstrap resamples. 0 = off. Experimental.
+    "minStability": ("share", 0.0, "minStability"),
 }
 VALIDATION = {"required": ("bool", False, "replication"), "method": ("method", "internal_replication", None),
               "split": ("split", "hash", "split"), "minPerHalf": ("count", 5, "minPerHalf"),

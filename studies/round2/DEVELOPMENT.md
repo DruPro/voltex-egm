@@ -63,3 +63,70 @@ gives recall 0; whether that is acceptable is a pre-registration question, not a
 reported field and an available policy threshold. It is not adopted as the fix.
 
 Open for the profile run: the matched settings (TREES, CHAIN 3, CONDITIONS, DEPTH 0) with `COVSOURCE 1`.
+
+## W2. Stability under a subject bootstrap
+
+Engine: `stability()` is the share of 50 resamples (head subjects, with replacement, seeded from the rule's text) on
+which the shipped acceptance test still passes. The base rate and the coverage estimate are held fixed. It is an
+evaluation, recomputed per build like validation, and shares one prediction capture with internal replication
+(`captured()`). Evidence field `stability`; policy field `minStability` (core and extension). Gate 221/221.
+
+### Iteration 1 (`dev/stab_dpkg.py`, `dev/w2_iter1.json`; COVSOURCE 1 for the policy comparison)
+
+- **Hypothesis "it catches the dpkg flood within one split": refuted.** Transitive `depends on` has stability 1.0
+  in both flooding splits. Under the bad coverage estimate it passes on every resample: the fault is in the
+  estimator, which the bootstrap holds fixed (the limit stated in DESIGN). Its weak source rule scores 0.82 to
+  0.86. Other borderline dpkg rules score 0.4 to 0.6.
+- **As a policy threshold it is a selectivity dial, not a fix:**
+
+| world | tendency → tendency + `minStability 0.9` (precision / recall / AURC) |
+|---|---|
+| hidden-cov70 | 0.919 / 0.570 / 0.007 → 0.973 / 0.547 / 0.002 |
+| hidden-cov50 | 0.964 / 0.507 / 0.003 → 0.993 / 0.482 / 0.001 |
+| hidden-cov30 | 0.986 / 0.395 / 0.002 → 0.995 / 0.367 / 0.001 |
+| company-noise15 | 0.989 / 0.783 / 0.001 → 0.994 / 0.700 / 0.001 |
+| dpkg | 0.856 / 0.165 / 0.078 → 0.844 / 0.143 / 0.108 |
+| company, harvest, remainders, controls | identical |
+
+  Strict is unchanged everywhere (replication already removes what stability would). At 0.6 the effect is about a
+  third as large. Reading: stability adds an evidence component and a usable dial for the tendency stratum. It
+  does not change a built-in policy.
+
+## W3. Conditions proposed out of sample (`CONDHOLDOUT 1`)
+
+On top of `CONDITIONS 1`. Head subjects are split with the replication hash. A condition (relation and values) is
+proposed on one half and must pass the shipped condition tests on the other half alone, with z corrected for the
+number of candidates (Bonferroni, as in `mineTrees`), and then the shipped test on all subjects. Conditions name
+attribute values directly, not word categories, so the Round 1 note "build categories on the discovery half" does
+not apply to them. Gate 221/221. Worlds: harvest and hidden (development), Round 1 sealed `conditional`,
+`conditional_decoy` and `conditional_control` at seeds 1000 to 1004 (Round 1 confirmation, now development).
+
+- **Iteration 1 (one direction):** the proxy condition `is from` on hidden-cov70 is gone. harvest and the three
+  conditional worlds are unchanged at precision and recall 1.0 (true condition found 5 of 5, no decoy, no condition
+  on the control). But the true condition `works as(farmer|miner)` on `harvests` (`hidden_world.py` line 39) is
+  lost in hidden-cov50 (shipped: 2 of 5 seeds) and hidden-cov70 (shipped: 2 of 5).
+- **Iteration 2 (cross-fit: each half proposes for the other, correction over both):** recovers it in 1 of 5
+  seeds on hidden-cov70, none on cov50. A temporary debug print (not committed) shows why. The `harvests` rule has
+  a few dozen head subjects with a known `works as`, so a held-out half sees 2 to 13 subjects inside the
+  condition. No half-sample test can confirm that, and the shipped search's 2 of 5 rests on the same thin
+  evidence. Stopped here; tuning further against these worlds would overfit them.
+
+| world, default profile | precision, CONDHOLDOUT 0 → 1 | recall | new |
+|---|---|---|---|
+| hidden-cov70 | 0.971 → 0.929 | 0.566 → 0.567 | 1,897 → 1,992 |
+| hidden-cov50 | 0.983 → 0.962 | 0.506 → 0.507 | 2,512 → 2,580 |
+| harvest, conditional, conditional_decoy, conditional_control, hidden-cov30 | identical | identical | identical |
+
+Strict is identical in every world; tendency follows default. Reading: held-out conditions remove the proxy, as
+targeted, and cost power where a condition rests on a handful of subjects. On these worlds the loss outweighs the
+gain at the default profile; whether it is the right trade is for confirmation, against `conditional_rare` (8% of
+subjects qualify) in the new generator.
+
+## Status of the candidates for pre-registration
+
+| candidate | layer | on development data |
+|---|---|---|
+| `COVSOURCE 1` (W1b) | induction | fixes dpkg; identical elsewhere |
+| `minCoverageSourceAgreement` (W1a) | policy | cannot fix dpkg (wrong layer); reported field kept |
+| `minStability` (W2) | policy | precision dial for tendency; strict unchanged |
+| `CONDHOLDOUT 1` (W3) | induction | removes the proxy; loses a thin true condition in 3 of 10 seeds where shipped found it in 4 |

@@ -1,0 +1,1784 @@
+{
+ "company": {
+  "strict": [
+   {
+    "precision": 1.0,
+    "recall": 0.4915254237288136,
+    "new": 580,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.5120274914089347,
+    "new": 596,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.493859649122807,
+    "new": 563,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.4896907216494845,
+    "new": 570,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.5077720207253886,
+    "new": 588,
+    "aurc": 0.0
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": 1.0,
+    "recall": 0.4915254237288136,
+    "new": 580,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.5120274914089347,
+    "new": 596,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.493859649122807,
+    "new": 563,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.4896907216494845,
+    "new": 570,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.5077720207253886,
+    "new": 588,
+    "aurc": 0.0
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 1.0,
+    "recall": 0.9677966101694915,
+    "new": 1142,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9596219931271478,
+    "new": 1117,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9605263157894737,
+    "new": 1095,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9493127147766323,
+    "new": 1105,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9585492227979274,
+    "new": 1110,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": 1.0,
+    "recall": 0.9677966101694915,
+    "new": 1142,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9596219931271478,
+    "new": 1117,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9605263157894737,
+    "new": 1095,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9493127147766323,
+    "new": 1105,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9585492227979274,
+    "new": 1110,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": 1.0,
+    "recall": 0.9677966101694915,
+    "new": 1142,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9596219931271478,
+    "new": 1117,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9605263157894737,
+    "new": 1095,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9493127147766323,
+    "new": 1105,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9585492227979274,
+    "new": 1110,
+    "aurc": 0.0
+   }
+  ]
+ },
+ "company-noise15": {
+  "strict": [
+   {
+    "precision": 1.0,
+    "recall": 0.21321793863099922,
+    "new": 271,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.22266560255387072,
+    "new": 279,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.22050447518307567,
+    "new": 271,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.21399839098954143,
+    "new": 266,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.21996753246753248,
+    "new": 271,
+    "aurc": 0.0
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": 1.0,
+    "recall": 0.21321793863099922,
+    "new": 271,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.22266560255387072,
+    "new": 279,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.22050447518307567,
+    "new": 271,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.21399839098954143,
+    "new": 266,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.21996753246753248,
+    "new": 271,
+    "aurc": 0.0
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 1.0,
+    "recall": 0.6553894571203777,
+    "new": 833,
+    "aurc": 0.0
+   },
+   {
+    "precision": 0.9945750452079566,
+    "recall": 0.8778930566640064,
+    "new": 1106,
+    "aurc": 0.000580192982194174
+   },
+   {
+    "precision": 0.9890310786106032,
+    "recall": 0.8803905614320586,
+    "new": 1094,
+    "aurc": 0.0009498733589699336
+   },
+   {
+    "precision": 0.96289592760181,
+    "recall": 0.8559935639581657,
+    "new": 1105,
+    "aurc": 0.00484154721733108
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.6436688311688312,
+    "new": 793,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": 1.0,
+    "recall": 0.6553894571203777,
+    "new": 833,
+    "aurc": 0.0
+   },
+   {
+    "precision": 0.9733455882352942,
+    "recall": 0.8451715881883479,
+    "new": 1088,
+    "aurc": 0.0029518286135027964
+   },
+   {
+    "precision": 0.9943052391799544,
+    "recall": 0.71033360455655,
+    "new": 878,
+    "aurc": 0.0001867125128513524
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.6444086886564763,
+    "new": 801,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.6436688311688312,
+    "new": 793,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": 1.0,
+    "recall": 0.6553894571203777,
+    "new": 833,
+    "aurc": 0.0
+   },
+   {
+    "precision": 0.9733455882352942,
+    "recall": 0.8451715881883479,
+    "new": 1088,
+    "aurc": 0.0029518286135027964
+   },
+   {
+    "precision": 0.9943052391799544,
+    "recall": 0.71033360455655,
+    "new": 878,
+    "aurc": 0.0001867125128513524
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.6444086886564763,
+    "new": 801,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.6436688311688312,
+    "new": 793,
+    "aurc": 0.0
+   }
+  ]
+ },
+ "hidden-cov30": {
+  "strict": [
+   {
+    "precision": 1.0,
+    "recall": 0.2926184926184926,
+    "new": 1883,
+    "aurc": 0.0
+   },
+   {
+    "precision": 0.9991759373712402,
+    "recall": 0.3729621654875423,
+    "new": 2427,
+    "aurc": 0.0004856642338523602
+   },
+   {
+    "precision": 0.9978373702422145,
+    "recall": 0.35340073529411764,
+    "new": 2312,
+    "aurc": 3.288210012417168e-05
+   },
+   {
+    "precision": 0.9921671018276762,
+    "recall": 0.3532692903625658,
+    "new": 2298,
+    "aurc": 0.0049007883374013956
+   },
+   {
+    "precision": 0.9948412698412699,
+    "recall": 0.3847452424800491,
+    "new": 2520,
+    "aurc": 0.0008571384644395414
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": 1.0,
+    "recall": 0.2926184926184926,
+    "new": 1883,
+    "aurc": 0.0
+   },
+   {
+    "precision": 0.9991759373712402,
+    "recall": 0.3729621654875423,
+    "new": 2427,
+    "aurc": 0.0004856642338523602
+   },
+   {
+    "precision": 0.9978373702422145,
+    "recall": 0.35340073529411764,
+    "new": 2312,
+    "aurc": 3.288210012417168e-05
+   },
+   {
+    "precision": 0.9921225382932166,
+    "recall": 0.3512550356368144,
+    "new": 2285,
+    "aurc": 0.004967735777466379
+   },
+   {
+    "precision": 0.9948371723590151,
+    "recall": 0.38443830570902393,
+    "new": 2518,
+    "aurc": 0.0008385311563638486
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 0.9597818677573279,
+    "recall": 0.4376068376068376,
+    "new": 2934,
+    "aurc": 0.003685357996543653
+   },
+   {
+    "precision": 0.9991759373712402,
+    "recall": 0.3729621654875423,
+    "new": 2427,
+    "aurc": 0.0004856642338523602
+   },
+   {
+    "precision": 0.9961449498843485,
+    "recall": 0.3958333333333333,
+    "new": 2594,
+    "aurc": 0.00027521884700023474
+   },
+   {
+    "precision": 0.9876084262701363,
+    "recall": 0.3704679268670592,
+    "new": 2421,
+    "aurc": 0.005128031657823854
+   },
+   {
+    "precision": 0.9896432681242808,
+    "recall": 0.39594843462246776,
+    "new": 2607,
+    "aurc": 0.0010758543327915428
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": 0.9975198412698413,
+    "recall": 0.3125097125097125,
+    "new": 2016,
+    "aurc": 0.00010243139415325765
+   },
+   {
+    "precision": 0.9991759373712402,
+    "recall": 0.3729621654875423,
+    "new": 2427,
+    "aurc": 0.0004856642338523602
+   },
+   {
+    "precision": 0.997651663405088,
+    "recall": 0.39047181372549017,
+    "new": 2555,
+    "aurc": 0.00022867440536996386
+   },
+   {
+    "precision": 0.9898862199747156,
+    "recall": 0.36396033467616984,
+    "new": 2373,
+    "aurc": 0.005097796622101354
+   },
+   {
+    "precision": 0.9907120743034056,
+    "recall": 0.3928790669122161,
+    "new": 2584,
+    "aurc": 0.0009910232742266674
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": 0.9717453505007153,
+    "recall": 0.4222222222222222,
+    "new": 2796,
+    "aurc": 0.0021692768576881257
+   },
+   {
+    "precision": 0.9991759373712402,
+    "recall": 0.3729621654875423,
+    "new": 2427,
+    "aurc": 0.0004856642338523602
+   },
+   {
+    "precision": 0.997651663405088,
+    "recall": 0.39047181372549017,
+    "new": 2555,
+    "aurc": 0.00022867440536996386
+   },
+   {
+    "precision": 0.987546699875467,
+    "recall": 0.3686086148125194,
+    "new": 2409,
+    "aurc": 0.005091708955098927
+   },
+   {
+    "precision": 0.9896432681242808,
+    "recall": 0.39594843462246776,
+    "new": 2607,
+    "aurc": 0.0010758543327915428
+   }
+  ]
+ },
+ "hidden-cov50": {
+  "strict": [
+   {
+    "precision": 0.9995608256477821,
+    "recall": 0.45859359258512994,
+    "new": 2277,
+    "aurc": 8.567627589954409e-06
+   },
+   {
+    "precision": 0.9954318936877077,
+    "recall": 0.49361614497528833,
+    "new": 2408,
+    "aurc": 0.0010925417897596113
+   },
+   {
+    "precision": 0.9973214285714286,
+    "recall": 0.4652228238234069,
+    "new": 2240,
+    "aurc": 0.00014508692376859046
+   },
+   {
+    "precision": 0.9954689623923878,
+    "recall": 0.4538318529229498,
+    "new": 2207,
+    "aurc": 0.0022522895981242565
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.4443548387096774,
+    "new": 2204,
+    "aurc": 0.0
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": 0.9995596653456627,
+    "recall": 0.45738464638323595,
+    "new": 2271,
+    "aurc": 8.613177248927941e-06
+   },
+   {
+    "precision": 0.9954318936877077,
+    "recall": 0.49361614497528833,
+    "new": 2408,
+    "aurc": 0.0010925417897596113
+   },
+   {
+    "precision": 0.997305792546026,
+    "recall": 0.4625156184922949,
+    "new": 2227,
+    "aurc": 0.000146811518493899
+   },
+   {
+    "precision": 0.9954689623923878,
+    "recall": 0.4538318529229498,
+    "new": 2207,
+    "aurc": 0.0022522895981242565
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.4443548387096774,
+    "new": 2204,
+    "aurc": 0.0
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 0.980078125,
+    "recall": 0.5055410034253476,
+    "new": 2560,
+    "aurc": 0.0008887665869447902
+   },
+   {
+    "precision": 0.8777892207346378,
+    "recall": 0.5265650741350906,
+    "new": 2913,
+    "aurc": 0.010127688452172656
+   },
+   {
+    "precision": 0.9862515163768703,
+    "recall": 0.5079133694294045,
+    "new": 2473,
+    "aurc": 0.0009628376704039671
+   },
+   {
+    "precision": 0.9874424445374633,
+    "recall": 0.487296013220409,
+    "new": 2389,
+    "aurc": 0.002709851192553956
+   },
+   {
+    "precision": 0.9862475442043221,
+    "recall": 0.5060483870967742,
+    "new": 2545,
+    "aurc": 0.0009363265055128114
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": 0.997845756139595,
+    "recall": 0.46665323393109004,
+    "new": 2321,
+    "aurc": 3.291608529227296e-05
+   },
+   {
+    "precision": 0.9903614457831326,
+    "recall": 0.5078253706754531,
+    "new": 2490,
+    "aurc": 0.0012903167275752376
+   },
+   {
+    "precision": 0.9887076537013801,
+    "recall": 0.4922948771345273,
+    "new": 2391,
+    "aurc": 0.000650520109729485
+   },
+   {
+    "precision": 0.9954689623923878,
+    "recall": 0.4538318529229498,
+    "new": 2207,
+    "aurc": 0.0022522895981242565
+   },
+   {
+    "precision": 0.9901920719248059,
+    "recall": 0.48850806451612905,
+    "new": 2447,
+    "aurc": 0.0005014589017152982
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": 0.9906199021207178,
+    "recall": 0.4894217207334274,
+    "new": 2452,
+    "aurc": 0.00027404689370742145
+   },
+   {
+    "precision": 0.87995787995788,
+    "recall": 0.5162685337726524,
+    "new": 2849,
+    "aurc": 0.009627600663445727
+   },
+   {
+    "precision": 0.9872375463153561,
+    "recall": 0.4993752603082049,
+    "new": 2429,
+    "aurc": 0.0007354488018087832
+   },
+   {
+    "precision": 0.9874424445374633,
+    "recall": 0.487296013220409,
+    "new": 2389,
+    "aurc": 0.002709851192553956
+   },
+   {
+    "precision": 0.9862475442043221,
+    "recall": 0.5060483870967742,
+    "new": 2545,
+    "aurc": 0.0009363265055128114
+   }
+  ]
+ },
+ "hidden-cov70": {
+  "strict": [
+   {
+    "precision": 0.9941724941724942,
+    "recall": 0.5294847920546245,
+    "new": 1716,
+    "aurc": 0.0005170071367212493
+   },
+   {
+    "precision": 0.9886492622020431,
+    "recall": 0.5296442687747036,
+    "new": 1762,
+    "aurc": 0.0005358614354089981
+   },
+   {
+    "precision": 0.9884551951621771,
+    "recall": 0.5559678416821274,
+    "new": 1819,
+    "aurc": 0.0006632729416641129
+   },
+   {
+    "precision": 0.9987405541561712,
+    "recall": 0.48890258939580766,
+    "new": 1588,
+    "aurc": 6.185603962256566e-05
+   },
+   {
+    "precision": 0.9917984768599882,
+    "recall": 0.5166310649984742,
+    "new": 1707,
+    "aurc": 0.0005654894689877615
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": 0.9941520467836257,
+    "recall": 0.5276225946617008,
+    "new": 1710,
+    "aurc": 0.0005207391134213992
+   },
+   {
+    "precision": 0.9886169607285145,
+    "recall": 0.5281240498631803,
+    "new": 1757,
+    "aurc": 0.0005389699773977177
+   },
+   {
+    "precision": 0.9884233737596472,
+    "recall": 0.5544217687074829,
+    "new": 1814,
+    "aurc": 0.0006670150540569483
+   },
+   {
+    "precision": 0.9987317691819911,
+    "recall": 0.4855117139334155,
+    "new": 1577,
+    "aurc": 5.347474495523572e-05
+   },
+   {
+    "precision": 0.9917984768599882,
+    "recall": 0.5166310649984742,
+    "new": 1707,
+    "aurc": 0.0005654894689877615
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 0.9786096256684492,
+    "recall": 0.5679702048417132,
+    "new": 1870,
+    "aurc": 0.0013873729401629785
+   },
+   {
+    "precision": 0.9035608308605341,
+    "recall": 0.5554879902705989,
+    "new": 2022,
+    "aurc": 0.006316295847968131
+   },
+   {
+    "precision": 0.9732052578361982,
+    "recall": 0.5952380952380952,
+    "new": 1978,
+    "aurc": 0.0019929451754118646
+   },
+   {
+    "precision": 0.8430097538318625,
+    "recall": 0.5594944512946979,
+    "new": 2153,
+    "aurc": 0.01580934153993402
+   },
+   {
+    "precision": 0.8971291866028708,
+    "recall": 0.5721696673787,
+    "new": 2090,
+    "aurc": 0.00806843332599543
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": 0.9909194097616345,
+    "recall": 0.5418994413407822,
+    "new": 1762,
+    "aurc": 0.0007309529732959909
+   },
+   {
+    "precision": 0.9850828729281768,
+    "recall": 0.5421100638491942,
+    "new": 1810,
+    "aurc": 0.0009376369609261494
+   },
+   {
+    "precision": 0.985239852398524,
+    "recall": 0.577922077922078,
+    "new": 1897,
+    "aurc": 0.0012323562442032678
+   },
+   {
+    "precision": 0.9845183486238532,
+    "recall": 0.5292848335388409,
+    "new": 1744,
+    "aurc": 0.0009611526421585796
+   },
+   {
+    "precision": 0.9209302325581395,
+    "recall": 0.5437900518767165,
+    "new": 1935,
+    "aurc": 0.004607703808726579
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": 0.9796246648793566,
+    "recall": 0.5670391061452514,
+    "new": 1865,
+    "aurc": 0.00141896495066069
+   },
+   {
+    "precision": 0.9035608308605341,
+    "recall": 0.5554879902705989,
+    "new": 2022,
+    "aurc": 0.006316295847968131
+   },
+   {
+    "precision": 0.9852786540483701,
+    "recall": 0.5794681508967223,
+    "new": 1902,
+    "aurc": 0.00122569845136268
+   },
+   {
+    "precision": 0.9846851956891662,
+    "recall": 0.5351418002466092,
+    "new": 1763,
+    "aurc": 0.0009542969335628653
+   },
+   {
+    "precision": 0.9238191975622143,
+    "recall": 0.5550808666463228,
+    "new": 1969,
+    "aurc": 0.004526874076090244
+   }
+  ]
+ },
+ "gates": {
+  "strict": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ]
+ },
+ "lineage": {
+  "strict": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ]
+ },
+ "harvest": {
+  "strict": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 0.02666666666666667,
+    "recall": 1.0,
+    "new": 600,
+    "aurc": 0.9686472195260365
+   },
+   {
+    "precision": 0.04019292604501608,
+    "recall": 0.9259259259259259,
+    "new": 622,
+    "aurc": 0.9565670848701856
+   },
+   {
+    "precision": 0.02086677367576244,
+    "recall": 1.0,
+    "new": 623,
+    "aurc": 0.9887932659911578
+   },
+   {
+    "precision": 0.03425774877650897,
+    "recall": 1.0,
+    "new": 613,
+    "aurc": 0.9709135431827205
+   },
+   {
+    "precision": 0.02280130293159609,
+    "recall": 1.0,
+    "new": 614,
+    "aurc": 0.9805563896562152
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": 0.02666666666666667,
+    "recall": 1.0,
+    "new": 600,
+    "aurc": 0.9686472195260365
+   },
+   {
+    "precision": 0.04019292604501608,
+    "recall": 0.9259259259259259,
+    "new": 622,
+    "aurc": 0.9565670848701856
+   },
+   {
+    "precision": 0.02086677367576244,
+    "recall": 1.0,
+    "new": 623,
+    "aurc": 0.9887932659911578
+   },
+   {
+    "precision": 0.03425774877650897,
+    "recall": 1.0,
+    "new": 613,
+    "aurc": 0.9709135431827205
+   },
+   {
+    "precision": 0.02280130293159609,
+    "recall": 1.0,
+    "new": 614,
+    "aurc": 0.9805563896562152
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": 0.02666666666666667,
+    "recall": 1.0,
+    "new": 600,
+    "aurc": 0.9686472195260365
+   },
+   {
+    "precision": 0.04019292604501608,
+    "recall": 0.9259259259259259,
+    "new": 622,
+    "aurc": 0.9565670848701856
+   },
+   {
+    "precision": 0.02086677367576244,
+    "recall": 1.0,
+    "new": 623,
+    "aurc": 0.9887932659911578
+   },
+   {
+    "precision": 0.03425774877650897,
+    "recall": 1.0,
+    "new": 613,
+    "aurc": 0.9709135431827205
+   },
+   {
+    "precision": 0.02280130293159609,
+    "recall": 1.0,
+    "new": 614,
+    "aurc": 0.9805563896562152
+   }
+  ]
+ },
+ "remainders": {
+  "strict": [
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "new": 39,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.8444444444444444,
+    "new": 38,
+    "aurc": 0.0
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 1.0,
+    "recall": 0.9555555555555556,
+    "new": 43,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "new": 42,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": 1.0,
+    "recall": 0.9555555555555556,
+    "new": 43,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "new": 42,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": 1.0,
+    "recall": 0.9555555555555556,
+    "new": 43,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "new": 42,
+    "aurc": 0.0
+   },
+   {
+    "precision": 1.0,
+    "recall": 0.9111111111111111,
+    "new": 41,
+    "aurc": 0.0
+   }
+  ]
+ },
+ "random_links": {
+  "strict": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": null,
+    "new": 0,
+    "aurc": null
+   }
+  ]
+ },
+ "dpkg": {
+  "strict": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "strict+stab.9": [
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   },
+   {
+    "precision": null,
+    "recall": 0.0,
+    "new": 0,
+    "aurc": null
+   }
+  ],
+  "tendency": [
+   {
+    "precision": 0.8640483383685801,
+    "recall": 0.16067415730337078,
+    "new": 331,
+    "aurc": 0.09374893539159096
+   },
+   {
+    "precision": 0.8597014925373134,
+    "recall": 0.1578082191780822,
+    "new": 335,
+    "aurc": 0.07931647235038837
+   },
+   {
+    "precision": 0.8696969696969697,
+    "recall": 0.16912197996464348,
+    "new": 330,
+    "aurc": 0.07211348869604668
+   },
+   {
+    "precision": 0.8236842105263158,
+    "recall": 0.17814456459874786,
+    "new": 380,
+    "aurc": 0.07793913443259062
+   },
+   {
+    "precision": 0.8644578313253012,
+    "recall": 0.15760571114772104,
+    "new": 332,
+    "aurc": 0.06727629324401406
+   }
+  ],
+  "tendency+stab.9": [
+   {
+    "precision": 0.8670886075949367,
+    "recall": 0.15393258426966291,
+    "new": 316,
+    "aurc": 0.09146458890019377
+   },
+   {
+    "precision": 0.7797619047619048,
+    "recall": 0.07178082191780821,
+    "new": 168,
+    "aurc": 0.24210904347788653
+   },
+   {
+    "precision": 0.8696969696969697,
+    "recall": 0.16912197996464348,
+    "new": 330,
+    "aurc": 0.07211348869604668
+   },
+   {
+    "precision": 0.8296089385474861,
+    "recall": 0.16903813318155947,
+    "new": 358,
+    "aurc": 0.07379005942748508
+   },
+   {
+    "precision": 0.8742138364779874,
+    "recall": 0.1526633717737507,
+    "new": 318,
+    "aurc": 0.06044565495455192
+   }
+  ],
+  "tendency+stab.6": [
+   {
+    "precision": 0.8670886075949367,
+    "recall": 0.15393258426966291,
+    "new": 316,
+    "aurc": 0.09146458890019377
+   },
+   {
+    "precision": 0.8597014925373134,
+    "recall": 0.1578082191780822,
+    "new": 335,
+    "aurc": 0.07931647235038837
+   },
+   {
+    "precision": 0.8696969696969697,
+    "recall": 0.16912197996464348,
+    "new": 330,
+    "aurc": 0.07211348869604668
+   },
+   {
+    "precision": 0.8236842105263158,
+    "recall": 0.17814456459874786,
+    "new": 380,
+    "aurc": 0.07793913443259062
+   },
+   {
+    "precision": 0.8742138364779874,
+    "recall": 0.1526633717737507,
+    "new": 318,
+    "aurc": 0.06044565495455192
+   }
+  ]
+ }
+}

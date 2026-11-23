@@ -326,7 +326,8 @@ class Engine:
                         "tier": kv["tier"], "one_value": kv["one_value"] == "1",
                         "validation": kv.get("validation", ""), "admit": kv.get("admit", "-"),
                         "cov_source": kv.get("cov_source"),
-                        "cov_source_agree": None if kv.get("cov_source_agree", "undef") == "undef" else float(kv["cov_source_agree"])})
+                        "cov_source_agree": None if kv.get("cov_source_agree", "undef") == "undef" else float(kv["cov_source_agree"]),
+                        "stability": None if kv.get("stability", "undef") == "undef" else float(kv["stability"])})
         return out
 
     def chains(self) -> List[dict]:
