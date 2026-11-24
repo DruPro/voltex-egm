@@ -63,7 +63,9 @@ The SDK mirrors the layers: `egm/engine.py` (process, commands, `evidence()`, `a
 
 Example: Round 2's `stability` and `cov_source`.
 
-1. Compute it in the evidence layer. If it judges the rule, make it a lazy, cached evaluation (pattern: `stability()`,
+1. Compute it in the evidence layer. If it describes *how* a number was obtained (an evidence class, like
+   `rel_basis`), add a value to an enumeration and a matching policy field, rather than a judgment.
+   If it judges the rule, make it a lazy, cached evaluation (pattern: `stability()`,
    `internalReplication()`), clear the cache in `evaluatePolicy`, and reuse `captured()` if you need each rule's
    predictions (one capture serves every evaluation).
 2. Print it in `RULES EVIDENCE` as a new `key=value` field (append; the SDK parses fields by name). Use `undef` for
@@ -153,10 +155,13 @@ timing (Round 1 D1).
 
 See `studies/round2/CONFIRMATION.md` for what the confirmation decided. Known open items:
 
-- **Self-sourced coverage (first priority).** `estimateCoverage` takes a relation's coverage from its best inverse
-  rule, and `rescoreRules` then computes that same rule's reliability as rate / coverage = 1.0. Exclude a rule from
-  being its own coverage source (or estimate it from another), then re-run Round 2's confirmation profiles as
-  development data.
+- **Self-sourced coverage: labelled, not detected.** A rule that is its relation's coverage source has reliability
+  rate / rate = 1.0. That is an assumption, and from the rule's own statistics it can't be told apart from a
+  measurement (`studies/reliability_basis`). It is reported as `rel_basis` (`basisOf`), and policies choose with
+  `reliabilityBasis`. A detector (`COVSELF`, a mirror test) is parked on branch `round3-covself`: it helps where side
+  evidence exists and refuted true laws on real code. A principled improvement is a coverage-estimation stage that
+  does not use the rules it calibrates (capture-recapture across independent rules, or held-out halves): add it as
+  a new basis, not as a change to an existing one.
 
 - **Coverage estimation beyond inverse rules.** W1b refuses an estimate the evidence contradicts; it doesn't produce a
   better one. Relations without a trustworthy inverse have no estimate at all.

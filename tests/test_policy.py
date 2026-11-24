@@ -97,7 +97,8 @@ class Policies(unittest.TestCase):
         for bad in ({"thresholds": {"minAgrement": 0.5}}, {"thresholds": {"minAgreement": 1.5}},
                     {"thresholds": {"minSampleSize": 2.5}}, {"validation": {"method": "independent_sources"}},
                     {"validation": {"split": "random"}}, {"inference": {"shapes": ["spiral"]}},
-                    {"inference": {"shapes": []}}, {"bogus": {}}):
+                    {"inference": {"shapes": []}}, {"thresholds": {"reliabilityBasis": ["measured"]}},
+                    {"thresholds": {"reliabilityBasis": []}}, {"bogus": {}}):
             with self.assertRaises(PolicyError, msg=str(bad)):
                 self.reg.create("bad", **{k: v for k, v in bad.items() if k in ("thresholds", "validation", "inference")}) \
                     if "bogus" not in bad else egm.policy.validate(bad)
@@ -111,6 +112,31 @@ class Policies(unittest.TestCase):
             out = e.cmd("POLICY APPLY p 1 core.nonsense=1")
             self.assertTrue(any(l.startswith("[ERROR] unknown policy field") for l in out))
             self.assertEqual(e.cmd("POLICY SHOW"), ["[POLICY] legacy"])
+
+    # reliability basis: every rule reports how its reliability was obtained, and a policy can refuse a basis
+    def test_reliability_basis(self):
+        # a symmetric relation with several values per subject, 75% of reverse links stated: the symmetry rule is the
+        # relation's own coverage source, so its reliability is rate / rate = 1, assumed rather than measured
+        import random
+        r, lines = random.Random(4), []
+        for _ in range(300):
+            a, b = r.sample(range(120), 2); lines.append(f"p{a} works with p{b}")
+            if r.random() < 0.75: lines.append(f"p{b} works with p{a}")
+        lines = sorted(set(lines))
+        with egm.Engine() as e:
+            e.ingest_many(lines)
+            ev = {r["rule"]: r for r in e.evidence()}
+            src = [r for r in ev.values() if "(b,a)" in r["rule"]]
+            self.assertTrue(src); self.assertEqual(src[0]["rel_basis"], "self")   # its own coverage source: assumed
+            self.assertTrue(all(r["rel_basis"] in egm.policy.BASES for r in ev.values()))
+            p = self.reg.create("no-self", validation={"required": False}, thresholds={"reliabilityBasis": "agreement,inverse,global,rate"})
+            self.assertEqual(p.thresholds["reliabilityBasis"], ["agreement", "inverse", "global", "rate"])
+            e.apply_policy(p)
+            adm = {r["rule"]: r["admit"] for r in e.evidence()}
+            self.assertEqual(adm[src[0]["rule"]], "none")
+            self.assertTrue(all(adm[k] == "none" for k, r in ev.items() if r["rel_basis"] == "self"))
+            e.apply_policy(self.reg.create("all", validation={"required": False}))
+            self.assertEqual({r["rule"]: r["admit"] for r in e.evidence()}[src[0]["rule"]], "core")
 
     # 8. legacy behaviour is unchanged by the policy machinery
     def test_legacy_unchanged(self):

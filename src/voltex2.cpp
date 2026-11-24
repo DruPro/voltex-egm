@@ -350,7 +350,7 @@ struct Vault {
     // voltex3 inference policies (studies/evidence_policy, docs/POLICIES.md). Set only by POLICY APPLY, never by SET, and
     // never saved with the knowledge base: a policy is how inference is run, not part of the evidence. Inactive = legacy.
     struct Stratum { bool on = false; u64 minKnown = 0, minSupport = 0; double minAgree = 0, minRel = 0, minCov = 0, minZ = -1e300,
-                     minLift = 0, maxUnknown = 1, minRatio = 0, minCovSrc = 0, minStab = 0; int repl = 0, split = 0, depth = 4; unsigned shapes = 0x1F;
+                     minLift = 0, maxUnknown = 1, minRatio = 0, minCovSrc = 0, minStab = 0; int repl = 0, split = 0, depth = 4; unsigned shapes = 0x1F, bases = 31;
                      u64 minPerHalf = 5; int onInsufficient = 0; };   // onInsufficient: 0 reject, 1 admit
     struct PolicyCfg { bool active = false; std::string name = "legacy", version = "0"; Stratum core, ext; };
     PolicyCfg pol;
@@ -998,6 +998,24 @@ struct Vault {
         }
         return validation[split] = std::move(out);
     }
+    // How a rule's reliability was obtained (its evidence class). Bits match the policy field reliabilityBasis.
+    //   agreement  measured: known-answer agreement (one-value conclusions, tree rules)
+    //   inverse    rate / coverage, coverage estimated from a different rule concluding the same relation
+    //   global     rate / coverage, coverage borrowed from the median of other relations
+    //   self       rate / coverage where the rule is itself its relation's coverage source: rate / rate = 1, an
+    //              assumption that the rule is a law, not a measurement (studies/round2/CONFIRMATION.md)
+    //   rate       no coverage estimate: the raw rate (path rules; no estimate; coverage set aside by a policy)
+    enum : unsigned { RB_AGREE = 1, RB_INVERSE = 2, RB_GLOBAL = 4, RB_SELF = 8, RB_RATE = 16, RB_ALL = 31 };
+    unsigned basisOf(const RuleH& h) const {
+        if (h.type == 'G' || h.fnTarget) return RB_AGREE;
+        if (h.type == 'P' || h.cov <= 0) return RB_RATE;
+        if (h.r3 >= 0 && h.r3 < (int)covRel.size() && covRel[h.r3] > 0)
+            return (h.type == 'I' && h.r1 == covSrcR1[h.r3]) ? RB_SELF : RB_INVERSE;
+        return RB_GLOBAL;
+    }
+    static const char* basisName(unsigned b) {
+        return b == RB_AGREE ? "agreement" : b == RB_INVERSE ? "inverse" : b == RB_GLOBAL ? "global" : b == RB_SELF ? "self" : "rate";
+    }
     static unsigned shapeOf(const RuleH& h) {   // 1 inverse, 2 chain, 4 path, 8 tree, 16 conditional
         unsigned b = h.type == 'I' ? 1u : (h.type == 'T' || h.type == 'C') ? 2u : h.type == 'P' ? 4u : h.type == 'G' ? 8u : 0u;
         return h.condRel >= 0 ? (b | 16u) : b;
@@ -1016,6 +1034,8 @@ struct Vault {
         // reliability falls back to the rate, as when no estimate exists
         bool covOk = cov > 0;
         if (st.minCovSrc > 0 && cov > 0 && covSourceAgree(h.r3) < st.minCovSrc) { covOk = false; cov = 0; if (!h.fnTarget) reliab = h.rate; }
+        unsigned basis = covOk || h.fnTarget || h.type == 'G' ? basisOf(h) : (unsigned)RB_RATE;
+        if (!(basis & st.bases)) return false;   // the reliability's evidence class is not one this stratum accepts
         double unk = h.n ? double(h.eUnknown) / double(h.n) : 0;
         if (h.pn < st.minKnown || h.k < st.minSupport || agree < st.minAgree || reliab < st.minRel || cov < st.minCov ||
             h.z < st.minZ || h.lift < st.minLift || unk > st.maxUnknown) return false;
@@ -1412,6 +1432,7 @@ struct Vault {
     // not enter the median. COVSOURCE 0 is the shipped estimator, byte-identical.
     std::vector<int> covSrc; std::vector<char> covRefuted; int covGlobalSrc = -1; int F_COVSRC = 0;
     std::vector<double> covSrcAgreeV; double covGlobalAgree = -1;   // the source's agreement, fixed when estimated
+    std::vector<int> covSrcR1;   // premise relation of the inverse rule that supplied each relation's estimate
     bool covExceeded(int r, double c, int src) const {
         if (c <= 0) return false;
         c = std::min(1.0, c / RATE_REL); if (c >= 1) return false;
@@ -1426,10 +1447,11 @@ struct Vault {
     void estimateCoverage() {
         size_t m = rels.size();
         covRel.assign(m, -1); covSrc.assign(m, -1); covRefuted.assign(m, 0); covGlobalSrc = -1; covSrcAgreeV.assign(m, -1); covGlobalAgree = -1;
+        covSrcR1.assign(m, -1);
         for (size_t i = 0; i < ruleList.size(); ++i) {
             auto& h = ruleList[i];
             if (h.type == 'I' && h.lift >= 20 && h.k >= 10 && h.rate > covRel[h.r3]) {
-                covRel[h.r3] = h.rate; covSrc[h.r3] = (int)i; covSrcAgreeV[h.r3] = h.pn ? double(h.k) / double(h.pn) : 0; }
+                covRel[h.r3] = h.rate; covSrc[h.r3] = (int)i; covSrcAgreeV[h.r3] = h.pn ? double(h.k) / double(h.pn) : 0; covSrcR1[h.r3] = h.r1; }
         }
         if (F_COVSRC) for (size_t r = 0; r < m; ++r)
             if (covRel[r] > 0 && covExceeded((int)r, covRel[r], covSrc[r])) { covRel[r] = -1; covRefuted[r] = 1; }
@@ -2310,10 +2332,10 @@ int main(int argc, char** argv) {
                 if (!V.pol.active) { std::puts("[POLICY] legacy"); continue; }
                 std::printf("[POLICY] %s@%s\n", V.pol.name.c_str(), V.pol.version.c_str());
                 auto show = [](const char* nm, const Vault::Stratum& st) {
-                    std::printf("STRATUM\t%s\tminSampleSize=%llu\tminSupport=%llu\tminAgreement=%g\tminReliability=%g\tminCoverage=%g\tminZ=%g\tminLift=%g\tmaxUnknownShare=%g\tminAgreementToCoverage=%g\tminCoverageSourceAgreement=%g\tminStability=%g\treplication=%d\tsplit=%s\tminPerHalf=%llu\tonInsufficient=%s\tmaxDepth=%d\tshapes=%u\n",
+                    std::printf("STRATUM\t%s\tminSampleSize=%llu\tminSupport=%llu\tminAgreement=%g\tminReliability=%g\tminCoverage=%g\tminZ=%g\tminLift=%g\tmaxUnknownShare=%g\tminAgreementToCoverage=%g\tminCoverageSourceAgreement=%g\tminStability=%g\treplication=%d\tsplit=%s\tminPerHalf=%llu\tonInsufficient=%s\tmaxDepth=%d\tshapes=%u\treliabilityBasis=%u\n",
                                 nm, (unsigned long long)st.minKnown, (unsigned long long)st.minSupport, st.minAgree, st.minRel, st.minCov,
                                 st.minZ < -1e299 ? -1e300 : st.minZ, st.minLift, st.maxUnknown, st.minRatio, st.minCovSrc, st.minStab, st.repl, st.split ? "blocked" : "hash",
-                                (unsigned long long)st.minPerHalf, st.onInsufficient ? "admit" : "reject", st.depth, st.shapes); };
+                                (unsigned long long)st.minPerHalf, st.onInsufficient ? "admit" : "reject", st.depth, st.shapes, st.bases); };
                 show("core", V.pol.core); if (V.pol.ext.on) show("extension", V.pol.ext);
                 continue;
             }
@@ -2347,6 +2369,13 @@ int main(int argc, char** argv) {
                 else if (f == "replication") { if (v == "1" || v == "true") S->repl = 1; else if (v == "0" || v == "false") S->repl = 0; else err = "replication must be true or false, got '" + v + "'"; }
                 else if (f == "split") { if (v == "hash") S->split = 0; else if (v == "blocked") S->split = 1; else err = "split must be hash or blocked, got '" + v + "'"; }
                 else if (f == "maxDepth") { if (!num || x < 0 || x != std::floor(x)) err = "maxDepth must be a whole number >= 0 (0 = until nothing new), got '" + v + "'"; else S->depth = (int)x; }
+                else if (f == "reliabilityBasis") {
+                    unsigned m = 0; std::stringstream sh(v); std::string t;
+                    while (std::getline(sh, t, ',')) { if (t == "agreement") m |= 1; else if (t == "inverse") m |= 2; else if (t == "global") m |= 4; else if (t == "self") m |= 8;
+                                                       else if (t == "rate") m |= 16; else { err = "unknown reliability basis '" + t + "' (agreement, inverse, global, self, rate)"; break; } }
+                    if (err.empty() && !m) err = "reliabilityBasis can't be empty: no rule could be admitted";
+                    if (err.empty()) S->bases = m;
+                }
                 else if (f == "shapes") {
                     unsigned m = 0; std::stringstream sh(v); std::string t;
                     while (std::getline(sh, t, ',')) { if (t == "inverse") m |= 1; else if (t == "chain") m |= 2; else if (t == "path") m |= 4; else if (t == "tree") m |= 8;
@@ -2375,7 +2404,7 @@ int main(int argc, char** argv) {
                 size_t ri = &h - &V.ruleList[0];
                 int sp = V.pol.active ? V.pol.core.split : 0; auto& vd = V.internalReplication(sp)[ri];
                 char agree[16] = "undef"; if (h.pn) std::snprintf(agree, sizeof agree, "%.4f", double(h.k) / double(h.pn));
-                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\tvalidation=%s:%s\tadmit=%s\tcov_source=%s\tcov_source_agree=%s\tstability=%s%s\n",
+                std::printf("EVIDENCE\t%s\t%s\tn=%llu\te+=%llu\te-=%llu\te?=%llu\tagree=%s\tlift=%.4f\tz=%.2f\tbase=%.6f\tcov=%.4f\trel=%.4f\ttier=%s\tone_value=%d\tvalidation=%s:%s\tadmit=%s\tcov_source=%s\tcov_source_agree=%s\tstability=%s\trel_basis=%s%s\n",
                             h.accepted ? "ACCEPT" : "reject", V.ruleText(h).c_str(), (unsigned long long)h.n, (unsigned long long)h.k,
                             (unsigned long long)h.eMinus, (unsigned long long)h.eUnknown, agree, h.lift, h.z, h.base, h.cov, h.rel,
                             h.law ? "law" : "tendency", h.fnTarget ? 1 : 0, vd.method.c_str(),
@@ -2383,6 +2412,7 @@ int main(int argc, char** argv) {
                             !V.pol.active ? "-" : V.admitCore[ri] ? "core" : V.admitExt[ri] ? "extension" : "none",
                             V.covSourceDesc(h.r3).c_str(), [&] { double a2 = V.covSourceAgree(h.r3); char b[16] = "undef"; if (a2 >= 0) std::snprintf(b, sizeof b, "%.4f", a2); return std::string(b); }().c_str(),
                             [&] { double st2 = V.stability()[ri]; char b[16] = "undef"; if (st2 >= 0) std::snprintf(b, sizeof b, "%.2f", st2); return std::string(b); }().c_str(),
+                            V.basisName(V.basisOf(h)),
                             h.condRel < 0 ? "" : [&] { char b[200]; std::snprintf(b, sizeof b, "\tcond_in=%.0f/%.0f subjects known, %.0f/%.0f chains stated\tcond_out=%.0f/%.0f subjects known, %.0f/%.0f chains stated\tcond_z=%.2f",
                                 h.cInKnown, h.cIn, h.ckIn, h.cnIn, h.cOutKnown, h.cOut, h.ckOut, h.cnOut, h.cZ); return std::string(b); }().c_str());
             }

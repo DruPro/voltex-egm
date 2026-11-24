@@ -249,7 +249,7 @@ def cmd_rules(a):
                 print(l)
 
 
-EV_COLS = ("admit", "tier", "n", "e_plus", "e_minus", "agree", "rel", "cov", "cov_source", "stability", "validation")
+EV_COLS = ("admit", "tier", "n", "e_plus", "e_minus", "agree", "rel", "cov", "cov_source", "rel_basis", "stability", "validation")
 
 
 def cmd_evidence(a):

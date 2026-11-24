@@ -29,6 +29,10 @@ The contract (every field is enforced by the engine; nothing here is advisory):
                maxUnknownShare  E? / chains: share of chains whose answer is unknown; 0-1
                minAgreementToCoverage  several values per subject only, where a coverage estimate exists: agreement /
                                 estimated completeness of the conclusion relation (a true rule is near 1); >= 0
+               reliabilityBasis how the rule's reliability was obtained, any of: agreement (measured from known
+                                answers), inverse (coverage from another rule), global (coverage borrowed from
+                                other relations), self (the rule is its own coverage source: an assumption that it
+                                is a law), rate (no coverage estimate); default all
   validation   required         true: the rule must pass validation
                method           "internal_replication" (split-half on this knowledge base; "split_half" is accepted
                                 as the same method). Independent-source confirmation is not available yet.
@@ -43,7 +47,7 @@ The contract (every field is enforced by the engine; nothing here is advisory):
                the first stratum reaches its fixpoint and can't override it, so the policy's answers contain the
                first stratum's answers. Extension-derived facts are labelled "extension", never "core".
 
-Not exposed, because the engine can't enforce them yet: evidence classes (held-out evidence is not yet a class),
+Not exposed, because the engine can't enforce them yet: held-out evidence as a reliability basis,
 independent-source validation (Investigation V).
 """
 import copy
@@ -62,6 +66,7 @@ class PolicyError(EgmError, ValueError):
 
 
 SHAPES = ("inverse", "chain", "path", "tree", "conditional")
+BASES = ("agreement", "inverse", "global", "self", "rate")
 
 # field -> (kind, default, engine key). Defaults admit everything the engine accepted: a field only restricts.
 THRESHOLDS = {
@@ -75,6 +80,9 @@ THRESHOLDS = {
     "minCoverageSourceAgreement": ("share", 0.0, "minCoverageSourceAgreement"),
     # Round 2 W2: admit only rules accepted on at least this share of subject-bootstrap resamples. 0 = off. Experimental.
     "minStability": ("share", 0.0, "minStability"),
+    # how a rule's reliability was obtained (docs/EVIDENCE.md): admit only rules whose basis is listed. "self" is the
+    # rule being its own coverage source, an assumption that it is a law rather than a measurement.
+    "reliabilityBasis": ("bases", list(BASES), "reliabilityBasis"),
 }
 VALIDATION = {"required": ("bool", False, "replication"), "method": ("method", "internal_replication", None),
               "split": ("split", "hash", "split"), "minPerHalf": ("count", 5, "minPerHalf"),
@@ -124,6 +132,12 @@ def _check(section, key, kind, v):
         if v not in ("hash", "blocked"):
             raise PolicyError(f"{where} must be 'hash' or 'blocked', got {v!r}")
         return v
+    if kind == "bases":
+        if isinstance(v, str):
+            v = [x.strip() for x in v.split(",") if x.strip()]
+        if not isinstance(v, (list, tuple)) or not v or any(x not in BASES for x in v):
+            raise PolicyError(f"{where} must be a non-empty list drawn from {list(BASES)}, got {v!r}")
+        return [b for b in BASES if b in v]
     if kind == "shapes":
         if isinstance(v, str):
             v = [x.strip() for x in v.split(",") if x.strip()]
@@ -163,6 +177,8 @@ def _engine_args(prefix, st):
                 continue
             if kind == "bool":
                 v = "true" if v else "false"
+            elif kind == "bases":
+                v = ",".join(v)
             elif kind == "shapes":
                 v = ",".join(v) if v else ""
                 if not v:
