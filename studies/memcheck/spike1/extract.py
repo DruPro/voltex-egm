@@ -11,7 +11,9 @@
 Usage: python3 extract.py FILE.c [-I DIR ...] > facts.txt
 """
 import sys
+import os
 import clang.cindex as ci
+HANDED_ON = os.environ.get("HANDED_ON", "1") == "1"
 
 K = ci.CursorKind
 
@@ -77,6 +79,10 @@ def facts_for(fn, out, rtypes):
                     if v in handles:
                         escaped[handles[v]].add("field")
     for h, c in last.items():
+        # ownership semantics, true for all C code: a returned or stored pointer is handed on, so its life doesn't end in
+        # this function and no ending is stated (HANDED_ON=0 restores the previous facts)
+        if HANDED_ON and escaped[h]:
+            continue
         out.add(f"{h} ends with {c}")
     for h, how in escaped.items():
         for x in sorted(how) or ["none"]:

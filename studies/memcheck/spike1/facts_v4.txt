@@ -1,0 +1,575 @@
+audit_event__d comes from ctx_default
+audit_event__d escapes via return
+audit_event__d is passed to ctx_run
+audit_event__d is passed to ctx_set
+audit_order__b comes from buf_new
+audit_order__b ends with buf_release
+audit_order__b escapes via none
+audit_order__b is passed to buf_append
+audit_order__b is passed to buf_len
+audit_order__b is passed to buf_release
+audit_order__b is passed to ctx_set
+audit_order__c comes from ctx_create
+audit_order__c ends with ctx_destroy
+audit_order__c escapes via none
+audit_order__c is passed to ctx_destroy
+audit_order__c is passed to ctx_run
+audit_order__c is passed to ctx_set
+buf_new is source of audit_order__b
+buf_new is source of build_batch__b
+buf_new is source of build_token__b
+buf_new is source of emit_order__b
+buf_new is source of emit_token__b
+buf_new is source of flush_frame__b
+buf_new is source of fold_config__b
+buf_new is source of join_frame__b
+buf_new is source of lift_event__b
+buf_new is source of lift_queue__b
+buf_new is source of load_user__b
+buf_new is source of mark_order__b
+buf_new is source of parse_event__b
+buf_new is source of parse_frame__b
+buf_new is source of pull_user__b
+buf_new is source of push_page__b
+buf_new is source of scan_batch__b
+buf_new is source of sort_config__b
+buf_new is source of spin_frame__b
+buf_new is source of split_config__b
+buf_new is source of split_table__b
+buf_new is source of sync_user__b
+buf_new is source of trace_order__b
+buf_new is source of trace_token__b
+buf_new is source of tune_frame__b
+buf_new is source of weigh_config__b
+buf_new returns type buf
+build_batch__b comes from buf_new
+build_batch__b ends with buf_release
+build_batch__b escapes via none
+build_batch__b is passed to buf_append
+build_batch__b is passed to buf_len
+build_batch__b is passed to buf_release
+build_batch__b is passed to ctx_set
+build_batch__c comes from ctx_create
+build_batch__c ends with ctx_destroy
+build_batch__c escapes via none
+build_batch__c is passed to ctx_destroy
+build_batch__c is passed to ctx_run
+build_batch__c is passed to ctx_set
+build_token__b comes from buf_new
+build_token__b ends with buf_release
+build_token__b escapes via none
+build_token__b is passed to buf_append
+build_token__b is passed to buf_len
+build_token__b is passed to buf_release
+cache_batch__c comes from ctx_create
+cache_batch__c ends with ctx_destroy
+cache_batch__c escapes via none
+cache_batch__c is passed to ctx_destroy
+cache_batch__c is passed to ctx_run
+cache_batch__c is passed to ctx_set
+copy_event__h comes from ctx_create
+copy_event__h ends with ctx_destroy
+copy_event__h escapes via none
+copy_event__h is passed to ctx_destroy
+copy_event__h is passed to ctx_get
+copy_event__h is passed to ctx_set
+count_queue__h comes from ctx_create
+count_queue__h ends with ctx_destroy
+count_queue__h escapes via none
+count_queue__h is passed to ctx_destroy
+count_queue__h is passed to ctx_get
+count_queue__h is passed to ctx_set
+ctx_create is source of audit_order__c
+ctx_create is source of build_batch__c
+ctx_create is source of cache_batch__c
+ctx_create is source of copy_event__h
+ctx_create is source of count_queue__h
+ctx_create is source of fetch_order__c
+ctx_create is source of fold_page__a
+ctx_create is source of fold_page__b
+ctx_create is source of index_table__h
+ctx_create is source of index_user__h
+ctx_create is source of join_order__a
+ctx_create is source of join_order__b
+ctx_create is source of join_queue__h
+ctx_create is source of make_page_ctx0__c
+ctx_create is source of make_page_ctx1__c
+ctx_create is source of mark_config__a
+ctx_create is source of mark_config__b
+ctx_create is source of pack_batch__c
+ctx_create is source of pack_order__c
+ctx_create is source of parse_frame__c
+ctx_create is source of probe_order__a
+ctx_create is source of probe_order__b
+ctx_create is source of pull_batch__c
+ctx_create is source of pull_page__c
+ctx_create is source of push_frame__h
+ctx_create is source of rank_queue__c
+ctx_create is source of register_config0__c
+ctx_create is source of register_event1__c
+ctx_create is source of render_config__h
+ctx_create is source of report_usage__c
+ctx_create is source of seal_batch__a
+ctx_create is source of seal_batch__b
+ctx_create is source of seal_queue__c
+ctx_create is source of seal_token__c
+ctx_create is source of seal_user__a
+ctx_create is source of seal_user__b
+ctx_create is source of sort_config__c
+ctx_create is source of spin_event__a
+ctx_create is source of spin_event__b
+ctx_create is source of spin_user__a
+ctx_create is source of spin_user__b
+ctx_create is source of tally_table__h
+ctx_create is source of trace_batch__h
+ctx_create is source of trace_order__c
+ctx_create is source of trace_user__h
+ctx_create is source of weigh_config__c
+ctx_create is source of wrap_batch__a
+ctx_create is source of wrap_batch__b
+ctx_create is source of wrap_order__a
+ctx_create is source of wrap_order__b
+ctx_create is source of wrap_table__c
+ctx_create returns type ctx
+ctx_default is source of audit_event__d
+ctx_default is source of drop_user__d
+ctx_default is source of fold_table__d
+ctx_default is source of probe_token__d
+ctx_default is source of send_user__d
+ctx_default is source of spin_batch__d
+ctx_default is source of stamp_event__d
+ctx_default is source of trace_event__d
+ctx_default returns type ctx
+drop_user__d comes from ctx_default
+drop_user__d escapes via return
+drop_user__d is passed to ctx_run
+drop_user__d is passed to ctx_set
+emit_order__b comes from buf_new
+emit_order__b ends with buf_release
+emit_order__b escapes via none
+emit_order__b is passed to buf_append
+emit_order__b is passed to buf_len
+emit_order__b is passed to buf_release
+emit_token__b comes from buf_new
+emit_token__b ends with buf_release
+emit_token__b escapes via none
+emit_token__b is passed to buf_append
+emit_token__b is passed to buf_len
+emit_token__b is passed to buf_release
+fetch_order__c comes from ctx_create
+fetch_order__c ends with ctx_destroy
+fetch_order__c escapes via none
+fetch_order__c is passed to ctx_destroy
+fetch_order__c is passed to ctx_run
+fetch_order__c is passed to ctx_set
+flush_frame__b comes from buf_new
+flush_frame__b ends with buf_release
+flush_frame__b escapes via none
+flush_frame__b is passed to buf_append
+flush_frame__b is passed to buf_len
+flush_frame__b is passed to buf_release
+fold_config__b comes from buf_new
+fold_config__b ends with buf_release
+fold_config__b escapes via none
+fold_config__b is passed to buf_append
+fold_config__b is passed to buf_len
+fold_config__b is passed to buf_release
+fold_page__a comes from ctx_create
+fold_page__a ends with ctx_destroy
+fold_page__a escapes via none
+fold_page__a is passed to ctx_destroy
+fold_page__a is passed to ctx_run
+fold_page__a is passed to ctx_set
+fold_page__b comes from ctx_create
+fold_page__b ends with ctx_destroy
+fold_page__b escapes via none
+fold_page__b is passed to ctx_destroy
+fold_page__b is passed to ctx_run
+fold_page__b is passed to ctx_set
+fold_table__d comes from ctx_default
+fold_table__d escapes via return
+fold_table__d is passed to ctx_run
+fold_table__d is passed to ctx_set
+index_table__h comes from ctx_create
+index_table__h ends with ctx_destroy
+index_table__h escapes via none
+index_table__h is passed to ctx_destroy
+index_table__h is passed to ctx_get
+index_table__h is passed to ctx_set
+index_user__h comes from ctx_create
+index_user__h ends with ctx_destroy
+index_user__h escapes via none
+index_user__h is passed to ctx_destroy
+index_user__h is passed to ctx_get
+index_user__h is passed to ctx_set
+join_frame__b comes from buf_new
+join_frame__b ends with buf_release
+join_frame__b escapes via none
+join_frame__b is passed to buf_append
+join_frame__b is passed to buf_len
+join_frame__b is passed to buf_release
+join_order__a comes from ctx_create
+join_order__a ends with ctx_destroy
+join_order__a escapes via none
+join_order__a is passed to ctx_destroy
+join_order__a is passed to ctx_run
+join_order__a is passed to ctx_set
+join_order__b comes from ctx_create
+join_order__b ends with ctx_destroy
+join_order__b escapes via none
+join_order__b is passed to ctx_destroy
+join_order__b is passed to ctx_run
+join_order__b is passed to ctx_set
+join_queue__h comes from ctx_create
+join_queue__h ends with ctx_destroy
+join_queue__h escapes via none
+join_queue__h is passed to ctx_destroy
+join_queue__h is passed to ctx_get
+join_queue__h is passed to ctx_set
+lift_event__b comes from buf_new
+lift_event__b ends with buf_release
+lift_event__b escapes via none
+lift_event__b is passed to buf_append
+lift_event__b is passed to buf_len
+lift_event__b is passed to buf_release
+lift_queue__b comes from buf_new
+lift_queue__b ends with buf_release
+lift_queue__b escapes via none
+lift_queue__b is passed to buf_append
+lift_queue__b is passed to buf_len
+lift_queue__b is passed to buf_release
+load_user__b comes from buf_new
+load_user__b ends with buf_release
+load_user__b escapes via none
+load_user__b is passed to buf_append
+load_user__b is passed to buf_len
+load_user__b is passed to buf_release
+make_page_ctx0__c comes from ctx_create
+make_page_ctx0__c escapes via return
+make_page_ctx0__c is passed to ctx_set
+make_page_ctx1__c comes from ctx_create
+make_page_ctx1__c escapes via return
+make_page_ctx1__c is passed to ctx_set
+mark_config__a comes from ctx_create
+mark_config__a ends with ctx_destroy
+mark_config__a escapes via none
+mark_config__a is passed to ctx_destroy
+mark_config__a is passed to ctx_run
+mark_config__a is passed to ctx_set
+mark_config__b comes from ctx_create
+mark_config__b ends with ctx_destroy
+mark_config__b escapes via none
+mark_config__b is passed to ctx_destroy
+mark_config__b is passed to ctx_run
+mark_config__b is passed to ctx_set
+mark_order__b comes from buf_new
+mark_order__b ends with buf_release
+mark_order__b escapes via none
+mark_order__b is passed to buf_append
+mark_order__b is passed to buf_len
+mark_order__b is passed to buf_release
+pack_batch__c comes from ctx_create
+pack_batch__c ends with ctx_destroy
+pack_batch__c escapes via none
+pack_batch__c is passed to ctx_destroy
+pack_batch__c is passed to ctx_run
+pack_batch__c is passed to ctx_set
+pack_order__c comes from ctx_create
+pack_order__c ends with ctx_destroy
+pack_order__c escapes via none
+pack_order__c is passed to ctx_destroy
+pack_order__c is passed to ctx_run
+pack_order__c is passed to ctx_set
+parse_event__b comes from buf_new
+parse_event__b ends with buf_release
+parse_event__b escapes via none
+parse_event__b is passed to buf_append
+parse_event__b is passed to buf_len
+parse_event__b is passed to buf_release
+parse_frame__b comes from buf_new
+parse_frame__b ends with buf_release
+parse_frame__b escapes via none
+parse_frame__b is passed to buf_append
+parse_frame__b is passed to buf_len
+parse_frame__b is passed to buf_release
+parse_frame__b is passed to ctx_set
+parse_frame__c comes from ctx_create
+parse_frame__c ends with ctx_destroy
+parse_frame__c escapes via none
+parse_frame__c is passed to ctx_destroy
+parse_frame__c is passed to ctx_run
+parse_frame__c is passed to ctx_set
+probe_order__a comes from ctx_create
+probe_order__a ends with ctx_destroy
+probe_order__a escapes via none
+probe_order__a is passed to ctx_destroy
+probe_order__a is passed to ctx_run
+probe_order__a is passed to ctx_set
+probe_order__b comes from ctx_create
+probe_order__b ends with ctx_destroy
+probe_order__b escapes via none
+probe_order__b is passed to ctx_destroy
+probe_order__b is passed to ctx_run
+probe_order__b is passed to ctx_set
+probe_token__d comes from ctx_default
+probe_token__d escapes via return
+probe_token__d is passed to ctx_run
+probe_token__d is passed to ctx_set
+pull_batch__c comes from ctx_create
+pull_batch__c ends with ctx_destroy
+pull_batch__c escapes via none
+pull_batch__c is passed to ctx_destroy
+pull_batch__c is passed to ctx_run
+pull_batch__c is passed to ctx_set
+pull_page__c comes from ctx_create
+pull_page__c ends with ctx_destroy
+pull_page__c escapes via none
+pull_page__c is passed to ctx_destroy
+pull_page__c is passed to ctx_run
+pull_page__c is passed to ctx_set
+pull_user__b comes from buf_new
+pull_user__b ends with buf_release
+pull_user__b escapes via none
+pull_user__b is passed to buf_append
+pull_user__b is passed to buf_len
+pull_user__b is passed to buf_release
+push_frame__h comes from ctx_create
+push_frame__h ends with ctx_destroy
+push_frame__h escapes via none
+push_frame__h is passed to ctx_destroy
+push_frame__h is passed to ctx_get
+push_frame__h is passed to ctx_set
+push_page__b comes from buf_new
+push_page__b ends with buf_release
+push_page__b escapes via none
+push_page__b is passed to buf_append
+push_page__b is passed to buf_len
+push_page__b is passed to buf_release
+rank_queue__c comes from ctx_create
+rank_queue__c ends with ctx_destroy
+rank_queue__c escapes via none
+rank_queue__c is passed to ctx_destroy
+rank_queue__c is passed to ctx_run
+rank_queue__c is passed to ctx_set
+register_config0__c comes from ctx_create
+register_config0__c escapes via field
+register_config0__c is passed to ctx_set
+register_event1__c comes from ctx_create
+register_event1__c escapes via field
+register_event1__c is passed to ctx_set
+render_config__h comes from ctx_create
+render_config__h ends with ctx_destroy
+render_config__h escapes via none
+render_config__h is passed to ctx_destroy
+render_config__h is passed to ctx_get
+render_config__h is passed to ctx_set
+report_usage__c comes from ctx_create
+report_usage__c ends with ctx_run
+report_usage__c escapes via none
+report_usage__c is passed to ctx_run
+report_usage__c is passed to ctx_set
+scan_batch__b comes from buf_new
+scan_batch__b ends with buf_release
+scan_batch__b escapes via none
+scan_batch__b is passed to buf_append
+scan_batch__b is passed to buf_len
+scan_batch__b is passed to buf_release
+seal_batch__a comes from ctx_create
+seal_batch__a ends with ctx_destroy
+seal_batch__a escapes via none
+seal_batch__a is passed to ctx_destroy
+seal_batch__a is passed to ctx_run
+seal_batch__a is passed to ctx_set
+seal_batch__b comes from ctx_create
+seal_batch__b ends with ctx_destroy
+seal_batch__b escapes via none
+seal_batch__b is passed to ctx_destroy
+seal_batch__b is passed to ctx_run
+seal_batch__b is passed to ctx_set
+seal_queue__c comes from ctx_create
+seal_queue__c ends with ctx_destroy
+seal_queue__c escapes via none
+seal_queue__c is passed to ctx_destroy
+seal_queue__c is passed to ctx_run
+seal_queue__c is passed to ctx_set
+seal_token__c comes from ctx_create
+seal_token__c ends with ctx_destroy
+seal_token__c escapes via none
+seal_token__c is passed to ctx_destroy
+seal_token__c is passed to ctx_run
+seal_token__c is passed to ctx_set
+seal_user__a comes from ctx_create
+seal_user__a ends with ctx_destroy
+seal_user__a escapes via none
+seal_user__a is passed to ctx_destroy
+seal_user__a is passed to ctx_run
+seal_user__a is passed to ctx_set
+seal_user__b comes from ctx_create
+seal_user__b ends with ctx_destroy
+seal_user__b escapes via none
+seal_user__b is passed to ctx_destroy
+seal_user__b is passed to ctx_run
+seal_user__b is passed to ctx_set
+send_user__d comes from ctx_default
+send_user__d escapes via return
+send_user__d is passed to ctx_run
+send_user__d is passed to ctx_set
+sort_config__b comes from buf_new
+sort_config__b ends with buf_release
+sort_config__b escapes via none
+sort_config__b is passed to buf_append
+sort_config__b is passed to buf_len
+sort_config__b is passed to buf_release
+sort_config__b is passed to ctx_set
+sort_config__c comes from ctx_create
+sort_config__c ends with ctx_destroy
+sort_config__c escapes via none
+sort_config__c is passed to ctx_destroy
+sort_config__c is passed to ctx_run
+sort_config__c is passed to ctx_set
+spin_batch__d comes from ctx_default
+spin_batch__d escapes via return
+spin_batch__d is passed to ctx_run
+spin_batch__d is passed to ctx_set
+spin_event__a comes from ctx_create
+spin_event__a ends with ctx_destroy
+spin_event__a escapes via none
+spin_event__a is passed to ctx_destroy
+spin_event__a is passed to ctx_run
+spin_event__a is passed to ctx_set
+spin_event__b comes from ctx_create
+spin_event__b ends with ctx_destroy
+spin_event__b escapes via none
+spin_event__b is passed to ctx_destroy
+spin_event__b is passed to ctx_run
+spin_event__b is passed to ctx_set
+spin_frame__b comes from buf_new
+spin_frame__b ends with buf_release
+spin_frame__b escapes via none
+spin_frame__b is passed to buf_append
+spin_frame__b is passed to buf_len
+spin_frame__b is passed to buf_release
+spin_user__a comes from ctx_create
+spin_user__a ends with ctx_destroy
+spin_user__a escapes via none
+spin_user__a is passed to ctx_destroy
+spin_user__a is passed to ctx_run
+spin_user__a is passed to ctx_set
+spin_user__b comes from ctx_create
+spin_user__b ends with ctx_destroy
+spin_user__b escapes via none
+spin_user__b is passed to ctx_destroy
+spin_user__b is passed to ctx_run
+spin_user__b is passed to ctx_set
+split_config__b comes from buf_new
+split_config__b ends with buf_release
+split_config__b escapes via none
+split_config__b is passed to buf_append
+split_config__b is passed to buf_len
+split_config__b is passed to buf_release
+split_table__b comes from buf_new
+split_table__b ends with buf_release
+split_table__b escapes via none
+split_table__b is passed to buf_append
+split_table__b is passed to buf_len
+split_table__b is passed to buf_release
+stamp_event__d comes from ctx_default
+stamp_event__d escapes via return
+stamp_event__d is passed to ctx_run
+stamp_event__d is passed to ctx_set
+sync_user__b comes from buf_new
+sync_user__b ends with buf_release
+sync_user__b escapes via none
+sync_user__b is passed to buf_append
+sync_user__b is passed to buf_len
+sync_user__b is passed to buf_release
+tally_table__h comes from ctx_create
+tally_table__h ends with ctx_destroy
+tally_table__h escapes via none
+tally_table__h is passed to ctx_destroy
+tally_table__h is passed to ctx_get
+tally_table__h is passed to ctx_set
+trace_batch__h comes from ctx_create
+trace_batch__h ends with ctx_destroy
+trace_batch__h escapes via none
+trace_batch__h is passed to ctx_destroy
+trace_batch__h is passed to ctx_get
+trace_batch__h is passed to ctx_set
+trace_event__d comes from ctx_default
+trace_event__d escapes via return
+trace_event__d is passed to ctx_run
+trace_event__d is passed to ctx_set
+trace_order__b comes from buf_new
+trace_order__b ends with buf_release
+trace_order__b escapes via none
+trace_order__b is passed to buf_append
+trace_order__b is passed to buf_len
+trace_order__b is passed to buf_release
+trace_order__b is passed to ctx_set
+trace_order__c comes from ctx_create
+trace_order__c ends with ctx_destroy
+trace_order__c escapes via none
+trace_order__c is passed to ctx_destroy
+trace_order__c is passed to ctx_run
+trace_order__c is passed to ctx_set
+trace_token__b comes from buf_new
+trace_token__b ends with buf_release
+trace_token__b escapes via none
+trace_token__b is passed to buf_append
+trace_token__b is passed to buf_len
+trace_token__b is passed to buf_release
+trace_user__h comes from ctx_create
+trace_user__h ends with ctx_destroy
+trace_user__h escapes via none
+trace_user__h is passed to ctx_destroy
+trace_user__h is passed to ctx_get
+trace_user__h is passed to ctx_set
+tune_frame__b comes from buf_new
+tune_frame__b ends with buf_release
+tune_frame__b escapes via none
+tune_frame__b is passed to buf_append
+tune_frame__b is passed to buf_len
+tune_frame__b is passed to buf_release
+weigh_config__b comes from buf_new
+weigh_config__b ends with buf_release
+weigh_config__b escapes via none
+weigh_config__b is passed to buf_append
+weigh_config__b is passed to buf_len
+weigh_config__b is passed to buf_release
+weigh_config__b is passed to ctx_set
+weigh_config__c comes from ctx_create
+weigh_config__c ends with ctx_destroy
+weigh_config__c escapes via none
+weigh_config__c is passed to ctx_destroy
+weigh_config__c is passed to ctx_run
+weigh_config__c is passed to ctx_set
+wrap_batch__a comes from ctx_create
+wrap_batch__a ends with ctx_destroy
+wrap_batch__a escapes via none
+wrap_batch__a is passed to ctx_destroy
+wrap_batch__a is passed to ctx_run
+wrap_batch__a is passed to ctx_set
+wrap_batch__b comes from ctx_create
+wrap_batch__b ends with ctx_destroy
+wrap_batch__b escapes via none
+wrap_batch__b is passed to ctx_destroy
+wrap_batch__b is passed to ctx_run
+wrap_batch__b is passed to ctx_set
+wrap_order__a comes from ctx_create
+wrap_order__a ends with ctx_destroy
+wrap_order__a escapes via none
+wrap_order__a is passed to ctx_destroy
+wrap_order__a is passed to ctx_run
+wrap_order__a is passed to ctx_set
+wrap_order__b comes from ctx_create
+wrap_order__b ends with ctx_destroy
+wrap_order__b escapes via none
+wrap_order__b is passed to ctx_destroy
+wrap_order__b is passed to ctx_run
+wrap_order__b is passed to ctx_set
+wrap_table__c comes from ctx_create
+wrap_table__c ends with ctx_destroy
+wrap_table__c escapes via none
+wrap_table__c is passed to ctx_destroy
+wrap_table__c is passed to ctx_run
+wrap_table__c is passed to ctx_set
