@@ -46,6 +46,7 @@ CLI: `egm evidence KB [--all] [--policy NAME] [--json]` prints the same fields a
 | `cov_source` | where `cov` came from: `inverse`, `global`, `refuted`, `global_refuted`, `none` | Round 2 |
 | `cov_source_agree` | the known-answer agreement of the rule that supplied `cov` | Round 2 |
 | `stability` | share of 50 subject-bootstrap resamples on which the rule still passes acceptance | Round 2 |
+| `rel_basis` | how `rel` was obtained: `agreement` (measured from known answers), `inverse` (coverage from a different rule), `global` (coverage borrowed from other relations' median), `self` (the rule is its own coverage source: rate / rate, assumed), `rate` (no coverage estimate) | `self` and `global` are assumptions, not measurements; a policy can refuse them (`reliabilityBasis`) |
 | `cond_in`, `cond_out`, `cond_z` | conditional rules: subjects and chains inside and outside the condition, and the test statistic | |
 
 ## Coverage, and when not to trust it
@@ -72,11 +73,14 @@ elsewhere; it stays opt-in because its strict profile lost that world's recall (
 **Reading it:** when `rel` is near 1 but `agree` is low, check `cov_source` and `cov_source_agree`. `rel` of 1.00
 from a `global` or low-agreement `inverse` source is an assumption, not evidence.
 
-**Known defect (Round 2 confirmation):** an inverse rule can be the coverage source for its own conclusion relation.
-Its reliability is then its rate divided by its own rate, 1.0, whatever its agreement. On the Round 2
-`reversed_weak` world, a decoy with agreement 0.14 was admitted by strict this way. `COVSOURCE` can't catch it (the
-source is excluded from the refutation test). A policy with `minCoverageSourceAgreement` can. A fix in induction is
-the first item for Round 3.
+**Assumed reliability (Round 2 confirmation):** an inverse rule can be the coverage source for its own conclusion
+relation. Its reliability is then its rate divided by its own rate, 1.0, whatever its agreement. This is common (about
+15% of accepted rules) and nearly always right, because most such rules are true laws, but on the Round 2 decoy world
+strict admitted a rule with agreement 0.14 this way. From its own statistics a true law that is 30% stated can't be
+told from a rule that is right 30% of the time, so EGM doesn't try to detect the bad ones. It labels the basis
+(`rel_basis = self`, and `global` where the estimate is borrowed), and a policy decides whether to accept it:
+`thresholds.reliabilityBasis` (`docs/POLICIES.md`). Refusing `self` and `global` removed nearly all of strict's
+confident errors in development and also true laws that only vouch for themselves (`studies/reliability_basis`).
 
 ## Stability
 

@@ -41,6 +41,7 @@ Unknown fields and out-of-range values are errors, never ignored.
 | thresholds | `maxUnknownShare` | share of the rule's cases whose answer is unknown (E?) | 0 to 1 | 1 |
 | thresholds | `minAgreementToCoverage` | several values per subject, where a coverage estimate exists: agreement divided by the conclusion relation's estimated completeness. A true rule is near 1 whatever the coverage, so this separates incomplete data from an unreliable rule, which a fixed agreement floor can't | >= 0 | 0 |
 | thresholds | `minCoverageSourceAgreement` | Round 2: coverage from a source rule whose own known-answer agreement is below this is not used, and reliability falls back to the rate (as with no estimate). Acts at admission only, so it can't undo induction's use of a bad estimate; for that use `COVSOURCE 1` (`docs/EVIDENCE.md`) | 0 to 1 | 0 |
+| thresholds | `reliabilityBasis` | how the rule's reliability was obtained (`rel_basis`, `docs/EVIDENCE.md`): admit only the bases listed, from `agreement`, `inverse`, `global`, `self`, `rate`. `self` and `global` are assumptions rather than measurements | non-empty list | all five |
 | thresholds | `minStability` | Round 2: share of 50 subject-bootstrap resamples on which the rule still passes acceptance (`stability` in the evidence vector). At 0.9 on tendency it raised precision in development but on no confirmation world, and cost recall there | 0 to 1 | 0 |
 | validation | `required` | the rule must pass validation | true / false | false |
 | validation | `method` | `internal_replication` (`split_half` is accepted as the same method) | | internal_replication |
@@ -122,6 +123,16 @@ same module as the SDK (`egm/policy.py`), so both validate and execute identical
 
 Each recipe is a policy you create once and then name in `ask`, `infer` or `compare`. Start from a built-in with
 `clone` when you want its validation settings; start from `create` when you want only what you name.
+
+**Only measured reliability** (refuse reliability that is assumed: a rule judged against its own coverage estimate,
+or against coverage borrowed from other relations). Removes confident errors that rest on an assumption and also
+true laws that have nothing but themselves to vouch for them (`studies/reliability_basis`):
+
+```
+egm policy clone strict strict-measured
+egm policy configure strict-measured --set thresholds.reliabilityBasis=agreement,inverse,rate
+egm evidence facts.txt --policy strict-measured      # rel_basis column: why each rule is or isn't admitted
+```
 
 **Market or log data, where neighbouring records are correlated:** replicate on a chronological split, so a rule must
 hold in the later half of the data as well as the earlier one.

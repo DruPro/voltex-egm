@@ -123,7 +123,7 @@ with egm.open("facts.txt", settings={"COVSOURCE": 1}) as kb:
 ```
 
 Fields of `evidence()`: `accepted, rule, n, e_plus, e_minus, e_unknown, agree, lift, z, base, cov, rel, tier,
-one_value, validation, admit, cov_source, cov_source_agree, stability`. Policies, their schema and the registry are in
+one_value, validation, admit, cov_source, cov_source_agree, stability, rel_basis`. Policies, their schema and the registry are in
 `docs/POLICIES.md`.
 
 ## Errors
