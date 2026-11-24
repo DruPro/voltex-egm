@@ -27,6 +27,20 @@ def refs(node):
     return out
 
 
+def direct_refs(node):
+    """Variables that are the value itself (through casts and parentheses), not arguments of a call inside it."""
+    out = set()
+    def walk(n):
+        for c in n.get_children():
+            if c.kind == K.CALL_EXPR:
+                continue
+            if c.kind == K.DECL_REF_EXPR and c.referenced is not None and c.referenced.kind in (K.VAR_DECL, K.PARM_DECL):
+                out.add(c.referenced.hash)
+            walk(c)
+    walk(node)
+    return out
+
+
 def callee(call):
     r = call.referenced
     return r.spelling if r is not None else None
@@ -67,7 +81,7 @@ def facts_for(fn, out, rtypes):
                     if v in handles:
                         out.add(f"{handles[v]} is passed to {callee(n)}"); last[handles[v]] = callee(n)
         elif n.kind == K.RETURN_STMT:
-            for v in refs(n):
+            for v in direct_refs(n):
                 if v in handles:
                     escaped[handles[v]].add("return")
         elif n.kind == K.BINARY_OPERATOR and [t.spelling for t in n.get_tokens()][1:2] != ["="]:
@@ -89,9 +103,9 @@ def facts_for(fn, out, rtypes):
             out.add(f"{h} escapes via {x}")
 
 
-def main():
-    path, args = sys.argv[1], sys.argv[2:]
-    tu = ci.Index.create().parse(path, args=args)
+def extract(path, args=()):
+    """Facts for every function defined in path (a list of fact lines)."""
+    tu = ci.Index.create().parse(path, args=list(args))
     out, rtypes = set(), set()
     for c in tu.cursor.get_children():
         if c.kind == K.FUNCTION_DECL and c.is_definition() and c.location.file and c.location.file.name == path:
@@ -100,7 +114,11 @@ def main():
         t = d.result_type.get_canonical()
         if t.kind == ci.TypeKind.POINTER:
             out.add(f"{d.spelling} returns type {t.get_pointee().spelling.replace('struct ', '').replace(' ', '_')}")
-    print("\n".join(sorted(out)))
+    return sorted(out)
+
+
+def main():
+    print("\n".join(extract(sys.argv[1], sys.argv[2:])))
 
 
 if __name__ == "__main__":

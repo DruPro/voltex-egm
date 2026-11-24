@@ -1,5 +1,6 @@
 audit_event__d comes from ctx_default
-audit_event__d escapes via return
+audit_event__d ends with ctx_run
+audit_event__d escapes via none
 audit_event__d is passed to ctx_run
 audit_event__d is passed to ctx_set
 audit_order__b comes from buf_new
@@ -141,7 +142,8 @@ ctx_default is source of stamp_event__d
 ctx_default is source of trace_event__d
 ctx_default returns type ctx
 drop_user__d comes from ctx_default
-drop_user__d escapes via return
+drop_user__d ends with ctx_run
+drop_user__d escapes via none
 drop_user__d is passed to ctx_run
 drop_user__d is passed to ctx_set
 emit_order__b comes from buf_new
@@ -187,7 +189,8 @@ fold_page__b is passed to ctx_destroy
 fold_page__b is passed to ctx_run
 fold_page__b is passed to ctx_set
 fold_table__d comes from ctx_default
-fold_table__d escapes via return
+fold_table__d ends with ctx_run
+fold_table__d escapes via none
 fold_table__d is passed to ctx_run
 fold_table__d is passed to ctx_set
 index_table__h comes from ctx_create
@@ -312,7 +315,8 @@ probe_order__b is passed to ctx_destroy
 probe_order__b is passed to ctx_run
 probe_order__b is passed to ctx_set
 probe_token__d comes from ctx_default
-probe_token__d escapes via return
+probe_token__d ends with ctx_run
+probe_token__d escapes via none
 probe_token__d is passed to ctx_run
 probe_token__d is passed to ctx_set
 pull_batch__c comes from ctx_create
@@ -411,7 +415,8 @@ seal_user__b is passed to ctx_destroy
 seal_user__b is passed to ctx_run
 seal_user__b is passed to ctx_set
 send_user__d comes from ctx_default
-send_user__d escapes via return
+send_user__d ends with ctx_run
+send_user__d escapes via none
 send_user__d is passed to ctx_run
 send_user__d is passed to ctx_set
 sort_config__b comes from buf_new
@@ -428,7 +433,8 @@ sort_config__c is passed to ctx_destroy
 sort_config__c is passed to ctx_run
 sort_config__c is passed to ctx_set
 spin_batch__d comes from ctx_default
-spin_batch__d escapes via return
+spin_batch__d ends with ctx_run
+spin_batch__d escapes via none
 spin_batch__d is passed to ctx_run
 spin_batch__d is passed to ctx_set
 spin_event__a comes from ctx_create
@@ -474,7 +480,8 @@ split_table__b is passed to buf_append
 split_table__b is passed to buf_len
 split_table__b is passed to buf_release
 stamp_event__d comes from ctx_default
-stamp_event__d escapes via return
+stamp_event__d ends with ctx_run
+stamp_event__d escapes via none
 stamp_event__d is passed to ctx_run
 stamp_event__d is passed to ctx_set
 sync_user__b comes from buf_new
@@ -496,7 +503,8 @@ trace_batch__h is passed to ctx_destroy
 trace_batch__h is passed to ctx_get
 trace_batch__h is passed to ctx_set
 trace_event__d comes from ctx_default
-trace_event__d escapes via return
+trace_event__d ends with ctx_run
+trace_event__d escapes via none
 trace_event__d is passed to ctx_run
 trace_event__d is passed to ctx_set
 trace_order__b comes from buf_new

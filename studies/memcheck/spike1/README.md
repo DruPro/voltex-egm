@@ -80,4 +80,10 @@ because report_usage__c comes from ctx_create + ctx_create is source of ...  [ru
 - How the false-alarm rate scales on a large codebase, where conventions are noisier.
 - Why strict's split-half replication rejects a rule that holds 46 of 47 times.
 
+**Extractor fix (v5):** a pointer used only as a call argument inside `return f(p);` was wrongly marked as
+returned, so it was treated as handed on. Now only a pointer that is itself the returned value counts. The result is
+unchanged: 1 report, the leak.
+
+**Query interface:** `../memq.py` answers "FUNCTION is a ?" from these facts (see `../README.md`).
+
 Files: `gen_code.py` (codebase), `src/` (generated), `extract.py` (libclang facts; `HANDED_ON=0` gives v3), `facts_v3.txt`, `facts_v4.txt`, `run_egm.py`.
