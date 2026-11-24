@@ -1280,7 +1280,7 @@ struct Vault {
     u64 treeCandidates = 0; double treeZ = 0;
     // the shipped acceptance test and reliability label, for a rule whose statistics were recomputed
     bool passes(RuleH& x, const std::vector<bool>& functional) {
-        double cR = covFor(x.r3); x.cov = cR;
+        double cR = covForRule(x); x.cov = cR;
         double bar = (F_COV && cR > 0) ? std::min(RATE_MIN, RATE_REL * cR) : RATE_MIN;
         bool classic = x.lift >= LIFT_MIN && x.rate >= bar;
         double ex = double(x.pn) * x.base, sd = std::sqrt(std::max(1e-9, ex * (1 - x.base)));
@@ -1412,6 +1412,11 @@ struct Vault {
     // not enter the median. COVSOURCE 0 is the shipped estimator, byte-identical.
     std::vector<int> covSrc; std::vector<char> covRefuted; int covGlobalSrc = -1; int F_COVSRC = 0;
     std::vector<double> covSrcAgreeV; double covGlobalAgree = -1;   // the source's agreement, fixed when estimated
+    // Round 3 prototype, COVSELF 1: the inverse rule that supplies a relation's estimate is not judged by that estimate
+    // (its reliability would be rate / rate = 1.0 whatever its agreement). It is judged by the best other inverse rule
+    // for the relation, else the median of other relations' estimates whose source does not involve this relation
+    // (two weak inverses between the same pair of relations must not vouch for each other), else no estimate.
+    int F_COVSELF = 0; std::vector<int> covSrcR1; std::vector<double> covAlt; std::vector<char> covMirrorRefuted;
     bool covExceeded(int r, double c, int src) const {
         if (c <= 0) return false;
         c = std::min(1.0, c / RATE_REL); if (c >= 1) return false;
@@ -1426,10 +1431,34 @@ struct Vault {
     void estimateCoverage() {
         size_t m = rels.size();
         covRel.assign(m, -1); covSrc.assign(m, -1); covRefuted.assign(m, 0); covGlobalSrc = -1; covSrcAgreeV.assign(m, -1); covGlobalAgree = -1;
+        covSrcR1.assign(m, -1); covAlt.assign(m, -1);
         for (size_t i = 0; i < ruleList.size(); ++i) {
             auto& h = ruleList[i];
             if (h.type == 'I' && h.lift >= 20 && h.k >= 10 && h.rate > covRel[h.r3]) {
-                covRel[h.r3] = h.rate; covSrc[h.r3] = (int)i; covSrcAgreeV[h.r3] = h.pn ? double(h.k) / double(h.pn) : 0; }
+                covRel[h.r3] = h.rate; covSrc[h.r3] = (int)i; covSrcAgreeV[h.r3] = h.pn ? double(h.k) / double(h.pn) : 0; covSrcR1[h.r3] = h.r1; }
+        }
+        covMirrorRefuted.assign(m, 0);
+        if (F_COVSELF == 2) for (size_t r = 0; r < m; ++r) {
+            if (covRel[r] <= 0 || covSrcR1[r] < 0) continue;
+            int a1 = covSrcR1[r];
+            if (a1 == (int)r) continue;   // symmetric rule: its mirror is itself; COVSOURCE handles its own refutation
+            for (size_t i = 0; i < ruleList.size(); ++i) {
+                auto& g = ruleList[i];
+                if (g.type == 'I' && g.r1 == (int)r && g.r3 == a1 && g.condRel < 0) {
+                    if (covExceeded(a1, g.rate, (int)i)) covMirrorRefuted[r] = 1;
+                    break;
+                }
+            }
+        }
+        if (F_COVSELF) {
+            for (auto& h : ruleList)   // second-best inverse source, a different premise relation
+                if (h.type == 'I' && h.lift >= 20 && h.k >= 10 && h.r1 != covSrcR1[h.r3] && h.r1 != h.r3 && h.rate > covAlt[h.r3]) covAlt[h.r3] = h.rate;
+            for (size_t r = 0; r < m; ++r) {
+                if (covAlt[r] > 0 || covRel[r] <= 0) continue;
+                std::vector<double> o;
+                for (size_t q = 0; q < m; ++q) if (q != r && covRel[q] > 0 && covSrcR1[q] != (int)r) o.push_back(covRel[q]);
+                std::sort(o.begin(), o.end()); if (!o.empty()) covAlt[r] = o[o.size() / 2];
+            }
         }
         if (F_COVSRC) for (size_t r = 0; r < m; ++r)
             if (covRel[r] > 0 && covExceeded((int)r, covRel[r], covSrc[r])) { covRel[r] = -1; covRefuted[r] = 1; }
@@ -1439,6 +1468,16 @@ struct Vault {
         covGlobalAgree = v.empty() ? -1 : covSrcAgreeV[covGlobalSrc];
         if (F_COVSRC && covGlobal > 0) for (size_t r = 0; r < m; ++r)
             if (covRel[r] <= 0 && !covRefuted[r] && covExceeded((int)r, covGlobal, -1)) covRefuted[r] = 2;   // the median is refuted here
+    }
+    // coverage a given rule is judged by: covFor, except for the relation's own coverage source under COVSELF
+    double covForRule(const RuleH& h) const {
+        double c = covFor(h.r3);
+        if (!F_COVSELF || h.type != 'I' || h.r3 < 0 || h.r3 >= (int)covRel.size() || covRel[h.r3] <= 0 || h.r1 != covSrcR1[h.r3]) return c;
+        // COVSELF 2: keep the self-sourced estimate unless the inverse hypothesis is refuted in the other direction: if
+        // A(a,b) => B(b,a) were a law, the mirror B(a,b) => A(b,a) would be confirmed at A's coverage, so A is that
+        // complete; refuted when another rule concluding A is confirmed significantly beyond it (covExceeded)
+        if (F_COVSELF == 2 && !covMirrorRefuted[h.r3]) return c;
+        return covAlt[h.r3];
     }
     double covFor(int r) const {
         if (r < 0 || r >= (int)covRel.size()) return covGlobal;
@@ -1467,7 +1506,7 @@ struct Vault {
         }
         for (auto& h : ruleList) {
             if (h.type == 'G') continue;   // tree rules keep their own scoring (studies/trees)
-            double cR = covFor(h.r3); h.cov = cR;
+            double cR = covForRule(h); h.cov = cR;
             double bar = (F_COV && cR > 0 && h.type != 'P') ? std::min(RATE_MIN, RATE_REL * cR) : RATE_MIN;   // relax for sparse data, never tighten (R2-F1: not for path rules)
             bool classic = h.lift >= LIFT_MIN && h.rate >= bar;
             double ex = double(h.pn) * h.base, sd = std::sqrt(std::max(1e-9, ex * (1 - h.base)));
@@ -1929,6 +1968,7 @@ static std::vector<Setting>& settings() {
             VTX_SETTING("REPLICATE", "induction", true, true, "a rule must also hold in each half of its subjects (1/0) (studies/noise)", F_REPL, int),
             VTX_SETTING("TENDENCYSTEPS", "inference", true, true, "most tendency-tier steps one proof may contain, -1 = no limit (studies/tendency)", F_TSTEPS, int),
             VTX_SETTING("COVSOURCE", "induction", true, true, "1 = a coverage estimate c is refuted and not used when another rule concluding the relation is confirmed significantly (z > 3) above c / RATE_REL; 0 = shipped (studies/round2)", F_COVSRC, int),
+            VTX_SETTING("COVSELF", "induction", true, true, "1 = the inverse rule that supplies a relation's coverage estimate is judged by another estimate, not its own; 2 = only when the evidence contradicts the coverage its mirror rule implies (Round 3 prototype)", F_COVSELF, int),
             VTX_SETTING("DEPTH", "inference", false, true, "inference rounds, 0 = until nothing new (studies/depth)", DEPTH, int),
             VTX_SETTING("CORROBORATE", "inference", false, true, "a contradiction needs two distinct rules (1/0)", F_CORROB, int),
             VTX_SETTING("OBS", "evidence", false, true, "project the observation log (1/0)", F_OBS, int),
