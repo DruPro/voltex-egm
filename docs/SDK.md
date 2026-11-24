@@ -193,7 +193,7 @@ with egm.open("gates.txt", settings={"TREES": 1, "DEPTH": 0}) as e:
 |---|---|
 | `DEPTH` | more facts from `infer_all()`; `0` runs to a fixpoint |
 | `CHAIN` 3-8 | rules with `shape == "path"` and `premises == CHAIN`; facts with that many `because` entries |
-| `CONDITIONS` | rules with `condition` set, e.g. `[? works as ?](a,farmer|miner)` |
+| `CONDITIONS` (default 1) | rules with `condition` set, e.g. `[? works as ?](a,farmer|miner)` |
 | `TREES` | rules with `shape == "tree"`, text starting `TREE `; facts whose `because` lists every branch |
 
 The tests in `tests/test_sdk.py` (`TestExperimentalSettings`) run each one on a small world from

@@ -77,7 +77,8 @@ all.
   `docs/POLICIES.md`).
 - **H5 and H6 passed:** `CONDITIONS 1` is recommended as the default for the next release, with `CONDHOLDOUT` as the
   stricter option. Making it the default changes the legacy profile's output, so it is the owner's release
-  decision, not a change this round makes.
+  decision, not a change this round makes. *(2026-11-23: the owner made it the default;
+  `studies/cond_default/`.)*
 - **H7, H8, H9 and K-H0 passed:** nothing blocks these recommendations.
 
 ## For Round 3

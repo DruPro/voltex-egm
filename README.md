@@ -338,15 +338,15 @@ becomes evidence, and the learned rules can act as a program ([THEORY.md](docs/T
 - **Cold start.** A name seen in only one fact can't fill a learned slot. Relations need 3+ facts.
 - **Weak rules.** Tendency-tier rules can be wrong. Use `--strict` (or `TENDENCYSTEPS 0`) when precision matters.
 - **Rule shapes.** Learned rules are inverses, chains, paths of up to 8 premises (`CHAIN`), group conditions
-  (`CONDITIONS`) and trees (`TREES`).
+  (`CONDITIONS`, on by default) and trees (`TREES`).
   - A same-direction copy `r(a,b) ⇒ s(a,b)` isn't a shape: state the inverse instead.
   - Tree targets can have at most 8 distinct values.
 - **Categories can drop facts silently.** A value that falls outside its slot's category takes its facts out of the
   relation, with no warning. Keep unrelated domains' values distinct ([Mimic report](lang/mimic/REPORT.md) §5.3).
 - **OBSERVE snapshots** can lose a record's current state after 13-26 restatements when plain facts also name the
   entity (`lang/mimic/repro_observe_loss.py`).
-- **Rebuild cost.** Changes re-run learning, unless `REFRESH` applies (small changes, no new words, not with
-  `CHAIN 3+` or `CONDITIONS`). Inference always re-runs in full.
+- **Rebuild cost.** Changes re-run learning, unless `REFRESH` applies (opt-in; small changes, no new words, not with
+  `CHAIN 3+` or `CONDITIONS`, so it needs `SET CONDITIONS 0`). Inference always re-runs in full.
 - **Storage.** The observation log roughly doubles storage on heavily revised data.
 - **Memory at exit.** The grammar has no destructor. The sanitizer build finds no memory errors or undefined
   behaviour, but reports the memory still allocated at exit.
@@ -417,6 +417,8 @@ voltex-egm/
   - studies: `capability` (architecture-independent suite), `evidence_policy` (Round 1, confirmed in part:
     `CONFIRMATION.md`), `sealed` (independent generator), `shared_conditions` (conditions through the shared
     evaluator).
+  - `CONDITIONS 1` is the default (Round 2 confirmation, H6). `SET CONDITIONS 0` restores the earlier default
+    exactly; knowledge bases saved earlier reload with conditions on. Before/after: `studies/cond_default/REPORT.md`.
   - Round 2 (`studies/round2`): `COVSOURCE` (a coverage estimate the evidence contradicts is refused), `stability`
     and `minStability` (subject bootstrap), `cov_source` fields and `minCoverageSourceAgreement`, `CONDHOLDOUT`
     (conditions proposed out of sample), a second independent generator (`studies/sealed2`), `egm evidence`; guides

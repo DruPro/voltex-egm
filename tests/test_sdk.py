@@ -245,7 +245,7 @@ class TestPersistence(unittest.TestCase):
         with egm.Engine() as e:
             c = e.config()
         self.assertGreaterEqual(len(c), 23)
-        self.assertTrue(c["CHAIN"]["experimental"] and c["CONDITIONS"]["experimental"] and c["TREES"]["experimental"])
+        self.assertTrue(c["CHAIN"]["experimental"] and not c["CONDITIONS"]["experimental"] and c["TREES"]["experimental"])
         self.assertFalse(c["DEPTH"]["experimental"])
         self.assertEqual((c["DEPTH"]["value"], c["CHAIN"]["value"]), (4, 2))
 
@@ -300,9 +300,9 @@ class TestExperimentalSettings(unittest.TestCase):
 
     def test_conditions_restrict_an_over_general_rule(self):
         lines, wrong = worlds.harvest()
-        with self.kb(lines) as e:
+        with self.kb(lines, CONDITIONS=0) as e:             # the earlier default: no conditions
             base = {(f.subject, f.object) for f in e.infer_all() if f.relation == "harvests"}
-        with self.kb(lines, CONDITIONS=1) as e:
+        with self.kb(lines) as e:                           # CONDITIONS 1 is the default since Round 2
             cond = {(f.subject, f.object) for f in e.infer_all() if f.relation == "harvests"}
             rules = [r for r in e.rules() if r.condition]
         self.assertGreater(len(base & wrong), 100)          # the general rule fires for everyone
@@ -561,7 +561,9 @@ class TestShardSources(unittest.TestCase):
         for f in r.facts:
             got[f.source].add((f.fact, f.tier))
         self.assertEqual(dict(got), alone)
-        self.assertGreater(len(alone["staff"]), 50); self.assertGreater(len(alone["farm"]), 50)
+        # farm is the harvest world: with conditions (the default since Round 2) its over-general rule no longer
+        # floods it, so it derives ~20 facts instead of the earlier 100+
+        self.assertGreater(len(alone["staff"]), 50); self.assertGreater(len(alone["farm"]), 10)
 
     def test_shared_entities_are_reported(self):
         src = self.sources()

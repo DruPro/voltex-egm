@@ -20,7 +20,7 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 | `COVERAGE` | 1 | induction | stable | relax the rate bar when data looks sparse (1/0) |
 | `LABELS` | 1 | induction | stable | label rules and facts law or tendency (1/0) |
 | `CHAIN` | 2 | induction | **experimental** | longest rule body, 2-8 premises (studies/multipremise) |
-| `CONDITIONS` | 0 | induction | **experimental** | learn group conditions on accepted rules (1/0) (studies/multipremise) |
+| `CONDITIONS` | 1 | induction | stable | learn group conditions on accepted rules (1/0); default 1 since Round 2, 0 restores the earlier default (studies/multipremise, studies/round2) |
 | `TREES` | 0 | induction | **experimental** | tree-shaped rules joining several branches at one entity (1/0) (studies/trees) |
 | `REPLICATE` | 0 | induction | **experimental** | a rule must also hold in each half of its subjects (1/0) (studies/noise) |
 | `TENDENCYSTEPS` | -1 | inference | **experimental** | most tendency-tier steps one proof may contain, -1 = no limit (studies/tendency) |
@@ -47,9 +47,13 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
   3,000 correct inferences, 0 wrong, where the default makes none). Lowers precision on
   coincidence-rich data (hidden world: 0.955 to 0.931 at 3, 0.903 at 4) and is slower. See
   `studies/multipremise/RESULTS.md`.
-- `CONDITIONS` (0/1): restricts a rule to the group it actually holds for. Found the hidden
-  world's true rule (only farmers and miners harvest), cut those errors 98%, best precision of
-  any configuration (0.980). One spurious condition from 9 cases remains. Same study.
+- `CONDITIONS` (0/1, **default 1** since Round 2): restricts a rule to the group it actually holds for. Found the
+  hidden world's true rule (only farmers and miners harvest), cut those errors 98%, best precision of any
+  configuration (0.980); one spurious condition from 9 cases remains (`studies/multipremise`). Confirmed on unseen
+  worlds in Round 2 (a condition held by 8% of subjects: precision 1.0 where everything without it was 0.014) and
+  made the default; before/after on every world set: `studies/cond_default/REPORT.md`. `SET CONDITIONS 0` restores
+  the earlier default exactly (gate: 204/221 byte-identical, the other 17 differ only in `[CONFIG]` notices).
+  Knowledge bases saved before this change reload with conditions on, since only non-default settings are saved.
 - `TREES` (0/1): tree-shaped rules, where several branches meet at one entity (a gate's kind and
   its inputs decide its output). Learned exact truth tables: 1,319 of 1,332 hidden gate outputs,
   0 wrong; 100 of 100 four-bit adders computed with `DEPTH 0`; nothing learned for a random gate.
@@ -83,7 +87,8 @@ data. Turning one on makes `RELATIONS` print `[CONFIG] experimental settings on:
 - `REFRESH`: on a small change with no new words (net change at most this share of records), it keeps the learned
   categories and rules and re-projects the relations. It re-attaches every relation a rule references: premises,
   conclusion, path steps, the condition relation (whose subjects are recomputed) and tree branches. It applies with
-  `TREES` (`studies/refresh_trees`), but not with `CHAIN 3+`, `CONDITIONS`, `REPLICATE` or `QUARANTINE`. With
+  `TREES` (`studies/refresh_trees`), but not with `CHAIN 3+`, `CONDITIONS`, `REPLICATE` or `QUARANTINE`. Since
+  `CONDITIONS` is on by default, using `REFRESH` also needs `SET CONDITIONS 0`. With
   `REFRESH` off, output is byte-identical to before (gate 221/221).
 
 `DEPTH` is stable: `SET DEPTH 0` runs inference until nothing new is derived (`studies/depth/`).

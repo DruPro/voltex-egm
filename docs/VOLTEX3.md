@@ -43,9 +43,9 @@ with egm.open("facts.txt", settings={"COVSOURCE": 1}) as kb:
   synthetic twin.
 - **You want everything the data supports, labelled:** `tendency`. Answers from rules that only pass the looser
   stratum are labelled `extension`.
-- **Your data has groups with different behaviour:** `CONDITIONS 1`, recommended by Round 2's confirmation
+- **Your data has groups with different behaviour:** conditions are on by default since Round 2's confirmation
   (perfect on a condition held by 8% of subjects, where everything without it was 1.4% precise; no harm elsewhere).
-  `CONDHOLDOUT 1` is the stricter variant. Check the conditions it learns with `egm evidence` (a rule with `if ...`).
+  `CONDHOLDOUT 1` is the stricter variant; `SET CONDITIONS 0` turns them off. Check the conditions it learns with `egm evidence` (a rule with `if ...`).
 - **You want a stricter trade than the built-ins:** clone one and set thresholds (POLICIES.md, Recipes).
 
 What each choice achieved on unseen data is in `studies/round2/CONFIRMATION.md` (Round 2) and

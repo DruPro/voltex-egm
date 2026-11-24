@@ -333,7 +333,7 @@ struct Vault {
     int DEPTH = 4, lastRounds = 0;   // multi-premise study: inference rounds (0 = until nothing new)
     int CHAIN_L = 2;                 // longest rule body (2 = shipped shapes; >= 3 adds evidence-guided path rules)
     int F_CONDHO = 0;                // Round 2 W3: conditions proposed on the discovery half, accepted on the held-out half
-    int F_COND = 0;                  // learn conditions that restrict an accepted rule to a group of subjects
+    int F_COND = 1;                  // (default 1 since Round 2, studies/round2/CONFIRMATION.md) learn conditions that restrict an accepted rule to a group of subjects
     int F_TSTEPS = -1;               // TENDENCYSTEPS (studies/tendency): most tendency-tier rule steps a proof may contain; -1 = no limit
     u64 MAX_WORDS = 12000;           // categories are built for this many most frequent words; rarer words are not slots
     u64 MAX_RELS = 40;               // relations kept, largest first
@@ -1923,7 +1923,7 @@ static std::vector<Setting>& settings() {
             VTX_SETTING("LABELS", "induction", false, true, "label rules and facts law or tendency (1/0)", F_LABELS, int),
             {"CHAIN", "induction", true, true, "longest rule body, 2-8 premises (studies/multipremise)",
              [] { return double(V.CHAIN_L); }, [](double v) { V.CHAIN_L = std::max(2, std::min(8, (int)v)); }},
-            VTX_SETTING("CONDITIONS", "induction", true, true, "learn group conditions on accepted rules (1/0) (studies/multipremise)", F_COND, int),
+            VTX_SETTING("CONDITIONS", "induction", false, true, "learn group conditions on accepted rules (1/0); default 1 since Round 2, 0 restores the earlier default (studies/multipremise, studies/round2)", F_COND, int),
             VTX_SETTING("CONDHOLDOUT", "induction", true, true, "1 = a condition is proposed on half the subjects and accepted only if it passes on the other half, corrected for the candidates tried; 0 = shipped (studies/round2)", F_CONDHO, int),
             VTX_SETTING("TREES", "induction", true, true, "tree-shaped rules joining several branches at one entity (1/0) (studies/trees)", F_TREES, int),
             VTX_SETTING("REPLICATE", "induction", true, true, "a rule must also hold in each half of its subjects (1/0) (studies/noise)", F_REPL, int),

@@ -101,7 +101,7 @@ and not built.
 
 ## Conditions
 
-With `CONDITIONS 1`, an accepted rule can be restricted to a group of subjects (`... if [works as](a, farmer|miner)`)
+With `CONDITIONS 1` (the default since Round 2), an accepted rule can be restricted to a group of subjects (`... if [works as](a, farmer|miner)`)
 when its conclusion is missing outside the group much more than inside. `CONDHOLDOUT 1` (experimental) proposes the
 condition on one half of the subjects and accepts it only if it passes on the other half, corrected for the number of
 candidates tried. It removes proxy conditions (a correlated attribute that isn't the cause) at the cost of conditions

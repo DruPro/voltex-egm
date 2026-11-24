@@ -28,7 +28,7 @@ from .engine import Engine
 #: (setting, values to try). The first value is the engine default.
 DEFAULT_SPACE: List[Tuple[str, list]] = [
     ("RATE", [0.4, 0.3, 0.5]), ("LIFT", [5, 3, 8]), ("SUPPORT", [3, 2, 5]), ("PCA", [0.8, 0.7, 0.9]),
-    ("COVERAGE", [1, 0]), ("CORROBORATE", [1, 0]), ("DEPTH", [4, 0]), ("CHAIN", [2, 3]), ("CONDITIONS", [0, 1]),
+    ("COVERAGE", [1, 0]), ("CORROBORATE", [1, 0]), ("DEPTH", [4, 0]), ("CHAIN", [2, 3]), ("CONDITIONS", [1, 0]),
     ("TREES", [0, 1]), ("REPLICATE", [0, 1]), ("QUARANTINE", [0, 1]), ("VOTE", [0, 1]),
 ]
 Fact3 = Tuple[str, str, str]
